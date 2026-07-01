@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerador de Ebook | Valor Investimentos</title>
+<title>Gerador de Ebook | Vendas-JA</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -40,7 +40,7 @@ textarea{resize:vertical;font-family:'Courier New',monospace;line-height:1.5}
     <label>Subtítulo (opcional)</label>
     <input type="text" id="ebook-subtitulo" placeholder="Ex: Um guia prático e direto ao ponto">
     <label>Autor / Marca</label>
-    <input type="text" id="ebook-autor" value="Valor Investimentos">
+    <input type="text" id="ebook-autor" value="Vendas-JA">
   </div>
 
   <div class="card">
@@ -133,7 +133,7 @@ function rodape(doc, pagina) {
 function gerarPDF() {
   const titulo = document.getElementById('ebook-titulo').value.trim() || 'Título do Ebook';
   const subtitulo = document.getElementById('ebook-subtitulo').value.trim();
-  const autor = document.getElementById('ebook-autor').value.trim() || 'Valor Investimentos';
+  const autor = document.getElementById('ebook-autor').value.trim() || 'Vendas-JA';
   const conteudoBruto = document.getElementById('ebook-conteudo').value.trim();
   const ctaTexto = document.getElementById('ebook-cta-texto').value.trim();
   const ctaBotao = document.getElementById('ebook-cta-botao').value.trim();

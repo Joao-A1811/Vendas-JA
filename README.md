@@ -1,4 +1,4 @@
-# Marketing Digital — Valor Investimentos
+# Marketing Digital — Vendas-JA
 
 Base técnica para vender infoprodutos digitais (ebooks, cursos) via anúncios no Facebook/Instagram,
 com checkout pela Hotmart. Esta pasta contém tudo que dá para deixar pronto **antes** de escolher
