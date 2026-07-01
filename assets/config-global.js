@@ -11,6 +11,11 @@ window.SITE = {
   // Enquanto estiver 'COLE_AQUI', as páginas funcionam normalmente, só não medem conversão.
   pixelId: 'COLE_AQUI',
 
+  // E-mail de contato mostrado na política de privacidade e nos termos de uso
+  // (necessário pra LGPD: é por ele que a pessoa pede acesso/exclusão dos dados).
+  // Enquanto estiver 'COLE_AQUI', as páginas legais mostram um texto genérico.
+  emailContato: 'COLE_AQUI',
+
   // Projeto Firebase que guarda os leads (formulários preenchidos).
   firebase: {
     apiKey: 'AIzaSyDhGANcA5y7KGgLVF3fY-IX9s7qqWw1fvM',

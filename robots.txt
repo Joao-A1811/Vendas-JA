@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /leads/
+Disallow: /ebooks/
+Disallow: /landing-page/
+Allow: /
+
+Sitemap: https://vendas-ja.netlify.app/sitemap.xml

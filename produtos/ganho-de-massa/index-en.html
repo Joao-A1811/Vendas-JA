@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{PAGE_TITLE}} | NextLevel</title>
 <meta name="description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NextLevel">
+<meta property="og:title" content="{{PAGE_TITLE}} | NextLevel">
+<meta property="og:description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+<meta property="og:image" content="https://vendas-ja.netlify.app/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+// Canonical + hreflang for this page and its language siblings,
+// built from the page's own URL (works in any produtos/<slug>/).
+(function () {
+  var pasta = location.pathname.replace(/index(-en|-es)?\.html$/, '');
+  var base = 'https://vendas-ja.netlify.app' + pasta;
+  var versoes = { 'pt-BR': base, 'en': base + 'index-en.html', 'es': base + 'index-es.html', 'x-default': base };
+  var atual = /index-en\.html$/.test(location.pathname) ? versoes.en
+            : /index-es\.html$/.test(location.pathname) ? versoes.es
+            : versoes['pt-BR'];
+  var c = document.createElement('link');
+  c.rel = 'canonical'; c.href = atual;
+  document.head.appendChild(c);
+  for (var lang in versoes) {
+    var l = document.createElement('link');
+    l.rel = 'alternate'; l.hreflang = lang; l.href = versoes[lang];
+    document.head.appendChild(l);
+  }
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -23,8 +51,16 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-if (PIXEL_ATIVO) { fbq('init', window.SITE.pixelId); fbq('track', 'PageView'); }
+// The Pixel only turns on after the visitor ACCEPTS cookies — the banner in
+// /assets/consent.js is what calls this function (GDPR/LGPD).
+window.iniciarPixel = function () {
+  if (!PIXEL_ATIVO || window.__pixelOn) return;
+  window.__pixelOn = true;
+  fbq('init', window.SITE.pixelId);
+  fbq('track', 'PageView');
+};
 </script>
+<script src="/assets/consent.js" defer></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -102,6 +138,7 @@ img{max-width:100%;display:block}
 .lead-form input{padding:14px 16px;border-radius:10px;border:none;font-size:15px;font-family:inherit}
 .lead-form small{display:block;margin-top:12px;color:#f0e8fb;font-size:12px}
 #lead-msg{margin-top:12px;font-size:14px;font-weight:600}
+#lead-site{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 #btn-download-ebook{display:none;margin-top:14px}
 
 .oferta{background:#fff;border-radius:20px;padding:44px;text-align:center;border:1px solid #f0e8fb;box-shadow:0 10px 40px rgba(91,33,182,.1)}
@@ -224,6 +261,8 @@ const CONFIG = {
         <input type="text" id="lead-nome" placeholder="Your name" required>
         <input type="email" id="lead-email" placeholder="Your best email" required>
         <input type="tel" id="lead-whatsapp" placeholder="WhatsApp / phone (optional)">
+        <!-- Anti-spam honeypot: invisible to people; bots fill it and get ignored -->
+        <input type="text" id="lead-site" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-primary">Send it to me</button>
       </form>
       <div id="lead-msg"></div>
@@ -256,7 +295,9 @@ const CONFIG = {
 
 <footer class="footer">
   <div class="container">
-    NextLevel — all rights reserved.
+    NextLevel — all rights reserved. ·
+    <a href="/legal/privacidade-en.html" style="color:inherit">Privacy</a> ·
+    <a href="/legal/termos-en.html" style="color:inherit">Terms of use</a>
   </div>
 </footer>
 
@@ -381,14 +422,16 @@ function montarLinkCheckout() {
   const el = document.getElementById(id);
   el.href = montarLinkCheckout();
   el.addEventListener('click', () => {
-    if (PIXEL_ATIVO) fbq('track', 'InitiateCheckout');
+    if (window.__pixelOn) fbq('track', 'InitiateCheckout');
   });
 });
 
 // ============================================================
 // FIREBASE — lead capture + instant ebook delivery
 // ============================================================
-const FB_READY = window.SITE.firebase.apiKey !== 'COLE_AQUI';
+// typeof: if the Firebase script fails to load (CDN down), the page keeps
+// working — it just warns that the lead wasn't saved, without breaking.
+const FB_READY = typeof firebase !== 'undefined' && window.SITE.firebase.apiKey !== 'COLE_AQUI';
 if (FB_READY) firebase.initializeApp(window.SITE.firebase);
 
 function entregarEbook() {
@@ -405,6 +448,15 @@ function entregarEbook() {
 document.getElementById('form-lead').addEventListener('submit', function (e) {
   e.preventDefault();
   const msg = document.getElementById('lead-msg');
+
+  // Honeypot: if the hidden field was filled, it's a bot.
+  // Pretend success (so the bot moves on) and save nothing.
+  if (document.getElementById('lead-site').value) {
+    msg.textContent = 'Done!';
+    msg.style.color = '#baffc9';
+    return;
+  }
+
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
@@ -428,7 +480,7 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
       msg.textContent = entregarEbook();
       msg.style.color = '#baffc9';
       document.getElementById('form-lead').reset();
-      if (PIXEL_ATIVO) fbq('track', 'Lead');
+      if (window.__pixelOn) fbq('track', 'Lead');
     })
     .catch((err) => {
       msg.textContent = 'Something went wrong. Please try again.';

@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{TITULO_DE_LA_PAGINA}} | NextLevel</title>
 <meta name="description" content="{{DESCRIPCION_CORTA_PARA_GOOGLE_Y_REDES}}">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NextLevel">
+<meta property="og:title" content="{{TITULO_DE_LA_PAGINA}} | NextLevel">
+<meta property="og:description" content="{{DESCRIPCION_CORTA_PARA_GOOGLE_Y_REDES}}">
+<meta property="og:image" content="https://vendas-ja.netlify.app/assets/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+// Canonical + hreflang de esta página y sus versiones hermanas de idioma,
+// generados a partir de la propia URL (funciona en cualquier produtos/<slug>/).
+(function () {
+  var pasta = location.pathname.replace(/index(-en|-es)?\.html$/, '');
+  var base = 'https://vendas-ja.netlify.app' + pasta;
+  var versoes = { 'pt-BR': base, 'en': base + 'index-en.html', 'es': base + 'index-es.html', 'x-default': base };
+  var atual = /index-en\.html$/.test(location.pathname) ? versoes.en
+            : /index-es\.html$/.test(location.pathname) ? versoes.es
+            : versoes['pt-BR'];
+  var c = document.createElement('link');
+  c.rel = 'canonical'; c.href = atual;
+  document.head.appendChild(c);
+  for (var lang in versoes) {
+    var l = document.createElement('link');
+    l.rel = 'alternate'; l.hreflang = lang; l.href = versoes[lang];
+    document.head.appendChild(l);
+  }
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -23,8 +51,16 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-if (PIXEL_ATIVO) { fbq('init', window.SITE.pixelId); fbq('track', 'PageView'); }
+// El Píxel solo se activa después de que el visitante ACEPTA las cookies —
+// el banner de /assets/consent.js es quien llama a esta función (RGPD/LGPD).
+window.iniciarPixel = function () {
+  if (!PIXEL_ATIVO || window.__pixelOn) return;
+  window.__pixelOn = true;
+  fbq('init', window.SITE.pixelId);
+  fbq('track', 'PageView');
+};
 </script>
+<script src="/assets/consent.js" defer></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -102,6 +138,7 @@ img{max-width:100%;display:block}
 .lead-form input{padding:14px 16px;border-radius:10px;border:none;font-size:15px;font-family:inherit}
 .lead-form small{display:block;margin-top:12px;color:#f0e8fb;font-size:12px}
 #lead-msg{margin-top:12px;font-size:14px;font-weight:600}
+#lead-site{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 #btn-download-ebook{display:none;margin-top:14px}
 
 .oferta{background:#fff;border-radius:20px;padding:44px;text-align:center;border:1px solid #f0e8fb;box-shadow:0 10px 40px rgba(91,33,182,.1)}
@@ -224,6 +261,8 @@ const CONFIG = {
         <input type="text" id="lead-nome" placeholder="Tu nombre" required>
         <input type="email" id="lead-email" placeholder="Tu mejor correo" required>
         <input type="tel" id="lead-whatsapp" placeholder="WhatsApp (opcional)">
+        <!-- Honeypot anti-spam: invisible para personas; los robots lo llenan y son ignorados -->
+        <input type="text" id="lead-site" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-primary">Quiero recibirlo</button>
       </form>
       <div id="lead-msg"></div>
@@ -256,7 +295,9 @@ const CONFIG = {
 
 <footer class="footer">
   <div class="container">
-    NextLevel — todos los derechos reservados.
+    NextLevel — todos los derechos reservados. ·
+    <a href="/legal/privacidade-es.html" style="color:inherit">Privacidad</a> ·
+    <a href="/legal/termos-es.html" style="color:inherit">Términos de uso</a>
   </div>
 </footer>
 
@@ -381,14 +422,16 @@ function montarLinkCheckout() {
   const el = document.getElementById(id);
   el.href = montarLinkCheckout();
   el.addEventListener('click', () => {
-    if (PIXEL_ATIVO) fbq('track', 'InitiateCheckout');
+    if (window.__pixelOn) fbq('track', 'InitiateCheckout');
   });
 });
 
 // ============================================================
 // FIREBASE — captura de lead + entrega instantánea del ebook
 // ============================================================
-const FB_READY = window.SITE.firebase.apiKey !== 'COLE_AQUI';
+// typeof: si el script de Firebase no carga (CDN caído), la página sigue
+// funcionando — solo avisa que el lead no se guardó, sin romperse.
+const FB_READY = typeof firebase !== 'undefined' && window.SITE.firebase.apiKey !== 'COLE_AQUI';
 if (FB_READY) firebase.initializeApp(window.SITE.firebase);
 
 function entregarEbook() {
@@ -405,6 +448,15 @@ function entregarEbook() {
 document.getElementById('form-lead').addEventListener('submit', function (e) {
   e.preventDefault();
   const msg = document.getElementById('lead-msg');
+
+  // Honeypot: si el campo oculto viene lleno, es un robot.
+  // Finge éxito (para que el robot no insista) y no guarda nada.
+  if (document.getElementById('lead-site').value) {
+    msg.textContent = '¡Recibido!';
+    msg.style.color = '#baffc9';
+    return;
+  }
+
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
@@ -428,7 +480,7 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
       msg.textContent = entregarEbook();
       msg.style.color = '#baffc9';
       document.getElementById('form-lead').reset();
-      if (PIXEL_ATIVO) fbq('track', 'Lead');
+      if (window.__pixelOn) fbq('track', 'Lead');
     })
     .catch((err) => {
       msg.textContent = 'Algo salió mal. Intenta de nuevo.';

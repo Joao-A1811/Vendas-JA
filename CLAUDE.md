@@ -26,10 +26,18 @@ a cada push na `main`.
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
 | `anuncios/` | Templates de copy para Meta Ads (BR e internacional), com regras por nicho |
 | `leads/painel-leads.html` | Painel de leads (login Google) com exportação CSV |
+| `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
+| `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
+| `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 
 Leads são salvos no Firebase (projeto `vendas-ja-99317`) com produto + idioma + UTMs.
 Quem se cadastra recebe o ebook gratuito na hora, no idioma da página (campo
-`linkEbookGratis` do `CONFIG`).
+`linkEbookGratis` do `CONFIG`). O formulário tem honeypot anti-spam (campo `#lead-site`
+escondido — robô que preenche é ignorado sem salvar).
+
+As páginas de produto têm SEO/social prontos: favicon, Open Graph (imagem em
+`assets/og-image.png`), canonical + hreflang gerados por JS a partir da própria URL.
+As home pages têm as mesmas tags, estáticas.
 
 ## Catálogo atual (todos ainda `disponivel: false` = "Em breve")
 
@@ -50,6 +58,10 @@ As páginas de produto ainda têm `{{placeholders}}` no `CONFIG`, aguardando con
 
 - **Pixel do Meta:** criar no Events Manager (tela estava travando) e colar o ID em
   `assets/config-global.js`.
+- **E-mail de contato:** colar em `emailContato` no `assets/config-global.js` (aparece nas
+  páginas legais; exigência LGPD).
+- **Regras novas do Firebase:** colar a versão anti-spam do `CHECKLIST-CONFIGURACAO.md`
+  (seção 1, passo 5) no console do Firebase.
 - **Produtos reais:** gerar os ebooks (`ebooks/gerador-ebook.html`), preencher os `CONFIG`,
   colocar os PDFs em `ebooks/arquivos/`, trocar `disponivel` para `true`.
 - **E-mail (Brevo):** sequência por idioma quando os ebooks existirem.

@@ -32,12 +32,33 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
      "rules": {
        "leads": {
          ".read": "auth != null",
-         ".write": true,
-         ".indexOn": ["data"]
+         ".indexOn": ["data"],
+         "$lead": {
+           ".write": "!data.exists()",
+           ".validate": "newData.hasChildren(['nome', 'email', 'produto', 'idioma', 'data'])",
+           "nome":         { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 120" },
+           "email":        { ".validate": "newData.isString() && newData.val().contains('@') && newData.val().length < 200" },
+           "whatsapp":     { ".validate": "newData.isString() && newData.val().length < 40" },
+           "produto":      { ".validate": "newData.isString() && newData.val().length < 120" },
+           "idioma":       { ".validate": "newData.isString() && newData.val().length < 6" },
+           "pagina":       { ".validate": "newData.isString() && newData.val().length < 500" },
+           "data":         { ".validate": "newData.isString() && newData.val().length < 40" },
+           "utm_source":   { ".validate": "newData.isString() && newData.val().length < 200" },
+           "utm_medium":   { ".validate": "newData.isString() && newData.val().length < 200" },
+           "utm_campaign": { ".validate": "newData.isString() && newData.val().length < 200" },
+           "utm_content":  { ".validate": "newData.isString() && newData.val().length < 200" },
+           "utm_term":     { ".validate": "newData.isString() && newData.val().length < 200" },
+           "$outro":       { ".validate": false }
+         }
        }
      }
    }
    ```
+   > ⚠️ **Estas regras foram reforçadas em jul/2026** (anti-spam: só aceitam cadastro novo com
+   > os campos esperados, tamanhos limitados e e-mail com @; ninguém consegue apagar ou editar
+   > lead pelo site). Se o banco ainda estiver com as regras antigas (`".write": true`), cole
+   > esta versão nova em **Realtime Database → Regras → Publicar** — leva 1 minuto e não afeta
+   > os leads já salvos.
 
 ---
 
@@ -108,6 +129,16 @@ Depois disso, cada produto fica acessível assim:
    github.com: abrir o arquivo → botão de lápis → Commit changes.)
 7. Montar a campanha no Meta Ads usando `anuncios/copy-facebook-br.md` (para PT) ou
    `-internacional.md` (para EN/ES), respeitando os avisos de política por nicho descritos lá.
+
+## 5b. E-mail de contato das páginas legais (fazer uma vez, na Fase 1)
+
+O site tem Política de Privacidade e Termos de Uso (`legal/`, nos 3 idiomas) — o Meta costuma
+exigir esse link na página pra aprovar anúncio, e a LGPD exige um canal de contato pro titular
+dos dados. Defina qual e-mail vai atender esses pedidos (pode ser um Gmail) e cole no campo
+`emailContato` de `assets/config-global.js`. Enquanto estiver `COLE_AQUI`, as páginas legais
+mostram um texto genérico ("pelos nossos canais de atendimento") em vez do e-mail.
+
+---
 
 ## 6. Teste do funil (fazer pra cada produto novo)
 
