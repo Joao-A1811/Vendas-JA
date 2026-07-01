@@ -23,7 +23,8 @@ entregar tudo de graça.
 ## 4. Regras de escrita
 - Frases curtas, linguagem direta, sem jargão técnico sem explicar
 - Um exemplo prático por capítulo
-- Não prometer resultado financeiro garantido (fica fora das políticas de anúncio do Meta e pode configurar propaganda enganosa)
+- Não prometer resultado garantido (fica fora das políticas de anúncio do Meta e pode configurar propaganda enganosa) — vale para resultado financeiro, corporal ou de relacionamento
+- Para nichos de saúde (emagrecimento/ganho de massa) e relacionamento: foque em hábitos, comunicação e comportamento — não em promessas de transformação corporal específica nem em táticas de manipulação
 
 ## 5. Formato para colar no gerador
 ```

@@ -8,6 +8,11 @@ Um anúncio bom testa **3 a 5 variações** de texto e criativo ao mesmo tempo �
 > - Título (headline): até 40 caracteres
 > - Descrição: até 30 caracteres
 
+> Cuidado por nicho (senão o anúncio é reprovado ou a conta pode ser suspensa):
+> - **Emagrecimento/ganho de massa**: proibido prometer número específico ("perca 10kg em 30 dias"), proibido foto de "antes e depois" do corpo, evitar linguagem de vergonha corporal.
+> - **Investimentos**: proibido prometer rentabilidade garantida ou específica.
+> - **Relacionamentos**: nada sexualmente sugestivo, cuidado com segmentação por características pessoais. Foque em confiança, comunicação e habilidades sociais — nunca em manipulação.
+
 ---
 
 ## Produto
@@ -81,8 +86,8 @@ Um anúncio bom testa **3 a 5 variações** de texto e criativo ao mesmo tempo �
 ---
 
 ## Checklist antes de publicar
-- [ ] Pixel do Meta instalado na landing page (`marketing-digital/landing-page/index.html`) e testando eventos (PageView, Lead, InitiateCheckout) no Gerenciador de Eventos
+- [ ] Pixel do Meta instalado na landing page e testando eventos (PageView, Lead, InitiateCheckout) no Gerenciador de Eventos
 - [ ] Link da landing page com UTMs configurados (ex: `?utm_source=facebook&utm_medium=cpc&utm_campaign={{nome_da_campanha}}&utm_content={{variacao}}`)
 - [ ] Conta de anúncios verificada no Meta Business Manager (identidade da empresa, sem antidetect browser / multi-contas)
 - [ ] Orçamento diário definido e teto de gasto configurado
-- [ ] Público, texto e criativo revisados contra as Políticas de Publicidade do Meta (promessas exageradas de ganho financeiro são frequentemente reprovadas — evitar "garantido", "sem risco", números de retorno específicos)
+- [ ] Público, texto e criativo revisados contra as Políticas de Publicidade do Meta e os cuidados por nicho listados acima

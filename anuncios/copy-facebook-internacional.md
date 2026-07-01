@@ -8,6 +8,11 @@ Run **3 to 5 variations** of text and creative at the same time — never launch
 > - Headline: up to 40 characters
 > - Description: up to 30 characters
 
+> Watch out per niche (otherwise the ad gets rejected or the account can be suspended):
+> - **Weight loss/muscle gain**: forbidden to promise a specific number ("lose 10kg in 30 days"), forbidden "before and after" body photos, avoid body-shaming language.
+> - **Investing**: forbidden to promise guaranteed or specific returns.
+> - **Relationships**: nothing sexually suggestive, be careful with targeting by personal attributes. Focus on confidence, communication and social skills — never manipulation.
+
 ---
 
 ## Product
@@ -90,8 +95,8 @@ Run **3 to 5 variations** of text and creative at the same time — never launch
 ---
 
 ## Checklist before publishing
-- [ ] Meta Pixel installed on the landing page (`marketing-digital/landing-page/index-en.html`) and firing events (PageView, Lead, InitiateCheckout) in Events Manager
+- [ ] Meta Pixel installed on the landing page and firing events (PageView, Lead, InitiateCheckout) in Events Manager
 - [ ] Landing page link includes UTMs (e.g. `?utm_source=facebook&utm_medium=cpc&utm_campaign={{campaign_name}}&utm_content={{variation}}`)
 - [ ] Ads account verified in Meta Business Manager (real business identity, no antidetect browser / multi-account setup)
 - [ ] Daily budget and spend cap defined
-- [ ] Audience, copy and creative reviewed against Meta's Advertising Policies (exaggerated financial-return claims are frequently rejected — avoid "guaranteed", "risk-free", specific ROI numbers)
+- [ ] Audience, copy and creative reviewed against Meta's Advertising Policies and the per-niche notes above
