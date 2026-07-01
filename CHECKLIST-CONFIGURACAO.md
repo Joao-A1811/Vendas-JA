@@ -1,92 +1,144 @@
 # Checklist de Configuração Manual
 
-Passo a passo das contas e credenciais que precisam ser criadas fora deste repositório.
+Passo a passo detalhado das contas e credenciais que precisam ser criadas fora deste repositório.
 Nenhuma senha, token ou chave deve ser commitada aqui — cole as credenciais diretamente
-nos arquivos indicados (eles já têm um campo `COLE_AQUI` / `PASTE_HERE` reservado para isso)
-apenas no seu ambiente local, ou direto no editor do Netlify.
+nos arquivos indicados (eles já têm um campo `COLE_AQUI` / `PASTE_HERE` reservado para isso).
+
+## Como fica a separação do site de investimentos
+
+- **Código**: continua neste mesmo repositório, mas isolado na pasta `marketing-digital/` (a
+  `plataforma-carteira/` não é tocada em nenhum passo abaixo).
+- **Deploy/domínio**: site novo e separado no Netlify (domínio próprio, ex: `promo.suaempresa.com.br`
+  ou um domínio novo comprado só para isso) — não é o mesmo site publicado da plataforma de carteira.
+- **Banco de dados**: projeto Firebase novo e separado (leads de marketing não ficam no mesmo banco
+  dos dados de carteira dos clientes).
+- **Se quiser indo além**: dá para separar também em um **repositório GitHub próprio** (fora do
+  `Valor-Investimentos`), mas isso não é necessário tecnicamente — só faz sentido se, por exemplo,
+  quiser dar acesso a esse código pra alguém sem dar acesso à plataforma de carteira. Se quiser isso,
+  me avise que eu ajudo a migrar.
 
 ## Ordem recomendada
 
-**Fase 1 — infraestrutura (dá para fazer tudo agora, sem ter o produto pronto):**
-Seções 1 (Firebase), 3 (Meta Business Manager) e 5 (Netlify) abaixo, além de abrir a conta na
-Hotmart (parte inicial da seção 2 — só o cadastro/verificação de identidade, sem cadastrar produto
-ainda).
+**Fase 1 — infraestrutura (fazer tudo agora, sem ter o produto pronto):** passos 1 a 4 abaixo.
+**Fase 2 — só depois que o ebook/curso estiver pronto:** passo 5 em diante.
 
-**Fase 2 — só depois que o produto (ebook/curso) estiver pronto:**
-Cadastrar o produto na Hotmart (resto da seção 2), colar o link de checkout na landing page,
-gerar o ebook, publicar a landing page atualizada e então subir a campanha de anúncio (seção 3,
-parte final) e a automação de e-mail (seção 4).
+---
 
-## 1. Firebase (captura de lead)
+## 1. Firebase (banco de dados dos leads)
 
-1. Acesse [console.firebase.google.com](https://console.firebase.google.com) e crie um **projeto novo**
-   (não reaproveitar o `valor-carteira`).
-2. Ative o **Realtime Database** (modo produção).
-3. Em Project Settings → Your apps → adicione um app Web e copie o `firebaseConfig`.
-4. Cole esse config em:
-   - `marketing-digital/landing-page/index.html` (campo `firebase` dentro de `CONFIG`)
-   - `marketing-digital/landing-page/index-en.html` (idem)
-   - `marketing-digital/leads/painel-leads.html` (campo `FIREBASE_CONFIG`)
-5. Em Authentication, ative o provedor **Google** e adicione o(s) e-mail(s) que podem acessar o
-   painel de leads.
-6. Configure as **regras do Realtime Database** para que:
-   - Qualquer pessoa possa **escrever** em `/leads` (é o formulário público da landing page), mas
-     **sem conseguir ler** os dados de outros leads.
-   - Só usuários autenticados (login Google) possam **ler** `/leads` (usado pelo painel).
+1. Acesse [console.firebase.google.com](https://console.firebase.google.com) e faça login com a
+   conta Google da empresa.
+2. Clique em **"Adicionar projeto"**.
+3. Dê um nome diferente do projeto da carteira, ex: `valor-marketing-leads`. Clique em Continuar.
+4. Na etapa do Google Analytics, pode **desativar** (não é necessário). Clique em **Criar projeto**
+   e aguarde.
+5. No menu lateral esquerdo, vá em **Build → Realtime Database** → **Criar banco de dados**.
+   - Escolha uma localização (ex: `us-central1`).
+   - Selecione **"Iniciar em modo de produção"**.
+6. Ainda no menu, vá em **⚙️ Configurações do projeto** (ícone de engrenagem, canto superior
+   esquerdo) → aba **Geral**.
+7. Role até **"Seus aplicativos"** → clique no ícone **`</>`** (Web) → dê um nome (ex:
+   `landing-page`) → **Registrar app**. Não precisa marcar "Firebase Hosting".
+8. Vai aparecer um bloco de código com `const firebaseConfig = {...}`. Copie esses valores
+   (apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId).
+9. Cole esses valores nos 3 arquivos abaixo, substituindo `COLE_AQUI` / `PASTE_HERE`:
+   - `marketing-digital/landing-page/index.html` (dentro de `CONFIG.firebase`)
+   - `marketing-digital/landing-page/index-en.html` (dentro de `CONFIG.firebase`)
+   - `marketing-digital/leads/painel-leads.html` (dentro de `FIREBASE_CONFIG`)
+10. Menu lateral → **Build → Authentication** → **Vamos começar** → aba **Sign-in method** →
+    clique em **Google** → **Ativar** → selecione um e-mail de suporte → **Salvar**.
+11. Volte em **Realtime Database → aba Regras**, apague o conteúdo e cole:
+    ```json
+    {
+      "rules": {
+        "leads": {
+          ".read": "auth != null",
+          ".write": true,
+          ".indexOn": ["data"]
+        }
+      }
+    }
+    ```
+    Clique em **Publicar**. (Isso permite que qualquer visitante envie o formulário, mas só quem
+    fizer login com Google consiga ler a lista de leads no painel.)
 
-   Exemplo de regra:
-   ```json
-   {
-     "rules": {
-       "leads": {
-         ".read": "auth != null",
-         ".write": true,
-         ".indexOn": ["data"]
-       }
-     }
-   }
-   ```
+---
 
-## 2. Hotmart
+## 2. Meta Business Manager (conta de anúncios)
 
-1. Criar conta de produtor em [hotmart.com](https://hotmart.com).
-2. Completar a verificação de identidade (necessário para sacar valores).
-3. Cadastrar o produto (tipo: ebook/curso digital).
-4. Definir preço, moeda e (se for vender fora do Brasil) ativar as moedas/localidades desejadas.
-5. Copiar o **link de checkout** do produto e colar em `CONFIG.linkCheckoutHotmart` na landing page.
-6. Configurar o programa de afiliados (comissão sugerida: 40–60%) quando o produto já tiver
-   algumas vendas orgânicas e boas avaliações (ajuda a atrair afiliados).
+1. Acesse [business.facebook.com](https://business.facebook.com) → **Criar conta**.
+2. Preencha nome da empresa, seu nome e e-mail comercial. Confirme o e-mail recebido.
+3. Menu **Configurações do Business** (ícone de engrenagem) → **Contas → Contas de anúncios** →
+   **Adicionar → Criar uma nova conta de anúncios**.
+   - Nome da conta, fuso horário (Brasília), moeda (BRL, ou a moeda do país que for anunciar
+     primeiro — depois dá pra criar outra conta pra outra moeda).
+4. Ainda em Configurações do Business → **Métodos de pagamento** → adicione um cartão para a
+   conta de anúncios.
+5. **Verificação da empresa** (importante para evitar limitações): Configurações do Business →
+   **Centro de segurança** → **Verificação da empresa** → siga o passo a passo enviando CNPJ e
+   documentos solicitados.
+6. Criar o Pixel: acesse [business.facebook.com/events_manager](https://business.facebook.com/events_manager)
+   → **Conectar fontes de dados** → **Web** → **Pixel do Meta** → dê um nome (ex: `Pixel Marketing
+   Valor`) → informe a URL da landing page (pode colocar um placeholder por enquanto, ex:
+   `https://promo.suaempresa.com.br`) → **Continuar** → **Configurar manualmente**.
+7. Copie o **ID do Pixel** (número) exibido.
+8. Cole esse ID em `META_PIXEL_ID` nos arquivos `marketing-digital/landing-page/index.html` e
+   `index-en.html`.
+9. Depois que a landing page estiver publicada (passo 4), volte no Gerenciador de Eventos → aba
+   **Testar eventos** → cole a URL do site publicado → confirme que o evento `PageView` aparece
+   ao abrir a página, e `Lead` ao enviar o formulário de teste.
 
-## 3. Meta Business Manager (anúncios)
+---
 
-1. Criar o Business Manager em [business.facebook.com](https://business.facebook.com) com a
-   identidade real da empresa (não usar antidetect browser / múltiplas contas — ver `README.md`).
-2. Verificar a empresa (Meta pode pedir CNPJ/documentos).
-3. Criar uma conta de anúncios e associar um método de pagamento.
-4. Criar um **Pixel** em Eventos → Pixels, copiar o ID e colar em `META_PIXEL_ID` na landing page
-   (`index.html` e/ou `index-en.html`).
-5. No Gerenciador de Eventos, conferir se os eventos `PageView`, `Lead` e `InitiateCheckout` estão
-   chegando (abra a landing page publicada e simule um cadastro).
-6. Montar a campanha usando os templates em `anuncios/copy-facebook-br.md` (ou `-internacional.md`).
+## 3. Hotmart — só a conta (produto vem na Fase 2)
 
-## 4. E-mail marketing (Brevo — recomendado, plano grátis)
+1. Acesse [hotmart.com](https://hotmart.com) → **Cadastre-se como produtor**.
+2. Preencha os dados pessoais/empresa.
+3. Complete a verificação de identidade (documento + selfie, pedido pela própria Hotmart) — sem
+   isso não é possível sacar valores de vendas depois.
+4. Pare por aqui nesta fase. **Não cadastre o produto ainda.**
 
-1. Criar conta em [brevo.com](https://www.brevo.com).
-2. Criar uma lista e uma automação: "quando um contato for adicionado à lista X → enviar e-mail
-   com o ebook em anexo/link → depois de N dias → enviar e-mail com a oferta do produto pago".
-3. Os leads capturados no Firebase precisam ser importados (manual via CSV exportado no
-   `painel-leads.html`, ou futuramente uma integração automática via API do Brevo).
+---
 
-## 5. Netlify (publicar a landing page)
+## 4. Netlify (publicar a landing page, separado da plataforma de carteira)
 
-1. Criar um **novo site** no Netlify (separado do site atual da `plataforma-carteira`).
-2. Apontar o **base directory** para `marketing-digital/landing-page` e publish directory `.`
-   (ou copiar o conteúdo dessa pasta para um repositório/site próprio, se preferir manter os
-   domínios totalmente separados).
-3. Configurar o domínio/subdomínio desejado (ex: `promo.valorinvestimentos.com.br`).
+1. Acesse [app.netlify.com](https://app.netlify.com) e faça login (mesma conta usada no site
+   atual, sem problema — o que importa é criar um **site novo**, não editar o existente).
+2. Clique em **"Add new site" → "Import an existing project"**.
+3. Conecte ao GitHub e selecione o repositório `Joao-A1811/Valor-Investimentos` (o mesmo repo — o
+   Netlify permite ter vários sites apontando para pastas diferentes do mesmo repositório, cada
+   um com seu próprio domínio, o que já resolve a separação sem precisar de um repo novo).
+4. Em **"Site settings"** durante a importação:
+   - **Base directory**: `marketing-digital/landing-page`
+   - **Build command**: deixe em branco (é HTML estático, sem build)
+   - **Publish directory**: `marketing-digital/landing-page`
+5. Clique em **Deploy site**. O Netlify vai gerar uma URL temporária (ex:
+   `nome-aleatorio.netlify.app`) — já dá pra testar o formulário nela.
+6. **Site settings → Domain management → Add a domain** → informe o domínio/subdomínio desejado
+   (ex: `promo.suaempresa.com.br`, separado do domínio da plataforma de carteira).
+7. Siga as instruções de DNS mostradas (adicionar um registro CNAME ou os nameservers, no painel
+   onde o domínio foi comprado). O certificado SSL é gerado automaticamente depois que o DNS
+   propagar (pode levar algumas horas).
+8. Depois de publicado, volte no Firebase → **Authentication → Settings → Authorized domains** →
+   adicione o novo domínio (necessário para o login Google do painel de leads funcionar).
 
-## 6. Depois de configurado
+---
 
-- Testar o funil inteiro uma vez: abrir a landing page publicada → preencher o formulário → conferir
-  se o lead aparece no `painel-leads.html` → conferir se o Pixel disparou no Gerenciador de Eventos
-  do Meta → clicar no botão de compra e conferir se chega no checkout certo da Hotmart.
+## 5. (Fase 2 — depois que o ebook/curso estiver pronto)
+
+1. Cadastrar o produto na Hotmart → copiar o **link de checkout**.
+2. Colar esse link em `CONFIG.linkCheckoutHotmart` nos arquivos da landing page.
+3. Gerar o ebook em `marketing-digital/ebooks/gerador-ebook.html` e disponibilizar o PDF (link de
+   download ou anexo no e-mail de boas-vindas).
+4. Criar conta em [brevo.com](https://www.brevo.com), montar a automação de e-mail (lead entra na
+   lista → recebe o ebook → depois de alguns dias recebe a oferta) e importar os leads exportados
+   em CSV pelo `leads/painel-leads.html`.
+5. Publicar a landing page atualizada (commit + push, o Netlify redeploya automaticamente).
+6. Montar a campanha no Meta Ads usando `marketing-digital/anuncios/copy-facebook-br.md` (ou
+   `-internacional.md`), com o Pixel já validado no passo 2.9 acima.
+
+## 6. Teste final do funil completo
+
+Abrir a landing page publicada → preencher o formulário → conferir se o lead aparece no
+`painel-leads.html` → conferir no Gerenciador de Eventos do Meta se `PageView` e `Lead`
+dispararam → clicar no botão de compra e confirmar que abre o checkout certo da Hotmart.
