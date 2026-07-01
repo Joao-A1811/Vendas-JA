@@ -9,7 +9,7 @@ window.SITE = {
   // Pixel do Meta (Facebook Ads).
   // Onde pegar: business.facebook.com/events_manager → seu Pixel → ID (número).
   // Enquanto estiver 'COLE_AQUI', as páginas funcionam normalmente, só não medem conversão.
-  pixelId: 'COLE_AQUI',
+  pixelId: '1817037532617722',
 
   // E-mail de contato mostrado na política de privacidade e nos termos de uso
   // (necessário pra LGPD: é por ele que a pessoa pede acesso/exclusão dos dados).
