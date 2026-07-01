@@ -1,0 +1,22 @@
+PASTA DOS EBOOKS GRATUITOS (PDFs)
+=================================
+
+Suba aqui os PDFs gerados pelo gerador-ebook.html, um por produto e por idioma.
+
+Convenção de nome (tudo minúsculo, sem espaço nem acento):
+  <slug-do-produto>-<idioma>.pdf
+
+Exemplos:
+  emagrecimento-pt.pdf
+  emagrecimento-en.pdf
+  emagrecimento-es.pdf
+  investimentos-pt.pdf
+
+Depois de subir o PDF, aponte para ele no CONFIG da página do produto,
+no campo linkEbookGratis. Exemplo (na página em espanhol do emagrecimento,
+produtos/emagrecimento/index-es.html):
+
+  linkEbookGratis: '/ebooks/arquivos/emagrecimento-es.pdf',
+
+Com isso, quem se cadastrar na página em espanhol baixa o ebook em espanhol
+na hora, automaticamente. Cada idioma da página aponta pro seu próprio PDF.

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NextLevel — Sua evolução começa aqui</title>
+<title>NextLevel — Tu próximo nivel empieza aquí</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="/assets/produtos.js"></script>
@@ -38,26 +38,26 @@ h1,h2{font-family:'Poppins',Arial,sans-serif}
 <section class="hero">
   <div class="container">
     <nav class="idiomas">
-      <a href="index.html" class="atual">PT</a>
+      <a href="index.html">PT</a>
       <a href="index-en.html">EN</a>
-      <a href="index-es.html">ES</a>
+      <a href="index-es.html" class="atual">ES</a>
     </nav>
-    <span class="badge">🚀 Feito pra gerar resultado, não enrolação</span>
-    <h1>Sua evolução começa aqui</h1>
-    <p>Métodos práticos e diretos ao ponto para transformar sua saúde, seu dinheiro e sua vida — escolha por onde começar.</p>
+    <span class="badge">🚀 Hecho para dar resultados, no rodeos</span>
+    <h1>Tu próximo nivel empieza aquí</h1>
+    <p>Métodos prácticos y directos para transformar tu salud, tu dinero y tu vida — elige por dónde empezar.</p>
   </div>
 </section>
 
 <div class="grid" id="grid"></div>
 
-<footer class="footer">NextLevel — todos os direitos reservados.</footer>
+<footer class="footer">NextLevel — todos los derechos reservados.</footer>
 
 <script>
-// A lista de produtos vem de /assets/produtos.js (um lugar só pra editar).
-const IDIOMA = 'pt';
-const SUFIXO_PAGINA = ''; // pt = index.html (padrão da pasta)
-const TXT_EM_BREVE = 'Em breve';
-const TXT_SAIBA_MAIS = 'Saiba mais →';
+// La lista de productos viene de /assets/produtos.js (se edita en un solo lugar).
+const IDIOMA = 'es';
+const SUFIXO_PAGINA = 'index-es.html';
+const TXT_EM_BREVE = 'Próximamente';
+const TXT_SAIBA_MAIS = 'Saber más →';
 
 const lista = window.PRODUTOS_SITE || [];
 document.getElementById('grid').innerHTML = lista.map(p => `

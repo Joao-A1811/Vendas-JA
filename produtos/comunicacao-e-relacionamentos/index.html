@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{TITULO_DA_PAGINA}} | Vendas-JA</title>
+<title>{{TITULO_DA_PAGINA}} | NextLevel</title>
 <meta name="description" content="{{DESCRICAO_CURTA_PARA_GOOGLE_E_REDES}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- ============================================================
-  META PIXEL (Facebook Ads)
-  Cole o seu Pixel ID abaixo. Sem isso, os anúncios não conseguem
-  medir conversão (lead / compra) nem otimizar a entrega.
-  Onde pegar: Meta Business Manager → Eventos → Pixels
-============================================================ -->
+<!-- Configuração global (Pixel + Firebase) — editada UMA vez em /assets/config-global.js -->
+<script src="/assets/config-global.js"></script>
 <script>
-  const META_PIXEL_ID = 'COLE_AQUI'; // ex: '1234567890123456'
+// Fallback: se o config global não carregar (ex: abrindo o arquivo direto no
+// computador, fora do site publicado), a página continua funcionando sem
+// Pixel e sem salvar leads.
+if (!window.SITE) window.SITE = { pixelId: 'COLE_AQUI', firebase: { apiKey: 'COLE_AQUI' } };
+const PIXEL_ATIVO = window.SITE.pixelId && window.SITE.pixelId !== 'COLE_AQUI';
 </script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,7 +23,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-if (META_PIXEL_ID !== 'COLE_AQUI') { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); }
+if (PIXEL_ATIVO) { fbq('init', window.SITE.pixelId); fbq('track', 'PageView'); }
 </script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
@@ -48,6 +48,10 @@ img{max-width:100%;display:block}
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid #eee2f7}
 .header .container{display:flex;align-items:center;justify-content:space-between}
 .header h1{font-size:16px;font-weight:800;background:linear-gradient(135deg,var(--roxo),var(--rosa));-webkit-background-clip:text;background-clip:text;color:transparent}
+.idiomas{display:flex;gap:12px;font-size:12px;font-weight:700}
+.idiomas a{color:var(--texto-suave);text-decoration:none}
+.idiomas a.atual{color:var(--roxo)}
+.idiomas a:hover{color:var(--rosa)}
 
 .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--roxo) 0%,var(--roxo-claro) 45%,var(--rosa) 100%);color:#fff;padding:76px 0 90px}
 .hero::before,.hero::after{content:'';position:absolute;border-radius:50%;filter:blur(60px);opacity:.35}
@@ -98,6 +102,7 @@ img{max-width:100%;display:block}
 .lead-form input{padding:14px 16px;border-radius:10px;border:none;font-size:15px;font-family:inherit}
 .lead-form small{display:block;margin-top:12px;color:#f0e8fb;font-size:12px}
 #lead-msg{margin-top:12px;font-size:14px;font-weight:600}
+#btn-download-ebook{display:none;margin-top:14px}
 
 .oferta{background:#fff;border-radius:20px;padding:44px;text-align:center;border:1px solid #f0e8fb;box-shadow:0 10px 40px rgba(91,33,182,.1)}
 .oferta .produto{font-weight:700;color:var(--roxo);font-size:14px;text-transform:uppercase;letter-spacing:.4px}
@@ -131,9 +136,9 @@ img{max-width:100%;display:block}
 <body>
 
 <!-- ============================================================
-  CONFIGURAÇÃO DO PRODUTO
+  CONFIGURAÇÃO DO PRODUTO (conteúdo desta página)
   Edite os campos abaixo para publicar uma nova página de venda.
-  Não é necessário mexer no restante do arquivo.
+  Pixel e Firebase NÃO ficam aqui — ficam em /assets/config-global.js
 ============================================================ -->
 <script>
 const CONFIG = {
@@ -162,25 +167,26 @@ const CONFIG = {
   // Opcional: data/hora ISO em que a oferta acaba (ex: '2026-08-01T23:59:59'). Deixe vazio para não mostrar contador.
   contagemRegressivaFim: '',
   linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
+  // Ebook gratuito NESTE idioma, entregue na hora após o cadastro.
+  // Suba o PDF em /ebooks/arquivos/ e aponte aqui (ex: '/ebooks/arquivos/emagrecimento-pt.pdf').
+  // Se ficar vazio, a página mostra "confira seu e-mail" (entrega via automação de e-mail).
+  linkEbookGratis: '',
+  idioma: 'pt',
   faq: [
     { pergunta: '{{Pergunta frequente 1}}', resposta: '{{Resposta}}' },
     { pergunta: '{{Pergunta frequente 2}}', resposta: '{{Resposta}}' }
-  ],
-  firebase: {
-    apiKey: 'AIzaSyDhGANcA5y7KGgLVF3fY-IX9s7qqWw1fvM',
-    authDomain: 'vendas-ja-99317.firebaseapp.com',
-    databaseURL: 'https://vendas-ja-99317-default-rtdb.firebaseio.com',
-    projectId: 'vendas-ja-99317',
-    storageBucket: 'vendas-ja-99317.firebasestorage.app',
-    messagingSenderId: '101750111486',
-    appId: '1:101750111486:web:a24c06daf344fafdff39af'
-  }
+  ]
 };
 </script>
 
 <header class="header">
   <div class="container">
-    <h1>Vendas-JA</h1>
+    <h1>NextLevel</h1>
+    <nav class="idiomas" id="idiomas">
+      <a href="index.html" class="atual">PT</a>
+      <a href="index-en.html">EN</a>
+      <a href="index-es.html">ES</a>
+    </nav>
   </div>
 </header>
 
@@ -221,6 +227,7 @@ const CONFIG = {
         <button type="submit" class="btn btn-primary">Quero receber</button>
       </form>
       <div id="lead-msg"></div>
+      <a href="#" id="btn-download-ebook" class="btn btn-primary" download>📥 Baixar o material</a>
       <small>Seus dados estão seguros e não serão compartilhados.</small>
     </div>
   </div>
@@ -249,7 +256,7 @@ const CONFIG = {
 
 <footer class="footer">
   <div class="container">
-    Vendas-JA — todos os direitos reservados.
+    NextLevel — todos os direitos reservados.
   </div>
 </footer>
 
@@ -324,7 +331,6 @@ if (CONFIG.contagemRegressivaFim) {
 // ============================================================
 // ANIMAÇÃO DE ENTRADA AO ROLAR A PÁGINA
 // ============================================================
-const elementosReveal = document.querySelectorAll('.reveal');
 document.querySelectorAll('.beneficio, .depoimento').forEach(el => el.classList.add('reveal'));
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entradas) => {
@@ -362,6 +368,11 @@ function getUTMs() {
 }
 const UTM = getUTMs();
 
+// Preserva os UTMs ao trocar de idioma (link pra página irmã)
+document.querySelectorAll('#idiomas a:not(.atual)').forEach(a => {
+  a.href = a.getAttribute('href') + window.location.search;
+});
+
 const utmQuery = new URLSearchParams(UTM).toString();
 function montarLinkCheckout() {
   return CONFIG.linkCheckoutHotmart + (CONFIG.linkCheckoutHotmart.includes('?') ? '&' : '?') + utmQuery;
@@ -370,15 +381,26 @@ function montarLinkCheckout() {
   const el = document.getElementById(id);
   el.href = montarLinkCheckout();
   el.addEventListener('click', () => {
-    if (META_PIXEL_ID !== 'COLE_AQUI') fbq('track', 'InitiateCheckout');
+    if (PIXEL_ATIVO) fbq('track', 'InitiateCheckout');
   });
 });
 
 // ============================================================
-// FIREBASE — captura de lead
+// FIREBASE — captura de lead + entrega instantânea do ebook
 // ============================================================
-const FB_READY = CONFIG.firebase.apiKey !== 'COLE_AQUI';
-if (FB_READY) firebase.initializeApp(CONFIG.firebase);
+const FB_READY = window.SITE.firebase.apiKey !== 'COLE_AQUI';
+if (FB_READY) firebase.initializeApp(window.SITE.firebase);
+
+function entregarEbook() {
+  // Se houver ebook gratuito configurado NESTE idioma, mostra o botão de download na hora
+  if (CONFIG.linkEbookGratis) {
+    const btn = document.getElementById('btn-download-ebook');
+    btn.href = CONFIG.linkEbookGratis;
+    btn.style.display = 'inline-block';
+    return 'Recebido! Clique abaixo para baixar seu material agora:';
+  }
+  return 'Recebido! Confira seu e-mail em instantes.';
+}
 
 document.getElementById('form-lead').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -388,13 +410,14 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     email: document.getElementById('lead-email').value.trim(),
     whatsapp: document.getElementById('lead-whatsapp').value.trim(),
     produto: CONFIG.produto,
+    idioma: CONFIG.idioma,
     pagina: window.location.href,
     data: new Date().toISOString(),
     ...UTM
   };
 
   if (!FB_READY) {
-    msg.textContent = 'Configuração do Firebase pendente (veja CONFIG.firebase no topo do arquivo). Lead não foi salvo.';
+    msg.textContent = 'Configuração pendente em /assets/config-global.js — lead não foi salvo.';
     msg.style.color = '#ffe4a3';
     console.log('Lead capturado (não salvo, Firebase não configurado):', lead);
     return;
@@ -402,10 +425,10 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
 
   firebase.database().ref('leads').push(lead)
     .then(() => {
-      msg.textContent = 'Recebido! Confira seu e-mail em instantes.';
+      msg.textContent = entregarEbook();
       msg.style.color = '#baffc9';
       document.getElementById('form-lead').reset();
-      if (META_PIXEL_ID !== 'COLE_AQUI') fbq('track', 'Lead');
+      if (PIXEL_ATIVO) fbq('track', 'Lead');
     })
     .catch((err) => {
       msg.textContent = 'Erro ao enviar. Tente novamente.';

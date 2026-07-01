@@ -4,6 +4,10 @@ Passo a passo detalhado das contas e credenciais que precisam ser criadas fora d
 Nenhuma senha, token ou chave deve ser commitada aqui — cole as credenciais diretamente
 nos arquivos indicados (eles já têm um campo `COLE_AQUI` / `PASTE_HERE` reservado para isso).
 
+Nota: o domínio técnico do site continua `vendas-ja.netlify.app` (nome do projeto no Netlify),
+mas a marca que aparece pro cliente em todas as páginas é **NextLevel**. Dá pra trocar o domínio
+por um definitivo depois, em Domain management no Netlify, sem precisar mudar nada no código.
+
 ## Ordem recomendada
 
 **Fase 1 — infraestrutura (fazer uma vez só, vale para todos os produtos):** passos 1 a 4 abaixo.
@@ -47,7 +51,8 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
    bloqueia o resto).
 5. **business.facebook.com/events_manager → Conectar fontes de dados → Web → Pixel do Meta** →
    nome → URL da página (ex: `https://vendas-ja.netlify.app`) → Configurar manualmente.
-6. Copiar o **ID do Pixel** e colar em `META_PIXEL_ID` em cada página de produto que for anunciar.
+6. Copiar o **ID do Pixel** e colar em `pixelId` no arquivo `assets/config-global.js` — **um
+   lugar só**, todas as páginas (de todos os produtos e idiomas) passam a medir automaticamente.
 
 Se a tela de conectar Pixel não carregar: tentar aba anônima, desativar bloqueador de
 anúncios/rastreamento, ou tentar em outro navegador/computador.
@@ -84,16 +89,25 @@ Depois disso, cada produto fica acessível assim:
 
 ## 5. A cada novo produto (repetir esta parte)
 
-1. Cadastrar o produto na Hotmart → copiar o **link de checkout**.
-2. Duplicar `landing-page/` para `produtos/<nome-do-produto>/` e editar o `CONFIG` (headline,
-   benefícios, depoimentos, preço, `linkCheckoutHotmart`, FAQ).
-3. Gerar o ebook gratuito em `ebooks/gerador-ebook.html`.
-4. Criar/atualizar a automação de e-mail no **brevo.com** (lead entra na lista → recebe o ebook →
-   depois de alguns dias recebe a oferta), importando os leads exportados em CSV pelo
-   `leads/painel-leads.html` (filtrando pela coluna "Produto").
-5. Commit + push — o Netlify publica sozinho.
-6. Montar a campanha no Meta Ads usando `anuncios/copy-facebook-br.md` (ou
-   `-internacional.md`), respeitando os avisos de política por nicho descritos lá.
+1. Cadastrar o produto na Hotmart → copiar o **link de checkout** (um por idioma/moeda, se os
+   preços forem diferentes).
+2. Duplicar `landing-page/` (já vem com as 3 versões PT/EN/ES) para
+   `produtos/<nome-do-produto>/` e editar o `CONFIG` em cada uma das 3 (headline, benefícios,
+   depoimentos, preço, `linkCheckoutHotmart`, `linkEbookGratis`, FAQ), cada uma na língua certa.
+3. Adicionar o bloco do produto em `assets/produtos.js` (um lugar só — o catálogo dos 3 idiomas
+   atualiza junto). Quando o produto estiver pronto pra vender, trocar `disponivel: false` por
+   `true` pra sumir o selo "Em breve".
+4. Gerar os 3 ebooks gratuitos (um por idioma) em `ebooks/gerador-ebook.html` e subir os PDFs em
+   `ebooks/arquivos/` seguindo a convenção `<slug>-pt.pdf` / `<slug>-en.pdf` / `<slug>-es.pdf`.
+   Com o `linkEbookGratis` preenchido, a entrega é instantânea no idioma da página.
+5. Criar/atualizar a automação de e-mail no **brevo.com** — o ideal é uma lista por idioma (lead
+   entra na lista → recebe o ebook no idioma certo → depois de alguns dias recebe a oferta),
+   importando os leads exportados em CSV pelo `leads/painel-leads.html` (as colunas "Produto" e
+   "Idioma" já vêm preenchidas).
+6. Commit + push — o Netlify publica sozinho. (Pra mudanças pequenas dá pra editar direto no
+   github.com: abrir o arquivo → botão de lápis → Commit changes.)
+7. Montar a campanha no Meta Ads usando `anuncios/copy-facebook-br.md` (para PT) ou
+   `-internacional.md` (para EN/ES), respeitando os avisos de política por nicho descritos lá.
 
 ## 6. Teste do funil (fazer pra cada produto novo)
 

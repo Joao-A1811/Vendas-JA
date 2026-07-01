@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{PAGE_TITLE}} | NextLevel</title>
-<meta name="description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+<title>{{TITULO_DE_LA_PAGINA}} | NextLevel</title>
+<meta name="description" content="{{DESCRIPCION_CORTA_PARA_GOOGLE_Y_REDES}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- Global config (Pixel + Firebase) — edited ONCE in /assets/config-global.js -->
+<!-- Configuración global (Pixel + Firebase) — se edita UNA vez en /assets/config-global.js -->
 <script src="/assets/config-global.js"></script>
 <script>
-// Fallback: if the global config fails to load (e.g. opening the file straight
-// from disk, outside the published site), the page still works without the
-// Pixel and without saving leads.
+// Respaldo: si la configuración global no carga (ej: abriendo el archivo
+// directo desde el disco, fuera del sitio publicado), la página sigue
+// funcionando sin Pixel y sin guardar leads.
 if (!window.SITE) window.SITE = { pixelId: 'COLE_AQUI', firebase: { apiKey: 'COLE_AQUI' } };
 const PIXEL_ATIVO = window.SITE.pixelId && window.SITE.pixelId !== 'COLE_AQUI';
 </script>
@@ -136,45 +136,45 @@ img{max-width:100%;display:block}
 <body>
 
 <!-- ============================================================
-  PRODUCT CONFIGURATION (content of this page)
-  Edit the fields below to publish a new sales page.
-  Pixel and Firebase do NOT live here — they live in /assets/config-global.js
+  CONFIGURACIÓN DEL PRODUCTO (contenido de esta página)
+  Edita los campos de abajo para publicar una página de venta nueva.
+  El Pixel y Firebase NO viven aquí — viven en /assets/config-global.js
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: '{{PRODUCT_NAME}}',
-  headline: '{{MAIN HEADLINE — the biggest promise/benefit in one sentence}}',
-  subheadline: '{{SUBHEADLINE — supports the promise, 1-2 sentences}}',
-  selo: '{{e.g.: Over 1,000 people already used it}}',
+  produto: '{{NOMBRE_DEL_PRODUCTO}}',
+  headline: '{{TÍTULO PRINCIPAL — la mayor promesa/beneficio en una frase}}',
+  subheadline: '{{SUBTÍTULO — complementa la promesa, 1-2 frases}}',
+  selo: '{{ej: Más de 1.000 personas ya lo usaron}}',
   estatisticas: [
-    { numero: '{{+1,000}}', legenda: '{{students}}' },
-    { numero: '{{4.9/5}}', legenda: '{{rating}}' },
-    { numero: '{{7 days}}', legenda: '{{guarantee}}' }
+    { numero: '{{+1.000}}', legenda: '{{alumnos}}' },
+    { numero: '{{4.9/5}}', legenda: '{{valoración}}' },
+    { numero: '{{7 días}}', legenda: '{{garantía}}' }
   ],
   beneficios: [
-    { icone: '✅', titulo: '{{Benefit 1}}', texto: '{{short explanation}}' },
-    { icone: '⚡', titulo: '{{Benefit 2}}', texto: '{{short explanation}}' },
-    { icone: '🎯', titulo: '{{Benefit 3}}', texto: '{{short explanation}}' }
+    { icone: '✅', titulo: '{{Beneficio 1}}', texto: '{{explicación corta}}' },
+    { icone: '⚡', titulo: '{{Beneficio 2}}', texto: '{{explicación corta}}' },
+    { icone: '🎯', titulo: '{{Beneficio 3}}', texto: '{{explicación corta}}' }
   ],
   depoimentos: [
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 },
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 },
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 }
+    { nome: '{{Nombre}}', papel: '{{quién es / resultado obtenido}}', texto: '{{Testimonio real del cliente}}', estrelas: 5 },
+    { nome: '{{Nombre}}', papel: '{{quién es / resultado obtenido}}', texto: '{{Testimonio real del cliente}}', estrelas: 5 },
+    { nome: '{{Nombre}}', papel: '{{quién es / resultado obtenido}}', texto: '{{Testimonio real del cliente}}', estrelas: 5 }
   ],
   precoDe: '{{$97.00}}',
   precoPor: '{{$37.00}}',
-  garantiaTexto: '{{7-day unconditional guarantee}}',
-  // Optional: ISO date/time when the offer ends (e.g. '2026-08-01T23:59:59'). Leave empty to hide the countdown.
+  garantiaTexto: '{{Garantía incondicional de 7 días}}',
+  // Opcional: fecha/hora ISO en que termina la oferta (ej: '2026-08-01T23:59:59'). Deja vacío para no mostrar el contador.
   contagemRegressivaFim: '',
-  linkCheckoutHotmart: 'https://pay.hotmart.com/PASTE_PRODUCT_CODE',
-  // Free ebook in THIS language, delivered instantly after sign-up.
-  // Upload the PDF to /ebooks/arquivos/ and point to it here (e.g. '/ebooks/arquivos/weight-loss-en.pdf').
-  // If left empty, the page shows "check your inbox" (delivery via email automation).
+  linkCheckoutHotmart: 'https://pay.hotmart.com/PEGA_EL_CODIGO_DEL_PRODUCTO',
+  // Ebook gratuito en ESTE idioma, entregado al instante tras el registro.
+  // Sube el PDF a /ebooks/arquivos/ y apúntalo aquí (ej: '/ebooks/arquivos/perdida-de-peso-es.pdf').
+  // Si queda vacío, la página muestra "revisa tu correo" (entrega vía automatización de email).
   linkEbookGratis: '',
-  idioma: 'en',
+  idioma: 'es',
   faq: [
-    { pergunta: '{{FAQ question 1}}', resposta: '{{Answer}}' },
-    { pergunta: '{{FAQ question 2}}', resposta: '{{Answer}}' }
+    { pergunta: '{{Pregunta frecuente 1}}', resposta: '{{Respuesta}}' },
+    { pergunta: '{{Pregunta frecuente 2}}', resposta: '{{Respuesta}}' }
   ]
 };
 </script>
@@ -184,8 +184,8 @@ const CONFIG = {
     <h1>NextLevel</h1>
     <nav class="idiomas" id="idiomas">
       <a href="index.html">PT</a>
-      <a href="index-en.html" class="atual">EN</a>
-      <a href="index-es.html">ES</a>
+      <a href="index-en.html">EN</a>
+      <a href="index-es.html" class="atual">ES</a>
     </nav>
   </div>
 </header>
@@ -195,22 +195,22 @@ const CONFIG = {
     <span class="badge" id="hero-selo"></span>
     <h2 id="hero-headline"></h2>
     <p class="sub" id="hero-sub"></p>
-    <a href="#oferta" class="btn btn-primary">Get it now</a>
+    <a href="#oferta" class="btn btn-primary">Lo quiero ahora</a>
     <div class="stats" id="hero-stats"></div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h3 class="reveal">What you'll get</h3>
+    <h3 class="reveal">Lo que vas a conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
   </div>
 </section>
 
 <section class="section" style="background:#fff">
   <div class="container">
-    <h3 class="reveal">Loved by people who tried it</h3>
-    <p class="lead-sec reveal">Real results from people who already applied the method</p>
+    <h3 class="reveal">Quienes ya lo probaron, lo recomiendan</h3>
+    <p class="lead-sec reveal">Resultados reales de personas que ya aplicaron el método</p>
     <div class="depoimentos-wrap reveal" id="depoimentos"></div>
   </div>
 </section>
@@ -218,30 +218,30 @@ const CONFIG = {
 <section class="section" id="lead">
   <div class="container">
     <div class="lead-form reveal">
-      <h3>Get the free material</h3>
-      <p class="lead-sec">Leave your contact and get it now, free of charge</p>
+      <h3>Recibe el material gratuito</h3>
+      <p class="lead-sec">Deja tu contacto y recíbelo ahora, sin costo</p>
       <form id="form-lead">
-        <input type="text" id="lead-nome" placeholder="Your name" required>
-        <input type="email" id="lead-email" placeholder="Your best email" required>
-        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp / phone (optional)">
-        <button type="submit" class="btn btn-primary">Send it to me</button>
+        <input type="text" id="lead-nome" placeholder="Tu nombre" required>
+        <input type="email" id="lead-email" placeholder="Tu mejor correo" required>
+        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp (opcional)">
+        <button type="submit" class="btn btn-primary">Quiero recibirlo</button>
       </form>
       <div id="lead-msg"></div>
-      <a href="#" id="btn-download-ebook" class="btn btn-primary" download>📥 Download the material</a>
-      <small>Your data is safe and will not be shared.</small>
+      <a href="#" id="btn-download-ebook" class="btn btn-primary" download>📥 Descargar el material</a>
+      <small>Tus datos están seguros y no serán compartidos.</small>
     </div>
   </div>
 </section>
 
 <section class="section" id="oferta" style="background:#fff">
   <div class="container">
-    <h3 class="reveal">Special offer</h3>
+    <h3 class="reveal">Oferta especial</h3>
     <div class="oferta reveal">
       <div class="produto" id="oferta-produto"></div>
       <div class="preco-de" id="oferta-preco-de"></div>
       <div class="preco" id="oferta-preco-por"></div>
       <div class="contador" id="contador" style="display:none"></div>
-      <a href="#" id="btn-checkout" target="_blank" class="btn btn-primary">Buy now</a>
+      <a href="#" id="btn-checkout" target="_blank" class="btn btn-primary">Comprar ahora</a>
       <div><span class="garantia">🛡️ <span id="oferta-garantia"></span></span></div>
     </div>
   </div>
@@ -249,27 +249,27 @@ const CONFIG = {
 
 <section class="section faq">
   <div class="container">
-    <h3 class="reveal">Frequently asked questions</h3>
+    <h3 class="reveal">Preguntas frecuentes</h3>
     <div id="faq-lista" class="reveal"></div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
-    NextLevel — all rights reserved.
+    NextLevel — todos los derechos reservados.
   </div>
 </footer>
 
 <div class="barra-fixa" id="barra-fixa">
   <div class="container">
     <div class="info"><b id="barra-preco"></b><span id="barra-produto"></span></div>
-    <a href="#" id="barra-btn" target="_blank" class="btn btn-primary">Buy now</a>
+    <a href="#" id="barra-btn" target="_blank" class="btn btn-primary">Comprar ahora</a>
   </div>
 </div>
 
 <script>
 // ============================================================
-// RENDER CONTENT FROM CONFIG
+// RENDERIZADO DEL CONTENIDO DESDE CONFIG
 // ============================================================
 document.getElementById('hero-selo').textContent = CONFIG.selo;
 document.getElementById('hero-headline').textContent = CONFIG.headline;
@@ -295,8 +295,8 @@ document.getElementById('depoimentos').innerHTML = CONFIG.depoimentos.map(d => `
 `).join('');
 
 document.getElementById('oferta-produto').textContent = CONFIG.produto;
-document.getElementById('oferta-preco-de').textContent = 'Was ' + CONFIG.precoDe;
-document.getElementById('oferta-preco-por').textContent = 'Now ' + CONFIG.precoPor;
+document.getElementById('oferta-preco-de').textContent = 'Antes ' + CONFIG.precoDe;
+document.getElementById('oferta-preco-por').textContent = 'Ahora ' + CONFIG.precoPor;
 document.getElementById('oferta-garantia').textContent = CONFIG.garantiaTexto;
 
 document.getElementById('faq-lista').innerHTML = CONFIG.faq.map(f => `
@@ -307,7 +307,7 @@ document.getElementById('barra-preco').textContent = CONFIG.precoPor;
 document.getElementById('barra-produto').textContent = CONFIG.produto;
 
 // ============================================================
-// COUNTDOWN TIMER (optional)
+// CONTADOR REGRESIVO (opcional)
 // ============================================================
 if (CONFIG.contagemRegressivaFim) {
   const elContador = document.getElementById('contador');
@@ -329,13 +329,13 @@ if (CONFIG.contagemRegressivaFim) {
 }
 
 // ============================================================
-// SCROLL-REVEAL ANIMATION
+// ANIMACIÓN AL DESPLAZARSE POR LA PÁGINA
 // ============================================================
 document.querySelectorAll('.beneficio, .depoimento').forEach(el => el.classList.add('reveal'));
 if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('on'); observer.unobserve(entry.target); }
+  const observer = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) { entrada.target.classList.add('on'); observer.unobserve(entrada.target); }
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
@@ -344,7 +344,7 @@ if ('IntersectionObserver' in window) {
 }
 
 // ============================================================
-// STICKY BUY BAR (appears on scroll)
+// BARRA FIJA DE COMPRA (aparece al desplazarse)
 // ============================================================
 const barraFixa = document.getElementById('barra-fixa');
 const heroEl = document.querySelector('.hero');
@@ -354,7 +354,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================
-// UTM — identifies which ad/campaign the visitor came from
+// UTM — identifica de qué anuncio/campaña vino el visitante
 // ============================================================
 function getUTMs() {
   const p = new URLSearchParams(window.location.search);
@@ -368,7 +368,7 @@ function getUTMs() {
 }
 const UTM = getUTMs();
 
-// Preserve UTMs when switching language (link to sibling page)
+// Conserva los UTM al cambiar de idioma (enlace a la página hermana)
 document.querySelectorAll('#idiomas a:not(.atual)').forEach(a => {
   a.href = a.getAttribute('href') + window.location.search;
 });
@@ -386,20 +386,20 @@ function montarLinkCheckout() {
 });
 
 // ============================================================
-// FIREBASE — lead capture + instant ebook delivery
+// FIREBASE — captura de lead + entrega instantánea del ebook
 // ============================================================
 const FB_READY = window.SITE.firebase.apiKey !== 'COLE_AQUI';
 if (FB_READY) firebase.initializeApp(window.SITE.firebase);
 
 function entregarEbook() {
-  // If a free ebook is configured for THIS language, show the download button right away
+  // Si hay un ebook gratuito configurado en ESTE idioma, muestra el botón de descarga al instante
   if (CONFIG.linkEbookGratis) {
     const btn = document.getElementById('btn-download-ebook');
     btn.href = CONFIG.linkEbookGratis;
     btn.style.display = 'inline-block';
-    return 'Got it! Click below to download your material now:';
+    return '¡Recibido! Haz clic abajo para descargar tu material ahora:';
   }
-  return 'Got it! Check your inbox in a moment.';
+  return '¡Recibido! Revisa tu correo en un momento.';
 }
 
 document.getElementById('form-lead').addEventListener('submit', function (e) {
@@ -417,9 +417,9 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
   };
 
   if (!FB_READY) {
-    msg.textContent = 'Setup pending in /assets/config-global.js — lead was not saved.';
+    msg.textContent = 'Configuración pendiente en /assets/config-global.js — el lead no fue guardado.';
     msg.style.color = '#ffe4a3';
-    console.log('Lead captured (not saved, Firebase not configured):', lead);
+    console.log('Lead capturado (no guardado, Firebase no configurado):', lead);
     return;
   }
 
@@ -431,7 +431,7 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
       if (PIXEL_ATIVO) fbq('track', 'Lead');
     })
     .catch((err) => {
-      msg.textContent = 'Something went wrong. Please try again.';
+      msg.textContent = 'Algo salió mal. Intenta de nuevo.';
       msg.style.color = '#ffb3b3';
       console.error(err);
     });
