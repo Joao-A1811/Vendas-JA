@@ -5,6 +5,18 @@ Nenhuma senha, token ou chave deve ser commitada aqui — cole as credenciais di
 nos arquivos indicados (eles já têm um campo `COLE_AQUI` / `PASTE_HERE` reservado para isso)
 apenas no seu ambiente local, ou direto no editor do Netlify.
 
+## Ordem recomendada
+
+**Fase 1 — infraestrutura (dá para fazer tudo agora, sem ter o produto pronto):**
+Seções 1 (Firebase), 3 (Meta Business Manager) e 5 (Netlify) abaixo, além de abrir a conta na
+Hotmart (parte inicial da seção 2 — só o cadastro/verificação de identidade, sem cadastrar produto
+ainda).
+
+**Fase 2 — só depois que o produto (ebook/curso) estiver pronto:**
+Cadastrar o produto na Hotmart (resto da seção 2), colar o link de checkout na landing page,
+gerar o ebook, publicar a landing page atualizada e então subir a campanha de anúncio (seção 3,
+parte final) e a automação de e-mail (seção 4).
+
 ## 1. Firebase (captura de lead)
 
 1. Acesse [console.firebase.google.com](https://console.firebase.google.com) e crie um **projeto novo**
