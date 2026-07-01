@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITULO_DA_PAGINA}} | Valor Investimentos</title>
+<meta name="description" content="{{DESCRICAO_CURTA_PARA_GOOGLE_E_REDES}}">
+
+<!-- ============================================================
+  META PIXEL (Facebook Ads)
+  Cole o seu Pixel ID abaixo. Sem isso, os anúncios não conseguem
+  medir conversão (lead / compra) nem otimizar a entrega.
+  Onde pegar: Meta Business Manager → Eventos → Pixels
+============================================================ -->
+<script>
+  const META_PIXEL_ID = 'COLE_AQUI'; // ex: '1234567890123456'
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+if (META_PIXEL_ID !== 'COLE_AQUI') { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); }
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#fff;color:#1a1a1a;font-size:15px;line-height:1.55}
+a{color:inherit}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+
+.header{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:16px 0}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:16px;font-weight:700;letter-spacing:.3px}
+
+.hero{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:60px 0 70px}
+.hero h2{font-size:32px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero p.sub{font-size:17px;color:#c8d7eb;margin-bottom:26px;max-width:640px}
+.btn{display:inline-block;padding:14px 30px;border-radius:8px;border:none;cursor:pointer;font-size:16px;font-weight:700;text-decoration:none;transition:.15s}
+.btn-primary{background:#ffb020;color:#1a1200}
+.btn-primary:hover{background:#ffc75a}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+
+.section{padding:56px 0}
+.section h3{font-size:24px;font-weight:800;color:#1d3461;margin-bottom:28px;text-align:center}
+
+.beneficios{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:800px){.beneficios{grid-template-columns:1fr}}
+.beneficio{background:#f4f7fb;border-radius:10px;padding:24px;border-left:4px solid #1d3461}
+.beneficio h4{font-size:15px;color:#1d3461;margin-bottom:8px}
+.beneficio p{font-size:14px;color:#444}
+
+.oferta{background:#f4f7fb;border-radius:14px;padding:40px;text-align:center}
+.oferta .preco{font-size:38px;font-weight:800;color:#1d3461;margin:10px 0}
+.oferta .preco-de{font-size:15px;color:#888;text-decoration:line-through}
+.oferta .garantia{font-size:13px;color:#666;margin-top:14px}
+
+.lead-form{background:#1d3461;border-radius:14px;padding:40px;color:#fff;text-align:center}
+.lead-form h3{color:#fff}
+.lead-form form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.lead-form input{padding:13px 14px;border-radius:8px;border:none;font-size:15px}
+.lead-form small{display:block;margin-top:10px;color:#c8d7eb;font-size:12px}
+#lead-msg{margin-top:12px;font-size:14px}
+
+.faq details{border-bottom:1px solid #e2e6ec;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700;color:#1d3461}
+.faq p{margin-top:8px;color:#444;font-size:14px}
+
+.footer{background:#172843;color:#c8d7eb;padding:28px 0;font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  CONFIGURAÇÃO DO PRODUTO
+  Edite os campos abaixo para publicar uma nova página de venda.
+  Não é necessário mexer no restante do arquivo.
+============================================================ -->
+<script>
+const CONFIG = {
+  produto: '{{NOME_DO_PRODUTO}}',
+  headline: '{{TÍTULO PRINCIPAL — a maior promessa/benefício em uma frase}}',
+  subheadline: '{{SUBTÍTULO — complementa a promessa, 1-2 frases}}',
+  beneficios: [
+    { titulo: '{{Benefício 1}}', texto: '{{explicação curta}}' },
+    { titulo: '{{Benefício 2}}', texto: '{{explicação curta}}' },
+    { titulo: '{{Benefício 3}}', texto: '{{explicação curta}}' }
+  ],
+  precoDe: '{{R$ 297,00}}',
+  precoPor: '{{R$ 97,00}}',
+  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO', // link de checkout do produto na Hotmart
+  faq: [
+    { pergunta: '{{Pergunta frequente 1}}', resposta: '{{Resposta}}' },
+    { pergunta: '{{Pergunta frequente 2}}', resposta: '{{Resposta}}' }
+  ],
+  // Firebase separado para leads (NÃO reaproveitar o projeto "valor-carteira" da plataforma de carteira)
+  firebase: {
+    apiKey: 'COLE_AQUI',
+    authDomain: 'COLE_AQUI',
+    databaseURL: 'COLE_AQUI',
+    projectId: 'COLE_AQUI',
+    storageBucket: 'COLE_AQUI',
+    messagingSenderId: 'COLE_AQUI',
+    appId: 'COLE_AQUI'
+  }
+};
+</script>
+
+<header class="header">
+  <div class="container">
+    <h1>Valor Investimentos</h1>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h2 id="hero-headline"></h2>
+    <p class="sub" id="hero-sub"></p>
+    <a href="#oferta" class="btn btn-primary">Quero garantir o meu</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3>O que você vai conseguir</h3>
+    <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" id="lead">
+  <div class="container">
+    <div class="lead-form">
+      <h3>Receba o material gratuito</h3>
+      <form id="form-lead">
+        <input type="text" id="lead-nome" placeholder="Seu nome" required>
+        <input type="email" id="lead-email" placeholder="Seu melhor e-mail" required>
+        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp (opcional)">
+        <button type="submit" class="btn btn-primary">Quero receber</button>
+      </form>
+      <div id="lead-msg"></div>
+      <small>Seus dados estão seguros e não serão compartilhados.</small>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="oferta">
+  <div class="container">
+    <h3>Oferta</h3>
+    <div class="oferta">
+      <div id="oferta-produto" style="font-weight:700;color:#1d3461"></div>
+      <div class="preco-de" id="oferta-preco-de"></div>
+      <div class="preco" id="oferta-preco-por"></div>
+      <a href="#" id="btn-checkout" target="_blank" class="btn btn-primary">Comprar agora</a>
+      <div class="garantia">Compra 100% segura via Hotmart</div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="container">
+    <h3>Perguntas frequentes</h3>
+    <div id="faq-lista"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    Valor Investimentos — este material não constitui recomendação de investimento.
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// RENDERIZAÇÃO DO CONTEÚDO A PARTIR DO CONFIG
+// ============================================================
+document.getElementById('hero-headline').textContent = CONFIG.headline;
+document.getElementById('hero-sub').textContent = CONFIG.subheadline;
+
+document.getElementById('beneficios').innerHTML = CONFIG.beneficios.map(b => `
+  <div class="beneficio"><h4>${b.titulo}</h4><p>${b.texto}</p></div>
+`).join('');
+
+document.getElementById('oferta-produto').textContent = CONFIG.produto;
+document.getElementById('oferta-preco-de').textContent = 'De ' + CONFIG.precoDe;
+document.getElementById('oferta-preco-por').textContent = 'por ' + CONFIG.precoPor;
+
+document.getElementById('faq-lista').innerHTML = CONFIG.faq.map(f => `
+  <details><summary>${f.pergunta}</summary><p>${f.resposta}</p></details>
+`).join('');
+
+// ============================================================
+// UTM — identifica de qual anúncio/campanha veio o visitante
+// ============================================================
+function getUTMs() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    utm_term: p.get('utm_term') || ''
+  };
+}
+const UTM = getUTMs();
+
+// Repassa os UTMs para o link de checkout da Hotmart (ajuda a rastrear origem da venda)
+const btnCheckout = document.getElementById('btn-checkout');
+const utmQuery = new URLSearchParams(UTM).toString();
+btnCheckout.href = CONFIG.linkCheckoutHotmart + (CONFIG.linkCheckoutHotmart.includes('?') ? '&' : '?') + utmQuery;
+btnCheckout.addEventListener('click', () => {
+  if (META_PIXEL_ID !== 'COLE_AQUI') fbq('track', 'InitiateCheckout');
+});
+
+// ============================================================
+// FIREBASE — captura de lead
+// ============================================================
+const FB_READY = CONFIG.firebase.apiKey !== 'COLE_AQUI';
+if (FB_READY) firebase.initializeApp(CONFIG.firebase);
+
+document.getElementById('form-lead').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const msg = document.getElementById('lead-msg');
+  const lead = {
+    nome: document.getElementById('lead-nome').value.trim(),
+    email: document.getElementById('lead-email').value.trim(),
+    whatsapp: document.getElementById('lead-whatsapp').value.trim(),
+    produto: CONFIG.produto,
+    pagina: window.location.href,
+    data: new Date().toISOString(),
+    ...UTM
+  };
+
+  if (!FB_READY) {
+    msg.textContent = 'Configuração do Firebase pendente (veja CONFIG.firebase no topo do arquivo). Lead não foi salvo.';
+    msg.style.color = '#ffb020';
+    console.log('Lead capturado (não salvo, Firebase não configurado):', lead);
+    return;
+  }
+
+  firebase.database().ref('leads').push(lead)
+    .then(() => {
+      msg.textContent = 'Recebido! Confira seu e-mail em instantes.';
+      msg.style.color = '#8fd19e';
+      document.getElementById('form-lead').reset();
+      if (META_PIXEL_ID !== 'COLE_AQUI') fbq('track', 'Lead');
+    })
+    .catch((err) => {
+      msg.textContent = 'Erro ao enviar. Tente novamente.';
+      msg.style.color = '#ff8080';
+      console.error(err);
+    });
+});
+</script>
+
+</body>
+</html>

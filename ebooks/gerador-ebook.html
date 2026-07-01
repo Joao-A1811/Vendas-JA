@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Ebook | Valor Investimentos</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#eef2f7;color:#1a1a1a;font-size:14px}
+.header{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:16px 28px}
+.header h1{font-size:17px}
+.header p{font-size:12px;color:#c8d7eb;margin-top:3px}
+.content{max-width:900px;margin:0 auto;padding:22px;display:grid;gap:18px}
+.card{background:#fff;border-radius:9px;padding:20px;box-shadow:0 1px 5px rgba(0,0,0,.08)}
+.card h2{font-size:13px;color:#1d3461;text-transform:uppercase;letter-spacing:.4px;margin-bottom:14px;border-bottom:2px solid #1d3461;padding-bottom:8px}
+label{display:block;font-size:12px;font-weight:700;color:#444;margin-bottom:4px;margin-top:12px}
+label:first-child{margin-top:0}
+input[type=text],textarea{width:100%;padding:9px 10px;border:1px solid #ccc;border-radius:6px;font-size:13.5px;font-family:inherit}
+textarea{resize:vertical;font-family:'Courier New',monospace;line-height:1.5}
+.hint{font-size:11.5px;color:#888;margin-top:4px}
+.btn{padding:11px 22px;border-radius:6px;border:none;cursor:pointer;font-size:14px;font-weight:700;background:#1d3461;color:#fff}
+.btn:hover{background:#2b4e8a}
+.exemplo{background:#f4f7fb;border-radius:6px;padding:12px;font-family:'Courier New',monospace;font-size:12px;white-space:pre-wrap;color:#444}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>Gerador de Ebook (PDF)</h1>
+  <p>Preencha os campos, clique em gerar e o PDF é baixado direto no navegador — nenhum dado sai do seu computador.</p>
+</header>
+
+<div class="content">
+
+  <div class="card">
+    <h2>1. Capa</h2>
+    <label>Título do ebook</label>
+    <input type="text" id="ebook-titulo" placeholder="Ex: 5 Passos para Organizar suas Finanças">
+    <label>Subtítulo (opcional)</label>
+    <input type="text" id="ebook-subtitulo" placeholder="Ex: Um guia prático e direto ao ponto">
+    <label>Autor / Marca</label>
+    <input type="text" id="ebook-autor" value="Valor Investimentos">
+  </div>
+
+  <div class="card">
+    <h2>2. Conteúdo</h2>
+    <label>Capítulos</label>
+    <textarea id="ebook-conteudo" rows="16" placeholder="Cole o conteúdo aqui seguindo o formato do exemplo abaixo"></textarea>
+    <div class="hint">
+      Formato: cada capítulo começa com uma linha <code># Título do Capítulo</code>. Os parágrafos seguintes (linhas separadas por linha em branco) viram o corpo do texto.
+    </div>
+    <p style="margin-top:10px;font-size:12px;font-weight:700;color:#444">Exemplo:</p>
+    <div class="exemplo"># Introdução
+Este ebook vai te mostrar como organizar suas finanças em 5 passos simples.
+
+Cada capítulo traz um passo prático que você pode aplicar hoje mesmo.
+
+# Passo 1: Anote todos os seus gastos
+Antes de qualquer mudança, você precisa saber exatamente para onde o dinheiro está indo.
+
+Use um app ou planilha simples, durante 30 dias, sem exceção.</div>
+  </div>
+
+  <div class="card">
+    <h2>3. Chamada final (CTA para o produto pago)</h2>
+    <label>Texto da última página</label>
+    <textarea id="ebook-cta-texto" rows="3">Gostou do conteúdo? Esse foi só o começo. No {{NOME_DO_PRODUTO}} você aprende o passo a passo completo.</textarea>
+    <label>Texto do botão / link</label>
+    <input type="text" id="ebook-cta-botao" value="Quero conhecer o {{NOME_DO_PRODUTO}}">
+    <label>Link de checkout (Hotmart)</label>
+    <input type="text" id="ebook-cta-link" placeholder="https://pay.hotmart.com/...">
+  </div>
+
+  <div class="card">
+    <button class="btn" onclick="gerarPDF()">Gerar PDF</button>
+  </div>
+
+</div>
+
+<script>
+const NAVY = [29, 52, 97];
+const NAVY_CLARO = [43, 78, 138];
+const CINZA_TEXTO = [60, 60, 60];
+const MARGEM = 22;
+const LARGURA_PAGINA = 210;
+const ALTURA_PAGINA = 297;
+const LARGURA_TEXTO = LARGURA_PAGINA - MARGEM * 2;
+const ALTURA_LINHA = 6.2;
+const TAMANHO_FONTE = 11;
+
+function parseConteudo(texto) {
+  const blocos = texto.split(/\n(?=# )/).map(b => b.trim()).filter(Boolean);
+  return blocos.map(bloco => {
+    const linhas = bloco.split('\n');
+    const titulo = linhas[0].replace(/^#\s*/, '').trim();
+    const corpo = linhas.slice(1).join('\n').trim();
+    const paragrafos = corpo.split(/\n\s*\n/).map(p => p.replace(/\n/g, ' ').trim()).filter(Boolean);
+    return { titulo, paragrafos };
+  });
+}
+
+// Primeira passada: calcula em qual página cada capítulo começa (cada capítulo sempre inicia página nova)
+function calcularSumario(doc, capitulos, paginaInicial) {
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(TAMANHO_FONTE);
+  const linhasPorPagina = Math.floor((ALTURA_PAGINA - MARGEM * 2 - 14) / ALTURA_LINHA); // -14mm reservado pro título do capítulo
+  let pagina = paginaInicial;
+  const sumario = [];
+  capitulos.forEach(cap => {
+    sumario.push({ titulo: cap.titulo, pagina });
+    let linhas = 0;
+    cap.paragrafos.forEach(p => {
+      linhas += doc.splitTextToSize(p, LARGURA_TEXTO).length + 1;
+    });
+    let restante = linhas - linhasPorPagina;
+    while (restante > 0) {
+      pagina++;
+      restante -= Math.floor((ALTURA_PAGINA - MARGEM * 2) / ALTURA_LINHA);
+    }
+    pagina++; // próximo capítulo começa em página nova
+  });
+  return sumario;
+}
+
+function rodape(doc, pagina) {
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(150, 150, 150);
+  doc.text(String(pagina), LARGURA_PAGINA / 2, ALTURA_PAGINA - 10, { align: 'center' });
+}
+
+function gerarPDF() {
+  const titulo = document.getElementById('ebook-titulo').value.trim() || 'Título do Ebook';
+  const subtitulo = document.getElementById('ebook-subtitulo').value.trim();
+  const autor = document.getElementById('ebook-autor').value.trim() || 'Valor Investimentos';
+  const conteudoBruto = document.getElementById('ebook-conteudo').value.trim();
+  const ctaTexto = document.getElementById('ebook-cta-texto').value.trim();
+  const ctaBotao = document.getElementById('ebook-cta-botao').value.trim();
+  const ctaLink = document.getElementById('ebook-cta-link').value.trim();
+
+  if (!conteudoBruto) { alert('Preencha o conteúdo dos capítulos antes de gerar o PDF.'); return; }
+
+  const capitulos = parseConteudo(conteudoBruto);
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+  const sumario = calcularSumario(doc, capitulos, 3); // capítulos começam a partir da página 3 (1=capa, 2=sumário)
+
+  // ---------- PÁGINA 1: CAPA ----------
+  doc.setFillColor(...NAVY);
+  doc.rect(0, 0, LARGURA_PAGINA, ALTURA_PAGINA, 'F');
+  doc.setFillColor(...NAVY_CLARO);
+  doc.rect(0, ALTURA_PAGINA - 60, LARGURA_PAGINA, 60, 'F');
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(26);
+  const linhasTitulo = doc.splitTextToSize(titulo, LARGURA_TEXTO - 10);
+  let y = 110;
+  linhasTitulo.forEach(l => { doc.text(l, LARGURA_PAGINA / 2, y, { align: 'center' }); y += 12; });
+
+  if (subtitulo) {
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(14);
+    doc.setTextColor(200, 215, 235);
+    const linhasSub = doc.splitTextToSize(subtitulo, LARGURA_TEXTO - 20);
+    y += 4;
+    linhasSub.forEach(l => { doc.text(l, LARGURA_PAGINA / 2, y, { align: 'center' }); y += 7; });
+  }
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.setTextColor(255, 255, 255);
+  doc.text(autor, LARGURA_PAGINA / 2, ALTURA_PAGINA - 25, { align: 'center' });
+
+  // ---------- PÁGINA 2: SUMÁRIO ----------
+  doc.addPage();
+  doc.setTextColor(...NAVY);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(18);
+  doc.text('Sumário', MARGEM, MARGEM + 6);
+  doc.setDrawColor(...NAVY);
+  doc.setLineWidth(0.6);
+  doc.line(MARGEM, MARGEM + 10, LARGURA_PAGINA - MARGEM, MARGEM + 10);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(12);
+  doc.setTextColor(...CINZA_TEXTO);
+  let ySum = MARGEM + 26;
+  sumario.forEach(item => {
+    doc.text(item.titulo, MARGEM, ySum);
+    doc.text(String(item.pagina), LARGURA_PAGINA - MARGEM, ySum, { align: 'right' });
+    ySum += 10;
+  });
+  rodape(doc, 2);
+
+  // ---------- CAPÍTULOS ----------
+  let paginaAtual = 2;
+  capitulos.forEach(cap => {
+    doc.addPage();
+    paginaAtual++;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(17);
+    doc.setTextColor(...NAVY);
+    doc.text(cap.titulo, MARGEM, MARGEM + 4);
+    doc.setDrawColor(...NAVY);
+    doc.setLineWidth(0.5);
+    doc.line(MARGEM, MARGEM + 8, LARGURA_PAGINA - MARGEM, MARGEM + 8);
+
+    let y = MARGEM + 22;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(TAMANHO_FONTE);
+    doc.setTextColor(...CINZA_TEXTO);
+
+    cap.paragrafos.forEach(paragrafo => {
+      const linhas = doc.splitTextToSize(paragrafo, LARGURA_TEXTO);
+      linhas.forEach(linha => {
+        if (y > ALTURA_PAGINA - MARGEM) {
+          rodape(doc, paginaAtual);
+          doc.addPage();
+          paginaAtual++;
+          y = MARGEM + 4;
+        }
+        doc.text(linha, MARGEM, y);
+        y += ALTURA_LINHA;
+      });
+      y += ALTURA_LINHA * 0.6;
+    });
+    rodape(doc, paginaAtual);
+  });
+
+  // ---------- PÁGINA FINAL: CTA PARA O PRODUTO PAGO ----------
+  if (ctaTexto || ctaBotao) {
+    doc.addPage();
+    doc.setFillColor(...NAVY);
+    doc.rect(0, 0, LARGURA_PAGINA, ALTURA_PAGINA, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    let yCta = 120;
+    const linhasCta = doc.splitTextToSize(ctaTexto, LARGURA_TEXTO - 20);
+    linhasCta.forEach(l => { doc.text(l, LARGURA_PAGINA / 2, yCta, { align: 'center' }); yCta += 9; });
+
+    if (ctaBotao) {
+      yCta += 14;
+      doc.setFillColor(255, 176, 32);
+      doc.roundedRect(LARGURA_PAGINA / 2 - 45, yCta - 8, 90, 16, 3, 3, 'F');
+      doc.setTextColor(26, 18, 0);
+      doc.setFontSize(12);
+      doc.text(ctaBotao, LARGURA_PAGINA / 2, yCta + 2, { align: 'center' });
+    }
+
+    if (ctaLink) {
+      doc.setTextColor(200, 215, 235);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.text(ctaLink, LARGURA_PAGINA / 2, yCta + 20, { align: 'center' });
+      doc.link(LARGURA_PAGINA / 2 - 45, yCta - 8, 90, 16, { url: ctaLink });
+    }
+  }
+
+  const nomeArquivo = titulo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'ebook';
+  doc.save(nomeArquivo + '.pdf');
+}
+</script>
+
+</body>
+</html>

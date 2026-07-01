@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{PAGE_TITLE}} | Valor Investimentos</title>
+<meta name="description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+
+<!-- ============================================================
+  META PIXEL (Facebook Ads)
+  Paste your Pixel ID below. Without it, ads cannot measure
+  conversions (lead / purchase) or optimize delivery.
+  Where to find it: Meta Business Manager -> Events -> Pixels
+============================================================ -->
+<script>
+  const META_PIXEL_ID = 'PASTE_HERE'; // e.g. '1234567890123456'
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+if (META_PIXEL_ID !== 'PASTE_HERE') { fbq('init', META_PIXEL_ID); fbq('track', 'PageView'); }
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#fff;color:#1a1a1a;font-size:15px;line-height:1.55}
+a{color:inherit}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+
+.header{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:16px 0}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:16px;font-weight:700;letter-spacing:.3px}
+
+.hero{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:60px 0 70px}
+.hero h2{font-size:32px;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero p.sub{font-size:17px;color:#c8d7eb;margin-bottom:26px;max-width:640px}
+.btn{display:inline-block;padding:14px 30px;border-radius:8px;border:none;cursor:pointer;font-size:16px;font-weight:700;text-decoration:none;transition:.15s}
+.btn-primary{background:#ffb020;color:#1a1200}
+.btn-primary:hover{background:#ffc75a}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+
+.section{padding:56px 0}
+.section h3{font-size:24px;font-weight:800;color:#1d3461;margin-bottom:28px;text-align:center}
+
+.beneficios{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:800px){.beneficios{grid-template-columns:1fr}}
+.beneficio{background:#f4f7fb;border-radius:10px;padding:24px;border-left:4px solid #1d3461}
+.beneficio h4{font-size:15px;color:#1d3461;margin-bottom:8px}
+.beneficio p{font-size:14px;color:#444}
+
+.oferta{background:#f4f7fb;border-radius:14px;padding:40px;text-align:center}
+.oferta .preco{font-size:38px;font-weight:800;color:#1d3461;margin:10px 0}
+.oferta .preco-de{font-size:15px;color:#888;text-decoration:line-through}
+.oferta .garantia{font-size:13px;color:#666;margin-top:14px}
+
+.lead-form{background:#1d3461;border-radius:14px;padding:40px;color:#fff;text-align:center}
+.lead-form h3{color:#fff}
+.lead-form form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.lead-form input{padding:13px 14px;border-radius:8px;border:none;font-size:15px}
+.lead-form small{display:block;margin-top:10px;color:#c8d7eb;font-size:12px}
+#lead-msg{margin-top:12px;font-size:14px}
+
+.faq details{border-bottom:1px solid #e2e6ec;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700;color:#1d3461}
+.faq p{margin-top:8px;color:#444;font-size:14px}
+
+.footer{background:#172843;color:#c8d7eb;padding:28px 0;font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  PRODUCT CONFIGURATION
+  Edit the fields below to publish a new sales page.
+  No need to touch the rest of the file.
+============================================================ -->
+<script>
+const CONFIG = {
+  produto: '{{PRODUCT_NAME}}',
+  headline: '{{MAIN HEADLINE — the biggest promise/benefit in one sentence}}',
+  subheadline: '{{SUBHEADLINE — supports the promise, 1-2 sentences}}',
+  beneficios: [
+    { titulo: '{{Benefit 1}}', texto: '{{short explanation}}' },
+    { titulo: '{{Benefit 2}}', texto: '{{short explanation}}' },
+    { titulo: '{{Benefit 3}}', texto: '{{short explanation}}' }
+  ],
+  precoDe: '{{$97.00}}',
+  precoPor: '{{$37.00}}',
+  linkCheckoutHotmart: 'https://pay.hotmart.com/PASTE_PRODUCT_CODE', // Hotmart checkout link (set currency in the Hotmart product settings)
+  faq: [
+    { pergunta: '{{FAQ question 1}}', resposta: '{{Answer}}' },
+    { pergunta: '{{FAQ question 2}}', resposta: '{{Answer}}' }
+  ],
+  // Separate Firebase project for leads (do NOT reuse the "valor-carteira" project used by the portfolio platform)
+  firebase: {
+    apiKey: 'PASTE_HERE',
+    authDomain: 'PASTE_HERE',
+    databaseURL: 'PASTE_HERE',
+    projectId: 'PASTE_HERE',
+    storageBucket: 'PASTE_HERE',
+    messagingSenderId: 'PASTE_HERE',
+    appId: 'PASTE_HERE'
+  }
+};
+</script>
+
+<header class="header">
+  <div class="container">
+    <h1>Valor Investimentos</h1>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h2 id="hero-headline"></h2>
+    <p class="sub" id="hero-sub"></p>
+    <a href="#oferta" class="btn btn-primary">Get it now</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3>What you'll get</h3>
+    <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" id="lead">
+  <div class="container">
+    <div class="lead-form">
+      <h3>Get the free material</h3>
+      <form id="form-lead">
+        <input type="text" id="lead-nome" placeholder="Your name" required>
+        <input type="email" id="lead-email" placeholder="Your best email" required>
+        <input type="tel" id="lead-whatsapp" placeholder="WhatsApp / phone (optional)">
+        <button type="submit" class="btn btn-primary">Send it to me</button>
+      </form>
+      <div id="lead-msg"></div>
+      <small>Your data is safe and will not be shared.</small>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="oferta">
+  <div class="container">
+    <h3>Offer</h3>
+    <div class="oferta">
+      <div id="oferta-produto" style="font-weight:700;color:#1d3461"></div>
+      <div class="preco-de" id="oferta-preco-de"></div>
+      <div class="preco" id="oferta-preco-por"></div>
+      <a href="#" id="btn-checkout" target="_blank" class="btn btn-primary">Buy now</a>
+      <div class="garantia">100% secure checkout via Hotmart</div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="container">
+    <h3>Frequently asked questions</h3>
+    <div id="faq-lista"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    Valor Investimentos — this material does not constitute investment advice.
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// RENDER CONTENT FROM CONFIG
+// ============================================================
+document.getElementById('hero-headline').textContent = CONFIG.headline;
+document.getElementById('hero-sub').textContent = CONFIG.subheadline;
+
+document.getElementById('beneficios').innerHTML = CONFIG.beneficios.map(b => `
+  <div class="beneficio"><h4>${b.titulo}</h4><p>${b.texto}</p></div>
+`).join('');
+
+document.getElementById('oferta-produto').textContent = CONFIG.produto;
+document.getElementById('oferta-preco-de').textContent = 'Was ' + CONFIG.precoDe;
+document.getElementById('oferta-preco-por').textContent = 'Now ' + CONFIG.precoPor;
+
+document.getElementById('faq-lista').innerHTML = CONFIG.faq.map(f => `
+  <details><summary>${f.pergunta}</summary><p>${f.resposta}</p></details>
+`).join('');
+
+// ============================================================
+// UTM — identifies which ad/campaign the visitor came from
+// ============================================================
+function getUTMs() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    utm_term: p.get('utm_term') || ''
+  };
+}
+const UTM = getUTMs();
+
+// Forwards UTMs to the Hotmart checkout link (helps track which ad drove the sale)
+const btnCheckout = document.getElementById('btn-checkout');
+const utmQuery = new URLSearchParams(UTM).toString();
+btnCheckout.href = CONFIG.linkCheckoutHotmart + (CONFIG.linkCheckoutHotmart.includes('?') ? '&' : '?') + utmQuery;
+btnCheckout.addEventListener('click', () => {
+  if (META_PIXEL_ID !== 'PASTE_HERE') fbq('track', 'InitiateCheckout');
+});
+
+// ============================================================
+// FIREBASE — lead capture
+// ============================================================
+const FB_READY = CONFIG.firebase.apiKey !== 'PASTE_HERE';
+if (FB_READY) firebase.initializeApp(CONFIG.firebase);
+
+document.getElementById('form-lead').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const msg = document.getElementById('lead-msg');
+  const lead = {
+    nome: document.getElementById('lead-nome').value.trim(),
+    email: document.getElementById('lead-email').value.trim(),
+    whatsapp: document.getElementById('lead-whatsapp').value.trim(),
+    produto: CONFIG.produto,
+    pagina: window.location.href,
+    data: new Date().toISOString(),
+    ...UTM
+  };
+
+  if (!FB_READY) {
+    msg.textContent = 'Firebase not configured yet (see CONFIG.firebase at the top of the file). Lead was not saved.';
+    msg.style.color = '#ffb020';
+    console.log('Lead captured (not saved, Firebase not configured):', lead);
+    return;
+  }
+
+  firebase.database().ref('leads').push(lead)
+    .then(() => {
+      msg.textContent = 'Got it! Check your inbox in a moment.';
+      msg.style.color = '#8fd19e';
+      document.getElementById('form-lead').reset();
+      if (META_PIXEL_ID !== 'PASTE_HERE') fbq('track', 'Lead');
+    })
+    .catch((err) => {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.style.color = '#ff8080';
+      console.error(err);
+    });
+});
+</script>
+
+</body>
+</html>

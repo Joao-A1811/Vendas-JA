@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Leads | Valor Investimentos</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#eef2f7;color:#1a1a1a;font-size:14px}
+.header{background:linear-gradient(135deg,#1d3461,#2b4e8a);color:#fff;padding:16px 28px;display:flex;justify-content:space-between;align-items:center}
+.content{max-width:1100px;margin:0 auto;padding:22px}
+.card{background:#fff;border-radius:9px;padding:20px;box-shadow:0 1px 5px rgba(0,0,0,.08)}
+.btn{padding:9px 18px;border-radius:6px;border:none;cursor:pointer;font-size:13px;font-weight:600;background:#1d3461;color:#fff}
+.btn:hover{background:#2b4e8a}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12.5px}
+th,td{padding:8px 10px;border-bottom:1px solid #e2e6ec;text-align:left;white-space:nowrap}
+th{background:#f4f7fb;color:#1d3461}
+#login-box{max-width:340px;margin:60px auto;text-align:center}
+#login-box input{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:6px}
+#status{margin-top:10px;font-size:13px;color:#666}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  CONFIGURAÇÃO
+  Use o MESMO firebaseConfig colado em marketing-digital/landing-page/index.html
+  Este painel só lê os leads salvos pela landing page.
+============================================================ -->
+<script>
+const FIREBASE_CONFIG = {
+  apiKey: 'COLE_AQUI',
+  authDomain: 'COLE_AQUI',
+  databaseURL: 'COLE_AQUI',
+  projectId: 'COLE_AQUI',
+  storageBucket: 'COLE_AQUI',
+  messagingSenderId: 'COLE_AQUI',
+  appId: 'COLE_AQUI'
+};
+const FB_READY = FIREBASE_CONFIG.apiKey !== 'COLE_AQUI';
+if (FB_READY) firebase.initializeApp(FIREBASE_CONFIG);
+</script>
+
+<header class="header">
+  <h1 style="font-size:16px">Painel de Leads</h1>
+  <button class="btn" id="btn-logout" style="display:none" onclick="sair()">Sair</button>
+</header>
+
+<div class="content">
+  <div id="login-box" class="card">
+    <p style="margin-bottom:14px">Entre com sua conta Google (mesma conta do Firebase do projeto) para visualizar os leads.</p>
+    <button class="btn" onclick="entrar()">Entrar com Google</button>
+    <div id="status"></div>
+  </div>
+
+  <div id="painel" class="card" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong id="contador">0 leads</strong>
+      <button class="btn" onclick="exportarCSV()">Exportar CSV</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table id="tabela-leads">
+        <thead>
+          <tr>
+            <th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th>
+            <th>Produto</th><th>Origem (utm_source)</th><th>Campanha (utm_campaign)</th><th>Conteúdo (utm_content)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-leads"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+let leadsAtuais = [];
+
+function entrar() {
+  if (!FB_READY) {
+    document.getElementById('status').textContent = 'Configure o FIREBASE_CONFIG no topo do arquivo primeiro.';
+    return;
+  }
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).catch(e => {
+    document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
+  });
+}
+
+function sair() {
+  firebase.auth().signOut();
+}
+
+if (FB_READY) {
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      document.getElementById('login-box').style.display = 'none';
+      document.getElementById('painel').style.display = 'block';
+      document.getElementById('btn-logout').style.display = 'inline-block';
+      carregarLeads();
+    } else {
+      document.getElementById('login-box').style.display = 'block';
+      document.getElementById('painel').style.display = 'none';
+      document.getElementById('btn-logout').style.display = 'none';
+    }
+  });
+}
+
+function carregarLeads() {
+  firebase.database().ref('leads').on('value', snap => {
+    const dados = snap.val() || {};
+    leadsAtuais = Object.values(dados).sort((a, b) => (b.data || '').localeCompare(a.data || ''));
+    document.getElementById('contador').textContent = leadsAtuais.length + ' leads';
+    document.getElementById('tbody-leads').innerHTML = leadsAtuais.map(l => `
+      <tr>
+        <td>${new Date(l.data).toLocaleString('pt-BR')}</td>
+        <td>${l.nome || ''}</td>
+        <td>${l.email || ''}</td>
+        <td>${l.whatsapp || ''}</td>
+        <td>${l.produto || ''}</td>
+        <td>${l.utm_source || ''}</td>
+        <td>${l.utm_campaign || ''}</td>
+        <td>${l.utm_content || ''}</td>
+      </tr>
+    `).join('');
+  });
+}
+
+function exportarCSV() {
+  const ws = XLSX.utils.json_to_sheet(leadsAtuais);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Leads');
+  XLSX.writeFile(wb, 'leads-' + new Date().toISOString().slice(0, 10) + '.csv');
+}
+</script>
+
+</body>
+</html>
