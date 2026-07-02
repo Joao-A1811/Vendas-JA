@@ -11,5 +11,12 @@
 [build]
   publish = "."
 
+[build.environment]
+  # O scanner de segredos do Netlify aponta a apiKey do Firebase em
+  # assets/config-global.js como "possível segredo vazado" — é falso
+  # positivo: é a config pública do Firebase pro navegador (a segurança
+  # vem das regras do Realtime Database, não de esconder essa chave).
+  SECRETS_SCAN_OMIT_PATHS = "assets/config-global.js"
+
 [functions]
   directory = "netlify/functions"
