@@ -31,7 +31,7 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
    {
      "rules": {
        "leads": {
-         ".read": "auth != null && auth.token.email === 'SEU_EMAIL_GOOGLE_AQUI@gmail.com'",
+         ".read": "auth != null && auth.token.email === 'ja.investimentos@outlook.com'",
          ".indexOn": ["data"],
          "$lead": {
            ".write": "!data.exists()",
@@ -58,10 +58,18 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
    > 1. **Anti-spam:** só aceitam cadastro novo com os campos esperados, tamanhos limitados e
    >    e-mail com @; ninguém apaga ou edita lead pelo site.
    > 2. **Privacidade (LGPD):** antes, QUALQUER pessoa logada com QUALQUER conta Google
-   >    conseguia abrir o painel e exportar todos os leads. Agora a leitura fica restrita à(s)
-   >    conta(s) listada(s) — **troque `SEU_EMAIL_GOOGLE_AQUI@gmail.com` pelo e-mail Google que
-   >    vocês usam pra logar no painel** antes de publicar. Pra liberar mais de uma pessoa:
-   >    `".read": "auth != null && (auth.token.email === 'email1@gmail.com' || auth.token.email === 'email2@gmail.com')"`
+   >    conseguia abrir o painel e exportar todos os leads. Agora a leitura fica restrita ao
+   >    e-mail `ja.investimentos@outlook.com` (o e-mail informado como conta de login do
+   >    painel). Pra liberar mais de uma pessoa:
+   >    `".read": "auth != null && (auth.token.email === 'email1@...' || auth.token.email === 'email2@...')"`
+   >
+   > ⚠️ **Atenção antes de colar:** o login do painel de leads é feito via **Google Sign-In**
+   > (Firebase Authentication). Isso só funciona se `ja.investimentos@outlook.com` for o
+   > e-mail de uma **Conta do Google** de verdade (o Google permite criar conta usando e-mail
+   > Outlook/Hotmail como login — se foi assim que a conta foi criada, tudo certo). Se vocês
+   > logam no painel com um e-mail `@gmail.com` diferente desse, troquem para o e-mail
+   > `@gmail.com` correto antes de publicar — senão o próprio dono fica trancado pra fora do
+   > painel.
    >
    > Cole em **Realtime Database → Regras → Publicar** — 1 minuto, não afeta os leads salvos.
 
