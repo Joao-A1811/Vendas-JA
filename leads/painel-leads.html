@@ -93,7 +93,9 @@ function entrar() {
   const provider = new firebase.auth.GoogleAuthProvider();
   // Redirect em vez de popup: popup é bloqueado silenciosamente em muitos
   // navegadores de celular (inclusive dentro de apps como Instagram/WhatsApp).
-  firebase.auth().signInWithRedirect(provider);
+  firebase.auth().signInWithRedirect(provider).catch(e => {
+    document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
+  });
 }
 
 function sair() {
