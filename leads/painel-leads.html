@@ -57,8 +57,12 @@ if (FB_READY) {
 
 <div class="content">
   <div id="login-box" class="card">
-    <p style="margin-bottom:14px">Entre com sua conta Google (mesma conta do Firebase do projeto) para visualizar os leads.</p>
-    <button class="btn" onclick="entrar()">Entrar com Google</button>
+    <p style="margin-bottom:14px">Entre com o e-mail e a senha cadastrados no Firebase para visualizar os leads.</p>
+    <form id="form-login" onsubmit="event.preventDefault(); entrar();">
+      <input type="email" id="login-email" placeholder="E-mail" autocomplete="username" required>
+      <input type="password" id="login-senha" placeholder="Senha" autocomplete="current-password" required>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
     <div id="status"></div>
   </div>
 
@@ -87,14 +91,19 @@ let leadsAtuais = [];
 
 function entrar() {
   if (!FB_READY) {
-    document.getElementById('status').textContent = 'Configure o FIREBASE_CONFIG no topo do arquivo primeiro.';
+    document.getElementById('status').textContent =
+      typeof firebase === 'undefined'
+        ? 'Não foi possível carregar o Firebase. Verifique sua conexão e recarregue a página.'
+        : 'Configuração pendente em /assets/config-global.js.';
     return;
   }
-  document.getElementById('status').textContent = 'Redirecionando pro login do Google...';
-  const provider = new firebase.auth.GoogleAuthProvider();
-  // Redirect em vez de popup: popup é bloqueado silenciosamente em muitos
-  // navegadores de celular (inclusive dentro de apps como Instagram/WhatsApp).
-  firebase.auth().signInWithRedirect(provider).catch(e => {
+  const email = document.getElementById('login-email').value.trim();
+  const senha = document.getElementById('login-senha').value;
+  document.getElementById('status').textContent = 'Entrando...';
+  // E-mail/senha em vez de login Google: evita bloqueio de popup no celular,
+  // domínio não autorizado etc. A conta é criada manualmente no console do
+  // Firebase (Authentication > Users) — não existe cadastro público aqui.
+  firebase.auth().signInWithEmailAndPassword(email, senha).catch(e => {
     document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
   });
 }
@@ -104,11 +113,6 @@ function sair() {
 }
 
 if (FB_READY) {
-  // Captura o resultado do login por redirect (e mostra o motivo se falhar,
-  // ex: domínio não autorizado no Firebase Authentication > Authorized domains).
-  firebase.auth().getRedirectResult().catch(e => {
-    document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
-  });
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       document.getElementById('login-box').style.display = 'none';
@@ -148,7 +152,7 @@ function carregarLeads() {
     document.getElementById('contador').textContent = 'Erro ao carregar';
     document.getElementById('db-status').textContent =
       'Erro ao ler os leads: ' + error.message +
-      ' — confira em Realtime Database > Regras se o e-mail desta conta Google está autorizado.';
+      ' — confira em Realtime Database > Regras se este e-mail está autorizado.';
   });
 }
 

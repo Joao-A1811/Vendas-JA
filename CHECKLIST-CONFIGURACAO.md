@@ -17,21 +17,27 @@ por um definitivo depois, em Domain management no Netlify, sem precisar mudar na
 
 ## 1. Firebase (banco de dados dos leads) — ✅ já configurado
 
-Projeto `vendas-ja-99317` já criado, com Realtime Database, login Google e regras de segurança
-publicadas. O `firebaseConfig` já vem preenchido em todas as páginas de produto novas (copiadas
-do `landing-page/`). Só repita esses passos se precisar recriar o projeto do zero:
+Projeto **Vendas-JA** (ID `vendas-ja-99317`) já criado, com Realtime Database e regras de
+segurança publicadas. O `firebaseConfig` já vem preenchido em todas as páginas de produto novas
+(copiadas do `landing-page/`). Só repita os passos 1 a 3 se precisar recriar o projeto do zero —
+o login do painel mudou pra **e-mail/senha** (mais simples que o Google Sign-In anterior, que
+esbarrava em bloqueio de popup no celular e domínio não autorizado):
 
 1. **console.firebase.google.com** → Adicionar projeto.
 2. **Build → Realtime Database → Criar banco de dados** → modo bloqueado.
 3. **Configurações → Configurações do projeto → Seus aplicativos → `</>` Web** → registrar e
    copiar o `firebaseConfig`.
-4. **Build → Authentication → Sign-in method → Google → Ativar**.
-5. **Realtime Database → Regras**, colar:
+4. **Build → Authentication → Sign-in method → E-mail/senha → Ativar**.
+5. **Build → Authentication → Users → Add user** → digite o e-mail e a senha que vão usar pra
+   entrar no painel de leads (`leads/painel-leads.html`). Pode criar mais de um usuário aqui se
+   mais de uma pessoa precisar de acesso — não existe cadastro público, só quem for adicionado
+   manualmente aqui consegue logar.
+6. **Realtime Database → Regras**, colar:
    ```json
    {
      "rules": {
        "leads": {
-         ".read": "auth != null && auth.token.email === 'ja.investimentos@outlook.com'",
+         ".read": "auth != null",
          ".indexOn": ["data"],
          "$lead": {
            ".write": "!data.exists()",
@@ -54,22 +60,11 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
      }
    }
    ```
-   > ⚠️ **Estas regras foram reforçadas em jul/2026**, com duas proteções:
-   > 1. **Anti-spam:** só aceitam cadastro novo com os campos esperados, tamanhos limitados e
-   >    e-mail com @; ninguém apaga ou edita lead pelo site.
-   > 2. **Privacidade (LGPD):** antes, QUALQUER pessoa logada com QUALQUER conta Google
-   >    conseguia abrir o painel e exportar todos os leads. Agora a leitura fica restrita ao
-   >    e-mail `ja.investimentos@outlook.com` (o e-mail informado como conta de login do
-   >    painel). Pra liberar mais de uma pessoa:
-   >    `".read": "auth != null && (auth.token.email === 'email1@...' || auth.token.email === 'email2@...')"`
-   >
-   > ⚠️ **Atenção antes de colar:** o login do painel de leads é feito via **Google Sign-In**
-   > (Firebase Authentication). Isso só funciona se `ja.investimentos@outlook.com` for o
-   > e-mail de uma **Conta do Google** de verdade (o Google permite criar conta usando e-mail
-   > Outlook/Hotmail como login — se foi assim que a conta foi criada, tudo certo). Se vocês
-   > logam no painel com um e-mail `@gmail.com` diferente desse, troquem para o e-mail
-   > `@gmail.com` correto antes de publicar — senão o próprio dono fica trancado pra fora do
-   > painel.
+   > ⚠️ **Estas regras foram reforçadas em jul/2026** (anti-spam: só aceitam cadastro novo com
+   > os campos esperados, tamanhos limitados e e-mail com @; ninguém apaga ou edita lead pelo
+   > site). A leitura (`.read`) fica liberada pra qualquer usuário autenticado porque, com login
+   > por e-mail/senha, **só existe conta pra quem vocês criarem manualmente no passo 5** — não
+   > tem cadastro público, então não precisa travar por e-mail específico.
    >
    > Cole em **Realtime Database → Regras → Publicar** — 1 minuto, não afeta os leads salvos.
 
@@ -139,11 +134,9 @@ aparece nos anúncios e nos ebooks.
 5. Depois disso, verificar o domínio no Meta: **Configurações do Business → Segurança da
    marca → Domínios → Adicionar** → escolher verificação por meta-tag → mandar a tag pro
    Claude instalar no site → voltar e clicar em Verificar.
-6. **Autorizar o domínio novo no Firebase** (senão o login do painel de leads falha nesse
-   domínio): **console.firebase.google.com → projeto vendas-ja-99317 → Authentication →
-   Settings → Authorized domains → Add domain** → colar o domínio novo (ex:
-   `nextlevelbr.app.br`). O `vendas-ja.netlify.app` já vem autorizado por padrão — não mexer
-   nele, só adicionar o novo.
+Obs.: como o login do painel de leads agora é por e-mail/senha (não é mais Google Sign-In), não
+é preciso autorizar o domínio novo no Firebase Authentication — o login funciona igual em
+qualquer domínio que sirva o site.
 
 ---
 
