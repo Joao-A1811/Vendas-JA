@@ -31,7 +31,7 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
    {
      "rules": {
        "leads": {
-         ".read": "auth != null",
+         ".read": "auth != null && auth.token.email === 'SEU_EMAIL_GOOGLE_AQUI@gmail.com'",
          ".indexOn": ["data"],
          "$lead": {
            ".write": "!data.exists()",
@@ -54,11 +54,16 @@ do `landing-page/`). Só repita esses passos se precisar recriar o projeto do ze
      }
    }
    ```
-   > ⚠️ **Estas regras foram reforçadas em jul/2026** (anti-spam: só aceitam cadastro novo com
-   > os campos esperados, tamanhos limitados e e-mail com @; ninguém consegue apagar ou editar
-   > lead pelo site). Se o banco ainda estiver com as regras antigas (`".write": true`), cole
-   > esta versão nova em **Realtime Database → Regras → Publicar** — leva 1 minuto e não afeta
-   > os leads já salvos.
+   > ⚠️ **Estas regras foram reforçadas em jul/2026**, com duas proteções:
+   > 1. **Anti-spam:** só aceitam cadastro novo com os campos esperados, tamanhos limitados e
+   >    e-mail com @; ninguém apaga ou edita lead pelo site.
+   > 2. **Privacidade (LGPD):** antes, QUALQUER pessoa logada com QUALQUER conta Google
+   >    conseguia abrir o painel e exportar todos os leads. Agora a leitura fica restrita à(s)
+   >    conta(s) listada(s) — **troque `SEU_EMAIL_GOOGLE_AQUI@gmail.com` pelo e-mail Google que
+   >    vocês usam pra logar no painel** antes de publicar. Pra liberar mais de uma pessoa:
+   >    `".read": "auth != null && (auth.token.email === 'email1@gmail.com' || auth.token.email === 'email2@gmail.com')"`
+   >
+   > Cole em **Realtime Database → Regras → Publicar** — 1 minuto, não afeta os leads salvos.
 
 ---
 
@@ -105,6 +110,27 @@ Depois disso, cada produto fica acessível assim:
 - Produto: `https://vendas-ja.netlify.app/produtos/nome-do-produto/`
 - Painel de leads: `https://vendas-ja.netlify.app/leads/painel-leads.html`
 - Gerador de ebook: `https://vendas-ja.netlify.app/ebooks/gerador-ebook.html`
+
+---
+
+## 4b. Domínio próprio (recomendado ANTES de gerar os ebooks)
+
+Os PDFs dos ebooks terão links pro site dentro deles — link impresso não se corrige depois.
+Por isso, decida o domínio definitivo antes de gerar os PDFs. Duas opções:
+
+**Opção A — continuar no `vendas-ja.netlify.app`:** válido, custo zero. Só saiba que a URL
+aparece nos anúncios e nos ebooks.
+
+**Opção B — domínio próprio (ex: `nextlevel-oficial.com`, ~R$ 40/ano):**
+1. Registrar em **registro.br** (domínios `.com.br`) ou **cloudflare.com** (`.com`).
+2. No Netlify: painel do site → **Domain management → Add a domain** → digitar o domínio →
+   seguir as instruções de DNS que o Netlify mostrar (apontar CNAME/A no registrador).
+3. Aguardar o HTTPS ativar (automático, minutos até algumas horas).
+4. **Avisar o Claude** pra trocar todas as URLs do código (sitemap, hreflang, Open Graph,
+   robots.txt) pro domínio novo — é uma mudança de minutos.
+5. Depois disso, verificar o domínio no Meta: **Configurações do Business → Segurança da
+   marca → Domínios → Adicionar** → escolher verificação por meta-tag → mandar a tag pro
+   Claude instalar no site → voltar e clicar em Verificar.
 
 ---
 

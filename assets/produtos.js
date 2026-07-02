@@ -16,9 +16,9 @@ window.PRODUTOS_SITE = [
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
     titulo: { pt: 'Emagrecimento', en: 'Weight Loss', es: 'Pérdida de Peso' },
     resumo: {
-      pt: 'Perca peso sem dietas malucas nem sofrimento.',
-      en: 'Lose weight without crazy diets or suffering.',
-      es: 'Pierde peso sin dietas locas ni sufrimiento.'
+      pt: 'Emagreça de forma leve, sem dietas malucas nem sofrimento.',
+      en: 'Lose weight the light way — no crazy diets, no suffering.',
+      es: 'Adelgaza de forma ligera, sin dietas locas ni sufrimiento.'
     }
   },
   {
@@ -27,9 +27,9 @@ window.PRODUTOS_SITE = [
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
     titulo: { pt: 'Ganho de Massa', en: 'Muscle Gain', es: 'Ganancia Muscular' },
     resumo: {
-      pt: 'Construa músculo de forma inteligente, sem perder tempo na academia.',
-      en: 'Build muscle smartly, without wasting time at the gym.',
-      es: 'Gana músculo de forma inteligente, sin perder horas en el gimnasio.'
+      pt: 'Treino, comida e descanso num plano simples: músculo com método, não achismo.',
+      en: 'Training, food and rest in one simple plan: muscle with method, not guesswork.',
+      es: 'Entrenamiento, comida y descanso en un plan simple: músculo con método.'
     }
   },
   {
@@ -38,9 +38,9 @@ window.PRODUTOS_SITE = [
     tag:    { pt: 'Finanças', en: 'Finance', es: 'Finanzas' },
     titulo: { pt: 'Investimentos', en: 'Investing', es: 'Inversiones' },
     resumo: {
-      pt: 'Faça seu dinheiro trabalhar por você, do jeito certo.',
-      en: 'Make your money work for you, the right way.',
-      es: 'Haz que tu dinero trabaje para ti, de la forma correcta.'
+      pt: 'Saia do zero: organize seu dinheiro e comece a investir sem economês.',
+      en: 'Go from zero: organize your money and start investing without the jargon.',
+      es: 'Pasa de cero: organiza tu dinero y empieza a invertir sin tecnicismos.'
     }
   },
   {
@@ -49,9 +49,9 @@ window.PRODUTOS_SITE = [
     tag:    { pt: 'Relacionamentos', en: 'Relationships', es: 'Relaciones' },
     titulo: { pt: 'Confiança Social', en: 'Social Confidence', es: 'Confianza Social' },
     resumo: {
-      pt: 'Supere a timidez e sinta-se à vontade em qualquer conversa.',
-      en: 'Overcome shyness and feel at ease in any conversation.',
-      es: 'Supera la timidez y siéntete cómodo en cualquier conversación.'
+      pt: 'Vença a timidez e fique à vontade em qualquer conversa — sem fingir ser outra pessoa.',
+      en: 'Beat shyness and feel at ease in any conversation — without pretending to be someone else.',
+      es: 'Supera la timidez y siéntete cómodo en cualquier conversación — sin fingir ser otra persona.'
     }
   },
   {
@@ -60,9 +60,9 @@ window.PRODUTOS_SITE = [
     tag:    { pt: 'Relacionamentos', en: 'Relationships', es: 'Relaciones' },
     titulo: { pt: 'Comunicação e Relacionamentos', en: 'Communication & Relationships', es: 'Comunicación y Relaciones' },
     resumo: {
-      pt: 'Construa conexões reais através de confiança e comunicação genuína.',
-      en: 'Build real connections through confidence and genuine communication.',
-      es: 'Construye conexiones reales a través de la confianza y la comunicación genuina.'
+      pt: 'Comunicação com clareza e empatia pra relações que duram — no amor, na família e no trabalho.',
+      en: 'Clear, empathetic communication for relationships that last — in love, family and work.',
+      es: 'Comunicación clara y empática para relaciones que duran — en el amor, la familia y el trabajo.'
     }
   }
 ];

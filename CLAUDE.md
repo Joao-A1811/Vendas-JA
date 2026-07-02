@@ -65,10 +65,13 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   `assets/config-global.js`.
 - **Regras novas do Firebase:** colar a versão anti-spam do `CHECKLIST-CONFIGURACAO.md`
   (seção 1, passo 5) no console do Firebase (o dono pediu pra deixar pra depois).
+- **Domínio próprio:** decidir antes de gerar os ebooks (links dentro dos PDFs não mudam
+  depois) — passo a passo na seção 4b do `CHECKLIST-CONFIGURACAO.md`. Ao trocar, atualizar
+  todas as URLs `vendas-ja.netlify.app` do código (sitemap, hreflang, OG, robots).
 - **Produtos reais:** gerar os ebooks (`ebooks/gerador-ebook.html`), subir os PDFs em
-  `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart e colar o
-  `linkCheckoutHotmart` em cada página, trocar `disponivel` para `true` no
-  `assets/produtos.js`.
+  `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
+  `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
+  para `true` no `assets/produtos.js`.
 - **E-mail (Brevo):** sequência por idioma quando os ebooks existirem.
 - **Anúncios Meta Ads:** usar os templates de `anuncios/`.
 
