@@ -28,7 +28,8 @@ a cada push na `main`.
 | `leads/painel-leads.html` | Painel de leads (login Google) com exportação CSV |
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
-| `emails/` | Sequência de e-mails pro Brevo (3 e-mails × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
+| `emails/` | Conteúdo dos e-mails da sequência (3 × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
+| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY` no Netlify |
 | `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 
 Leads são salvos no Firebase (projeto `vendas-ja-99317`) com produto + idioma + UTMs.
@@ -81,8 +82,10 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   em `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
   `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
   para `true` no `assets/produtos.js`. **Nenhum produto foi escolhido pra sair primeiro.**
-- **E-mail (Brevo):** os 9 e-mails prontos estão em `emails/` — falta só a conta Brevo e a
-  automação (passo a passo em `emails/LEIA-ME-BREVO.md`).
+- **E-mail (Brevo):** a automação inteira está em código (`netlify/functions/`) — falta SÓ
+  gerar a chave da API no Brevo e colar como env var `BREVO_API_KEY` no Netlify + redeploy
+  (passo a passo na seção 4c do `CHECKLIST-CONFIGURACAO.md`). Se mudar preço/nome de produto
+  nas páginas, atualizar também `netlify/functions/lib/produtos-email.mjs`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`).
 

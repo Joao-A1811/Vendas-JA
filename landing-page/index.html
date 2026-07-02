@@ -488,6 +488,13 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
       msg.style.color = '#baffc9';
       document.getElementById('form-lead').reset();
       if (window.__pixelOn) fbq('track', 'Lead');
+      // Dispara a sequência de e-mails (função no Netlify + API do Brevo).
+      // Se falhar, não afeta nada: o lead já está salvo e o ebook entregue.
+      fetch('/.netlify/functions/lead-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.assign({ slug: location.pathname.split('/')[2] || '' }, lead))
+      }).catch(function () {});
     })
     .catch((err) => {
       msg.textContent = 'Erro ao enviar. Tente novamente.';

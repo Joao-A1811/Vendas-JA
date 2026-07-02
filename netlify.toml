@@ -1,0 +1,15 @@
+# Configuração do Netlify.
+# O site é estático (publicado da raiz); as funções em netlify/functions
+# cuidam da sequência de e-mails via API do Brevo:
+#   - lead-email: chamada pela página após o cadastro (envia o e-mail 1)
+#   - sequencia-diaria: agendada (12h UTC) — envia os e-mails 2 e 3
+#   - descadastrar: link de descadastro dos e-mails (LGPD)
+# Exigem a variável de ambiente BREVO_API_KEY (Site configuration →
+# Environment variables). Sem ela, o site funciona normal — só não
+# envia os e-mails automáticos.
+
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"

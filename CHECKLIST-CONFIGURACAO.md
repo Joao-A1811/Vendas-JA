@@ -148,6 +148,24 @@ qualquer domínio que sirva o site.
 
 ---
 
+## 4c. Sequência de e-mails automática (fazer uma vez) — ⏳ falta só a chave da API
+
+A automação inteira já está em código (`netlify/functions/`): e-mail 1 na hora do cadastro,
+e-mail 2 após 2 dias, e-mail 3 após 4 dias, com descadastro LGPD embutido. Falta apenas:
+
+1. **Gerar a chave da API no Brevo:** app.brevo.com → menu do perfil (canto superior direito)
+   → **SMTP & API** → aba **API Keys** → **Generate a new API key** → nomear (ex: `netlify`)
+   → copiar a chave `xkeysib-...` (ela só aparece uma vez).
+2. **Colar no Netlify:** app.netlify.com → site vendas-ja → **Site configuration →
+   Environment variables → Add a variable** → Key `BREVO_API_KEY`, Value = a chave → salvar.
+3. **Republicar:** Deploys → **Trigger deploy → Deploy project**.
+4. **Testar:** cadastrar um e-mail seu numa página de produto → o e-mail "Seu material
+   chegou!" deve chegar em instantes (olhar o spam na primeira vez).
+
+Sem a chave, o site funciona normal — só não envia os e-mails automáticos.
+
+---
+
 ## 5. A cada novo produto (repetir esta parte)
 
 1. Cadastrar o produto na Hotmart → copiar o **link de checkout** (um por idioma/moeda, se os
@@ -161,12 +179,9 @@ qualquer domínio que sirva o site.
 4. Gerar os 3 ebooks gratuitos (um por idioma) em `ebooks/gerador-ebook.html` e subir os PDFs em
    `ebooks/arquivos/` seguindo a convenção `<slug>-pt.pdf` / `<slug>-en.pdf` / `<slug>-es.pdf`.
    Com o `linkEbookGratis` preenchido, a entrega é instantânea no idioma da página.
-5. Criar/atualizar a automação de e-mail no **brevo.com** — **os 3 e-mails da sequência já
-   estão prontos, com o visual da marca, em `emails/<idioma>/`** (passo a passo completo em
-   `emails/LEIA-ME-BREVO.md`). O ideal é uma lista por idioma (lead
-   entra na lista → recebe o ebook no idioma certo → depois de alguns dias recebe a oferta),
-   importando os leads exportados em CSV pelo `leads/painel-leads.html` (as colunas "Produto" e
-   "Idioma" já vêm preenchidas).
+5. E-mails: **nada a fazer por produto** — a sequência de 3 e-mails é enviada automaticamente
+   por código (funções do Netlify + API do Brevo, no idioma certo, com o link do ebook do
+   produto). Configuração única na seção 4c abaixo; detalhes em `emails/LEIA-ME-BREVO.md`.
 6. Commit + push — o Netlify publica sozinho. (Pra mudanças pequenas dá pra editar direto no
    github.com: abrir o arquivo → botão de lápis → Commit changes.)
 7. Montar a campanha no Meta Ads usando `anuncios/copy-facebook-br.md` (para PT) ou

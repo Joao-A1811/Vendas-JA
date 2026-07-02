@@ -1,0 +1,121 @@
+// ============================================================
+// Dados de cada produto usados nos e-mails da sequência.
+// Espelham o CONFIG das páginas em produtos/<slug>/ — se mudar
+// preço ou nome lá, atualize aqui também.
+// ============================================================
+const SITE = 'https://nextlevelbr.app.br';
+
+function links(slug) {
+  return {
+    pt: { linkPagina: `${SITE}/produtos/${slug}/`, linkEbook: `${SITE}/ebooks/arquivos/${slug}-pt.pdf` },
+    en: { linkPagina: `${SITE}/produtos/${slug}/index-en.html`, linkEbook: `${SITE}/ebooks/arquivos/${slug}-en.pdf` },
+    es: { linkPagina: `${SITE}/produtos/${slug}/index-es.html`, linkEbook: `${SITE}/ebooks/arquivos/${slug}-es.pdf` },
+  };
+}
+
+const PRECOS = {
+  pt: { precoDe: 'R$ 97,00', precoPor: 'R$ 47,00' },
+  en: { precoDe: '$37', precoPor: '$19' },
+  es: { precoDe: '$37', precoPor: '$19' },
+};
+
+function montar(slug, dados) {
+  const l = links(slug);
+  const resultado = {};
+  for (const idioma of ['pt', 'en', 'es']) {
+    resultado[idioma] = { ...dados[idioma], ...PRECOS[idioma], ...l[idioma] };
+  }
+  return resultado;
+}
+
+export const PRODUTOS = {
+  'emagrecimento': montar('emagrecimento', {
+    pt: {
+      nomeProduto: 'Ebook Emagrecimento Inteligente',
+      tema: 'emagrecimento leve, sem dietas malucas',
+      dica: 'Antes de mudar a dieta inteira, escolha UMA refeição do dia (o café da manhã é ótimo) e melhore só ela nesta semana. Constância em uma refeição vence perfeição em todas — quando ela virar automática, avance pra próxima.',
+    },
+    en: {
+      nomeProduto: 'Smart Weight Loss Ebook',
+      tema: 'losing weight the light way, without crazy diets',
+      dica: 'Before changing your whole diet, pick ONE meal of the day (breakfast is a great choice) and improve only that one this week. Consistency in one meal beats perfection in all of them — once it becomes automatic, move to the next.',
+    },
+    es: {
+      nomeProduto: 'Ebook Pérdida de Peso Inteligente',
+      tema: 'perder peso de forma ligera, sin dietas locas',
+      dica: 'Antes de cambiar toda tu dieta, elige UNA comida del día (el desayuno es ideal) y mejora solo esa durante esta semana. La constancia en una comida vence a la perfección en todas — cuando se vuelva automática, pasa a la siguiente.',
+    },
+  }),
+
+  'ganho-de-massa': montar('ganho-de-massa', {
+    pt: {
+      nomeProduto: 'Ebook Ganho de Massa Inteligente',
+      tema: 'ganho de massa com método, sem achismo',
+      dica: 'Anote as cargas e repetições de cada treino, nem que seja no bloco de notas do celular. Sem registro não existe progressão — e progressão é o que faz o músculo crescer.',
+    },
+    en: {
+      nomeProduto: 'Smart Muscle Gain Ebook',
+      tema: 'building muscle with method, not guesswork',
+      dica: "Write down the weights and reps of every workout, even if it's just in your phone's notes app. Without a record there's no progression — and progression is what makes muscle grow.",
+    },
+    es: {
+      nomeProduto: 'Ebook Ganancia Muscular Inteligente',
+      tema: 'ganar músculo con método, sin suposiciones',
+      dica: 'Anota las cargas y repeticiones de cada entrenamiento, aunque sea en las notas del móvil. Sin registro no hay progresión — y la progresión es lo que hace crecer el músculo.',
+    },
+  }),
+
+  'investimentos': montar('investimentos', {
+    pt: {
+      nomeProduto: 'Ebook Investimentos do Zero',
+      tema: 'investir do zero, sem economês',
+      dica: 'Antes de pensar em onde investir, anote TODOS os seus gastos por 7 dias, sem julgamento. Esse mapa simples revela pra onde seu dinheiro está indo — e é a base de qualquer plano que funciona.',
+    },
+    en: {
+      nomeProduto: 'Investing from Zero Ebook',
+      tema: 'investing from zero, without the jargon',
+      dica: "Before thinking about where to invest, write down ALL your expenses for 7 days, no judgment. That simple map reveals where your money is going — and it's the foundation of any plan that works.",
+    },
+    es: {
+      nomeProduto: 'Ebook Inversiones desde Cero',
+      tema: 'invertir desde cero, sin tecnicismos',
+      dica: 'Antes de pensar en dónde invertir, anota TODOS tus gastos durante 7 días, sin juzgarte. Ese mapa simple revela a dónde va tu dinero — y es la base de cualquier plan que funcione.',
+    },
+  }),
+
+  'confianca-social': montar('confianca-social', {
+    pt: {
+      nomeProduto: 'Ebook Confiança Social na Prática',
+      tema: 'confiança social na prática',
+      dica: 'Hoje, faça UMA pergunta simples a alguém (no mercado, no trabalho, no elevador) — só isso. Confiança social se constrói como músculo: repetições pequenas, feitas com frequência.',
+    },
+    en: {
+      nomeProduto: 'Social Confidence in Practice Ebook',
+      tema: 'social confidence in practice',
+      dica: "Today, ask ONE simple question to someone (at the store, at work, in the elevator) — that's it. Social confidence is built like a muscle: small reps, done often.",
+    },
+    es: {
+      nomeProduto: 'Ebook Confianza Social en la Práctica',
+      tema: 'confianza social en la práctica',
+      dica: 'Hoy, hazle UNA pregunta simple a alguien (en la tienda, en el trabajo, en el ascensor) — solo eso. La confianza social se construye como un músculo: repeticiones pequeñas y frecuentes.',
+    },
+  }),
+
+  'comunicacao-e-relacionamentos': montar('comunicacao-e-relacionamentos', {
+    pt: {
+      nomeProduto: 'Ebook Comunicação e Relacionamentos',
+      tema: 'comunicação e relacionamentos saudáveis',
+      dica: "Na próxima conversa difícil, antes de responder, repita com suas palavras o que a pessoa disse ('então o que te incomoda é...'). Esse gesto simples desarma a briga e mostra que você escutou de verdade.",
+    },
+    en: {
+      nomeProduto: 'Communication & Relationships Ebook',
+      tema: 'communication and healthy relationships',
+      dica: "In your next difficult conversation, before replying, repeat in your own words what the person said ('so what bothers you is...'). This simple move defuses the fight and shows you truly listened.",
+    },
+    es: {
+      nomeProduto: 'Ebook Comunicación y Relaciones',
+      tema: 'comunicación y relaciones sanas',
+      dica: "En tu próxima conversación difícil, antes de responder, repite con tus palabras lo que la otra persona dijo ('entonces lo que te molesta es...'). Ese gesto simple desarma la pelea y demuestra que escuchaste de verdad.",
+    },
+  }),
+};
