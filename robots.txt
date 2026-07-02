@@ -1,3 +1,8 @@
+# Rastreador do Meta (Facebook/Instagram) — precisa de permissão explícita
+# pra verificação de domínio e pra gerar preview de link (Open Graph).
+User-agent: facebookexternalhit
+Allow: /
+
 User-agent: *
 Disallow: /leads/
 Disallow: /ebooks/
