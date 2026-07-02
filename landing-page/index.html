@@ -244,7 +244,10 @@ const CONFIG = {
   </div>
 </section>
 
-<section class="section" style="background:#fff">
+<!-- Depoimentos: a seção só aparece se CONFIG.depoimentos tiver itens.
+     Use SOMENTE depoimentos reais, com autorização — inventar viola a
+     política do Meta Ads e o CDC (propaganda enganosa). -->
+<section class="section" style="background:#fff" id="secao-depoimentos">
   <div class="container">
     <h3 class="reveal">Quem já usou, recomenda</h3>
     <p class="lead-sec reveal">Resultado real de quem já aplicou o método</p>
@@ -324,16 +327,20 @@ document.getElementById('beneficios').innerHTML = CONFIG.beneficios.map(b => `
   <div class="beneficio"><div class="icone">${b.icone}</div><h4>${b.titulo}</h4><p>${b.texto}</p></div>
 `).join('');
 
-document.getElementById('depoimentos').innerHTML = CONFIG.depoimentos.map(d => `
-  <div class="depoimento">
-    <div class="estrelas">${'★'.repeat(d.estrelas)}${'☆'.repeat(5 - d.estrelas)}</div>
-    <p>"${d.texto}"</p>
-    <div class="autor">
-      <div class="avatar">${d.nome.trim().charAt(0).toUpperCase()}</div>
-      <div><b>${d.nome}</b><span>${d.papel}</span></div>
+if (CONFIG.depoimentos && CONFIG.depoimentos.length) {
+  document.getElementById('depoimentos').innerHTML = CONFIG.depoimentos.map(d => `
+    <div class="depoimento">
+      <div class="estrelas">${'★'.repeat(d.estrelas)}${'☆'.repeat(5 - d.estrelas)}</div>
+      <p>"${d.texto}"</p>
+      <div class="autor">
+        <div class="avatar">${d.nome.trim().charAt(0).toUpperCase()}</div>
+        <div><b>${d.nome}</b><span>${d.papel}</span></div>
+      </div>
     </div>
-  </div>
-`).join('');
+  `).join('');
+} else {
+  document.getElementById('secao-depoimentos').style.display = 'none';
+}
 
 document.getElementById('oferta-produto').textContent = CONFIG.produto;
 document.getElementById('oferta-preco-de').textContent = 'De ' + CONFIG.precoDe;

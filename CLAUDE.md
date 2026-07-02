@@ -44,7 +44,12 @@ As home pages têm as mesmas tags, estáticas.
 `emagrecimento`, `ganho-de-massa` (Saúde) · `investimentos` (Finanças) ·
 `confianca-social`, `comunicacao-e-relacionamentos` (Relacionamentos)
 
-As páginas de produto ainda têm `{{placeholders}}` no `CONFIG`, aguardando conteúdo real.
+As 15 páginas de produto (5 × 3 idiomas) já estão com o `CONFIG` preenchido: headline,
+benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e `linkEbookGratis` apontando
+pro caminho convencionado dos PDFs. Falta em cada uma só o `linkCheckoutHotmart` real e o
+upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão vazios (`depoimentos: []`) e a
+seção fica oculta automaticamente — **só preencher com depoimentos reais e autorizados;
+inventar depoimento é vetado** (Meta Ads + CDC).
 
 ## Como fazer alterações comuns
 
@@ -58,12 +63,12 @@ As páginas de produto ainda têm `{{placeholders}}` no `CONFIG`, aguardando con
 
 - **Pixel do Meta:** criar no Events Manager (tela estava travando) e colar o ID em
   `assets/config-global.js`.
-- **E-mail de contato:** colar em `emailContato` no `assets/config-global.js` (aparece nas
-  páginas legais; exigência LGPD).
 - **Regras novas do Firebase:** colar a versão anti-spam do `CHECKLIST-CONFIGURACAO.md`
-  (seção 1, passo 5) no console do Firebase.
-- **Produtos reais:** gerar os ebooks (`ebooks/gerador-ebook.html`), preencher os `CONFIG`,
-  colocar os PDFs em `ebooks/arquivos/`, trocar `disponivel` para `true`.
+  (seção 1, passo 5) no console do Firebase (o dono pediu pra deixar pra depois).
+- **Produtos reais:** gerar os ebooks (`ebooks/gerador-ebook.html`), subir os PDFs em
+  `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart e colar o
+  `linkCheckoutHotmart` em cada página, trocar `disponivel` para `true` no
+  `assets/produtos.js`.
 - **E-mail (Brevo):** sequência por idioma quando os ebooks existirem.
 - **Anúncios Meta Ads:** usar os templates de `anuncios/`.
 

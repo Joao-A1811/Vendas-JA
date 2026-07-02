@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{PAGE_TITLE}} | NextLevel</title>
-<meta name="description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+<title>Communication & Relationships — real connections | NextLevel</title>
+<meta name="description" content="An ebook to communicate with clarity and empathy and build healthy relationships in love, family and work.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="{{PAGE_TITLE}} | NextLevel">
-<meta property="og:description" content="{{SHORT_DESCRIPTION_FOR_GOOGLE_AND_SOCIAL}}">
+<meta property="og:title" content="Communication & Relationships — real connections | NextLevel">
+<meta property="og:description" content="An ebook to communicate with clarity and empathy and build healthy relationships in love, family and work.">
 <meta property="og:image" content="https://vendas-ja.netlify.app/assets/og-image.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -179,39 +179,37 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: '{{PRODUCT_NAME}}',
-  headline: '{{MAIN HEADLINE — the biggest promise/benefit in one sentence}}',
-  subheadline: '{{SUBHEADLINE — supports the promise, 1-2 sentences}}',
-  selo: '{{e.g.: Over 1,000 people already used it}}',
+  produto: "Communication & Relationships Ebook",
+  headline: "Healthy relationships start with a good conversation",
+  subheadline: "Learn to communicate with clarity and empathy to strengthen friendships, family and your love life — no games.",
+  selo: "📘 Complete ebook · Instant access",
   estatisticas: [
-    { numero: '{{+1,000}}', legenda: '{{students}}' },
-    { numero: '{{4.9/5}}', legenda: '{{rating}}' },
-    { numero: '{{7 days}}', legenda: '{{guarantee}}' }
+    { numero: "100%", legenda: "digital" },
+    { numero: "7-day", legenda: "guarantee" },
+    { numero: "0", legenda: "fluff" }
   ],
   beneficios: [
-    { icone: '✅', titulo: '{{Benefit 1}}', texto: '{{short explanation}}' },
-    { icone: '⚡', titulo: '{{Benefit 2}}', texto: '{{short explanation}}' },
-    { icone: '🎯', titulo: '{{Benefit 3}}', texto: '{{short explanation}}' }
+    { icone: "🗣️", titulo: "Speak to be understood", texto: "Clarity and assertiveness without rudeness: say what you need without turning talk into a fight." },
+    { icone: "👂", titulo: "Truly listen", texto: "Active listening in practice — the skill that most transforms any relationship." },
+    { icone: "🤝", titulo: "Conflict without war", texto: "How to disagree, ask for change and negotiate without hurting the other person or erasing yourself." }
   ],
-  depoimentos: [
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 },
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 },
-    { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 }
-  ],
-  precoDe: '{{$97.00}}',
-  precoPor: '{{$37.00}}',
-  garantiaTexto: '{{7-day unconditional guarantee}}',
-  // Optional: ISO date/time when the offer ends (e.g. '2026-08-01T23:59:59'). Leave empty to hide the countdown.
+  // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
+  depoimentos: [],
+  precoDe: "$37",
+  precoPor: "$19",
+  garantiaTexto: "7-day unconditional money-back guarantee",
   contagemRegressivaFim: '',
-  linkCheckoutHotmart: 'https://pay.hotmart.com/PASTE_PRODUCT_CODE',
-  // Free ebook in THIS language, delivered instantly after sign-up.
-  // Upload the PDF to /ebooks/arquivos/ and point to it here (e.g. '/ebooks/arquivos/weight-loss-en.pdf').
-  // If left empty, the page shows "check your inbox" (delivery via email automation).
-  linkEbookGratis: '',
-  idioma: 'en',
+  // ONLY THIS MISSING: replace with this product’s real Hotmart checkout link.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
+  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkEbookGratis: '/ebooks/arquivos/comunicacao-e-relacionamentos-en.pdf',
+  idioma: "en",
   faq: [
-    { pergunta: '{{FAQ question 1}}', resposta: '{{Answer}}' },
-    { pergunta: '{{FAQ question 2}}', resposta: '{{Answer}}' }
+    { pergunta: "Does it apply to love life and work?", resposta: "Yes. The communication principles are the same — the ebook brings examples applied to friendships, family, romantic life and work." },
+    { pergunta: "Is this about \"manipulating\" people?", resposta: "No — quite the opposite. The method is based on honest, empathetic communication, to build trusting relationships that last." },
+    { pergunta: "Does it replace couples therapy?", resposta: "No. The content is educational and doesn’t replace psychological care when it’s needed." },
+    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the ebook to your email. You can read it on your phone, tablet or computer." },
+    { pergunta: "What if I don’t like it?", resposta: "You have a 7-day unconditional guarantee: just request a refund directly through Hotmart and get 100% of your money back, no questions asked." }
   ]
 };
 </script>
@@ -244,7 +242,10 @@ const CONFIG = {
   </div>
 </section>
 
-<section class="section" style="background:#fff">
+<!-- Testimonials: the section only shows if CONFIG.depoimentos has items.
+     Use ONLY real testimonials, with permission — fabricating them violates
+     Meta Ads policy and consumer protection law. -->
+<section class="section" style="background:#fff" id="secao-depoimentos">
   <div class="container">
     <h3 class="reveal">Loved by people who tried it</h3>
     <p class="lead-sec reveal">Real results from people who already applied the method</p>
@@ -324,16 +325,20 @@ document.getElementById('beneficios').innerHTML = CONFIG.beneficios.map(b => `
   <div class="beneficio"><div class="icone">${b.icone}</div><h4>${b.titulo}</h4><p>${b.texto}</p></div>
 `).join('');
 
-document.getElementById('depoimentos').innerHTML = CONFIG.depoimentos.map(d => `
-  <div class="depoimento">
-    <div class="estrelas">${'★'.repeat(d.estrelas)}${'☆'.repeat(5 - d.estrelas)}</div>
-    <p>"${d.texto}"</p>
-    <div class="autor">
-      <div class="avatar">${d.nome.trim().charAt(0).toUpperCase()}</div>
-      <div><b>${d.nome}</b><span>${d.papel}</span></div>
+if (CONFIG.depoimentos && CONFIG.depoimentos.length) {
+  document.getElementById('depoimentos').innerHTML = CONFIG.depoimentos.map(d => `
+    <div class="depoimento">
+      <div class="estrelas">${'★'.repeat(d.estrelas)}${'☆'.repeat(5 - d.estrelas)}</div>
+      <p>"${d.texto}"</p>
+      <div class="autor">
+        <div class="avatar">${d.nome.trim().charAt(0).toUpperCase()}</div>
+        <div><b>${d.nome}</b><span>${d.papel}</span></div>
+      </div>
     </div>
-  </div>
-`).join('');
+  `).join('');
+} else {
+  document.getElementById('secao-depoimentos').style.display = 'none';
+}
 
 document.getElementById('oferta-produto').textContent = CONFIG.produto;
 document.getElementById('oferta-preco-de').textContent = 'Was ' + CONFIG.precoDe;
