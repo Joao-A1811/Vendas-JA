@@ -70,7 +70,11 @@ esbarrava em bloqueio de popup no celular e domínio não autorizado):
 
 ---
 
-## 2. Meta Business Manager (conta de anúncios) — ⏳ pendente (Pixel)
+## 2. Meta Business Manager (conta de anúncios) — ✅ já configurado
+
+Pixel criado e ativo (ID `1817037532617722`, colado em `assets/config-global.js`), conta de
+anúncios `2104501427133123` com pagamento cadastrado, domínio `nextlevelbr.app.br` verificado
+(via registro TXT no DNS). Só repita os passos abaixo se precisar recriar do zero:
 
 1. **business.facebook.com** → Criar conta → nome da empresa, seu nome, e-mail comercial.
 2. **Configurações do Business → Contas → Contas de anúncios → Adicionar → Criar nova conta de
@@ -116,7 +120,11 @@ Depois disso, cada produto fica acessível assim:
 
 ---
 
-## 4b. Domínio próprio (recomendado ANTES de gerar os ebooks)
+## 4b. Domínio próprio — ✅ feito (`nextlevelbr.app.br`)
+
+Registrado no Registro.br, apontado pro Netlify (A `75.2.60.5` + CNAME www), HTTPS ativo,
+URLs do código atualizadas e domínio verificado no Meta. Os passos abaixo ficam de
+referência caso um dia troquem de domínio:
 
 Os PDFs dos ebooks terão links pro site dentro deles — link impresso não se corrige depois.
 Por isso, decida o domínio definitivo antes de gerar os PDFs. Duas opções:
@@ -153,7 +161,9 @@ qualquer domínio que sirva o site.
 4. Gerar os 3 ebooks gratuitos (um por idioma) em `ebooks/gerador-ebook.html` e subir os PDFs em
    `ebooks/arquivos/` seguindo a convenção `<slug>-pt.pdf` / `<slug>-en.pdf` / `<slug>-es.pdf`.
    Com o `linkEbookGratis` preenchido, a entrega é instantânea no idioma da página.
-5. Criar/atualizar a automação de e-mail no **brevo.com** — o ideal é uma lista por idioma (lead
+5. Criar/atualizar a automação de e-mail no **brevo.com** — **os 3 e-mails da sequência já
+   estão prontos, com o visual da marca, em `emails/<idioma>/`** (passo a passo completo em
+   `emails/LEIA-ME-BREVO.md`). O ideal é uma lista por idioma (lead
    entra na lista → recebe o ebook no idioma certo → depois de alguns dias recebe a oferta),
    importando os leads exportados em CSV pelo `leads/painel-leads.html` (as colunas "Produto" e
    "Idioma" já vêm preenchidas).

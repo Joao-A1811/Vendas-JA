@@ -28,6 +28,7 @@ a cada push na `main`.
 | `leads/painel-leads.html` | Painel de leads (login Google) com exportação CSV |
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
+| `emails/` | Sequência de e-mails pro Brevo (3 e-mails × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
 | `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 
 Leads são salvos no Firebase (projeto `vendas-ja-99317`) com produto + idioma + UTMs.
@@ -59,21 +60,31 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   adicionar o bloco em `assets/produtos.js`. Quando pronto pra vender, `disponivel: true`.
 - **Publicar:** commit + push na `main` — o Netlify atualiza sozinho, sem deploy manual.
 
+## Infraestrutura já concluída (julho/2026) — não refazer
+
+- **Domínio próprio `nextlevelbr.app.br`** no ar (Registro.br + Netlify) e **verificado no
+  Meta** (via registro TXT no DNS; a meta-tag também está no `index.html`). Todas as URLs
+  do código já apontam pra ele. O `vendas-ja.netlify.app` continua servindo o mesmo site.
+- **Pixel do Meta ativo** (ID em `assets/config-global.js`) e recebendo eventos.
+  Conta de anúncios: `2104501427133123`, com método de pagamento cadastrado.
+- **Firebase:** regras anti-spam publicadas; login do painel de leads é por **e-mail/senha**
+  (usuário criado manualmente em Authentication → Users — NÃO é login Google; já foi e deu
+  problema com popup/domínio).
+- **Netlify:** a conta ("Valor Investimentos") estourou os créditos do plano free em jul/2026
+  e os deploys pararam **silenciosamente** ("Skipped due to account credit usage exceeded" na
+  aba Deploys). Créditos foram comprados. Se um push não aparecer no site, conferir isso
+  ANTES de caçar bug no código.
+
 ## O que ainda falta (estado em julho/2026)
 
-- **Pixel do Meta:** criar no Events Manager (tela estava travando) e colar o ID em
-  `assets/config-global.js`.
-- **Regras novas do Firebase:** colar a versão anti-spam do `CHECKLIST-CONFIGURACAO.md`
-  (seção 1, passo 5) no console do Firebase (o dono pediu pra deixar pra depois).
-- **Domínio próprio:** decidir antes de gerar os ebooks (links dentro dos PDFs não mudam
-  depois) — passo a passo na seção 4b do `CHECKLIST-CONFIGURACAO.md`. Ao trocar, atualizar
-  todas as URLs `vendas-ja.netlify.app` do código (sitemap, hreflang, OG, robots).
-- **Produtos reais:** gerar os ebooks (`ebooks/gerador-ebook.html`), subir os PDFs em
-  `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
+- **Produtos reais:** escrever/gerar os ebooks (`ebooks/gerador-ebook.html`), subir os PDFs
+  em `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
   `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
-  para `true` no `assets/produtos.js`.
-- **E-mail (Brevo):** sequência por idioma quando os ebooks existirem.
-- **Anúncios Meta Ads:** usar os templates de `anuncios/`.
+  para `true` no `assets/produtos.js`. **Nenhum produto foi escolhido pra sair primeiro.**
+- **E-mail (Brevo):** os 9 e-mails prontos estão em `emails/` — falta só a conta Brevo e a
+  automação (passo a passo em `emails/LEIA-ME-BREVO.md`).
+- **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
+  o produto estiver vendável (checkout real + `disponivel: true`).
 
 ## Regras / decisões já tomadas (não contrariar)
 
