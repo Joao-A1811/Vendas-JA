@@ -64,9 +64,10 @@ if (FB_READY) {
 
   <div id="painel" class="card" style="display:none">
     <div style="display:flex;justify-content:space-between;align-items:center">
-      <strong id="contador">0 leads</strong>
+      <strong id="contador">Carregando...</strong>
       <button class="btn" onclick="exportarCSV()">Exportar CSV</button>
     </div>
+    <div id="db-status" style="color:#c0392b;font-weight:600;margin-top:8px"></div>
     <div style="overflow-x:auto">
       <table id="tabela-leads">
         <thead>
@@ -124,6 +125,7 @@ if (FB_READY) {
 
 function carregarLeads() {
   firebase.database().ref('leads').on('value', snap => {
+    document.getElementById('db-status').textContent = '';
     const dados = snap.val() || {};
     leadsAtuais = Object.values(dados).sort((a, b) => (b.data || '').localeCompare(a.data || ''));
     document.getElementById('contador').textContent = leadsAtuais.length + ' leads';
@@ -140,6 +142,13 @@ function carregarLeads() {
         <td>${l.utm_content || ''}</td>
       </tr>
     `).join('');
+  }, error => {
+    // Sem isso, uma leitura negada pelas regras do Realtime Database falhava
+    // em silêncio: o painel ficava com "Carregando..." pra sempre.
+    document.getElementById('contador').textContent = 'Erro ao carregar';
+    document.getElementById('db-status').textContent =
+      'Erro ao ler os leads: ' + error.message +
+      ' — confira em Realtime Database > Regras se o e-mail desta conta Google está autorizado.';
   });
 }
 
