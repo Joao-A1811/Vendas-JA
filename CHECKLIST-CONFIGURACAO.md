@@ -139,6 +139,11 @@ aparece nos anúncios e nos ebooks.
 5. Depois disso, verificar o domínio no Meta: **Configurações do Business → Segurança da
    marca → Domínios → Adicionar** → escolher verificação por meta-tag → mandar a tag pro
    Claude instalar no site → voltar e clicar em Verificar.
+6. **Autorizar o domínio novo no Firebase** (senão o login do painel de leads falha nesse
+   domínio): **console.firebase.google.com → projeto vendas-ja-99317 → Authentication →
+   Settings → Authorized domains → Add domain** → colar o domínio novo (ex:
+   `nextlevelbr.app.br`). O `vendas-ja.netlify.app` já vem autorizado por padrão — não mexer
+   nele, só adicionar o novo.
 
 ---
 

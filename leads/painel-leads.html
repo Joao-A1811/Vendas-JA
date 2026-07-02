@@ -35,8 +35,19 @@ th{background:#f4f7fb;color:#5b21b6}
 <script>
 if (!window.SITE) window.SITE = { firebase: { apiKey: 'COLE_AQUI' } };
 const FIREBASE_CONFIG = window.SITE.firebase;
-const FB_READY = FIREBASE_CONFIG.apiKey !== 'COLE_AQUI';
-if (FB_READY) firebase.initializeApp(FIREBASE_CONFIG);
+// typeof: se o CDN do Firebase não carregar (rede instável, bloqueador etc.),
+// a página mostra aviso em vez de travar com erro de JavaScript.
+const FB_READY = typeof firebase !== 'undefined' && FIREBASE_CONFIG.apiKey !== 'COLE_AQUI';
+if (FB_READY) {
+  firebase.initializeApp(FIREBASE_CONFIG);
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('status').textContent =
+      typeof firebase === 'undefined'
+        ? 'Não foi possível carregar o Firebase. Verifique sua conexão e recarregue a página.'
+        : 'Configuração pendente em /assets/config-global.js.';
+  });
+}
 </script>
 
 <header class="header">
@@ -78,10 +89,11 @@ function entrar() {
     document.getElementById('status').textContent = 'Configure o FIREBASE_CONFIG no topo do arquivo primeiro.';
     return;
   }
+  document.getElementById('status').textContent = 'Redirecionando pro login do Google...';
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).catch(e => {
-    document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
-  });
+  // Redirect em vez de popup: popup é bloqueado silenciosamente em muitos
+  // navegadores de celular (inclusive dentro de apps como Instagram/WhatsApp).
+  firebase.auth().signInWithRedirect(provider);
 }
 
 function sair() {
@@ -89,6 +101,11 @@ function sair() {
 }
 
 if (FB_READY) {
+  // Captura o resultado do login por redirect (e mostra o motivo se falhar,
+  // ex: domínio não autorizado no Firebase Authentication > Authorized domains).
+  firebase.auth().getRedirectResult().catch(e => {
+    document.getElementById('status').textContent = 'Erro ao entrar: ' + e.message;
+  });
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       document.getElementById('login-box').style.display = 'none';
