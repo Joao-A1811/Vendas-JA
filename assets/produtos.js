@@ -67,7 +67,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'treino-em-casa',
-    disponivel: false,
+    disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
     titulo: { pt: 'Treino em Casa', en: 'Home Workout', es: 'Entrenamiento en Casa' },
     resumo: {
