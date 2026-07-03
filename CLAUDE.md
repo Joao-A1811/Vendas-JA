@@ -68,15 +68,19 @@ moedas, `disponivel: true`:
 **`suplementacao-inteligente` (jul/2026, 7º produto — "Coleção Projeto Verão") — PT e ES ao
 vivo, EN pendente.** Guia pago de 50 páginas + ebook gratuito (isca, 7 páginas) nos 3 idiomas,
 `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`. Ainda sem galeria "olhe por dentro"
-(nenhum preview gerado pra este produto). `disponivel: false` no catálogo (mostra "Em breve"
-mesmo com PT/ES vendáveis) até o checkout EN funcionar — ver detalhe abaixo:
-- PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 47,00, preço padrão ainda não customizado)
+(nenhum preview gerado pra este produto). Preço final definido pelo dono do projeto: **R$ 49,99
+(PT) / US$ 19,00 (EN/ES)** — já salvo nas 3 páginas e em `produtos-email.mjs`. `disponivel:
+false` no catálogo (mostra "Em breve" mesmo com PT/ES vendáveis) até o checkout EN funcionar —
+ver detalhe abaixo:
+- PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 49,99)
 - ES/USD: `https://pay.hotmart.com/K106596585A` (US$ 19)
 - **EN foi barrado pela Hotmart** (moderação reprovou por "non-compliance", motivo exato não
   informado — suspeita: a palavra "steroids" na descrição original, mesmo em contexto de
   negação, pode ter disparado filtro automático da política internacional, mais rígida que a
   brasileira pra categoria Saúde). Descrição revisada (sem essa palavra, com disclaimer padrão
-  FDA) pronta em `CADASTRO-HOTMART.md` seção 7 pra reenviar. Enquanto isso,
+  FDA) pronta em `CADASTRO-HOTMART.md` seção 7 pra reenviar. O e-book pago e o gratuito em
+  inglês também foram corrigidos (toda menção a "anabolic steroid(s)" virou "hormone(s)"/"banned
+  substance(s)", mesmo sentido, sem a palavra-gatilho). Enquanto isso,
   `produtos/suplementacao-inteligente/index-en.html` tem `linkCheckoutHotmart` de placeholder.
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram

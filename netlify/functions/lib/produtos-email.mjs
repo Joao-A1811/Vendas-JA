@@ -147,7 +147,7 @@ export const PRODUTOS = {
       tema: 'suplementar com método, sem desperdício e sem promessa milagrosa',
       dica: 'Antes de comprar qualquer suplemento novo, responda: eu já tentei resolver isso com comida, treino ou sono? Se a resposta for não, comida resolve mais barato e melhor do que qualquer pote.',
       precoDe: 'R$ 97,00',
-      precoPor: 'R$ 47,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
       nomeProduto: 'Smart Supplementation — Complete NextLevel Guide',

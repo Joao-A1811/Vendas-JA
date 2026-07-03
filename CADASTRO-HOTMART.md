@@ -226,9 +226,9 @@ Contenido educativo — no sustituye la evaluación médica, nutricional o de ed
 
 > ✅ **PT e ES já cadastrados e ao vivo na Hotmart (jul/2026).** Checkout PT/BRL:
 > `https://pay.hotmart.com/T106596501Y` — já colado em `produtos/suplementacao-inteligente/index.html`.
-> Checkout ES/USD: `https://pay.hotmart.com/K106596585A` — já colado em `index-es.html`. Preço de
-> exibição no site: PT R$97→R$47 (padrão, ainda não customizado como o Treino em Casa), EN/ES
-> $37→$19 (padrão).
+> Checkout ES/USD: `https://pay.hotmart.com/K106596585A` — já colado em `index-es.html`. **Preço
+> final definido pelo dono do projeto: R$ 49,99 (PT) e US$ 19,00 (EN/ES)** — já salvo nas 3
+> páginas do site, no e-book gratuito/CTA e em `netlify/functions/lib/produtos-email.mjs`.
 >
 > ❌ **EN foi barrado pela Hotmart** (moderação automática/manual reprovou por "non-compliance
 > with Terms of Use or General Responsible Use Policy", sem apontar o motivo exato). Causa mais
@@ -236,12 +236,17 @@ Contenido educativo — no sustituye la evaluación médica, nutricional o de ed
 > brasileira com produtos de suplementação — e a descrição EN original citava a palavra
 > "steroids" (mesmo no sentido de "isto NÃO é sobre esteroides"), o que pode ter disparado
 > moderação automática por palavra-chave. Descrição revisada abaixo, sem essa palavra e com
-> disclaimer no padrão FDA — **use esta versão ao reenviar o produto EN pra revisão**. Verifique
-> também: categoria igual à usada em PT/ES, e se a sales page em inglês (preenchida direto na
-> Hotmart, fora deste repositório) tem política de reembolso e dados de contato visíveis.
-> Enquanto não for aprovado, `produtos/suplementacao-inteligente/index-en.html` fica com
-> `linkCheckoutHotmart` de placeholder (`PASTE_PRODUCT_CODE`) e o produto continua com
-> `disponivel: false` no catálogo (ver `assets/produtos.js`).
+> disclaimer no padrão FDA — **use esta versão ao reenviar o produto EN pra revisão**. O próprio
+> **e-book pago e o e-book gratuito em inglês também foram corrigidos**: toda menção a "anabolic
+> steroid(s)" virou "hormone(s)"/"banned substance(s)", mantendo o mesmo sentido (o conteúdo
+> nunca recomendou essas substâncias — só evitamos a palavra que pode disparar filtro
+> automático). PT e ES não precisaram de ajuste, já que passaram na revisão da Hotmart sem
+> problema com "anabolizante(s)"/"esteroides anabolizantes". Verifique também: categoria igual à
+> usada em PT/ES, e se a sales page em inglês (preenchida direto na Hotmart, fora deste
+> repositório) tem política de reembolso e dados de contato visíveis. Enquanto não for aprovado,
+> `produtos/suplementacao-inteligente/index-en.html` fica com `linkCheckoutHotmart` de
+> placeholder (`PASTE_PRODUCT_CODE`) e o produto continua com `disponivel: false` no catálogo
+> (ver `assets/produtos.js`).
 
 **Nome (PT):** Suplementação Inteligente — Guia Completo NextLevel
 **Descrição (PT):**
