@@ -173,13 +173,14 @@ atualize a variável no Netlify e dispare novo deploy (variável só vale no dep
 
 ---
 
-## 4d. Meta Conversions API (CAPI) — ✅ configurada (jul/2026)
+## 4d. Meta Conversions API (CAPI) — ✅ configurada e testada (jul/2026)
 
 Reforço server-side do evento "Lead": além do Pixel do navegador, o servidor manda o
 mesmo evento por trás (`netlify/functions/lib/meta-capi.mjs`), deduplicado pelo mesmo
 `eventId`. Configurado com um usuário do sistema no Business Manager (`Conversions API
-System User`) com acesso total ao Pixel `NextLevel`, e a variável `META_ACCESS_TOKEN` no
-Netlify.
+System User`) com acesso total ao Pixel `NextLevel`, e as variáveis `META_ACCESS_TOKEN` e
+`META_TEST_EVENT_CODE` no Netlify. Teste confirmado no Gerenciador de Eventos → aba Test
+Events: evento "Lead" recebido do Servidor, status "Processado".
 
 **Pra testar com segurança** (sem contar como lead de verdade na conta de anúncios):
 1. Gerenciador de Eventos (business.facebook.com/events_manager) → seu pixel → aba
