@@ -65,23 +65,23 @@ moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/F106595630M` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/V106595694E` (US$ 19)
 
-**`suplementacao-inteligente` (jul/2026, 7º produto — "Coleção Projeto Verão") — PT e ES ao
-vivo, EN pendente.** Guia pago de 50 páginas + ebook gratuito (isca, 7 páginas) nos 3 idiomas,
+**`suplementacao-inteligente` (jul/2026, 7º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos
+3 idiomas.** Guia pago de 50 páginas + ebook gratuito (isca, 7 páginas) nos 3 idiomas,
 `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`. Ainda sem galeria "olhe por dentro"
 (nenhum preview gerado pra este produto). Preço final definido pelo dono do projeto: **R$ 49,99
-(PT) / US$ 19,00 (EN/ES)** — já salvo nas 3 páginas e em `produtos-email.mjs`. `disponivel:
-false` no catálogo (mostra "Em breve" mesmo com PT/ES vendáveis) até o checkout EN funcionar —
-ver detalhe abaixo:
+(PT) / US$ 19,00 (EN/ES)** — já salvo nas 3 páginas e em `produtos-email.mjs`. Checkout real nas
+3 moedas, `disponivel: true`:
 - PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/L106596626U` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/K106596585A` (US$ 19)
-- **EN foi barrado pela Hotmart** (moderação reprovou por "non-compliance", motivo exato não
-  informado — suspeita: a palavra "steroids" na descrição original, mesmo em contexto de
-  negação, pode ter disparado filtro automático da política internacional, mais rígida que a
-  brasileira pra categoria Saúde). Descrição revisada (sem essa palavra, com disclaimer padrão
-  FDA) pronta em `CADASTRO-HOTMART.md` seção 7 pra reenviar. O e-book pago e o gratuito em
-  inglês também foram corrigidos (toda menção a "anabolic steroid(s)" virou "hormone(s)"/"banned
-  substance(s)", mesmo sentido, sem a palavra-gatilho). Enquanto isso,
-  `produtos/suplementacao-inteligente/index-en.html` tem `linkCheckoutHotmart` de placeholder.
+
+O produto EN tinha sido barrado pela Hotmart num primeiro momento (moderação reprovou por
+"non-compliance", suspeita de a palavra "steroids" na descrição ter disparado filtro
+automático). O dono do projeto reenviou **a versão antiga (sem alteração) e ela foi aceita** —
+ou seja, a reprovação inicial não teve a ver com essa palavra especificamente (pode ter sido
+falha pontual de moderação, ou outro campo do cadastro). A descrição revisada e o e-book EN sem
+a palavra "steroids" continuam disponíveis em `CADASTRO-HOTMART.md` seção 7 como alternativa
+mais conservadora, mas não foram necessários desta vez.
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode

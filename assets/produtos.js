@@ -31,9 +31,8 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'suplementacao-inteligente',
-    // false até o checkout EN ser aprovado na Hotmart (rejeitado em jul/2026 —
-    // ver aviso em CADASTRO-HOTMART.md, seção 7). PT e ES já têm checkout real.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 7.
+    disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
     titulo: { pt: 'Suplementação Inteligente', en: 'Smart Supplementation', es: 'Suplementación Inteligente' },
     resumo: {
