@@ -23,7 +23,9 @@ function montar(slug, dados) {
   const l = links(slug);
   const resultado = {};
   for (const idioma of ['pt', 'en', 'es']) {
-    resultado[idioma] = { ...dados[idioma], ...PRECOS[idioma], ...l[idioma] };
+    // Ordem importa: PRECOS entra primeiro pra servir de padrão, e dados[idioma]
+    // pode sobrescrever precoDe/precoPor quando o produto tiver preço próprio.
+    resultado[idioma] = { ...PRECOS[idioma], ...dados[idioma], ...l[idioma] };
   }
   return resultado;
 }
@@ -116,6 +118,26 @@ export const PRODUTOS = {
       nomeProduto: 'Ebook Comunicación y Relaciones',
       tema: 'comunicación y relaciones sanas',
       dica: "En tu próxima conversación difícil, antes de responder, repite con tus palabras lo que la otra persona dijo ('entonces lo que te molesta es...'). Ese gesto simple desarma la pelea y demuestra que escuchaste de verdad.",
+    },
+  }),
+
+  'treino-em-casa': montar('treino-em-casa', {
+    pt: {
+      nomeProduto: 'Treino em Casa — Manual Completo NextLevel',
+      tema: 'treinar em casa com método, sem academia',
+      dica: 'Nos dias sem vontade nenhuma, prometa só 5 minutos de treino. Muitas vezes você acaba continuando — e quando não continua, ainda manteve o hábito vivo, que é o que mais importa no início.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Home Workout — Complete NextLevel Manual',
+      tema: 'training at home with method, no gym required',
+      dica: "On days when you have zero motivation, promise yourself just 5 minutes of training. Often you'll end up continuing — and when you don't, you still kept the habit alive, which matters most in the beginning.",
+    },
+    es: {
+      nomeProduto: 'Entrenamiento en Casa — Manual Completo NextLevel',
+      tema: 'entrenar en casa con método, sin gimnasio',
+      dica: 'En los días sin ninguna motivación, prométete solo 5 minutos de entrenamiento. Muchas veces terminas continuando — y cuando no lo haces, igual mantuviste el hábito vivo, que es lo más importante al principio.',
     },
   }),
 };
