@@ -42,29 +42,33 @@ As páginas de produto têm SEO/social prontos: favicon, Open Graph (imagem em
 `assets/og-image.png`), canonical + hreflang gerados por JS a partir da própria URL.
 As home pages têm as mesmas tags, estáticas.
 
-## Catálogo atual (todos ainda `disponivel: false` = "Em breve")
+## Catálogo atual
 
-`emagrecimento`, `ganho-de-massa`, `treino-em-casa` (Saúde) · `investimentos` (Finanças) ·
-`confianca-social`, `comunicacao-e-relacionamentos` (Relacionamentos)
+`emagrecimento`, `ganho-de-massa` (Saúde) · `investimentos` (Finanças) ·
+`confianca-social`, `comunicacao-e-relacionamentos` (Relacionamentos) — ainda
+`disponivel: false` ("Em breve"). **`treino-em-casa` (Saúde) já é `disponivel: true` —
+primeiro produto do catálogo à venda de verdade**, ver seção abaixo.
 
-As 15 páginas dos 5 primeiros produtos (5 × 3 idiomas) já estão com o `CONFIG` preenchido:
-headline, benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e `linkEbookGratis`
-apontando pro caminho convencionado dos PDFs. Falta em cada uma só o `linkCheckoutHotmart`
-real e o upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão vazios (`depoimentos: []`)
-e a seção fica oculta automaticamente — **só preencher com depoimentos reais e autorizados;
-inventar depoimento é vetado** (Meta Ads + CDC).
+As 15 páginas dos 5 produtos ainda "Em breve" (5 × 3 idiomas) já estão com o `CONFIG`
+preenchido: headline, benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e
+`linkEbookGratis` apontando pro caminho convencionado dos PDFs. Falta em cada uma só o
+`linkCheckoutHotmart` real e o upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão
+vazios (`depoimentos: []`) e a seção fica oculta automaticamente — **só preencher com
+depoimentos reais e autorizados; inventar depoimento é vetado** (Meta Ads + CDC).
 
-**`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão"):** único produto com
-tudo pronto nos 3 idiomas — CONFIG completo, e ebooks gratuitos (isca, 7 páginas cada) em
-`ebooks/arquivos/treino-em-casa-<pt|en|es>.pdf`. Checkout **BRL já ativo e testado**
-(`https://pay.hotmart.com/S106595121K`, preço R$ 49,99) em `produtos/treino-em-casa/index.html`.
-EN/ES ainda com `linkCheckoutHotmart` placeholder — aguardando o dono do projeto criar as
-ofertas em dólar na Hotmart. **O produto pago (manual completo de 49 páginas, 3 idiomas)
-NÃO fica no repositório** — foi entregue direto pro dono do projeto pra upload manual na
-Hotmart (ebook comercial, não pode ficar público no site), assim como as capas do produto
-(imagem estilo capa de ebook, 3 idiomas). `disponivel` continua `false` até as ofertas
-EN/ES ficarem prontas. Falta: checkout USD real (EN/ES), `disponivel: true`, e
-opcionalmente copy de anúncio em `anuncios/`.
+**`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
+idiomas (jul/2026).** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
+`ebooks/arquivos/treino-em-casa-<pt|en|es>.pdf`, galeria "olhe por dentro" com 5 páginas de
+amostra do manual em `assets/produtos/treino-em-casa/` (3 idiomas). Checkout real nas 3
+moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/S106595121K` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/F106595630M` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/V106595694E` (US$ 19)
+
+**O produto pago (manual completo de 49 páginas, 3 idiomas) NÃO fica no repositório** — foi
+entregue direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
+ficar público no site), assim como as capas do produto (imagem estilo capa de ebook, 3
+idiomas). Falta só, opcionalmente, copy de anúncio Meta Ads em `anuncios/`.
 
 ## Como fazer alterações comuns
 
