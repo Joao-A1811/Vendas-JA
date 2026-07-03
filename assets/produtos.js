@@ -64,5 +64,16 @@ window.PRODUTOS_SITE = [
       en: 'Clear, empathetic communication for relationships that last — in love, family and work.',
       es: 'Comunicación clara y empática para relaciones que duran — en el amor, la familia y el trabajo.'
     }
+  },
+  {
+    slug: 'treino-em-casa',
+    disponivel: false,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Treino em Casa', en: 'Home Workout', es: 'Entrenamiento en Casa' },
+    resumo: {
+      pt: 'Treinos por área muscular, cronograma de 30 dias e dieta de apoio — sem academia, sem equipamento caro.',
+      en: 'Workouts by muscle group, a 30-day schedule and supportive nutrition — no gym, no expensive equipment.',
+      es: 'Entrenamientos por grupo muscular, cronograma de 30 días y alimentación de apoyo — sin gimnasio, sin equipo caro.'
+    }
   }
 ];

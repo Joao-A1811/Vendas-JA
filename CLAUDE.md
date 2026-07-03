@@ -44,15 +44,24 @@ As home pages têm as mesmas tags, estáticas.
 
 ## Catálogo atual (todos ainda `disponivel: false` = "Em breve")
 
-`emagrecimento`, `ganho-de-massa` (Saúde) · `investimentos` (Finanças) ·
+`emagrecimento`, `ganho-de-massa`, `treino-em-casa` (Saúde) · `investimentos` (Finanças) ·
 `confianca-social`, `comunicacao-e-relacionamentos` (Relacionamentos)
 
-As 15 páginas de produto (5 × 3 idiomas) já estão com o `CONFIG` preenchido: headline,
-benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e `linkEbookGratis` apontando
-pro caminho convencionado dos PDFs. Falta em cada uma só o `linkCheckoutHotmart` real e o
-upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão vazios (`depoimentos: []`) e a
-seção fica oculta automaticamente — **só preencher com depoimentos reais e autorizados;
+As 15 páginas dos 5 primeiros produtos (5 × 3 idiomas) já estão com o `CONFIG` preenchido:
+headline, benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e `linkEbookGratis`
+apontando pro caminho convencionado dos PDFs. Falta em cada uma só o `linkCheckoutHotmart`
+real e o upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão vazios (`depoimentos: []`)
+e a seção fica oculta automaticamente — **só preencher com depoimentos reais e autorizados;
 inventar depoimento é vetado** (Meta Ads + CDC).
+
+**`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão"):** único até agora com
+CONFIG preenchido só em PT completo (EN/ES têm CONFIG traduzido mas sem ebook gratuito
+próprio ainda — `linkEbookGratis` fica vazio nesses dois, cai no fallback "confira seu
+e-mail"). Ebook gratuito PT já está em `ebooks/arquivos/treino-em-casa-pt.pdf` (isca curta,
+7 páginas). **O produto pago (manual completo de 49 páginas) NÃO fica no repositório** —
+foi entregue direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não
+pode ficar público no site). Falta: `linkCheckoutHotmart` real, ebook gratuito em EN/ES, e
+opcionalmente copy de anúncio em `anuncios/`.
 
 ## Como fazer alterações comuns
 
