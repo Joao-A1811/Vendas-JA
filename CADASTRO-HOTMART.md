@@ -181,6 +181,11 @@ acompañamiento psicológico.
 
 ## 6. Treino em Casa — categoria: Saúde e esportes
 
+> ✅ **Já cadastrado e ao vivo na Hotmart (jul/2026).** Preço real definido: **R$ 49,99**
+> (diferente do padrão R$ 47,00 da tabela acima). Checkout BRL:
+> `https://pay.hotmart.com/S106595121K` — já colado em `produtos/treino-em-casa/index.html`.
+> Falta só configurar as ofertas em outras moedas (EN/ES) quando for a hora.
+
 **Nome (PT):** Treino em Casa — Manual Completo NextLevel
 **Descrição (PT):**
 Manual premium de 49 páginas pra treinar em casa com método, sem academia e sem equipamento
