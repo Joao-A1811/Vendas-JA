@@ -222,6 +222,53 @@ Contenido educativo — no sustituye la evaluación médica, nutricional o de ed
 
 ---
 
+## 7. Suplementação Inteligente — categoria: Saúde e esportes
+
+> Guia pago (50 páginas) + guias gratuitos (isca, 7 páginas) já gerados nos 3 idiomas e
+> entregues fora do repositório (ver aviso no fim deste bloco). Falta: cadastrar o produto na
+> Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda e criar `produtos/suplementacao-inteligente/`
+> no site (3 idiomas) — segue o mesmo padrão do Treino em Casa.
+
+**Nome (PT):** Suplementação Inteligente — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 50 páginas pra suplementar com método, sem desperdício e sem promessa
+milagrosa. 10 módulos completos: como ler rótulo e evitar marketing enganoso, whey/caseína/
+proteína vegetal/albumina, creatina com evidência e bom senso, cafeína e pré-treino com
+responsabilidade, micronutrientes e ômega-3, o que costuma não valer o dinheiro, estratégias
+por objetivo (emagrecimento, hipertrofia, desempenho e rotina corrida), plano prático de
+compras e orçamento, e planners de acompanhamento com diário de sinais de segurança. E-book
+digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo 100% educativo — sem
+anabolizantes, sem prescrição individual, sem substituir orientação médica ou nutricional.
+
+**Name (EN):** Smart Supplementation — Complete NextLevel Guide
+**Description (EN):**
+Premium 50-page guide to supplement with method, no waste and no miracle promises. 10 complete
+modules: how to read labels and avoid misleading marketing, whey/casein/plant protein/albumin,
+creatine with evidence and common sense, responsible caffeine and pre-workout use,
+micronutrients and omega-3, what usually isn't worth the money, strategies by goal (weight
+loss, muscle gain, performance and busy routines), a practical shopping and budget plan, and
+tracking planners with a safety signs journal. Digital ebook, instant access, 7-day
+unconditional guarantee. 100% educational content — no anabolic steroids, no individual
+prescriptions, not a substitute for medical or nutritional guidance.
+
+**Nombre (ES):** Suplementación Inteligente — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 50 páginas para suplementar con método, sin desperdicio y sin promesas
+milagrosas. 10 módulos completos: cómo leer la etiqueta y evitar el marketing engañoso, whey/
+caseína/proteína vegetal/albúmina, creatina con evidencia y sentido común, cafeína y
+pre-entreno con responsabilidad, micronutrientes y omega-3, lo que suele no valer el dinero,
+estrategias por objetivo (adelgazamiento, hipertrofia, rendimiento y rutina apretada), un plan
+práctico de compras y presupuesto, y planners de seguimiento con un diario de señales de
+seguridad. Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido 100%
+educativo — sin anabolizantes, sin prescripción individual, no sustituye la orientación médica
+o nutricional.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
