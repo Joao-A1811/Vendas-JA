@@ -54,13 +54,16 @@ real e o upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão vazios (`depo
 e a seção fica oculta automaticamente — **só preencher com depoimentos reais e autorizados;
 inventar depoimento é vetado** (Meta Ads + CDC).
 
-**`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão"):** único até agora com
-CONFIG preenchido só em PT completo (EN/ES têm CONFIG traduzido mas sem ebook gratuito
-próprio ainda — `linkEbookGratis` fica vazio nesses dois, cai no fallback "confira seu
-e-mail"). Ebook gratuito PT já está em `ebooks/arquivos/treino-em-casa-pt.pdf` (isca curta,
-7 páginas). **O produto pago (manual completo de 49 páginas) NÃO fica no repositório** —
-foi entregue direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não
-pode ficar público no site). Falta: `linkCheckoutHotmart` real, ebook gratuito em EN/ES, e
+**`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão"):** único produto com
+tudo pronto nos 3 idiomas — CONFIG completo, e ebooks gratuitos (isca, 7 páginas cada) em
+`ebooks/arquivos/treino-em-casa-<pt|en|es>.pdf`. Checkout **BRL já ativo e testado**
+(`https://pay.hotmart.com/S106595121K`, preço R$ 49,99) em `produtos/treino-em-casa/index.html`.
+EN/ES ainda com `linkCheckoutHotmart` placeholder — aguardando o dono do projeto criar as
+ofertas em dólar na Hotmart. **O produto pago (manual completo de 49 páginas, 3 idiomas)
+NÃO fica no repositório** — foi entregue direto pro dono do projeto pra upload manual na
+Hotmart (ebook comercial, não pode ficar público no site), assim como as capas do produto
+(imagem estilo capa de ebook, 3 idiomas). `disponivel` continua `false` até as ofertas
+EN/ES ficarem prontas. Falta: checkout USD real (EN/ES), `disponivel: true`, e
 opcionalmente copy de anúncio em `anuncios/`.
 
 ## Como fazer alterações comuns
