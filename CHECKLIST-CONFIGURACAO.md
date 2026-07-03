@@ -164,10 +164,34 @@ CAN-SPAM Act pra e-mail comercial). O que resta é só a reputação do domínio
 firmar com o tempo (Outlook demora mais que o Gmail) — detalhes em
 `emails/LEIA-ME-BREVO.md`.
 
+A mesma página também confere a **Meta Conversions API** (ver seção abaixo).
+
 **Página de diagnóstico** (testa a cadeia inteira e explica o que estiver faltando):
 `https://nextlevelbr.app.br/.netlify/functions/diagnostico`
 — use sempre que suspeitar que os e-mails pararam. Se um dia trocar a chave no Brevo,
 atualize a variável no Netlify e dispare novo deploy (variável só vale no deploy seguinte).
+
+---
+
+## 4d. Meta Conversions API (CAPI) — ✅ configurada (jul/2026)
+
+Reforço server-side do evento "Lead": além do Pixel do navegador, o servidor manda o
+mesmo evento por trás (`netlify/functions/lib/meta-capi.mjs`), deduplicado pelo mesmo
+`eventId`. Configurado com um usuário do sistema no Business Manager (`Conversions API
+System User`) com acesso total ao Pixel `NextLevel`, e a variável `META_ACCESS_TOKEN` no
+Netlify.
+
+**Pra testar com segurança** (sem contar como lead de verdade na conta de anúncios):
+1. Gerenciador de Eventos (business.facebook.com/events_manager) → seu pixel → aba
+   **Test Events** → copie o código de teste mostrado ali.
+2. Netlify → Environment variables → criar **`META_TEST_EVENT_CODE`** com esse código →
+   Trigger deploy.
+3. Abra a página de diagnóstico (seção 4c acima) — com as duas variáveis configuradas,
+   aparece o botão **"Enviar evento de teste pra Conversions API"**. Clique e confira se
+   o evento aparece na aba Test Events em alguns segundos.
+
+Sem `META_ACCESS_TOKEN`, essa parte fica desligada e o site funciona normal — só o Pixel
+do navegador continua sozinho, sem o reforço server-side.
 
 ---
 

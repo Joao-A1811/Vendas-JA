@@ -18,7 +18,7 @@ function hash(valor) {
   return crypto.createHash('sha256').update(String(valor).trim().toLowerCase()).digest('hex');
 }
 
-export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAgent, fbp, fbc, eventId }) {
+export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAgent, fbp, fbc, eventId, testEventCode }) {
   const token = process.env.META_ACCESS_TOKEN;
   if (!token) return;
 
@@ -43,6 +43,9 @@ export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAge
       user_data: userData,
     }],
   };
+  // test_event_code (pego em Events Manager → Test Events): faz o evento aparecer
+  // só no painel de teste do Meta, sem contar nas métricas reais da conta de anúncios.
+  if (testEventCode) corpo.test_event_code = testEventCode;
 
   const resposta = await fetch(`${API}?access_token=${encodeURIComponent(token)}`, {
     method: 'POST',
@@ -53,4 +56,23 @@ export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAge
     const texto = await resposta.text();
     throw new Error(`Meta CAPI ${resposta.status}: ${texto}`);
   }
+}
+
+// Confere se o token consegue ler os dados do próprio Pixel — valida a chave e
+// o acesso, sem mandar nenhum evento (seguro pra rodar sempre na página de
+// diagnóstico, mesmo sem test_event_code configurado).
+export async function verificarToken() {
+  const token = process.env.META_ACCESS_TOKEN;
+  if (!token) return { ok: false, motivo: 'sem-token' };
+
+  const resposta = await fetch(`https://graph.facebook.com/v20.0/${PIXEL_ID}?fields=id,name&access_token=${encodeURIComponent(token)}`);
+  const texto = await resposta.text();
+  let dados = {};
+  try { dados = texto ? JSON.parse(texto) : {}; } catch { dados = { bruto: texto }; }
+  if (!resposta.ok) {
+    const erro = new Error(dados.error?.message || dados.bruto || `HTTP ${resposta.status}`);
+    erro.status = resposta.status;
+    throw erro;
+  }
+  return { ok: true, id: dados.id, nome: dados.name };
 }
