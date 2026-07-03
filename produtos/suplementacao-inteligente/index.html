@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -268,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">O que você vai conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Dê uma olhada por dentro</h3>
+    <p class="lead-sec reveal">Amostra real do guia completo — capa, módulo, tabelas e planners</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/suplementacao-inteligente/preview-pt-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/suplementacao-inteligente/preview-pt-capa.jpg" alt="Capa do guia Suplementação Inteligente" loading="lazy"></a>
+      <a href="/assets/produtos/suplementacao-inteligente/preview-pt-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/suplementacao-inteligente/preview-pt-modulo.jpg" alt="Abertura de módulo do guia" loading="lazy"></a>
+      <a href="/assets/produtos/suplementacao-inteligente/preview-pt-seguranca.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/suplementacao-inteligente/preview-pt-seguranca.jpg" alt="Página sobre segurança e sinais de alerta" loading="lazy"></a>
+      <a href="/assets/produtos/suplementacao-inteligente/preview-pt-checklist.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/suplementacao-inteligente/preview-pt-checklist.jpg" alt="Checklist final de compra" loading="lazy"></a>
+      <a href="/assets/produtos/suplementacao-inteligente/preview-pt-planner.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/suplementacao-inteligente/preview-pt-planner.jpg" alt="Módulo de planners e continuidade" loading="lazy"></a>
+    </div>
   </div>
 </section>
 
