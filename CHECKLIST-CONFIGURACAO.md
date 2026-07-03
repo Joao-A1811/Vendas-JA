@@ -155,6 +155,15 @@ e-mail 2 após 2 dias, e-mail 3 após 4 dias, com descadastro LGPD embutido. A c
 `BREVO_API_KEY` já está nas variáveis de ambiente do Netlify e o envio foi testado com
 sucesso (e-mail de teste entregue).
 
+**Entregabilidade (jul/2026): domínio autenticado + remetente próprio.** O domínio
+`nextlevelbr.app.br` está autenticado no Brevo (DKIM 1/2, DMARC, brevo-code no DNS do
+Registro.br) e o remetente passou a ser `contato@nextlevelbr.app.br` (criado via
+ImprovMX, `EMAIL_REMETENTE` configurado no Netlify) em vez de um e-mail `@outlook.com`.
+Todo e-mail também tem o endereço postal físico da empresa no rodapé (exigência do
+CAN-SPAM Act pra e-mail comercial). O que resta é só a reputação do domínio novo se
+firmar com o tempo (Outlook demora mais que o Gmail) — detalhes em
+`emails/LEIA-ME-BREVO.md`.
+
 **Página de diagnóstico** (testa a cadeia inteira e explica o que estiver faltando):
 `https://nextlevelbr.app.br/.netlify/functions/diagnostico`
 — use sempre que suspeitar que os e-mails pararam. Se um dia trocar a chave no Brevo,

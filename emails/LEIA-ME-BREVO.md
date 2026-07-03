@@ -58,30 +58,38 @@ O que **já está embutido no código** (nada a fazer):
 - Versão em texto puro junto do HTML (multipart) — e-mails só-HTML pontuam pior;
 - Cabeçalho de **descadastro de 1 clique** (RFC 8058), exigido pelo Gmail/Outlook pra
   remetentes em volume — habilita o botão nativo "Cancelar inscrição";
-- `Reply-To` configurado e assuntos sem emoji.
+- `Reply-To` configurado e assuntos sem emoji;
+- **Endereço postal físico** no rodapé de todo e-mail (exigência legal do CAN-SPAM Act
+  pra e-mail comercial nos EUA, além de ser sinal de confiança pros filtros de spam).
 
-O que **depende de configuração manual** (em ordem de impacto):
+✅ **Feito (jul/2026):**
+1. ~~Autenticar o domínio no Brevo~~ — `nextlevelbr.app.br` autenticado (DKIM 1 e 2,
+   DMARC e brevo-code todos cadastrados e verificados no Registro.br).
+2. ~~Trocar o remetente pra um e-mail do domínio próprio~~ — `contato@nextlevelbr.app.br`
+   criado via ImprovMX (MX + SPF no Registro.br), verificado como remetente no Brevo e
+   `EMAIL_REMETENTE` configurado no Netlify. Confirmado verde na página de diagnóstico.
 
-1. **Autenticar o domínio no Brevo** — os registros DNS (brevo-code, DKIM 1 e 2, DMARC)
-   já foram cadastrados no Registro.br; falta só conferir em **Brevo → Settings →
-   Senders, Domains & IPs → aba Domains** se `nextlevelbr.app.br` está **"Autenticado"**
-   (se não, clicar em "Autenticar" de novo — DNS pode ter demorado a propagar).
-2. **Trocar o remetente pra um e-mail do domínio próprio** — este é o maior motivo de
-   spam hoje: enviar como `@outlook.com` por uma plataforma terceira falha na checagem
-   DMARC da Microsoft. Correção:
-   a. Criar `contato@nextlevelbr.app.br` com redirecionamento gratuito no
-      **improvmx.com** (2 registros MX no Registro.br — não conflitam com nada já feito);
-   b. Brevo → Settings → Senders → **Add a sender** com esse endereço → o link de
-      confirmação chega redirecionado no Outlook → clicar;
-   c. Netlify → Environment variables → criar **`EMAIL_REMETENTE`** =
-      `contato@nextlevelbr.app.br` → **Trigger deploy**.
-3. **Aquecer a reputação**: nos primeiros testes, se cair no spam, marcar como
-   **"Não é spam"** — isso treina o Gmail/Outlook. E começar com volume baixo
-   (o que já vai acontecer naturalmente).
+O que ainda **depende só do tempo** (não tem configuração que acelere isso):
 
-> Mesmo com tudo certo, nenhum remetente do mundo garante 100% de caixa de entrada —
-> mas os itens 1 e 2 tiram o envio da categoria "quase certamente spam" e o colocam na
-> categoria "remetente legítimo autenticado".
+- **Aquecer a reputação**: com domínio novo, é normal os primeiros e-mails ainda caírem
+  no spam (a Microsoft/Outlook é a mais lenta a confiar em domínio novo, mesmo com tudo
+  autenticado certo). Nos primeiros testes, marque como **"Não é spam"** no Outlook/Gmail
+  — isso treina o filtro. Volume baixo no início ajuda (o que já acontece naturalmente).
+
+> Mesmo com tudo certo, nenhum remetente do mundo garante 100% de caixa de entrada — mas
+> com autenticação + remetente próprio + endereço físico, o envio sai da categoria "quase
+> certamente spam" e entra na categoria "remetente legítimo autenticado", que é o que dá
+> pra controlar por configuração.
+
+## Melhorias futuras opcionais (não bloqueiam nada)
+
+- **Google Postmaster Tools** e **Microsoft SNDS**: painéis gratuitos que mostram a
+  reputação do domínio direto na fonte — cadastro manual, só pra monitorar.
+- **DMARC mais rígido**: hoje está em `p=none` (só monitora). Depois de umas semanas sem
+  problema, dá pra subir pra `p=quarantine` no registro `_dmarc` do Registro.br.
+- **Teste de conteúdo**: mail-tester.com dá uma nota de spam-score do conteúdo em si.
+- **BIMI** (logo ao lado do e-mail no Gmail): exige DMARC mais rígido + certificado
+  pago — futuro, não é prioridade agora.
 
 ## Configurações opcionais (variáveis de ambiente no Netlify)
 

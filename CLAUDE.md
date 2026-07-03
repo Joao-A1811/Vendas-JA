@@ -25,7 +25,7 @@ a cada push na `main`.
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
 | `anuncios/` | Templates de copy para Meta Ads (BR e internacional), com regras por nicho |
-| `leads/painel-leads.html` | Painel de leads (login Google) com exportação CSV |
+| `leads/painel-leads.html` | Painel de leads (login e-mail/senha) com exportação CSV |
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
 | `emails/` | Conteúdo dos e-mails da sequência (3 × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
@@ -75,6 +75,16 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   e os deploys pararam **silenciosamente** ("Skipped due to account credit usage exceeded" na
   aba Deploys). Créditos foram comprados. Se um push não aparecer no site, conferir isso
   ANTES de caçar bug no código.
+- **E-mail (Brevo) funcionando de ponta a ponta**, incluindo entregabilidade: domínio
+  `nextlevelbr.app.br` autenticado no Brevo (DKIM 1/2, DMARC, brevo-code no DNS do
+  Registro.br), remetente próprio `contato@nextlevelbr.app.br` (via ImprovMX + MX/SPF no
+  DNS, `EMAIL_REMETENTE` setado no Netlify) em vez de `@outlook.com`, e endereço postal
+  físico no rodapé de todo e-mail (CAN-SPAM). Diagnóstico em
+  `/.netlify/functions/diagnostico`. Se mudar preço/nome de produto nas páginas, atualizar
+  também `netlify/functions/lib/produtos-email.mjs`. O que resta (não é bug, é normal pra
+  domínio novo): reputação ainda "esquentando" — pode cair no spam do Outlook em especial
+  por mais um tempo; marcar "Não é spam" nos primeiros testes ajuda. Detalhes e melhorias
+  futuras opcionais em `emails/LEIA-ME-BREVO.md`.
 
 ## O que ainda falta (estado em julho/2026)
 
@@ -82,13 +92,6 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   em `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
   `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
   para `true` no `assets/produtos.js`. **Nenhum produto foi escolhido pra sair primeiro.**
-- ~~E-mail (Brevo)~~ ✅ **funcionando** (jul/2026): chave configurada no Netlify, envio
-  testado. Diagnóstico em `/.netlify/functions/diagnostico`. Se mudar preço/nome de produto
-  nas páginas, atualizar também `netlify/functions/lib/produtos-email.mjs`.
-- **Remetente no domínio próprio (anti-spam):** os envios saem como `@outlook.com` e por
-  isso tendem a cair no spam. Correção: criar `contato@nextlevelbr.app.br` (ImprovMX),
-  verificar no Brevo e setar env var `EMAIL_REMETENTE` no Netlify — passo a passo na seção
-  "Entregabilidade" do `emails/LEIA-ME-BREVO.md`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`).
 
