@@ -92,8 +92,20 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros dois produtos.
 
 - **Preço, headline, benefícios, FAQ, checkout Hotmart de um produto:** editar o `CONFIG` no
   topo de `produtos/<slug>/index*.html` (lembrar dos 3 idiomas).
-- **Produto novo:** copiar `landing-page/` → `produtos/<slug>/`, preencher os `CONFIG`,
-  adicionar o bloco em `assets/produtos.js`. Quando pronto pra vender, `disponivel: true`.
+- **Produto novo — checklist completo (por decisão do dono do projeto, jul/2026: já fazer tudo
+  isso ao criar cada novo produto, sem esperar pedido separado):**
+  1. Gerar o e-book pago + gratuito (PT/EN/ES) e a capa, a partir do rascunho enviado.
+  2. **Gerar a galeria "olhe por dentro"**: 5 screenshots de páginas reais do PDF final por
+     idioma (capa + 4 páginas que mostrem bem o conteúdo — variar entre divisória de módulo,
+     página com tabela/callout, checklist, etc.), salvar em
+     `assets/produtos/<slug>/preview-<pt|en|es>-<nome>.jpg` e já incluir a seção "Dê uma olhada
+     por dentro" (`.preview-galeria`) nas 3 páginas do produto — não deixar pra depois.
+  3. Copiar `landing-page/` → `produtos/<slug>/`, preencher os `CONFIG`, adicionar o bloco em
+     `assets/produtos.js` e o produto em `netlify/functions/lib/produtos-email.mjs`.
+  4. Cadastrar na Hotmart (textos em `CADASTRO-HOTMART.md`), colar os `linkCheckoutHotmart`
+     reais. Só trocar `disponivel` pra `true` quando TODOS os idiomas tiverem checkout
+     funcionando.
+  5. Adicionar entrada em `sitemap.xml`.
 - **Publicar:** commit + push na `main` — o Netlify atualiza sozinho, sem deploy manual.
 
 ## Infraestrutura já concluída (julho/2026) — não refazer
