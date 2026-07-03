@@ -17,6 +17,10 @@ O conteúdo dos e-mails vem de `emails/<idioma>/*.html` (compilados em
 `netlify/functions/lib/emails-conteudo.mjs`) e os dados de cada produto (tema, dica,
 preço, links) de `netlify/functions/lib/produtos-email.mjs`.
 
+> ✅ **Status (jul/2026): configurado e testado** — chave no Netlify, e-mail de teste
+> entregue. Página de diagnóstico (testa tudo e explica o que faltar):
+> `https://nextlevelbr.app.br/.netlify/functions/diagnostico`
+
 ## Configuração única (2 minutos) — a ÚNICA coisa manual
 
 1. **Gerar a chave da API no Brevo:** app.brevo.com → menu do perfil (canto superior

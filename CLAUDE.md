@@ -82,9 +82,8 @@ inventar depoimento é vetado** (Meta Ads + CDC).
   em `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
   `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
   para `true` no `assets/produtos.js`. **Nenhum produto foi escolhido pra sair primeiro.**
-- **E-mail (Brevo):** a automação inteira está em código (`netlify/functions/`) — falta SÓ
-  gerar a chave da API no Brevo e colar como env var `BREVO_API_KEY` no Netlify + redeploy
-  (passo a passo na seção 4c do `CHECKLIST-CONFIGURACAO.md`). Se mudar preço/nome de produto
+- ~~E-mail (Brevo)~~ ✅ **funcionando** (jul/2026): chave configurada no Netlify, envio
+  testado. Diagnóstico em `/.netlify/functions/diagnostico`. Se mudar preço/nome de produto
   nas páginas, atualizar também `netlify/functions/lib/produtos-email.mjs`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`).

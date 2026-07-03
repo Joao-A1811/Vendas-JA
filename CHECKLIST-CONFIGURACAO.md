@@ -148,21 +148,17 @@ qualquer domínio que sirva o site.
 
 ---
 
-## 4c. Sequência de e-mails automática (fazer uma vez) — ⏳ falta só a chave da API
+## 4c. Sequência de e-mails automática — ✅ configurada e testada (jul/2026)
 
-A automação inteira já está em código (`netlify/functions/`): e-mail 1 na hora do cadastro,
-e-mail 2 após 2 dias, e-mail 3 após 4 dias, com descadastro LGPD embutido. Falta apenas:
+A automação inteira está em código (`netlify/functions/`): e-mail 1 na hora do cadastro,
+e-mail 2 após 2 dias, e-mail 3 após 4 dias, com descadastro LGPD embutido. A chave
+`BREVO_API_KEY` já está nas variáveis de ambiente do Netlify e o envio foi testado com
+sucesso (e-mail de teste entregue).
 
-1. **Gerar a chave da API no Brevo:** app.brevo.com → menu do perfil (canto superior direito)
-   → **SMTP & API** → aba **API Keys** → **Generate a new API key** → nomear (ex: `netlify`)
-   → copiar a chave `xkeysib-...` (ela só aparece uma vez).
-2. **Colar no Netlify:** app.netlify.com → site vendas-ja → **Site configuration →
-   Environment variables → Add a variable** → Key `BREVO_API_KEY`, Value = a chave → salvar.
-3. **Republicar:** Deploys → **Trigger deploy → Deploy project**.
-4. **Testar:** cadastrar um e-mail seu numa página de produto → o e-mail "Seu material
-   chegou!" deve chegar em instantes (olhar o spam na primeira vez).
-
-Sem a chave, o site funciona normal — só não envia os e-mails automáticos.
+**Página de diagnóstico** (testa a cadeia inteira e explica o que estiver faltando):
+`https://nextlevelbr.app.br/.netlify/functions/diagnostico`
+— use sempre que suspeitar que os e-mails pararam. Se um dia trocar a chave no Brevo,
+atualize a variável no Netlify e dispare novo deploy (variável só vale no deploy seguinte).
 
 ---
 
