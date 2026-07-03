@@ -85,6 +85,10 @@ inventar depoimento é vetado** (Meta Ads + CDC).
 - ~~E-mail (Brevo)~~ ✅ **funcionando** (jul/2026): chave configurada no Netlify, envio
   testado. Diagnóstico em `/.netlify/functions/diagnostico`. Se mudar preço/nome de produto
   nas páginas, atualizar também `netlify/functions/lib/produtos-email.mjs`.
+- **Remetente no domínio próprio (anti-spam):** os envios saem como `@outlook.com` e por
+  isso tendem a cair no spam. Correção: criar `contato@nextlevelbr.app.br` (ImprovMX),
+  verificar no Brevo e setar env var `EMAIL_REMETENTE` no Netlify — passo a passo na seção
+  "Entregabilidade" do `emails/LEIA-ME-BREVO.md`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`).
 

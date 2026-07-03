@@ -129,16 +129,41 @@ export function montarEmail(n, { email, nome, slug, idioma }) {
   html = html.replace(/\[\[DICA_PRINCIPAL[^\]]*\]\]/g, produto.dica);
   // Se o nome vier vazio, limpa a saudação ("Olá, !" → "Olá!")
   html = html.replace(/,\s+!/g, '!').replace(/Hi\s+,/g, 'Hi,');
-  return { assunto: modelo.assunto, html };
+  return { assunto: modelo.assunto, html, linkDescadastro };
+}
+
+// Versão em texto puro do e-mail: mensagens só-HTML pontuam pior nos
+// filtros de spam; enviar as duas versões (multipart) melhora a entrega.
+export function textoSimples(html) {
+  return html
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|tr|h1|h2|h3|table)>/gi, '\n')
+    .replace(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, '$2 ( $1 )')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ ?\n ?/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 export async function enviarEmailSequencia(n, contato) {
-  const { assunto, html } = montarEmail(n, contato);
+  const { assunto, html, linkDescadastro } = montarEmail(n, contato);
   await api('/smtp/email', 'POST', {
     sender: REMETENTE,
+    replyTo: REMETENTE,
     to: [{ email: contato.email, name: contato.nome || undefined }],
     subject: assunto,
     htmlContent: html,
+    textContent: textoSimples(html),
+    // Descadastro de 1 clique (RFC 8058): Gmail/Outlook exigem de quem envia
+    // em volume e mostram o botão nativo "Cancelar inscrição" — melhora a
+    // entrega e evita que a pessoa marque como spam por não achar a saída.
+    headers: {
+      'List-Unsubscribe': `<${linkDescadastro}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
     tags: [`sequencia-${n}`, contato.slug],
   });
 }

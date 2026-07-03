@@ -64,6 +64,14 @@ export default async (req) => {
       itens.push(['aviso', `Não consegui conferir os remetentes: ${e.message}`]);
     }
 
+    // Entregabilidade: remetente em provedor gratuito é o maior motivo de
+    // cair no spam quando o envio passa por uma plataforma como o Brevo.
+    const FREEMAIL = ['outlook.com', 'hotmail.com', 'live.com', 'gmail.com', 'yahoo.com', 'yahoo.com.br', 'icloud.com', 'zohomail.com', 'bol.com.br', 'uol.com.br'];
+    const dominioRemetente = REMETENTE.email.split('@')[1]?.toLowerCase() || '';
+    if (FREEMAIL.includes(dominioRemetente)) {
+      itens.push(['aviso', `O remetente atual usa um provedor gratuito (<strong>@${dominioRemetente}</strong>) — Gmail e Outlook tendem a mandar esses envios pro spam. Pra cair na caixa de entrada: 1) confirme que o domínio <strong>nextlevelbr.app.br</strong> está "Autenticado" no Brevo (Settings → Senders, Domains &amp; IPs → Domains → Autenticar); 2) crie <strong>contato@nextlevelbr.app.br</strong> com redirecionamento gratuito no improvmx.com; 3) verifique esse endereço como remetente no Brevo; 4) no Netlify, crie a variável <strong>EMAIL_REMETENTE</strong> com esse endereço e dispare novo deploy. Passo a passo completo em emails/LEIA-ME-BREVO.md.`]);
+    }
+
     try {
       const listaId = await garantirInfra();
       itens.push(['ok', `Lista <strong>sequencia-automatica</strong> pronta no Brevo (id ${listaId}), atributos criados.`]);

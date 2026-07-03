@@ -45,8 +45,12 @@ export default async (req) => {
   const idioma = ['pt', 'en', 'es'].includes(l) ? l : 'pt';
   const t = TEXTOS[idioma];
   const cabecalho = { 'content-type': 'text/html; charset=utf-8' };
+  // POST = descadastro de 1 clique (RFC 8058), disparado pelo botão nativo
+  // do Gmail/Outlook sem abrir página — a resposta é só um 200 sem HTML.
+  const umClique = req.method === 'POST';
 
   if (!email || token !== tokenDescadastro(email)) {
+    if (umClique) return new Response('invalid', { status: 400 });
     return new Response(pagina(t.erro[0], t.erro.slice(1), idioma), { status: 400, headers: cabecalho });
   }
 
@@ -57,5 +61,6 @@ export default async (req) => {
   } catch (e) {
     console.error('descadastrar:', e.message);
   }
+  if (umClique) return new Response('ok', { status: 200 });
   return new Response(pagina(t.ok[0], t.ok.slice(1), idioma), { headers: cabecalho });
 };

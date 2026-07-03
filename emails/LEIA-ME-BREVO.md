@@ -52,6 +52,37 @@ Sem a chave, o site funciona 100% normal — só não envia os e-mails automáti
 2. Peça pro Claude regenerar `netlify/functions/lib/emails-conteudo.mjs` (ou rode o
    trecho Python do histórico) e faça commit + push.
 
+## Entregabilidade: por que cai em spam e como ir pra caixa de entrada
+
+O que **já está embutido no código** (nada a fazer):
+- Versão em texto puro junto do HTML (multipart) — e-mails só-HTML pontuam pior;
+- Cabeçalho de **descadastro de 1 clique** (RFC 8058), exigido pelo Gmail/Outlook pra
+  remetentes em volume — habilita o botão nativo "Cancelar inscrição";
+- `Reply-To` configurado e assuntos sem emoji.
+
+O que **depende de configuração manual** (em ordem de impacto):
+
+1. **Autenticar o domínio no Brevo** — os registros DNS (brevo-code, DKIM 1 e 2, DMARC)
+   já foram cadastrados no Registro.br; falta só conferir em **Brevo → Settings →
+   Senders, Domains & IPs → aba Domains** se `nextlevelbr.app.br` está **"Autenticado"**
+   (se não, clicar em "Autenticar" de novo — DNS pode ter demorado a propagar).
+2. **Trocar o remetente pra um e-mail do domínio próprio** — este é o maior motivo de
+   spam hoje: enviar como `@outlook.com` por uma plataforma terceira falha na checagem
+   DMARC da Microsoft. Correção:
+   a. Criar `contato@nextlevelbr.app.br` com redirecionamento gratuito no
+      **improvmx.com** (2 registros MX no Registro.br — não conflitam com nada já feito);
+   b. Brevo → Settings → Senders → **Add a sender** com esse endereço → o link de
+      confirmação chega redirecionado no Outlook → clicar;
+   c. Netlify → Environment variables → criar **`EMAIL_REMETENTE`** =
+      `contato@nextlevelbr.app.br` → **Trigger deploy**.
+3. **Aquecer a reputação**: nos primeiros testes, se cair no spam, marcar como
+   **"Não é spam"** — isso treina o Gmail/Outlook. E começar com volume baixo
+   (o que já vai acontecer naturalmente).
+
+> Mesmo com tudo certo, nenhum remetente do mundo garante 100% de caixa de entrada —
+> mas os itens 1 e 2 tiram o envio da categoria "quase certamente spam" e o colocam na
+> categoria "remetente legítimo autenticado".
+
 ## Configurações opcionais (variáveis de ambiente no Netlify)
 
 | Variável | Padrão | Pra quê |
