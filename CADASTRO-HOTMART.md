@@ -2,7 +2,7 @@
 
 Copiar e colar ao cadastrar cada produto em **app.hotmart.com → Produtos → Cadastrar produto**.
 
-## Configurações iguais pra todos os 5 produtos
+## Configurações iguais pra todos os 6 produtos
 
 | Campo | Valor |
 |---|---|
@@ -176,6 +176,44 @@ familia, las amistades y el trabajo. Asertividad sin brusquedad, escucha activa 
 negociar sin herir al otro ni anularte. Comunicación honesta, sin juegos. Ebook digital,
 acceso inmediato y garantía incondicional de 7 días. Contenido educativo — no sustituye el
 acompañamiento psicológico.
+
+---
+
+## 6. Treino em Casa — categoria: Saúde e esportes
+
+**Nome (PT):** Treino em Casa — Manual Completo NextLevel
+**Descrição (PT):**
+Manual premium de 49 páginas pra treinar em casa com método, sem academia e sem equipamento
+caro — só corpo livre, cadeira, mochila e uma toalha. Treinos completos por nível (iniciante,
+intermediário, avançado) e por área muscular (pernas, glúteos, peito, costas, braços e core),
+cardio e HIIT sem aparelhos, cronograma guiado de 30 dias com missão semanal, dieta de apoio
+com cardápio de 7 dias, mobilidade, prevenção de lesões, planners e checklists de
+acompanhamento. E-book digital com acesso imediato e garantia incondicional de 7 dias.
+Conteúdo educacional — não substitui avaliação médica, nutricional ou de educação física.
+
+**Name (EN):** Home Workout — Complete NextLevel Manual
+**Description (EN):**
+49-page premium manual to train at home with method, no gym and no expensive equipment — just
+bodyweight, a chair, a backpack and a towel. Complete workouts by level (beginner,
+intermediate, advanced) and by muscle group (legs, glutes, chest, back, arms and core), cardio
+and HIIT with no equipment, a guided 30-day schedule with weekly missions, supportive nutrition
+with a 7-day meal plan, mobility, injury prevention, planners and tracking checklists. Digital
+ebook, instant access, 7-day unconditional guarantee. Educational content — not a substitute
+for medical, nutritional or fitness professional guidance.
+
+**Nombre (ES):** Entrenamiento en Casa — Manual Completo NextLevel
+**Descripción (ES):**
+Manual premium de 49 páginas para entrenar en casa con método, sin gimnasio y sin equipo caro
+— solo peso corporal, una silla, una mochila y una toalla. Entrenamientos completos por nivel
+(principiante, intermedio, avanzado) y por grupo muscular (piernas, glúteos, pecho, espalda,
+brazos y core), cardio y HIIT sin aparatos, cronograma guiado de 30 días con misión semanal,
+alimentación de apoyo con menú de 7 días, movilidad, prevención de lesiones, planners y
+checklists de seguimiento. Ebook digital, acceso inmediato y garantía incondicional de 7 días.
+Contenido educativo — no sustituye la evaluación médica, nutricional o de educación física.
+
+> Observação: o ebook gratuito (isca) já existe só em PT (`ebooks/arquivos/treino-em-casa-pt.pdf`).
+> As versões EN/ES do produto pago podem ser vendidas normalmente mesmo sem isca própria —
+> quem se cadastra nessas páginas recebe a mensagem "confira seu e-mail" até a isca EN/ES existir.
 
 ---
 
