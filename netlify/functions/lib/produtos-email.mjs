@@ -140,4 +140,24 @@ export const PRODUTOS = {
       dica: 'En los días sin ninguna motivación, prométete solo 5 minutos de entrenamiento. Muchas veces terminas continuando — y cuando no lo haces, igual mantuviste el hábito vivo, que es lo más importante al principio.',
     },
   }),
+
+  'suplementacao-inteligente': montar('suplementacao-inteligente', {
+    pt: {
+      nomeProduto: 'Suplementação Inteligente — Guia Completo NextLevel',
+      tema: 'suplementar com método, sem desperdício e sem promessa milagrosa',
+      dica: 'Antes de comprar qualquer suplemento novo, responda: eu já tentei resolver isso com comida, treino ou sono? Se a resposta for não, comida resolve mais barato e melhor do que qualquer pote.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 47,00',
+    },
+    en: {
+      nomeProduto: 'Smart Supplementation — Complete NextLevel Guide',
+      tema: 'supplementing with method, no waste and no miracle promises',
+      dica: 'Before buying any new supplement, ask yourself: have I already tried solving this with food, training, or sleep? If the answer is no, food solves it cheaper and better than any tub.',
+    },
+    es: {
+      nomeProduto: 'Suplementación Inteligente — Guía Completa NextLevel',
+      tema: 'suplementar con método, sin desperdicio y sin promesas milagrosas',
+      dica: 'Antes de comprar cualquier suplemento nuevo, pregúntate: ¿ya intenté resolver esto con comida, entrenamiento o sueño? Si la respuesta es no, la comida lo resuelve más barato y mejor que cualquier envase.',
+    },
+  }),
 };

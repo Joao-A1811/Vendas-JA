@@ -224,10 +224,24 @@ Contenido educativo — no sustituye la evaluación médica, nutricional o de ed
 
 ## 7. Suplementação Inteligente — categoria: Saúde e esportes
 
-> Guia pago (50 páginas) + guias gratuitos (isca, 7 páginas) já gerados nos 3 idiomas e
-> entregues fora do repositório (ver aviso no fim deste bloco). Falta: cadastrar o produto na
-> Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda e criar `produtos/suplementacao-inteligente/`
-> no site (3 idiomas) — segue o mesmo padrão do Treino em Casa.
+> ✅ **PT e ES já cadastrados e ao vivo na Hotmart (jul/2026).** Checkout PT/BRL:
+> `https://pay.hotmart.com/T106596501Y` — já colado em `produtos/suplementacao-inteligente/index.html`.
+> Checkout ES/USD: `https://pay.hotmart.com/K106596585A` — já colado em `index-es.html`. Preço de
+> exibição no site: PT R$97→R$47 (padrão, ainda não customizado como o Treino em Casa), EN/ES
+> $37→$19 (padrão).
+>
+> ❌ **EN foi barrado pela Hotmart** (moderação automática/manual reprovou por "non-compliance
+> with Terms of Use or General Responsible Use Policy", sem apontar o motivo exato). Causa mais
+> provável: a política internacional da Hotmart pra categoria Saúde é bem mais rígida que a
+> brasileira com produtos de suplementação — e a descrição EN original citava a palavra
+> "steroids" (mesmo no sentido de "isto NÃO é sobre esteroides"), o que pode ter disparado
+> moderação automática por palavra-chave. Descrição revisada abaixo, sem essa palavra e com
+> disclaimer no padrão FDA — **use esta versão ao reenviar o produto EN pra revisão**. Verifique
+> também: categoria igual à usada em PT/ES, e se a sales page em inglês (preenchida direto na
+> Hotmart, fora deste repositório) tem política de reembolso e dados de contato visíveis.
+> Enquanto não for aprovado, `produtos/suplementacao-inteligente/index-en.html` fica com
+> `linkCheckoutHotmart` de placeholder (`PASTE_PRODUCT_CODE`) e o produto continua com
+> `disponivel: false` no catálogo (ver `assets/produtos.js`).
 
 **Nome (PT):** Suplementação Inteligente — Guia Completo NextLevel
 **Descrição (PT):**
@@ -240,16 +254,18 @@ compras e orçamento, e planners de acompanhamento com diário de sinais de segu
 digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo 100% educativo — sem
 anabolizantes, sem prescrição individual, sem substituir orientação médica ou nutricional.
 
-**Name (EN):** Smart Supplementation — Complete NextLevel Guide
-**Description (EN):**
+**Name (EN) — REVISADO pra reenvio, evita a palavra "steroids":** Smart Supplementation — Complete NextLevel Guide
+**Description (EN) — REVISADO:**
 Premium 50-page guide to supplement with method, no waste and no miracle promises. 10 complete
 modules: how to read labels and avoid misleading marketing, whey/casein/plant protein/albumin,
 creatine with evidence and common sense, responsible caffeine and pre-workout use,
 micronutrients and omega-3, what usually isn't worth the money, strategies by goal (weight
 loss, muscle gain, performance and busy routines), a practical shopping and budget plan, and
 tracking planners with a safety signs journal. Digital ebook, instant access, 7-day
-unconditional guarantee. 100% educational content — no anabolic steroids, no individual
-prescriptions, not a substitute for medical or nutritional guidance.
+unconditional guarantee. Educational content only, for general wellness purposes. These
+statements have not been evaluated by any health regulatory agency. This product is not
+intended to diagnose, treat, cure or prevent any disease, and is not a substitute for
+professional medical or nutritional advice.
 
 **Nombre (ES):** Suplementación Inteligente — Guía Completa NextLevel
 **Descripción (ES):**

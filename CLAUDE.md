@@ -44,20 +44,20 @@ As home pages têm as mesmas tags, estáticas.
 
 ## Catálogo atual
 
-`emagrecimento`, `ganho-de-massa` (Saúde) · `investimentos` (Finanças) ·
-`confianca-social`, `comunicacao-e-relacionamentos` (Relacionamentos) — ainda
-`disponivel: false` ("Em breve"). **`treino-em-casa` (Saúde) já é `disponivel: true` —
-primeiro produto do catálogo à venda de verdade**, ver seção abaixo.
-
-As 15 páginas dos 5 produtos ainda "Em breve" (5 × 3 idiomas) já estão com o `CONFIG`
-preenchido: headline, benefícios, FAQ, preços (R$ 97→47 no PT; $37→$19 em EN/ES) e
-`linkEbookGratis` apontando pro caminho convencionado dos PDFs. Falta em cada uma só o
-`linkCheckoutHotmart` real e o upload dos PDFs em `ebooks/arquivos/`. Depoimentos estão
-vazios (`depoimentos: []`) e a seção fica oculta automaticamente — **só preencher com
-depoimentos reais e autorizados; inventar depoimento é vetado** (Meta Ads + CDC).
+**Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
+estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
+`treino-em-casa` e `suplementacao-inteligente`, ambos Saúde. Os 5 produtos ainda em rascunho
+(`emagrecimento`, `ganho-de-massa`, `investimentos`, `confianca-social`,
+`comunicacao-e-relacionamentos`) **foram retirados do catálogo público e do `sitemap.xml`**,
+mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
+headline, benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra
+reaproveitar quando/se algum deles virar produto de verdade — basta cadastrar na Hotmart,
+colar o `linkCheckoutHotmart` real e adicionar de volta o bloco em `assets/produtos.js` (e uma
+entrada em `sitemap.xml`). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até
+existir depoimento real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
-idiomas (jul/2026).** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
+idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
 `ebooks/arquivos/treino-em-casa-<pt|en|es>.pdf`, galeria "olhe por dentro" com 5 páginas de
 amostra do manual em `assets/produtos/treino-em-casa/` (3 idiomas). Checkout real nas 3
 moedas, `disponivel: true`:
@@ -65,10 +65,24 @@ moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/F106595630M` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/V106595694E` (US$ 19)
 
-**O produto pago (manual completo de 49 páginas, 3 idiomas) NÃO fica no repositório** — foi
-entregue direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
-ficar público no site), assim como as capas do produto (imagem estilo capa de ebook, 3
-idiomas). Falta só, opcionalmente, copy de anúncio Meta Ads em `anuncios/`.
+**`suplementacao-inteligente` (jul/2026, 7º produto — "Coleção Projeto Verão") — PT e ES ao
+vivo, EN pendente.** Guia pago de 50 páginas + ebook gratuito (isca, 7 páginas) nos 3 idiomas,
+`ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`. Ainda sem galeria "olhe por dentro"
+(nenhum preview gerado pra este produto). `disponivel: false` no catálogo (mostra "Em breve"
+mesmo com PT/ES vendáveis) até o checkout EN funcionar — ver detalhe abaixo:
+- PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 47,00, preço padrão ainda não customizado)
+- ES/USD: `https://pay.hotmart.com/K106596585A` (US$ 19)
+- **EN foi barrado pela Hotmart** (moderação reprovou por "non-compliance", motivo exato não
+  informado — suspeita: a palavra "steroids" na descrição original, mesmo em contexto de
+  negação, pode ter disparado filtro automático da política internacional, mais rígida que a
+  brasileira pra categoria Saúde). Descrição revisada (sem essa palavra, com disclaimer padrão
+  FDA) pronta em `CADASTRO-HOTMART.md` seção 7 pra reenviar. Enquanto isso,
+  `produtos/suplementacao-inteligente/index-en.html` tem `linkCheckoutHotmart` de placeholder.
+
+**Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
+entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
+ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros dois produtos.
 
 ## Como fazer alterações comuns
 
@@ -116,12 +130,19 @@ idiomas). Falta só, opcionalmente, copy de anúncio Meta Ads em `anuncios/`.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Produtos reais:** escrever/gerar os ebooks (`ebooks/gerador-ebook.html`), subir os PDFs
-  em `ebooks/arquivos/` (`<slug>-<pt|en|es>.pdf`), cadastrar na Hotmart usando os textos de
-  `CADASTRO-HOTMART.md` e colar o `linkCheckoutHotmart` em cada página, trocar `disponivel`
-  para `true` no `assets/produtos.js`. **Nenhum produto foi escolhido pra sair primeiro.**
+- **Suplementação Inteligente — resolver reprovação do Hotmart EN:** reenviar o produto EN pra
+  revisão usando a descrição revisada em `CADASTRO-HOTMART.md` seção 7 (sem a palavra
+  "steroids", com disclaimer padrão FDA). Quando aprovado: colar o `linkCheckoutHotmart` real em
+  `produtos/suplementacao-inteligente/index-en.html` e considerar trocar `disponivel` pra `true`
+  em `assets/produtos.js` (hoje fica `false`/"Em breve" mesmo com PT e ES já vendáveis, pra não
+  mostrar botão de compra quebrado pro visitante EN).
+- **Os 5 produtos em rascunho** (`emagrecimento`, `ganho-de-massa`, `investimentos`,
+  `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
+  `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
+  tiverem ebook real + checkout Hotmart real, igual aos outros dois.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
-  o produto estiver vendável (checkout real + `disponivel: true`).
+  o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
+  dos dois produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
