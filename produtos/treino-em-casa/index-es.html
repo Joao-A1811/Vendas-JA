@@ -221,7 +221,7 @@ const CONFIG = {
   var precoTexto = CONFIG.precoPor || '';
   var moeda = precoTexto.indexOf('R$') === 0 ? 'BRL' : 'USD';
   var valor = parseFloat(precoTexto.replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
-  var temCheckout = CONFIG.linkCheckoutHotmart && CONFIG.linkCheckoutHotmart.indexOf('COLE_O_CODIGO') === -1;
+  var temCheckout = CONFIG.linkCheckoutHotmart && !/COLE_O_CODIGO|PASTE_PRODUCT_CODE|PEGA_EL_CODIGO/.test(CONFIG.linkCheckoutHotmart);
   var ld = {
     '@context': 'https://schema.org',
     '@type': 'Product',

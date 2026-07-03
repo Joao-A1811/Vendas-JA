@@ -200,7 +200,7 @@ const CONFIG = {
   garantiaTexto: "Garantia incondicional de 7 dias",
   // Opcional: data/hora ISO em que a oferta acaba (ex: '2026-08-01T23:59:59'). Deixe vazio para não mostrar contador.
   contagemRegressivaFim: '',
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
+  linkCheckoutHotmart: 'https://pay.hotmart.com/S106595121K',
   linkEbookGratis: '/ebooks/arquivos/treino-em-casa-pt.pdf',
   idioma: 'pt',
   faq: [
@@ -221,7 +221,7 @@ const CONFIG = {
   var precoTexto = CONFIG.precoPor || '';
   var moeda = precoTexto.indexOf('R$') === 0 ? 'BRL' : 'USD';
   var valor = parseFloat(precoTexto.replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
-  var temCheckout = CONFIG.linkCheckoutHotmart && CONFIG.linkCheckoutHotmart.indexOf('COLE_O_CODIGO') === -1;
+  var temCheckout = CONFIG.linkCheckoutHotmart && !/COLE_O_CODIGO|PASTE_PRODUCT_CODE|PEGA_EL_CODIGO/.test(CONFIG.linkCheckoutHotmart);
   var ld = {
     '@context': 'https://schema.org',
     '@type': 'Product',
