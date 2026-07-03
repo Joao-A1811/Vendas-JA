@@ -20,3 +20,19 @@
 
 [functions]
   directory = "netlify/functions"
+
+# Cabeçalhos de segurança (aplicados a todo o site pelo Netlify).
+# Obs.: o CSP libera 'unsafe-inline' em script/style porque as páginas usam
+# <script> e style="" inline (é como o site inteiro foi construído, sem bundler);
+# mesmo assim, os outros itens (frame-ancestors, connect-src, X-Frame-Options
+# etc.) já bloqueiam clickjacking e restringem pra quais domínios o site pode
+# "vazar" dados via script/conexão.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://www.facebook.com https://*.firebaseio.com wss://*.firebaseio.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"

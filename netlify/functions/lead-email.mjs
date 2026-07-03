@@ -6,6 +6,8 @@
 // ============================================================
 import { garantirInfra, upsertContato, enviarEmailSequencia } from './lib/brevo.mjs';
 import { PRODUTOS } from './lib/produtos-email.mjs';
+import { enviarEventoCapi } from './lib/meta-capi.mjs';
+import { permitido } from './lib/limite-taxa.mjs';
 
 const ORIGENS_PERMITIDAS = [
   'https://nextlevelbr.app.br',
@@ -40,14 +42,18 @@ export default async (req) => {
     return new Response('Produto desconhecido', { status: 400 });
   }
 
+  // Limite anti-abuso: mesmo e-mail ou mesmo IP tentando várias vezes seguidas
+  // (best-effort — vale por instância da função; não substitui uma solução
+  // distribuída, mas barra a maioria dos scripts de flood).
+  const ip = req.headers.get('x-nf-client-connection-ip') || req.headers.get('x-forwarded-for') || 'sem-ip';
+  if (!permitido(email) || !permitido(ip)) {
+    return new Response('Muitas tentativas — aguarde um pouco.', { status: 429 });
+  }
+
   try {
     const listaId = await garantirInfra();
     await upsertContato({ email, nome, slug, idioma, listaId });
     await enviarEmailSequencia(1, { email, nome, slug, idioma });
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 202,
-      headers: { 'content-type': 'application/json' },
-    });
   } catch (e) {
     // O cadastro no Firebase já aconteceu; aqui só logamos — o lead não se perde
     // e a rotina diária não depende deste endpoint pra continuar a sequência.
@@ -57,4 +63,27 @@ export default async (req) => {
       headers: { 'content-type': 'application/json' },
     });
   }
+
+  // Eco do mesmo evento "Lead" via Conversions API (não bloqueia a resposta
+  // por falha — o Pixel do navegador já disparou o evento do lado dele).
+  try {
+    await enviarEventoCapi({
+      nome: 'Lead',
+      email,
+      telefone: dados.whatsapp,
+      url: dados.pagina,
+      ip: ip !== 'sem-ip' ? ip : undefined,
+      userAgent: req.headers.get('user-agent') || undefined,
+      fbp: dados.fbp,
+      fbc: dados.fbc,
+      eventId: dados.eventId,
+    });
+  } catch (e) {
+    console.error('meta-capi:', e.message);
+  }
+
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 202,
+    headers: { 'content-type': 'application/json' },
+  });
 };

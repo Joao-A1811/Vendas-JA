@@ -216,6 +216,36 @@ const CONFIG = {
 };
 </script>
 
+<script>
+// Dados estruturados (JSON-LD) pro Google poder mostrar preço/disponibilidade
+// direto no resultado de busca — gerado a partir do próprio CONFIG acima,
+// um lugar só (nada pra manter sincronizado à mão).
+(function () {
+  var precoTexto = CONFIG.precoPor || '';
+  var moeda = precoTexto.indexOf('R$') === 0 ? 'BRL' : 'USD';
+  var valor = parseFloat(precoTexto.replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
+  var temCheckout = CONFIG.linkCheckoutHotmart && CONFIG.linkCheckoutHotmart.indexOf('COLE_O_CODIGO') === -1;
+  var ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: CONFIG.produto,
+    description: CONFIG.subheadline || CONFIG.headline || '',
+    image: 'https://nextlevelbr.app.br/assets/og-image.png',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: moeda,
+      price: valor.toFixed(2),
+      availability: temCheckout ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
+      url: window.location.href
+    }
+  };
+  var script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(ld);
+  document.head.appendChild(script);
+})();
+</script>
+
 <header class="header">
   <div class="container">
     <h1>NextLevel</h1>
@@ -464,6 +494,15 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return;
   }
 
+  // ID único do evento: usado pra deduplicar entre o Pixel do navegador e a
+  // Conversions API (envio espelhado, direto do servidor — mais resistente a
+  // bloqueador de anúncio / Safari / iOS do que só o Pixel sozinho).
+  const leadEventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
+  function lerCookie(nome) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + nome + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
@@ -487,13 +526,18 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
       msg.textContent = entregarEbook();
       msg.style.color = '#baffc9';
       document.getElementById('form-lead').reset();
-      if (window.__pixelOn) fbq('track', 'Lead');
+      if (window.__pixelOn) fbq('track', 'Lead', {}, { eventID: leadEventId });
       // Dispara la secuencia de correos (función de Netlify + API de Brevo).
       // Si falla, no afecta nada: el lead ya está guardado y el ebook entregado.
       fetch('/.netlify/functions/lead-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.assign({ slug: location.pathname.split('/')[2] || '' }, lead))
+        body: JSON.stringify(Object.assign({
+          slug: location.pathname.split('/')[2] || '',
+          eventId: leadEventId,
+          fbp: lerCookie('_fbp'),
+          fbc: lerCookie('_fbc')
+        }, lead))
       }).catch(function () {});
     })
     .catch((err) => {
