@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Weight Loss — lose weight without crazy diets | NextLevel</title>
-<meta name="description" content="A practical ebook on habits and mindful eating to lose weight without suffering or radical diets.">
+<title>Smart Weight Loss — Diet, Training and Mindset | NextLevel</title>
+<meta name="description" content="Flexible diet, progressive training and tools against emotional hunger — a 30-day plan to lose fat with consistency, no crash diets.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Smart Weight Loss — lose weight without crazy diets | NextLevel">
-<meta property="og:description" content="A practical ebook on habits and mindful eating to lose weight without suffering or radical diets.">
+<meta property="og:title" content="Smart Weight Loss — Diet, Training and Mindset | NextLevel">
+<meta property="og:description" content="Flexible diet, progressive training and tools against emotional hunger — a 30-day plan to lose fat with consistency, no crash diets.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-en.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,19 +185,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Smart Weight Loss Ebook",
-  headline: "Lose weight the light way — no crazy diets",
-  subheadline: "A practical method of habits and mindful eating to take care of your body without suffering — or giving up your social life.",
-  selo: "📘 Complete ebook · Instant access",
+  produto: "Smart Weight Loss",
+  headline: "Flexible diet, progressive training and tools against emotional hunger — a 30-day plan with no extremes",
+  subheadline: "A complete guide with a smart plate method, a 14-day menu, home or gym workouts, the P.A.U.S.E. protocol against emotional hunger, and a guided 30-day schedule — to lose fat with consistency, no crash diets.",
+  selo: "🔥 Complete guide · 40 pages · Instant access",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7-day", legenda: "guarantee" },
-    { numero: "0", legenda: "fluff" }
+    { numero: "30 days", legenda: "guided schedule" },
+    { numero: "14-day", legenda: "flexible menu" },
+    { numero: "0", legenda: "fad diets" }
   ],
   beneficios: [
-    { icone: "🥗", titulo: "Eat real food", texto: "No cutting everything out: build satisfying meals that fit your routine and your budget." },
-    { icone: "⚡", titulo: "A realistic routine", texto: "Habits and movement for busy people — no gym required." },
-    { icone: "🎯", titulo: "Consistency without guilt", texto: "What to do when you slip, so you get back on track the next day without throwing it all away." }
+    { icone: "🥗", titulo: "Flexible diet", texto: "Smart plate method, the hand-portion method, and a 14-day menu — without cutting out what you love." },
+    { icone: "💪", titulo: "Progressive training", texto: "A/B workouts with a home or gym option and a 4-week progression, without losing strength." },
+    { icone: "🧠", titulo: "Anxiety under control", texto: "The P.A.U.S.E. protocol against emotional hunger and tools for the hardest nights." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -199,16 +205,14 @@ const CONFIG = {
   precoPor: "$19",
   garantiaTexto: "7-day unconditional money-back guarantee",
   contagemRegressivaFim: '',
-  // ONLY THIS MISSING: replace with this product’s real Hotmart checkout link.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/W106609196K',
   linkEbookGratis: '/ebooks/arquivos/emagrecimento-en.pdf',
   idioma: "en",
   faq: [
-    { pergunta: "Does it work if I’ve tried everything?", resposta: "The method focuses precisely on consistency and habits — not radical diets. You move at your own pace, with zero food terrorism." },
-    { pergunta: "Do I need a gym or equipment?", resposta: "No. The movement suggestions can be done at home, and the core of the method is food and routine." },
-    { pergunta: "Does it replace a doctor or nutritionist?", resposta: "No. The content is educational and doesn’t replace professional care — consult a health professional before big changes." },
-    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the ebook to your email. You can read it on your phone, tablet or computer." },
+    { pergunta: "Will I lose weight fast with this method?", resposta: "We don't promise fast, guaranteed, or specific-pound weight loss — the focus is on method, consistency, and sustainable habits for the long run." },
+    { pergunta: "Do I need to follow a crash diet or cut carbs?", resposta: "No. The method uses flexible menus and the smart plate approach, with no extreme cuts or eliminating whole food groups." },
+    { pergunta: "Do I need a gym or equipment?", resposta: "No. The workouts have both a home version and an equipment version — pick what fits your routine." },
+    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the complete guide to your email." },
     { pergunta: "What if I don’t like it?", resposta: "You have a 7-day unconditional guarantee: just request a refund directly through Hotmart and get 100% of your money back, no questions asked." }
   ]
 };
@@ -269,6 +273,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">What you'll get</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Take a look inside</h3>
+    <p class="lead-sec reveal">Real samples from the complete guide — cover, module, plan week, shopping list, and planner</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/emagrecimento/preview-en-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-en-capa.jpg" alt="Cover of the Smart Weight Loss guide" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-en-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-en-modulo.jpg" alt="Module opener — Sustainable weight loss" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-en-semana.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-en-semana.jpg" alt="Weeks 3 and 4 of the 30-day plan" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-en-compras.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-en-compras.jpg" alt="Base shopping list" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-en-planner.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-en-planner.jpg" alt="Weekly tracking planner" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

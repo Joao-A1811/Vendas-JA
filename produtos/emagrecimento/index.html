@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emagrecimento Inteligente — emagreça sem dietas malucas | NextLevel</title>
-<meta name="description" content="Ebook com método prático de hábitos e alimentação consciente para emagrecer sem sofrimento e sem dietas radicais.">
+<title>Emagrecimento Inteligente — Dieta, Treino e Mente | NextLevel</title>
+<meta name="description" content="Dieta flexível, treino progressivo e ferramentas contra a fome emocional — um plano de 30 dias pra perder gordura com consistência, sem dieta radical.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Emagrecimento Inteligente — emagreça sem dietas malucas | NextLevel">
-<meta property="og:description" content="Ebook com método prático de hábitos e alimentação consciente para emagrecer sem sofrimento e sem dietas radicais.">
+<meta property="og:title" content="Emagrecimento Inteligente — Dieta, Treino e Mente | NextLevel">
+<meta property="og:description" content="Dieta flexível, treino progressivo e ferramentas contra a fome emocional — um plano de 30 dias pra perder gordura com consistência, sem dieta radical.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,36 +185,34 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Emagrecimento Inteligente",
-  headline: "Emagreça de forma leve, sem dietas malucas",
-  subheadline: "Um método prático de hábitos e alimentação consciente pra cuidar do corpo sem sofrimento — e sem abrir mão da sua vida social.",
-  selo: "📘 Ebook completo · Acesso imediato",
+  produto: "Emagrecimento Inteligente",
+  headline: "Dieta flexível, treino progressivo e ferramentas contra a fome emocional — um plano de 30 dias sem extremismos",
+  subheadline: "Guia completo com prato inteligente, cardápio de 14 dias, treinos em casa ou na academia, protocolo P.A.U.S.A. contra a fome emocional e um cronograma guiado de 30 dias — pra perder gordura com consistência, sem dieta radical.",
+  selo: "🔥 Guia completo · 40 páginas · Acesso imediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 dias", legenda: "de garantia" },
-    { numero: "0", legenda: "enrolação" }
+    { numero: "30 dias", legenda: "cronograma guiado" },
+    { numero: "14 dias", legenda: "cardápio flexível" },
+    { numero: "0", legenda: "dieta da moda" }
   ],
   beneficios: [
-    { icone: "🥗", titulo: "Coma de verdade", texto: "Nada de cortar tudo: aprenda a montar refeições que saciam e cabem na sua rotina e no seu bolso." },
-    { icone: "⚡", titulo: "Rotina realista", texto: "Hábitos e movimento pra quem tem pouco tempo — sem depender de academia." },
-    { icone: "🎯", titulo: "Constância sem culpa", texto: "O que fazer quando sair da linha, pra voltar no dia seguinte sem jogar tudo fora." }
+    { icone: "🥗", titulo: "Dieta flexível", texto: "Prato inteligente, método das mãos e cardápio de 14 dias, sem cortar tudo que você gosta." },
+    { icone: "💪", titulo: "Treino progressivo", texto: "Treinos A/B com opção em casa ou na academia e progressão de 4 semanas, sem perder força." },
+    { icone: "🧠", titulo: "Ansiedade sob controle", texto: "Protocolo P.A.U.S.A. contra a fome emocional e ferramentas pras noites difíceis." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
   precoDe: "R$ 97,00",
-  precoPor: "R$ 47,00",
+  precoPor: "R$ 49,99",
   garantiaTexto: "Garantia incondicional de 7 dias",
   contagemRegressivaFim: '',
-  // FALTA SÓ ISTO: troque pelo link real do checkout da Hotmart deste produto.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/H106609158K',
   linkEbookGratis: '/ebooks/arquivos/emagrecimento-pt.pdf',
   idioma: "pt",
   faq: [
-    { pergunta: "Funciona pra quem já tentou de tudo?", resposta: "O foco do método é justamente constância e hábitos — não dieta radical. Você avança no seu ritmo, sem terrorismo nutricional." },
-    { pergunta: "Preciso de academia ou equipamentos?", resposta: "Não. As sugestões de movimento podem ser feitas em casa, e a base do método é alimentação e rotina." },
-    { pergunta: "Substitui médico ou nutricionista?", resposta: "Não. O conteúdo é educacional e não substitui acompanhamento profissional — consulte um profissional de saúde antes de grandes mudanças." },
-    { pergunta: "Como eu recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o ebook no seu e-mail. Dá pra ler no celular, tablet ou computador." },
+    { pergunta: "Vou perder peso rápido com esse método?", resposta: "Não trabalhamos com promessa de emagrecimento rápido, garantido ou em número de quilos — o foco é método, consistência e hábitos sustentáveis a longo prazo." },
+    { pergunta: "Preciso fazer dieta radical ou cortar carboidrato?", resposta: "Não. O método usa cardápios flexíveis e o prato inteligente, sem cortes extremos nem eliminar grupos alimentares inteiros." },
+    { pergunta: "Preciso de academia ou equipamento?", resposta: "Não. Os treinos têm versão em casa e versão com equipamento — você escolhe o que couber na sua rotina." },
+    { pergunta: "Como recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o guia completo no seu e-mail." },
     { pergunta: "E se eu não gostar?", resposta: "Você tem 7 dias de garantia incondicional: é só pedir o reembolso direto na Hotmart e receber 100% do valor de volta, sem perguntas." }
   ]
 };
@@ -269,6 +273,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">O que você vai conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Dê uma olhada por dentro</h3>
+    <p class="lead-sec reveal">Amostra real do guia completo — capa, módulo, semana do plano, lista de compras e planner</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/emagrecimento/preview-pt-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-pt-capa.jpg" alt="Capa do guia Emagrecimento Inteligente" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-pt-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-pt-modulo.jpg" alt="Abertura de módulo — Emagrecimento sustentável" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-pt-semana.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-pt-semana.jpg" alt="Semanas 3 e 4 do plano de 30 dias" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-pt-compras.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-pt-compras.jpg" alt="Lista de compras base" loading="lazy"></a>
+      <a href="/assets/produtos/emagrecimento/preview-pt-planner.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/emagrecimento/preview-pt-planner.jpg" alt="Planner semanal de acompanhamento" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

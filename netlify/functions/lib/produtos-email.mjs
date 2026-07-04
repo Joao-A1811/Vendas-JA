@@ -33,19 +33,21 @@ function montar(slug, dados) {
 export const PRODUTOS = {
   'emagrecimento': montar('emagrecimento', {
     pt: {
-      nomeProduto: 'Ebook Emagrecimento Inteligente',
-      tema: 'emagrecimento leve, sem dietas malucas',
-      dica: 'Antes de mudar a dieta inteira, escolha UMA refeição do dia (o café da manhã é ótimo) e melhore só ela nesta semana. Constância em uma refeição vence perfeição em todas — quando ela virar automática, avance pra próxima.',
+      nomeProduto: 'Emagrecimento Inteligente — Guia Completo NextLevel',
+      tema: 'dieta flexível, treino progressivo e mente sob controle, sem dieta radical',
+      dica: 'Nos momentos de fome emocional, aplique o Protocolo P.A.U.S.A. antes de decidir comer: Pare, Avalie a fome real, Utilize uma alternativa, Se ainda quiser, coma com atenção, Analise depois sem culpa.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
-      nomeProduto: 'Smart Weight Loss Ebook',
-      tema: 'losing weight the light way, without crazy diets',
-      dica: 'Before changing your whole diet, pick ONE meal of the day (breakfast is a great choice) and improve only that one this week. Consistency in one meal beats perfection in all of them — once it becomes automatic, move to the next.',
+      nomeProduto: 'Smart Weight Loss — Complete NextLevel Guide',
+      tema: 'flexible diet, progressive training and your mindset under control, no crash diets',
+      dica: "In moments of emotional hunger, apply the P.A.U.S.E. protocol before deciding to eat: Pause, Assess real hunger, Use an alternative, Should you still want to, eat mindfully, Evaluate afterward without guilt.",
     },
     es: {
-      nomeProduto: 'Ebook Pérdida de Peso Inteligente',
-      tema: 'perder peso de forma ligera, sin dietas locas',
-      dica: 'Antes de cambiar toda tu dieta, elige UNA comida del día (el desayuno es ideal) y mejora solo esa durante esta semana. La constancia en una comida vence a la perfección en todas — cuando se vuelva automática, pasa a la siguiente.',
+      nomeProduto: 'Adelgazamiento Inteligente — Guía Completa NextLevel',
+      tema: 'dieta flexible, entrenamiento progresivo y la mente bajo control, sin dietas extremas',
+      dica: 'En los momentos de hambre emocional, aplica el Protocolo P.A.U.S.A. antes de decidir comer: Pausa, Analiza el hambre real, Usa una alternativa, Si aún quieres, come con atención, Analiza después sin culpa.',
     },
   }),
 

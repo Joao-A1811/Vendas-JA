@@ -64,5 +64,17 @@ window.PRODUTOS_SITE = [
       en: '30 daily missions for training, nutrition, sleep and habits — scoring system and a 90-day continuity plan.',
       es: '30 misiones diarias de entrenamiento, alimentación, sueño y hábitos — sistema de puntuación y plan de continuidad de 90 días.'
     }
+  },
+  {
+    slug: 'emagrecimento',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 10.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Emagrecimento Inteligente', en: 'Smart Weight Loss', es: 'Adelgazamiento Inteligente' },
+    resumo: {
+      pt: 'Dieta flexível, treino progressivo e protocolo contra a fome emocional — um plano de 30 dias sem dieta radical.',
+      en: 'Flexible diet, progressive training and a protocol against emotional hunger — a 30-day plan, no crash diets.',
+      es: 'Dieta flexible, entrenamiento progresivo y protocolo contra el hambre emocional — un plan de 30 días sin dietas extremas.'
+    }
   }
 ];
