@@ -46,10 +46,10 @@ As home pages têm as mesmas tags, estáticas.
 
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
-`treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness` e `desafio-30-dias`, todos
-Saúde. Os 5 produtos ainda em rascunho
-(`emagrecimento`, `ganho-de-massa`, `investimentos`, `confianca-social`,
-`comunicacao-e-relacionamentos`) **foram retirados do catálogo público e do `sitemap.xml`**,
+`treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias` e
+`emagrecimento`, todos Saúde. Os 4 produtos ainda em rascunho
+(`ganho-de-massa`, `investimentos`, `confianca-social`,
+`comunicacao-e-relacionamentos`) **continuam fora do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
 headline, benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra
 reaproveitar quando/se algum deles virar produto de verdade — basta cadastrar na Hotmart,
@@ -106,10 +106,25 @@ true`:
 - EN/USD: `https://pay.hotmart.com/A106608536W` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/N106608560T` (US$ 19)
 
+**`emagrecimento` (jul/2026, 10º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
+idiomas.** Reaproveitou o slug/pasta que já existia como rascunho (nicho sensível — ver regras
+abaixo). Guia pago de 40 páginas (prato inteligente, método das mãos, cardápio flexível de 14
+dias, treinos A/B com progressão de 4 semanas, protocolo P.A.U.S.A. contra a fome emocional,
+plano de 30 dias, caderno de execução com planners) + ebook gratuito (isca, 6 páginas) nos 3
+idiomas, `ebooks/arquivos/emagrecimento-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas
+de amostra em `assets/produtos/emagrecimento/` (3 idiomas). Todo o conteúdo (headline, FAQ,
+ebook, capa, Hotmart) foi escrito sem promessa numérica de peso, sem foto antes/depois e sem
+linguagem de vergonha corporal, seguindo a regra do nicho sensível já documentada neste arquivo.
+Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+`disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/H106609158K` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/W106609196K` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/G106609215L` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatro produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros cinco produtos.
 
 ## Como fazer alterações comuns
 
@@ -169,13 +184,13 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatro produto
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Os 5 produtos em rascunho** (`emagrecimento`, `ganho-de-massa`, `investimentos`,
+- **Os 4 produtos em rascunho** (`ganho-de-massa`, `investimentos`,
   `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos quatro já ao vivo.
+  tiverem ebook real + checkout Hotmart real, igual aos cinco já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos quatro produtos ao vivo.
+  dos cinco produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
