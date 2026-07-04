@@ -372,6 +372,54 @@ profesional de educación física, y no es un protocolo clínico.
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/desafio-30-dias-<pt|en|es>.pdf`.
 
+## 10. Emagrecimento Inteligente — categoria: Saúde e esportes
+
+> Guia pago (40 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/emagrecimento/`). Este produto reaproveita
+> a pasta `produtos/emagrecimento/` que já existia como rascunho (ver `CLAUDE.md`) — falta:
+> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, atualizar o
+> `CONFIG` das 3 páginas com os textos abaixo e trocar `disponivel` pra `true`. Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+>
+> **Atenção — nicho sensível (regra do projeto):** sem promessa numérica ("perca X kg"), sem
+> foto antes/depois, sem linguagem de vergonha corporal. Os textos abaixo já seguem essa regra —
+> não adicionar números de peso/prazo ao editar.
+
+**Nome (PT):** Emagrecimento Inteligente — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 40 páginas com um plano de 30 dias para perder gordura com consistência, sem
+extremismos. Cardápio flexível de 14 dias, método do prato e das mãos, treinos de força A/B/C
+com versão em casa, protocolo P.A.U.S.A. de 10 minutos contra a fome emocional, módulo de sono e
+ambiente, planner semanal, diário alimentar e checklist diário. E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo educativo — não promete perda de peso
+rápida, garantida ou numérica, não substitui orientação de nutricionista, médico, psicólogo ou
+profissional de educação física, e não é um protocolo clínico.
+
+**Name (EN):** Smart Weight Loss — Complete NextLevel Guide
+**Description (EN):**
+Premium 40-page guide with a 30-day plan to lose fat with consistency, no extremes. A flexible
+14-day menu, the plate and hand methods, A/B/C strength workouts with a home version, the
+10-minute P.A.U.S.E. protocol against emotional hunger, a sleep and environment module, a weekly
+planner, a food journal, and a daily checklist. Digital ebook, instant access, 7-day
+unconditional guarantee. Educational content — does not promise fast, guaranteed, or numeric
+weight loss, is not a substitute for guidance from a dietitian, doctor, psychologist, or fitness
+professional, and is not a clinical protocol.
+
+**Nombre (ES):** Adelgazamiento Inteligente — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 40 páginas con un plan de 30 días para perder grasa con constancia, sin
+extremos. Menú flexible de 14 días, método del plato y de las manos, entrenamientos de fuerza
+A/B/C con versión en casa, protocolo P.A.U.S.A. de 10 minutos contra el hambre emocional, módulo
+de sueño y entorno, planner semanal, diario alimentario y checklist diario. Ebook digital,
+acceso inmediato y garantía incondicional de 7 días. Contenido educativo — no promete una
+pérdida de peso rápida, garantizada ni numérica, no sustituye la orientación de un
+nutricionista, médico, psicólogo o profesional de educación física, y no es un protocolo
+clínico.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/emagrecimento-<pt|en|es>.pdf`.
+
 ---
 
 ## Depois de cadastrar cada produto
