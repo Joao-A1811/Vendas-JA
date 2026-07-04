@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Muscle Gain — muscle with method | NextLevel</title>
-<meta name="description" content="An ebook that organizes training, food and rest into one simple plan to build muscle consistently.">
+<title>Muscle Mass Gain — Smart Hypertrophy | NextLevel</title>
+<meta name="description" content="Caloric surplus without excess, progressive training and organized recovery — a complete hypertrophy system, with no promised pounds.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Smart Muscle Gain — muscle with method | NextLevel">
-<meta property="og:description" content="An ebook that organizes training, food and rest into one simple plan to build muscle consistently.">
+<meta property="og:title" content="Muscle Mass Gain — Smart Hypertrophy | NextLevel">
+<meta property="og:description" content="Caloric surplus without excess, progressive training and organized recovery — a complete hypertrophy system, with no promised pounds.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-en.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,19 +185,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Smart Muscle Gain Ebook",
-  headline: "Build muscle with method, not guesswork",
-  subheadline: "Training, food and rest organized into one simple plan, so you progress consistently — at home or at the gym.",
-  selo: "📘 Complete ebook · Instant access",
+  produto: "Muscle Mass Gain",
+  headline: "Caloric surplus without excess, progressive training and organized recovery — hypertrophy with method, not guesswork",
+  subheadline: "A complete guide with a flexible 14-day menu, 3 workout models (beginner, intermediate, and ABC split), an exercise library, a 12-week load progression, and supplements without hype — to build lean mass with consistency.",
+  selo: "💪 Complete guide · 43 pages · Instant access",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7-day", legenda: "guarantee" },
-    { numero: "0", legenda: "fluff" }
+    { numero: "12 weeks", legenda: "guided progression" },
+    { numero: "14-day", legenda: "flexible menu" },
+    { numero: "0", legenda: "miracle shortcuts" }
   ],
   beneficios: [
-    { icone: "🏋️", titulo: "Training with purpose", texto: "Sets, progressive overload and technique explained simply, so every workout counts." },
-    { icone: "🍚", titulo: "Food that builds", texto: "How to put together affordable, protein-sufficient meals — no miracle supplements needed." },
-    { icone: "😴", titulo: "Rest that grows muscle", texto: "Sleep and recovery as part of the plan: what almost every beginner ignores." }
+    { icone: "🏋️", titulo: "Progressive training", texto: "3 models by level, an exercise library and a 12-week load progression." },
+    { icone: "🍚", titulo: "No-fuss nutrition", texto: "Smart caloric surplus, the hypertrophy plate and a 14-day menu." },
+    { icone: "😴", titulo: "Real recovery", texto: "Sleep, deload and supplements without hype — what almost every beginner ignores." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -199,16 +205,15 @@ const CONFIG = {
   precoPor: "$19",
   garantiaTexto: "7-day unconditional money-back guarantee",
   contagemRegressivaFim: '',
-  // ONLY THIS MISSING: replace with this product’s real Hotmart checkout link.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/Y106610935L',
   linkEbookGratis: '/ebooks/arquivos/ganho-de-massa-en.pdf',
   idioma: "en",
   faq: [
+    { pergunta: "Will I gain a specific amount of pounds?", resposta: "We don't promise fast, guaranteed, or specific-pound muscle gain — the focus is method, progression, and long-term consistency." },
     { pergunta: "I’m a beginner — is this for me?", resposta: "Yes — the method was designed to build your foundation the right way from day one, without bad training habits." },
-    { pergunta: "Does training at home work?", resposta: "It does. The plan includes paths for home or gym training, with whatever you have available." },
-    { pergunta: "Does it replace a personal trainer?", resposta: "No. The content is educational and doesn’t replace professional supervision — if you have an injury or health condition, see a professional." },
-    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the ebook to your email. You can read it on your phone, tablet or computer." },
+    { pergunta: "Does training at home work?", resposta: "It does. The plan includes models for home or gym training, with whatever you have available." },
+    { pergunta: "Do I need supplements to see results?", resposta: "No. The guide explains what's worth considering, but supplements are optional — food and training come first." },
+    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the complete guide to your email." },
     { pergunta: "What if I don’t like it?", resposta: "You have a 7-day unconditional guarantee: just request a refund directly through Hotmart and get 100% of your money back, no questions asked." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">What you'll get</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Take a look inside</h3>
+    <p class="lead-sec reveal">Real samples from the complete guide — cover, module, workout model, planner, and checklist</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/ganho-de-massa/preview-en-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-en-capa.jpg" alt="Cover of the Muscle Mass Gain guide" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-en-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-en-modulo.jpg" alt="Module opener — Hypertrophy training" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-en-treino.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-en-treino.jpg" alt="Model A — beginner workout" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-en-planner.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-en-planner.jpg" alt="Training and nutrition planner" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-en-checklist.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-en-checklist.jpg" alt="Weekly checklist" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

@@ -127,4 +127,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/emagrecimento/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/emagrecimento/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/ganho-de-massa/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/ganho-de-massa/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/ganho-de-massa/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/ganho-de-massa/"/>
+  </url>
 </urlset>

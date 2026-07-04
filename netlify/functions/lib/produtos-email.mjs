@@ -53,18 +53,20 @@ export const PRODUTOS = {
 
   'ganho-de-massa': montar('ganho-de-massa', {
     pt: {
-      nomeProduto: 'Ebook Ganho de Massa Inteligente',
-      tema: 'ganho de massa com método, sem achismo',
+      nomeProduto: 'Ganho de Massa Muscular — Guia Completo NextLevel',
+      tema: 'superávit calórico, treino progressivo e recuperação, sem promessa de quilos',
       dica: 'Anote as cargas e repetições de cada treino, nem que seja no bloco de notas do celular. Sem registro não existe progressão — e progressão é o que faz o músculo crescer.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
-      nomeProduto: 'Smart Muscle Gain Ebook',
-      tema: 'building muscle with method, not guesswork',
+      nomeProduto: 'Muscle Mass Gain — Complete NextLevel Guide',
+      tema: 'caloric surplus, progressive training and recovery, with no promised pounds',
       dica: "Write down the weights and reps of every workout, even if it's just in your phone's notes app. Without a record there's no progression — and progression is what makes muscle grow.",
     },
     es: {
-      nomeProduto: 'Ebook Ganancia Muscular Inteligente',
-      tema: 'ganar músculo con método, sin suposiciones',
+      nomeProduto: 'Ganancia de Masa Muscular — Guía Completa NextLevel',
+      tema: 'superávit calórico, entrenamiento progresivo y recuperación, sin promesa de kilos',
       dica: 'Anota las cargas y repeticiones de cada entrenamiento, aunque sea en las notas del móvil. Sin registro no hay progresión — y la progresión es lo que hace crecer el músculo.',
     },
   }),

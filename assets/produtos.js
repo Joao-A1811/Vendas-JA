@@ -76,5 +76,17 @@ window.PRODUTOS_SITE = [
       en: 'Flexible diet, progressive training and a protocol against emotional hunger — a 30-day plan, no crash diets.',
       es: 'Dieta flexible, entrenamiento progresivo y protocolo contra el hambre emocional — un plan de 30 días sin dietas extremas.'
     }
+  },
+  {
+    slug: 'ganho-de-massa',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 11.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Ganho de Massa Muscular', en: 'Muscle Mass Gain', es: 'Ganancia de Masa Muscular' },
+    resumo: {
+      pt: 'Superávit calórico sem exagero, treino progressivo e recuperação organizada — hipertrofia com método, sem promessa de quilos.',
+      en: 'Caloric surplus without excess, progressive training and organized recovery — hypertrophy with method, no promised pounds.',
+      es: 'Superávit calórico sin exceso, entrenamiento progresivo y recuperación organizada — hipertrofia con método, sin promesa de kilos.'
+    }
   }
 ];

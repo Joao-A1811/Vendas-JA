@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganho de Massa Inteligente — músculos com método | NextLevel</title>
-<meta name="description" content="Ebook com treino, alimentação e descanso organizados num plano simples para ganhar massa muscular com consistência.">
+<title>Ganho de Massa Muscular — Hipertrofia Inteligente | NextLevel</title>
+<meta name="description" content="Superávit calórico sem exagero, treino progressivo e recuperação organizada — um sistema completo de hipertrofia, sem promessa de quilos.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Ganho de Massa Inteligente — músculos com método | NextLevel">
-<meta property="og:description" content="Ebook com treino, alimentação e descanso organizados num plano simples para ganhar massa muscular com consistência.">
+<meta property="og:title" content="Ganho de Massa Muscular — Hipertrofia Inteligente | NextLevel">
+<meta property="og:description" content="Superávit calórico sem exagero, treino progressivo e recuperação organizada — um sistema completo de hipertrofia, sem promessa de quilos.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,36 +185,35 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Ganho de Massa Inteligente",
-  headline: "Construa músculos com método, não com achismo",
-  subheadline: "Treino, alimentação e descanso organizados num plano simples, pra evoluir com consistência — em casa ou na academia.",
-  selo: "📘 Ebook completo · Acesso imediato",
+  produto: "Ganho de Massa Muscular",
+  headline: "Superávit calórico sem exagero, treino progressivo e recuperação organizada — hipertrofia com método, não achismo",
+  subheadline: "Guia completo com cardápio flexível de 14 dias, 3 modelos de treino (iniciante, intermediário e ABC), biblioteca de exercícios, progressão de carga de 12 semanas e suplementação sem fantasia — pra construir massa magra com consistência.",
+  selo: "💪 Guia completo · 43 páginas · Acesso imediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 dias", legenda: "de garantia" },
-    { numero: "0", legenda: "enrolação" }
+    { numero: "12 semanas", legenda: "progressão guiada" },
+    { numero: "14 dias", legenda: "cardápio flexível" },
+    { numero: "0", legenda: "atalho milagroso" }
   ],
   beneficios: [
-    { icone: "🏋️", titulo: "Treino com propósito", texto: "Séries, progressão de carga e técnica explicadas de forma simples, pra cada treino contar de verdade." },
-    { icone: "🍚", titulo: "Comida que constrói", texto: "Como montar pratos acessíveis com proteína suficiente — sem depender de suplemento milagroso." },
-    { icone: "😴", titulo: "Descanso que faz crescer", texto: "Sono e recuperação como parte do plano: o que quase todo iniciante ignora." }
+    { icone: "🏋️", titulo: "Treino progressivo", texto: "3 modelos por nível, biblioteca de exercícios e progressão de carga de 12 semanas." },
+    { icone: "🍚", titulo: "Nutrição sem neurose", texto: "Superávit calórico inteligente, prato de hipertrofia e cardápio de 14 dias." },
+    { icone: "😴", titulo: "Recuperação de verdade", texto: "Sono, deload e suplementação sem fantasia — o que quase todo iniciante ignora." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
   precoDe: "R$ 97,00",
-  precoPor: "R$ 47,00",
+  precoPor: "R$ 49,99",
   garantiaTexto: "Garantia incondicional de 7 dias",
   contagemRegressivaFim: '',
-  // FALTA SÓ ISTO: troque pelo link real do checkout da Hotmart deste produto.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/W106610896N',
   linkEbookGratis: '/ebooks/arquivos/ganho-de-massa-pt.pdf',
   idioma: "pt",
   faq: [
+    { pergunta: "Vou ganhar uma quantidade específica de quilos?", resposta: "Não trabalhamos com promessa de ganho de massa rápido, garantido ou em número de quilos — o foco é método, progressão e consistência a longo prazo." },
     { pergunta: "Sou iniciante, serve pra mim?", resposta: "Sim — o método foi pensado pra construir a base do jeito certo desde o começo, sem vícios de treino." },
-    { pergunta: "Treino em casa funciona?", resposta: "Funciona. O plano tem caminhos pra treinar em casa ou na academia, com o que você tiver disponível." },
-    { pergunta: "Substitui um educador físico?", resposta: "Não. O conteúdo é educacional e não substitui acompanhamento profissional — em caso de lesão ou condição de saúde, procure um profissional." },
-    { pergunta: "Como eu recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o ebook no seu e-mail. Dá pra ler no celular, tablet ou computador." },
+    { pergunta: "Treino em casa funciona?", resposta: "Funciona. O plano tem modelos pra treinar em casa ou na academia, com o que você tiver disponível." },
+    { pergunta: "Preciso de suplemento pra ver resultado?", resposta: "Não. O guia explica o que faz sentido considerar, mas o suplemento é opcional — comida e treino vêm primeiro." },
+    { pergunta: "Como recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o guia completo no seu e-mail." },
     { pergunta: "E se eu não gostar?", resposta: "Você tem 7 dias de garantia incondicional: é só pedir o reembolso direto na Hotmart e receber 100% do valor de volta, sem perguntas." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">O que você vai conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Dê uma olhada por dentro</h3>
+    <p class="lead-sec reveal">Amostra real do guia completo — capa, módulo, modelo de treino, planner e checklist</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/ganho-de-massa/preview-pt-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-pt-capa.jpg" alt="Capa do guia Ganho de Massa Muscular" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-pt-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-pt-modulo.jpg" alt="Abertura de módulo — Treino de hipertrofia" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-pt-treino.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-pt-treino.jpg" alt="Modelo A — treino de iniciante" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-pt-planner.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-pt-planner.jpg" alt="Planner de treino e alimentar" loading="lazy"></a>
+      <a href="/assets/produtos/ganho-de-massa/preview-pt-checklist.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/ganho-de-massa/preview-pt-checklist.jpg" alt="Checklist semanal" loading="lazy"></a>
+    </div>
   </div>
 </section>
 
