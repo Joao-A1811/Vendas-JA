@@ -329,6 +329,49 @@ dieta para condiciones específicas.
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`.
 
+## 9. Desafio 30 Dias — categoria: Saúde e esportes
+
+> Guia pago (36 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/desafio-30-dias/`). Falta: cadastrar
+> o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda e criar
+> `produtos/desafio-30-dias/` no site (3 idiomas) — segue o mesmo padrão dos outros produtos ao
+> vivo. Preço sugerido (padrão da coleção, ajustar se o dono do projeto preferir outro valor):
+> R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Desafio 30 Dias — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 36 páginas com um plano de 30 dias pra organizar treino, alimentação, sono,
+hidratação e hábitos sem radicalismo. Sistema de pontuação semanal, treinos A/B/C completos com
+cardio e mobilidade, cardápios flexíveis por objetivo, protocolo anti-impulso de 10 minutos pra
+fome emocional, módulo de sono e ansiedade, planner semanal, revisão final e plano de
+continuidade de 90 dias. E-book digital com acesso imediato e garantia incondicional de 7 dias.
+Conteúdo educativo — não substitui orientação de nutricionista, médico, psicólogo ou
+profissional de educação física, e não é um protocolo clínico.
+
+**Name (EN):** 30-Day Challenge — Complete NextLevel Guide
+**Description (EN):**
+Premium 36-page guide with a 30-day plan to organize training, nutrition, sleep, hydration, and
+habits without extremes. A weekly scoring system, complete A/B/C workouts with cardio and
+mobility, flexible menus by goal, a 10-minute anti-impulse protocol for emotional hunger, a
+sleep and anxiety module, a weekly planner, a final review, and a 90-day continuity plan.
+Digital ebook, instant access, 7-day unconditional guarantee. Educational content — not a
+substitute for guidance from a dietitian, doctor, psychologist, or fitness professional, and not
+a clinical protocol.
+
+**Nombre (ES):** Desafío 30 Días — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 36 páginas con un plan de 30 días para organizar entrenamiento, alimentación,
+sueño, hidratación y hábitos sin radicalismo. Sistema de puntuación semanal, entrenamientos
+A/B/C completos con cardio y movilidad, menús flexibles por objetivo, protocolo antiimpulso de
+10 minutos para el hambre emocional, módulo de sueño y ansiedad, planner semanal, revisión final
+y plan de continuidad de 90 días. Ebook digital, acceso inmediato y garantía incondicional de 7
+días. Contenido educativo — no sustituye la orientación de un nutricionista, médico, psicólogo o
+profesional de educación física, y no es un protocolo clínico.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/desafio-30-dias-<pt|en|es>.pdf`.
+
 ---
 
 ## Depois de cadastrar cada produto
