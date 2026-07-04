@@ -46,7 +46,8 @@ As home pages têm as mesmas tags, estáticas.
 
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
-`treino-em-casa` e `suplementacao-inteligente`, ambos Saúde. Os 5 produtos ainda em rascunho
+`treino-em-casa`, `suplementacao-inteligente` e `receitas-fitness`, todos Saúde. Os 5 produtos
+ainda em rascunho
 (`emagrecimento`, `ganho-de-massa`, `investimentos`, `confianca-social`,
 `comunicacao-e-relacionamentos`) **foram retirados do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
@@ -83,10 +84,20 @@ falha pontual de moderação, ou outro campo do cadastro). A descrição revisad
 a palavra "steroids" continuam disponíveis em `CADASTRO-HOTMART.md` seção 7 como alternativa
 mais conservadora, mas não foram necessários desta vez.
 
+**`receitas-fitness` (jul/2026, 8º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
+idiomas.** Guia pago de 43 páginas (50+ receitas, cardápios por objetivo, sistema de meal prep
+3-2-1, cronograma de 30 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/receitas-fitness-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas de
+amostra em `assets/produtos/receitas-fitness/` (3 idiomas). Preço padrão da coleção: **R$ 49,99
+(PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/N106607533X` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/P106607574X` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/U106607614K` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros dois produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros três produtos.
 
 ## Como fazer alterações comuns
 
@@ -146,19 +157,13 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros dois produtos.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Suplementação Inteligente — resolver reprovação do Hotmart EN:** reenviar o produto EN pra
-  revisão usando a descrição revisada em `CADASTRO-HOTMART.md` seção 7 (sem a palavra
-  "steroids", com disclaimer padrão FDA). Quando aprovado: colar o `linkCheckoutHotmart` real em
-  `produtos/suplementacao-inteligente/index-en.html` e considerar trocar `disponivel` pra `true`
-  em `assets/produtos.js` (hoje fica `false`/"Em breve" mesmo com PT e ES já vendáveis, pra não
-  mostrar botão de compra quebrado pro visitante EN).
 - **Os 5 produtos em rascunho** (`emagrecimento`, `ganho-de-massa`, `investimentos`,
   `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos outros dois.
+  tiverem ebook real + checkout Hotmart real, igual aos três já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos dois produtos ao vivo.
+  dos três produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
