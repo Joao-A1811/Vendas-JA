@@ -278,6 +278,53 @@ seguridad. Ebook digital, acceso inmediato y garantía incondicional de 7 días.
 educativo — sin anabolizantes, sin prescripción individual, no sustituye la orientación médica
 o nutricional.
 
+---
+
+## 8. Receitas, Marmitas e Cardápios Fitness — categoria: Saúde e esportes
+
+> Guia pago (43 páginas) + guias gratuitos (isca, 6 páginas) já gerados nos 3 idiomas,
+> capas e galeria "olhe por dentro" prontas (ver `assets/produtos/receitas-fitness/`). Falta:
+> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda e criar
+> `produtos/receitas-fitness/` no site (3 idiomas) — segue o mesmo padrão dos outros dois
+> produtos ao vivo. Preço sugerido (padrão da coleção, ajustar se o dono do projeto preferir
+> outro valor): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Receitas, Marmitas e Cardápios Fitness — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 43 páginas com 50+ receitas fitness (cafés da manhã, marmitas, lanches,
+molhos e doces), cardápios completos por objetivo (emagrecimento, recomposição corporal e
+ganho de massa), sistema de meal prep 3-2-1 com combinações prontas, tabela de substituições
+inteligentes, cronograma de 30 dias com missões semanais e planners de acompanhamento
+(cardápio semanal, lista de compras, preparo e checklist de qualidade). E-book digital com
+acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo — não substitui
+orientação de nutricionista ou médico, e não é um protocolo clínico ou dieta para condições
+específicas.
+
+**Name (EN):** Fitness Recipes, Meal Preps and Menus — Complete NextLevel Guide
+**Description (EN):**
+Premium 43-page guide with 50+ fitness recipes (breakfasts, meal preps, snacks, sauces, and
+desserts), complete menus by goal (sustainable weight loss, body recomposition, and muscle
+gain), the 3-2-1 meal prep system with ready-made combinations, a smart substitution table, a
+30-day schedule with weekly missions, and tracking planners (weekly menu, shopping list, prep,
+and quality checklist). Digital ebook, instant access, 7-day unconditional guarantee.
+Educational content — not a substitute for guidance from a dietitian or doctor, and not a
+clinical protocol or diet for specific conditions.
+
+**Nombre (ES):** Recetas, Viandas y Menús Fitness — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 43 páginas con 50+ recetas fitness (desayunos, viandas, meriendas, salsas y
+postres), menús completos por objetivo (adelgazamiento sostenible, recomposición corporal y
+ganancia muscular), el sistema de meal prep 3-2-1 con combinaciones listas, una tabla de
+sustituciones inteligentes, un cronograma de 30 días con misiones semanales y planners de
+seguimiento (menú semanal, lista de compras, preparación y checklist de calidad). Ebook
+digital, acceso inmediato y garantía incondicional de 7 días. Contenido educativo — no
+sustituye la orientación de un nutricionista o médico, y no es un protocolo clínico ni una
+dieta para condiciones específicas.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/receitas-fitness-<pt|en|es>.pdf`.
+
 > Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`.
