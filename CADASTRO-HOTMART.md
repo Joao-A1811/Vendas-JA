@@ -422,6 +422,58 @@ clínico.
 
 ---
 
+## 11. Ganho de Massa Muscular — categoria: Saúde e esportes
+
+> Guia pago (43 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/ganho-de-massa/`). Este produto
+> reaproveita a pasta `produtos/ganho-de-massa/` que já existia como rascunho (ver `CLAUDE.md`) —
+> falta: cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda,
+> atualizar o `CONFIG` das 3 páginas com os textos abaixo e trocar `disponivel` pra `true`. Preço
+> sugerido (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+>
+> **Atenção — nicho sensível (regra do projeto):** sem promessa numérica de quilos ganhos, sem
+> foto antes/depois, sem linguagem de vergonha corporal. Os textos abaixo já seguem essa regra —
+> não adicionar números de peso/prazo ao editar.
+
+**Nome (PT):** Ganho de Massa Muscular — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 43 páginas com um sistema completo de hipertrofia inteligente: superávit
+calórico sem exagero, cardápio flexível de 14 dias, receitas práticas, 3 modelos de treino
+(iniciante 3x, intermediário 4x e ABC 5x), biblioteca de exercícios por grupo muscular,
+progressão de carga guiada de 12 semanas, suplementação sem fantasia, plano de execução de 30
+dias com planners, checklist semanal e plano de continuidade de 90 dias. E-book digital com
+acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo — não promete ganho de
+massa rápido, garantido ou em número de quilos, não substitui orientação de nutricionista,
+médico, educador físico ou profissional de saúde, e não é um protocolo clínico.
+
+**Name (EN):** Muscle Mass Gain — Complete NextLevel Guide
+**Description (EN):**
+Premium 43-page guide with a complete smart hypertrophy system: caloric surplus without excess,
+a flexible 14-day menu, practical recipes, 3 workout models (beginner 3x, intermediate 4x, and
+ABC 5x split), an exercise library by muscle group, a guided 12-week load progression,
+supplements without hype, a 30-day execution plan with planners, a weekly checklist, and a
+90-day continuity plan. Digital ebook, instant access, 7-day unconditional guarantee.
+Educational content — does not promise fast, guaranteed, or specific-pound muscle gain, is not
+a substitute for guidance from a dietitian, doctor, exercise professional, or health
+professional, and is not a clinical protocol.
+
+**Nombre (ES):** Ganancia de Masa Muscular — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 43 páginas con un sistema completo de hipertrofia inteligente: superávit
+calórico sin exceso, menú flexible de 14 días, recetas prácticas, 3 modelos de entrenamiento
+(principiante 3x, intermedio 4x y ABC 5x), biblioteca de ejercicios por grupo muscular,
+progresión de carga guiada de 12 semanas, suplementación sin fantasía, plan de ejecución de 30
+días con planners, checklist semanal y plan de continuidad de 90 días. Ebook digital, acceso
+inmediato y garantía incondicional de 7 días. Contenido educativo — no promete una ganancia
+muscular rápida, garantizada ni en número de kilos, no sustituye la orientación de un
+nutricionista, médico, educador físico o profesional de la salud, y no es un protocolo clínico.
+
+> Observación: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/ganho-de-massa-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
