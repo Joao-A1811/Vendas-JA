@@ -46,8 +46,8 @@ As home pages têm as mesmas tags, estáticas.
 
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
-`treino-em-casa`, `suplementacao-inteligente` e `receitas-fitness`, todos Saúde. Os 5 produtos
-ainda em rascunho
+`treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness` e `desafio-30-dias`, todos
+Saúde. Os 5 produtos ainda em rascunho
 (`emagrecimento`, `ganho-de-massa`, `investimentos`, `confianca-social`,
 `comunicacao-e-relacionamentos`) **foram retirados do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
@@ -94,10 +94,22 @@ amostra em `assets/produtos/receitas-fitness/` (3 idiomas). Preço padrão da co
 - EN/USD: `https://pay.hotmart.com/P106607574X` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/U106607614K` (US$ 19)
 
+**`desafio-30-dias` (jul/2026, 9º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
+idiomas.** Guia pago de 36 páginas (sistema de pontuação semanal, treinos A/B/C com cardio e
+mobilidade, cardápios flexíveis, protocolo anti-impulso, cronograma de 30 dias condensado em 4
+páginas semanais, planner e plano de continuidade de 90 dias) + ebook gratuito (isca, 6
+páginas) nos 3 idiomas, `ebooks/arquivos/desafio-30-dias-<pt|en|es>.pdf`. Galeria "olhe por
+dentro" com 5 páginas de amostra em `assets/produtos/desafio-30-dias/` (3 idiomas). Preço padrão
+da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel:
+true`:
+- PT/BRL: `https://pay.hotmart.com/L106608497Y` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/A106608536W` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/N106608560T` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros três produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatro produtos.
 
 ## Como fazer alterações comuns
 
@@ -160,10 +172,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros três produtos
 - **Os 5 produtos em rascunho** (`emagrecimento`, `ganho-de-massa`, `investimentos`,
   `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos três já ao vivo.
+  tiverem ebook real + checkout Hotmart real, igual aos quatro já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos três produtos ao vivo.
+  dos quatro produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
