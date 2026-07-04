@@ -40,5 +40,17 @@ window.PRODUTOS_SITE = [
       en: 'Whey, creatine, caffeine and a shopping checklist — supplement with method, no waste and no miracle promises.',
       es: 'Whey, creatina, cafeína y checklist de compra — suplementa con método, sin desperdicio y sin promesas milagrosas.'
     }
+  },
+  {
+    slug: 'receitas-fitness',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 8.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Receitas, Marmitas e Cardápios Fitness', en: 'Fitness Recipes, Meal Preps and Menus', es: 'Recetas, Viandas y Menús Fitness' },
+    resumo: {
+      pt: '50+ receitas fitness, cardápios por objetivo e sistema de meal prep — organize sua semana sem dieta radical.',
+      en: '50+ fitness recipes, menus by goal and a meal prep system — organize your week without a crash diet.',
+      es: '50+ recetas fitness, menús por objetivo y sistema de meal prep — organiza tu semana sin dieta radical.'
+    }
   }
 ];

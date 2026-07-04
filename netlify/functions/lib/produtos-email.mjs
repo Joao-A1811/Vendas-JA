@@ -160,4 +160,24 @@ export const PRODUTOS = {
       dica: 'Antes de comprar cualquier suplemento nuevo, pregúntate: ¿ya intenté resolver esto con comida, entrenamiento o sueño? Si la respuesta es no, la comida lo resuelve más barato y mejor que cualquier envase.',
     },
   }),
+
+  'receitas-fitness': montar('receitas-fitness', {
+    pt: {
+      nomeProduto: 'Receitas, Marmitas e Cardápios Fitness — Guia Completo NextLevel',
+      tema: 'comer bem com método, sem dieta radical',
+      dica: 'Nesta semana, escolha só UMA receita nova do guia e monte a marmita dela com antecedência. Comida boa que já está pronta na geladeira vence qualquer tentação de última hora.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Fitness Recipes, Meal Preps and Menus — Complete NextLevel Guide',
+      tema: 'eating well with method, no crash diet',
+      dica: "This week, pick just ONE new recipe from the guide and prep it ahead of time. Good food that's already ready in the fridge beats any last-minute temptation.",
+    },
+    es: {
+      nomeProduto: 'Recetas, Viandas y Menús Fitness — Guía Completa NextLevel',
+      tema: 'comer bien con método, sin dieta radical',
+      dica: 'Esta semana, elige solo UNA receta nueva de la guía y prepárala con anticipación. La buena comida que ya está lista en la heladera vence cualquier tentación de último momento.',
+    },
+  }),
 };
