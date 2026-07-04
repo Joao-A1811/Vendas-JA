@@ -85,4 +85,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/receitas-fitness/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/receitas-fitness/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/desafio-30-dias/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/desafio-30-dias/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/desafio-30-dias/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/desafio-30-dias/"/>
+  </url>
 </urlset>

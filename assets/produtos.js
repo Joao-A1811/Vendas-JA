@@ -52,5 +52,17 @@ window.PRODUTOS_SITE = [
       en: '50+ fitness recipes, menus by goal and a meal prep system — organize your week without a crash diet.',
       es: '50+ recetas fitness, menús por objetivo y sistema de meal prep — organiza tu semana sin dieta radical.'
     }
+  },
+  {
+    slug: 'desafio-30-dias',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 9.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Desafio 30 Dias', en: '30-Day Challenge', es: 'Desafío 30 Días' },
+    resumo: {
+      pt: '30 missões diárias de treino, alimentação, sono e hábitos — sistema de pontuação e plano de continuidade de 90 dias.',
+      en: '30 daily missions for training, nutrition, sleep and habits — scoring system and a 90-day continuity plan.',
+      es: '30 misiones diarias de entrenamiento, alimentación, sueño y hábitos — sistema de puntuación y plan de continuidad de 90 días.'
+    }
   }
 ];

@@ -180,4 +180,24 @@ export const PRODUTOS = {
       dica: 'Esta semana, elige solo UNA receta nueva de la guía y prepárala con anticipación. La buena comida que ya está lista en la heladera vence cualquier tentación de último momento.',
     },
   }),
+
+  'desafio-30-dias': montar('desafio-30-dias', {
+    pt: {
+      nomeProduto: 'Desafio 30 Dias — Guia Completo NextLevel',
+      tema: 'organizar treino, alimentação, sono e hábitos em 30 dias, sem radicalismo',
+      dica: 'Hoje, marque só UMA missão do dia — treino, comida ou mentalidade — e cumpra ela até o fim. A regra dos 80% vale mais que qualquer semana perfeita abandonada no meio.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: '30-Day Challenge — Complete NextLevel Guide',
+      tema: 'organizing training, nutrition, sleep, and habits in 30 days, no extremes',
+      dica: "Today, pick just ONE mission of the day — training, food, or mindset — and follow through on it. The 80% rule beats any perfect week abandoned halfway.",
+    },
+    es: {
+      nomeProduto: 'Desafío 30 Días — Guía Completa NextLevel',
+      tema: 'organizar entrenamiento, alimentación, sueño y hábitos en 30 días, sin radicalismo',
+      dica: 'Hoy, elige solo UNA misión del día — entrenamiento, comida o mentalidad — y cúmplela hasta el final. La regla del 80% vale más que cualquier semana perfecta abandonada a la mitad.',
+    },
+  }),
 };
