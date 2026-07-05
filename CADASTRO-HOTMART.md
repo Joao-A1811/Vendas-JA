@@ -865,6 +865,75 @@ manipulación ni ningún abordaje invasivo.
 
 ---
 
+## 19. Linguagem Corporal e Presença Social — categoria: Saúde e esportes
+
+> Guia pago (36 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/presenca-social/`). Produto novo, slug
+> novo `presenca-social` (sem pasta de rascunho prévia) — mesma nova vertente "Conexões, Presença
+> e Relacionamentos Saudáveis" do `confianca-social` e do `atracao-com-respeito`, mas com foco
+> específico em linguagem corporal (postura, olhar, voz, gestos, imagem pessoal) e regulação da
+> ansiedade corporal antes de interagir — distinto do `atracao-com-respeito` (foco em ansiedade
+> social e escada de exposição) e do `confianca-social` (foco em conversas). Falta: copiar
+> `landing-page/` para `produtos/presenca-social/`, cadastrar o produto na Hotmart, pegar o
+> `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das 3 páginas com os textos
+> abaixo e adicionar o bloco em `assets/produtos.js` (com `disponivel: true` só quando todos os
+> idiomas tiverem checkout funcionando). Preço sugerido (padrão da coleção): R$ 49,99 (PT) /
+> US$ 19,00 (EN/ES).
+
+**Nome (PT):** Linguagem Corporal e Presença Social — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 36 páginas para desenvolver presença social visível através da
+linguagem corporal: a diferença entre presença e atração, postura/eixo/energia com protocolo de
+60 segundos, olhar/rosto/sorriso com o método 3-2-1 para contato visual, voz/ritmo/pausas com a
+regra dos 3 ajustes, espaço pessoal e limites com distâncias sociais por contexto, mãos/gestos e
+congruência, imagem pessoal sem obsessão (os 6 pilares do autocuidado), como entrar em ambientes
+sociais com o ritual de chegada em 5 passos, calibragem social com o método O.A.R. e leitura de
+sinais sem paranoia, ansiedade corporal com o Protocolo R.E.S.E.T. e escada de exposição social,
+playbooks por situação (faculdade, evento social e mais), um plano de 30 dias com cronograma
+completo e score semanal de presença, e workbook com ficha de diagnóstico e diário de interação
+social. E-book digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo
+sobre comunicação não verbal e autoconfiança — não promete que alguém vai se sentir atraído por
+você, não substitui apoio psicológico e não ensina nenhuma técnica de intimidação, encarada
+fixa ou invasão de espaço alheio.
+
+**Name (EN):** Body Language and Social Presence — Complete NextLevel Guide
+**Description (EN):**
+Premium 36-page guide + workbook to build visible social presence through body language: the
+difference between presence and attraction, posture/alignment/energy with a 60-second protocol,
+eye contact/face/smile with the 3-2-1 method, voice/rhythm/pauses with the rule of 3 adjustments,
+personal space and boundaries with social distances by context, hands/gestures and congruence,
+personal image without obsession (the 6 pillars of self-care), entering social environments with
+a 5-step arrival ritual, social calibration with the O.A.R. method and reading signals without
+paranoia, body anxiety with the R.E.S.E.T. protocol and a social exposure ladder, situation
+playbooks (college, social events and more), a 30-day plan with a full schedule and a weekly
+presence score, and a workbook with a diagnostic sheet and social interaction journal. Digital
+ebook, instant access, 7-day unconditional guarantee. Educational content on nonverbal
+communication and self-confidence — does not promise anyone will feel attracted to you, does not
+replace psychological support, and does not teach any technique of intimidation, staring, or
+invading someone else's space.
+
+**Nombre (ES):** Lenguaje Corporal y Presencia Social — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 36 páginas para desarrollar presencia social visible a través del
+lenguaje corporal: la diferencia entre presencia y atracción, postura/eje/energía con un
+protocolo de 60 segundos, mirada/rostro/sonrisa con el método 3-2-1 para el contacto visual,
+voz/ritmo/pausas con la regla de los 3 ajustes, espacio personal y límites con distancias
+sociales por contexto, manos/gestos y congruencia, imagen personal sin obsesión (los 6 pilares
+del autocuidado), cómo entrar en ambientes sociales con el ritual de llegada en 5 pasos,
+calibración social con el método O.A.R. y lectura de señales sin paranoia, ansiedad corporal con
+el Protocolo R.E.S.E.T. y una escalera de exposición social, playbooks por situación (universidad,
+evento social y más), un plan de 30 días con cronograma completo y puntaje semanal de presencia,
+y un workbook con ficha de diagnóstico y diario de interacción social. Ebook digital, acceso
+inmediato y garantía incondicional de 7 días. Contenido educativo sobre comunicación no verbal y
+autoconfianza — no promete que alguien se sienta atraído por ti, no sustituye el apoyo
+psicológico y no enseña ninguna técnica de intimidación, mirada fija o invasión del espacio ajeno.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/presenca-social-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
