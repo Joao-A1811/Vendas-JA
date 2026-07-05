@@ -47,7 +47,8 @@ As home pages têm as mesmas tags, estáticas.
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
-`emagrecimento`, `ganho-de-massa` e `treino-academia`, todos Saúde. Os 3 produtos ainda em rascunho
+`emagrecimento`, `ganho-de-massa`, `treino-academia` e `mentalidade-ansiedade-habitos`, todos
+Saúde. Os 3 produtos ainda em rascunho
 (`investimentos`, `confianca-social`,
 `comunicacao-e-relacionamentos`) **continuam fora do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
@@ -151,10 +152,26 @@ páginas de amostra em `assets/produtos/treino-academia/` (3 idiomas). Preço pa
 - EN/USD: `https://pay.hotmart.com/J106612684I` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/X106612700Y` (US$ 19)
 
+**`mentalidade-ansiedade-habitos` (jul/2026, 13º produto — "Coleção Projeto Verão") — ✅ AO VIVO
+nos 3 idiomas.** Produto novo (sem pasta de rascunho prévia), funciona como bônus/complemento
+emocional da coleção. Guia pago de 36 páginas (ciclo do hábito, fome física x fome emocional,
+protocolo anti-impulso de 10 minutos, ambiente que facilita a dieta, sono e movimento como
+regulação emocional, plano de 30 dias, recaídas e autoimagem, laboratório de gatilhos pessoais,
+rotinas por perfil, desafios de 7 dias, plano de continuidade de 90 dias, cartões de bolso e
+seção "Sinais de atenção" — mantém integralmente os avisos de saúde/segurança do material
+original, sem diagnosticar nem tratar ansiedade ou transtornos alimentares) + ebook gratuito
+(isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/mentalidade-ansiedade-habitos-<pt|en|es>.pdf`.
+Galeria "olhe por dentro" com 5 páginas de amostra em
+`assets/produtos/mentalidade-ansiedade-habitos/` (3 idiomas). Preço padrão da coleção: **R$
+49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/Q106613382C` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/N106613402F` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/B106613410C` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros sete produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros oito produtos.
 
 ## Como fazer alterações comuns
 
@@ -217,10 +234,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros sete produtos.
 - **Os 3 produtos em rascunho** (`investimentos`,
   `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos sete já ao vivo.
+  tiverem ebook real + checkout Hotmart real, igual aos oito já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos sete produtos ao vivo.
+  dos oito produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
