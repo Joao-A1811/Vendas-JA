@@ -48,8 +48,8 @@ As home pages têm as mesmas tags, estáticas.
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
 `emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
-`mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling` e
-`comunicacao-e-relacionamentos`, todos Saúde. O único produto ainda em rascunho
+`mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
+`comunicacao-e-relacionamentos` e `atracao-com-respeito`, todos Saúde. O único produto ainda em rascunho
 (`investimentos`) **continua fora do catálogo público e do `sitemap.xml`**, mas a pasta
 `produtos/investimentos/` continua no repositório (CONFIG de exemplo já preenchido: headline,
 benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra reaproveitar
@@ -252,10 +252,34 @@ US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/D106619836D` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Q106619860V` (US$ 19)
 
+**`atracao-com-respeito` (jul/2026, 18º produto — "Confiança Social: Atração com Respeito", mesma
+nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3 idiomas.**
+Produto novo, slug novo sem pasta de rascunho prévia — distinto do `confianca-social` já ao vivo
+(que é sobre conversas e naturalidade social em geral); este produto tem foco específico em
+presença pessoal, ansiedade social e atração com respeito. Guia pago de 33 páginas (diagnóstico
+social com escada de exposição em 5 níveis, presença pessoal — aparência cuidada e linguagem
+corporal —, o Protocolo P.A.R.E. para ansiedade social — pausar, aterrissar, reorganizar,
+executar —, o método C.O.N.E.C.T.A. de 7 passos para conversas naturais, sinais de abertura e
+cautela na atração, o convite respeitoso em 3 partes, reformulação madura diante da rejeição,
+ambientes sociais — academia, eventos, trabalho, online —, limites e mensagens digitais
+saudáveis, e um plano de 30 dias condensado em 2 tabelas semanais — a partir de um PDF de origem
+com 30 páginas quase idênticas de "Dia N" — com workbook completo — mapa de limites pessoais,
+identidade social autêntica, roteiro de conversa difícil) + ebook gratuito (isca, 6 páginas) nos
+3 idiomas, `ebooks/arquivos/atracao-com-respeito-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/atracao-com-respeito/` (3 idiomas). Todo o conteúdo
+(headline, FAQ, ebook, capa, Hotmart) não promete conquistar ninguém, não substitui terapia e não
+incentiva insistência, pressão, manipulação ou qualquer abordagem invasiva — segue a mesma regra
+de nicho sensível de relacionamentos do `confianca-social`, do `carisma-humor-storytelling` e do
+`comunicacao-e-relacionamentos`. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/I106620409B` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/L106620441I` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Q106620456T` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros doze produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros treze produtos.
 
 ## Como fazer alterações comuns
 
@@ -317,10 +341,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros doze produtos.
 
 - **O único produto em rascunho** (`investimentos`) continua com CONFIG de exemplo em
   `produtos/investimentos/`, mas fora do catálogo público — só volta a aparecer no site quando
-  tiver ebook real + checkout Hotmart real, igual aos doze já ao vivo.
+  tiver ebook real + checkout Hotmart real, igual aos treze já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos doze produtos ao vivo.
+  dos treze produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
