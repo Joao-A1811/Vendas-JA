@@ -47,7 +47,7 @@ As home pages têm as mesmas tags, estáticas.
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
-`emagrecimento` e `ganho-de-massa`, todos Saúde. Os 3 produtos ainda em rascunho
+`emagrecimento`, `ganho-de-massa` e `treino-academia`, todos Saúde. Os 3 produtos ainda em rascunho
 (`investimentos`, `confianca-social`,
 `comunicacao-e-relacionamentos`) **continuam fora do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
@@ -138,10 +138,23 @@ Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout rea
 - EN/USD: `https://pay.hotmart.com/Y106610935L` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/F106610965B` (US$ 19)
 
+**`treino-academia` (jul/2026, 12º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
+idiomas.** Produto novo (sem pasta de rascunho prévia). Guia pago de 36 páginas (6 pilares da
+evolução, dieta por objetivo com cardápio de 7 dias, treinos A/B por grupo muscular — peito,
+costas, ombros, braços, pernas e core —, 4 divisões semanais prontas de 3x a 6x, cronograma de
+12 semanas em fases, cardio e mobilidade, planners de evolução, biblioteca de exercícios e
+fichas prontas Full Body/Superior-Inferior/Push-Pull-Legs) + ebook gratuito (isca, 6 páginas)
+nos 3 idiomas, `ebooks/arquivos/treino-academia-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/treino-academia/` (3 idiomas). Preço padrão da coleção:
+**R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/Y106612661T` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/J106612684I` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/X106612700Y` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros seis produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros sete produtos.
 
 ## Como fazer alterações comuns
 
@@ -204,10 +217,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros seis produtos.
 - **Os 3 produtos em rascunho** (`investimentos`,
   `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos seis já ao vivo.
+  tiverem ebook real + checkout Hotmart real, igual aos sete já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos seis produtos ao vivo.
+  dos sete produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
