@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comunicación y Relaciones — conexiones de verdad | NextLevel</title>
-<meta name="description" content="Ebook para comunicarte con claridad y empatía y construir relaciones sanas en el amor, la familia y el trabajo.">
+<title>Comunicación y Relación: Conversaciones que Crean Conexión — Guía Completa | NextLevel</title>
+<meta name="description" content="Método O.U.V.I.R., estructura de storytelling 30-20-10, método R.E.P.A.R.O. para conflictos y un plan de 30 días — comunícate con claridad y construye relaciones saludables.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Comunicación y Relaciones — conexiones de verdad | NextLevel">
-<meta property="og:description" content="Ebook para comunicarte con claridad y empatía y construir relaciones sanas en el amor, la familia y el trabajo.">
+<meta property="og:title" content="Comunicación y Relación: Conversaciones que Crean Conexión — Guía Completa | NextLevel">
+<meta property="og:description" content="Método O.U.V.I.R., estructura de storytelling 30-20-10, método R.E.P.A.R.O. para conflictos y un plan de 30 días — comunícate con claridad y construye relaciones saludables.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-es.png">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,19 +185,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Comunicación y Relaciones",
-  headline: "Las relaciones sanas empiezan con una buena conversación",
-  subheadline: "Aprende a comunicarte con claridad y empatía para fortalecer amistades, familia y vida amorosa — sin juegos.",
-  selo: "📘 Ebook completo · Acceso inmediato",
+  produto: "Comunicación y Relación: Conversaciones que Crean Conexión",
+  headline: "Método O.U.V.I.R., estructura de storytelling 30-20-10 y plan de 30 días — comunícate con claridad y construye relaciones saludables",
+  subheadline: "Guía completa con escucha activa, mejores preguntas, storytelling social, humor con respeto, límites saludables, un método R.E.P.A.R.O. para conflictos y un workbook completo de seguimiento.",
+  selo: "💬 Guía completa · 37 páginas · Acceso inmediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 días", legenda: "de garantía" },
-    { numero: "0", legenda: "relleno" }
+    { numero: "30 días", legenda: "plan guiado" },
+    { numero: "9", legenda: "módulos prácticos" },
+    { numero: "0", legenda: "manipulación o presión" }
   ],
   beneficios: [
-    { icone: "🗣️", titulo: "Habla para que te entiendan", texto: "Claridad y asertividad sin brusquedad: di lo que necesitas sin convertir la charla en pelea." },
-    { icone: "👂", titulo: "Escucha de verdad", texto: "Escucha activa en la práctica — la habilidad que más transforma cualquier relación." },
-    { icone: "🤝", titulo: "Conflicto sin guerra", texto: "Cómo discrepar, pedir cambios y negociar sin herir al otro ni anularte." }
+    { icone: "👂", titulo: "Método O.U.V.I.R.", texto: "Observar, usar silencio, validar, investigar con cuidado y responder con presencia." },
+    { icone: "📖", titulo: "Storytelling social", texto: "Estructura 30-20-10 para contar historias cortas y atractivas, sin dar rodeos." },
+    { icone: "🤝", titulo: "Límites y reparación de conflictos", texto: "Los cinco tipos de límite y un método de reparación para resolver roces con respeto." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -199,16 +205,15 @@ const CONFIG = {
   precoPor: "$19",
   garantiaTexto: "Garantía incondicional de 7 días",
   contagemRegressivaFim: '',
-  // SOLO FALTA ESTO: cambia por el enlace real del checkout de Hotmart de este producto.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/Q106619860V',
   linkEbookGratis: '/ebooks/arquivos/comunicacao-e-relacionamentos-es.pdf',
   idioma: "es",
   faq: [
-    { pergunta: "¿Sirve para la vida amorosa y el trabajo?", resposta: "Sí. Los principios de comunicación son los mismos — el ebook trae ejemplos aplicados a amistades, familia, pareja y trabajo." },
-    { pergunta: "¿Es sobre \"manipular\" personas?", resposta: "No — todo lo contrario. El método se basa en comunicación honesta y empática, para construir relaciones de confianza duraderas." },
-    { pergunta: "¿Sustituye a la terapia de pareja?", resposta: "No. El contenido es educativo y no sustituye el acompañamiento psicológico cuando es necesario." },
-    { pergunta: "¿Cómo recibo el material?", resposta: "El acceso es 100% digital e inmediato: en cuanto se confirma el pago, Hotmart envía el ebook a tu correo. Puedes leerlo en el móvil, tablet u ordenador." },
+    { pergunta: "¿Esta guía enseña manipulación o técnicas de conquista?", resposta: "No. El método es sobre comunicación genuina, escucha y reciprocidad — el otro siempre tiene la libertad de decir sí, no o tal vez. No enseñamos manipulación, presión ni juegos emocionales." },
+    { pergunta: "¿Sirve para la vida amorosa, amistades y trabajo?", resposta: "Sí. Los principios de comunicación son los mismos — la guía trae ejemplos aplicados a amistades, familia, relación de pareja y ambiente profesional." },
+    { pergunta: "¿Cómo manejo un conflicto sin que se vuelva pelea?", resposta: "La guía enseña un método de reparación (reconocer, escuchar, pedir disculpas, ajustar, reparar y observar), además de los cinco tipos de límite y cómo comunicarlos con respeto." },
+    { pergunta: "¿Sustituye la terapia de pareja o el acompañamiento psicológico?", resposta: "No. El contenido es educativo y no sustituye el acompañamiento profesional cuando es necesario." },
+    { pergunta: "¿Cómo recibo el material?", resposta: "El acceso es 100% digital e inmediato: en cuanto se confirma el pago, Hotmart envía la guía completa a tu correo." },
     { pergunta: "¿Y si no me gusta?", resposta: "Tienes 7 días de garantía incondicional: solo pide el reembolso directamente en Hotmart y recibe el 100% de tu dinero de vuelta, sin preguntas." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">Lo que vas a conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Échale un vistazo por dentro</h3>
+    <p class="lead-sec reveal">Muestra real de la guía completa — portada, módulo, preguntas, invitaciones y red flags/green flags</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-es-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-es-capa.jpg" alt="Portada de la guía Comunicación y Relación" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-es-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-es-modulo.jpg" alt="Apertura de módulo — Conversaciones que conectan" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-es-perguntas.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-es-perguntas.jpg" alt="Cómo preguntar con cuidado" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-es-convites.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-es-convites.jpg" alt="Invitaciones, continuidad y cuándo no invitar" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-es-redflags.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-es-redflags.jpg" alt="Red flags y green flags en las relaciones" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

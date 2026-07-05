@@ -148,5 +148,17 @@ window.PRODUTOS_SITE = [
       en: 'The C.H.A.R.M. method, storytelling structures and a 30-day plan — build connection and tell interesting stories without forcing a persona.',
       es: 'Método C.H.A.R.M.E., estructuras de storytelling y plan de 30 días — crea conexión y cuenta historias interesantes sin forzar un personaje.'
     }
+  },
+  {
+    slug: 'comunicacao-e-relacionamentos',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 17.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Comunicação e Relacionamento: Conversas que Criam Conexão', en: 'Communication and Relationships: Conversations That Create Connection', es: 'Comunicación y Relación: Conversaciones que Crean Conexión' },
+    resumo: {
+      pt: 'Método O.U.V.I.R., estrutura de storytelling 30-20-10 e plano de 30 dias — comunique-se com clareza e construa relacionamentos saudáveis.',
+      en: 'The listening method, the 30-20-10 storytelling structure and a 30-day plan — communicate clearly and build healthy relationships.',
+      es: 'Método O.U.V.I.R., estructura de storytelling 30-20-10 y plan de 30 días — comunícate con claridad y construye relaciones saludables.'
+    }
   }
 ];

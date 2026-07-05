@@ -111,18 +111,20 @@ export const PRODUTOS = {
 
   'comunicacao-e-relacionamentos': montar('comunicacao-e-relacionamentos', {
     pt: {
-      nomeProduto: 'Ebook Comunicação e Relacionamentos',
-      tema: 'comunicação e relacionamentos saudáveis',
+      nomeProduto: 'Comunicação e Relacionamento: Conversas que Criam Conexão — Guia Completo NextLevel',
+      tema: 'método O.U.V.I.R. de escuta ativa, storytelling social e método R.E.P.A.R.O. para conflitos',
       dica: "Na próxima conversa difícil, antes de responder, repita com suas palavras o que a pessoa disse ('então o que te incomoda é...'). Esse gesto simples desarma a briga e mostra que você escutou de verdade.",
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
-      nomeProduto: 'Communication & Relationships Ebook',
-      tema: 'communication and healthy relationships',
+      nomeProduto: 'Communication and Relationships: Conversations That Create Connection — Complete NextLevel Guide',
+      tema: 'the listening method for active listening, social storytelling and a conflict-repair method',
       dica: "In your next difficult conversation, before replying, repeat in your own words what the person said ('so what bothers you is...'). This simple move defuses the fight and shows you truly listened.",
     },
     es: {
-      nomeProduto: 'Ebook Comunicación y Relaciones',
-      tema: 'comunicación y relaciones sanas',
+      nomeProduto: 'Comunicación y Relación: Conversaciones que Crean Conexión — Guía Completa NextLevel',
+      tema: 'método O.U.V.I.R. de escucha activa, storytelling social y método R.E.P.A.R.O. para conflictos',
       dica: "En tu próxima conversación difícil, antes de responder, repite con tus palabras lo que la otra persona dijo ('entonces lo que te molesta es...'). Ese gesto simple desarma la pelea y demuestra que escuchaste de verdad.",
     },
   }),

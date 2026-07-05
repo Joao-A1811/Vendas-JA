@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Communication & Relationships — real connections | NextLevel</title>
-<meta name="description" content="An ebook to communicate with clarity and empathy and build healthy relationships in love, family and work.">
+<title>Communication and Relationships: Conversations That Create Connection — Complete Guide | NextLevel</title>
+<meta name="description" content="The listening method, the 30-20-10 storytelling structure, the conflict-repair method and a 30-day plan — communicate clearly and build healthy relationships.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Communication & Relationships — real connections | NextLevel">
-<meta property="og:description" content="An ebook to communicate with clarity and empathy and build healthy relationships in love, family and work.">
+<meta property="og:title" content="Communication and Relationships: Conversations That Create Connection — Complete Guide | NextLevel">
+<meta property="og:description" content="The listening method, the 30-20-10 storytelling structure, the conflict-repair method and a 30-day plan — communicate clearly and build healthy relationships.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-en.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,19 +185,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Communication & Relationships Ebook",
-  headline: "Healthy relationships start with a good conversation",
-  subheadline: "Learn to communicate with clarity and empathy to strengthen friendships, family and your love life — no games.",
-  selo: "📘 Complete ebook · Instant access",
+  produto: "Communication and Relationships: Conversations That Create Connection",
+  headline: "The listening method, the 30-20-10 storytelling structure and a 30-day plan — communicate clearly and build healthy relationships",
+  subheadline: "A complete guide with active listening, better questions, social storytelling, humor with respect, healthy boundaries, a conflict-repair method, and a full workbook to track your progress.",
+  selo: "💬 Complete guide · 37 pages · Instant access",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7-day", legenda: "guarantee" },
-    { numero: "0", legenda: "fluff" }
+    { numero: "30 days", legenda: "guided plan" },
+    { numero: "9", legenda: "practical modules" },
+    { numero: "0", legenda: "manipulation or pressure" }
   ],
   beneficios: [
-    { icone: "🗣️", titulo: "Speak to be understood", texto: "Clarity and assertiveness without rudeness: say what you need without turning talk into a fight." },
-    { icone: "👂", titulo: "Truly listen", texto: "Active listening in practice — the skill that most transforms any relationship." },
-    { icone: "🤝", titulo: "Conflict without war", texto: "How to disagree, ask for change and negotiate without hurting the other person or erasing yourself." }
+    { icone: "👂", titulo: "The listening method", texto: "Observe, use silence, validate, investigate with care and respond with presence." },
+    { icone: "📖", titulo: "Social storytelling", texto: "The 30-20-10 structure for telling short, engaging stories without rambling." },
+    { icone: "🤝", titulo: "Boundaries and conflict repair", texto: "The five types of boundaries and a repair method for resolving friction with respect." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -199,16 +205,15 @@ const CONFIG = {
   precoPor: "$19",
   garantiaTexto: "7-day unconditional money-back guarantee",
   contagemRegressivaFim: '',
-  // ONLY THIS MISSING: replace with this product’s real Hotmart checkout link.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/D106619836D',
   linkEbookGratis: '/ebooks/arquivos/comunicacao-e-relacionamentos-en.pdf',
   idioma: "en",
   faq: [
-    { pergunta: "Does it apply to love life and work?", resposta: "Yes. The communication principles are the same — the ebook brings examples applied to friendships, family, romantic life and work." },
-    { pergunta: "Is this about \"manipulating\" people?", resposta: "No — quite the opposite. The method is based on honest, empathetic communication, to build trusting relationships that last." },
-    { pergunta: "Does it replace couples therapy?", resposta: "No. The content is educational and doesn’t replace psychological care when it’s needed." },
-    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the ebook to your email. You can read it on your phone, tablet or computer." },
+    { pergunta: "Does this guide teach manipulation or pickup techniques?", resposta: "No. The method is about genuine communication, listening and reciprocity — the other person always has the freedom to say yes, no or maybe. We don't teach manipulation, pressure, or emotional games." },
+    { pergunta: "Does this work for romantic relationships, friendships and work?", resposta: "Yes. The communication principles are the same — the guide includes examples applied to friendships, family, romantic relationships and the workplace." },
+    { pergunta: "How do I handle conflict without it turning into a fight?", resposta: "The guide teaches a repair method (recognize, listen, apologize, adjust, repair and observe), plus the five types of boundaries and how to communicate them with respect." },
+    { pergunta: "Does this replace couples therapy or psychological support?", resposta: "No. The content is educational and does not replace professional support when it's needed." },
+    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the complete guide to your email." },
     { pergunta: "What if I don’t like it?", resposta: "You have a 7-day unconditional guarantee: just request a refund directly through Hotmart and get 100% of your money back, no questions asked." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">What you'll get</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Take a look inside</h3>
+    <p class="lead-sec reveal">Real samples from the complete guide — cover, module opener, questions, invitations, and red flags/green flags</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-en-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-en-capa.jpg" alt="Cover of the Communication and Relationships guide" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-en-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-en-modulo.jpg" alt="Module opener — Conversations that connect" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-en-perguntas.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-en-perguntas.jpg" alt="How to ask with care" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-en-convites.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-en-convites.jpg" alt="Invitations, continuity and when not to invite" loading="lazy"></a>
+      <a href="/assets/produtos/comunicacao-e-relacionamentos/preview-en-redflags.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/comunicacao-e-relacionamentos/preview-en-redflags.jpg" alt="Red flags and green flags in relationships" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

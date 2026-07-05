@@ -253,4 +253,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/carisma-humor-storytelling/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/carisma-humor-storytelling/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/comunicacao-e-relacionamentos/"/>
+  </url>
 </urlset>
