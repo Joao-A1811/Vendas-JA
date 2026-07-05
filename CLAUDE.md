@@ -47,9 +47,9 @@ As home pages têm as mesmas tags, estáticas.
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
-`emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos` e
-`mobilidade-alongamento-prevencao`, todos Saúde. Os 3 produtos ainda em rascunho
-(`investimentos`, `confianca-social`,
+`emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
+`mobilidade-alongamento-prevencao` e `confianca-social`, todos Saúde. Os 2 produtos ainda em
+rascunho (`investimentos`,
 `comunicacao-e-relacionamentos`) **continuam fora do catálogo público e do `sitemap.xml`**,
 mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
 headline, benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra
@@ -186,10 +186,31 @@ padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3
 - EN/USD: `https://pay.hotmart.com/T106614345B` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/C106614359D` (US$ 19)
 
+**`confianca-social` (jul/2026, 15º produto — "Ansiedade Social e Conversas com Naturalidade",
+nova vertente) — ✅ AO VIVO nos 3 idiomas.** Reaproveitou o slug/pasta que já existia como
+rascunho ("Confiança Social na Prática"). Guia pago de 42 páginas (ansiedade social sem
+vergonha, o ciclo da trava social, corpo calmo/mente presente com preparação de 3 minutos,
+exposição gradual sem forçar com escada de 6 níveis, fórmulas de abertura respeitosa, método
+P.E.C. para sustentar conversa sem parecer interrogatório, silêncio/rejeição/limites com
+frases de encerramento elegante, playbooks por situação — faculdade, academia, festa, café,
+redes sociais —, conversas com interesse e respeito sem pressão nem joguinho, cronograma de 30
+dias, e workbook completo — diário social, mapa de gatilhos, escada pessoal de exposição, banco
+de frases) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/confianca-social-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas de
+amostra em `assets/produtos/confianca-social/` (3 idiomas). Todo o conteúdo (headline, FAQ,
+ebook, capa, Hotmart) evita prometer conquista garantida ou resultado romântico, sempre
+enquadrando o método como comunicação e habilidades sociais que dependem de reciprocidade —
+nunca manipulação — seguindo a regra de nicho sensível de relacionamentos já documentada neste
+arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3
+moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/K106617805B` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/I106617832D` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Y106617848F` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros nove produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros dez produtos.
 
 ## Como fazer alterações comuns
 
@@ -249,13 +270,13 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros nove produtos.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Os 3 produtos em rascunho** (`investimentos`,
-  `confianca-social`, `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
+- **Os 2 produtos em rascunho** (`investimentos`,
+  `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
   `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos nove já ao vivo.
+  tiverem ebook real + checkout Hotmart real, igual aos dez já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos nove produtos ao vivo.
+  dos dez produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
