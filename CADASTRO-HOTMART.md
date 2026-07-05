@@ -523,6 +523,58 @@ nutricional o de un profesional de educación física, y no es un protocolo clí
 
 ---
 
+## 13. Mentalidade, Ansiedade e Hábitos — categoria: Saúde e esportes
+
+> Guia pago (36 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/mentalidade-ansiedade-habitos/`).
+> Produto novo, sem pasta de rascunho prévia — funciona como bônus/complemento emocional da
+> coleção (ciclo do hábito, protocolo anti-impulso, ambiente, sono, plano de 30 dias). Falta:
+> copiar `landing-page/` para `produtos/mentalidade-ansiedade-habitos/`, cadastrar o produto na
+> Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das 3 páginas
+> com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com `disponivel: true` só
+> quando todos os idiomas tiverem checkout funcionando). Preço sugerido (padrão da coleção):
+> R$ 49,99 (PT) / US$ 19,00 (EN/ES). Conteúdo revisado para não diagnosticar nem tratar
+> ansiedade ou transtornos alimentares — mantém a seção "Sinais de atenção" e os avisos de
+> buscar apoio profissional do material original.
+
+**Nome (PT):** Mentalidade, Ansiedade e Hábitos — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 36 páginas com um método prático para construir constância e controlar
+gatilhos emocionais: o ciclo do hábito, fome física x fome emocional, protocolo anti-impulso de
+10 minutos, ambiente que facilita a dieta, sono e movimento como regulação emocional, plano de
+30 dias, laboratório de gatilhos pessoais, rotinas por perfil e ferramentas completas de
+acompanhamento (diário emocional, tracker de hábitos, cartões de bolso). E-book digital com
+acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo — não substitui
+avaliação médica, nutricional, psicológica ou de educação física, não diagnostica nem trata
+ansiedade ou transtornos alimentares.
+
+**Name (EN):** Mindset, Anxiety and Habits — Complete NextLevel Guide
+**Description (EN):**
+Premium 36-page guide with a practical method to build consistency and control emotional
+triggers: the habit cycle, physical vs. emotional hunger, a 10-minute anti-impulse protocol, an
+environment that makes dieting easier, sleep and movement as emotional regulation, a 30-day
+plan, a personal trigger lab, routines by profile, and complete tracking tools (emotional
+journal, habit tracker, pocket cards). Digital ebook, instant access, 7-day unconditional
+guarantee. Educational content — does not replace medical, nutritional, psychological, or
+exercise-professional assessment, and does not diagnose or treat anxiety or eating disorders.
+
+**Nombre (ES):** Mentalidad, Ansiedad y Hábitos — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 36 páginas con un método práctico para construir constancia y controlar
+gatillos emocionales: el ciclo del hábito, hambre física x hambre emocional, protocolo
+antiimpulso de 10 minutos, ambiente que facilita la dieta, sueño y movimiento como regulación
+emocional, plan de 30 días, laboratorio de gatillos personales, rutinas por perfil y
+herramientas completas de acompañamiento (diario emocional, tracker de hábitos, tarjetas de
+bolsillo). Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido
+educativo — no sustituye la evaluación médica, nutricional, psicológica o de un profesional de
+educación física, y no diagnostica ni trata la ansiedad o los trastornos alimentarios.
+
+> Observación: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/mentalidade-ansiedade-habitos-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
