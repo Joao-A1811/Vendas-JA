@@ -136,5 +136,17 @@ window.PRODUTOS_SITE = [
       en: 'A gradual exposure ladder, playbooks by situation and a 30-day plan — unlock conversations and build connections with respect.',
       es: 'Escalera de exposición gradual, playbooks por situación y plan de 30 días — destraba conversaciones y crea conexiones con respeto.'
     }
+  },
+  {
+    slug: 'carisma-humor-storytelling',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 16.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Carisma, Humor e Storytelling', en: 'Charisma, Humor and Storytelling', es: 'Carisma, Humor y Storytelling' },
+    resumo: {
+      pt: 'Método C.H.A.R.M.E., estruturas de storytelling e plano de 30 dias — crie conexão e conte histórias interessantes sem forçar personagem.',
+      en: 'The C.H.A.R.M. method, storytelling structures and a 30-day plan — build connection and tell interesting stories without forcing a persona.',
+      es: 'Método C.H.A.R.M.E., estructuras de storytelling y plan de 30 días — crea conexión y cuenta historias interesantes sin forzar un personaje.'
+    }
   }
 ];

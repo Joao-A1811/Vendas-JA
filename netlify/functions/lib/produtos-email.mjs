@@ -266,4 +266,24 @@ export const PRODUTOS = {
       dica: 'Antes de tu próximo entrenamiento, haz solo 5 minutos del calentamiento específico de la articulación que más te preocupa. La prevención no es el entrenamiento extra que nunca haces — es el calentamiento de 5 minutos que ya puedes empezar hoy.',
     },
   }),
+
+  'carisma-humor-storytelling': montar('carisma-humor-storytelling', {
+    pt: {
+      nomeProduto: 'Carisma, Humor e Storytelling — Guia Completo NextLevel',
+      tema: 'método C.H.A.R.M.E., estruturas de storytelling e playbooks por situação para conversar com mais leveza',
+      dica: 'Na próxima conversa, aplique a técnica 2+1: antes de contar algo sobre você, faça duas respostas conectadas ao que a outra pessoa falou — uma validação e uma pergunta — e só depois compartilhe uma experiência curta.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Charisma, Humor and Storytelling — Complete NextLevel Guide',
+      tema: 'the C.H.A.R.M. method, storytelling structures, and playbooks by situation to talk with more ease',
+      dica: "In your next conversation, try the 2+1 technique: before sharing something about yourself, give two responses connected to what the other person said — a validation and a question — then share a short experience of your own.",
+    },
+    es: {
+      nomeProduto: 'Carisma, Humor y Storytelling — Guía Completa NextLevel',
+      tema: 'el método C.H.A.R.M.E., estructuras de storytelling y playbooks por situación para conversar con más ligereza',
+      dica: 'En tu próxima conversación, prueba la técnica 2+1: antes de contar algo sobre ti, da dos respuestas conectadas a lo que la otra persona dijo — una validación y una pregunta — y solo después comparte una experiencia corta tuya.',
+    },
+  }),
 };
