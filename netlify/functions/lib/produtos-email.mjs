@@ -288,4 +288,24 @@ export const PRODUTOS = {
       dica: 'En tu próxima conversación, prueba la técnica 2+1: antes de contar algo sobre ti, da dos respuestas conectadas a lo que la otra persona dijo — una validación y una pregunta — y solo después comparte una experiencia corta tuya.',
     },
   }),
+
+  'atracao-com-respeito': montar('atracao-com-respeito', {
+    pt: {
+      nomeProduto: 'Confiança Social: Atração com Respeito — Guia Completo NextLevel',
+      tema: 'diagnóstico social, Protocolo P.A.R.E. para ansiedade e método C.O.N.E.C.T.A. para conversas naturais',
+      dica: 'Hoje, pratique um degrau da escada de exposição social: cumprimente 3 pessoas em ambientes comuns (porteiro, caixa, colega). Confiança social se constrói como músculo — repetições pequenas e frequentes.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Social Confidence: Attraction with Respect — Complete NextLevel Guide',
+      tema: 'a social diagnostic, the STOP protocol for anxiety, and the C.O.N.N.E.C.T. method for natural conversations',
+      dica: "Today, practice one step of the social exposure ladder: greet 3 people in common settings (a doorman, a cashier, a coworker). Social confidence is built like a muscle — small, frequent reps.",
+    },
+    es: {
+      nomeProduto: 'Confianza Social: Atracción con Respeto — Guía Completa NextLevel',
+      tema: 'diagnóstico social, Protocolo P.A.R.E. para la ansiedad y método C.O.N.E.C.T.A. para conversaciones naturales',
+      dica: 'Hoy, practica un escalón de la escalera de exposición social: saluda a 3 personas en ambientes comunes (portero, cajero, colega). La confianza social se construye como un músculo — repeticiones pequeñas y frecuentes.',
+    },
+  }),
 };

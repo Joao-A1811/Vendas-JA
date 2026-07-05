@@ -160,5 +160,17 @@ window.PRODUTOS_SITE = [
       en: 'The listening method, the 30-20-10 storytelling structure and a 30-day plan — communicate clearly and build healthy relationships.',
       es: 'Método O.U.V.I.R., estructura de storytelling 30-20-10 y plan de 30 días — comunícate con claridad y construye relaciones saludables.'
     }
+  },
+  {
+    slug: 'atracao-com-respeito',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 18.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Confiança Social: Atração com Respeito', en: 'Social Confidence: Attraction with Respect', es: 'Confianza Social: Atracción con Respeto' },
+    resumo: {
+      pt: 'Diagnóstico social, Protocolo P.A.R.E. para ansiedade, método C.O.N.E.C.T.A. e plano de 30 dias — presença, autoestima e atração com respeito.',
+      en: 'A social diagnostic, the STOP protocol for anxiety, the C.O.N.N.E.C.T. method and a 30-day plan — presence, self-esteem and attraction with respect.',
+      es: 'Diagnóstico social, Protocolo P.A.R.E. para la ansiedad, método C.O.N.E.C.T.A. y plan de 30 días — presencia, autoestima y atracción con respeto.'
+    }
   }
 ];
