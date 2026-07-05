@@ -681,6 +681,67 @@ no promete conquistar a ninguna persona en particular ni un resultado romántico
 
 ---
 
+## 16. Carisma, Humor e Storytelling — categoria: Saúde e esportes
+
+> Guia pago (33 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/carisma-humor-storytelling/`). Produto
+> novo, sem pasta de rascunho prévia — nova vertente "Conexões, Presença e Relacionamentos
+> Saudáveis" (mesma linha do `confianca-social`, mas com foco em carisma, humor e storytelling ao
+> invés de ansiedade social). Falta: copiar `landing-page/` para
+> `produtos/carisma-humor-storytelling/`, cadastrar o produto na Hotmart, pegar o
+> `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das 3 páginas com os textos
+> abaixo e adicionar o bloco em `assets/produtos.js` (com `disponivel: true` só quando todos os
+> idiomas tiverem checkout funcionando). Preço sugerido (padrão da coleção): R$ 49,99 (PT) /
+> US$ 19,00 (EN/ES).
+
+**Nome (PT):** Carisma, Humor e Storytelling — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 33 páginas para criar conexão, conversar com leveza e contar histórias
+interessantes sem forçar personagem: o método C.H.A.R.M.E. (curiosidade, humor leve,
+autenticidade, reciprocidade, memória social e escuta), humor com respeito (tipos que aproximam,
+o que afasta, timing e autohumor), estruturas de storytelling (3C e F.E.C.H.A.) com banco de
+histórias pessoais, conversas em camadas com perguntas melhores e leitura de reciprocidade,
+playbooks prontos por situação (festa, encontro, WhatsApp, ambiente profissional, amigos,
+conflitos leves), um plano de 30 dias e workbook completo (diagnóstico de carisma, construtor de
+histórias, banco de humor seguro, cartões de bolso). E-book digital com acesso imediato e
+garantia incondicional de 7 dias. Conteúdo educativo sobre comunicação e habilidades sociais —
+não ensina manipulação, negs, pressão ou técnicas para passar por cima da vontade de alguém, e
+não promete conquistar qualquer pessoa.
+
+**Name (EN):** Charisma, Humor and Storytelling — Complete NextLevel Guide
+**Description (EN):**
+Premium 33-page guide + workbook to build connection, talk with ease, and tell interesting
+stories without forcing a persona: the 6 pillars of charisma (curiosity, light humor,
+authenticity, reciprocity, social memory and listening), humor with respect (types that bring
+people closer, what pushes them away, timing and self-humor), storytelling structures (3C and a
+5-part structure) with a bank of personal stories, layered conversations with better questions
+and reading reciprocity, ready-made playbooks by situation (party, date, WhatsApp, professional
+setting, friends, light conflicts), a 30-day plan, and a complete workbook (charisma diagnostic,
+story builder, safe humor bank, pocket cards). Digital ebook, instant access, 7-day unconditional
+guarantee. Educational content on communication and social skills — does not teach manipulation,
+negging, pressure, or techniques to override someone's will, and does not promise winning over
+any specific person.
+
+**Nombre (ES):** Carisma, Humor y Storytelling — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 33 páginas para crear conexión, conversar con ligereza y contar
+historias interesantes sin forzar un personaje: el método C.H.A.R.M.E. (curiosidad, humor
+ligero, autenticidad, reciprocidad, memoria social y escucha), humor con respeto (tipos que
+acercan, lo que aleja, timing y autohumor), estructuras de storytelling (3C y F.E.C.H.A.) con un
+banco de historias personales, conversaciones en capas con mejores preguntas y lectura de
+reciprocidad, playbooks listos por situación (fiesta, cita, WhatsApp, ambiente profesional,
+amigos, conflictos leves), un plan de 30 días y un workbook completo (diagnóstico de carisma,
+constructor de historias, banco de humor seguro, tarjetas de bolsillo). Ebook digital, acceso
+inmediato y garantía incondicional de 7 días. Contenido educativo sobre comunicación y
+habilidades sociales — no enseña manipulación, negging, presión ni técnicas para pasar por
+encima de la voluntad de alguien, y no promete conquistar a ninguna persona en particular.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/carisma-humor-storytelling-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
