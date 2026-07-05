@@ -204,4 +204,24 @@ export const PRODUTOS = {
       dica: 'Hoy, elige solo UNA misión del día — entrenamiento, comida o mentalidad — y cúmplela hasta el final. La regla del 80% vale más que cualquier semana perfecta abandonada a la mitad.',
     },
   }),
+
+  'treino-academia': montar('treino-academia', {
+    pt: {
+      nomeProduto: 'Manual Completo de Academia — Guia Completo NextLevel',
+      tema: 'treino por grupo muscular, dieta por objetivo e cronograma de 12 semanas na academia',
+      dica: 'Escolha a divisão semanal (3x, 4x, 5x ou 6x) que cabe de verdade na sua rotina — a melhor divisão não é a mais avançada, é a que você consegue manter todo mês.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Complete Gym Manual — Complete NextLevel Guide',
+      tema: 'workouts by muscle group, diet by goal, and a 12-week gym schedule',
+      dica: "Pick the weekly split (3x, 4x, 5x, or 6x) that truly fits your routine — the best split isn't the most advanced one, it's the one you can keep up every month.",
+    },
+    es: {
+      nomeProduto: 'Manual Completo de Gimnasio — Guía Completa NextLevel',
+      tema: 'entrenamiento por grupo muscular, dieta por objetivo y cronograma de 12 semanas en el gimnasio',
+      dica: 'Elige la división semanal (3x, 4x, 5x o 6x) que realmente encaje en tu rutina — la mejor división no es la más avanzada, es la que puedes mantener todos los meses.',
+    },
+  }),
 };

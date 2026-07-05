@@ -88,5 +88,17 @@ window.PRODUTOS_SITE = [
       en: 'Caloric surplus without excess, progressive training and organized recovery — hypertrophy with method, no promised pounds.',
       es: 'Superávit calórico sin exceso, entrenamiento progresivo y recuperación organizada — hipertrofia con método, sin promesa de kilos.'
     }
+  },
+  {
+    slug: 'treino-academia',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 12.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Manual Completo de Academia', en: 'Complete Gym Manual', es: 'Manual Completo de Gimnasio' },
+    resumo: {
+      pt: 'Treinos por grupo muscular, dieta por objetivo, 4 divisões semanais e cronograma de 12 semanas — evolua na academia com método.',
+      en: 'Workouts by muscle group, diet by goal, 4 weekly splits and a 12-week schedule — progress at the gym with method.',
+      es: 'Entrenamientos por grupo muscular, dieta por objetivo, 4 divisiones semanales y cronograma de 12 semanas — evoluciona en el gimnasio con método.'
+    }
   }
 ];
