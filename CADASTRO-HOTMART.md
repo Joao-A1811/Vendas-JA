@@ -742,6 +742,68 @@ encima de la voluntad de alguien, y no promete conquistar a ninguna persona en p
 
 ---
 
+## 17. Comunicação e Relacionamento: Conversas que Criam Conexão — categoria: Saúde e esportes
+
+> Guia pago (37 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/comunicacao-e-relacionamentos/`).
+> Reaproveita o slug/pasta de rascunho `comunicacao-e-relacionamentos` que já existia (nova
+> vertente "Conexões, Presença e Relacionamentos Saudáveis", mesma linha do `confianca-social` e
+> do `carisma-humor-storytelling`, com foco em comunicação clara, escuta ativa e relacionamentos
+> saudáveis). Falta: substituir as páginas antigas de rascunho em
+> `produtos/comunicacao-e-relacionamentos/` pelo template mais recente (com galeria "olhe por
+> dentro"), cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda,
+> preencher o `CONFIG` das 3 páginas com os textos abaixo e adicionar o bloco em
+> `assets/produtos.js` (com `disponivel: true` só quando todos os idiomas tiverem checkout
+> funcionando). Preço sugerido (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Comunicação e Relacionamento: Conversas que Criam Conexão — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 37 páginas para se comunicar com clareza e construir relacionamentos
+saudáveis: o método O.U.V.I.R. de escuta ativa (observar, usar silêncio, validar, investigar com
+cuidado e responder com presença), os quatro níveis de pergunta (leve, médio, profundo e
+cuidado), storytelling social com a estrutura 30-20-10, humor e leveza com o teste da elegância,
+checklist de mensagens digitais e convites sem pressão, os cinco tipos de limite (tempo,
+emocional, digital, social e físico), o método R.E.P.A.R.O. para reparar conflitos, red flags e
+green flags em relacionamentos, um plano de 30 dias e workbook completo (mapa de conversa
+profunda, contrato pessoal de comunicação, plano de relacionamento saudável). E-book digital com
+acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo sobre comunicação e
+relacionamentos saudáveis — não ensina manipulação, pressão, insistência após um "não" ou
+qualquer jogo emocional, e não promete conquistar ou mudar o comportamento de ninguém.
+
+**Name (EN):** Communication and Relationships: Conversations That Create Connection — Complete NextLevel Guide
+**Description (EN):**
+Premium 37-page guide + workbook to communicate clearly and build healthy relationships: an
+active-listening method (observe, use silence, validate, investigate with care and respond with
+presence), the four levels of questions (light, medium, deep and caution), social storytelling
+with the 30-20-10 structure, humor and lightness with the elegance test, a digital-message
+checklist and pressure-free invitations, the five types of boundaries (time, emotional, digital,
+social and physical), a conflict-repair method, red flags and green flags in relationships, a
+30-day plan, and a complete workbook (deep conversation map, personal communication contract,
+healthy-relationship plan). Digital ebook, instant access, 7-day unconditional guarantee.
+Educational content on communication and healthy relationships — does not teach manipulation,
+pressure, insisting after a "no" or any emotional game, and does not promise winning anyone over
+or changing anyone's behavior.
+
+**Nombre (ES):** Comunicación y Relación: Conversaciones que Crean Conexión — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 37 páginas para comunicarte con claridad y construir relaciones
+saludables: un método de escucha activa (observar, usar silencio, validar, investigar con cuidado
+y responder con presencia), los cuatro niveles de pregunta (leve, medio, profundo y cuidado),
+storytelling social con la estructura 30-20-10, humor y ligereza con la prueba de la elegancia,
+checklist de mensajes digitales e invitaciones sin presión, los cinco tipos de límite (tiempo,
+emocional, digital, social y físico), un método de reparación de conflictos, red flags y green
+flags en las relaciones, un plan de 30 días y un workbook completo (mapa de conversación
+profunda, contrato personal de comunicación, plan de relación saludable). Ebook digital, acceso
+inmediato y garantía incondicional de 7 días. Contenido educativo sobre comunicación y relaciones
+saludables — no enseña manipulación, presión, insistir después de un "no" ni ningún juego
+emocional, y no promete conquistar ni cambiar el comportamiento de nadie.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/comunicacao-e-relacionamentos-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
