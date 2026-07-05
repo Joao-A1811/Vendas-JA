@@ -474,6 +474,55 @@ nutricionista, médico, educador físico o profesional de la salud, y no es un p
 
 ---
 
+## 12. Manual Completo de Academia — categoria: Saúde e esportes
+
+> Guia pago (36 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/treino-academia/`). Produto novo, sem
+> pasta de rascunho prévia — falta: copiar `landing-page/` para `produtos/treino-academia/`,
+> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o
+> `CONFIG` das 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
+> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Manual Completo de Academia — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 36 páginas com um sistema completo de treino de academia: os 6 pilares da
+evolução, dieta por objetivo (perder gordura, recompor ou ganhar massa) com cardápio de 7
+dias, treinos A/B por grupo muscular (peito, costas, ombros, braços, pernas e core), 4
+divisões semanais prontas (3x a 6x por semana), cronograma de 12 semanas em fases, cardio e
+mobilidade, planners de evolução, biblioteca de exercícios e fichas completas prontas para
+uso (Full Body, Superior/Inferior, Push/Pull/Legs). E-book digital com acesso imediato e
+garantia incondicional de 7 dias. Conteúdo educativo — não substitui avaliação médica,
+nutricional ou de um profissional de educação física, e não é um protocolo clínico.
+
+**Name (EN):** Complete Gym Manual — Complete NextLevel Guide
+**Description (EN):**
+Premium 36-page guide with a complete gym training system: the 6 pillars of progress, diet
+by goal (lose fat, recompose, or gain mass) with a 7-day menu, A/B workouts by muscle group
+(chest, back, shoulders, arms, legs, and core), 4 ready-made weekly splits (3x to 6x per
+week), a phased 12-week schedule, cardio and mobility, progress planners, an exercise
+library, and complete ready-to-use workout sheets (Full Body, Upper/Lower, Push/Pull/Legs).
+Digital ebook, instant access, 7-day unconditional guarantee. Educational content — does not
+replace medical, nutritional, or exercise-professional assessment, and is not a clinical
+protocol.
+
+**Nombre (ES):** Manual Completo de Gimnasio — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 36 páginas con un sistema completo de entrenamiento de gimnasio: los 6
+pilares de la evolución, dieta por objetivo (perder grasa, recomponer o ganar masa) con menú
+de 7 días, entrenamientos A/B por grupo muscular (pecho, espalda, hombros, brazos, piernas y
+core), 4 divisiones semanales listas (3x a 6x por semana), cronograma de 12 semanas en fases,
+cardio y movilidad, planners de evolución, biblioteca de ejercicios y fichas completas listas
+para usar (Full Body, Superior/Inferior, Push/Pull/Legs). Ebook digital, acceso inmediato y
+garantía incondicional de 7 días. Contenido educativo — no sustituye la evaluación médica,
+nutricional o de un profesional de educación física, y no es un protocolo clínico.
+
+> Observación: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/treino-academia-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
