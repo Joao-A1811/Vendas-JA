@@ -124,5 +124,17 @@ window.PRODUTOS_SITE = [
       en: 'A/B routines by joint, a stretching library and a 30-day schedule — train better and gain range of motion safely.',
       es: 'Rutinas A/B por articulación, biblioteca de estiramientos y cronograma de 30 días — entrena mejor y gana amplitud con seguridad.'
     }
+  },
+  {
+    slug: 'confianca-social',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 15.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Ansiedade Social e Conversas com Naturalidade', en: 'Social Anxiety and Natural Conversations', es: 'Ansiedad Social y Conversaciones con Naturalidad' },
+    resumo: {
+      pt: 'Escada de exposição gradual, playbooks por situação e plano de 30 dias — destrave conversas e crie conexões com respeito.',
+      en: 'A gradual exposure ladder, playbooks by situation and a 30-day plan — unlock conversations and build connections with respect.',
+      es: 'Escalera de exposición gradual, playbooks por situación y plan de 30 días — destraba conversaciones y crea conexiones con respeto.'
+    }
   }
 ];

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Confidence in Practice — beat shyness | NextLevel</title>
-<meta name="description" content="An ebook with practical confidence and conversation techniques to feel at ease in any social situation.">
+<title>Social Anxiety and Natural Conversations — Complete Guide | NextLevel</title>
+<meta name="description" content="A gradual exposure ladder, playbooks by situation, the P.E.C. method and a 30-day plan — unlock conversations and build connections with respect and naturalness.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Social Confidence in Practice — beat shyness | NextLevel">
-<meta property="og:description" content="An ebook with practical confidence and conversation techniques to feel at ease in any social situation.">
+<meta property="og:title" content="Social Anxiety and Natural Conversations — Complete Guide | NextLevel">
+<meta property="og:description" content="A gradual exposure ladder, playbooks by situation, the P.E.C. method and a 30-day plan — unlock conversations and build connections with respect and naturalness.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-en.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,19 +185,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Social Confidence in Practice Ebook",
-  headline: "Beat shyness and feel at ease in any conversation",
-  subheadline: "Practical confidence and conversation techniques for real situations: work, parties, dates and new friendships.",
-  selo: "📘 Complete ebook · Instant access",
+  produto: "Social Anxiety and Natural Conversations",
+  headline: "A gradual exposure ladder, playbooks by situation and a 30-day plan — unlock conversations and build connections with respect",
+  subheadline: "A complete guide with the social freeze cycle, a 3-minute preparation, respectful opening formulas, the P.E.C. method to sustain conversation, how to handle silence and rejection, and a full workbook to track your progress.",
+  selo: "💬 Complete guide · 42 pages · Instant access",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7-day", legenda: "guarantee" },
-    { numero: "0", legenda: "fluff" }
+    { numero: "30 days", legenda: "guided plan" },
+    { numero: "11", legenda: "practical modules" },
+    { numero: "0", legenda: "promise of a guaranteed conquest" }
   ],
   beneficios: [
-    { icone: "💬", titulo: "Unlock conversation", texto: "How to start and keep a good chat going without memorized scripts or fake formulas." },
-    { icone: "🪜", titulo: "Confidence you build", texto: "Progressive exercises to leave your comfort zone one step at a time." },
-    { icone: "✨", titulo: "Authenticity, not a persona", texto: "Presence and listening to create lasting connections — without pretending to be someone you’re not." }
+    { icone: "🪜", titulo: "Gradual exposure", texto: "A ladder of conversations in safe doses, without forcing it or punishing yourself for freezing." },
+    { icone: "💬", titulo: "Playbooks by situation", texto: "College, gym, party, coffee shop and social media — ready-made models to adapt." },
+    { icone: "🤝", titulo: "Boundaries and respect", texto: "How to handle silence, rejection and interest without pressure or games." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -199,16 +205,15 @@ const CONFIG = {
   precoPor: "$19",
   garantiaTexto: "7-day unconditional money-back guarantee",
   contagemRegressivaFim: '',
-  // ONLY THIS MISSING: replace with this product’s real Hotmart checkout link.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/I106617832D',
   linkEbookGratis: '/ebooks/arquivos/confianca-social-en.pdf',
   idioma: "en",
   faq: [
-    { pergunta: "I’m VERY shy. Is this for me?", resposta: "Yes — the exercises are progressive: they start in low-pressure situations and advance as you gain confidence." },
-    { pergunta: "Is this about \"pickup techniques\"?", resposta: "No. The method is about genuine confidence, communication and social skills — no manipulation or games." },
-    { pergunta: "Does it replace therapy?", resposta: "No. The content is educational. If social anxiety severely limits your life, a psychologist is the right path — the ebook can be a complement." },
-    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the ebook to your email. You can read it on your phone, tablet or computer." },
+    { pergunta: "Does this guide replace therapy or professional support?", resposta: "No. It's educational material about communication and social skills — it does not diagnose social anxiety or replace psychotherapy. If it causes intense isolation or frequent suffering, the ideal is to seek professional support." },
+    { pergunta: "Is this for someone very shy, or for someone who just wants to refine their social skills?", resposta: "Both: the exposure ladder starts with very small actions for people who freeze easily, and there are playbooks and nuances for people who already converse well and want more naturalness." },
+    { pergunta: "Is this about pickup techniques or manipulation?", resposta: "No. The method is about genuine communication, listening and reciprocity — no technique should override another person's comfort or limits." },
+    { pergunta: "Do I need to memorize scripts and ready-made lines?", resposta: "No. The formulas and playbooks are starting points to unlock conversation — the idea is to abandon the script as soon as the real conversation begins." },
+    { pergunta: "How do I get the material?", resposta: "Access is 100% digital and instant: as soon as payment is confirmed, Hotmart delivers the complete guide to your email." },
     { pergunta: "What if I don’t like it?", resposta: "You have a 7-day unconditional guarantee: just request a refund directly through Hotmart and get 100% of your money back, no questions asked." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">What you'll get</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Take a look inside</h3>
+    <p class="lead-sec reveal">Real samples from the complete guide — cover, module opener, opening formulas, playbooks, and workbook</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/confianca-social/preview-en-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-en-capa.jpg" alt="Cover of the Social Anxiety and Natural Conversations guide" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-en-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-en-modulo.jpg" alt="Module opener — Social anxiety without shame" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-en-abertura.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-en-abertura.jpg" alt="Respectful opening formulas" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-en-playbooks.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-en-playbooks.jpg" alt="Playbooks by situation" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-en-diario.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-en-diario.jpg" alt="Social journal and post-conversation review sheet" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

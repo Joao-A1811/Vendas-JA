@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confiança Social na Prática — vença a timidez | NextLevel</title>
-<meta name="description" content="Ebook com técnicas práticas de confiança e conversação para se sentir à vontade em qualquer situação social.">
+<title>Ansiedade Social e Conversas com Naturalidade — Guia Completo | NextLevel</title>
+<meta name="description" content="Escada de exposição gradual, playbooks por situação, método P.E.C. e plano de 30 dias — destrave conversas e crie conexões com respeito e naturalidade.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Confiança Social na Prática — vença a timidez | NextLevel">
-<meta property="og:description" content="Ebook com técnicas práticas de confiança e conversação para se sentir à vontade em qualquer situação social.">
+<meta property="og:title" content="Ansiedade Social e Conversas com Naturalidade — Guia Completo | NextLevel">
+<meta property="og:description" content="Escada de exposição gradual, playbooks por situação, método P.E.C. e plano de 30 dias — destrave conversas e crie conexões com respeito e naturalidade.">
 <meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(91,33,182,.12);border:1px solid #eee2f7;transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid #f0e8fb;box-shadow:0 4px 18px rgba(91,33,182,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -179,36 +185,35 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Confiança Social na Prática",
-  headline: "Vença a timidez e fique à vontade em qualquer conversa",
-  subheadline: "Técnicas práticas de confiança e conversação pra situações reais: trabalho, festas, encontros e novas amizades.",
-  selo: "📘 Ebook completo · Acesso imediato",
+  produto: "Ansiedade Social e Conversas com Naturalidade",
+  headline: "Escada de exposição gradual, playbooks por situação e plano de 30 dias — destrave conversas e crie conexões com respeito",
+  subheadline: "Guia completo com o ciclo da trava social, preparação de 3 minutos, fórmulas de abertura respeitosa, o método P.E.C. para sustentar conversa, como lidar com silêncio e rejeição, e um workbook completo de acompanhamento.",
+  selo: "💬 Guia completo · 42 páginas · Acesso imediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 dias", legenda: "de garantia" },
-    { numero: "0", legenda: "enrolação" }
+    { numero: "30 dias", legenda: "plano guiado" },
+    { numero: "11", legenda: "módulos práticos" },
+    { numero: "0", legenda: "promessa de conquista garantida" }
   ],
   beneficios: [
-    { icone: "💬", titulo: "Destrave a conversa", texto: "Como começar e manter um bom papo sem decorar roteiro nem usar fórmula falsa." },
-    { icone: "🪜", titulo: "Confiança que se constrói", texto: "Exercícios progressivos pra sair da zona de conforto um passo de cada vez." },
-    { icone: "✨", titulo: "Autenticidade, não personagem", texto: "Presença e escuta pra criar conexões que duram — sem fingir ser quem você não é." }
+    { icone: "🪜", titulo: "Exposição gradual", texto: "Uma escada de conversas em doses seguras, sem forçar nem se punir por travar." },
+    { icone: "💬", titulo: "Playbooks por situação", texto: "Faculdade, academia, festa, café e redes sociais — modelos prontos pra adaptar." },
+    { icone: "🤝", titulo: "Limites e respeito", texto: "Como lidar com silêncio, rejeição e interesse sem pressão nem joguinho." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
   precoDe: "R$ 97,00",
-  precoPor: "R$ 47,00",
+  precoPor: "R$ 49,99",
   garantiaTexto: "Garantia incondicional de 7 dias",
   contagemRegressivaFim: '',
-  // FALTA SÓ ISTO: troque pelo link real do checkout da Hotmart deste produto.
-  linkCheckoutHotmart: 'https://pay.hotmart.com/COLE_O_CODIGO_DO_PRODUTO',
-  // Ebook gratuito: o caminho já aponta pro nome certo — basta subir o PDF em /ebooks/arquivos/.
+  linkCheckoutHotmart: 'https://pay.hotmart.com/K106617805B',
   linkEbookGratis: '/ebooks/arquivos/confianca-social-pt.pdf',
   idioma: "pt",
   faq: [
-    { pergunta: "Sou MUITO tímido. Serve pra mim?", resposta: "Sim — os exercícios são progressivos: começam em situações de baixa pressão e avançam conforme você ganha segurança." },
-    { pergunta: "É sobre \"técnicas de conquista\"?", resposta: "Não. O método é sobre confiança, comunicação e habilidades sociais genuínas — nada de manipulação ou joguinhos." },
-    { pergunta: "Substitui terapia?", resposta: "Não. O conteúdo é educacional. Se a ansiedade social limita muito sua vida, um psicólogo é o caminho certo — o ebook pode ser um complemento." },
-    { pergunta: "Como eu recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o ebook no seu e-mail. Dá pra ler no celular, tablet ou computador." },
+    { pergunta: "Esse guia substitui terapia ou acompanhamento profissional?", resposta: "Não. É um material educativo sobre comunicação e habilidades sociais — não diagnostica ansiedade social nem substitui psicoterapia. Se causar isolamento intenso ou sofrimento frequente, o ideal é buscar apoio profissional." },
+    { pergunta: "Serve pra quem é muito tímido ou só pra quem quer refinar o social?", resposta: "Os dois: a escada de exposição começa em ações bem pequenas pra quem trava fácil, e tem playbooks e nuances pra quem já conversa bem e quer mais naturalidade." },
+    { pergunta: "É sobre técnicas de conquista ou manipulação?", resposta: "Não. O método é sobre comunicação genuína, escuta e reciprocidade — nenhuma técnica deve passar por cima do limite ou do conforto de outra pessoa." },
+    { pergunta: "Preciso decorar roteiros e frases prontas?", resposta: "Não. As fórmulas e playbooks são pontos de partida pra destravar — a ideia é abandonar o roteiro assim que a conversa real começa." },
+    { pergunta: "Como recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o guia completo no seu e-mail." },
     { pergunta: "E se eu não gostar?", resposta: "Você tem 7 dias de garantia incondicional: é só pedir o reembolso direto na Hotmart e receber 100% do valor de volta, sem perguntas." }
   ]
 };
@@ -269,6 +274,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">O que você vai conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h3 class="reveal">Dê uma olhada por dentro</h3>
+    <p class="lead-sec reveal">Amostra real do guia completo — capa, módulo, fórmulas de abertura, playbooks e workbook</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/confianca-social/preview-pt-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-pt-capa.jpg" alt="Capa do guia Ansiedade Social e Conversas com Naturalidade" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-pt-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-pt-modulo.jpg" alt="Abertura de módulo — Ansiedade social sem vergonha" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-pt-abertura.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-pt-abertura.jpg" alt="Fórmulas de abertura respeitosa" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-pt-playbooks.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-pt-playbooks.jpg" alt="Playbooks por situação" loading="lazy"></a>
+      <a href="/assets/produtos/confianca-social/preview-pt-diario.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/confianca-social/preview-pt-diario.jpg" alt="Diário social e ficha de revisão pós-conversa" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

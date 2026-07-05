@@ -91,19 +91,21 @@ export const PRODUTOS = {
 
   'confianca-social': montar('confianca-social', {
     pt: {
-      nomeProduto: 'Ebook Confiança Social na Prática',
-      tema: 'confiança social na prática',
-      dica: 'Hoje, faça UMA pergunta simples a alguém (no mercado, no trabalho, no elevador) — só isso. Confiança social se constrói como músculo: repetições pequenas, feitas com frequência.',
+      nomeProduto: 'Ansiedade Social e Conversas com Naturalidade — Guia Completo NextLevel',
+      tema: 'escada de exposição gradual, playbooks por situação e plano de 30 dias para destravar conversas',
+      dica: 'Hoje, faça UMA pergunta simples a alguém (no mercado, no trabalho, no elevador) — só isso. Naturalidade social se constrói como músculo: repetições pequenas, feitas com frequência.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
-      nomeProduto: 'Social Confidence in Practice Ebook',
-      tema: 'social confidence in practice',
-      dica: "Today, ask ONE simple question to someone (at the store, at work, in the elevator) — that's it. Social confidence is built like a muscle: small reps, done often.",
+      nomeProduto: 'Social Anxiety and Natural Conversations — Complete NextLevel Guide',
+      tema: 'a gradual exposure ladder, playbooks by situation, and a 30-day plan to unlock conversations',
+      dica: "Today, ask ONE simple question to someone (at the store, at work, in the elevator) — that's it. Social ease is built like a muscle: small reps, done often.",
     },
     es: {
-      nomeProduto: 'Ebook Confianza Social en la Práctica',
-      tema: 'confianza social en la práctica',
-      dica: 'Hoy, hazle UNA pregunta simple a alguien (en la tienda, en el trabajo, en el ascensor) — solo eso. La confianza social se construye como un músculo: repeticiones pequeñas y frecuentes.',
+      nomeProduto: 'Ansiedad Social y Conversaciones con Naturalidad — Guía Completa NextLevel',
+      tema: 'escalera de exposición gradual, playbooks por situación y plan de 30 días para destrabar conversaciones',
+      dica: 'Hoy, hazle UNA pregunta simple a alguien (en la tienda, en el trabajo, en el ascensor) — solo eso. La naturalidad social se construye como un músculo: repeticiones pequeñas y frecuentes.',
     },
   }),
 
