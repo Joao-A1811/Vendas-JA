@@ -575,6 +575,56 @@ educación física, y no diagnostica ni trata la ansiedad o los trastornos alime
 
 ---
 
+## 14. Mobilidade, Alongamento e Prevenção de Lesões — categoria: Saúde e esportes
+
+> Guia pago (37 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/mobilidade-alongamento-prevencao/`).
+> Produto novo, sem pasta de rascunho prévia — funciona como complemento técnico da coleção
+> (rotinas por articulação, biblioteca de alongamentos, prevenção de lesões, cronograma de 30
+> dias). Falta: copiar `landing-page/` para `produtos/mobilidade-alongamento-prevencao/`,
+> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o
+> `CONFIG` das 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
+> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Mobilidade, Alongamento e Prevenção de Lesões — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 37 páginas para treinar melhor, ganhar amplitude com segurança e proteger as
+articulações: mapa rápido do corpo, escala de sensação segura, aquecimento de 3 camadas,
+rotinas A/B por articulação (ombros, quadril, tornozelos, coluna, joelhos e punhos), biblioteca
+de alongamentos e mobilidade, prevenção de lesões por área (as 7 causas mais comuns e sinais de
+atenção), rotinas para a vida real (quem fica sentado, rotina matinal e noturna), dieta de
+apoio para articulações e cronograma de 30 dias com planners. E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo educativo — não substitui avaliação
+médica, fisioterapêutica ou de um profissional de educação física.
+
+**Name (EN):** Mobility, Stretching and Injury Prevention — Complete NextLevel Guide
+**Description (EN):**
+Premium 37-page guide to train better, gain range of motion safely, and protect your joints: a
+quick body map, a safe-sensation scale, a 3-layer warm-up, A/B routines by joint (shoulders,
+hips, ankles, spine, knees, and wrists), a stretching and mobility library, injury prevention by
+area (the 7 most common causes and warning signs), routines for real life (desk workers, a
+morning routine, and a night routine), supportive diet for joints, and a 30-day schedule with
+planners. Digital ebook, instant access, 7-day unconditional guarantee. Educational content —
+does not replace medical, physical therapy, or exercise-professional assessment.
+
+**Nombre (ES):** Movilidad, Estiramiento y Prevención de Lesiones — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 37 páginas para entrenar mejor, ganar amplitud con seguridad y proteger las
+articulaciones: mapa rápido del cuerpo, escala de sensación segura, calentamiento de 3 capas,
+rutinas A/B por articulación (hombros, cadera, tobillos, columna, rodillas y muñecas),
+biblioteca de estiramientos y movilidad, prevención de lesiones por área (las 7 causas más
+comunes y señales de atención), rutinas para la vida real (quien está sentado, rutina matutina
+y nocturna), dieta de apoyo para las articulaciones y cronograma de 30 días con planners. Ebook
+digital, acceso inmediato y garantía incondicional de 7 días. Contenido educativo — no sustituye
+la evaluación médica, fisioterapéutica o de un profesional de educación física.
+
+> Observación: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/mobilidade-alongamento-prevencao-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
