@@ -625,6 +625,62 @@ la evaluación médica, fisioterapéutica o de un profesional de educación fís
 
 ---
 
+## 15. Ansiedade Social e Conversas com Naturalidade — categoria: Saúde e esportes
+
+> Guia pago (42 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/confianca-social/`). Reaproveita o slug
+> de rascunho `confianca-social` (nicho de relacionamentos/habilidades sociais — nunca vender
+> manipulação como confiança). Falta: preencher o `CONFIG` das 3 páginas em
+> `produtos/confianca-social/` com os textos abaixo, cadastrar o produto na Hotmart, pegar o
+> `linkCheckoutHotmart` real de cada moeda e adicionar o bloco em `assets/produtos.js` (com
+> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Ansiedade Social e Conversas com Naturalidade — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 42 páginas para destravar interações, falar com leveza e criar
+conexões sem pressão: o ciclo da trava social, preparação de 3 minutos e ferramentas de
+ancoragem, a escada de exposição gradual, fórmulas de abertura respeitosa, o método P.E.C. para
+sustentar conversa sem parecer interrogatório, como lidar com silêncio e rejeição com maturidade,
+playbooks prontos por situação (faculdade, academia, festa, café, redes sociais), como
+demonstrar interesse com respeito e reciprocidade, um plano de 30 dias e workbook completo
+(diário social, mapa de gatilhos, escada pessoal, banco de frases). E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo educativo sobre desenvolvimento pessoal e
+habilidades sociais — não diagnostica ansiedade social, não substitui psicoterapia e não promete
+conquistar qualquer pessoa ou resultado romântico garantido.
+
+**Name (EN):** Social Anxiety and Natural Conversations — Complete NextLevel Guide
+**Description (EN):**
+Premium 42-page guide + workbook to unlock interactions, speak with ease, and build connections
+without pressure: the social freeze cycle, a 3-minute preparation and anchoring tools, the
+gradual exposure ladder, respectful opening formulas, the P.E.C. method to sustain conversation
+without sounding like an interrogation, how to handle silence and rejection with maturity,
+ready-made playbooks by situation (college, gym, party, coffee shop, social media), how to show
+interest with respect and reciprocity, a 30-day plan, and a complete workbook (social journal,
+trigger map, personal ladder, phrase bank). Digital ebook, instant access, 7-day unconditional
+guarantee. Educational content on personal development and social skills — does not diagnose
+social anxiety, does not replace psychotherapy, and does not promise winning over any specific
+person or a guaranteed romantic outcome.
+
+**Nombre (ES):** Ansiedad Social y Conversaciones con Naturalidad — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 42 páginas para destrabar interacciones, hablar con ligereza y crear
+conexiones sin presión: el ciclo de la traba social, preparación de 3 minutos y herramientas de
+anclaje, la escalera de exposición gradual, fórmulas de apertura respetuosa, el método P.E.C.
+para sostener la conversación sin parecer un interrogatorio, cómo manejar el silencio y el
+rechazo con madurez, playbooks listos por situación (universidad, gimnasio, fiesta, café, redes
+sociales), cómo demostrar interés con respeto y reciprocidad, un plan de 30 días y un workbook
+completo (diario social, mapa de gatillos, escalera personal, banco de frases). Ebook digital,
+acceso inmediato y garantía incondicional de 7 días. Contenido educativo sobre desarrollo
+personal y habilidades sociales — no diagnostica ansiedad social, no sustituye la psicoterapia y
+no promete conquistar a ninguna persona en particular ni un resultado romántico garantizado.
+
+> Observación: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/confianca-social-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
