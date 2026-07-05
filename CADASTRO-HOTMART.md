@@ -804,6 +804,67 @@ emocional, y no promete conquistar ni cambiar el comportamiento de nadie.
 
 ---
 
+## 18. Confiança Social: Atração com Respeito — categoria: Saúde e esportes
+
+> Guia pago (33 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/atracao-com-respeito/`). Produto novo,
+> slug novo `atracao-com-respeito` (sem pasta de rascunho prévia) — mesma nova vertente "Conexões,
+> Presença e Relacionamentos Saudáveis" do `confianca-social` e do `carisma-humor-storytelling`,
+> mas com foco específico em presença pessoal, ansiedade social e atração com respeito (distinto
+> do `confianca-social`, que é sobre conversas e naturalidade social em geral). Falta: copiar
+> `landing-page/` para `produtos/atracao-com-respeito/`, cadastrar o produto na Hotmart, pegar o
+> `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das 3 páginas com os textos
+> abaixo e adicionar o bloco em `assets/produtos.js` (com `disponivel: true` só quando todos os
+> idiomas tiverem checkout funcionando). Preço sugerido (padrão da coleção): R$ 49,99 (PT) /
+> US$ 19,00 (EN/ES).
+
+**Nome (PT):** Confiança Social: Atração com Respeito — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 33 páginas para desenvolver presença social e atração com respeito: um
+diagnóstico social completo com escada de exposição em 5 níveis, presença pessoal (aparência
+cuidada e linguagem corporal), o Protocolo P.A.R.E. para ansiedade social, o método C.O.N.E.C.T.A.
+para conversas naturais com interesse genuíno, sinais de abertura e cautela na atração, o convite
+respeitoso em 3 partes, reformulação madura diante da rejeição, ambientes sociais (academia,
+eventos, trabalho, online), limites e mensagens digitais saudáveis, e um plano de 30 dias com
+workbook completo (mapa de limites pessoais, identidade social autêntica, roteiro de conversa
+difícil). E-book digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo
+educativo sobre habilidades sociais e autoconhecimento — não promete conquistar ninguém, não
+substitui terapia e não incentiva insistência, pressão, manipulação ou qualquer abordagem
+invasiva.
+
+**Name (EN):** Social Confidence: Attraction with Respect — Complete NextLevel Guide
+**Description (EN):**
+Premium 33-page guide + workbook to build social presence and attraction with respect: a complete
+social diagnostic with a 5-level exposure ladder, personal presence (groomed appearance and body
+language), the STOP protocol for social anxiety, the C.O.N.N.E.C.T. method for natural
+conversations with genuine interest, openness and caution signals in attraction, the 3-part
+respectful invitation, mature reframing in the face of rejection, social environments (gym,
+events, work, online), healthy boundaries and digital messages, and a 30-day plan with a complete
+workbook (personal boundary map, authentic social identity, difficult-conversation script).
+Digital ebook, instant access, 7-day unconditional guarantee. Educational content on social skills
+and self-awareness — does not promise to win anyone over, does not replace therapy, and does not
+encourage insistence, pressure, manipulation or any invasive approach.
+
+**Nombre (ES):** Confianza Social: Atracción con Respeto — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 33 páginas para desarrollar presencia social y atracción con respeto:
+un diagnóstico social completo con una escalera de exposición de 5 niveles, presencia personal
+(apariencia cuidada y lenguaje corporal), el Protocolo P.A.R.E. para la ansiedad social, el método
+C.O.N.E.C.T.A. para conversaciones naturales con interés genuino, señales de apertura y cautela en
+la atracción, la invitación respetuosa en 3 partes, reformulación madura ante el rechazo,
+ambientes sociales (gimnasio, eventos, trabajo, en línea), límites y mensajes digitales
+saludables, y un plan de 30 días con workbook completo (mapa de límites personales, identidad
+social auténtica, guion de conversación difícil). Ebook digital, acceso inmediato y garantía
+incondicional de 7 días. Contenido educativo sobre habilidades sociales y autoconocimiento — no
+promete conquistar a nadie, no sustituye la terapia y no incentiva la insistencia, la presión, la
+manipulación ni ningún abordaje invasivo.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/atracao-com-respeito-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
