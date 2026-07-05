@@ -48,15 +48,15 @@ As home pages têm as mesmas tags, estáticas.
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
 `emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
-`mobilidade-alongamento-prevencao`, `confianca-social` e `carisma-humor-storytelling`, todos
-Saúde. Os 2 produtos ainda em rascunho (`investimentos`,
-`comunicacao-e-relacionamentos`) **continuam fora do catálogo público e do `sitemap.xml`**,
-mas as pastas `produtos/<slug>/` continuam no repositório (CONFIG de exemplo já preenchido:
-headline, benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra
-reaproveitar quando/se algum deles virar produto de verdade — basta cadastrar na Hotmart,
-colar o `linkCheckoutHotmart` real e adicionar de volta o bloco em `assets/produtos.js` (e uma
-entrada em `sitemap.xml`). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até
-existir depoimento real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
+`mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling` e
+`comunicacao-e-relacionamentos`, todos Saúde. O único produto ainda em rascunho
+(`investimentos`) **continua fora do catálogo público e do `sitemap.xml`**, mas a pasta
+`produtos/investimentos/` continua no repositório (CONFIG de exemplo já preenchido: headline,
+benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra reaproveitar
+quando/se virar produto de verdade — basta cadastrar na Hotmart, colar o
+`linkCheckoutHotmart` real e adicionar de volta o bloco em `assets/produtos.js` (e uma entrada
+em `sitemap.xml`). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir
+depoimento real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -228,10 +228,34 @@ nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/X106618676C` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Q106618694P` (US$ 19)
 
+**`comunicacao-e-relacionamentos` (jul/2026, 17º produto — "Comunicação e Relacionamento:
+Conversas que Criam Conexão", mesma nova vertente "Conexões, Presença e Relacionamentos
+Saudáveis") — ✅ AO VIVO nos 3 idiomas.** Reaproveitou o slug/pasta que já existia como rascunho
+(único draft anterior a `confianca-social`, com CONFIG de exemplo desde o início do projeto).
+Guia pago de 37 páginas (o método O.U.V.I.R. de escuta ativa — observar, usar silêncio, validar,
+investigar com cuidado, responder com presença —, os quatro níveis de pergunta — leve, médio,
+profundo, cuidado —, storytelling social com a estrutura 30-20-10, humor e leveza com o teste da
+elegância, checklist de mensagens digitais e convites sem pressão, os cinco tipos de limite —
+tempo, emocional, digital, social, físico —, método R.E.P.A.R.O. para conflitos, red flags e
+green flags em relacionamentos, cronograma de 30 dias condensado em 2 tabelas semanais — a partir
+de um PDF de origem com 30 páginas quase idênticas de "Dia N", a condensação mais agressiva do
+projeto até aqui —, e workbook completo — mapa de conversa profunda, contrato pessoal de
+comunicação, plano de relacionamento saudável) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/comunicacao-e-relacionamentos-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/comunicacao-e-relacionamentos/` (3 idiomas). Todo o
+conteúdo (headline, FAQ, ebook, capa, Hotmart) reconhece que o outro sempre tem liberdade para
+dizer sim, não ou talvez, e explicitamente não ensina manipulação, pressão, insistência após um
+"não" ou qualquer jogo emocional — segue a mesma regra de nicho sensível de relacionamentos do
+`confianca-social` e do `carisma-humor-storytelling`. Preço padrão da coleção: **R$ 49,99 (PT) /
+US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/O106619803O` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/D106619836D` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Q106619860V` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros onze produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros doze produtos.
 
 ## Como fazer alterações comuns
 
@@ -291,13 +315,12 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros onze produtos.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Os 2 produtos em rascunho** (`investimentos`,
-  `comunicacao-e-relacionamentos`) continuam com CONFIG de exemplo em
-  `produtos/<slug>/`, mas fora do catálogo público — só voltam a aparecer no site quando
-  tiverem ebook real + checkout Hotmart real, igual aos onze já ao vivo.
+- **O único produto em rascunho** (`investimentos`) continua com CONFIG de exemplo em
+  `produtos/investimentos/`, mas fora do catálogo público — só volta a aparecer no site quando
+  tiver ebook real + checkout Hotmart real, igual aos doze já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos onze produtos ao vivo.
+  dos doze produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
