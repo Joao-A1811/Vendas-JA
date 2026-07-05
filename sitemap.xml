@@ -190,4 +190,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mobilidade-alongamento-prevencao/"/>
+  </url>
 </urlset>

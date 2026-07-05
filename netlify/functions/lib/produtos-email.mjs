@@ -244,4 +244,24 @@ export const PRODUTOS = {
       dica: 'La próxima vez que sientas ganas de comer por impulso, prueba el protocolo de 10 minutos antes de decidir: nombra la emoción, respira, mueve el cuerpo y solo después decide. Crear ese espacio cambia la decisión la mayoría de las veces.',
     },
   }),
+
+  'mobilidade-alongamento-prevencao': montar('mobilidade-alongamento-prevencao', {
+    pt: {
+      nomeProduto: 'Mobilidade, Alongamento e Prevenção de Lesões — Guia Completo NextLevel',
+      tema: 'rotinas A/B por articulação, aquecimento de 3 camadas e prevenção de lesões por área',
+      dica: 'Antes do próximo treino, faça só 5 minutos do aquecimento específico da articulação que mais te preocupa. Prevenção não é o treino extra que você nunca faz — é o aquecimento de 5 minutos que você já pode começar hoje.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Mobility, Stretching and Injury Prevention — Complete NextLevel Guide',
+      tema: 'A/B routines by joint, a 3-layer warm-up, and injury prevention by area',
+      dica: "Before your next workout, do just 5 minutes of the warm-up specific to the joint that worries you most. Prevention isn't the extra workout you never do — it's the 5-minute warm-up you can start today.",
+    },
+    es: {
+      nomeProduto: 'Movilidad, Estiramiento y Prevención de Lesiones — Guía Completa NextLevel',
+      tema: 'rutinas A/B por articulación, calentamiento de 3 capas y prevención de lesiones por área',
+      dica: 'Antes de tu próximo entrenamiento, haz solo 5 minutos del calentamiento específico de la articulación que más te preocupa. La prevención no es el entrenamiento extra que nunca haces — es el calentamiento de 5 minutos que ya puedes empezar hoy.',
+    },
+  }),
 };

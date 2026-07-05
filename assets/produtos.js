@@ -112,5 +112,17 @@ window.PRODUTOS_SITE = [
       en: 'Habit cycle, a 10-minute anti-impulse protocol and a 30-day plan — build consistency and control emotional triggers.',
       es: 'Ciclo del hábito, protocolo antiimpulso de 10 minutos y plan de 30 días — construye constancia y controla gatillos emocionales.'
     }
+  },
+  {
+    slug: 'mobilidade-alongamento-prevencao',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 14.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Mobilidade, Alongamento e Prevenção de Lesões', en: 'Mobility, Stretching and Injury Prevention', es: 'Movilidad, Estiramiento y Prevención de Lesiones' },
+    resumo: {
+      pt: 'Rotinas A/B por articulação, biblioteca de alongamentos e cronograma de 30 dias — treine melhor e ganhe amplitude com segurança.',
+      en: 'A/B routines by joint, a stretching library and a 30-day schedule — train better and gain range of motion safely.',
+      es: 'Rutinas A/B por articulación, biblioteca de estiramientos y cronograma de 30 días — entrena mejor y gana amplitud con seguridad.'
+    }
   }
 ];
