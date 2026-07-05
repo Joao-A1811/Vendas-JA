@@ -169,4 +169,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/treino-academia/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/treino-academia/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/mentalidade-ansiedade-habitos/"/>
+  </url>
 </urlset>

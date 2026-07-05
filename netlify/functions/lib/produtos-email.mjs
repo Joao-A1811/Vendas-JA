@@ -224,4 +224,24 @@ export const PRODUTOS = {
       dica: 'Elige la división semanal (3x, 4x, 5x o 6x) que realmente encaje en tu rutina — la mejor división no es la más avanzada, es la que puedes mantener todos los meses.',
     },
   }),
+
+  'mentalidade-ansiedade-habitos': montar('mentalidade-ansiedade-habitos', {
+    pt: {
+      nomeProduto: 'Mentalidade, Ansiedade e Hábitos — Guia Completo NextLevel',
+      tema: 'ciclo do hábito, protocolo anti-impulso e plano de 30 dias para construir constância',
+      dica: 'Da próxima vez que sentir vontade de comer por impulso, teste o protocolo de 10 minutos antes de decidir: nomeie a emoção, respire, mova o corpo e só depois decida. Criar esse espaço já muda a decisão na maioria das vezes.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Mindset, Anxiety and Habits — Complete NextLevel Guide',
+      tema: 'the habit cycle, an anti-impulse protocol, and a 30-day plan to build consistency',
+      dica: "Next time you feel like eating on impulse, try the 10-minute protocol before deciding: name the emotion, breathe, move your body, and only then decide. Creating that space changes the decision most of the time.",
+    },
+    es: {
+      nomeProduto: 'Mentalidad, Ansiedad y Hábitos — Guía Completa NextLevel',
+      tema: 'ciclo del hábito, protocolo antiimpulso y plan de 30 días para construir constancia',
+      dica: 'La próxima vez que sientas ganas de comer por impulso, prueba el protocolo de 10 minutos antes de decidir: nombra la emoción, respira, mueve el cuerpo y solo después decide. Crear ese espacio cambia la decisión la mayoría de las veces.',
+    },
+  }),
 };

@@ -100,5 +100,17 @@ window.PRODUTOS_SITE = [
       en: 'Workouts by muscle group, diet by goal, 4 weekly splits and a 12-week schedule — progress at the gym with method.',
       es: 'Entrenamientos por grupo muscular, dieta por objetivo, 4 divisiones semanales y cronograma de 12 semanas — evoluciona en el gimnasio con método.'
     }
+  },
+  {
+    slug: 'mentalidade-ansiedade-habitos',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 13.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Mentalidade, Ansiedade e Hábitos', en: 'Mindset, Anxiety and Habits', es: 'Mentalidad, Ansiedad y Hábitos' },
+    resumo: {
+      pt: 'Ciclo do hábito, protocolo anti-impulso de 10 minutos e plano de 30 dias — construa constância e controle gatilhos emocionais.',
+      en: 'Habit cycle, a 10-minute anti-impulse protocol and a 30-day plan — build consistency and control emotional triggers.',
+      es: 'Ciclo del hábito, protocolo antiimpulso de 10 minutos y plan de 30 días — construye constancia y controla gatillos emocionales.'
+    }
   }
 ];
