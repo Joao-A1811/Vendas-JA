@@ -172,5 +172,17 @@ window.PRODUTOS_SITE = [
       en: 'A social diagnostic, the STOP protocol for anxiety, the C.O.N.N.E.C.T. method and a 30-day plan — presence, self-esteem and attraction with respect.',
       es: 'Diagnóstico social, Protocolo P.A.R.E. para la ansiedad, método C.O.N.E.C.T.A. y plan de 30 días — presencia, autoestima y atracción con respeto.'
     }
+  },
+  {
+    slug: 'presenca-social',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 19.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Linguagem Corporal e Presença Social', en: 'Body Language and Social Presence', es: 'Lenguaje Corporal y Presencia Social' },
+    resumo: {
+      pt: 'Postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito, com plano de 30 dias.',
+      en: 'Posture, eye contact, voice, personal space and social calibration — visible presence and attraction with respect, with a 30-day plan.',
+      es: 'Postura, mirada, voz, espacio personal y calibración social — presencia visible y atracción con respeto, con plan de 30 días.'
+    }
   }
 ];

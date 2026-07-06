@@ -308,4 +308,24 @@ export const PRODUTOS = {
       dica: 'Hoy, practica un escalón de la escalera de exposición social: saluda a 3 personas en ambientes comunes (portero, cajero, colega). La confianza social se construye como un músculo — repeticiones pequeñas y frecuentes.',
     },
   }),
+
+  'presenca-social': montar('presenca-social', {
+    pt: {
+      nomeProduto: 'Linguagem Corporal e Presença Social — Guia Completo NextLevel',
+      tema: 'postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito',
+      dica: 'Hoje, faça o protocolo de 60 segundos antes de entrar em um ambiente social: pés apoiados, ombros soltos, mãos visíveis e um ponto de foco à frente. Presença se treina no corpo, não só na cabeça.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Body Language and Social Presence — Complete NextLevel Guide',
+      tema: 'posture, eye contact, voice, personal space and social calibration — visible presence and attraction with respect',
+      dica: 'Today, do the 60-second protocol before entering a social setting: feet grounded, shoulders relaxed, hands visible and a focal point ahead of you. Presence is trained in the body, not just the mind.',
+    },
+    es: {
+      nomeProduto: 'Lenguaje Corporal y Presencia Social — Guía Completa NextLevel',
+      tema: 'postura, mirada, voz, espacio personal y calibración social — presencia visible y atracción con respeto',
+      dica: 'Hoy, haz el protocolo de 60 segundos antes de entrar en un ambiente social: pies apoyados, hombros sueltos, manos visibles y un punto de enfoque al frente. La presencia se entrena en el cuerpo, no solo en la mente.',
+    },
+  }),
 };
