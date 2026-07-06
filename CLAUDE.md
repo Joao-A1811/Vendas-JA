@@ -30,7 +30,7 @@ a cada push na `main`.
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
 | `emails/` | Conteúdo dos e-mails da sequência (3 × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
-| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` é opcional (liga a Conversions API) |
+| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` já configurada (Conversions API ligada desde jul/2026) |
 | `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 | `netlify.toml` | Além do build, define os cabeçalhos de segurança (CSP, X-Frame-Options etc.) pro site todo |
 
@@ -356,11 +356,13 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produ
   domínio novo): reputação ainda "esquentando" — pode cair no spam do Outlook em especial
   por mais um tempo; marcar "Não é spam" nos primeiros testes ajuda. Detalhes e melhorias
   futuras opcionais em `emails/LEIA-ME-BREVO.md`.
-- **Meta Conversions API (CAPI):** todo formulário de lead já manda o evento "Lead" também
-  por trás, direto do servidor (`netlify/functions/lib/meta-capi.mjs`), deduplicado com o
-  Pixel do navegador pelo mesmo `eventId`. Fica desligada até existir a env var
-  `META_ACCESS_TOKEN` no Netlify (System User Access Token gerado no Business Manager) —
-  sem ela, o site funciona normal, só sem o reforço server-side.
+- **Meta Conversions API (CAPI) — ✅ LIGADA (jul/2026):** todo formulário de lead manda o
+  evento "Lead" também por trás, direto do servidor (`netlify/functions/lib/meta-capi.mjs`),
+  deduplicado com o Pixel do navegador pelo mesmo `eventId`. As env vars `META_ACCESS_TOKEN`
+  e `META_TEST_EVENT_CODE` estão configuradas no Netlify e o diagnóstico confirmou o token
+  aceito no pixel certo (`1817037532617722`). Obs: existe um conjunto de dados abandonado
+  no Business Manager ("NextLevel Servidor", `4547029375545191`), criado sem querer durante
+  a configuração — não usar, não atrapalha.
 - **Cabeçalhos de segurança + JSON-LD:** `netlify.toml` define CSP/X-Frame-Options/etc. pro
   site todo; as páginas de produto geram automaticamente dados estruturados
   (Product/Offer) a partir do próprio `CONFIG`, sem nada pra manter sincronizado à mão.
