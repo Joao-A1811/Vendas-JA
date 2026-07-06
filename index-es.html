@@ -22,6 +22,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="/assets/produtos.js"></script>
+<!-- Píxel de Meta (config en /assets/config-global.js) — solo se activa cuando el visitante acepta las cookies (consent.js) -->
+<script src="/assets/config-global.js"></script>
+<script>
+// Respaldo: si la configuración global no carga, la página sigue funcionando sin Píxel.
+if (!window.SITE) window.SITE = { pixelId: 'COLE_AQUI', firebase: { apiKey: 'COLE_AQUI' } };
+const PIXEL_ATIVO = window.SITE.pixelId && window.SITE.pixelId !== 'COLE_AQUI';
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+window.iniciarPixel = function () {
+  if (!PIXEL_ATIVO || window.__pixelOn) return;
+  window.__pixelOn = true;
+  fbq('init', window.SITE.pixelId);
+  fbq('track', 'PageView');
+};
+</script>
+<script src="/assets/consent.js" defer></script>
 <style>
 :root{--roxo:#5b21b6;--roxo-claro:#7c3aed;--rosa:#db2777;--laranja:#f59e0b;--texto:#1c1428;--texto-suave:#5c5470;--bg:#faf9fc}
 *{box-sizing:border-box;margin:0;padding:0}

@@ -21,7 +21,7 @@ a cada push na `main`.
 | `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
 | `index.html` / `-en` / `-es` | Página inicial: mostra SÓ os cards de categoria (lidos de `assets/produtos.js`) — os produtos ficam em `/categorias/` |
-| `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
+| `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Tem busca por texto (ignora acentos, atravessa as categorias) e JSON-LD ItemList. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
@@ -39,9 +39,12 @@ Quem se cadastra recebe o ebook gratuito na hora, no idioma da página (campo
 `linkEbookGratis` do `CONFIG`). O formulário tem honeypot anti-spam (campo `#lead-site`
 escondido — robô que preenche é ignorado sem salvar).
 
-As páginas de produto têm SEO/social prontos: favicon, Open Graph (imagem em
-`assets/og-image.png`), canonical + hreflang gerados por JS a partir da própria URL.
-As home pages têm as mesmas tags, estáticas.
+As páginas de produto têm SEO/social prontos: favicon, Open Graph com **imagem própria por
+produto/idioma** (`assets/produtos/<slug>/og-<pt|en|es>.jpg`, 1200×630, gerada a partir da capa
+do guia — ao criar produto novo, gerar junto com a galeria), canonical + hreflang gerados por JS
+a partir da própria URL. As home pages têm as mesmas tags, estáticas (imagem genérica
+`assets/og-image*.png`). **O Pixel do Meta (com banner de consentimento) roda em TODAS as
+páginas**: produto, home e `/categorias/` — as duas últimas só PageView, sem Firebase.
 
 ## Catálogo atual
 

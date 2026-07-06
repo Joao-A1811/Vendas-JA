@@ -22,6 +22,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="/assets/produtos.js"></script>
+<!-- Píxel de Meta (config en /assets/config-global.js) — solo se activa cuando el visitante acepta las cookies (consent.js) -->
+<script src="/assets/config-global.js"></script>
+<script>
+// Respaldo: si la configuración global no carga, la página sigue funcionando sin Píxel.
+if (!window.SITE) window.SITE = { pixelId: 'COLE_AQUI', firebase: { apiKey: 'COLE_AQUI' } };
+const PIXEL_ATIVO = window.SITE.pixelId && window.SITE.pixelId !== 'COLE_AQUI';
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+window.iniciarPixel = function () {
+  if (!PIXEL_ATIVO || window.__pixelOn) return;
+  window.__pixelOn = true;
+  fbq('init', window.SITE.pixelId);
+  fbq('track', 'PageView');
+};
+</script>
+<script src="/assets/consent.js" defer></script>
 <style>
 :root{--roxo:#5b21b6;--roxo-claro:#7c3aed;--rosa:#db2777;--laranja:#f59e0b;--texto:#1c1428;--texto-suave:#5c5470;--bg:#faf9fc}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -48,6 +69,9 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 .chips a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 20px;border-radius:99px;transition:background .15s ease}
 .chips a:hover{background:rgba(255,255,255,.28)}
 .chips a.ativa{background:#fff;color:var(--roxo);border-color:#fff}
+.busca{position:relative;margin:18px auto 0;max-width:430px}
+.busca input{width:100%;padding:12px 20px;border-radius:99px;border:none;font-size:14px;font-family:inherit;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.sem-resultado{display:none;text-align:center;color:var(--texto-suave);padding:52px 0 8px;font-size:14.5px}
 
 .categoria{padding:52px 0 8px}
 .categoria .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -89,10 +113,12 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
     <h2>Explora por categoría</h2>
     <p>Todas las guías NextLevel organizadas por tema — elige el área que quieres evolucionar.</p>
     <nav class="chips" id="chips"></nav>
+    <div class="busca"><input type="search" id="busca" placeholder="🔍 Buscar guía por nombre o tema..." aria-label="Buscar guía"></div>
   </div>
 </section>
 
 <main class="container" id="categorias"></main>
+<p class="sem-resultado container" id="sem-resultado">Ninguna guía encontrada para esta búsqueda.</p>
 
 <div class="container" style="text-align:center">
   <a class="voltar" href="/index-es.html">← Volver a la página principal</a>
@@ -169,12 +195,62 @@ document.getElementById('chips').addEventListener('click', e => {
   const a = e.target.closest('a');
   if (!a) return;
   e.preventDefault();
+  const busca = document.getElementById('busca');
+  if (busca.value) { busca.value = ''; document.querySelectorAll('.card').forEach(c => { c.style.display = ''; }); document.getElementById('sem-resultado').style.display = 'none'; }
   const cat = a.dataset.cat;
   history.replaceState(null, '', cat === 'todos' ? location.pathname + location.search : '#' + cat);
   aplicarFiltro(cat);
 });
 window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
 aplicarFiltro(location.hash.slice(1));
+
+// ---- busca por texto (atravessa todas as categorias, ignora acentos) ----
+const campoBusca = document.getElementById('busca');
+function normalizar(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+function aplicarBusca() {
+  const q = normalizar(campoBusca.value.trim());
+  const msg = document.getElementById('sem-resultado');
+  if (!q) {
+    document.querySelectorAll('.card').forEach(c => { c.style.display = ''; });
+    msg.style.display = 'none';
+    aplicarFiltro(location.hash.slice(1));
+    return;
+  }
+  let total = 0;
+  document.querySelectorAll('.categoria').forEach(sec => {
+    let n = 0;
+    sec.querySelectorAll('.card').forEach(card => {
+      const bate = normalizar(card.textContent).includes(q);
+      card.style.display = bate ? '' : 'none';
+      if (bate) n++;
+    });
+    sec.style.display = n ? '' : 'none';
+    total += n;
+  });
+  document.querySelectorAll('.chips a').forEach(a => a.classList.remove('ativa'));
+  msg.style.display = total ? 'none' : 'block';
+}
+campoBusca.addEventListener('input', aplicarBusca);
+
+// ---- dados estruturados (ItemList) pro Google ----
+(function () {
+  var ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Guías NextLevel por categoría',
+    numberOfItems: lista.length,
+    itemListElement: lista.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.titulo[IDIOMA],
+      url: 'https://nextlevelbr.app.br/produtos/' + p.slug + '/' + SUFIXO_PAGINA
+    }))
+  };
+  var s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+})();
 </script>
 
 </body>
