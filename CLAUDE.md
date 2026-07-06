@@ -20,8 +20,8 @@ a cada push na `main`.
 |---|---|
 | `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
-| `index.html` / `-en` / `-es` | Página inicial (catálogo NextLevel), lê de `assets/produtos.js`; hero tem botão pra `/categorias/` |
-| `categorias/` | Página "Explore por categoria" (3 idiomas): agrupa os produtos por `categoria` do `produtos.js` — categoria sem produto listado não aparece |
+| `index.html` / `-en` / `-es` | Página inicial: mostra SÓ os cards de categoria (lidos de `assets/produtos.js`) — os produtos ficam em `/categorias/` |
+| `categorias/` | Página "Explore por categoria" (3 idiomas): produtos agrupados por `categoria` do `produtos.js`, com chips de navegação — categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
@@ -368,8 +368,9 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produ
 ## O que ainda falta (estado em julho/2026)
 
 - **O único produto em rascunho** (`investimentos`) continua com CONFIG de exemplo em
-  `produtos/investimentos/`, mas fora do catálogo público — só volta a aparecer no site quando
-  tiver ebook real + checkout Hotmart real, igual aos quatorze já ao vivo.
+  `produtos/investimentos/`, mas fora do catálogo público e com `<meta name="robots"
+  content="noindex">` nas 3 páginas — só volta a aparecer no site quando tiver ebook real +
+  checkout Hotmart real, igual aos quatorze já ao vivo (aí é só tirar o noindex).
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos quatorze produtos ao vivo.
