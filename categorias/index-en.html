@@ -47,6 +47,7 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 .chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px;position:relative}
 .chips a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 20px;border-radius:99px;transition:background .15s ease}
 .chips a:hover{background:rgba(255,255,255,.28)}
+.chips a.ativa{background:#fff;color:var(--roxo);border-color:#fff}
 
 .categoria{padding:52px 0 8px}
 .categoria .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -111,6 +112,7 @@ const SUFIXO_PAGINA = 'index-en.html';
 const TXT_EM_BREVE = 'Coming soon';
 const TXT_SAIBA_MAIS = 'Learn more →';
 const TXT_GUIA = ['guide', 'guides'];
+const TXT_TODOS = '✨ All guides';
 
 const CATS = window.CATEGORIAS_SITE || {};
 const lista = window.PRODUTOS_SITE || [];
@@ -125,17 +127,19 @@ const ordem = Object.keys(CATS).filter(c => porCategoria[c]).concat(
   Object.keys(porCategoria).filter(c => !CATS[c])
 );
 
-document.getElementById('chips').innerHTML = ordem.map(c => {
-  const meta = CATS[c] || { icone: '📦', nome: { [IDIOMA]: c } };
-  return `<a href="#${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
-}).join('');
+document.getElementById('chips').innerHTML =
+  `<a href="#todos" data-cat="todos">${TXT_TODOS}</a>` +
+  ordem.map(c => {
+    const meta = CATS[c] || { icone: '📦', nome: { [IDIOMA]: c } };
+    return `<a href="#${c}" data-cat="${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
+  }).join('');
 
 document.getElementById('categorias').innerHTML = ordem.map(c => {
   const meta = CATS[c] || { icone: '📦', nome: { [IDIOMA]: c }, desc: { [IDIOMA]: '' } };
   const prods = porCategoria[c];
   const n = prods.length;
   return `
-  <section class="categoria" id="${c}">
+  <section class="categoria" id="sec-${c}">
     <div class="cat-head"><div class="cat-icone">${meta.icone}</div><h3>${meta.nome[IDIOMA]}</h3></div>
     <p class="cat-desc">${meta.desc ? meta.desc[IDIOMA] : ''}</p>
     <span class="cat-total">${n} ${n === 1 ? TXT_GUIA[0] : TXT_GUIA[1]}</span>
@@ -150,6 +154,27 @@ document.getElementById('categorias').innerHTML = ordem.map(c => {
     </div>
   </section>`;
 }).join('');
+
+// ---- filtro por categoria (chips + #hash da URL) ----
+function aplicarFiltro(cat) {
+  const ativo = ordem.includes(cat) ? cat : 'todos';
+  document.querySelectorAll('.categoria').forEach(sec => {
+    sec.style.display = (ativo === 'todos' || sec.id === 'sec-' + ativo) ? '' : 'none';
+  });
+  document.querySelectorAll('.chips a').forEach(a => {
+    a.classList.toggle('ativa', a.dataset.cat === ativo);
+  });
+}
+document.getElementById('chips').addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  e.preventDefault();
+  const cat = a.dataset.cat;
+  history.replaceState(null, '', cat === 'todos' ? location.pathname + location.search : '#' + cat);
+  aplicarFiltro(cat);
+});
+window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
+aplicarFiltro(location.hash.slice(1));
 </script>
 
 </body>

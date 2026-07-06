@@ -21,7 +21,7 @@ a cada push na `main`.
 | `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
 | `index.html` / `-en` / `-es` | Página inicial: mostra SÓ os cards de categoria (lidos de `assets/produtos.js`) — os produtos ficam em `/categorias/` |
-| `categorias/` | Página "Explore por categoria" (3 idiomas): produtos agrupados por `categoria` do `produtos.js`, com chips de navegação — categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
+| `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
