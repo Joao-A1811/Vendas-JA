@@ -49,7 +49,7 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
 `emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
-`comunicacao-e-relacionamentos` e `atracao-com-respeito`, todos Saúde. O único produto ainda em rascunho
+`comunicacao-e-relacionamentos`, `atracao-com-respeito` e `presenca-social`, todos Saúde. O único produto ainda em rascunho
 (`investimentos`) **continua fora do catálogo público e do `sitemap.xml`**, mas a pasta
 `produtos/investimentos/` continua no repositório (CONFIG de exemplo já preenchido: headline,
 benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra reaproveitar
@@ -276,10 +276,35 @@ Checkout real nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/L106620441I` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Q106620456T` (US$ 19)
 
+**`presenca-social` (jul/2026, 19º produto — "Linguagem Corporal e Presença Social", mesma nova
+vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3 idiomas.** Produto
+novo, slug novo sem pasta de rascunho prévia — distinto do `atracao-com-respeito` (foco em
+ansiedade social e escada de exposição) e do `confianca-social` (foco em conversas); este produto
+tem foco específico em linguagem corporal e regulação da ansiedade corporal antes de interagir.
+Guia pago de 36 páginas (a diferença entre presença e atração, postura/eixo/energia com protocolo
+de 60 segundos, olhar/rosto/sorriso com o método 3-2-1 para contato visual, voz/ritmo/pausas com
+a regra dos 3 ajustes, espaço pessoal e limites com distâncias sociais por contexto, mãos/gestos
+e congruência, imagem pessoal sem obsessão — os 6 pilares do autocuidado —, como entrar em
+ambientes sociais com o ritual de chegada em 5 passos, calibragem social com o método O.A.R.,
+ansiedade corporal com o Protocolo R.E.S.E.T. e escada de exposição social, playbooks por
+situação, um plano de 30 dias com cronograma completo e score semanal de presença, e workbook com
+ficha de diagnóstico e diário de interação social) + ebook gratuito (isca, 6 páginas) nos 3
+idiomas, `ebooks/arquivos/presenca-social-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/presenca-social/` (3 idiomas). Todo o conteúdo (headline,
+FAQ, ebook, capa, Hotmart) não promete que alguém vai se sentir atraído por quem lê, não substitui
+apoio psicológico e não ensina nenhuma técnica de intimidação, encarada fixa ou invasão de espaço
+alheio — segue a mesma regra de nicho sensível de relacionamentos do `confianca-social`, do
+`carisma-humor-storytelling`, do `comunicacao-e-relacionamentos` e do `atracao-com-respeito`.
+Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+`disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/E106621916S` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/N106621947M` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/A106621974F` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros treze produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produtos.
 
 ## Como fazer alterações comuns
 
@@ -341,10 +366,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros treze produtos
 
 - **O único produto em rascunho** (`investimentos`) continua com CONFIG de exemplo em
   `produtos/investimentos/`, mas fora do catálogo público — só volta a aparecer no site quando
-  tiver ebook real + checkout Hotmart real, igual aos treze já ao vivo.
+  tiver ebook real + checkout Hotmart real, igual aos quatorze já ao vivo.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos treze produtos ao vivo.
+  dos quatorze produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
