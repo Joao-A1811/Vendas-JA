@@ -19,8 +19,9 @@ a cada push na `main`.
 | Arquivo/pasta | O que é |
 |---|---|
 | `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
-| `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`) |
-| `index.html` / `-en` / `-es` | Página inicial (catálogo NextLevel), lê de `assets/produtos.js` |
+| `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
+| `index.html` / `-en` / `-es` | Página inicial (catálogo NextLevel), lê de `assets/produtos.js`; hero tem botão pra `/categorias/` |
+| `categorias/` | Página "Explore por categoria" (3 idiomas): agrupa os produtos por `categoria` do `produtos.js` — categoria sem produto listado não aparece |
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
@@ -319,7 +320,9 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produ
      `assets/produtos/<slug>/preview-<pt|en|es>-<nome>.jpg` e já incluir a seção "Dê uma olhada
      por dentro" (`.preview-galeria`) nas 3 páginas do produto — não deixar pra depois.
   3. Copiar `landing-page/` → `produtos/<slug>/`, preencher os `CONFIG`, adicionar o bloco em
-     `assets/produtos.js` e o produto em `netlify/functions/lib/produtos-email.mjs`.
+     `assets/produtos.js` (incluindo o campo `categoria` — hoje existem `saude-fitness` e
+     `relacionamentos`; categoria nova = adicionar também em `window.CATEGORIAS_SITE`) e o
+     produto em `netlify/functions/lib/produtos-email.mjs`.
   4. Cadastrar na Hotmart (textos em `CADASTRO-HOTMART.md`), colar os `linkCheckoutHotmart`
      reais. Só trocar `disponivel` pra `true` quando TODOS os idiomas tiverem checkout
      funcionando.

@@ -316,4 +316,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/presenca-social/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/presenca-social/"/>
   </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/categorias/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/categorias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/categorias/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/categorias/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/categorias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/categorias/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/categorias/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/categorias/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/categorias/"/>
+  </url>
 </urlset>

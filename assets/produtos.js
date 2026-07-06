@@ -17,9 +17,35 @@
 //   4. Quando TODOS os idiomas tiverem checkout funcionando,
 //      troque disponivel: false por true (some o "Em breve")
 // ============================================================
+// Categorias do catálogo — usadas pela página /categorias/ (3 idiomas) e
+// pelas tags dos cards. Categoria só aparece no site quando tem pelo menos
+// um produto listado abaixo com o slug dela (ex: 'investimentos' só passa a
+// existir quando o produto de investimentos virar produto real).
+window.CATEGORIAS_SITE = {
+  'saude-fitness': {
+    icone: '💪',
+    nome: { pt: 'Saúde e Fitness', en: 'Health & Fitness', es: 'Salud y Fitness' },
+    desc: {
+      pt: 'Treino, alimentação, suplementação e hábitos — métodos práticos pra evoluir seu corpo com constância.',
+      en: 'Training, nutrition, supplementation and habits — practical methods to evolve your body with consistency.',
+      es: 'Entrenamiento, alimentación, suplementación y hábitos — métodos prácticos para evolucionar tu cuerpo con constancia.'
+    }
+  },
+  'relacionamentos': {
+    icone: '💬',
+    nome: { pt: 'Relacionamentos e Habilidades Sociais', en: 'Relationships & Social Skills', es: 'Relaciones y Habilidades Sociales' },
+    desc: {
+      pt: 'Conversas, presença, carisma e conexões saudáveis — comunicação genuína e respeito, nunca manipulação.',
+      en: 'Conversations, presence, charisma and healthy connections — genuine communication and respect, never manipulation.',
+      es: 'Conversaciones, presencia, carisma y conexiones saludables — comunicación genuina y respeto, nunca manipulación.'
+    }
+  }
+};
+
 window.PRODUTOS_SITE = [
   {
     slug: 'treino-em-casa',
+    categoria: 'saude-fitness',
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
     titulo: { pt: 'Treino em Casa', en: 'Home Workout', es: 'Entrenamiento en Casa' },
@@ -31,6 +57,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'suplementacao-inteligente',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 7.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -43,6 +70,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'receitas-fitness',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 8.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -55,6 +83,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'desafio-30-dias',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 9.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -67,6 +96,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'emagrecimento',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 10.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -79,6 +109,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'ganho-de-massa',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 11.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -91,6 +122,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'treino-academia',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 12.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -103,6 +135,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'mentalidade-ansiedade-habitos',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 13.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -115,6 +148,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'mobilidade-alongamento-prevencao',
+    categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 14.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -127,9 +161,10 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'confianca-social',
+    categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 15.
     disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Ansiedade Social e Conversas com Naturalidade', en: 'Social Anxiety and Natural Conversations', es: 'Ansiedad Social y Conversaciones con Naturalidad' },
     resumo: {
       pt: 'Escada de exposição gradual, playbooks por situação e plano de 30 dias — destrave conversas e crie conexões com respeito.',
@@ -139,9 +174,10 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'carisma-humor-storytelling',
+    categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 16.
     disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Carisma, Humor e Storytelling', en: 'Charisma, Humor and Storytelling', es: 'Carisma, Humor y Storytelling' },
     resumo: {
       pt: 'Método C.H.A.R.M.E., estruturas de storytelling e plano de 30 dias — crie conexão e conte histórias interessantes sem forçar personagem.',
@@ -151,9 +187,10 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'comunicacao-e-relacionamentos',
+    categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 17.
     disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Comunicação e Relacionamento: Conversas que Criam Conexão', en: 'Communication and Relationships: Conversations That Create Connection', es: 'Comunicación y Relación: Conversaciones que Crean Conexión' },
     resumo: {
       pt: 'Método O.U.V.I.R., estrutura de storytelling 30-20-10 e plano de 30 dias — comunique-se com clareza e construa relacionamentos saudáveis.',
@@ -163,9 +200,10 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'atracao-com-respeito',
+    categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 18.
     disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Confiança Social: Atração com Respeito', en: 'Social Confidence: Attraction with Respect', es: 'Confianza Social: Atracción con Respeto' },
     resumo: {
       pt: 'Diagnóstico social, Protocolo P.A.R.E. para ansiedade, método C.O.N.E.C.T.A. e plano de 30 dias — presença, autoestima e atração com respeito.',
@@ -175,9 +213,10 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'presenca-social',
+    categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 19.
     disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Linguagem Corporal e Presença Social', en: 'Body Language and Social Presence', es: 'Lenguaje Corporal y Presencia Social' },
     resumo: {
       pt: 'Postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito, com plano de 30 dias.',
