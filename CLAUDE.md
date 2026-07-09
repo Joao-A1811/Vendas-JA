@@ -13,6 +13,13 @@ a cada push na `main`.
 - **Idiomas:** cada página tem versões irmãs — `index.html` (PT), `index-en.html` (EN),
   `index-es.html` (ES) — com seletor de idioma no topo.
 - Não há build, framework nem dependências — tudo é HTML estático.
+- **Identidade visual (jul/2026): tema escuro "dark premium"** — navy `#0d1b2a` + teal `#14b8a6`/`#5eead4`
+  + âmbar `#f59e0b` nos CTAs, a mesma paleta das capas dos ebooks. O site todo usa esse tema:
+  a home e as páginas de categorias têm CSS próprio já escuro; páginas de produto, legais e o
+  template `landing-page/` carregam um bloco `/* ===== Tema escuro NextLevel ===== */` no FIM do
+  `<style>` que sobrescreve a paleta clara antiga (não remover — produto novo copiado do template
+  já vem com ele). Cada produto tem miniatura de capa `assets/produtos/<slug>/thumb-<idioma>.jpg`
+  (400px, ~20-25 KB) usada na home — gerar junto com a galeria ao criar produto novo.
 
 ## Estrutura e pontos únicos de edição
 
@@ -20,7 +27,7 @@ a cada push na `main`.
 |---|---|
 | `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
-| `index.html` / `-en` / `-es` | Página inicial: mostra SÓ os cards de categoria (lidos de `assets/produtos.js`) — os produtos ficam em `/categorias/` |
+| `index.html` / `-en` / `-es` | Página inicial (redesign dark premium, jul/2026): catálogo completo com capas (`thumb-<idioma>.jpg`), busca em tempo real, filtro por categoria, selo "NOVO" automático (último de `PRODUTOS_SITE`), seção "Como funciona", faixa de confiança, captura de lead (select de objetivo → entrega o ebook gratuito de `treino-em-casa` ou `confianca-social` e dispara a mesma automação `lead-email` dos produtos) e JSON-LD ItemList |
 | `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Tem busca por texto (ignora acentos, atravessa as categorias) e JSON-LD ItemList. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
@@ -322,6 +329,8 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produ
      página com tabela/callout, checklist, etc.), salvar em
      `assets/produtos/<slug>/preview-<pt|en|es>-<nome>.jpg` e já incluir a seção "Dê uma olhada
      por dentro" (`.preview-galeria`) nas 3 páginas do produto — não deixar pra depois.
+     **Gerar também a miniatura da capa** `thumb-<pt|en|es>.jpg` (400px de largura, JPEG q=80,
+     a partir do `preview-<idioma>-capa.jpg`) — é ela que aparece no card da home.
   3. Copiar `landing-page/` → `produtos/<slug>/`, preencher os `CONFIG`, adicionar o bloco em
      `assets/produtos.js` (incluindo o campo `categoria` — hoje existem `saude-fitness` e
      `relacionamentos`; categoria nova = adicionar também em `window.CATEGORIAS_SITE`) e o
