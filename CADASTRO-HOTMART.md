@@ -1000,16 +1000,15 @@ ningún juego emocional.
 
 ## 21. Mensagens, WhatsApp e Conversas Online — categoria: Saúde e esportes
 
-> Guia pago (50 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
-> galeria "olhe por dentro" prontas (ver `assets/produtos/mensagens-e-conversas-online/`). Produto
-> novo, a partir de um rascunho enviado pelo dono do projeto — mesma nova vertente "Conexões,
-> Presença e Relacionamentos Saudáveis" dos demais produtos da linha, com foco específico em
-> comunicação digital (WhatsApp, DMs, redes sociais): fórmula base da conversa, técnica C.E.C.,
-> convite para sair com respeito e segurança digital contra golpes afetivos. Falta: cadastrar o
-> produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das
-> 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
-> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
-> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+> ✅ AO VIVO nos 3 idiomas. Guia pago (50 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/mensagens-e-conversas-online/`). Produto novo, a partir de um rascunho enviado
+> pelo dono do projeto — mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis" dos
+> demais produtos da linha, com foco específico em comunicação digital (WhatsApp, DMs, redes
+> sociais): fórmula base da conversa, técnica C.E.C., convite para sair com respeito e segurança
+> digital contra golpes afetivos. Checkout real nas 3 moedas, `disponivel: true`: PT/BRL
+> `https://pay.hotmart.com/X106706106E` (R$ 49,99), EN/USD `https://pay.hotmart.com/W106706125W`
+> (US$ 19), ES/USD `https://pay.hotmart.com/I106706139S` (US$ 19).
 
 **Nome (PT):** Mensagens, WhatsApp e Conversas Online — Guia Completo NextLevel
 **Descrição (PT):**
