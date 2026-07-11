@@ -23,7 +23,7 @@
 // existir quando o produto de investimentos virar produto real).
 window.CATEGORIAS_SITE = {
   'saude-fitness': {
-    icone: '💪',
+    icone: (window.ICONS || {}).pulse || '💪',
     nome: { pt: 'Saúde e Fitness', en: 'Health & Fitness', es: 'Salud y Fitness' },
     desc: {
       pt: 'Treino, alimentação, suplementação e hábitos — métodos práticos pra evoluir seu corpo com constância.',
@@ -32,7 +32,7 @@ window.CATEGORIAS_SITE = {
     }
   },
   'relacionamentos': {
-    icone: '💬',
+    icone: (window.ICONS || {}).chat || '💬',
     nome: { pt: 'Relacionamentos e Habilidades Sociais', en: 'Relationships & Social Skills', es: 'Relaciones y Habilidades Sociales' },
     desc: {
       pt: 'Conversas, presença, carisma e conexões saudáveis — comunicação genuína e respeito, nunca manipulação.',

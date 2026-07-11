@@ -21,6 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="/assets/icons.js"></script>
 <script src="/assets/produtos.js"></script>
 <!-- Pixel do Meta (config em /assets/config-global.js) — só liga após o visitante aceitar os cookies (consent.js) -->
 <script src="/assets/config-global.js"></script>
@@ -76,7 +77,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .hero::after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:#1b3a5c;opacity:.5;filter:blur(40px);bottom:-200px;left:-140px}
 .hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
 @media(max-width:840px){.hero .container{grid-template-columns:1fr}}
-.hero .badge{display:inline-block;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.4);color:var(--teal-claro);padding:7px 16px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.6px;margin-bottom:20px}
+.hero .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.4);color:var(--teal-claro);padding:7px 16px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.6px;margin-bottom:20px}
+.hero .badge svg{font-size:14px;flex-shrink:0}
 .hero h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;line-height:1.14;color:#fff}
 .hero h1 em{font-style:normal;color:var(--teal-claro)}
 .hero p{color:var(--texto-suave);margin-top:16px;font-size:16.5px;max-width:520px;line-height:1.65}
@@ -86,7 +88,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .btn-ghost{color:var(--teal-claro);border:1.5px solid rgba(94,234,212,.5);background:transparent}
 .hero .prova{margin-top:30px;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--texto-suave)}
 .hero .prova .selos{display:flex}
-.hero .prova .selos span{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0f766e,#14b8a6);border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px;margin-left:-8px}
+.hero .prova .selos span{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0f766e,#14b8a6);border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;margin-left:-8px}
 .hero .prova .selos span:first-child{margin-left:0}
 .hero .stats{display:flex;gap:30px;margin-top:26px}
 .hero .stat b{display:block;font-size:24px;font-family:'Poppins',Arial,sans-serif;color:#fff}
@@ -108,8 +110,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .painel-busca .busca input:focus{border-color:var(--teal-claro)}
 .painel-busca .busca .lupa{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.6;font-size:15px}
 .filtros{display:flex;gap:10px;flex-wrap:wrap}
-.chip{padding:10px 18px;border-radius:99px;font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.16);color:var(--texto-suave);cursor:pointer;background:transparent;font-family:inherit}
-.chip.on{background:var(--teal);border-color:var(--teal);color:#04211d}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:99px;font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.16);color:var(--texto-suave);cursor:pointer;background:transparent;font-family:inherit;text-decoration:none}
+.chip svg{font-size:15px;flex-shrink:0}
+.chip:hover{border-color:var(--teal-claro);color:#fff}
 
 /* ---------- catálogo ---------- */
 .secao{padding:44px 0 6px}
@@ -118,6 +121,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .secao h2 .risco{color:var(--teal-claro)}
 .secao .conta{font-size:13px;font-weight:700;color:var(--teal-claro)}
 .secao .sub{color:var(--texto-suave);font-size:14px;margin-bottom:24px}
+
+.secao-cat{margin-bottom:40px}
+.secao-cat-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.secao-cat-head .cat-ico{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0f766e,var(--teal));display:flex;align-items:center;justify-content:center;font-size:19px;color:#fff;flex-shrink:0}
+.secao-cat-head h3{font-size:19px;color:#fff}
+.secao-cat-head .cat-total{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--teal-claro);white-space:nowrap}
+.secao-cat .cat-desc{color:var(--texto-suave);font-size:13.5px;margin:6px 0 20px;max-width:640px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:22px;padding-bottom:26px}
 .card{position:relative;background:var(--card);border:1px solid rgba(94,234,212,.12);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--texto);transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;display:flex;flex-direction:column}
@@ -153,7 +163,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .confianca .container{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:820px){.confianca .container{grid-template-columns:repeat(2,1fr)}}
 .confianca .item{display:flex;align-items:center;gap:12px}
-.confianca .ico{font-size:22px}
+.confianca .ico{font-size:20px;color:var(--teal-claro);flex-shrink:0}
 .confianca b{display:block;font-size:13px;color:#fff}
 .confianca span{font-size:11.5px;color:var(--texto-suave)}
 
@@ -200,7 +210,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <section class="hero">
   <div class="container">
     <div>
-      <span class="badge">🚀 BUILT FOR REAL RESULTS, NOT FLUFF</span>
+      <span class="badge" id="hero-badge">BUILT FOR REAL RESULTS, NOT FLUFF</span>
       <h1>Your next level<br>starts <em>here</em></h1>
       <p>Practical, straight-to-the-point guides to transform your health, your body and your connections — step-by-step methods, 30-day plans and complete workbooks.</p>
       <div class="acoes">
@@ -208,7 +218,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <a class="btn btn-ghost" href="#lead">Get the free material</a>
       </div>
       <div class="prova">
-        <div class="selos" aria-hidden="true"><span>💪</span><span>🥗</span><span>🧠</span><span>💬</span></div>
+        <div class="selos" id="hero-selos" aria-hidden="true"></div>
         Health, fitness, mindset and social skills — in 3 languages
       </div>
       <div class="stats" id="hero-stats"></div>
@@ -263,10 +273,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 <section class="confianca">
   <div class="container">
-    <div class="item"><span class="ico" aria-hidden="true">⚡</span><div><b>Instant access</b><span>straight to your inbox</span></div></div>
-    <div class="item"><span class="ico" aria-hidden="true">🛡️</span><div><b>7-day guarantee</b><span>refund, no questions asked</span></div></div>
-    <div class="item"><span class="ico" aria-hidden="true">🎁</span><div><b>Free sample</b><span>on every guide</span></div></div>
-    <div class="item"><span class="ico" aria-hidden="true">🔒</span><div><b>Secure purchase</b><span>checkout via Hotmart</span></div></div>
+    <div class="item"><span class="ico" id="ico-bolt" aria-hidden="true"></span><div><b>Instant access</b><span>straight to your inbox</span></div></div>
+    <div class="item"><span class="ico" id="ico-shield" aria-hidden="true"></span><div><b>7-day guarantee</b><span>refund, no questions asked</span></div></div>
+    <div class="item"><span class="ico" id="ico-gift" aria-hidden="true"></span><div><b>Free sample</b><span>on every guide</span></div></div>
+    <div class="item"><span class="ico" id="ico-lock" aria-hidden="true"></span><div><b>Secure purchase</b><span>checkout via Hotmart</span></div></div>
   </div>
 </section>
 
@@ -275,12 +285,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="lead">
       <div>
         <h2>Not sure where to start?</h2>
-        <p>Pick your goal, leave your contact and get a free sample guide right now — in your browser and your inbox.</p>
+        <p>Pick a topic, leave your contact and get a free sample representative of that collection right now — in your browser and your inbox. (Want one specific guide instead? Open its page: every guide has its own free sample.)</p>
       </div>
       <form id="form-lead">
-        <select id="lead-objetivo" aria-label="What's your goal?">
-          <option value="treino-em-casa">💪 I want to improve body and health</option>
-          <option value="confianca-social">💬 I want to improve connections and presence</option>
+        <select id="lead-objetivo" aria-label="Which topic interests you?">
+          <option value="treino-em-casa">Body and health — collection sample</option>
+          <option value="confianca-social">Connections and presence — collection sample</option>
         </select>
         <input type="text" id="lead-nome" placeholder="Your name" required>
         <input type="email" id="lead-email" placeholder="Your best email" required>
@@ -312,7 +322,6 @@ const IDIOMA = 'en';
 const SUFIXO_PAGINA = 'index-en.html';
 const TXT_EM_BREVE = 'Coming soon';
 const TXT_SAIBA_MAIS = 'Learn more →';
-const TXT_TODOS = 'All';
 const TXT_GUIAS = 'guides';
 const TXT_DE = 'of';
 const PRECO_DE = '$37';
@@ -321,6 +330,16 @@ const PRECO_POR = '$19';
 const CATS = window.CATEGORIAS_SITE || {};
 const lista = window.PRODUTOS_SITE || [];
 const NOVO_SLUG = lista.length ? lista[lista.length - 1].slug : '';
+const ICO = window.ICONS || {};
+
+// ---- ícones do hero e da faixa de confiança ----
+document.getElementById('hero-badge').insertAdjacentHTML('afterbegin', ICO.rocket || '');
+document.getElementById('hero-selos').innerHTML =
+  `<span>${ICO.pulse || ''}</span><span>${ICO.meal || ''}</span><span>${ICO.brain || ''}</span><span>${ICO.chat || ''}</span>`;
+document.getElementById('ico-bolt').innerHTML = ICO.bolt || '';
+document.getElementById('ico-shield').innerHTML = ICO.shield || '';
+document.getElementById('ico-gift').innerHTML = ICO.gift || '';
+document.getElementById('ico-lock').innerHTML = ICO.lock || '';
 
 // ---- estatísticas do hero (contagem real do catálogo) ----
 document.getElementById('hero-stats').innerHTML = `
@@ -338,26 +357,33 @@ document.getElementById('hero-stats').innerHTML = `
     '<span class="selo-novo">NOVO</span>';
 })();
 
-// ---- filtros por categoria (lidos de CATEGORIAS_SITE) ----
-let filtroAtual = 'todos';
-let termo = '';
+// ============================================================
+// Catálogo agrupado por categoria: mostra SEMPRE todos os guias,
+// organizados em seções (não é mais um filtro que esconde o
+// resto) — os chips viram atalhos que rolam até a seção. A busca
+// continua funcionando por cima, escondendo card a card e a seção
+// inteira se ela ficar sem nenhum resultado.
+// ============================================================
+const porCategoria = {};
+for (const p of lista) {
+  const c = p.categoria || 'outros';
+  (porCategoria[c] = porCategoria[c] || []).push(p);
+}
+const ordemCats = Object.keys(CATS).filter(c => porCategoria[c]).concat(
+  Object.keys(porCategoria).filter(c => !CATS[c])
+);
+
 const elFiltros = document.getElementById('filtros');
-elFiltros.innerHTML = `<button class="chip on" data-cat="todos">${TXT_TODOS}</button>` +
-  Object.keys(CATS).filter(c => lista.some(p => p.categoria === c)).map(c =>
-    `<button class="chip" data-cat="${c}">${CATS[c].icone} ${CATS[c].nome[IDIOMA]}</button>`).join('');
+elFiltros.innerHTML = ordemCats.map(c => {
+  const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c } };
+  return `<a class="chip" href="#cat-${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
+}).join('');
 
 function normalizar(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
 
-function render() {
-  const filtrados = lista.filter(p => {
-    const okCat = filtroAtual === 'todos' || p.categoria === filtroAtual;
-    const okBusca = !termo || normalizar(p.titulo[IDIOMA] + ' ' + p.resumo[IDIOMA]).includes(termo);
-    return okCat && okBusca;
-  });
-  document.getElementById('grid').innerHTML = filtrados.map(p => {
-    const cat = CATS[p.categoria];
-    return `
-    <a class="card" href="/produtos/${p.slug}/${SUFIXO_PAGINA}">
+function cardHtml(p, cat) {
+  return `
+    <a class="card" href="/produtos/${p.slug}/${SUFIXO_PAGINA}" data-busca="${normalizar(p.titulo[IDIOMA] + ' ' + p.resumo[IDIOMA])}">
       ${p.slug === NOVO_SLUG ? '<span class="novo">NOVO</span>' : ''}
       ${p.disponivel ? '' : `<span class="em-breve">${TXT_EM_BREVE}</span>`}
       <div class="capa"><img src="/assets/produtos/${p.slug}/thumb-${IDIOMA}.jpg" alt="Cover of the ${p.titulo[IDIOMA]} guide" loading="lazy"></div>
@@ -371,24 +397,43 @@ function render() {
         </div>
       </div>
     </a>`;
-  }).join('');
-  document.getElementById('conta').textContent = `${filtrados.length} ${TXT_DE} ${lista.length} ${TXT_GUIAS}`;
-  document.getElementById('vazio').style.display = filtrados.length ? 'none' : 'block';
 }
 
-elFiltros.addEventListener('click', e => {
-  const chip = e.target.closest('.chip');
-  if (!chip) return;
-  elFiltros.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
-  chip.classList.add('on');
-  filtroAtual = chip.dataset.cat;
-  render();
-});
+document.getElementById('grid').innerHTML = ordemCats.map(c => {
+  const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c }, desc: { [IDIOMA]: '' } };
+  const prods = porCategoria[c];
+  return `
+  <div class="secao-cat" id="cat-${c}">
+    <div class="secao-cat-head">
+      <span class="cat-ico">${meta.icone}</span>
+      <h3>${meta.nome[IDIOMA]}</h3>
+      <span class="cat-total">${prods.length} ${TXT_GUIAS}</span>
+    </div>
+    <p class="cat-desc">${meta.desc ? meta.desc[IDIOMA] : ''}</p>
+    <div class="grid">${prods.map(p => cardHtml(p, meta)).join('')}</div>
+  </div>`;
+}).join('');
+
+document.getElementById('conta').textContent = `${lista.length} ${TXT_GUIAS}`;
+
 document.getElementById('busca').addEventListener('input', e => {
-  termo = normalizar(e.target.value.trim());
-  render();
+  const termo = normalizar(e.target.value.trim());
+  let totalVisivel = 0;
+  document.querySelectorAll('.secao-cat').forEach(sec => {
+    let visiveisNaSecao = 0;
+    sec.querySelectorAll('.card').forEach(card => {
+      const bate = !termo || card.dataset.busca.includes(termo);
+      card.style.display = bate ? '' : 'none';
+      if (bate) visiveisNaSecao++;
+    });
+    sec.style.display = visiveisNaSecao ? '' : 'none';
+    totalVisivel += visiveisNaSecao;
+  });
+  document.getElementById('conta').textContent = termo
+    ? `${totalVisivel} ${TXT_DE} ${lista.length} ${TXT_GUIAS}`
+    : `${lista.length} ${TXT_GUIAS}`;
+  document.getElementById('vazio').style.display = totalVisivel ? 'none' : 'block';
 });
-render();
 
 // ---- preserva UTMs ao trocar de idioma ----
 document.querySelectorAll('#idiomas a:not(.atual)').forEach(a => {
@@ -450,6 +495,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
