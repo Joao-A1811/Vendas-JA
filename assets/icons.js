@@ -47,5 +47,6 @@
     pan:       icon('<circle cx="10" cy="12" r="6.5"/><path d="M16 9.5l5-2.5"/>'),
     chart:     icon('<path d="M3 20h18"/><path d="M6 20V12M11 20V7M16 20v-9M21 20V4"/>'),
     check:     icon('<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/>'),
+    sun:       icon('<circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>'),
   };
 })();
