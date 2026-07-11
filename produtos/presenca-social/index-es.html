@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Configuración global (Pixel + Firebase) — se edita UNA vez en /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Respaldo: si la configuración global no carga (ej: abriendo el archivo
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "manipulación o presión" }
   ],
   beneficios: [
-    { icone: "🧍", titulo: "Postura y energía", texto: "Un protocolo de 60 segundos para el eje, hombros sueltos y presencia física sin forzar nada." },
-    { icone: "👀", titulo: "Método 3-2-1 para la mirada", texto: "Contacto visual presente, sin mirar fijo ni intimidar." },
-    { icone: "🧘", titulo: "Protocolo R.E.S.E.T.", texto: "Reduce la ansiedad corporal antes de interactuar, con pasos prácticos." }
+    { icone: (window.ICONS||{}).body || "🧍", titulo: "Postura y energía", texto: "Un protocolo de 60 segundos para el eje, hombros sueltos y presencia física sin forzar nada." },
+    { icone: (window.ICONS||{}).eye || "👀", titulo: "Método 3-2-1 para la mirada", texto: "Contacto visual presente, sin mirar fijo ni intimidar." },
+    { icone: (window.ICONS||{}).lotus || "🧘", titulo: "Protocolo R.E.S.E.T.", texto: "Reduce la ansiedad corporal antes de interactuar, con pasos prácticos." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

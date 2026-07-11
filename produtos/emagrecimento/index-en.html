@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Global config (Pixel + Firebase) — edited ONCE in /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: if the global config fails to load (e.g. opening the file straight
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "fad diets" }
   ],
   beneficios: [
-    { icone: "🥗", titulo: "Flexible diet", texto: "Smart plate method, the hand-portion method, and a 14-day menu — without cutting out what you love." },
-    { icone: "💪", titulo: "Progressive training", texto: "A/B workouts with a home or gym option and a 4-week progression, without losing strength." },
-    { icone: "🧠", titulo: "Anxiety under control", texto: "The P.A.U.S.E. protocol against emotional hunger and tools for the hardest nights." }
+    { icone: (window.ICONS||{}).meal || "🥗", titulo: "Flexible diet", texto: "Smart plate method, the hand-portion method, and a 14-day menu — without cutting out what you love." },
+    { icone: (window.ICONS||{}).dumbbell || "💪", titulo: "Progressive training", texto: "A/B workouts with a home or gym option and a 4-week progression, without losing strength." },
+    { icone: (window.ICONS||{}).brain || "🧠", titulo: "Anxiety under control", texto: "The P.A.U.S.E. protocol against emotional hunger and tools for the hardest nights." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -559,6 +560,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Configuración global (Pixel + Firebase) — editada UNA vez en /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: si la configuración global no carga (ej: abriendo el archivo
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "30 días", legenda: "cronograma guiado" }
   ],
   beneficios: [
-    { icone: "🍳", titulo: "50+ recetas listas", texto: "Desayunos, viandas, meriendas, salsas y postres fitness — sin rodeos." },
-    { icone: "📅", titulo: "Menús por objetivo", texto: "Adelgazamiento, recomposición corporal y ganancia muscular, cada uno con su menú semanal." },
-    { icone: "🧊", titulo: "Meal prep 3-2-1", texto: "Combina bases listas y organiza toda la semana en pocas horas de cocina." }
+    { icone: (window.ICONS||{}).meal || "🍳", titulo: "50+ recetas listas", texto: "Desayunos, viandas, meriendas, salsas y postres fitness — sin rodeos." },
+    { icone: (window.ICONS||{}).calendar || "📅", titulo: "Menús por objetivo", texto: "Adelgazamiento, recomposición corporal y ganancia muscular, cada uno con su menú semanal." },
+    { icone: (window.ICONS||{}).meal || "🧊", titulo: "Meal prep 3-2-1", texto: "Combina bases listas y organiza toda la semana en pocas horas de cocina." }
   ],
   // Testimonios: SOLO reales y con autorización. Vacío = la sección queda oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

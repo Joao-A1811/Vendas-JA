@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Configuração global (Pixel + Firebase) — editada UMA vez em /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: se o config global não carregar (ex: abrindo o arquivo direto no
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "academia necessária" }
   ],
   beneficios: [
-    { icone: "🏠", titulo: "Sem academia", texto: "Corpo livre, cadeira, mochila e uma toalha já bastam pra treinar em casa com resultado real." },
-    { icone: "📅", titulo: "Cronograma de 30 dias", texto: "Missões semanais guiadas — só seguir o plano, sem precisar montar treino sozinho." },
-    { icone: "🎯", titulo: "Por objetivo e por área", texto: "Treinos separados por nível e por grupo muscular, com dieta de apoio e planners pra acompanhar." }
+    { icone: (window.ICONS||{}).home || "🏠", titulo: "Sem academia", texto: "Corpo livre, cadeira, mochila e uma toalha já bastam pra treinar em casa com resultado real." },
+    { icone: (window.ICONS||{}).calendar || "📅", titulo: "Cronograma de 30 dias", texto: "Missões semanais guiadas — só seguir o plano, sem precisar montar treino sozinho." },
+    { icone: (window.ICONS||{}).target || "🎯", titulo: "Por objetivo e por área", texto: "Treinos separados por nível e por grupo muscular, com dieta de apoio e planners pra acompanhar." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

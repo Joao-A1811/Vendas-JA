@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Global config (Pixel + Firebase) — edited ONCE in /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: if the global config fails to load (e.g. opening the file straight
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "anabolic steroids or miracle promises" }
   ],
   beneficios: [
-    { icone: "🧪", titulo: "Shopping checklist", texto: "Know exactly what to check on the label before spending your money on a supplement." },
-    { icone: "💪", titulo: "The most studied", texto: "Whey, creatine and caffeine explained with evidence and common sense, no fluff." },
-    { icone: "🎯", titulo: "Strategies by goal", texto: "Weight loss, muscle gain, performance and busy routines — each with its own plan." }
+    { icone: (window.ICONS||{}).flask || "🧪", titulo: "Shopping checklist", texto: "Know exactly what to check on the label before spending your money on a supplement." },
+    { icone: (window.ICONS||{}).dumbbell || "💪", titulo: "The most studied", texto: "Whey, creatine and caffeine explained with evidence and common sense, no fluff." },
+    { icone: (window.ICONS||{}).target || "🎯", titulo: "Strategies by goal", texto: "Weight loss, muscle gain, performance and busy routines — each with its own plan." }
   ],
   // Testimonials: ONLY real ones, with permission. Empty = section stays hidden.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

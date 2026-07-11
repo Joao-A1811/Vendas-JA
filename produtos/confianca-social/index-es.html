@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Configuración global (Pixel + Firebase) — se edita UNA vez en /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Respaldo: si la configuración global no carga (ej: abriendo el archivo
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "promesa de conquista garantizada" }
   ],
   beneficios: [
-    { icone: "🪜", titulo: "Exposición gradual", texto: "Una escalera de conversaciones en dosis seguras, sin forzar ni castigarte por trabarte." },
-    { icone: "💬", titulo: "Playbooks por situación", texto: "Universidad, gimnasio, fiesta, café y redes sociales — modelos listos para adaptar." },
-    { icone: "🤝", titulo: "Límites y respeto", texto: "Cómo manejar el silencio, el rechazo y el interés sin presión ni juegos." }
+    { icone: (window.ICONS||{}).ladder || "🪜", titulo: "Exposición gradual", texto: "Una escalera de conversaciones en dosis seguras, sin forzar ni castigarte por trabarte." },
+    { icone: (window.ICONS||{}).chat || "💬", titulo: "Playbooks por situación", texto: "Universidad, gimnasio, fiesta, café y redes sociales — modelos listos para adaptar." },
+    { icone: (window.ICONS||{}).handshake || "🤝", titulo: "Límites y respeto", texto: "Cómo manejar el silencio, el rechazo y el interés sin presión ni juegos." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

@@ -45,5 +45,6 @@
     rocket:    icon('<path d="M12 2.5c3 2 4 6 3 10l-3 3-3-3c-1-4 0-8 3-10z"/><circle cx="12" cy="9" r="1.2" fill="currentColor" stroke="none"/><path d="M9 15l-2.5 4.5L11 17M15 15l2.5 4.5L13 17"/>'),
     search:    icon('<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>'),
     pan:       icon('<circle cx="10" cy="12" r="6.5"/><path d="M16 9.5l5-2.5"/>'),
+    chart:     icon('<path d="M3 20h18"/><path d="M6 20V12M11 20V7M16 20v-9M21 20V4"/>'),
   };
 })();

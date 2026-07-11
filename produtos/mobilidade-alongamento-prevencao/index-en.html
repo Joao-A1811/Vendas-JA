@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Global config (Pixel + Firebase) — edited ONCE in /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: if the global config fails to load (e.g. opening the file straight
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "0", legenda: "promise of never having pain" }
   ],
   beneficios: [
-    { icone: "🧘", titulo: "A/B routines by joint", texto: "Shoulders, hips, ankles, spine, knees, and wrists — before training and on alternate days." },
-    { icone: "🔥", titulo: "3-layer warm-up", texto: "General, specific, and preparatory — leave the warm-up more confident for training." },
-    { icone: "🛡️", titulo: "Smart prevention", texto: "The 7 most common causes of injury and warning signs by body area." }
+    { icone: (window.ICONS||{}).lotus || "🧘", titulo: "A/B routines by joint", texto: "Shoulders, hips, ankles, spine, knees, and wrists — before training and on alternate days." },
+    { icone: (window.ICONS||{}).flame || "🔥", titulo: "3-layer warm-up", texto: "General, specific, and preparatory — leave the warm-up more confident for training." },
+    { icone: (window.ICONS||{}).shield || "🛡️", titulo: "Smart prevention", texto: "The 7 most common causes of injury and warning signs by body area." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),

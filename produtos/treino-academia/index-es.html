@@ -39,6 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Configuración global (Pixel + Firebase) — se edita UNA vez en /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Respaldo: si la configuración global no carga (ej: abriendo el archivo
@@ -234,9 +235,9 @@ const CONFIG = {
     { numero: "6", legenda: "pilares de la evolución" }
   ],
   beneficios: [
-    { icone: "🏋️", titulo: "Entrenamientos por grupo muscular", texto: "Entrenamientos A/B de pecho, espalda, hombros, brazos, piernas y core, con sustituciones." },
-    { icone: "📅", titulo: "4 divisiones semanales listas", texto: "Rutinas de 3x, 4x, 5x y 6x por semana — elige la que se ajuste a tu rutina." },
-    { icone: "🍽️", titulo: "Dieta por objetivo", texto: "Plato base, ajustes para perder grasa, recomponer o ganar masa, y un menú de 7 días." }
+    { icone: (window.ICONS||{}).dumbbell || "🏋️", titulo: "Entrenamientos por grupo muscular", texto: "Entrenamientos A/B de pecho, espalda, hombros, brazos, piernas y core, con sustituciones." },
+    { icone: (window.ICONS||{}).calendar || "📅", titulo: "4 divisiones semanales listas", texto: "Rutinas de 3x, 4x, 5x y 6x por semana — elige la que se ajuste a tu rutina." },
+    { icone: (window.ICONS||{}).meal || "🍽️", titulo: "Dieta por objetivo", texto: "Plato base, ajustes para perder grasa, recomponer o ganar masa, y un menú de 7 días." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -560,6 +561,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
