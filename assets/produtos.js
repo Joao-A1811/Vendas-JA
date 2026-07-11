@@ -223,5 +223,19 @@ window.PRODUTOS_SITE = [
       en: 'Posture, eye contact, voice, personal space and social calibration — visible presence and attraction with respect, with a 30-day plan.',
       es: 'Postura, mirada, voz, espacio personal y calibración social — presencia visible y atracción con respeto, con plan de 30 días.'
     }
+  },
+  {
+    slug: 'limites-rejeicao-maturidade',
+    categoria: 'relacionamentos',
+    // Ainda falta cadastrar na Hotmart e colar o linkCheckoutHotmart real nas 3 páginas
+    // (textos prontos em CADASTRO-HOTMART.md, seção 20) — trocar pra true só depois.
+    disponivel: false,
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Limites, Rejeição e Maturidade Emocional', en: 'Boundaries, Rejection and Emotional Maturity', es: 'Límites, Rechazo y Madurez Emocional' },
+    resumo: {
+      pt: 'Protocolo P.A.R.A., mapa de limites e frases de comunicação assertiva — comunique limites e lide com rejeição com maturidade, num plano de 30 dias.',
+      en: 'The P.A.R.M. protocol, a boundary map and assertive communication phrases — communicate boundaries and handle rejection with maturity, in a 30-day plan.',
+      es: 'Protocolo P.A.R.A., mapa de límites y frases de comunicación asertiva — comunica límites y maneja el rechazo con madurez, en un plan de 30 días.'
+    }
   }
 ];

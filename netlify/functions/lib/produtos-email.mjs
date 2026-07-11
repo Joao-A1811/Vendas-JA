@@ -328,4 +328,24 @@ export const PRODUTOS = {
       dica: 'Hoy, haz el protocolo de 60 segundos antes de entrar en un ambiente social: pies apoyados, hombros sueltos, manos visibles y un punto de enfoque al frente. La presencia se entrena en el cuerpo, no solo en la mente.',
     },
   }),
+
+  'limites-rejeicao-maturidade': montar('limites-rejeicao-maturidade', {
+    pt: {
+      nomeProduto: 'Limites, Rejeição e Maturidade Emocional — Guia Completo NextLevel',
+      tema: 'Protocolo P.A.R.A., mapa de limites e frases de comunicação assertiva — comunique limites e lide com rejeição com maturidade',
+      dica: 'Hoje, aplique o Protocolo P.A.R.A. numa pequena frustração: pause antes de reagir, acolha o que está sentindo sem se julgar, reavalie a situação e só então aja com dignidade.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Boundaries, Rejection and Emotional Maturity — Complete NextLevel Guide',
+      tema: 'the P.A.R.M. protocol, a boundary map and assertive communication phrases — communicate boundaries and handle rejection with maturity',
+      dica: 'Today, apply the P.A.R.M. protocol to a small frustration: pause before reacting, acknowledge what you\'re feeling without judging yourself, reassess the situation, and only then move with dignity.',
+    },
+    es: {
+      nomeProduto: 'Límites, Rechazo y Madurez Emocional — Guía Completa NextLevel',
+      tema: 'Protocolo P.A.R.A., mapa de límites y frases de comunicación asertiva — comunica límites y maneja el rechazo con madurez',
+      dica: 'Hoy, aplica el Protocolo P.A.R.A. en una pequeña frustración: pausa antes de reaccionar, acoge lo que sientes sin juzgarte, reevalúa la situación y solo entonces actúa con dignidad.',
+    },
+  }),
 };

@@ -934,6 +934,71 @@ psicológico y no enseña ninguna técnica de intimidación, mirada fija o invas
 
 ---
 
+## 20. Limites, Rejeição e Maturidade Emocional — categoria: Saúde e esportes
+
+> Guia pago (65 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/limites-rejeicao-maturidade/`). Produto
+> novo, a partir de um rascunho enviado pelo dono do projeto — mesma nova vertente "Conexões,
+> Presença e Relacionamentos Saudáveis" do `confianca-social`, `carisma-humor-storytelling`,
+> `comunicacao-e-relacionamentos`, `atracao-com-respeito` e `presenca-social`, mas com foco
+> específico em comunicar limites pessoais e lidar com rejeição e ciúme com maturidade emocional
+> (protocolo P.A.R.A., mapa de limites, frases de comunicação assertiva) — distinto dos demais
+> produtos da vertente. Falta: copiar `landing-page/` para `produtos/limites-rejeicao-maturidade/`,
+> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o
+> `CONFIG` das 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
+> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Limites, Rejeição e Maturidade Emocional — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 65 páginas para comunicar limites com clareza e lidar com a rejeição
+com maturidade: fundamentos de maturidade emocional, como descobrir seus próprios limites, limites
+digitais saudáveis, a diferença entre limite e controle, o que a rejeição realmente significa,
+como responder a um não com dignidade, o protocolo das primeiras 24 horas, textos que você não
+deve enviar, como manter a autoestima depois do não, quando insistência vira invasão, o ciclo do
+impulso e o Protocolo P.A.R.A. para regular ansiedade/ciúme/vergonha, ciúme e insegurança sem
+controle, dinâmicas ruins e red flags, e um plano de execução de 30 dias com workbook completo —
+mapa de limites, frases de encerramento elegante e plano de continuidade de 90 dias. E-book
+digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo educativo sobre
+comunicação e maturidade emocional — reconhece que o outro sempre tem liberdade para dizer sim,
+não ou talvez, e não ensina manipulação, pressão, insistência após um "não" ou qualquer jogo
+emocional.
+
+**Name (EN):** Boundaries, Rejection and Emotional Maturity — Complete NextLevel Guide
+**Description (EN):**
+Premium 65-page guide + workbook to communicate boundaries with clarity and handle rejection with
+maturity: the fundamentals of emotional maturity, how to find your own boundaries, healthy digital
+boundaries, the difference between a boundary and control, what rejection really means, how to
+respond to a no with dignity, the first-24-hours protocol, texts you shouldn't send, how to keep
+your self-esteem after a no, when persistence turns into invasion, the impulse cycle and the
+P.A.R.M. protocol to regulate anxiety/jealousy/shame, jealousy and insecurity without control,
+unhealthy dynamics and red flags, and a 30-day execution plan with a full workbook — boundary map,
+graceful closing phrases and a 90-day continuity plan. Digital ebook, instant access, 7-day
+unconditional guarantee. Educational content on communication and emotional maturity — recognizes
+that the other person always has the freedom to say yes, no, or maybe, and does not teach
+manipulation, pressure, persistence after a "no," or any emotional game.
+
+**Nombre (ES):** Límites, Rechazo y Madurez Emocional — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 65 páginas para comunicar límites con claridad y manejar el rechazo con
+madurez: fundamentos de la madurez emocional, cómo descubrir tus propios límites, límites
+digitales saludables, la diferencia entre límite y control, qué significa realmente el rechazo,
+cómo responder a un no con dignidad, el protocolo de las primeras 24 horas, mensajes que no debes
+enviar, cómo mantener la autoestima después del no, cuándo la insistencia se convierte en
+invasión, el ciclo del impulso y el Protocolo P.A.R.A. para regular ansiedad/celos/vergüenza,
+celos e inseguridad sin control, dinámicas dañinas y red flags, y un plan de ejecución de 30 días
+con workbook completo — mapa de límites, frases de cierre elegante y plan de continuidad de 90
+días. Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido educativo
+sobre comunicación y madurez emocional — reconoce que la otra persona siempre tiene la libertad de
+decir sí, no o tal vez, y no enseña manipulación, presión, insistencia después de un "no" ni
+ningún juego emocional.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/limites-rejeicao-maturidade-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

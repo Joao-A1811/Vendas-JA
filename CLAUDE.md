@@ -312,10 +312,34 @@ Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout rea
 - EN/USD: `https://pay.hotmart.com/N106621947M` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/A106621974F` (US$ 19)
 
+**`limites-rejeicao-maturidade` (jul/2026, 20º produto — "Limites, Rejeição e Maturidade
+Emocional", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ⏳ conteúdo
+pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um rascunho enviado pelo dono
+do projeto — distinto dos demais produtos da vertente por focar em comunicar limites pessoais e
+lidar com rejeição e ciúme com maturidade emocional. Guia pago de 65 páginas (fundamentos de
+maturidade emocional, como descobrir os próprios limites, limites digitais saudáveis, limite x
+controle, o que a rejeição realmente significa, como responder a um não com dignidade, o
+protocolo das primeiras 24 horas, textos que não se deve enviar, autoestima depois do não, quando
+insistência vira invasão, o ciclo do impulso, o Protocolo P.A.R.A. para regular
+ansiedade/ciúme/vergonha, ciúme e insegurança sem controle, dinâmicas ruins e red flags, e um
+plano de execução de 30 dias com workbook completo — mapa de limites, frases de encerramento
+elegante e plano de continuidade de 90 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/limites-rejeicao-maturidade-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/limites-rejeicao-maturidade/` (3 idiomas). Todo o conteúdo
+(headline, FAQ, ebook, capa, Hotmart) reconhece que o outro sempre tem liberdade para dizer sim,
+não ou talvez, e explicitamente não ensina manipulação, pressão, insistência após um "não" ou
+qualquer jogo emocional — segue a mesma regra de nicho sensível de relacionamentos do
+`confianca-social`, do `carisma-humor-storytelling`, do `comunicacao-e-relacionamentos`, do
+`atracao-com-respeito` e do `presenca-social`. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+19,00 (EN/ES)**. Páginas de produto (3 idiomas) e bloco em `assets/produtos.js` já criados com
+`disponivel: false` (aparece na home com selo "Em breve") — falta só cadastrar na Hotmart (textos
+prontos em `CADASTRO-HOTMART.md`, seção 20), colar os `linkCheckoutHotmart` reais nas 3 páginas,
+trocar `disponivel` pra `true` e adicionar a entrada em `sitemap.xml`.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
-só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produtos.
+só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vivo.
 
 ## Como fazer alterações comuns
 
@@ -381,13 +405,17 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros quatorze produ
 
 ## O que ainda falta (estado em julho/2026)
 
-- **O único produto em rascunho** (`investimentos`) continua com CONFIG de exemplo em
-  `produtos/investimentos/`, mas fora do catálogo público e com `<meta name="robots"
-  content="noindex">` nas 3 páginas — só volta a aparecer no site quando tiver ebook real +
-  checkout Hotmart real, igual aos quatorze já ao vivo (aí é só tirar o noindex).
+- **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
+  catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
+  aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
+- **`limites-rejeicao-maturidade`** já tem ebook pago + gratuito, capa, galeria e páginas de
+  produto prontos nos 3 idiomas, e o bloco em `assets/produtos.js` com `disponivel: false`
+  (aparece na home com selo "Em breve") — falta só cadastrar na Hotmart (textos em
+  `CADASTRO-HOTMART.md`, seção 20), colar os `linkCheckoutHotmart` reais, trocar `disponivel`
+  pra `true` e adicionar a entrada em `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos quatorze produtos ao vivo.
+  dos produtos ao vivo.
 
 ## Regras / decisões já tomadas (não contrariar)
 
