@@ -232,7 +232,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   <div class="container">
     <div class="painel-busca">
       <div class="busca">
-        <span class="lupa" aria-hidden="true">🔍</span>
+        <span class="lupa" id="ico-search" aria-hidden="true"></span>
         <input type="search" id="busca" placeholder="Buscar por título ou assunto — ex: treino, ansiedade, carisma…" aria-label="Buscar guia por título ou assunto">
       </div>
       <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
@@ -341,6 +341,7 @@ document.getElementById('ico-bolt').innerHTML = ICO.bolt || '';
 document.getElementById('ico-shield').innerHTML = ICO.shield || '';
 document.getElementById('ico-gift').innerHTML = ICO.gift || '';
 document.getElementById('ico-lock').innerHTML = ICO.lock || '';
+document.getElementById('ico-search').innerHTML = ICO.search || '';
 
 // ---- estatísticas do hero (contagem real do catálogo) ----
 document.getElementById('hero-stats').innerHTML = `

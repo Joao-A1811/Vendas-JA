@@ -43,6 +43,7 @@
     gift:      icon('<rect x="4" y="9" width="16" height="11" rx="1.2"/><path d="M4 9h16M12 9v11"/><path d="M12 9C10.5 5 6 5 6 7.5S9 9 12 9zM12 9c1.5-4 6-4 6-1.5S15 9 12 9z"/>'),
     lock:      icon('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>'),
     rocket:    icon('<path d="M12 2.5c3 2 4 6 3 10l-3 3-3-3c-1-4 0-8 3-10z"/><circle cx="12" cy="9" r="1.2" fill="currentColor" stroke="none"/><path d="M9 15l-2.5 4.5L11 17M15 15l2.5 4.5L13 17"/>'),
+    search:    icon('<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>'),
     pan:       icon('<circle cx="10" cy="12" r="6.5"/><path d="M16 9.5l5-2.5"/>'),
   };
 })();

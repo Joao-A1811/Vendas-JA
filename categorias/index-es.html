@@ -21,6 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="/assets/icons.js"></script>
 <script src="/assets/produtos.js"></script>
 <!-- Píxel de Meta (config en /assets/config-global.js) — solo se activa cuando el visitante acepta las cookies (consent.js) -->
 <script src="/assets/config-global.js"></script>
@@ -66,12 +67,15 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 .hero p{color:#f0e8fb;margin-top:10px;position:relative;max-width:560px;margin-left:auto;margin-right:auto;font-size:15.5px}
 
 .chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px;position:relative}
-.chips a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 20px;border-radius:99px;transition:background .15s ease}
+.chips a{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 20px;border-radius:99px;transition:background .15s ease}
+.chips a svg{font-size:15px;flex-shrink:0}
 .chips a:hover{background:rgba(255,255,255,.28)}
 .chips a.ativa{background:#fff;color:var(--roxo);border-color:#fff}
 .busca{position:relative;margin:18px auto 0;max-width:430px}
 .busca input{width:100%;padding:12px 20px;border-radius:99px;border:none;font-size:14px;font-family:inherit;box-shadow:0 6px 24px rgba(0,0,0,.18)}
 .sem-resultado{display:none;text-align:center;color:var(--texto-suave);padding:52px 0 8px;font-size:14.5px}
+.escolha-categoria{text-align:center;color:var(--texto-suave);padding:60px 20px;font-size:15px}
+.escolha-categoria b{display:block;color:var(--texto);font-size:19px;margin-bottom:8px;font-family:'Poppins',Arial,sans-serif}
 
 .categoria{padding:52px 0 8px}
 .categoria .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -135,13 +139,14 @@ a:focus-visible,input:focus-visible{outline:2px solid #5eead4;outline-offset:2px
 <section class="hero">
   <div class="container">
     <h2>Explora por categoría</h2>
-    <p>Todas las guías NextLevel organizadas por tema — elige el área que quieres evolucionar.</p>
+    <p>Elige un área abajo para ver solo sus guías — o busca por nombre o tema.</p>
     <nav class="chips" id="chips"></nav>
-    <div class="busca"><input type="search" id="busca" placeholder="🔍 Buscar guía por nombre o tema..." aria-label="Buscar guía"></div>
+    <div class="busca"><input type="search" id="busca" placeholder="Buscar guía por nombre o tema..." aria-label="Buscar guía"></div>
   </div>
 </section>
 
 <main class="container" id="categorias"></main>
+<p class="escolha-categoria container" id="escolha-categoria"><b>Elige una categoría arriba</b>Haz clic en una de las áreas para ver sus guías.</p>
 <p class="sem-resultado container" id="sem-resultado">Ninguna guía encontrada para esta búsqueda.</p>
 
 <div class="container" style="text-align:center">
@@ -162,10 +167,10 @@ const SUFIXO_PAGINA = 'index-es.html';
 const TXT_EM_BREVE = 'Muy pronto';
 const TXT_SAIBA_MAIS = 'Saber más →';
 const TXT_GUIA = ['guía', 'guías'];
-const TXT_TODOS = '✨ Todas las guías';
 
 const CATS = window.CATEGORIAS_SITE || {};
 const lista = window.PRODUTOS_SITE || [];
+const ICO = window.ICONS || {};
 
 const porCategoria = {};
 for (const p of lista) {
@@ -177,15 +182,13 @@ const ordem = Object.keys(CATS).filter(c => porCategoria[c]).concat(
   Object.keys(porCategoria).filter(c => !CATS[c])
 );
 
-document.getElementById('chips').innerHTML =
-  `<a href="#todos" data-cat="todos">${TXT_TODOS}</a>` +
-  ordem.map(c => {
-    const meta = CATS[c] || { icone: '📦', nome: { [IDIOMA]: c } };
+document.getElementById('chips').innerHTML = ordem.map(c => {
+    const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c } };
     return `<a href="#${c}" data-cat="${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
   }).join('');
 
 document.getElementById('categorias').innerHTML = ordem.map(c => {
-  const meta = CATS[c] || { icone: '📦', nome: { [IDIOMA]: c }, desc: { [IDIOMA]: '' } };
+  const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c }, desc: { [IDIOMA]: '' } };
   const prods = porCategoria[c];
   const n = prods.length;
   return `
@@ -205,24 +208,26 @@ document.getElementById('categorias').innerHTML = ordem.map(c => {
   </section>`;
 }).join('');
 
-// ---- filtro por categoria (chips + #hash da URL) ----
+// ---- filtro por categoria: exige escolha, não tem "mostrar tudo" ----
 function aplicarFiltro(cat) {
-  const ativo = ordem.includes(cat) ? cat : 'todos';
+  const ativo = ordem.includes(cat) ? cat : null;
   document.querySelectorAll('.categoria').forEach(sec => {
-    sec.style.display = (ativo === 'todos' || sec.id === 'sec-' + ativo) ? '' : 'none';
+    sec.style.display = (ativo && sec.id === 'sec-' + ativo) ? '' : 'none';
   });
   document.querySelectorAll('.chips a').forEach(a => {
     a.classList.toggle('ativa', a.dataset.cat === ativo);
   });
+  document.getElementById('escolha-categoria').style.display = ativo ? 'none' : 'block';
+  document.getElementById('sem-resultado').style.display = 'none';
 }
 document.getElementById('chips').addEventListener('click', e => {
   const a = e.target.closest('a');
   if (!a) return;
   e.preventDefault();
   const busca = document.getElementById('busca');
-  if (busca.value) { busca.value = ''; document.querySelectorAll('.card').forEach(c => { c.style.display = ''; }); document.getElementById('sem-resultado').style.display = 'none'; }
+  if (busca.value) { busca.value = ''; }
   const cat = a.dataset.cat;
-  history.replaceState(null, '', cat === 'todos' ? location.pathname + location.search : '#' + cat);
+  history.replaceState(null, '', '#' + cat);
   aplicarFiltro(cat);
 });
 window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
@@ -240,6 +245,7 @@ function aplicarBusca() {
     aplicarFiltro(location.hash.slice(1));
     return;
   }
+  document.getElementById('escolha-categoria').style.display = 'none';
   let total = 0;
   document.querySelectorAll('.categoria').forEach(sec => {
     let n = 0;
