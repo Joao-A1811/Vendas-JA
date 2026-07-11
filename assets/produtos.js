@@ -227,9 +227,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'limites-rejeicao-maturidade',
     categoria: 'relacionamentos',
-    // Ainda falta cadastrar na Hotmart e colar o linkCheckoutHotmart real nas 3 páginas
-    // (textos prontos em CADASTRO-HOTMART.md, seção 20) — trocar pra true só depois.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 20.
+    disponivel: true,
     tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Limites, Rejeição e Maturidade Emocional', en: 'Boundaries, Rejection and Emotional Maturity', es: 'Límites, Rechazo y Madurez Emocional' },
     resumo: {

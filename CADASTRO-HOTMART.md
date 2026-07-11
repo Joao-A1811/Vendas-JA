@@ -936,18 +936,17 @@ psicológico y no enseña ninguna técnica de intimidación, mirada fija o invas
 
 ## 20. Limites, Rejeição e Maturidade Emocional — categoria: Saúde e esportes
 
-> Guia pago (65 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
-> galeria "olhe por dentro" prontas (ver `assets/produtos/limites-rejeicao-maturidade/`). Produto
-> novo, a partir de um rascunho enviado pelo dono do projeto — mesma nova vertente "Conexões,
-> Presença e Relacionamentos Saudáveis" do `confianca-social`, `carisma-humor-storytelling`,
-> `comunicacao-e-relacionamentos`, `atracao-com-respeito` e `presenca-social`, mas com foco
-> específico em comunicar limites pessoais e lidar com rejeição e ciúme com maturidade emocional
-> (protocolo P.A.R.A., mapa de limites, frases de comunicação assertiva) — distinto dos demais
-> produtos da vertente. Falta: copiar `landing-page/` para `produtos/limites-rejeicao-maturidade/`,
-> cadastrar o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o
-> `CONFIG` das 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
-> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
-> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+> ✅ AO VIVO nos 3 idiomas. Guia pago (65 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/limites-rejeicao-maturidade/`). Produto novo, a partir de um rascunho enviado
+> pelo dono do projeto — mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis" do
+> `confianca-social`, `carisma-humor-storytelling`, `comunicacao-e-relacionamentos`,
+> `atracao-com-respeito` e `presenca-social`, mas com foco específico em comunicar limites
+> pessoais e lidar com rejeição e ciúme com maturidade emocional (protocolo P.A.R.A., mapa de
+> limites, frases de comunicação assertiva) — distinto dos demais produtos da vertente. Checkout
+> real nas 3 moedas, `disponivel: true`: PT/BRL `https://pay.hotmart.com/E106705365S` (R$ 49,99),
+> EN/USD `https://pay.hotmart.com/P106705432B` (US$ 19), ES/USD
+> `https://pay.hotmart.com/U106705446J` (US$ 19).
 
 **Nome (PT):** Limites, Rejeição e Maturidade Emocional — Guia Completo NextLevel
 **Descrição (PT):**
