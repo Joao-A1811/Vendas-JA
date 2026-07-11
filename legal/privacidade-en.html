@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script src="/assets/tema.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | NextLevel</title>
 <meta name="description" content="How NextLevel collects, uses and protects your personal data.">
@@ -13,41 +14,45 @@
 <link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/legal/privacidade-es.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <style>
-:root{--roxo:#5b21b6;--rosa:#db2777;--texto:#1c1428;--texto-suave:#5c5470;--bg:#faf9fc}
+:root{--roxo:#0f766e;--rosa:#14b8a6;--texto:#33474a;--texto-suave:#5b6b68;--bg:#f7fbfa}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--texto);font-size:15px;line-height:1.7}
 h1,h2{font-family:'Poppins',Arial,sans-serif}
 .container{max-width:760px;margin:0 auto;padding:0 22px}
-.header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid #eee2f7}
+.header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid rgba(13,27,42,.08)}
 .header .container{display:flex;align-items:center;justify-content:space-between;max-width:1000px}
 .header a.marca{font-family:'Poppins',Arial,sans-serif;font-size:16px;font-weight:800;background:linear-gradient(135deg,var(--roxo),var(--rosa));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
-.idiomas{display:flex;gap:12px;font-size:12px;font-weight:700}
+.idiomas{display:flex;gap:12px;font-size:12px;font-weight:700;align-items:center}
 .idiomas a{color:var(--texto-suave);text-decoration:none}
 .idiomas a.atual{color:var(--roxo)}
+.tema-toggle{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(13,27,42,.14);background:transparent;color:var(--texto-suave);cursor:pointer;font-size:13px;flex-shrink:0;margin-left:4px}
+.tema-toggle:hover{color:var(--roxo);border-color:var(--roxo)}
 .topo{background:linear-gradient(160deg,var(--roxo),var(--rosa));color:#fff;padding:44px 0;text-align:center}
 .topo h1{font-size:clamp(22px,4vw,32px)}
-.topo p{color:#f0e8fb;font-size:13px;margin-top:8px}
+.topo p{color:#d9f7f0;font-size:13px;margin-top:8px}
 main{padding:40px 0 60px}
 main h2{font-size:19px;margin:32px 0 10px;color:var(--roxo)}
 main p, main li{color:var(--texto-suave);margin-bottom:10px}
 main ul{padding-left:22px;margin-bottom:10px}
 main a{color:var(--roxo);font-weight:600}
-.footer{background:var(--texto);color:#c9c0d6;padding:26px 0;font-size:12px;text-align:center}
-.footer a{color:#e9defa}
+.footer{background:var(--texto);color:#a9c4bf;padding:26px 0;font-size:12px;text-align:center}
+.footer a{color:#cfe8e3}
 
 /* ===== Tema escuro NextLevel (identidade dark premium, jul/2026) ===== */
-:root{--roxo:#5eead4;--rosa:#14b8a6;--texto:#eaf4f2;--texto-suave:#b7d5cf;--bg:#0d1b2a}
-.header{background:rgba(13,27,42,.92);border-bottom:1px solid rgba(94,234,212,.14)}
-.header a.marca{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff}
-.idiomas a.atual{color:#5eead4}
-.topo{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
-.topo p{color:#cfe8e3}
-main h2{color:#5eead4}
-main a{color:#5eead4}
-.footer{background:#0a1520;color:#b7d5cf}
-.footer a{color:#5eead4}
+:root[data-tema="escuro"]{--roxo:#5eead4;--rosa:#14b8a6;--texto:#eaf4f2;--texto-suave:#b7d5cf;--bg:#0d1b2a}
+[data-tema="escuro"] .header{background:rgba(13,27,42,.92);border-bottom:1px solid rgba(94,234,212,.14)}
+[data-tema="escuro"] .header a.marca{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff}
+[data-tema="escuro"] .idiomas a.atual{color:#5eead4}
+[data-tema="escuro"] .tema-toggle{border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .topo{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
+[data-tema="escuro"] .topo p{color:#cfe8e3}
+[data-tema="escuro"] main h2{color:#5eead4}
+[data-tema="escuro"] main a{color:#5eead4}
+[data-tema="escuro"] .footer{background:#0a1520;color:#b7d5cf}
+[data-tema="escuro"] .footer a{color:#5eead4}
 </style>
 </head>
 <body>
@@ -59,6 +64,7 @@ main a{color:#5eead4}
       <a href="privacidade.html">PT</a>
       <a href="privacidade-en.html" class="atual">EN</a>
       <a href="privacidade-es.html">ES</a>
+      <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
     </nav>
   </div>
 </header>
