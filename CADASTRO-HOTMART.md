@@ -998,6 +998,58 @@ ningún juego emocional.
 
 ---
 
+## 21. Mensagens, WhatsApp e Conversas Online — categoria: Saúde e esportes
+
+> Guia pago (50 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa e
+> galeria "olhe por dentro" prontas (ver `assets/produtos/mensagens-e-conversas-online/`). Produto
+> novo, a partir de um rascunho enviado pelo dono do projeto — mesma nova vertente "Conexões,
+> Presença e Relacionamentos Saudáveis" dos demais produtos da linha, com foco específico em
+> comunicação digital (WhatsApp, DMs, redes sociais): fórmula base da conversa, técnica C.E.C.,
+> convite para sair com respeito e segurança digital contra golpes afetivos. Falta: cadastrar o
+> produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda, preencher o `CONFIG` das
+> 3 páginas com os textos abaixo e adicionar o bloco em `assets/produtos.js` (com
+> `disponivel: true` só quando todos os idiomas tiverem checkout funcionando). Preço sugerido
+> (padrão da coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
+
+**Nome (PT):** Mensagens, WhatsApp e Conversas Online — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 50 páginas para conversar com leveza, clareza e respeito no digital: o
+código da conversa online, perfil e presença digital, como iniciar conversas sem parecer
+invasivo, como manter a conversa viva com a técnica C.E.C., WhatsApp sem ansiedade (tempo de
+resposta, áudio, textão, emojis e grupos), convite para sair com respeito, reciprocidade e
+rejeição, segurança digital contra golpes afetivos, um banco de mensagens adaptáveis, e um plano
+de execução de 30 dias com workbook completo. E-book digital com acesso imediato e garantia
+incondicional de 7 dias. Conteúdo educativo sobre comunicação digital — não promete conquistar
+ninguém e não ensina pressão, manipulação, joguinhos ou insistência.
+
+**Name (EN):** Messages, WhatsApp and Online Conversations — Complete NextLevel Guide
+**Description (EN):**
+Premium 50-page guide + workbook to talk with lightness, clarity, and respect online: the code of
+online conversation, profile and digital presence, how to start conversations without seeming
+invasive, how to keep a conversation alive with the C.E.S. technique, WhatsApp without anxiety
+(response time, voice notes, long texts, emojis, and groups), inviting someone out with respect,
+reciprocity and rejection, digital safety against romance scams, an adaptable message bank, and a
+30-day execution plan with a full workbook. Digital ebook, instant access, 7-day unconditional
+guarantee. Educational content on digital communication — does not promise you'll win anyone
+over, and does not teach pressure, manipulation, games, or persistence.
+
+**Nombre (ES):** Mensajes, WhatsApp y Conversaciones Online — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 50 páginas para conversar con ligereza, claridad y respeto en lo
+digital: el código de la conversación online, perfil y presencia digital, cómo iniciar
+conversaciones sin parecer invasivo, cómo mantener la conversación viva con la técnica C.E.C.,
+WhatsApp sin ansiedad (tiempo de respuesta, audio, textos largos, emojis y grupos), cómo invitar a
+salir con respeto, reciprocidad y rechazo, seguridad digital contra estafas románticas, un banco
+de mensajes adaptables, y un plan de ejecución de 30 días con workbook completo. Ebook digital,
+acceso inmediato y garantía incondicional de 7 días. Contenido educativo sobre comunicación
+digital — no promete conquistar a nadie y no enseña presión, manipulación, juegos ni insistencia.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/mensagens-e-conversas-online-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

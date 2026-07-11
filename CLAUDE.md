@@ -336,6 +336,28 @@ nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/P106705432B` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/U106705446J` (US$ 19)
 
+**`mensagens-e-conversas-online` (jul/2026, 21º produto — "Mensagens, WhatsApp e Conversas
+Online", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ⏳ conteúdo
+pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um rascunho enviado pelo dono
+do projeto — distinto dos demais produtos da vertente por focar especificamente em comunicação
+digital (WhatsApp, DMs, redes sociais). Guia pago de 50 páginas (o código da conversa online com
+a fórmula contexto+leveza+curiosidade+saída elegante, perfil e presença digital, como iniciar
+conversas sem parecer invasivo com banco de aberturas respeitosas, como manter a conversa viva com
+a técnica C.E.C., WhatsApp sem ansiedade — tempo de resposta, áudio, textão, emojis e grupos —,
+convite para sair com respeito, reciprocidade/limites/rejeição, segurança digital contra golpes
+afetivos, um banco de mensagens adaptáveis e um plano de execução de 30 dias com workbook
+completo) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/mensagens-e-conversas-online-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/mensagens-e-conversas-online/` (3 idiomas). Todo o
+conteúdo (headline, FAQ, ebook, capa, Hotmart) segue a mesma regra de nicho sensível de
+relacionamentos dos demais produtos da vertente — não promete conquistar ninguém e não ensina
+pressão, manipulação, joguinhos ou insistência; inclui módulo dedicado a segurança digital e
+reconhecimento de golpes afetivos. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+Páginas de produto (3 idiomas) e bloco em `assets/produtos.js` já criados com `disponivel: false`
+(aparece na home com selo "Em breve") — falta só cadastrar na Hotmart (textos prontos em
+`CADASTRO-HOTMART.md`, seção 21), colar os `linkCheckoutHotmart` reais nas 3 páginas, trocar
+`disponivel` pra `true` e adicionar a entrada em `sitemap.xml`.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -408,6 +430,11 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
+- **`mensagens-e-conversas-online`** já tem ebook pago + gratuito, capa, galeria e páginas de
+  produto prontos nos 3 idiomas, e o bloco em `assets/produtos.js` com `disponivel: false`
+  (aparece na home com selo "Em breve") — falta só cadastrar na Hotmart (textos em
+  `CADASTRO-HOTMART.md`, seção 21), colar os `linkCheckoutHotmart` reais, trocar `disponivel`
+  pra `true` e adicionar a entrada em `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

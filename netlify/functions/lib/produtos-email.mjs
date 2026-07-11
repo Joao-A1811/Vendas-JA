@@ -348,4 +348,24 @@ export const PRODUTOS = {
       dica: 'Hoy, aplica el Protocolo P.A.R.A. en una pequeña frustración: pausa antes de reaccionar, acoge lo que sientes sin juzgarte, reevalúa la situación y solo entonces actúa con dignidad.',
     },
   }),
+
+  'mensagens-e-conversas-online': montar('mensagens-e-conversas-online', {
+    pt: {
+      nomeProduto: 'Mensagens, WhatsApp e Conversas Online — Guia Completo NextLevel',
+      tema: 'fórmula base da conversa, técnica C.E.C., convite para sair com respeito e segurança contra golpes afetivos',
+      dica: 'Hoje, aplique a técnica C.E.C. numa conversa: comente algo sobre a resposta da pessoa, explore com uma pergunta curta e compartilhe um detalhe seu para equilibrar a troca.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Messages, WhatsApp and Online Conversations — Complete NextLevel Guide',
+      tema: 'the base conversation formula, the C.E.S. technique, inviting someone out with respect and safety against romance scams',
+      dica: 'Today, apply the C.E.S. technique in a conversation: comment on something about the person\'s reply, explore with a short question, and share a detail about yourself to balance the exchange.',
+    },
+    es: {
+      nomeProduto: 'Mensajes, WhatsApp y Conversaciones Online — Guía Completa NextLevel',
+      tema: 'fórmula base de la conversación, técnica C.E.C., cómo invitar a salir con respeto y seguridad contra estafas románticas',
+      dica: 'Hoy, aplica la técnica C.E.C. en una conversación: comenta algo sobre la respuesta de la persona, explora con una pregunta corta y comparte un detalle tuyo para equilibrar el intercambio.',
+    },
+  }),
 };

@@ -236,5 +236,19 @@ window.PRODUTOS_SITE = [
       en: 'The P.A.R.M. protocol, a boundary map and assertive communication phrases — communicate boundaries and handle rejection with maturity, in a 30-day plan.',
       es: 'Protocolo P.A.R.A., mapa de límites y frases de comunicación asertiva — comunica límites y maneja el rechazo con madurez, en un plan de 30 días.'
     }
+  },
+  {
+    slug: 'mensagens-e-conversas-online',
+    categoria: 'relacionamentos',
+    // Ainda falta cadastrar na Hotmart e colar o linkCheckoutHotmart real nas 3 páginas
+    // (textos prontos em CADASTRO-HOTMART.md, seção 21) — trocar pra true só depois.
+    disponivel: false,
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Mensagens, WhatsApp e Conversas Online', en: 'Messages, WhatsApp and Online Conversations', es: 'Mensajes, WhatsApp y Conversaciones Online' },
+    resumo: {
+      pt: 'Fórmula base da conversa, técnica C.E.C., convite para sair com respeito e segurança contra golpes afetivos — converse com leveza, clareza e respeito, num plano de 30 dias.',
+      en: 'The base conversation formula, the C.E.S. technique, inviting someone out with respect and safety against romance scams — talk with lightness, clarity and respect, in a 30-day plan.',
+      es: 'Fórmula base de la conversación, técnica C.E.C., cómo invitar a salir con respeto y seguridad contra estafas románticas — conversa con ligereza, claridad y respeto, en un plan de 30 días.'
+    }
   }
 ];
