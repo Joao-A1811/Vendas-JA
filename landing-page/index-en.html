@@ -37,6 +37,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Global config (Pixel + Firebase) — edited ONCE in /assets/config-global.js -->
+<script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
 <script>
 // Fallback: if the global config fails to load (e.g. opening the file straight
@@ -226,9 +227,9 @@ const CONFIG = {
     { numero: '{{7 days}}', legenda: '{{guarantee}}' }
   ],
   beneficios: [
-    { icone: '✅', titulo: '{{Benefit 1}}', texto: '{{short explanation}}' },
-    { icone: '⚡', titulo: '{{Benefit 2}}', texto: '{{short explanation}}' },
-    { icone: '🎯', titulo: '{{Benefit 3}}', texto: '{{short explanation}}' }
+    { icone: (window.ICONS||{}).check || '✅', titulo: '{{Benefit 1}}', texto: '{{short explanation}}' },
+    { icone: (window.ICONS||{}).bolt || '⚡', titulo: '{{Benefit 2}}', texto: '{{short explanation}}' },
+    { icone: (window.ICONS||{}).target || '🎯', titulo: '{{Benefit 3}}', texto: '{{short explanation}}' }
   ],
   depoimentos: [
     { nome: '{{Name}}', papel: '{{who they are / result achieved}}', texto: '{{Real customer testimonial}}', estrelas: 5 },
@@ -541,6 +542,12 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     return m ? decodeURIComponent(m[1]) : '';
   }
 
+  // ATENÇÃO: as regras do Firebase (Realtime Database) só aceitam EXATAMENTE
+  // estes campos em /leads — qualquer campo extra quebra o cadastro em
+  // silêncio ("Erro ao enviar", sem detalhe no console). Campos permitidos:
+  // nome, email, whatsapp, produto, idioma, pagina, data, utm_source,
+  // utm_medium, utm_campaign, utm_content, utm_term. Regras completas em
+  // CHECKLIST-CONFIGURACAO.md.
   const lead = {
     nome: document.getElementById('lead-nome').value.trim(),
     email: document.getElementById('lead-email').value.trim(),
