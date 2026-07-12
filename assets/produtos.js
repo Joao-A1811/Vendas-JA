@@ -301,8 +301,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'financas-pessoais',
     categoria: 'financas',
-    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 25.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 25.
+    disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'Finanças Pessoais e Liberdade Financeira', en: 'Personal Finance and Financial Freedom', es: 'Finanzas Personales y Libertad Financiera' },
     resumo: {

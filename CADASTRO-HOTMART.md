@@ -1236,22 +1236,22 @@ inversión ni asesoría de valores — evita promesas de rentabilidad y listas d
 
 ## 25. Finanças Pessoais e Liberdade Financeira — categoria: Finanças / Educação Financeira
 
-> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (44 páginas) + guia gratuito
-> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
-> `assets/produtos/financas-pessoais/`). Terceiro produto da vertente "Projeto Verão
-> Financeiro" / educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
-> ("Financas_Pessoais_e_Liberdade_Financeira.pdf"). Diferente do ETFs e do FIIs (focados em um
-> instrumento específico), este produto é o mais abrangente da vertente: cobre mentalidade,
-> diagnóstico, orçamento, dívidas, reserva de emergência, metas, investimentos (sem indicar
-> ativos), juros compostos, renda/carreira, consumo consciente, conversas financeiras em
-> família, plano de 30 dias com roteiro de 12 meses e workbooks/checklists/trackers completos.
-> Conteúdo universal (não específico do Brasil) — não precisou da generalização de
-> terminologia/tributação que os produtos de ETFs e FIIs exigiram para EN/ES, mas segue a mesma
-> regra de nicho sensível: sem promessa de rentabilidade garantida ou específica, sem indicar
-> ativos ou produtos financeiros específicos, sempre recomendando consulta a fontes
-> oficiais/profissional antes de decisões reais. Ainda sem checkout — `disponivel: false` em
-> `assets/produtos.js`. Só trocar pra `true` quando os 3 checkouts (PT/EN/ES) estiverem
-> cadastrados e funcionando.
+> ✅ AO VIVO nos 3 idiomas. Guia pago (44 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver `assets/produtos/financas-pessoais/`).
+> Terceiro produto da vertente "Projeto Verão Financeiro" / educação financeira, a partir de um
+> novo rascunho enviado pelo dono do projeto ("Financas_Pessoais_e_Liberdade_Financeira.pdf").
+> Diferente do ETFs e do FIIs (focados em um instrumento específico), este produto é o mais
+> abrangente da vertente: cobre mentalidade, diagnóstico, orçamento, dívidas, reserva de
+> emergência, metas, investimentos (sem indicar ativos), juros compostos, renda/carreira,
+> consumo consciente, conversas financeiras em família, plano de 30 dias com roteiro de 12 meses
+> e workbooks/checklists/trackers completos. Conteúdo universal (não específico do Brasil) — não
+> precisou da generalização de terminologia/tributação que os produtos de ETFs e FIIs exigiram
+> para EN/ES, mas segue a mesma regra de nicho sensível: sem promessa de rentabilidade garantida
+> ou específica, sem indicar ativos ou produtos financeiros específicos, sempre recomendando
+> consulta a fontes oficiais/profissional antes de decisões reais. Checkout real nas 3 moedas,
+> `disponivel: true`: PT/BRL `https://pay.hotmart.com/W106713797N` (R$ 49,99), EN/USD
+> `https://pay.hotmart.com/D106713828I` (US$ 19), ES/USD `https://pay.hotmart.com/Y106713849X`
+> (US$ 19).
 
 **Nome (PT):** Finanças Pessoais e Liberdade Financeira — Guia Completo NextLevel
 **Descrição (PT):**

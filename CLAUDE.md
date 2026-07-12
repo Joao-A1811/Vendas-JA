@@ -445,8 +445,8 @@ fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 
 - ES/USD: `https://pay.hotmart.com/R106711854B` (US$ 19)
 
 **`financas-pessoais` (jul/2026, 25º produto — "Finanças Pessoais e Liberdade Financeira",
-terceiro produto da vertente "Projeto Verão Financeiro" / Educação Financeira) — ⏳ conteúdo
-pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um novo rascunho enviado pelo
+terceiro produto da vertente "Projeto Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3
+idiomas.** Produto novo, a partir de um novo rascunho enviado pelo
 dono do projeto ("Financas_Pessoais_e_Liberdade_Financeira.pdf"). Diferente do ETFs e do FIIs
 (focados em um instrumento específico de investimento), este é o produto mais abrangente da
 vertente — cobre toda a jornada de organização financeira, não só investimento. Guia pago de 44
@@ -474,8 +474,10 @@ já documentada neste arquivo. **Conteúdo universal, não específico do Brasil
 ETFs e do FIIs, não precisou de generalização de terminologia ou tributação para as versões EN/ES
 (orçamento, dívidas, reserva de emergência e metas são conceitos universais); a tradução seguiu o
 padrão normal de localização. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
-Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em `assets/produtos.js`, fora do
-`sitemap.xml` até o lançamento.
+Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/W106713797N` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/D106713828I` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Y106713849X` (US$ 19)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
@@ -546,10 +548,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`financas-pessoais`** (25º produto) está com conteúdo 100% pronto (ebooks pagos e gratuitos,
-  capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3 `linkCheckoutHotmart`
-  reais** — só então trocar `disponivel` pra `true` e adicionar em `sitemap.xml` (ver
-  `CADASTRO-HOTMART.md`, seção 25).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
