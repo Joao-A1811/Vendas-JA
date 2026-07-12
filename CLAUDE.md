@@ -60,14 +60,13 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
 `emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
-`comunicacao-e-relacionamentos`, `atracao-com-respeito` e `presenca-social`, todos Saúde. O único produto ainda em rascunho
-(`investimentos`) **continua fora do catálogo público e do `sitemap.xml`**, mas a pasta
-`produtos/investimentos/` continua no repositório (CONFIG de exemplo já preenchido: headline,
-benefícios, FAQ, preços R$97→47 / $37→19, `linkEbookGratis` convencionado) pra reaproveitar
-quando/se virar produto de verdade — basta cadastrar na Hotmart, colar o
-`linkCheckoutHotmart` real e adicionar de volta o bloco em `assets/produtos.js` (e uma entrada
-em `sitemap.xml`). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir
-depoimento real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
+`comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
+`etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais` e
+`imposto-de-renda-investidores`. **`investimentos` (27º produto, ver abaixo) já foi promovido de
+volta ao catálogo com `disponivel: false`** — aparece no site com o selo "Em breve" enquanto
+aguarda cadastro na Hotmart; só falta colar os 3 `linkCheckoutHotmart` reais e trocar pra `true`.
+Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e
+autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -510,6 +509,32 @@ investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 4
 - EN/USD: `https://pay.hotmart.com/V106716286B` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 19)
 
+**`investimentos` (jul/2026, 27º produto — "Investimentos do Zero ao Método", quinto produto da
+vertente "Projeto Verão Financeiro" / Educação Financeira) — ⏳ EM CADASTRO na Hotmart, ainda
+não ao vivo.** Reaproveita o slug/pasta `produtos/investimentos/` que já existia como rascunho
+desde o início do projeto ("Ebook Investimentos do Zero", nunca lançado — texto antigo permanece
+na seção 3 do `CADASTRO-HOTMART.md`, agora desatualizado). Novo rascunho enviado pelo dono do
+projeto ("Investimentos_do_zero_ao_metodo.pdf", 54 páginas). Guia pago de 51 páginas (18
+módulos: O Método em 6 Etapas, Diagnóstico, Orçamento/Dívidas/Reserva, Objetivos/Prazos/Perfil
+de Risco, Conceitos Essenciais do Mercado, Renda Fixa na Prática, Fundos de Investimento, FIIs,
+Ações, ETFs/Exterior, Previdência/Cripto/Alternativos, Custos/Impostos/Liquidez, Como Montar uma
+Carteira, Aportes/Rebalanceamento/Revisão, Psicologia do Investidor, Segurança Contra Golpes,
+Plano de 30 Dias e Biblioteca de Decisão — os 16 quase-idênticos "cards de decisão" do rascunho
+original foram condensados em 2 tabelas comparativas) + ebook gratuito (isca, 5 páginas) nos 3
+idiomas, `ebooks/arquivos/investimentos-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas
+de amostra em `assets/produtos/investimentos/` (3 idiomas). **Generalização leve para EN/ES**
+(nível intermediário, entre o caso ETFs e o caso Imposto de Renda): a maior parte do conteúdo
+(método, diagnóstico, psicologia, montagem de carteira, segurança) é universal e foi traduzida
+diretamente; só os veículos específicos do Brasil foram generalizados com paralelo explicativo —
+"government bonds (e.g., Tesouro Direto in Brazil)", "deposit insurance (like Brazil's FGC)" —
+em vez de reescrever o guia inteiro como no Imposto de Renda. O PT mantém 100% do detalhe
+brasileiro (Tesouro Direto, CDB/LCI/LCA, FGC, Selic/CDI/IPCA). Segue a regra de nicho sensível de
+investimentos já documentada neste arquivo (sem recomendar ativos, sem prometer rentabilidade).
+Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. `assets/produtos.js` já tem a
+entrada com `disponivel: false` (aparece como "Em breve" no site) — falta só cadastrar na
+Hotmart, colar os 3 `linkCheckoutHotmart` reais nas páginas do produto, trocar `disponivel` pra
+`true` e adicionar a entrada em `sitemap.xml`.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -579,9 +604,9 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
-  catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
-  aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
+- **`investimentos`** (27º produto) já tem ebook real, capa, galeria e catálogo prontos
+  (`disponivel: false`, aparece como "Em breve") — só falta cadastrar na Hotmart e colar os 3
+  `linkCheckoutHotmart` reais pra virar `disponivel: true` e ganhar entrada em `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

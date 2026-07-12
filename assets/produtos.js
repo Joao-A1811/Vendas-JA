@@ -3,12 +3,11 @@
 // Este é o ÚNICO lugar onde a lista de produtos do catálogo é
 // editada. As páginas iniciais (PT/EN/ES) leem daqui.
 //
-// Por decisão do dono do projeto (jul/2026): só ficam listados aqui os
-// produtos que JÁ estão sendo vendidos de verdade (checkout Hotmart real
-// em pelo menos uma moeda). Os produtos ainda em rascunho (emagrecimento,
-// ganho-de-massa, investimentos, confiança social, comunicação e
-// relacionamentos) tiveram suas páginas mantidas em produtos/<slug>/ pra
-// reaproveitar depois, mas foram retirados do catálogo público.
+// Por decisão do dono do projeto (jul/2026): só ficam vendáveis (disponivel:
+// true) os produtos que JÁ estão sendo vendidos de verdade (checkout Hotmart
+// real em pelo menos uma moeda). O produto 'investimentos' está listado com
+// disponivel: false enquanto aguarda cadastro na Hotmart (ver CLAUDE.md) —
+// aparece como "Em breve" no site até os 3 checkouts ficarem prontos.
 //
 // Para adicionar um produto:
 //   1. Crie a pasta produtos/<slug>/ (copiando landing-page/)
@@ -19,8 +18,7 @@
 // ============================================================
 // Categorias do catálogo — usadas pela página /categorias/ (3 idiomas) e
 // pelas tags dos cards. Categoria só aparece no site quando tem pelo menos
-// um produto listado abaixo com o slug dela (ex: 'investimentos' só passa a
-// existir quando o produto de investimentos virar produto real).
+// um produto listado abaixo com o slug dela.
 window.CATEGORIAS_SITE = {
   'saude-fitness': {
     icone: (window.ICONS || {}).pulse || '💪',
@@ -322,6 +320,20 @@ window.PRODUTOS_SITE = [
       pt: 'Rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, exterior, cripto e declaração anual — com plano de 30 dias e checklists.',
       en: 'A monthly routine, tax folder system, stocks, REITs, ETFs, foreign assets, crypto and annual filing — with a 30-day plan and checklists.',
       es: 'Rutina mensual, carpeta fiscal, acciones, REITs, ETFs, exterior, cripto y declaración anual — con plan de 30 días y checklists.'
+    }
+  },
+  {
+    slug: 'investimentos',
+    categoria: 'financas',
+    // Em cadastro na Hotmart — ver CADASTRO-HOTMART.md, seção 27. Troque para
+    // true só quando os 3 idiomas tiverem checkout real funcionando.
+    disponivel: false,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Investimentos do Zero ao Método', en: 'Investing from Zero: A Complete Method', es: 'Inversiones desde Cero: Un Método Completo' },
+    resumo: {
+      pt: 'Diagnóstico, reserva, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs e carteira com plano de 30 dias — sem promessa de rentabilidade.',
+      en: 'Diagnosis, emergency fund, risk profile, fixed income, funds, REITs, stocks, ETFs and portfolio building with a 30-day plan — no promised returns.',
+      es: 'Diagnóstico, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs y cartera con plan de 30 días — sin promesa de rentabilidad.'
     }
   }
 ];

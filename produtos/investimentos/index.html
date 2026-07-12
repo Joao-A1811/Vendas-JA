@@ -4,17 +4,15 @@
 <meta charset="UTF-8">
 <script src="/assets/tema.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Produto em rascunho: fora do catálogo e do sitemap; noindex até virar produto real -->
-<meta name="robots" content="noindex">
-<title>Investimentos do Zero — sem economês | NextLevel</title>
-<meta name="description" content="Ebook passo a passo para organizar seu dinheiro, montar sua reserva de emergência e começar a investir com linguagem simples.">
+<title>Investimentos do Zero ao Método — sem promessa de rentabilidade | NextLevel</title>
+<meta name="description" content="Guia completo: diagnóstico financeiro, orçamento, reserva de emergência, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs, montagem de carteira e plano de 30 dias. Conteúdo 100% educacional.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Investimentos do Zero — sem economês | NextLevel">
-<meta property="og:description" content="Ebook passo a passo para organizar seu dinheiro, montar sua reserva de emergência e começar a investir com linguagem simples.">
-<meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image.png">
+<meta property="og:title" content="Investimentos do Zero ao Método — sem promessa de rentabilidade | NextLevel">
+<meta property="og:description" content="Guia completo: diagnóstico financeiro, orçamento, reserva de emergência, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs, montagem de carteira e plano de 30 dias. Conteúdo 100% educacional.">
+<meta property="og:image" content="https://nextlevelbr.app.br/assets/produtos/investimentos/og-pt.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <script>
@@ -130,6 +128,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(15,118,110,.12);border:1px solid rgba(13,27,42,.08);transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid rgba(13,27,42,.08);box-shadow:0 4px 18px rgba(15,118,110,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -226,24 +230,24 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Investimentos do Zero",
-  headline: "Saia do zero nos investimentos, sem economês",
-  subheadline: "Organize seu dinheiro, monte sua reserva de emergência e dê os primeiros passos como investidor — com passo a passo em linguagem simples.",
-  selo: "📘 Ebook completo · Acesso imediato",
+  produto: "Investimentos do Zero ao Método",
+  headline: "Investimentos do Zero ao Método — sem promessa de rentabilidade",
+  subheadline: "Diagnóstico financeiro, reserva de emergência, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs e montagem de carteira — em um método de 30 dias, 100% educacional.",
+  selo: "📘 Guia completo · Acesso imediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 dias", legenda: "de garantia" },
-    { numero: "0", legenda: "enrolação" }
+    { numero: "18", legenda: "módulos" },
+    { numero: "6", legenda: "etapas do método" },
+    { numero: "30 dias", legenda: "plano de execução" }
   ],
   beneficios: [
-    { icone: (window.ICONS||{}).clipboard || "🧾", titulo: "Arrume a casa primeiro", texto: "Orçamento sob controle e dívidas com plano de saída, antes de investir o primeiro real." },
-    { icone: (window.ICONS||{}).shield || "🛟", titulo: "Reserva de emergência", texto: "Quanto guardar, onde deixar e por que ela vem antes de qualquer investimento." },
-    { icone: (window.ICONS||{}).chart || "📈", titulo: "Primeiros investimentos", texto: "Os tipos mais comuns explicados com clareza — incluindo os riscos de cada um." }
+    { icone: (window.ICONS||{}).clipboard || "🧾", titulo: "Diagnóstico e reserva", texto: "Radiografia financeira completa, orçamento, ordem de ataque a dívidas e reserva de emergência por perfil." },
+    { icone: (window.ICONS||{}).shield || "🛟", titulo: "Renda fixa e variável explicadas", texto: "Tesouro Direto, CDB, LCI/LCA, fundos, FIIs, ações e ETFs — com riscos e cuidados de cada um, sem economês." },
+    { icone: (window.ICONS||{}).chart || "📈", titulo: "Carteira, psicologia e segurança", texto: "Como montar e manter uma carteira, vieses que sabotam decisões e como reconhecer golpes financeiros." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
   precoDe: "R$ 97,00",
-  precoPor: "R$ 47,00",
+  precoPor: "R$ 49,99",
   garantiaTexto: "Garantia incondicional de 7 dias",
   contagemRegressivaFim: '',
   // FALTA SÓ ISTO: troque pelo link real do checkout da Hotmart deste produto.
@@ -252,10 +256,11 @@ const CONFIG = {
   linkEbookGratis: '/ebooks/arquivos/investimentos-pt.pdf',
   idioma: "pt",
   faq: [
-    { pergunta: "Vocês indicam onde investir?", resposta: "Não. O conteúdo é educacional: explica conceitos, tipos de investimento e riscos pra você decidir com consciência. Não é recomendação personalizada nem promessa de rentabilidade." },
-    { pergunta: "Preciso de muito dinheiro pra começar?", resposta: "Não. O método começa pela organização do orçamento — dá pra aplicar mesmo começando com pouco." },
+    { pergunta: "Vocês indicam onde investir?", resposta: "Não. O conteúdo é 100% educacional: explica conceitos, tipos de investimento e riscos pra você decidir com consciência. Não é recomendação personalizada nem promessa de rentabilidade." },
+    { pergunta: "Preciso de muito dinheiro pra começar?", resposta: "Não. O método começa pela organização do orçamento e do diagnóstico financeiro — dá pra aplicar mesmo começando do zero." },
     { pergunta: "Estou endividado. Serve pra mim?", resposta: "Sim — o método começa exatamente aí: colocar o orçamento em ordem e montar um plano de saída das dívidas antes de investir." },
-    { pergunta: "Como eu recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o ebook no seu e-mail. Dá pra ler no celular, tablet ou computador." },
+    { pergunta: "O guia ensina sobre ações, fundos e FIIs específicos?", resposta: "O guia explica como cada tipo de investimento funciona, seus riscos e o que observar antes de decidir — mas não recomenda ativos específicos nem promete rentabilidade." },
+    { pergunta: "Como eu recebo o material?", resposta: "O acesso é 100% digital e imediato: assim que o pagamento é confirmado, a Hotmart libera o guia no seu e-mail. Dá pra ler no celular, tablet ou computador." },
     { pergunta: "E se eu não gostar?", resposta: "Você tem 7 dias de garantia incondicional: é só pedir o reembolso direto na Hotmart e receber 100% do valor de volta, sem perguntas." }
   ]
 };
@@ -318,6 +323,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">O que você vai conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section secao-alt">
+  <div class="container">
+    <h3 class="reveal">Dê uma olhada por dentro</h3>
+    <p class="lead-sec reveal">Amostra real do guia completo — capa, abertura de módulo, tabela de renda fixa, worksheet de perfil e biblioteca de decisão</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/investimentos/preview-pt-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-pt-capa.jpg" alt="Capa do guia Investimentos do Zero ao Método" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-pt-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-pt-modulo.jpg" alt="Abertura de módulo — Como Montar uma Carteira" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-pt-creditoprivado.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-pt-creditoprivado.jpg" alt="Tabela comparativa de CDB, LCI, LCA e crédito privado" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-pt-perfil.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-pt-perfil.jpg" alt="Worksheet de política de investimentos pessoal" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-pt-biblioteca.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-pt-biblioteca.jpg" alt="Biblioteca de decisão — renda fixa" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

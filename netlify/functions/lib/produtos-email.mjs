@@ -73,19 +73,21 @@ export const PRODUTOS = {
 
   'investimentos': montar('investimentos', {
     pt: {
-      nomeProduto: 'Ebook Investimentos do Zero',
-      tema: 'investir do zero, sem economês',
-      dica: 'Antes de pensar em onde investir, anote TODOS os seus gastos por 7 dias, sem julgamento. Esse mapa simples revela pra onde seu dinheiro está indo — e é a base de qualquer plano que funciona.',
+      nomeProduto: 'Investimentos do Zero ao Método — Guia Completo NextLevel',
+      tema: 'diagnóstico financeiro, orçamento, reserva de emergência, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs, montagem de carteira, psicologia do investidor e segurança contra golpes',
+      dica: 'Antes de qualquer aplicação, responda: se sua carteira caísse 20% amanhã, você venderia tudo em pânico ou manteria o plano? Essa é a "pergunta de ouro" que revela seu perfil de risco real.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
     },
     en: {
-      nomeProduto: 'Investing from Zero Ebook',
-      tema: 'investing from zero, without the jargon',
-      dica: "Before thinking about where to invest, write down ALL your expenses for 7 days, no judgment. That simple map reveals where your money is going — and it's the foundation of any plan that works.",
+      nomeProduto: 'Investing from Zero: A Complete Method — Complete NextLevel Guide',
+      tema: 'financial diagnosis, budgeting, emergency fund, risk profile, fixed income, funds, REITs, stocks, ETFs, portfolio building, investor psychology and scam protection',
+      dica: 'Before any investment, ask yourself: if your portfolio dropped 20% tomorrow, would you sell everything in a panic, or stick to the plan? That\'s the "million-dollar question" that reveals your real risk profile.',
     },
     es: {
-      nomeProduto: 'Ebook Inversiones desde Cero',
-      tema: 'invertir desde cero, sin tecnicismos',
-      dica: 'Antes de pensar en dónde invertir, anota TODOS tus gastos durante 7 días, sin juzgarte. Ese mapa simple revela a dónde va tu dinero — y es la base de cualquier plan que funcione.',
+      nomeProduto: 'Inversiones desde Cero: Un Método Completo — Guía Completa NextLevel',
+      tema: 'diagnóstico financiero, presupuesto, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs, construcción de cartera, psicología del inversionista y protección contra estafas',
+      dica: 'Antes de cualquier inversión, pregúntate: si tu cartera cayera 20% mañana, ¿venderías todo en pánico, o mantendrías el plan? Esa es la "pregunta de oro" que revela tu perfil de riesgo real.',
     },
   }),
 

@@ -4,17 +4,15 @@
 <meta charset="UTF-8">
 <script src="/assets/tema.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Produto em rascunho: fora do catálogo e do sitemap; noindex até virar produto real -->
-<meta name="robots" content="noindex">
-<title>Inversiones desde Cero — sin tecnicismos | NextLevel</title>
-<meta name="description" content="Ebook paso a paso para organizar tu dinero, crear tu fondo de emergencia y dar tus primeros pasos como inversor.">
+<title>Inversiones desde Cero: Un Método Completo — sin promesa de rentabilidad | NextLevel</title>
+<meta name="description" content="Guía completa: diagnóstico financiero, presupuesto, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs, construcción de cartera y un plan de 30 días. Contenido 100% educativo.">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel">
-<meta property="og:title" content="Inversiones desde Cero — sin tecnicismos | NextLevel">
-<meta property="og:description" content="Ebook paso a paso para organizar tu dinero, crear tu fondo de emergencia y dar tus primeros pasos como inversor.">
-<meta property="og:image" content="https://nextlevelbr.app.br/assets/og-image-es.png">
+<meta property="og:title" content="Inversiones desde Cero: Un Método Completo — sin promesa de rentabilidad | NextLevel">
+<meta property="og:description" content="Guía completa: diagnóstico financiero, presupuesto, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs, construcción de cartera y un plan de 30 días. Contenido 100% educativo.">
+<meta property="og:image" content="https://nextlevelbr.app.br/assets/produtos/investimentos/og-es.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <script>
@@ -130,6 +128,12 @@ img{max-width:100%;display:block}
 .beneficio h4{font-size:15.5px;color:var(--texto);margin-bottom:8px}
 .beneficio p{font-size:13.5px;color:var(--texto-suave)}
 
+.preview-galeria{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.preview-galeria a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(15,118,110,.12);border:1px solid rgba(13,27,42,.08);transition:transform .2s ease}
+.preview-galeria a:hover{transform:translateY(-4px)}
+.preview-galeria img{width:100%;display:block}
+@media(max-width:800px){.preview-galeria{grid-template-columns:repeat(2,1fr)}}
+
 .depoimentos-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-top:34px}
 .depoimento{scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:14px;padding:22px;border:1px solid rgba(13,27,42,.08);box-shadow:0 4px 18px rgba(15,118,110,.06)}
 .depoimento .estrelas{color:var(--laranja);font-size:14px;margin-bottom:10px}
@@ -226,19 +230,19 @@ img{max-width:100%;display:block}
 ============================================================ -->
 <script>
 const CONFIG = {
-  produto: "Ebook Inversiones desde Cero",
-  headline: "Pasa de cero a inversor, sin tecnicismos",
-  subheadline: "Organiza tu dinero, crea tu fondo de emergencia y da tus primeros pasos como inversor — paso a paso, en lenguaje simple.",
-  selo: "📘 Ebook completo · Acceso inmediato",
+  produto: "Inversiones desde Cero: Un Método Completo",
+  headline: "Inversiones desde Cero: Un Método Completo — sin promesa de rentabilidad",
+  subheadline: "Diagnóstico financiero, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs y construcción de cartera — en un método de 30 días, 100% educativo.",
+  selo: "📘 Guía completa · Acceso inmediato",
   estatisticas: [
-    { numero: "100%", legenda: "digital" },
-    { numero: "7 días", legenda: "de garantía" },
-    { numero: "0", legenda: "relleno" }
+    { numero: "18", legenda: "módulos" },
+    { numero: "6", legenda: "pasos del método" },
+    { numero: "30 días", legenda: "plan de ejecución" }
   ],
   beneficios: [
-    { icone: (window.ICONS||{}).clipboard || "🧾", titulo: "Ordena la casa primero", texto: "Presupuesto bajo control y un plan para salir de deudas, antes de invertir el primer euro o dólar." },
-    { icone: (window.ICONS||{}).shield || "🛟", titulo: "Fondo de emergencia", texto: "Cuánto guardar, dónde dejarlo y por qué va antes que cualquier inversión." },
-    { icone: (window.ICONS||{}).chart || "📈", titulo: "Tus primeras inversiones", texto: "Los tipos más comunes explicados con claridad — incluyendo los riesgos de cada uno." }
+    { icone: (window.ICONS||{}).clipboard || "🧾", titulo: "Diagnóstico y fondo de emergencia", texto: "Radiografía financiera completa, presupuesto, orden de ataque a deudas y fondo de emergencia según tu perfil." },
+    { icone: (window.ICONS||{}).shield || "🛟", titulo: "Renta fija y variable explicadas", texto: "Bonos gubernamentales, depósitos bancarios, fondos, REITs, acciones y ETFs — con los riesgos y cuidados de cada uno, sin tecnicismos." },
+    { icone: (window.ICONS||{}).chart || "📈", titulo: "Cartera, psicología y seguridad", texto: "Cómo construir y mantener una cartera, los sesgos que sabotean decisiones y cómo reconocer estafas financieras." }
   ],
   // Depoimentos: SOMENTE reais e com autorização. Vazio = a seção fica oculta.
   depoimentos: [],
@@ -252,10 +256,11 @@ const CONFIG = {
   linkEbookGratis: '/ebooks/arquivos/investimentos-es.pdf',
   idioma: "es",
   faq: [
-    { pergunta: "¿Me dicen dónde invertir?", resposta: "No. El contenido es educativo: explica conceptos, tipos de inversión y riesgos para que TÚ decidas con conciencia. No es asesoramiento personalizado ni promesa de rentabilidad." },
-    { pergunta: "¿Necesito mucho dinero para empezar?", resposta: "No. El método empieza por organizar el presupuesto — puedes aplicarlo aunque empieces con poco." },
+    { pergunta: "¿Me dicen dónde invertir?", resposta: "No. El contenido es 100% educativo: explica conceptos, tipos de inversión y riesgos para que TÚ decidas con conciencia. No es asesoramiento personalizado ni promesa de rentabilidad." },
+    { pergunta: "¿Necesito mucho dinero para empezar?", resposta: "No. El método empieza por organizar el presupuesto y el diagnóstico financiero — puedes aplicarlo aunque empieces de cero." },
     { pergunta: "Estoy endeudado. ¿Me sirve?", resposta: "Sí — el método empieza exactamente ahí: ordenar el presupuesto y armar un plan para salir de las deudas antes de invertir." },
-    { pergunta: "¿Cómo recibo el material?", resposta: "El acceso es 100% digital e inmediato: en cuanto se confirma el pago, Hotmart envía el ebook a tu correo. Puedes leerlo en el móvil, tablet u ordenador." },
+    { pergunta: "¿La guía recomienda acciones, fondos o REITs específicos?", resposta: "La guía explica cómo funciona cada tipo de inversión, sus riesgos y qué revisar antes de decidir — pero no recomienda activos específicos ni promete rentabilidad." },
+    { pergunta: "¿Cómo recibo el material?", resposta: "El acceso es 100% digital e inmediato: en cuanto se confirma el pago, Hotmart envía la guía a tu correo. Puedes leerla en el móvil, tablet u ordenador." },
     { pergunta: "¿Y si no me gusta?", resposta: "Tienes 7 días de garantía incondicional: solo pide el reembolso directamente en Hotmart y recibe el 100% de tu dinero de vuelta, sin preguntas." }
   ]
 };
@@ -318,6 +323,20 @@ const CONFIG = {
   <div class="container">
     <h3 class="reveal">Lo que vas a conseguir</h3>
     <div class="beneficios" id="beneficios"></div>
+  </div>
+</section>
+
+<section class="section secao-alt">
+  <div class="container">
+    <h3 class="reveal">Echa un vistazo por dentro</h3>
+    <p class="lead-sec reveal">Muestra real de la guía completa — portada, apertura de módulo, tabla de renta fija, worksheet de perfil y biblioteca de decisión</p>
+    <div class="preview-galeria reveal">
+      <a href="/assets/produtos/investimentos/preview-es-capa.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-es-capa.jpg" alt="Portada de la guía Inversiones desde Cero: Un Método Completo" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-es-modulo.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-es-modulo.jpg" alt="Apertura de módulo — Cómo Construir una Cartera" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-es-creditoprivado.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-es-creditoprivado.jpg" alt="Tabla comparativa de depósitos bancarios y crédito privado" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-es-perfil.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-es-perfil.jpg" alt="Worksheet de política de inversión personal" loading="lazy"></a>
+      <a href="/assets/produtos/investimentos/preview-es-biblioteca.jpg" target="_blank" rel="noopener"><img src="/assets/produtos/investimentos/preview-es-biblioteca.jpg" alt="Biblioteca de decisión — renta fija" loading="lazy"></a>
+    </div>
   </div>
 </section>
 

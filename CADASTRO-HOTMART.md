@@ -1393,6 +1393,88 @@ fiscal de tu país — evita promesas de reembolso garantizado o ahorro de impue
 
 ---
 
+## 27. Investimentos do Zero ao Método — categoria: Finanças / Educação Financeira
+
+> ⏳ EM CADASTRO. Reaproveita o slug/pasta `produtos/investimentos/` que já existia como
+> rascunho desde o início do projeto (era o produto placeholder "Ebook Investimentos do Zero",
+> nunca lançado — texto antigo permanece na seção 3 deste arquivo, agora desatualizado). Quinto
+> produto da vertente "Projeto Verão Financeiro" / educação financeira, a partir de um novo
+> rascunho enviado pelo dono do projeto ("Investimentos_do_zero_ao_metodo.pdf", 54 páginas).
+> Guia pago de 51 páginas (18 módulos: O Método em 6 Etapas, Diagnóstico, Orçamento/Dívidas/
+> Reserva, Objetivos/Prazos/Perfil de Risco, Conceitos Essenciais do Mercado, Renda Fixa na
+> Prática, Fundos de Investimento, FIIs, Ações, ETFs/Exterior, Previdência/Cripto/Alternativos,
+> Custos/Impostos/Liquidez, Como Montar uma Carteira, Aportes/Rebalanceamento/Revisão, Psicologia
+> do Investidor, Segurança Contra Golpes, Plano de 30 Dias e Biblioteca de Decisão) + ebook
+> gratuito (isca, 5 páginas) nos 3 idiomas, `ebooks/arquivos/investimentos-<pt|en|es>.pdf`.
+> Galeria "olhe por dentro" com 5 páginas de amostra em `assets/produtos/investimentos/` (3
+> idiomas). **Generalização leve para EN/ES** (nível intermediário, entre o caso ETFs e o caso
+> Imposto de Renda): a maior parte do conteúdo (método, diagnóstico, psicologia, montagem de
+> carteira, segurança) é universal e foi traduzida diretamente; só os veículos específicos do
+> Brasil foram generalizados com paralelo explicativo — "government bonds (e.g., Tesouro Direto
+> in Brazil)", "deposit insurance (like Brazil's FGC)", "bank certificate of deposit (like
+> Brazil's CDB)", "tax-advantaged real-estate-backed bond (like Brazil's LCI)" etc. — em vez de
+> reescrever o guia inteiro como no caso do Imposto de Renda, já que aqui a maior parte do
+> conteúdo não depende de regras específicas de um país. O PT mantém 100% do detalhe brasileiro
+> (Tesouro Direto, CDB/LCI/LCA, FGC, Selic/CDI/IPCA). **Nicho sensível (investimentos)** — todo
+> o conteúdo evita recomendar ativos específicos ou prometer rentabilidade garantida ou
+> específica, sempre remetendo o leitor a fontes oficiais do seu país ou a um profissional
+> habilitado antes de decidir — segue a regra de nicho sensível de investimentos já documentada
+> neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. `disponivel:
+> false` até os 3 checkouts da Hotmart ficarem prontos.
+
+**Nome (PT):** Investimentos do Zero ao Método — Guia Completo NextLevel
+**Descrição (PT):**
+Guia completo de 51 páginas com um método estruturado em 6 etapas — diagnosticar, proteger,
+alocar, aportar, rebalancear e revisar — para você sair do zero nos investimentos com clareza:
+diagnóstico financeiro completo (radiografia de renda, gastos, dívidas e objetivos), orçamento
+50-30-20 adaptado e ordem de ataque a dívidas, reserva de emergência por perfil de renda,
+perfil de risco com a "pergunta de ouro", conceitos essenciais do mercado (liquidez,
+volatilidade, indicadores), renda fixa na prática (Tesouro Direto, CDB, LCI/LCA, debêntures),
+fundos de investimento, FIIs, ações (como pensar como sócio), ETFs/BDRs e investir no exterior,
+previdência/cripto/alternativos, custos e impostos, como montar e manter uma carteira (pirâmide
+e modelo de baldes), psicologia do investidor (vieses e protocolo anti-impulso), segurança
+contra golpes financeiros, um plano de execução de 30 dias e uma biblioteca de decisão
+comparativa. E-book digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo
+100% educacional: não recomenda ativos específicos nem promete rentabilidade garantida.
+
+**Name (EN):** Investing from Zero: A Complete Method — Complete NextLevel Guide
+**Description (EN):**
+A complete 51-page guide with a structured 6-step method — diagnose, protect, allocate,
+contribute, rebalance and review — to help you start investing from zero with clarity: a
+complete financial diagnosis (income, expenses, debt and goals), an adapted 50-30-20 budget and
+debt payoff order, an emergency fund sized to your income type, a risk profile built around the
+"million-dollar question", essential market concepts (liquidity, volatility, reference rates),
+fixed income in practice (government bonds, bank deposits, tax-advantaged bonds, corporate
+bonds), investment funds, REITs, stocks (thinking like an owner), ETFs/foreign receipts and
+investing abroad, retirement accounts/crypto/alternatives, costs and taxes, how to build and
+maintain a portfolio (the pyramid and bucket model), investor psychology (biases and an
+anti-impulse protocol), scam protection, a 30-day execution plan, and a comparative decision
+library. Digital ebook, instant access, 7-day unconditional guarantee. 100% educational content:
+does not recommend specific assets or promise guaranteed returns.
+
+**Nombre (ES):** Inversiones desde Cero: Un Método Completo — Guía Completa NextLevel
+**Descripción (ES):**
+Una guía completa de 51 páginas con un método estructurado en 6 pasos — diagnosticar, proteger,
+asignar, aportar, reequilibrar y revisar — para que empieces a invertir desde cero con claridad:
+un diagnóstico financiero completo (ingresos, gastos, deudas y objetivos), un presupuesto
+50-30-20 adaptado y el orden de ataque a las deudas, un fondo de emergencia según tu tipo de
+ingreso, un perfil de riesgo construido con la "pregunta de oro", conceptos esenciales del
+mercado (liquidez, volatilidad, tasas de referencia), renta fija en la práctica (bonos
+gubernamentales, depósitos bancarios, bonos con beneficio fiscal, bonos corporativos), fondos de
+inversión, REITs, acciones (pensar como socio), ETFs/recibos extranjeros e invertir en el
+exterior, planes de retiro/cripto/alternativos, costos e impuestos, cómo construir y mantener
+una cartera (la pirámide y el modelo de baldes), psicología del inversionista (sesgos y un
+protocolo antiimpulso), protección contra estafas, un plan de ejecución de 30 días y una
+biblioteca de decisión comparativa. Ebook digital, acceso inmediato y garantía incondicional de
+7 días. Contenido 100% educativo: no recomienda activos específicos ni promete rentabilidad
+garantizada.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/investimentos-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
