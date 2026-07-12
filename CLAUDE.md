@@ -382,6 +382,32 @@ segurança e autonomia como base, não opcional. Preço padrão da coleção: **
 - EN/USD: `https://pay.hotmart.com/O106706603K` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/B106706622I` (US$ 19)
 
+**`etfs-investimento-global` (jul/2026, 23º produto — "ETFs e Investimento Global", primeiro
+produto da nova vertente "Projeto Verão Financeiro" / Educação Financeira) — ⏳ conteúdo pronto,
+aguardando cadastro.** Produto novo, a partir de um rascunho enviado pelo dono do projeto —
+diferente do rascunho antigo em `produtos/investimentos/` (sobre investir do zero em geral): este
+tem foco específico em ETFs, BDRs e diversificação internacional. Criou a categoria `financas`
+em `assets/produtos.js` (`window.CATEGORIAS_SITE`). Guia pago de 46 páginas (6 módulos: Por que
+Pensar Globalmente — home bias, risco Brasil, diagnóstico —, ETF sem Mistério — o que é, tipos
+por exposição, 10 critérios de análise, o índice como produto —, Caminhos de Acesso — ETF na B3,
+BDR, BDR de ETF, conta no exterior, fundos locais —, Riscos/Custos/Impostos — câmbio, custos
+invisíveis, tributação com aviso sobre a Lei 14.754/2023, liquidez/spread/domicílio,
+concentração —, Carteira Global com Método — camadas, modelos didáticos, core-satellite,
+rebalanceamento, estratégias comuns —, e Execução e Workbooks — plano de 30 dias, diagnóstico,
+ficha de ETF, comparador de rotas, dashboard trimestral, cards de decisão, erros comuns, estudos
+de caso, política pessoal, matriz de risco, mitos e verdades, glossário) + ebook gratuito (isca,
+6 páginas) nos 3 idiomas, `ebooks/arquivos/etfs-investimento-global-<pt|en|es>.pdf`. Galeria "olhe
+por dentro" com 5 páginas de amostra em `assets/produtos/etfs-investimento-global/` (3 idiomas).
+**Nicho sensível (investimentos)** — todo o conteúdo (headline, FAQ, ebook, capa, Hotmart) evita
+promessa de rentabilidade garantida ou específica e listas de "melhores ativos", trata o material
+como estritamente educacional (não é recomendação individual nem consultoria de valores
+mobiliários) e recomenda sempre consultar fontes oficiais/contador antes de vender ou declarar —
+segue a regra de nicho sensível de investimentos já documentada neste arquivo. As versões EN/ES
+generalizam a seção de tributação (que no PT cita a lei brasileira 14.754/2023) para não afirmar
+regras fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+19,00 (EN/ES)**. Ainda **fora do catálogo público** (`disponivel: false`) até ter checkout
+Hotmart real nas 3 moedas — ver `CADASTRO-HOTMART.md`, seção 23.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -454,6 +480,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
+- **`etfs-investimento-global`** (23º produto) tem conteúdo completo pronto (guia pago +
+  gratuito + capa + galeria nos 3 idiomas), mas está fora do catálogo público
+  (`disponivel: false`) até o dono do projeto cadastrar na Hotmart e mandar os
+  `linkCheckoutHotmart` reais — ver `CADASTRO-HOTMART.md`, seção 23.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

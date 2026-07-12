@@ -39,6 +39,15 @@ window.CATEGORIAS_SITE = {
       en: 'Conversations, presence, charisma and healthy connections — genuine communication and respect, never manipulation.',
       es: 'Conversaciones, presencia, carisma y conexiones saludables — comunicación genuina y respeto, nunca manipulación.'
     }
+  },
+  'financas': {
+    icone: (window.ICONS || {}).globe || '🌐',
+    nome: { pt: 'Educação Financeira', en: 'Financial Education', es: 'Educación Financiera' },
+    desc: {
+      pt: 'Investimento, diversificação e organização financeira — conteúdo educativo, sem promessa de rentabilidade.',
+      en: 'Investing, diversification and financial organization — educational content, no promised returns.',
+      es: 'Inversión, diversificación y organización financiera — contenido educativo, sin promesa de rentabilidad.'
+    }
   }
 };
 
@@ -261,6 +270,19 @@ window.PRODUTOS_SITE = [
       pt: 'Mentalidade certa, convite sem pressão, estrutura C.E.C. para conversar e presença/limites — prepare-se e crie uma experiência leve para os dois, num plano de 30 dias.',
       en: 'The right mindset, invitations without pressure, the C.E.S. structure for conversation, and presence/boundaries — prepare and create a light experience for both of you, in a 30-day plan.',
       es: 'La mentalidad correcta, invitaciones sin presión, la estructura C.E.C. para conversar y presencia/límites — prepárate y crea una experiencia ligera para ambos, en un plan de 30 días.'
+    }
+  },
+  {
+    slug: 'etfs-investimento-global',
+    categoria: 'financas',
+    // Ainda em rascunho — aguardando checkout Hotmart real nas 3 moedas.
+    disponivel: false,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'ETFs e Investimento Global', en: 'ETFs and Global Investing', es: 'ETFs e Inversión Global' },
+    resumo: {
+      pt: 'ETFs, BDRs, custos, impostos e carteira global com método — diversifique fora do Brasil sem promessa de rentabilidade.',
+      en: 'ETFs, access certificates, costs, taxes and a global portfolio with method — diversify beyond your home market, no promised returns.',
+      es: 'ETFs, certificados de acceso, costos, impuestos y cartera global con método — diversifica fuera de tu país sin promesa de rentabilidad.'
     }
   }
 ];

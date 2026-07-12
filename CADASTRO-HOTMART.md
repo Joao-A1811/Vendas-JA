@@ -1107,6 +1107,63 @@ enseña presión, manipulación, juegos ni insistencia después de un no.
 
 ---
 
+## 23. ETFs e Investimento Global — categoria: Finanças / Educação Financeira
+
+> ⏳ Conteúdo pronto (guia pago 46 páginas + guia gratuito 6 páginas nos 3 idiomas, capa e galeria
+> "olhe por dentro" prontas — ver `assets/produtos/etfs-investimento-global/`), aguardando cadastro
+> na Hotmart e `linkCheckoutHotmart` real. **Primeiro produto de uma nova vertente** ("Projeto Verão
+> Financeiro" / educação financeira), a partir de um rascunho enviado pelo dono do projeto —
+> diferente do rascunho antigo em `produtos/investimentos/` (que é sobre investir do zero em geral):
+> este produto tem foco específico em ETFs, BDRs e diversificação internacional. Nova categoria
+> `financas` criada em `assets/produtos.js` (`window.CATEGORIAS_SITE`). Nicho sensível — segue a
+> regra já documentada em `CLAUDE.md`: sem rentabilidade garantida ou específica, sem lista de
+> "melhores ativos", sempre recomendando consulta a fontes oficiais/contador antes de vender ou
+> declarar. `disponivel: false` até ter checkout real nas 3 moedas.
+
+**Nome (PT):** ETFs e Investimento Global — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 46 páginas para diversificar fora do Brasil com método: por que pensar
+globalmente (home bias, risco Brasil e diagnóstico), ETF sem mistério (o que é, tipos, 10 critérios
+de análise), caminhos de acesso (ETF na B3, BDR, BDR de ETF, conta no exterior e fundos locais),
+riscos/custos/impostos (câmbio, spread, tributação, liquidez e jurisdição), carteira global com
+método (camadas, core-satellite, modelos didáticos e rebalanceamento) e um módulo de execução com
+plano de 30 dias e workbooks completos (diagnóstico, ficha de ETF, comparador de rotas, dashboard
+trimestral e matriz de risco). E-book digital com acesso imediato e garantia incondicional de 7
+dias. Conteúdo educacional que não representa recomendação individual de investimento nem
+consultoria de valores mobiliários — evita promessas de rentabilidade e listas de "melhores
+ativos".
+
+**Name (EN):** ETFs and Global Investing — Complete NextLevel Guide
+**Description (EN):**
+Premium 46-page guide + workbook to diversify beyond your home market with method: why think
+globally (home bias, home-country risk, and diagnostic), ETFs without the mystery (what they are,
+types, 10 analysis criteria), access routes (local-exchange ETFs, access certificates, brokerage
+abroad, and local funds), risks/costs/taxes (currency, spread, taxation, liquidity, and
+jurisdiction), a global portfolio with method (layers, core-satellite, teaching models, and
+rebalancing), and an execution module with a 30-day plan and full workbooks (diagnostic, ETF
+sheet, route comparator, quarterly dashboard, and risk matrix). Digital ebook, instant access,
+7-day unconditional guarantee. Educational content that does not represent an individual
+investment recommendation or securities advice — avoids promises of returns and "best asset"
+lists.
+
+**Nombre (ES):** ETFs e Inversión Global — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 46 páginas para diversificar fuera de tu país con método: por qué
+pensar globalmente (sesgo local, riesgo país y diagnóstico), ETF sin misterio (qué es, tipos, 10
+criterios de análisis), caminos de acceso (ETF local, certificados de acceso, cuenta en el exterior
+y fondos locales), riesgos/costos/impuestos (cambio, spread, tributación, liquidez y jurisdicción),
+cartera global con método (capas, core-satellite, modelos didácticos y rebalanceo) y un módulo de
+ejecución con plan de 30 días y workbooks completos (diagnóstico, ficha de ETF, comparador de
+rutas, dashboard trimestral y matriz de riesgo). Ebook digital, acceso inmediato y garantía
+incondicional de 7 días. Contenido educativo que no representa una recomendación individual de
+inversión ni asesoría de valores — evita promesas de rentabilidad y listas de "mejores activos".
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/etfs-investimento-global-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

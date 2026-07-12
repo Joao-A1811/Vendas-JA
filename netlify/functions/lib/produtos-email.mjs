@@ -388,4 +388,24 @@ export const PRODUTOS = {
       dica: 'Antes de tu próxima cita, usa la preparación mental de 15 minutos de la guía: respira más despacio, recuerda el objetivo (conocer, conversar y respetar) y define una actitud clave para la cita.',
     },
   }),
+
+  'etfs-investimento-global': montar('etfs-investimento-global', {
+    pt: {
+      nomeProduto: 'ETFs e Investimento Global — Guia Completo NextLevel',
+      tema: 'ETF sem mistério, caminhos de acesso, riscos/custos/impostos e carteira global com método',
+      dica: 'Antes de comprar qualquer ETF, aplique os 10 critérios do guia: índice, objetivo, custo, liquidez, tracking, concentração, moeda, domicílio, distribuição e uso na carteira.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'ETFs and Global Investing — Complete NextLevel Guide',
+      tema: 'ETFs without the mystery, access routes, risks/costs/taxes, and a global portfolio with method',
+      dica: 'Before buying any ETF, apply the guide\'s 10 criteria: index, objective, cost, liquidity, tracking, concentration, currency, domicile, distribution, and portfolio role.',
+    },
+    es: {
+      nomeProduto: 'ETFs e Inversión Global — Guía Completa NextLevel',
+      tema: 'ETF sin misterio, caminos de acceso, riesgos/costos/impuestos y cartera global con método',
+      dica: 'Antes de comprar cualquier ETF, aplica los 10 criterios de la guía: índice, objetivo, costo, liquidez, tracking, concentración, moneda, domicilio, distribución y uso en la cartera.',
+    },
+  }),
 };
