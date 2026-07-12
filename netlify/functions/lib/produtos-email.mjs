@@ -408,4 +408,24 @@ export const PRODUTOS = {
       dica: 'Antes de comprar cualquier ETF, aplica los 10 criterios de la guía: índice, objetivo, costo, liquidez, tracking, concentración, moneda, domicilio, distribución y uso en la cartera.',
     },
   }),
+
+  'fiis-do-zero': montar('fiis-do-zero', {
+    pt: {
+      nomeProduto: 'FIIs do Zero — Guia Completo NextLevel',
+      tema: 'base dos FIIs, tipos de fundos, indicadores sem confusão (Dividend Yield, P/VP, vacância, WAULT), análise prática e carteira com método',
+      dica: 'Antes de comprar qualquer FII, use o checklist do guia: leia o relatório gerencial, identifique se é tijolo, papel, híbrido ou FoF, entenda os riscos e a concentração, compare com pares do mesmo segmento e confirme se a liquidez é compatível com o valor investido.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'REITs from Zero — Complete NextLevel Guide',
+      tema: 'REIT fundamentals, fund types, indicators without confusion (Dividend Yield, price-to-NAV, vacancy, WAULT), practical analysis, and a teaching portfolio',
+      dica: 'Before buying any REIT, use the guide\'s checklist: read the latest management report, identify if it\'s equity, mortgage, hybrid, or a fund of funds, understand the risks and concentration, compare with peers in the same segment, and confirm liquidity matches your invested amount.',
+    },
+    es: {
+      nomeProduto: 'REITs desde Cero — Guía Completa NextLevel',
+      tema: 'base de los REITs, tipos de fondos, indicadores sin confusión (Dividend Yield, precio/valor patrimonial, vacancia, WAULT), análisis práctico y cartera con método',
+      dica: 'Antes de comprar cualquier REIT, usa el checklist de la guía: lee el informe gerencial más reciente, identifica si es de capital, hipotecario, híbrido o fondo de fondos, entiende los riesgos y la concentración, compara con pares del mismo segmento y confirma que la liquidez sea compatible con el valor invertido.',
+    },
+  }),
 };

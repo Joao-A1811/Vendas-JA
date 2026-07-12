@@ -410,6 +410,38 @@ regras fiscais específicas de outros países. Preço padrão da coleção: **R$
 - EN/USD: `https://pay.hotmart.com/L106711275V` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/B106711299T` (US$ 19)
 
+**`fiis-do-zero` (jul/2026, 24º produto — "FIIs do Zero", segundo produto da vertente "Projeto
+Verão Financeiro" / Educação Financeira) — ⏳ conteúdo pronto, aguardando cadastro na Hotmart.**
+Produto novo, a partir de um novo rascunho enviado pelo dono do projeto
+("Aprenda_sobre_Fiis_do_Zero.pdf"). Guia pago de 51 páginas (7 módulos: Base dos FIIs — o que é
+um fundo imobiliário, por que FII não é renda fixa, FII x imóvel físico, como o investidor ganha
+ou perde dinheiro, código/negociação/liquidez, riscos principais —, Tipos de FIIs — visão rápida,
+tijolo, segmentos de tijolo, papel, IPCA/CDI/prefixado, híbridos/FoFs/gestão ativa —, Indicadores
+sem Confusão — Dividend Yield, P/VP e valor patrimonial, vacância física e financeira, WAULT e
+vencimentos, liquidez e tamanho do fundo, indicadores de fundos de papel, ranking pessoal —,
+Análise Prática — como ler um relatório gerencial, fichas de análise para FII de tijolo e de
+papel, gestão e governança, emissões/subscrições/diluição, armadilhas comuns —, Carteira de FIIs —
+por camadas, diversificação inteligente, modelo didático de alocação, aportes e preço médio,
+rebalanceamento, acompanhamento trimestral de renda —, Tributação e Controle — visão educacional
+(regra de isenção amplamente divulgada + aviso para verificar a regra vigente, citando a MP
+1303/2025), rendimentos x ganho de capital, rotina fiscal e planilha de controle —, e Plano de
+Execução — plano de 30 dias, checklist antes de comprar, ficha de tese do fundo, rotina mensal,
+dashboard e plano de continuidade de 90 dias, glossário) + ebook gratuito (isca, 6 páginas) nos 3
+idiomas, `ebooks/arquivos/fiis-do-zero-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas de
+amostra em `assets/produtos/fiis-do-zero/` (3 idiomas). **Nicho sensível (investimentos)** — todo
+o conteúdo (headline, FAQ, ebook, capa, Hotmart) evita promessa de rentabilidade garantida ou
+específica e listas de "melhores fundos", trata o material como estritamente educacional (não é
+recomendação individual nem consultoria de valores mobiliários) e recomenda sempre consultar
+fontes oficiais/contador antes de vender ou declarar — segue a regra de nicho sensível de
+investimentos já documentada neste arquivo. **FII (Fundo de Investimento Imobiliário) é um ativo
+específico do mercado brasileiro** — as versões EN/ES generalizam o conceito para "REIT" (Real
+Estate Investment Trust), o termo internacionalmente reconhecido equivalente, com título "REITs
+from Zero" (EN) / "REITs desde Cero" (ES); o PT mantém todo o detalhe específico do Brasil (leis,
+DARF, ReVar) e a seção de tributação nas versões EN/ES foi generalizada para não afirmar regras
+fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+(EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
+`assets/produtos.js`, fora do `sitemap.xml` até o lançamento.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -479,6 +511,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`fiis-do-zero`** (24º produto) está com conteúdo 100% pronto (ebooks pagos e gratuitos,
+  capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3 `linkCheckoutHotmart`
+  reais** — só então trocar `disponivel` pra `true` e adicionar em `sitemap.xml` (ver
+  `CADASTRO-HOTMART.md`, seção 24).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).

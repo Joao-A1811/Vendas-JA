@@ -284,5 +284,18 @@ window.PRODUTOS_SITE = [
       en: 'ETFs, access certificates, costs, taxes and a global portfolio with method — diversify beyond your home market, no promised returns.',
       es: 'ETFs, certificados de acceso, costos, impuestos y cartera global con método — diversifica fuera de tu país sin promesa de rentabilidad.'
     }
+  },
+  {
+    slug: 'fiis-do-zero',
+    categoria: 'financas',
+    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 24.
+    disponivel: false,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'FIIs do Zero', en: 'REITs from Zero', es: 'REITs desde Cero' },
+    resumo: {
+      pt: 'Tipos de FIIs, indicadores sem confusão, análise prática e carteira com método — sem promessa de rentabilidade.',
+      en: 'REIT types, indicators without confusion, practical analysis and a teaching portfolio with method — no promised returns.',
+      es: 'Tipos de REITs, indicadores sin confusión, análisis práctico y cartera con método — sin promesa de rentabilidad.'
+    }
   }
 ];

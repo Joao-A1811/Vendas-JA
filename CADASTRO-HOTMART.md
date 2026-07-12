@@ -1167,6 +1167,72 @@ inversión ni asesoría de valores — evita promesas de rentabilidad y listas d
 
 ---
 
+## 24. FIIs do Zero — categoria: Finanças / Educação Financeira
+
+> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (51 páginas) + guia gratuito
+> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/fiis-do-zero/`). Segundo produto da vertente "Projeto Verão Financeiro" /
+> educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
+> ("Aprenda_sobre_Fiis_do_Zero.pdf"). Foco em fundos imobiliários (FII, ativo específico do
+> mercado brasileiro) — as versões EN/ES generalizam o conceito para "REIT" (Real Estate
+> Investment Trust), termo internacionalmente reconhecido equivalente, mantendo o PT com todo o
+> detalhe específico do Brasil (leis, DARF, ReVar). Nicho sensível — segue a regra já documentada
+> em `CLAUDE.md`: sem rentabilidade garantida ou específica, sem lista de "melhores fundos",
+> sempre recomendando consulta a fontes oficiais/contador antes de vender ou declarar. Ainda sem
+> checkout — `disponivel: false` em `assets/produtos.js`. Só trocar pra `true` quando os 3
+> checkouts (PT/EN/ES) estiverem cadastrados e funcionando.
+
+**Nome (PT):** FIIs do Zero — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 51 páginas para entender fundos imobiliários com método: a base dos
+FIIs (o que é, por que não é renda fixa, como o investidor ganha ou perde dinheiro, riscos
+principais), tipos de FIIs (tijolo, papel, híbridos, FoFs e gestão ativa), indicadores sem
+confusão (Dividend Yield, P/VP, vacância física e financeira, WAULT, liquidez, e um ranking
+pessoal de avaliação), análise prática (como ler um relatório gerencial, fichas de análise para
+FII de tijolo e de papel, governança, emissões e armadilhas comuns), carteira de FIIs (camadas,
+diversificação, modelo didático de alocação, aportes e rebalanceamento), tributação e controle
+(visão educacional, rotina fiscal) e um módulo de execução com plano de 30 dias e workbooks
+completos (checklist de compra, ficha de tese do fundo, rotina mensal, dashboard e plano de
+continuidade de 90 dias). E-book digital com acesso imediato e garantia incondicional de 7 dias.
+Conteúdo educacional que não representa recomendação individual de investimento nem consultoria de
+valores mobiliários — evita promessas de rentabilidade e listas de "melhores fundos".
+
+**Name (EN):** REITs from Zero — Complete NextLevel Guide
+**Description (EN):**
+Premium 51-page guide + workbook to understand real estate investment trusts with method: REIT
+fundamentals (what it is, why it isn't fixed income, how investors gain or lose money, main
+risks), REIT types (equity, mortgage, hybrid, and funds of funds), indicators without confusion
+(Dividend Yield, price-to-NAV, physical and financial vacancy, WAULT, liquidity, and a personal
+scorecard), practical analysis (how to read a management report, analysis sheets for equity and
+mortgage REITs, governance, share issuances, and common pitfalls), portfolio building (layers,
+diversification, a teaching allocation model, contributions, and rebalancing), taxation and
+record-keeping (educational overview, tax routine), and an execution module with a 30-day plan and
+full workbooks (pre-purchase checklist, fund thesis sheet, monthly routine, dashboard, and a
+90-day continuity plan). Digital ebook, instant access, 7-day unconditional guarantee. Educational
+content that does not represent an individual investment recommendation or securities advice —
+avoids promises of returns and "best fund" lists.
+
+**Nombre (ES):** REITs desde Cero — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 51 páginas para entender los fondos inmobiliarios con método: la base
+de los REITs (qué es, por qué no es renta fija, cómo el inversor gana o pierde dinero, riesgos
+principales), tipos de REITs (de capital, hipotecarios, híbridos y fondos de fondos), indicadores
+sin confusión (Dividend Yield, precio/valor patrimonial, vacancia física y financiera, WAULT,
+liquidez, y un ranking personal de evaluación), análisis práctico (cómo leer un informe gerencial,
+fichas de análisis para REITs de capital y de hipoteca, gobernanza, emisiones y trampas comunes),
+cartera de REITs (capas, diversificación, modelo didáctico de asignación, aportes y rebalanceo),
+tributación y control (visión educativa, rutina fiscal) y un módulo de ejecución con plan de 30
+días y workbooks completos (checklist de compra, ficha de tesis del fondo, rutina mensual,
+dashboard y plan de continuidad de 90 días). Ebook digital, acceso inmediato y garantía
+incondicional de 7 días. Contenido educativo que no representa una recomendación individual de
+inversión ni asesoría de valores — evita promesas de rentabilidad y listas de "mejores fondos".
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/fiis-do-zero-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
