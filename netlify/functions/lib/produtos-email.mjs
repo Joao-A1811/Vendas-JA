@@ -428,4 +428,24 @@ export const PRODUTOS = {
       dica: 'Antes de comprar cualquier REIT, usa el checklist de la guía: lee el informe gerencial más reciente, identifica si es de capital, hipotecario, híbrido o fondo de fondos, entiende los riesgos y la concentración, compara con pares del mismo segmento y confirma que la liquidez sea compatible con el valor invertido.',
     },
   }),
+
+  'financas-pessoais': montar('financas-pessoais', {
+    pt: {
+      nomeProduto: 'Finanças Pessoais e Liberdade Financeira — Guia Completo NextLevel',
+      tema: 'diagnóstico financeiro, orçamento por função, plano de ataque a dívidas, reserva de emergência, metas por prazo e a ordem certa para investir',
+      dica: 'Antes de qualquer outra coisa, calcule seus 5 números essenciais: renda líquida mensal, custo de vida essencial, gasto total, dívida total e patrimônio líquido. Esse diagnóstico simples é a base de todo o método.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Personal Finance and Financial Freedom — Complete NextLevel Guide',
+      tema: 'financial diagnosis, budgeting by function, a debt attack plan, an emergency fund, goals by timeline, and the right order to start investing',
+      dica: 'Before anything else, calculate your 5 essential numbers: monthly net income, essential cost of living, total spending, total debt, and net worth. This simple diagnosis is the foundation of the whole method.',
+    },
+    es: {
+      nomeProduto: 'Finanzas Personales y Libertad Financiera — Guía Completa NextLevel',
+      tema: 'diagnóstico financiero, presupuesto por función, plan de ataque a deudas, fondo de emergencia, metas por plazo y el orden correcto para invertir',
+      dica: 'Antes que nada, calcula tus 5 números esenciales: ingreso neto mensual, costo de vida esencial, gasto total, deuda total y patrimonio neto. Este diagnóstico simple es la base de todo el método.',
+    },
+  }),
 };

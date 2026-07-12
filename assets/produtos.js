@@ -297,5 +297,18 @@ window.PRODUTOS_SITE = [
       en: 'REIT types, indicators without confusion, practical analysis and a teaching portfolio with method — no promised returns.',
       es: 'Tipos de REITs, indicadores sin confusión, análisis práctico y cartera con método — sin promesa de rentabilidad.'
     }
+  },
+  {
+    slug: 'financas-pessoais',
+    categoria: 'financas',
+    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 25.
+    disponivel: false,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Finanças Pessoais e Liberdade Financeira', en: 'Personal Finance and Financial Freedom', es: 'Finanzas Personales y Libertad Financiera' },
+    resumo: {
+      pt: 'Diagnóstico, orçamento, dívidas, reserva de emergência, metas e investimentos com plano de 30 dias — sem promessa de rentabilidade.',
+      en: 'Diagnosis, budgeting, debt, emergency fund, goals and investing with a 30-day plan — no promised returns.',
+      es: 'Diagnóstico, presupuesto, deudas, fondo de emergencia, metas e inversiones con plan de 30 días — sin promesa de rentabilidad.'
+    }
   }
 ];

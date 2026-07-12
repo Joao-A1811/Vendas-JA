@@ -1234,6 +1234,75 @@ inversión ni asesoría de valores — evita promesas de rentabilidad y listas d
 
 ---
 
+## 25. Finanças Pessoais e Liberdade Financeira — categoria: Finanças / Educação Financeira
+
+> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (44 páginas) + guia gratuito
+> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/financas-pessoais/`). Terceiro produto da vertente "Projeto Verão
+> Financeiro" / educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
+> ("Financas_Pessoais_e_Liberdade_Financeira.pdf"). Diferente do ETFs e do FIIs (focados em um
+> instrumento específico), este produto é o mais abrangente da vertente: cobre mentalidade,
+> diagnóstico, orçamento, dívidas, reserva de emergência, metas, investimentos (sem indicar
+> ativos), juros compostos, renda/carreira, consumo consciente, conversas financeiras em
+> família, plano de 30 dias com roteiro de 12 meses e workbooks/checklists/trackers completos.
+> Conteúdo universal (não específico do Brasil) — não precisou da generalização de
+> terminologia/tributação que os produtos de ETFs e FIIs exigiram para EN/ES, mas segue a mesma
+> regra de nicho sensível: sem promessa de rentabilidade garantida ou específica, sem indicar
+> ativos ou produtos financeiros específicos, sempre recomendando consulta a fontes
+> oficiais/profissional antes de decisões reais. Ainda sem checkout — `disponivel: false` em
+> `assets/produtos.js`. Só trocar pra `true` quando os 3 checkouts (PT/EN/ES) estiverem
+> cadastrados e funcionando.
+
+**Nome (PT):** Finanças Pessoais e Liberdade Financeira — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 44 páginas para organizar a vida financeira com método: mentalidade da
+liberdade financeira (os 4 inimigos silenciosos), diagnóstico completo (os 5 números que importam
+e o score financeiro pessoal), orçamento inteligente e fluxo de caixa, plano de ataque a dívidas
+(Avalanche x Bola de Neve) e renegociação, reserva de emergência em etapas, metas financeiras por
+prazo, investimentos dentro do método (a ordem correta, sem indicar ativos), juros compostos e o
+indicador de liberdade financeira, renda/carreira/fontes extras, consumo consciente e protocolo
+anti-impulso, conversas financeiras em família e casal, e um módulo de execução com plano de 30
+dias, roteiro de 12 meses e workbooks completos (checklist mensal, tracker de hábitos, plano de
+liberdade financeira, método das 5 contas). E-book digital com acesso imediato e garantia
+incondicional de 7 dias. Conteúdo educacional que não representa recomendação individual de
+investimento, planejamento financeiro, consultoria ou assessoria — evita promessas de riqueza
+rápida ou rentabilidade garantida.
+
+**Name (EN):** Personal Finance and Financial Freedom — Complete NextLevel Guide
+**Description (EN):**
+Premium 44-page guide + workbook to organize your financial life with method: the mindset of
+financial freedom (the 4 silent enemies), a complete diagnosis (the 5 numbers that matter and the
+personal financial score), smart budgeting and cash flow, a debt attack plan (Avalanche vs.
+Snowball) and renegotiation, a step-by-step emergency fund, financial goals by timeline, investing
+within the method (the right order, no specific assets recommended), compound interest and the
+financial freedom indicator, income/career/extra sources, conscious spending and an anti-impulse
+protocol, family and couple money conversations, and an execution module with a 30-day plan, a
+12-month roadmap, and complete workbooks (monthly checklist, habit tracker, financial freedom
+plan, the 5-account method). Digital ebook, instant access, 7-day unconditional guarantee.
+Educational content that does not represent individual investment recommendations, financial
+planning, or advisory services — avoids promises of fast riches or guaranteed returns.
+
+**Nombre (ES):** Finanzas Personales y Libertad Financiera — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 44 páginas para organizar la vida financiera con método: la mentalidad
+de la libertad financiera (los 4 enemigos silenciosos), un diagnóstico completo (los 5 números que
+importan y el score financiero personal), presupuesto inteligente y flujo de caja, un plan de
+ataque a deudas (Avalancha vs. Bola de Nieve) y renegociación, un fondo de emergencia por etapas,
+metas financieras por plazo, inversiones dentro del método (el orden correcto, sin indicar
+activos), interés compuesto y el indicador de libertad financiera, ingresos/carrera/fuentes
+extra, consumo consciente y un protocolo anti-impulso, conversaciones financieras en familia y
+pareja, y un módulo de ejecución con plan de 30 días, hoja de ruta de 12 meses y workbooks
+completos (checklist mensual, tracker de hábitos, plan de libertad financiera, el método de las 5
+cuentas). Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido educativo
+que no representa recomendaciones individuales de inversión, planificación financiera ni
+asesoría — evita promesas de riqueza rápida o rentabilidad garantizada.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/financas-pessoais-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

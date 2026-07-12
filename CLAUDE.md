@@ -444,6 +444,39 @@ fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 
 - EN/USD: `https://pay.hotmart.com/X106711836U` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/R106711854B` (US$ 19)
 
+**`financas-pessoais` (jul/2026, 25º produto — "Finanças Pessoais e Liberdade Financeira",
+terceiro produto da vertente "Projeto Verão Financeiro" / Educação Financeira) — ⏳ conteúdo
+pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um novo rascunho enviado pelo
+dono do projeto ("Financas_Pessoais_e_Liberdade_Financeira.pdf"). Diferente do ETFs e do FIIs
+(focados em um instrumento específico de investimento), este é o produto mais abrangente da
+vertente — cobre toda a jornada de organização financeira, não só investimento. Guia pago de 44
+páginas (14 módulos: Mentalidade da Liberdade Financeira — o dinheiro como ferramenta de escolha,
+os 4 inimigos silenciosos —, Diagnóstico — os 5 números que importam, score financeiro pessoal,
+workbook raio-x financeiro —, Orçamento Inteligente e Fluxo de Caixa — orçamento por função,
+método 70-20-10, checklist de vazamentos —, Dívidas — produtiva x destrutiva, Avalanche x Bola de
+Neve, plano de renegociação —, Reserva de Emergência — papel da reserva, quanto guardar, proteção
+além da reserva —, Metas Financeiras — por prazo, transformar desejo em plano —, Investimentos
+dentro do Método — a ordem correta, mapa de classes de ativos, checklist antes de investir —,
+Juros Compostos, Aportes e Patrimônio — o motor que você controla, indicador de liberdade
+financeira, dashboard de patrimônio —, Renda, Carreira e Fontes Extras — regra do dinheiro novo —,
+Consumo Consciente e Ansiedade Financeira — gatilhos de consumo, protocolo anti-impulso —,
+Família, Casal e Conversas sobre Dinheiro — reunião financeira sem briga —, Plano de 30 Dias e
+Roteiro de 12 Meses, Workbooks/Checklists/Trackers — método das 5 contas, níveis de liberdade
+financeira, revisão trimestral —, e Glossário e Referências) + ebook gratuito (isca, 6 páginas)
+nos 3 idiomas, `ebooks/arquivos/financas-pessoais-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/financas-pessoais/` (3 idiomas). **Nicho sensível
+(investimentos/finanças)** — todo o conteúdo (headline, FAQ, ebook, capa, Hotmart) evita promessa
+de rentabilidade garantida ou de riqueza rápida, não indica ativos ou produtos financeiros
+específicos, trata o material como estritamente educacional (não é planejamento financeiro
+individual, consultoria nem assessoria de investimentos) e recomenda sempre consultar fontes
+oficiais/profissional antes de decisões reais — segue a regra de nicho sensível de investimentos
+já documentada neste arquivo. **Conteúdo universal, não específico do Brasil** — diferente do
+ETFs e do FIIs, não precisou de generalização de terminologia ou tributação para as versões EN/ES
+(orçamento, dívidas, reserva de emergência e metas são conceitos universais); a tradução seguiu o
+padrão normal de localização. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em `assets/produtos.js`, fora do
+`sitemap.xml` até o lançamento.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -513,6 +546,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`financas-pessoais`** (25º produto) está com conteúdo 100% pronto (ebooks pagos e gratuitos,
+  capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3 `linkCheckoutHotmart`
+  reais** — só então trocar `disponivel` pra `true` e adicionar em `sitemap.xml` (ver
+  `CADASTRO-HOTMART.md`, seção 25).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
