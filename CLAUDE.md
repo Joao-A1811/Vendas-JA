@@ -479,6 +479,35 @@ Checkout real nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/D106713828I` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Y106713849X` (US$ 19)
 
+**`imposto-de-renda-investidores` (jul/2026, 26º produto — "Imposto de Renda para
+Investidores", quarto produto da vertente "Projeto Verão Financeiro" / Educação Financeira) —
+⏳ conteúdo pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um novo rascunho
+enviado pelo dono do projeto ("Imposto_de_Renda_para_Investidores.pdf"). **Caso especial de
+generalização, mais extremo que ETFs/FIIs**: o rascunho original é inteiramente sobre a
+declaração do Imposto de Renda brasileiro (Receita Federal, DARF, IRPF, alíquotas de 15%/20%,
+Lei 14.754/2023, Lei 15.270/2025) — traduzir literalmente para EN/ES seria enganoso, já que
+nada disso se aplica fora do Brasil. Por isso as versões EN/ES foram **totalmente
+regeneralizadas** (não apenas traduzidas) para "Investment Tax Organization: A Practical
+Method" (EN) / "Organización Fiscal para Inversionistas: Un Método Práctico" (ES) — ensinam o
+método universal (pasta fiscal, rotina mensal, custo médio, separação de tipos de operação,
+controle de ativos no exterior/cripto, checklist de documentos, erros comuns) sem citar nenhuma
+alíquota, formulário (DARF) ou lei específica do Brasil, sempre remetendo o leitor à própria
+autoridade fiscal do seu país ou a um profissional qualificado. O PT mantém 100% do detalhe
+brasileiro do rascunho original. Guia pago de 45 páginas (10 módulos: Mapa do IR para
+Investidores, Rotina Mensal e Pasta Fiscal, Renda Fixa/Fundos e Previdência, Ações e Operações
+Comuns, Day Trade e Operações Especiais, FIIs/Fiagro/ETFs e BDRs, Dividendos/JCP e Proventos,
+Exterior/Cripto e Outros Ativos, Declaração Anual, Workbooks e Plano de Execução) + ebook
+gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/imposto-de-renda-investidores-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
+páginas de amostra em `assets/produtos/imposto-de-renda-investidores/` (3 idiomas). **Nicho
+sensível (investimentos/tributário)** — todo o conteúdo evita prometer restituição garantida ou
+economia de imposto, não substitui contador/consultor tributário/orientação oficial da Receita
+Federal (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente
+das regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
+investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+19,00 (EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
+`assets/produtos.js`, fora do `sitemap.xml` até o lançamento.
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -548,6 +577,10 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`imposto-de-renda-investidores`** (26º produto) está com conteúdo 100% pronto (ebooks pagos
+  e gratuitos, capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3
+  `linkCheckoutHotmart` reais** — só então trocar `disponivel` pra `true` e adicionar em
+  `sitemap.xml` (ver `CADASTRO-HOTMART.md`, seção 26).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).

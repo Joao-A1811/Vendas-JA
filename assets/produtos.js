@@ -310,5 +310,18 @@ window.PRODUTOS_SITE = [
       en: 'Diagnosis, budgeting, debt, emergency fund, goals and investing with a 30-day plan — no promised returns.',
       es: 'Diagnóstico, presupuesto, deudas, fondo de emergencia, metas e inversiones con plan de 30 días — sin promesa de rentabilidad.'
     }
+  },
+  {
+    slug: 'imposto-de-renda-investidores',
+    categoria: 'financas',
+    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 26.
+    disponivel: false,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Imposto de Renda para Investidores', en: 'Investment Tax Organization', es: 'Organización Fiscal para Inversionistas' },
+    resumo: {
+      pt: 'Rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, exterior, cripto e declaração anual — com plano de 30 dias e checklists.',
+      en: 'A monthly routine, tax folder system, stocks, REITs, ETFs, foreign assets, crypto and annual filing — with a 30-day plan and checklists.',
+      es: 'Rutina mensual, carpeta fiscal, acciones, REITs, ETFs, exterior, cripto y declaración anual — con plan de 30 días y checklists.'
+    }
   }
 ];

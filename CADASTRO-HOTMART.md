@@ -1303,6 +1303,96 @@ asesoría — evita promesas de riqueza rápida o rentabilidad garantizada.
 
 ---
 
+## 26. Imposto de Renda para Investidores — categoria: Finanças / Educação Financeira
+
+> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (45 páginas) + guia gratuito
+> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/imposto-de-renda-investidores/`). Quarto produto da vertente "Projeto Verão
+> Financeiro" / educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
+> ("Imposto_de_Renda_para_Investidores.pdf"). **Caso especial de generalização**: diferente dos
+> produtos anteriores (ETFs, FIIs, Finanças Pessoais), este rascunho é inteiramente sobre a
+> declaração do Imposto de Renda brasileiro (Receita Federal, DARF, IRPF, alíquotas de 15%/20%,
+> Lei 14.754/2023, Lei 15.270/2025) — uma tradução literal para EN/ES seria enganosa, já que
+> nenhuma dessas regras se aplica fora do Brasil. Por isso as versões EN/ES foram totalmente
+> regeneralizadas (não apenas traduzidas) para "Investment Tax Organization: A Practical Method"
+> (EN) / "Organización Fiscal para Inversionistas: Un Método Práctico" (ES) — ensinam o método
+> universal (pasta fiscal, rotina mensal, custo médio, separação de tipos de operação, controle
+> de ativos no exterior/cripto, checklist de documentos, erros comuns) sem citar nenhuma
+> alíquota, formulário (DARF) ou lei específica do Brasil, sempre remetendo o leitor à "sua
+> própria autoridade fiscal" ou "um profissional qualificado". O PT mantém 100% do detalhe
+> brasileiro do rascunho original. Guia pago de 45 páginas (10 módulos: Mapa do IR para
+> Investidores, Rotina Mensal e Pasta Fiscal, Renda Fixa/Fundos e Previdência, Ações e Operações
+> Comuns, Day Trade e Operações Especiais, FIIs/Fiagro/ETFs e BDRs, Dividendos/JCP e Proventos,
+> Exterior/Cripto e Outros Ativos, Declaração Anual, Workbooks e Plano de Execução) + ebook
+> gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/imposto-de-renda-investidores-<pt|en|es>.pdf`.
+> Galeria "olhe por dentro" com 5 páginas de amostra em
+> `assets/produtos/imposto-de-renda-investidores/` (3 idiomas). **Nicho sensível
+> (investimentos/tributário)** — todo o conteúdo evita prometer restituição garantida ou economia
+> de imposto, não substitui contador/consultor tributário/orientação oficial da Receita Federal
+> (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente das
+> regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
+> investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+> 19,00 (EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
+> `assets/produtos.js`. Só trocar pra `true` quando os 3 checkouts (PT/EN/ES) estiverem
+> cadastrados e funcionando.
+
+**Nome (PT):** Imposto de Renda para Investidores — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 45 páginas para organizar, apurar e declarar investimentos com método:
+mapa do IR para investidores (o que declarar, quando apurar, quais documentos guardar), rotina
+mensal e pasta fiscal (arquitetura de pastas, checklist mensal, documentos essenciais), renda
+fixa/fundos e previdência (tabela regressiva, come-cotas, informes), ações e operações comuns
+(preço médio, isenção mensal de R$ 20 mil, exemplo didático de apuração, fluxo de DARF), day trade
+e operações especiais (separação obrigatória, comparativo com operações comuns), FIIs/Fiagro/ETFs
+e BDRs (renda mensal, venda de cotas, alíquota de 20%), dividendos/JCP e proventos (mudança de
+2026 na retenção sobre altos valores), exterior/cripto e outros ativos (Lei 14.754/2023,
+alíquota de 15%, checklist cripto), declaração anual (mapa de fichas, prejuízos acumulados, ReVar)
+e um módulo de execução com plano de 30 dias e workbooks completos (diagnóstico fiscal, planilha
+manual de apuração, checklist final, erros comuns, FAQ e glossário). E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo educacional que não substitui contador,
+advogado tributarista, consultor fiscal ou orientação oficial da Receita Federal — evita promessas
+de restituição garantida ou economia de imposto.
+
+**Name (EN):** Investment Tax Organization: A Practical Method — Complete NextLevel Guide
+**Description (EN):**
+Premium 45-page guide + workbook to organize your investment records for tax season with a
+general, universal method: a tax map for investors, a monthly routine and tax-folder system,
+fixed income/funds and retirement accounts, stocks and common trades (average cost, small-gain
+exemptions, a worked example, a general tax-payment flow), frequent trading and special cases
+(why separation matters), REITs/ETFs and foreign-listed shares, dividends and distributions,
+foreign assets/crypto and other holdings, annual filing (a filing-category map, carried-forward
+losses, auto-calculation tools), and an execution module with a 30-day plan and complete workbooks
+(a tax diagnosis, a manual tracking sheet, a final checklist, common mistakes, FAQ, and glossary).
+This guide teaches a general organizational method that applies across countries — it deliberately
+does not cite specific tax rates, forms, or thresholds for any one country. Digital ebook, instant
+access, 7-day unconditional guarantee. Educational content that does not replace an accountant,
+tax attorney, tax advisor, or your local tax authority's official guidance — avoids promises of a
+guaranteed refund or tax savings.
+
+**Nombre (ES):** Organización Fiscal para Inversionistas: Un Método Práctico — Guía Completa
+NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 45 páginas para organizar tus registros de inversión de cara a la
+temporada de impuestos con un método general y universal: un mapa fiscal para inversionistas, una
+rutina mensual y un sistema de carpeta fiscal, renta fija/fondos y cuentas de retiro, acciones y
+operaciones comunes (costo promedio, exenciones por ganancia pequeña, un ejemplo práctico, un
+flujo general de pago de impuestos), trading frecuente y casos especiales (por qué importa
+separar), REITs/ETFs y acciones listadas en el exterior, dividendos y distribuciones, activos en
+el exterior/cripto y otros activos, declaración anual (un mapa de categorías, pérdidas acumuladas,
+herramientas de cálculo automático) y un módulo de ejecución con plan de 30 días y workbooks
+completos (diagnóstico fiscal, planilla manual de seguimiento, checklist final, errores comunes,
+FAQ y glosario). Esta guía enseña un método general de organización que aplica a distintos
+países — deliberadamente no cita tasas, formularios ni umbrales específicos de ningún país. Ebook
+digital, acceso inmediato y garantía incondicional de 7 días. Contenido educativo que no sustituye
+a un contador, abogado tributarista, asesor fiscal ni la orientación oficial de la autoridad
+fiscal de tu país — evita promesas de reembolso garantizado o ahorro de impuestos.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/imposto-de-renda-investidores-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

@@ -448,4 +448,24 @@ export const PRODUTOS = {
       dica: 'Antes que nada, calcula tus 5 números esenciales: ingreso neto mensual, costo de vida esencial, gasto total, deuda total y patrimonio neto. Este diagnóstico simple es la base de todo el método.',
     },
   }),
+
+  'imposto-de-renda-investidores': montar('imposto-de-renda-investidores', {
+    pt: {
+      nomeProduto: 'Imposto de Renda para Investidores — Guia Completo NextLevel',
+      tema: 'rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, day trade, proventos, exterior, cripto e declaração anual',
+      dica: 'Nomeie seus arquivos assim: AAAA-MM - Corretora - Nota - Ativo.pdf. Esse padrão simples economiza horas de organização no ano seguinte.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Investment Tax Organization: A Practical Method — Complete NextLevel Guide',
+      tema: 'a monthly routine, tax folder system, stocks, REITs, ETFs, foreign-listed shares, frequent trading, dividends, foreign assets, crypto, and annual filing',
+      dica: 'Name your files like this: YYYY-MM - Broker - Confirmation - Asset.pdf. This simple pattern saves hours of organizing the following year.',
+    },
+    es: {
+      nomeProduto: 'Organización Fiscal para Inversionistas — Guía Completa NextLevel',
+      tema: 'rutina mensual, carpeta fiscal, acciones, REITs, ETFs, acciones del exterior, trading frecuente, dividendos, activos en el exterior, cripto y declaración anual',
+      dica: 'Nombra tus archivos así: AAAA-MM - Bróker - Confirmación - Activo.pdf. Este patrón simple ahorra horas de organización el año siguiente.',
+    },
+  }),
 };
