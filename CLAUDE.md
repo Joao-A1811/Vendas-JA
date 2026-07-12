@@ -481,7 +481,7 @@ Checkout real nas 3 moedas, `disponivel: true`:
 
 **`imposto-de-renda-investidores` (jul/2026, 26º produto — "Imposto de Renda para
 Investidores", quarto produto da vertente "Projeto Verão Financeiro" / Educação Financeira) —
-⏳ conteúdo pronto, aguardando cadastro na Hotmart.** Produto novo, a partir de um novo rascunho
+✅ AO VIVO nos 3 idiomas.** Produto novo, a partir de um novo rascunho
 enviado pelo dono do projeto ("Imposto_de_Renda_para_Investidores.pdf"). **Caso especial de
 generalização, mais extremo que ETFs/FIIs**: o rascunho original é inteiramente sobre a
 declaração do Imposto de Renda brasileiro (Receita Federal, DARF, IRPF, alíquotas de 15%/20%,
@@ -505,8 +505,10 @@ economia de imposto, não substitui contador/consultor tributário/orientação 
 Federal (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente
 das regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
 investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$
-19,00 (EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
-`assets/produtos.js`, fora do `sitemap.xml` até o lançamento.
+19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/E106716252K` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/V106716286B` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 19)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
@@ -577,10 +579,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`imposto-de-renda-investidores`** (26º produto) está com conteúdo 100% pronto (ebooks pagos
-  e gratuitos, capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3
-  `linkCheckoutHotmart` reais** — só então trocar `disponivel` pra `true` e adicionar em
-  `sitemap.xml` (ver `CADASTRO-HOTMART.md`, seção 26).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).

@@ -314,8 +314,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'imposto-de-renda-investidores',
     categoria: 'financas',
-    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 26.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 26.
+    disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'Imposto de Renda para Investidores', en: 'Investment Tax Organization', es: 'Organización Fiscal para Inversionistas' },
     resumo: {

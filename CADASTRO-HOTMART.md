@@ -1305,8 +1305,8 @@ asesoría — evita promesas de riqueza rápida o rentabilidad garantizada.
 
 ## 26. Imposto de Renda para Investidores — categoria: Finanças / Educação Financeira
 
-> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (45 páginas) + guia gratuito
-> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
+> ✅ AO VIVO nos 3 idiomas. Guia pago (45 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver
 > `assets/produtos/imposto-de-renda-investidores/`). Quarto produto da vertente "Projeto Verão
 > Financeiro" / educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
 > ("Imposto_de_Renda_para_Investidores.pdf"). **Caso especial de generalização**: diferente dos
@@ -1332,9 +1332,9 @@ asesoría — evita promesas de riqueza rápida o rentabilidad garantizada.
 > (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente das
 > regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
 > investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$
-> 19,00 (EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
-> `assets/produtos.js`. Só trocar pra `true` quando os 3 checkouts (PT/EN/ES) estiverem
-> cadastrados e funcionando.
+> 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`: PT/BRL
+> `https://pay.hotmart.com/E106716252K` (R$ 49,99), EN/USD `https://pay.hotmart.com/V106716286B`
+> (US$ 19), ES/USD `https://pay.hotmart.com/W106716311O` (US$ 19).
 
 **Nome (PT):** Imposto de Renda para Investidores — Guia Completo NextLevel
 **Descrição (PT):**
