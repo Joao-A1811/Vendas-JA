@@ -275,8 +275,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'etfs-investimento-global',
     categoria: 'financas',
-    // Ainda em rascunho — aguardando checkout Hotmart real nas 3 moedas.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 23.
+    disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'ETFs e Investimento Global', en: 'ETFs and Global Investing', es: 'ETFs e Inversión Global' },
     resumo: {

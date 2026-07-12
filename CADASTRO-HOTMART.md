@@ -1109,16 +1109,19 @@ enseña presión, manipulación, juegos ni insistencia después de un no.
 
 ## 23. ETFs e Investimento Global — categoria: Finanças / Educação Financeira
 
-> ⏳ Conteúdo pronto (guia pago 46 páginas + guia gratuito 6 páginas nos 3 idiomas, capa e galeria
-> "olhe por dentro" prontas — ver `assets/produtos/etfs-investimento-global/`), aguardando cadastro
-> na Hotmart e `linkCheckoutHotmart` real. **Primeiro produto de uma nova vertente** ("Projeto Verão
-> Financeiro" / educação financeira), a partir de um rascunho enviado pelo dono do projeto —
-> diferente do rascunho antigo em `produtos/investimentos/` (que é sobre investir do zero em geral):
-> este produto tem foco específico em ETFs, BDRs e diversificação internacional. Nova categoria
-> `financas` criada em `assets/produtos.js` (`window.CATEGORIAS_SITE`). Nicho sensível — segue a
-> regra já documentada em `CLAUDE.md`: sem rentabilidade garantida ou específica, sem lista de
-> "melhores ativos", sempre recomendando consulta a fontes oficiais/contador antes de vender ou
-> declarar. `disponivel: false` até ter checkout real nas 3 moedas.
+> ✅ AO VIVO nos 3 idiomas. Guia pago (46 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver
+> `assets/produtos/etfs-investimento-global/`). **Primeiro produto de uma nova vertente**
+> ("Projeto Verão Financeiro" / educação financeira), a partir de um rascunho enviado pelo dono
+> do projeto — diferente do rascunho antigo em `produtos/investimentos/` (que é sobre investir do
+> zero em geral): este produto tem foco específico em ETFs, BDRs e diversificação internacional.
+> Nova categoria `financas` criada em `assets/produtos.js` (`window.CATEGORIAS_SITE`). Nicho
+> sensível — segue a regra já documentada em `CLAUDE.md`: sem rentabilidade garantida ou
+> específica, sem lista de "melhores ativos", sempre recomendando consulta a fontes
+> oficiais/contador antes de vender ou declarar. Checkout real nas 3 moedas, `disponivel: true`:
+> PT/BRL `https://pay.hotmart.com/G106711251O` (R$ 49,99), EN/USD
+> `https://pay.hotmart.com/L106711275V` (US$ 19), ES/USD `https://pay.hotmart.com/B106711299T`
+> (US$ 19).
 
 **Nome (PT):** ETFs e Investimento Global — Guia Completo NextLevel
 **Descrição (PT):**
