@@ -359,27 +359,28 @@ moedas, `disponivel: true`:
 - ES/USD: `https://pay.hotmart.com/I106706139S` (US$ 19)
 
 **`primeiro-encontro` (jul/2026, 22º produto — "Primeiro Encontro: Conversa, Presença e
-Respeito", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ⏳ conteúdo
-pronto, aguardando cadastro.** Produto novo, a partir de um rascunho enviado pelo dono do
-projeto — distinto dos demais produtos da vertente por focar especificamente no primeiro
-encontro presencial (não em conversa online/digital, que é o foco do `mensagens-e-conversas-online`,
-nem em conversa social em geral, que é o foco do `confianca-social`). Guia pago de 65 páginas (8
-módulos: Mentalidade do Primeiro Encontro — objetivo real, reciprocidade, presença sem
-personagem —, Convite e Preparação — convite sem pressão, escolha do lugar, checklist,
-preparação mental de 15 minutos —, Conversa e Conexão — estrutura C.E.C., aberturas, perguntas,
-escuta ativa, storytelling, humor leve, profundidade gradual —, Presença, Sinais e Limites —
-linguagem corporal, sinais de conforto/desconforto, espaço pessoal e toque, segurança e
-autonomia —, Encerramento e Pós-Encontro — como lidar com rejeição, quando vale chamar de novo
-—, Playbooks Práticos com 8 cenários reais, Plano de 30 Dias e Workbook Premium com 8 páginas
-de ferramentas para preencher) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
-`ebooks/arquivos/primeiro-encontro-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas de
-amostra em `assets/produtos/primeiro-encontro/` (3 idiomas). Todo o conteúdo (headline, FAQ,
-ebook, capa, Hotmart) segue a mesma regra de nicho sensível de relacionamentos dos demais
-produtos da vertente — não promete conquistar ninguém e não ensina pressão, manipulação,
-joguinhos ou insistência após um não; trata consentimento, segurança e autonomia como base, não
-opcional. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Ainda **fora do
-catálogo público** (`disponivel: false`) até ter checkout Hotmart real nas 3 moedas — ver
-`CADASTRO-HOTMART.md`, seção 22.
+Respeito", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos
+3 idiomas.** Produto novo, a partir de um rascunho enviado pelo dono do projeto — distinto dos
+demais produtos da vertente por focar especificamente no primeiro encontro presencial (não em
+conversa online/digital, que é o foco do `mensagens-e-conversas-online`, nem em conversa social
+em geral, que é o foco do `confianca-social`). Guia pago de 65 páginas (8 módulos: Mentalidade
+do Primeiro Encontro — objetivo real, reciprocidade, presença sem personagem —, Convite e
+Preparação — convite sem pressão, escolha do lugar, checklist, preparação mental de 15 minutos
+—, Conversa e Conexão — estrutura C.E.C., aberturas, perguntas, escuta ativa, storytelling,
+humor leve, profundidade gradual —, Presença, Sinais e Limites — linguagem corporal, sinais de
+conforto/desconforto, espaço pessoal e toque, segurança e autonomia —, Encerramento e
+Pós-Encontro — como lidar com rejeição, quando vale chamar de novo —, Playbooks Práticos com 8
+cenários reais, Plano de 30 Dias e Workbook Premium com 8 páginas de ferramentas para preencher)
++ ebook gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/primeiro-encontro-<pt|en|es>.pdf`.
+Galeria "olhe por dentro" com 5 páginas de amostra em `assets/produtos/primeiro-encontro/` (3
+idiomas). Todo o conteúdo (headline, FAQ, ebook, capa, Hotmart) segue a mesma regra de nicho
+sensível de relacionamentos dos demais produtos da vertente — não promete conquistar ninguém e
+não ensina pressão, manipulação, joguinhos ou insistência após um não; trata consentimento,
+segurança e autonomia como base, não opcional. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/D106706588C` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/O106706603K` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/B106706622I` (US$ 19)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
@@ -453,10 +454,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
-- **`primeiro-encontro`** (22º produto) tem conteúdo completo pronto (guia pago + gratuito +
-  capa + galeria nos 3 idiomas), mas está fora do catálogo público (`disponivel: false`) até o
-  dono do projeto cadastrar na Hotmart e mandar os `linkCheckoutHotmart` reais — ver
-  `CADASTRO-HOTMART.md`, seção 22.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

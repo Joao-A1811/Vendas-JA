@@ -253,8 +253,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'primeiro-encontro',
     categoria: 'relacionamentos',
-    // Ainda em rascunho — aguardando checkout Hotmart real nas 3 moedas.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 22.
+    disponivel: true,
     tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
     titulo: { pt: 'Primeiro Encontro: Conversa, Presença e Respeito', en: 'First Date: Conversation, Presence and Respect', es: 'Primera Cita: Conversación, Presencia y Respeto' },
     resumo: {

@@ -1051,14 +1051,16 @@ digital — no promete conquistar a nadie y no enseña presión, manipulación, 
 
 ## 22. Primeiro Encontro: Conversa, Presença e Respeito — categoria: Saúde e esportes
 
-> ⏳ Conteúdo pronto (guia pago 65 páginas + guia gratuito 6 páginas nos 3 idiomas, capa e galeria
-> "olhe por dentro" prontas — ver `assets/produtos/primeiro-encontro/`), aguardando cadastro na
-> Hotmart e `linkCheckoutHotmart` real. Produto novo, a partir de um rascunho enviado pelo dono do
-> projeto — mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis" dos demais
-> produtos da linha, com foco específico no primeiro encontro presencial: mentalidade certa,
-> convite e preparação, estrutura C.E.C. para conversar, presença/sinais/limites, encerramento e
-> pós-encontro, playbooks práticos por cenário, e um plano de 30 dias com workbook premium.
-> `disponivel: false` até ter checkout real nas 3 moedas.
+> ✅ AO VIVO nos 3 idiomas. Guia pago (65 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver `assets/produtos/primeiro-encontro/`).
+> Produto novo, a partir de um rascunho enviado pelo dono do projeto — mesma nova vertente
+> "Conexões, Presença e Relacionamentos Saudáveis" dos demais produtos da linha, com foco
+> específico no primeiro encontro presencial: mentalidade certa, convite e preparação, estrutura
+> C.E.C. para conversar, presença/sinais/limites, encerramento e pós-encontro, playbooks
+> práticos por cenário, e um plano de 30 dias com workbook premium. Checkout real nas 3 moedas,
+> `disponivel: true`: PT/BRL `https://pay.hotmart.com/D106706588C` (R$ 49,99), EN/USD
+> `https://pay.hotmart.com/O106706603K` (US$ 19), ES/USD `https://pay.hotmart.com/B106706622I`
+> (US$ 19).
 
 **Nome (PT):** Primeiro Encontro: Conversa, Presença e Respeito — Guia Completo NextLevel
 **Descrição (PT):**
