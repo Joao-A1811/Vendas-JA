@@ -1049,6 +1049,62 @@ digital — no promete conquistar a nadie y no enseña presión, manipulación, 
 
 ---
 
+## 22. Primeiro Encontro: Conversa, Presença e Respeito — categoria: Saúde e esportes
+
+> ⏳ Conteúdo pronto (guia pago 65 páginas + guia gratuito 6 páginas nos 3 idiomas, capa e galeria
+> "olhe por dentro" prontas — ver `assets/produtos/primeiro-encontro/`), aguardando cadastro na
+> Hotmart e `linkCheckoutHotmart` real. Produto novo, a partir de um rascunho enviado pelo dono do
+> projeto — mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis" dos demais
+> produtos da linha, com foco específico no primeiro encontro presencial: mentalidade certa,
+> convite e preparação, estrutura C.E.C. para conversar, presença/sinais/limites, encerramento e
+> pós-encontro, playbooks práticos por cenário, e um plano de 30 dias com workbook premium.
+> `disponivel: false` até ter checkout real nas 3 moedas.
+
+**Nome (PT):** Primeiro Encontro: Conversa, Presença e Respeito — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 65 páginas para se preparar, conversar com presença e respeitar
+limites no primeiro encontro: mentalidade do primeiro encontro (objetivo real, reciprocidade,
+presença sem personagem), convite sem pressão e preparação (escolha do lugar, checklist,
+preparação mental de 15 minutos), a estrutura C.E.C. para conversar sem parecer entrevista,
+presença/sinais/limites (linguagem corporal, espaço pessoal, consentimento, segurança e
+autonomia), encerramento e pós-encontro (como lidar com rejeição, quando vale chamar de novo),
+8 playbooks práticos por cenário (café, caminhada, cinema, quando está nervoso, etc.), um plano
+de execução de 30 dias e um workbook completo. E-book digital com acesso imediato e garantia
+incondicional de 7 dias. Conteúdo educativo — não promete conquistar ninguém e não ensina
+pressão, manipulação, joguinhos ou insistência após um não.
+
+**Name (EN):** First Date: Conversation, Presence and Respect — Complete NextLevel Guide
+**Description (EN):**
+Premium 65-page guide + workbook to prepare, converse with presence, and respect boundaries on a
+first date: first-date mindset (real purpose, reciprocity, presence without a character),
+invitations without pressure and preparation (choosing the place, checklist, 15-minute mental
+warm-up), the C.E.S. structure for conversation that never feels like an interview,
+presence/signals/boundaries (body language, personal space, consent, safety and autonomy),
+closing and after the date (how to handle rejection, when it's worth reaching out again), 8
+practical playbooks by scenario (coffee, a walk, movies, when you're nervous, etc.), a 30-day
+execution plan, and a full workbook. Digital ebook, instant access, 7-day unconditional
+guarantee. Educational content — does not promise you'll win anyone over, and does not teach
+pressure, manipulation, games, or insistence after a no.
+
+**Nombre (ES):** Primera Cita: Conversación, Presencia y Respeto — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 65 páginas para prepararte, conversar con presencia y respetar
+límites en la primera cita: mentalidad de la primera cita (objetivo real, reciprocidad,
+presencia sin personaje), invitación sin presión y preparación (elección del lugar, checklist,
+preparación mental de 15 minutos), la estructura C.E.C. para conversar sin parecer entrevista,
+presencia/señales/límites (lenguaje corporal, espacio personal, consentimiento, seguridad y
+autonomía), cierre y después de la cita (cómo manejar el rechazo, cuándo vale la pena volver a
+invitar), 8 playbooks prácticos por escenario (café, caminata, cine, cuando estás nervioso,
+etc.), un plan de ejecución de 30 días y un workbook completo. Ebook digital, acceso inmediato y
+garantía incondicional de 7 días. Contenido educativo — no promete conquistar a nadie y no
+enseña presión, manipulación, juegos ni insistencia después de un no.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/primeiro-encontro-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

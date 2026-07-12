@@ -249,5 +249,18 @@ window.PRODUTOS_SITE = [
       en: 'The base conversation formula, the C.E.S. technique, inviting someone out with respect and safety against romance scams — talk with lightness, clarity and respect, in a 30-day plan.',
       es: 'Fórmula base de la conversación, técnica C.E.C., cómo invitar a salir con respeto y seguridad contra estafas románticas — conversa con ligereza, claridad y respeto, en un plan de 30 días.'
     }
+  },
+  {
+    slug: 'primeiro-encontro',
+    categoria: 'relacionamentos',
+    // Ainda em rascunho — aguardando checkout Hotmart real nas 3 moedas.
+    disponivel: false,
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Primeiro Encontro: Conversa, Presença e Respeito', en: 'First Date: Conversation, Presence and Respect', es: 'Primera Cita: Conversación, Presencia y Respeto' },
+    resumo: {
+      pt: 'Mentalidade certa, convite sem pressão, estrutura C.E.C. para conversar e presença/limites — prepare-se e crie uma experiência leve para os dois, num plano de 30 dias.',
+      en: 'The right mindset, invitations without pressure, the C.E.S. structure for conversation, and presence/boundaries — prepare and create a light experience for both of you, in a 30-day plan.',
+      es: 'La mentalidad correcta, invitaciones sin presión, la estructura C.E.C. para conversar y presencia/límites — prepárate y crea una experiencia ligera para ambos, en un plan de 30 días.'
+    }
   }
 ];

@@ -368,4 +368,24 @@ export const PRODUTOS = {
       dica: 'Hoy, aplica la técnica C.E.C. en una conversación: comenta algo sobre la respuesta de la persona, explora con una pregunta corta y comparte un detalle tuyo para equilibrar el intercambio.',
     },
   }),
+
+  'primeiro-encontro': montar('primeiro-encontro', {
+    pt: {
+      nomeProduto: 'Primeiro Encontro: Conversa, Presença e Respeito — Guia Completo NextLevel',
+      tema: 'mentalidade certa, convite sem pressão, estrutura C.E.C. para conversar e presença/limites no primeiro encontro',
+      dica: 'Antes do próximo encontro, use a preparação mental de 15 minutos do guia: respire mais devagar, relembre o objetivo (conhecer, conversar e respeitar) e defina uma atitude-chave para o encontro.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'First Date: Conversation, Presence and Respect — Complete NextLevel Guide',
+      tema: 'the right mindset, invitations without pressure, the C.E.S. structure for conversation, and presence/boundaries on a first date',
+      dica: 'Before your next date, use the guide\'s 15-minute mental warm-up: slow your breathing, recall the purpose (get to know each other, talk, and respect), and set one key intention for the date.',
+    },
+    es: {
+      nomeProduto: 'Primera Cita: Conversación, Presencia y Respeto — Guía Completa NextLevel',
+      tema: 'la mentalidad correcta, invitaciones sin presión, la estructura C.E.C. para conversar y presencia/límites en la primera cita',
+      dica: 'Antes de tu próxima cita, usa la preparación mental de 15 minutos de la guía: respira más despacio, recuerda el objetivo (conocer, conversar y respetar) y define una actitud clave para la cita.',
+    },
+  }),
 };
