@@ -401,6 +401,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/etfs-investimento-global/"/>
   </url>
   <url>
+    <loc>https://nextlevelbr.app.br/produtos/fiis-do-zero/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/fiis-do-zero/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/fiis-do-zero/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/fiis-do-zero/"/>
+  </url>
+  <url>
     <loc>https://nextlevelbr.app.br/categorias/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>

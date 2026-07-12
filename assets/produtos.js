@@ -288,8 +288,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'fiis-do-zero',
     categoria: 'financas',
-    // Rascunho — falta cadastrar na Hotmart. Ver CADASTRO-HOTMART.md, seção 24.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 24.
+    disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'FIIs do Zero', en: 'REITs from Zero', es: 'REITs desde Cero' },
     resumo: {

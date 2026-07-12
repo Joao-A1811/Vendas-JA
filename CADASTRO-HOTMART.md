@@ -1169,18 +1169,19 @@ inversión ni asesoría de valores — evita promesas de rentabilidad y listas d
 
 ## 24. FIIs do Zero — categoria: Finanças / Educação Financeira
 
-> ⏳ Conteúdo pronto, aguardando cadastro na Hotmart. Guia pago (51 páginas) + guia gratuito
-> (isca, 6 páginas) nos 3 idiomas, capa e galeria "olhe por dentro" prontas (ver
-> `assets/produtos/fiis-do-zero/`). Segundo produto da vertente "Projeto Verão Financeiro" /
-> educação financeira, a partir de um novo rascunho enviado pelo dono do projeto
-> ("Aprenda_sobre_Fiis_do_Zero.pdf"). Foco em fundos imobiliários (FII, ativo específico do
-> mercado brasileiro) — as versões EN/ES generalizam o conceito para "REIT" (Real Estate
-> Investment Trust), termo internacionalmente reconhecido equivalente, mantendo o PT com todo o
-> detalhe específico do Brasil (leis, DARF, ReVar). Nicho sensível — segue a regra já documentada
-> em `CLAUDE.md`: sem rentabilidade garantida ou específica, sem lista de "melhores fundos",
-> sempre recomendando consulta a fontes oficiais/contador antes de vender ou declarar. Ainda sem
-> checkout — `disponivel: false` em `assets/produtos.js`. Só trocar pra `true` quando os 3
-> checkouts (PT/EN/ES) estiverem cadastrados e funcionando.
+> ✅ AO VIVO nos 3 idiomas. Guia pago (51 páginas) + guia gratuito (isca, 6 páginas) nos 3
+> idiomas, capa e galeria "olhe por dentro" prontas (ver `assets/produtos/fiis-do-zero/`).
+> Segundo produto da vertente "Projeto Verão Financeiro" / educação financeira, a partir de um
+> novo rascunho enviado pelo dono do projeto ("Aprenda_sobre_Fiis_do_Zero.pdf"). Foco em fundos
+> imobiliários (FII, ativo específico do mercado brasileiro) — as versões EN/ES generalizam o
+> conceito para "REIT" (Real Estate Investment Trust), termo internacionalmente reconhecido
+> equivalente, mantendo o PT com todo o detalhe específico do Brasil (leis, DARF, ReVar). Nicho
+> sensível — segue a regra já documentada em `CLAUDE.md`: sem rentabilidade garantida ou
+> específica, sem lista de "melhores fundos", sempre recomendando consulta a fontes
+> oficiais/contador antes de vender ou declarar. Checkout real nas 3 moedas, `disponivel: true`:
+> PT/BRL `https://pay.hotmart.com/O106711807A` (R$ 49,99), EN/USD
+> `https://pay.hotmart.com/X106711836U` (US$ 19), ES/USD `https://pay.hotmart.com/R106711854B`
+> (US$ 19).
 
 **Nome (PT):** FIIs do Zero — Guia Completo NextLevel
 **Descrição (PT):**

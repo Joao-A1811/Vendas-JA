@@ -411,7 +411,7 @@ regras fiscais específicas de outros países. Preço padrão da coleção: **R$
 - ES/USD: `https://pay.hotmart.com/B106711299T` (US$ 19)
 
 **`fiis-do-zero` (jul/2026, 24º produto — "FIIs do Zero", segundo produto da vertente "Projeto
-Verão Financeiro" / Educação Financeira) — ⏳ conteúdo pronto, aguardando cadastro na Hotmart.**
+Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3 idiomas.**
 Produto novo, a partir de um novo rascunho enviado pelo dono do projeto
 ("Aprenda_sobre_Fiis_do_Zero.pdf"). Guia pago de 51 páginas (7 módulos: Base dos FIIs — o que é
 um fundo imobiliário, por que FII não é renda fixa, FII x imóvel físico, como o investidor ganha
@@ -439,8 +439,10 @@ Estate Investment Trust), o termo internacionalmente reconhecido equivalente, co
 from Zero" (EN) / "REITs desde Cero" (ES); o PT mantém todo o detalhe específico do Brasil (leis,
 DARF, ReVar) e a seção de tributação nas versões EN/ES foi generalizada para não afirmar regras
 fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
-(EN/ES)**. Ainda **sem checkout Hotmart cadastrado** — `disponivel: false` em
-`assets/produtos.js`, fora do `sitemap.xml` até o lançamento.
+(EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/O106711807A` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/X106711836U` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/R106711854B` (US$ 19)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
@@ -511,10 +513,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`fiis-do-zero`** (24º produto) está com conteúdo 100% pronto (ebooks pagos e gratuitos,
-  capa, galeria) mas **ainda falta cadastrar na Hotmart e colar os 3 `linkCheckoutHotmart`
-  reais** — só então trocar `disponivel` pra `true` e adicionar em `sitemap.xml` (ver
-  `CADASTRO-HOTMART.md`, seção 24).
 - **`investimentos`** continua com CONFIG de exemplo em `produtos/investimentos/`, mas fora do
   catálogo público e com `<meta name="robots" content="noindex">` nas 3 páginas — só volta a
   aparecer no site quando tiver ebook real + checkout Hotmart real (aí é só tirar o noindex).
