@@ -587,6 +587,11 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
      reais. Só trocar `disponivel` pra `true` quando TODOS os idiomas tiverem checkout
      funcionando.
   5. Adicionar entrada em `sitemap.xml`.
+  6. **Entrega pro dono do projeto (SEMPRE nessa mensagem, sem esperar ele pedir):** mandar os
+     PDFs pagos (PT/EN/ES) como arquivo, mandar as capas (PT/EN/ES —
+     `assets/produtos/<slug>/preview-<idioma>-capa.jpg`) como arquivo, e colar o texto de
+     cadastro da Hotmart (Nome + Descrição, 3 idiomas) direto na mensagem de chat — não só
+     referenciar o `CADASTRO-HOTMART.md`, colar o texto pronto pra copiar.
 - **Publicar:** commit + push na `main` — o Netlify atualiza sozinho, sem deploy manual.
 
 ## Infraestrutura já concluída (julho/2026) — não refazer
