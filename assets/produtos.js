@@ -360,5 +360,18 @@ window.PRODUTOS_SITE = [
       en: 'A practical 7-filter method to compare treasury bonds, CDs, tax-exempt notes and private credit, understand deposit insurance and mark-to-market, and build a layered portfolio.',
       es: 'Método práctico de 7 filtros para comparar el Tesoro Directo, CDB, LCI/LCA y crédito privado, entender el fondo de garantía y la valoración a mercado, y armar una cartera por capas.'
     }
+  },
+  {
+    slug: 'seguranca-financeira-e-golpes',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 30.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Segurança Financeira e Golpes', en: 'Financial Safety & Scams', es: 'Seguridad Financiera y Estafas' },
+    resumo: {
+      pt: 'Reconheça pirâmides, falsos assessores, phishing e boletos falsos, e monte um plano de blindagem financeira em 30 dias.',
+      en: 'Recognize pyramid schemes, fake advisors, phishing and fake invoices, and build a 30-day financial shielding plan.',
+      es: 'Reconoce pirámides, falsos asesores, phishing y facturas falsas, y arma un plan de blindaje financiero en 30 días.'
+    }
   }
 ];

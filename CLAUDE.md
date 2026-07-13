@@ -62,14 +62,10 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
-`imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto) e
-`renda-fixa-inteligente` (29º produto). Depoimentos ficam vazios (`depoimentos: []`, seção some
-sozinha) até existir depoimento real e autorizado — **inventar depoimento é vetado** (Meta Ads +
-CDC).
-
-O 30º produto, `seguranca-financeira-e-golpes`, já está construído (páginas, ebooks, galeria) mas
-**ainda NÃO está no catálogo público** — falta o checkout Hotmart real. Ver "O que ainda falta"
-abaixo.
+`imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto),
+`renda-fixa-inteligente` (29º produto) e `seguranca-financeira-e-golpes` (30º produto, ver
+abaixo). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento
+real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -582,6 +578,30 @@ coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `d
 - EN/USD: `https://pay.hotmart.com/K106725347G` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/K106725373C` (US$ 19)
 
+**`seguranca-financeira-e-golpes` (jul/2026, 30º produto — "Segurança Financeira e Golpes",
+oitavo produto da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto
+novo, slug novo (sem pasta de rascunho prévia), distinto dos demais produtos financeiros: este é
+100% sobre prevenção e resposta a golpes, não sobre investir propriamente. Guia pago de 54
+páginas (mapa dos golpes financeiros e anatomia de um golpe — isca, confiança, urgência,
+pagamento, silêncio —, por que pessoas inteligentes caem, os 20 sinais vermelhos, matriz de risco
+da oferta, checklist antes de investir, como verificar instituição e conta de destino, golpes de
+investimento — pirâmide, Ponzi, falso assessor, falsa corretora, cripto/Forex/robôs, clubes VIP,
+recuperação de valores, investimento esquecido —, segurança digital e bancária —
+senhas/2FA, e-mail/links, WhatsApp/engenharia social, Pix/limites, boletos/QR Codes falsos,
+celular/dispositivos, redes sociais —, resposta a incidentes — primeiras 24 horas, preservar
+provas, canais de reclamação, revisão sem culpa — e workbooks — diagnóstico de blindagem, ficha
+de verificação de oferta, diário de sinais vermelhos, contrato pessoal anti-golpe, plano de
+blindagem de 30 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/seguranca-financeira-e-golpes-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe
+por dentro" com 5 páginas de amostra em `assets/produtos/seguranca-financeira-e-golpes/` (3
+idiomas), já no visual dark premium navy+teal+âmbar. Conteúdo 100% educacional de prevenção — não
+ensina a praticar golpes, não promete recuperação de valores e não substitui orientação jurídica,
+policial, bancária ou regulatória. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/T106728083S` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/B106728123S` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/B106728152H` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -656,30 +676,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`seguranca-financeira-e-golpes` (30º produto — "Segurança Financeira e Golpes", oitavo
-  produto da vertente "Finanças / Educação Financeira") — construído, mas SEM checkout real
-  ainda.** Distinto dos demais produtos financeiros: este é 100% sobre prevenção e resposta a
-  golpes, não sobre investir propriamente. Guia pago de 54 páginas (mapa dos golpes financeiros e
-  anatomia de um golpe — isca, confiança, urgência, pagamento, silêncio —, por que pessoas
-  inteligentes caem, os 20 sinais vermelhos, matriz de risco da oferta, checklist antes de
-  investir, como verificar instituição e conta de destino, golpes de investimento — pirâmide,
-  Ponzi, falso assessor, falsa corretora, cripto/Forex/robôs, clubes VIP, recuperação de valores,
-  investimento esquecido —, segurança digital e bancária — senhas/2FA, e-mail/links,
-  WhatsApp/engenharia social, Pix/limites, boletos/QR Codes falsos, celular/dispositivos, redes
-  sociais —, resposta a incidentes — primeiras 24 horas, preservar provas, canais de reclamação,
-  revisão sem culpa — e workbooks — diagnóstico de blindagem, ficha de verificação de oferta,
-  diário de sinais vermelhos, contrato pessoal anti-golpe, plano de blindagem de 30 dias) + ebook
-  gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/seguranca-financeira-e-golpes-<pt|en|es>.pdf`.
-  Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
-  `assets/produtos/seguranca-financeira-e-golpes/` (3 idiomas), já no visual dark premium
-  navy+teal+âmbar. Conteúdo 100% educacional de prevenção — não ensina a praticar golpes, não
-  promete recuperação de valores e não substitui orientação jurídica, policial, bancária ou
-  regulatória. Páginas de venda em `produtos/seguranca-financeira-e-golpes/` (3 idiomas) já
-  prontas, com `linkCheckoutHotmart` em placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
-  `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`). Textos de cadastro em
-  `CADASTRO-HOTMART.md`, seção 30. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
-  Falta: cadastrar na Hotmart e colar os 3 links de checkout reais — só depois disso o produto
-  entra em `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.
