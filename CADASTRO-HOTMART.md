@@ -1603,8 +1603,66 @@ profesional de idoneidad, planificación financiera o asesoría de valores.
 
 > Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
-> vão pro repositório, em `ebooks/arquivos/renda-fixa-inteligente-<pt|en|es>.pdf`. Produto
-> construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart`
+> vão pro repositório, em `ebooks/arquivos/renda-fixa-inteligente-<pt|en|es>.pdf`. **Checkout
+> real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
+
+---
+
+## 30. Segurança Financeira e Golpes — categoria: Finanças / Educação Financeira
+
+**Nome (PT):** Segurança Financeira e Golpes — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 54 páginas para reconhecer e se proteger de golpes financeiros: o mapa dos
+golpes financeiros e a anatomia de um golpe (isca, confiança, urgência, pagamento, silêncio), por
+que pessoas inteligentes caem, os 20 sinais vermelhos, a matriz de risco da oferta, checklist
+antes de investir, como verificar uma instituição e a conta de destino, golpes de investimento
+(pirâmide, Ponzi, falso assessor, falsa corretora, cripto/Forex/robôs, clubes VIP, recuperação de
+valores, investimento esquecido), segurança digital e bancária (senhas e 2FA, e-mail e links,
+WhatsApp e engenharia social, Pix e limites, boletos e QR Codes falsos, celular e dispositivos,
+redes sociais), resposta a incidentes (primeiras 24 horas, como preservar provas, canais de
+reclamação, revisão sem culpa) e workbooks prontos (diagnóstico de blindagem, ficha de
+verificação de oferta, diário de sinais vermelhos, contrato pessoal anti-golpe e um plano de
+blindagem de 30 dias). E-book digital com acesso imediato e garantia incondicional de 7 dias.
+Conteúdo 100% educacional de prevenção e resposta — não ensina a praticar golpes, não promete
+recuperação de valores e não substitui orientação jurídica, policial, bancária ou regulatória.
+
+**Name (EN):** Financial Safety & Scams — Complete NextLevel Guide
+**Description (EN):**
+Premium 54-page guide to recognize and protect yourself from financial scams: the financial scam
+map and the anatomy of a scam (bait, trust, urgency, payment, silence), why smart people fall for
+it, the 20 red flags, the offer risk matrix, a pre-investment checklist, how to verify an
+institution and the destination account, investment scams (pyramid, Ponzi, fake advisor, fake
+broker, crypto/Forex/robots, VIP clubs, fund recovery scams, forgotten-investment scams), digital
+and banking security (passwords and 2FA, email and links, WhatsApp and social engineering,
+instant payments and limits, fake invoices and QR codes, phone and devices, social media),
+incident response (the first 24 hours, how to preserve evidence, complaint channels, a
+guilt-free review) and ready-to-use workbooks (a shielding diagnosis, an offer verification form,
+a red-flag journal, a personal anti-scam contract and a 30-day shielding plan). Digital ebook,
+instant access, 7-day unconditional guarantee. 100% educational content on prevention and
+response — it does not teach how to commit scams, does not promise fund recovery, and does not
+replace legal, police, banking or regulatory guidance.
+
+**Nombre (ES):** Seguridad Financiera y Estafas — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 54 páginas para reconocer y protegerte de estafas financieras: el mapa de las
+estafas financieras y la anatomía de una estafa (anzuelo, confianza, urgencia, pago, silencio),
+por qué caen personas inteligentes, las 20 señales de alerta, la matriz de riesgo de la oferta,
+checklist antes de invertir, cómo verificar una institución y la cuenta de destino, estafas de
+inversión (pirámide, Ponzi, falso asesor, falsa corredora, cripto/Forex/robots, clubes VIP,
+estafas de recuperación de dinero, inversión olvidada), seguridad digital y bancaria (contraseñas
+y 2FA, correo y enlaces, WhatsApp e ingeniería social, pagos instantáneos y límites, facturas y
+códigos QR falsos, celular y dispositivos, redes sociales), respuesta a incidentes (las primeras
+24 horas, cómo preservar pruebas, canales de reclamación, revisión sin culpa) y plantillas listas
+para usar (diagnóstico de blindaje, ficha de verificación de oferta, diario de señales de alerta,
+contrato personal anti-estafa y un plan de blindaje de 30 días). Ebook digital, acceso inmediato
+y garantía incondicional de 7 días. Contenido 100% educativo de prevención y respuesta — no
+enseña a practicar estafas, no promete la recuperación de valores y no sustituye la orientación
+jurídica, policial, bancaria o regulatoria.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/seguranca-financeira-e-golpes-<pt|en|es>.pdf`.
+> Produto construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart`
 > está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
 > `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
 > `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos

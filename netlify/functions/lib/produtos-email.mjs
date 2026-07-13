@@ -510,4 +510,24 @@ export const PRODUTOS = {
       dica: 'Antes de comprar cualquier producto de renta fija, aplica los 7 filtros: objetivo, plazo, liquidez, emisor, garantías, rentabilidad neta y concentración. Si no puedes responder los 7 en menos de 2 minutos, todavía no es momento de comprar.',
     },
   }),
+
+  'seguranca-financeira-e-golpes': montar('seguranca-financeira-e-golpes', {
+    pt: {
+      nomeProduto: 'Segurança Financeira e Golpes — Guia Completo NextLevel',
+      tema: 'mapa dos golpes financeiros, os 20 sinais vermelhos, matriz de risco, segurança digital e bancária, resposta a incidentes e plano de blindagem de 30 dias',
+      dica: 'Antes de qualquer transferência ou aporte, confirme: o dinheiro vai para conta da instituição, não de pessoa física? Se a resposta for não ou incerta, pare e verifique por canal oficial antes de decidir.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Financial Safety & Scams — Complete NextLevel Guide',
+      tema: 'the financial scam map, the 20 red flags, a risk matrix, digital and banking security, incident response and a 30-day shielding plan',
+      dica: "Before any transfer or contribution, confirm: does the money go to the institution's account, not an individual's? If the answer is no or unclear, stop and verify through an official channel before deciding.",
+    },
+    es: {
+      nomeProduto: 'Seguridad Financiera y Estafas — Guía Completa NextLevel',
+      tema: 'el mapa de las estafas financieras, las 20 señales de alerta, matriz de riesgo, seguridad digital y bancaria, respuesta a incidentes y plan de blindaje de 30 días',
+      dica: 'Antes de cualquier transferencia o aporte, confirma: ¿el dinero va a la cuenta de la institución, no de una persona física? Si la respuesta es no o incierta, detente y verifica por canal oficial antes de decidir.',
+    },
+  }),
 };
