@@ -485,6 +485,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/investimentos/"/>
   </url>
   <url>
+    <loc>https://nextlevelbr.app.br/produtos/psicologia-do-investidor/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/psicologia-do-investidor/"/>
+  </url>
+  <url>
     <loc>https://nextlevelbr.app.br/categorias/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>

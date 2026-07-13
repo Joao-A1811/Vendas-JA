@@ -62,9 +62,9 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
-`imposto-de-renda-investidores` e `investimentos` (27º produto, ver abaixo). Depoimentos ficam
-vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
-**inventar depoimento é vetado** (Meta Ads + CDC).
+`imposto-de-renda-investidores`, `investimentos` e `psicologia-do-investidor` (28º produto, ver
+abaixo). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento
+real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -534,6 +534,28 @@ Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout rea
 - EN/USD: `https://pay.hotmart.com/Y106716993J` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Y106717009V` (US$ 19)
 
+**`psicologia-do-investidor` (jul/2026, 28º produto — "Psicologia do Investidor", sexto produto
+da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto novo, slug
+novo (sem pasta de rascunho prévia), distinto do `investimentos` (que cobre a jornada completa do
+zero): este é 100% comportamental. Guia pago de 58 páginas (método P.A.U.S.A. — Parar, Analisar,
+Unificar, Simular, Agir — para pausar antes de decidir, diagnóstico de 10 vieses comportamentais
+— aversão à perda, confirmação, ancoragem, recência, FOMO/manada, excesso de confiança, efeito
+disposição, contabilidade mental, status quo, aversão ao arrependimento —, sistema de decisão
+completo — política pessoal de investimento, checklist antes de investir, tese em uma página,
+regras de compra/venda, alocação como escudo emocional, rebalanceamento —, protocolo para quedas
+de mercado e sinais de golpes financeiros, sete workbooks — diário do investidor, score emocional
+mensal, registro de compra/venda, revisão mensal da carteira, plano para queda de mercado,
+contrato de pré-compromisso, conversa financeira familiar — e plano guiado de 30 dias com
+continuidade de 90 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/psicologia-do-investidor-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
+dentro" com 5 páginas de amostra em `assets/produtos/psicologia-do-investidor/` (3 idiomas), já
+no visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
+documentada neste arquivo (sem indicar ativos, sem prometer rentabilidade). Preço padrão da
+coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/E106722185U` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/Q106722260X` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Q106722276C` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -603,21 +625,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`psicologia-do-investidor` (jul/2026, 28º produto — sexto da vertente "Finanças / Educação
-  Financeira") — construído, aguardando cadastro na Hotmart.** Guia pago de 58 páginas (método
-  P.A.U.S.A., diagnóstico de 10 vieses comportamentais, sistema de decisão completo, protocolo
-  para quedas de mercado e golpes, 7 workbooks e plano guiado de 30+90 dias) + ebook gratuito
-  (isca, 6 páginas) já gerados nos 3 idiomas, `ebooks/arquivos/psicologia-do-investidor-
-  <pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
-  `assets/produtos/psicologia-do-investidor/` (3 idiomas), já no visual dark premium
-  navy+teal+âmbar. Páginas de venda prontas em `produtos/psicologia-do-investidor/` (3 idiomas,
-  copiadas do template atual com tema escuro), textos de cadastro em `CADASTRO-HOTMART.md` seção
-  28. Distinto do `investimentos` (jornada completa do zero) — este é 100% comportamental, sem
-  indicar ativos e sem prometer rentabilidade, seguindo a regra de nicho sensível de investimentos
-  documentada abaixo. **Falta:** cadastrar na Hotmart, colar os 3 `linkCheckoutHotmart` reais
-  (PT/EN/ES) e só então adicionar o bloco em `assets/produtos.js` (`disponivel: true`) e uma
-  entrada em `sitemap.xml` — igual ao processo de todo produto novo. Preço sugerido (padrão da
-  coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

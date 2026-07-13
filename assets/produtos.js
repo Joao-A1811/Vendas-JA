@@ -334,5 +334,18 @@ window.PRODUTOS_SITE = [
       en: 'Diagnosis, emergency fund, risk profile, fixed income, funds, REITs, stocks, ETFs and portfolio building with a 30-day plan — no promised returns.',
       es: 'Diagnóstico, fondo de emergencia, perfil de riesgo, renta fija, fondos, REITs, acciones, ETFs y cartera con plan de 30 días — sin promesa de rentabilidad.'
     }
+  },
+  {
+    slug: 'psicologia-do-investidor',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 28.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Psicologia do Investidor', en: 'Investor Psychology', es: 'Psicología del Inversor' },
+    resumo: {
+      pt: 'Método P.A.U.S.A., diagnóstico de vieses comportamentais e protocolo anti-pânico para decidir com mais disciplina — sem indicar ativos.',
+      en: 'The S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline — no asset picks.',
+      es: 'Método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina — sin indicar activos.'
+    }
   }
 ];
