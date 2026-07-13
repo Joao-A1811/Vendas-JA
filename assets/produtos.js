@@ -347,5 +347,18 @@ window.PRODUTOS_SITE = [
       en: 'The S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline — no asset picks.',
       es: 'Método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina — sin indicar activos.'
     }
+  },
+  {
+    slug: 'renda-fixa-inteligente',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 29.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Renda Fixa Inteligente', en: 'Smart Fixed Income', es: 'Renta Fija Inteligente' },
+    resumo: {
+      pt: 'Método prático de 7 filtros para comparar Tesouro Direto, CDB, LCI/LCA e crédito privado, entender FGC e marcação a mercado, e montar uma carteira por camadas.',
+      en: 'A practical 7-filter method to compare treasury bonds, CDs, tax-exempt notes and private credit, understand deposit insurance and mark-to-market, and build a layered portfolio.',
+      es: 'Método práctico de 7 filtros para comparar el Tesoro Directo, CDB, LCI/LCA y crédito privado, entender el fondo de garantía y la valoración a mercado, y armar una cartera por capas.'
+    }
   }
 ];

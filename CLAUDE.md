@@ -62,13 +62,10 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
-`imposto-de-renda-investidores`, `investimentos` e `psicologia-do-investidor` (28º produto, ver
-abaixo). Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento
-real e autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
-
-O 29º produto, `renda-fixa-inteligente`, já está construído (páginas, ebooks, galeria) mas
-**ainda NÃO está no catálogo público** — falta o checkout Hotmart real. Ver "O que ainda falta"
-abaixo.
+`imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto) e
+`renda-fixa-inteligente` (29º produto, ver abaixo). Depoimentos ficam vazios (`depoimentos: []`,
+seção some sozinha) até existir depoimento real e autorizado — **inventar depoimento é vetado**
+(Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -560,6 +557,27 @@ coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `d
 - EN/USD: `https://pay.hotmart.com/Q106722260X` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/Q106722276C` (US$ 19)
 
+**`renda-fixa-inteligente` (jul/2026, 29º produto — "Renda Fixa Inteligente", sétimo produto da
+vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto novo, slug novo
+(sem pasta de rascunho prévia), distinto do `investimentos` (jornada completa do zero) e do
+`psicologia-do-investidor` (100% comportamental): este é o guia prático de comparação de produtos
+de renda fixa. Guia pago de 49 páginas (o jogo da renda fixa e glossário essencial — Selic, CDI,
+IPCA, prefixado, liquidez —, reserva de emergência, Tesouro Direto na prática — Selic, Prefixado,
+IPCA+, Renda+, Educa+ —, CDB/LCI/LCA e produtos bancários, FGC sem ilusão, crédito privado
+avançado — debêntures, CRI, CRA —, impostos/taxas/rentabilidade líquida, marcação a mercado sem
+trauma, um roteiro de 7 filtros para comparar produtos, carteira por camadas, fundos de renda
+fixa e ETFs, erros que custam dinheiro, plano guiado de 30 dias, workbooks — diagnóstico
+financeiro, política pessoal de investimento, checklist pré-compra, revisão mensal —, cards de
+decisão por produto e simulações didáticas) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/renda-fixa-inteligente-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
+dentro" com 5 páginas de amostra em `assets/produtos/renda-fixa-inteligente/` (3 idiomas), já no
+visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
+documentada neste arquivo (sem indicar ativos, sem prometer rentabilidade). Preço padrão da
+coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/T106725310X` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/K106725347G` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/K106725373C` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -634,27 +652,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`renda-fixa-inteligente` (29º produto — "Renda Fixa Inteligente", sétimo produto da vertente
-  "Finanças / Educação Financeira") — construído, mas SEM checkout real ainda.** Distinto do
-  `investimentos` (jornada completa do zero) e do `psicologia-do-investidor` (100%
-  comportamental): este é o guia prático de comparação de produtos de renda fixa. Guia pago de 49
-  páginas (o jogo da renda fixa e glossário essencial — Selic, CDI, IPCA, prefixado, liquidez —,
-  reserva de emergência, Tesouro Direto na prática — Selic, Prefixado, IPCA+, Renda+, Educa+ —,
-  CDB/LCI/LCA e produtos bancários, FGC sem ilusão, crédito privado avançado — debêntures, CRI,
-  CRA —, impostos/taxas/rentabilidade líquida, marcação a mercado sem trauma, um roteiro de 7
-  filtros para comparar produtos, carteira por camadas, fundos de renda fixa e ETFs, erros que
-  custam dinheiro, plano guiado de 30 dias, workbooks — diagnóstico financeiro, política pessoal
-  de investimento, checklist pré-compra, revisão mensal —, cards de decisão por produto e
-  simulações didáticas) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
-  `ebooks/arquivos/renda-fixa-inteligente-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
-  dentro" com 5 páginas de amostra em `assets/produtos/renda-fixa-inteligente/` (3 idiomas), já no
-  visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
-  documentada neste arquivo (sem indicar ativos, sem prometer rentabilidade). Páginas de venda em
-  `produtos/renda-fixa-inteligente/` (3 idiomas) já prontas, com `linkCheckoutHotmart` em
-  placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`).
-  Textos de cadastro em `CADASTRO-HOTMART.md`, seção 29. Preço padrão da coleção: **R$ 49,99 (PT)
-  / US$ 19,00 (EN/ES)**. Falta: cadastrar na Hotmart e colar os 3 links de checkout reais — só
-  depois disso o produto entra em `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.
