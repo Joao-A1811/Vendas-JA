@@ -1553,6 +1553,65 @@ orientación tributaria.
 
 ---
 
+## 29. Renda Fixa Inteligente — categoria: Finanças / Educação Financeira
+
+**Nome (PT):** Renda Fixa Inteligente — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 49 páginas para comparar produtos de renda fixa com método: o jogo da renda
+fixa e glossário essencial (Selic, CDI, IPCA, prefixado, liquidez), reserva de emergência,
+Tesouro Direto na prática (Selic, Prefixado, IPCA+, Renda+ e Educa+), CDB/LCI/LCA e produtos
+bancários, FGC sem ilusão (o que cobre e o que não cobre), crédito privado avançado (debêntures,
+CRI, CRA), impostos/taxas/rentabilidade líquida, marcação a mercado sem trauma, um roteiro de 7
+filtros para comparar produtos, carteira por camadas, fundos de renda fixa e ETFs, os erros mais
+comuns que custam dinheiro, um plano guiado de 30 dias, workbooks prontos (diagnóstico
+financeiro, política pessoal de investimento, checklist pré-compra, revisão mensal), cards de
+decisão por produto e simulações didáticas. E-book digital com acesso imediato e garantia
+incondicional de 7 dias. Conteúdo 100% educacional — não indica ativos específicos, não promete
+rentabilidade garantida e não substitui avaliação profissional de suitability, planejamento
+financeiro ou consultoria de valores mobiliários.
+
+**Name (EN):** Smart Fixed Income — Complete NextLevel Guide
+**Description (EN):**
+Premium 49-page guide to compare fixed income products with method: the fixed income game and
+essential glossary (base rate, reference rate, inflation index, fixed rate, liquidity), the
+emergency fund, treasury bonds in practice (floating-rate, fixed-rate, inflation-linked,
+retirement-income and education-savings bonds), CDs and bank-issued products, deposit insurance
+without illusions (what it covers and what it doesn't), advanced private credit (corporate
+bonds, receivables certificates), taxes/fees/net returns, mark-to-market without trauma, a
+7-filter roadmap to compare products, a layered portfolio, fixed income funds and ETFs, the most
+common mistakes that cost money, a guided 30-day plan, ready-to-use workbooks (financial
+diagnosis, personal investment policy, pre-purchase checklist, monthly review), decision cards
+by product and educational simulations. Digital ebook, instant access, 7-day unconditional
+guarantee. 100% educational content — does not point to specific assets, does not promise
+guaranteed returns, and does not replace a professional suitability assessment, financial
+planning, or securities advice.
+
+**Nombre (ES):** Renta Fija Inteligente — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 49 páginas para comparar productos de renta fija con método: el juego de la
+renta fija y glosario esencial (Selic, CDI, IPCA, prefijado, liquidez), la reserva de
+emergencia, el Tesoro Directo en la práctica (Selic, Prefijado, IPCA+, Renta+ y Educa+), CDB y
+productos bancarios, el fondo de garantía sin ilusiones (qué cubre y qué no cubre), crédito
+privado avanzado (debentures, CRI, CRA), impuestos/tasas/rentabilidad neta, valoración a mercado
+sin trauma, una guía de 7 filtros para comparar productos, cartera por capas, fondos de renta
+fija y ETFs, los errores más comunes que cuestan dinero, un plan guiado de 30 días, plantillas
+listas para usar (diagnóstico financiero, política personal de inversión, checklist de
+precompra, revisión mensual), fichas de decisión por producto y simulaciones didácticas. Ebook
+digital, acceso inmediato y garantía incondicional de 7 días. Contenido 100% educativo — no
+indica activos específicos, no promete rentabilidad garantizada y no sustituye una evaluación
+profesional de idoneidad, planificación financiera o asesoría de valores.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/renda-fixa-inteligente-<pt|en|es>.pdf`. Produto
+> construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart`
+> está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
+> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
+> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
+> abaixo.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

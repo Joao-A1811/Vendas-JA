@@ -490,4 +490,24 @@ export const PRODUTOS = {
       dica: 'Antes de tu próxima decisión de inversión, aplica el método P.A.U.S.A.: Para, Analiza qué cambió en realidad, Unifica con tu cartera como un todo, Simula qué pasa si te equivocas, y solo entonces Actúa. Disciplina es no dejar que la emoción firme la orden de compra o venta.',
     },
   }),
+
+  'renda-fixa-inteligente': montar('renda-fixa-inteligente', {
+    pt: {
+      nomeProduto: 'Renda Fixa Inteligente — Guia Completo NextLevel',
+      tema: 'método prático para comparar Tesouro Direto, CDB, LCI/LCA e crédito privado, entender FGC e marcação a mercado, e montar uma carteira por camadas',
+      dica: 'Antes de comprar qualquer produto de renda fixa, aplique os 7 filtros: objetivo, prazo, liquidez, emissor, garantias, rentabilidade líquida e concentração. Se você não conseguir responder aos 7 em menos de 2 minutos, ainda não é hora de comprar.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Smart Fixed Income — Complete NextLevel Guide',
+      tema: 'a practical method to compare treasury bonds, CDs, tax-exempt notes and private credit, understand deposit insurance and mark-to-market, and build a layered portfolio',
+      dica: "Before buying any fixed income product, apply the 7 filters: goal, term, liquidity, issuer, guarantees, net return and concentration. If you can't answer all 7 in under 2 minutes, it's not time to buy yet.",
+    },
+    es: {
+      nomeProduto: 'Renta Fija Inteligente — Guía Completa NextLevel',
+      tema: 'método práctico para comparar el Tesoro Directo, CDB, LCI/LCA y crédito privado, entender el fondo de garantía y la valoración a mercado, y armar una cartera por capas',
+      dica: 'Antes de comprar cualquier producto de renta fija, aplica los 7 filtros: objetivo, plazo, liquidez, emisor, garantías, rentabilidad neta y concentración. Si no puedes responder los 7 en menos de 2 minutos, todavía no es momento de comprar.',
+    },
+  }),
 };
