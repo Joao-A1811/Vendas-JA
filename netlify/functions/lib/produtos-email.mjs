@@ -470,4 +470,24 @@ export const PRODUTOS = {
       dica: 'Nombra tus archivos así: AAAA-MM - Bróker - Confirmación - Activo.pdf. Este patrón simple ahorra horas de organización el año siguiente.',
     },
   }),
+
+  'psicologia-do-investidor': montar('psicologia-do-investidor', {
+    pt: {
+      nomeProduto: 'Psicologia do Investidor — Guia Completo NextLevel',
+      tema: 'método P.A.U.S.A., diagnóstico de vieses comportamentais e protocolo anti-pânico para decidir com mais disciplina',
+      dica: 'Antes da próxima decisão de investimento, aplique o método P.A.U.S.A.: Pare, Analise o que mudou de fato, Unifique com sua carteira como um todo, Simule o que acontece se você estiver errado, e só então Aja. Disciplina é isso — não deixar a emoção assinar a ordem de compra ou venda.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Investor Psychology — Complete NextLevel Guide',
+      tema: 'the S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline',
+      dica: "Before your next investment decision, apply the S.T.O.P. method: Stop, Think through what actually changed, One portfolio view — does it fit the whole, Play out what happens if you're wrong, and only then Proceed. Discipline is not letting emotion sign the buy or sell order.",
+    },
+    es: {
+      nomeProduto: 'Psicología del Inversor — Guía Completa NextLevel',
+      tema: 'método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina',
+      dica: 'Antes de tu próxima decisión de inversión, aplica el método P.A.U.S.A.: Para, Analiza qué cambió en realidad, Unifica con tu cartera como un todo, Simula qué pasa si te equivocas, y solo entonces Actúa. Disciplina es no dejar que la emoción firme la orden de compra o venta.',
+    },
+  }),
 };

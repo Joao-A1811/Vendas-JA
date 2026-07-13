@@ -603,6 +603,21 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`psicologia-do-investidor` (jul/2026, 28º produto — sexto da vertente "Finanças / Educação
+  Financeira") — construído, aguardando cadastro na Hotmart.** Guia pago de 58 páginas (método
+  P.A.U.S.A., diagnóstico de 10 vieses comportamentais, sistema de decisão completo, protocolo
+  para quedas de mercado e golpes, 7 workbooks e plano guiado de 30+90 dias) + ebook gratuito
+  (isca, 6 páginas) já gerados nos 3 idiomas, `ebooks/arquivos/psicologia-do-investidor-
+  <pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
+  `assets/produtos/psicologia-do-investidor/` (3 idiomas), já no visual dark premium
+  navy+teal+âmbar. Páginas de venda prontas em `produtos/psicologia-do-investidor/` (3 idiomas,
+  copiadas do template atual com tema escuro), textos de cadastro em `CADASTRO-HOTMART.md` seção
+  28. Distinto do `investimentos` (jornada completa do zero) — este é 100% comportamental, sem
+  indicar ativos e sem prometer rentabilidade, seguindo a regra de nicho sensível de investimentos
+  documentada abaixo. **Falta:** cadastrar na Hotmart, colar os 3 `linkCheckoutHotmart` reais
+  (PT/EN/ES) e só então adicionar o bloco em `assets/produtos.js` (`disponivel: true`) e uma
+  entrada em `sitemap.xml` — igual ao processo de todo produto novo. Preço sugerido (padrão da
+  coleção): R$ 49,99 (PT) / US$ 19,00 (EN/ES).
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

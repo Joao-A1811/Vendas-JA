@@ -1477,6 +1477,82 @@ garantizada.
 
 ---
 
+## 28. Psicologia do Investidor — categoria: Finanças / Educação Financeira
+
+> Guia pago (58 páginas) + guia gratuito (isca, 6 páginas) já gerados nos 3 idiomas, capa,
+> thumbnail e galeria "olhe por dentro" prontas (ver `assets/produtos/psicologia-do-investidor/`).
+> Produto novo, slug novo `psicologia-do-investidor` (sem pasta de rascunho prévia) — sexto
+> produto da vertente "Finanças / Educação Financeira", distinto do `investimentos` (que cobre a
+> jornada completa do zero): este produto é 100% comportamental — método P.A.U.S.A. para pausar
+> antes de decidir, diagnóstico de 10 vieses (aversão à perda, confirmação, ancoragem, recência,
+> FOMO, manada, excesso de confiança, efeito disposição, contabilidade mental, status quo,
+> aversão ao arrependimento), sistema de decisão (política pessoal, checklist de compra, regras
+> de venda, alocação, rebalanceamento), protocolo para quedas de mercado e golpes, sete workbooks
+> e plano guiado de 30+90 dias. Segue a regra de nicho sensível de investimentos já documentada
+> neste arquivo: sem rentabilidade garantida ou específica, sem indicar ativos. Falta: cadastrar
+> o produto na Hotmart, pegar o `linkCheckoutHotmart` real de cada moeda e adicionar o bloco em
+> `assets/produtos.js` (com `disponivel: true` só quando todos os idiomas tiverem checkout
+> funcionando) e uma entrada em `sitemap.xml`. Preço sugerido (padrão da coleção): R$ 49,99 (PT) /
+> US$ 19,00 (EN/ES).
+
+**Nome (PT):** Psicologia do Investidor — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium + workbook de 58 páginas sobre comportamento financeiro e tomada de decisão: método
+P.A.U.S.A. (Parar, Analisar, Unificar, Simular, Agir) para pausar antes de decidir, diagnóstico
+completo de 10 vieses comportamentais (aversão à perda, confirmação, ancoragem, recência, FOMO e
+efeito manada, excesso de confiança, efeito disposição, contabilidade mental, status quo e
+aversão ao arrependimento), sistema de decisão completo (política pessoal de investimento,
+checklist antes de investir, como escrever uma tese, regras de compra e venda, alocação como
+escudo emocional, rebalanceamento), protocolo para dias de queda de mercado, guia para lidar com
+notícias/redes sociais/ruído e sinais de golpes financeiros, sete workbooks prontos (diário do
+investidor, score emocional mensal, registro de compra, registro de venda, revisão mensal da
+carteira, plano para queda de mercado, contrato de pré-compromisso e conversa financeira
+familiar) e um plano guiado de 30 dias com continuidade de 90 dias. E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo 100% educacional sobre comportamento
+financeiro — não indica ativos específicos, não promete rentabilidade e não substitui avaliação
+profissional de suitability, planejamento financeiro, consultoria de valores mobiliários ou
+orientação tributária.
+
+**Name (EN):** Investor Psychology — Complete NextLevel Guide
+**Description (EN):**
+Premium 58-page guide + workbook on financial behavior and decision-making: the S.T.O.P. method
+(Stop, Think it through, One portfolio view, Play it out, Proceed) to pause before deciding, a
+full diagnostic of 10 behavioral biases (loss aversion, confirmation, anchoring, recency, FOMO
+and herding, overconfidence, the disposition effect, mental accounting, status quo, and regret
+aversion), a complete decision system (personal investment policy, a checklist before investing,
+how to write a thesis, buying and selling rules, allocation as an emotional shield, rebalancing),
+a protocol for market-drop days, a guide to handling news/social media/noise and warning signs of
+financial scams, seven ready-to-use workbooks (investor journal, monthly emotional score, purchase
+log, sale log, monthly portfolio review, market-drop plan, pre-commitment contract and family
+financial conversation) and a guided 30-day plan with a 90-day continuity plan. Digital ebook,
+instant access, 7-day unconditional guarantee. 100% educational content on financial behavior —
+does not point to specific assets, does not promise returns, and does not replace a professional
+suitability assessment, financial planning, securities advice, or tax guidance.
+
+**Nombre (ES):** Psicología del Inversor — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium + workbook de 58 páginas sobre comportamiento financiero y toma de decisiones:
+método P.A.U.S.A. (Parar, Analizar, Unificar, Simular, Actuar) para pausar antes de decidir,
+diagnóstico completo de 10 sesgos de comportamiento (aversión a la pérdida, confirmación, anclaje,
+recencia, FOMO y efecto manada, exceso de confianza, efecto disposición, contabilidad mental,
+statu quo y aversión al arrepentimiento), un sistema de decisión completo (política personal de
+inversión, checklist antes de invertir, cómo escribir una tesis, reglas de compra y venta, la
+asignación como escudo emocional, rebalanceo), un protocolo para los días de caída de mercado, una
+guía para manejar noticias/redes sociales/ruido y señales de estafas financieras, siete workbooks
+listos para usar (diario del inversor, puntaje emocional mensual, registro de compra, registro de
+venta, revisión mensual de la cartera, plan para una caída de mercado, contrato de precompromiso y
+conversación financiera familiar) y un plan guiado de 30 días con un plan de continuidad de 90
+días. Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido 100% educativo
+sobre comportamiento financiero — no indica activos específicos, no promete rentabilidad y no
+sustituye una evaluación profesional de idoneidad, planificación financiera, asesoría de valores u
+orientación tributaria.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/psicologia-do-investidor-<pt|en|es>.pdf`.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
