@@ -61,12 +61,10 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `emagrecimento`, `ganho-de-massa`, `treino-academia`, `mentalidade-ansiedade-habitos`,
 `mobilidade-alongamento-prevencao`, `confianca-social`, `carisma-humor-storytelling`,
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
-`etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais` e
-`imposto-de-renda-investidores`. **`investimentos` (27º produto, ver abaixo) já foi promovido de
-volta ao catálogo com `disponivel: false`** — aparece no site com o selo "Em breve" enquanto
-aguarda cadastro na Hotmart; só falta colar os 3 `linkCheckoutHotmart` reais e trocar pra `true`.
-Depoimentos ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e
-autorizado — **inventar depoimento é vetado** (Meta Ads + CDC).
+`etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
+`imposto-de-renda-investidores` e `investimentos` (27º produto, ver abaixo). Depoimentos ficam
+vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
+**inventar depoimento é vetado** (Meta Ads + CDC).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -510,8 +508,8 @@ investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 4
 - ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 19)
 
 **`investimentos` (jul/2026, 27º produto — "Investimentos do Zero ao Método", quinto produto da
-vertente "Projeto Verão Financeiro" / Educação Financeira) — ⏳ EM CADASTRO na Hotmart, ainda
-não ao vivo.** Reaproveita o slug/pasta `produtos/investimentos/` que já existia como rascunho
+vertente "Projeto Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3 idiomas.**
+Reaproveita o slug/pasta `produtos/investimentos/` que já existia como rascunho
 desde o início do projeto ("Ebook Investimentos do Zero", nunca lançado — texto antigo permanece
 na seção 3 do `CADASTRO-HOTMART.md`, agora desatualizado). Novo rascunho enviado pelo dono do
 projeto ("Investimentos_do_zero_ao_metodo.pdf", 54 páginas). Guia pago de 51 páginas (18
@@ -530,10 +528,11 @@ diretamente; só os veículos específicos do Brasil foram generalizados com par
 em vez de reescrever o guia inteiro como no Imposto de Renda. O PT mantém 100% do detalhe
 brasileiro (Tesouro Direto, CDB/LCI/LCA, FGC, Selic/CDI/IPCA). Segue a regra de nicho sensível de
 investimentos já documentada neste arquivo (sem recomendar ativos, sem prometer rentabilidade).
-Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. `assets/produtos.js` já tem a
-entrada com `disponivel: false` (aparece como "Em breve" no site) — falta só cadastrar na
-Hotmart, colar os 3 `linkCheckoutHotmart` reais nas páginas do produto, trocar `disponivel` pra
-`true` e adicionar a entrada em `sitemap.xml`.
+Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+`disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/Q106716967J` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/Y106716993J` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/Y106717009V` (US$ 19)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
@@ -604,9 +603,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`investimentos`** (27º produto) já tem ebook real, capa, galeria e catálogo prontos
-  (`disponivel: false`, aparece como "Em breve") — só falta cadastrar na Hotmart e colar os 3
-  `linkCheckoutHotmart` reais pra virar `disponivel: true` e ganhar entrada em `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

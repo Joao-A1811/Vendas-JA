@@ -1395,7 +1395,7 @@ fiscal de tu país — evita promesas de reembolso garantizado o ahorro de impue
 
 ## 27. Investimentos do Zero ao Método — categoria: Finanças / Educação Financeira
 
-> ⏳ EM CADASTRO. Reaproveita o slug/pasta `produtos/investimentos/` que já existia como
+> ✅ AO VIVO nos 3 idiomas. Reaproveita o slug/pasta `produtos/investimentos/` que já existia como
 > rascunho desde o início do projeto (era o produto placeholder "Ebook Investimentos do Zero",
 > nunca lançado — texto antigo permanece na seção 3 deste arquivo, agora desatualizado). Quinto
 > produto da vertente "Projeto Verão Financeiro" / educação financeira, a partir de um novo
@@ -1419,8 +1419,10 @@ fiscal de tu país — evita promesas de reembolso garantizado o ahorro de impue
 > o conteúdo evita recomendar ativos específicos ou prometer rentabilidade garantida ou
 > específica, sempre remetendo o leitor a fontes oficiais do seu país ou a um profissional
 > habilitado antes de decidir — segue a regra de nicho sensível de investimentos já documentada
-> neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. `disponivel:
-> false` até os 3 checkouts da Hotmart ficarem prontos.
+> neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real
+> nas 3 moedas, `disponivel: true`: PT/BRL `https://pay.hotmart.com/Q106716967J` (R$ 49,99),
+> EN/USD `https://pay.hotmart.com/Y106716993J` (US$ 19), ES/USD
+> `https://pay.hotmart.com/Y106717009V` (US$ 19).
 
 **Nome (PT):** Investimentos do Zero ao Método — Guia Completo NextLevel
 **Descrição (PT):**

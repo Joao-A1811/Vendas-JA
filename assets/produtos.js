@@ -325,9 +325,8 @@ window.PRODUTOS_SITE = [
   {
     slug: 'investimentos',
     categoria: 'financas',
-    // Em cadastro na Hotmart — ver CADASTRO-HOTMART.md, seção 27. Troque para
-    // true só quando os 3 idiomas tiverem checkout real funcionando.
-    disponivel: false,
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 27.
+    disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'Investimentos do Zero ao Método', en: 'Investing from Zero: A Complete Method', es: 'Inversiones desde Cero: Un Método Completo' },
     resumo: {
