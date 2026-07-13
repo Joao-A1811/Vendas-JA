@@ -548,6 +548,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/seguranca-financeira-e-golpes/"/>
   </url>
   <url>
+    <loc>https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+  </url>
+  <url>
+    <loc>https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextlevelbr.app.br/produtos/dividendos-e-renda-passiva/"/>
+  </url>
+  <url>
     <loc>https://nextlevelbr.app.br/categorias/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nextlevelbr.app.br/categorias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nextlevelbr.app.br/categorias/index-en.html"/>

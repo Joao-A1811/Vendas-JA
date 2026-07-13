@@ -373,5 +373,18 @@ window.PRODUTOS_SITE = [
       en: 'Recognize pyramid schemes, fake advisors, phishing and fake invoices, and build a 30-day financial shielding plan.',
       es: 'Reconoce pirámides, falsos asesores, phishing y facturas falsas, y arma un plan de blindaje financiero en 30 días.'
     }
+  },
+  {
+    slug: 'dividendos-e-renda-passiva',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 31.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Dividendos e Renda Passiva', en: 'Dividends & Passive Income', es: 'Dividendos y Renta Pasiva' },
+    resumo: {
+      pt: 'Método prático para construir renda recorrente com ações, FIIs, reinvestimento e disciplina financeira — sem promessa de rentabilidade.',
+      en: 'A practical method to build recurring income with stocks, REITs, reinvestment and financial discipline — no promised returns.',
+      es: 'Método práctico para construir renta recurrente con acciones, FIIs/REITs, reinversión y disciplina financiera — sin promesa de rentabilidad.'
+    }
   }
 ];

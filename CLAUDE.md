@@ -63,13 +63,10 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
 `imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto),
-`renda-fixa-inteligente` (29º produto) e `seguranca-financeira-e-golpes` (30º produto). Depoimentos
+`renda-fixa-inteligente` (29º produto), `seguranca-financeira-e-golpes` (30º produto) e
+`dividendos-e-renda-passiva` (31º produto). Depoimentos
 ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
 **inventar depoimento é vetado** (Meta Ads + CDC).
-
-O 31º produto, `dividendos-e-renda-passiva`, já está construído (páginas, ebooks, galeria) mas
-**ainda NÃO está no catálogo público** — falta o checkout Hotmart real. Ver "O que ainda falta"
-abaixo.
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
@@ -606,6 +603,27 @@ Checkout real nas 3 moedas, `disponivel: true`:
 - EN/USD: `https://pay.hotmart.com/B106728123S` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/B106728152H` (US$ 19)
 
+**`dividendos-e-renda-passiva` (jul/2026, 31º produto — "Dividendos e Renda Passiva", nono
+produto da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Distinto dos
+demais produtos financeiros: este ensina a construir renda passiva com dividendos e FIIs, não
+segurança nem investimento do zero. Guia pago de 46 páginas (a mentalidade da renda passiva — o
+tripé qualidade/preço/tempo —, base financeira antes dos dividendos — reserva, meta de renda
+mensal, camadas da carteira —, ações e proventos — dividendos, JCP, datas com/ex, dividend
+yield, payout, qualidade da empresa pagadora, setores típicos —, FIIs e renda mensal — tijolo,
+papel, híbridos, indicadores como vacância e P/VP —, tributação e organização — regras de 2026,
+controle mensal, erros fiscais comuns —, método de carteira — alocação por objetivos,
+diversificação, reinvestimento, rebalanceamento, cortes de dividendos — e um plano de execução
+de 30 dias com worksheets — diagnóstico de renda, análise de ação pagadora, análise de FII,
+dashboard mensal, cards de decisão rápida) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/dividendos-e-renda-passiva-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
+dentro" com 5 páginas de amostra em `assets/produtos/dividendos-e-renda-passiva/` (3 idiomas), já
+no visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
+documentada neste arquivo (sem indicar ativos, sem prometer renda garantida). Preço padrão da
+coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/I106728656C` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/W106728688G` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/J106728736V` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -680,28 +698,6 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`dividendos-e-renda-passiva` (31º produto — "Dividendos e Renda Passiva", nono produto da
-  vertente "Finanças / Educação Financeira") — construído, mas SEM checkout real ainda.**
-  Distinto dos demais produtos financeiros: este ensina a construir renda passiva com dividendos
-  e FIIs, não segurança nem investimento do zero. Guia pago de 46 páginas (a mentalidade da
-  renda passiva — o tripé qualidade/preço/tempo —, base financeira antes dos dividendos —
-  reserva, meta de renda mensal, camadas da carteira —, ações e proventos — dividendos, JCP,
-  datas com/ex, dividend yield, payout, qualidade da empresa pagadora, setores típicos —, FIIs e
-  renda mensal — tijolo, papel, híbridos, indicadores como vacância e P/VP —, tributação e
-  organização — regras de 2026, controle mensal, erros fiscais comuns —, método de carteira —
-  alocação por objetivos, diversificação, reinvestimento, rebalanceamento, cortes de dividendos
-  — e um plano de execução de 30 dias com worksheets — diagnóstico de renda, análise de ação
-  pagadora, análise de FII, dashboard mensal, cards de decisão rápida) + ebook gratuito (isca, 6
-  páginas) nos 3 idiomas, `ebooks/arquivos/dividendos-e-renda-passiva-<pt|en|es>.pdf`. Capa,
-  thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
-  `assets/produtos/dividendos-e-renda-passiva/` (3 idiomas), já no visual dark premium
-  navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já documentada neste arquivo
-  (sem indicar ativos, sem prometer renda garantida). Páginas de venda em
-  `produtos/dividendos-e-renda-passiva/` (3 idiomas) já prontas, com `linkCheckoutHotmart` em
-  placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`).
-  Textos de cadastro em `CADASTRO-HOTMART.md`, seção 31. Preço padrão da coleção: **R$ 49,99 (PT)
-  / US$ 19,00 (EN/ES)**. Falta: cadastrar na Hotmart e colar os 3 links de checkout reais — só
-  depois disso o produto entra em `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.
