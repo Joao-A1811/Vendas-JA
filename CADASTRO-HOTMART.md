@@ -1662,7 +1662,65 @@ jurídica, policial, bancaria o regulatoria.
 > Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/seguranca-financeira-e-golpes-<pt|en|es>.pdf`.
-> Produto construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart`
+> **Checkout real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
+
+---
+
+## 31. Dividendos e Renda Passiva — categoria: Finanças / Educação Financeira
+
+**Nome (PT):** Dividendos e Renda Passiva — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 46 páginas para construir renda passiva com método: a mentalidade da renda
+passiva (o que dividendos resolvem e o que não resolvem, o tripé qualidade/preço/tempo), base
+financeira antes dos dividendos (reserva, meta de renda mensal, camadas da carteira), ações e
+proventos (dividendos, JCP, datas com/ex, dividend yield, payout, qualidade da empresa pagadora,
+setores típicos), FIIs e renda mensal (tijolo, papel, híbridos, indicadores como vacância e P/VP,
+ações x FIIs), tributação e organização (regras de 2026, controle mensal, erros fiscais comuns),
+método de carteira (modelo de alocação por objetivos, diversificação, reinvestimento,
+rebalanceamento, como lidar com cortes de dividendos) e um plano de execução de 30 dias com
+worksheets prontos (diagnóstico de renda, análise de ação pagadora, análise de FII, dashboard
+mensal, cards de decisão rápida). E-book digital com acesso imediato e garantia incondicional de
+7 dias. Conteúdo 100% educacional — não indica ativos específicos, não promete renda garantida e
+não substitui avaliação profissional de suitability, planejamento financeiro ou consultoria
+fiscal.
+
+**Name (EN):** Dividends & Passive Income — Complete NextLevel Guide
+**Description (EN):**
+Premium 46-page guide to build passive income with method: the passive-income mindset (what
+dividends solve and what they don't, the quality/price/time tripod), a financial foundation
+before dividends (emergency fund, monthly income goal, portfolio layers), stocks and payouts
+(dividends, equity-linked interest, cum/ex dates, dividend yield, payout ratio, quality of the
+paying company, typical sectors), REITs and monthly income (brick, paper, hybrid funds,
+indicators like vacancy and price/book value, stocks vs. REITs), taxation and organization (2026
+rules, monthly tracking, common tax mistakes), a portfolio method (allocation model by goals,
+diversification, reinvestment, rebalancing, how to handle dividend cuts) and a 30-day execution
+plan with ready-to-use worksheets (income diagnosis, dividend-stock analysis, REIT analysis, a
+monthly dashboard, quick decision cards). Digital ebook, instant access, 7-day unconditional
+guarantee. 100% educational content — does not point to specific assets, does not promise
+guaranteed income, and does not replace a professional suitability assessment, financial
+planning, or tax advice.
+
+**Nombre (ES):** Dividendos y Renta Pasiva — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 46 páginas para construir renta pasiva con método: la mentalidad de la renta
+pasiva (qué resuelven los dividendos y qué no resuelven, el trípode calidad/precio/tiempo), base
+financiera antes de los dividendos (reserva, meta de renta mensual, capas de la cartera),
+acciones y proventos (dividendos, intereses sobre capital propio, fechas con/ex derecho, dividend
+yield, payout, calidad de la empresa pagadora, sectores típicos), FIIs/REITs y renta mensual
+(ladrillo, papel, híbridos, indicadores como vacancia y Precio/Valor Patrimonial, acciones vs.
+FIIs/REITs), tributación y organización (reglas de 2026, control mensual, errores fiscales
+comunes), método de cartera (modelo de asignación por objetivos, diversificación, reinversión,
+reequilibrio, cómo lidiar con los cortes de dividendos) y un plan de ejecución de 30 días con
+fichas de trabajo listas (diagnóstico de renta, análisis de acción pagadora, análisis de
+FII/REIT, dashboard mensual, fichas de decisión rápida). Ebook digital, acceso inmediato y
+garantía incondicional de 7 días. Contenido 100% educativo — no indica activos específicos, no
+promete renta garantizada y no sustituye una evaluación profesional de idoneidad, planificación
+financiera o asesoría fiscal.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/dividendos-e-renda-passiva-<pt|en|es>.pdf`. Produto
+> construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart`
 > está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
 > `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
 > `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos

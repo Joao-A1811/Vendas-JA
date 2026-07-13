@@ -530,4 +530,24 @@ export const PRODUTOS = {
       dica: 'Antes de cualquier transferencia o aporte, confirma: ¿el dinero va a la cuenta de la institución, no de una persona física? Si la respuesta es no o incierta, detente y verifica por canal oficial antes de decidir.',
     },
   }),
+
+  'dividendos-e-renda-passiva': montar('dividendos-e-renda-passiva', {
+    pt: {
+      nomeProduto: 'Dividendos e Renda Passiva — Guia Completo NextLevel',
+      tema: 'dividendos sem ilusão, FIIs e renda mensal, tributação de 2026, método de carteira, reinvestimento e um plano de 30 dias',
+      dica: 'Antes de comprar por causa do dividend yield, pergunte: esse fluxo é sustentável, vem de fonte saudável e cabe no meu risco? Se a tese depende só do próximo pagamento, a análise ainda está incompleta.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Dividends & Passive Income — Complete NextLevel Guide',
+      tema: 'dividends without illusions, REITs and monthly income, 2026 taxation, a portfolio method, reinvestment and a 30-day plan',
+      dica: "Before buying because of the dividend yield, ask: is this flow sustainable, does it come from a healthy source, and does it fit my risk? If the thesis depends only on the next payment, the analysis is still incomplete.",
+    },
+    es: {
+      nomeProduto: 'Dividendos y Renta Pasiva — Guía Completa NextLevel',
+      tema: 'dividendos sin ilusión, FIIs/REITs y renta mensual, tributación de 2026, método de cartera, reinversión y un plan de 30 días',
+      dica: 'Antes de comprar por el dividend yield, pregúntate: ¿ese flujo es sostenible, viene de una fuente sana y cabe en mi riesgo? Si la tesis depende solo del próximo pago, el análisis todavía está incompleto.',
+    },
+  }),
 };
