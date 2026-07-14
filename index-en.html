@@ -343,7 +343,11 @@ const PRECO_POR = '$19';
 
 const CATS = window.CATEGORIAS_SITE || {};
 const lista = window.PRODUTOS_SITE || [];
-const NOVO_SLUG = lista.length ? lista[lista.length - 1].slug : '';
+// O selo "NOVO" segue o campo explícito `novo: true` em produtos.js — não a
+// posição no array, já que o catálogo agora é ordenado por apelo/venda, não
+// por ordem de lançamento.
+const MAIS_NOVO = lista.find(p => p.novo) || lista[lista.length - 1] || null;
+const NOVO_SLUG = MAIS_NOVO ? MAIS_NOVO.slug : '';
 const ICO = window.ICONS || {};
 
 // ---- ícones do hero e da faixa de confiança ----
@@ -364,8 +368,9 @@ document.getElementById('hero-stats').innerHTML = `
 
 // ---- capas em leque do hero (1º produto, mais novo, e um do meio) ----
 (function () {
+  const meio = lista[Math.floor(lista.length / 2)];
   const destaques = lista.length >= 3
-    ? [lista[0], lista[lista.length - 1], lista[Math.floor(lista.length / 2)]]
+    ? [...new Set([lista[0], MAIS_NOVO, meio].filter(Boolean))]
     : lista;
   document.getElementById('capas-stack').innerHTML =
     destaques.map(p => `<img src="/assets/produtos/${p.slug}/thumb-${IDIOMA}.jpg" alt="">`).join('') +

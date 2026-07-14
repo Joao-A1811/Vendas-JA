@@ -51,41 +51,16 @@ window.CATEGORIAS_SITE = {
 
 window.PRODUTOS_SITE = [
   {
-    slug: 'treino-em-casa',
+    slug: 'emagrecimento',
     categoria: 'saude-fitness',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 10.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
-    titulo: { pt: 'Treino em Casa', en: 'Home Workout', es: 'Entrenamiento en Casa' },
+    titulo: { pt: 'Emagrecimento Inteligente', en: 'Smart Weight Loss', es: 'Adelgazamiento Inteligente' },
     resumo: {
-      pt: 'Treinos por área muscular, cronograma de 30 dias e dieta de apoio — sem academia, sem equipamento caro.',
-      en: 'Workouts by muscle group, a 30-day schedule and supportive nutrition — no gym, no expensive equipment.',
-      es: 'Entrenamientos por grupo muscular, cronograma de 30 días y alimentación de apoyo — sin gimnasio, sin equipo caro.'
-    }
-  },
-  {
-    slug: 'suplementacao-inteligente',
-    categoria: 'saude-fitness',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 7.
-    disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
-    titulo: { pt: 'Suplementação Inteligente', en: 'Smart Supplementation', es: 'Suplementación Inteligente' },
-    resumo: {
-      pt: 'Whey, creatina, cafeína e checklist de compra — suplemente com método, sem desperdício e sem promessa milagrosa.',
-      en: 'Whey, creatine, caffeine and a shopping checklist — supplement with method, no waste and no miracle promises.',
-      es: 'Whey, creatina, cafeína y checklist de compra — suplementa con método, sin desperdicio y sin promesas milagrosas.'
-    }
-  },
-  {
-    slug: 'receitas-fitness',
-    categoria: 'saude-fitness',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 8.
-    disponivel: true,
-    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
-    titulo: { pt: 'Receitas, Marmitas e Cardápios Fitness', en: 'Fitness Recipes, Meal Preps and Menus', es: 'Recetas, Viandas y Menús Fitness' },
-    resumo: {
-      pt: '50+ receitas fitness, cardápios por objetivo e sistema de meal prep — organize sua semana sem dieta radical.',
-      en: '50+ fitness recipes, menus by goal and a meal prep system — organize your week without a crash diet.',
-      es: '50+ recetas fitness, menús por objetivo y sistema de meal prep — organiza tu semana sin dieta radical.'
+      pt: 'Dieta flexível, treino progressivo e protocolo contra a fome emocional — um plano de 30 dias sem dieta radical.',
+      en: 'Flexible diet, progressive training and a protocol against emotional hunger — a 30-day plan, no crash diets.',
+      es: 'Dieta flexible, entrenamiento progresivo y protocolo contra el hambre emocional — un plan de 30 días sin dietas extremas.'
     }
   },
   {
@@ -102,16 +77,15 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'emagrecimento',
+    slug: 'treino-em-casa',
     categoria: 'saude-fitness',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 10.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
-    titulo: { pt: 'Emagrecimento Inteligente', en: 'Smart Weight Loss', es: 'Adelgazamiento Inteligente' },
+    titulo: { pt: 'Treino em Casa', en: 'Home Workout', es: 'Entrenamiento en Casa' },
     resumo: {
-      pt: 'Dieta flexível, treino progressivo e protocolo contra a fome emocional — um plano de 30 dias sem dieta radical.',
-      en: 'Flexible diet, progressive training and a protocol against emotional hunger — a 30-day plan, no crash diets.',
-      es: 'Dieta flexible, entrenamiento progresivo y protocolo contra el hambre emocional — un plan de 30 días sin dietas extremas.'
+      pt: 'Treinos por área muscular, cronograma de 30 dias e dieta de apoio — sem academia, sem equipamento caro.',
+      en: 'Workouts by muscle group, a 30-day schedule and supportive nutrition — no gym, no expensive equipment.',
+      es: 'Entrenamientos por grupo muscular, cronograma de 30 días y alimentación de apoyo — sin gimnasio, sin equipo caro.'
     }
   },
   {
@@ -141,16 +115,29 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'mentalidade-ansiedade-habitos',
+    slug: 'receitas-fitness',
     categoria: 'saude-fitness',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 13.
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 8.
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
-    titulo: { pt: 'Mentalidade, Ansiedade e Hábitos', en: 'Mindset, Anxiety and Habits', es: 'Mentalidad, Ansiedad y Hábitos' },
+    titulo: { pt: 'Receitas, Marmitas e Cardápios Fitness', en: 'Fitness Recipes, Meal Preps and Menus', es: 'Recetas, Viandas y Menús Fitness' },
     resumo: {
-      pt: 'Ciclo do hábito, protocolo anti-impulso de 10 minutos e plano de 30 dias — construa constância e controle gatilhos emocionais.',
-      en: 'Habit cycle, a 10-minute anti-impulse protocol and a 30-day plan — build consistency and control emotional triggers.',
-      es: 'Ciclo del hábito, protocolo antiimpulso de 10 minutos y plan de 30 días — construye constancia y controla gatillos emocionales.'
+      pt: '50+ receitas fitness, cardápios por objetivo e sistema de meal prep — organize sua semana sem dieta radical.',
+      en: '50+ fitness recipes, menus by goal and a meal prep system — organize your week without a crash diet.',
+      es: '50+ recetas fitness, menús por objetivo y sistema de meal prep — organiza tu semana sin dieta radical.'
+    }
+  },
+  {
+    slug: 'suplementacao-inteligente',
+    categoria: 'saude-fitness',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 7.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Suplementação Inteligente', en: 'Smart Supplementation', es: 'Suplementación Inteligente' },
+    resumo: {
+      pt: 'Whey, creatina, cafeína e checklist de compra — suplemente com método, sem desperdício e sem promessa milagrosa.',
+      en: 'Whey, creatine, caffeine and a shopping checklist — supplement with method, no waste and no miracle promises.',
+      es: 'Whey, creatina, cafeína y checklist de compra — suplementa con método, sin desperdicio y sin promesas milagrosas.'
     }
   },
   {
@@ -167,6 +154,19 @@ window.PRODUTOS_SITE = [
     }
   },
   {
+    slug: 'mentalidade-ansiedade-habitos',
+    categoria: 'saude-fitness',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 13.
+    disponivel: true,
+    tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
+    titulo: { pt: 'Mentalidade, Ansiedade e Hábitos', en: 'Mindset, Anxiety and Habits', es: 'Mentalidad, Ansiedad y Hábitos' },
+    resumo: {
+      pt: 'Ciclo do hábito, protocolo anti-impulso de 10 minutos e plano de 30 dias — construa constância e controle gatilhos emocionais.',
+      en: 'Habit cycle, a 10-minute anti-impulse protocol and a 30-day plan — build consistency and control emotional triggers.',
+      es: 'Ciclo del hábito, protocolo antiimpulso de 10 minutos y plan de 30 días — construye constancia y controla gatillos emocionales.'
+    }
+  },
+  {
     slug: 'confianca-social',
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 15.
@@ -177,6 +177,19 @@ window.PRODUTOS_SITE = [
       pt: 'Escada de exposição gradual, playbooks por situação e plano de 30 dias — destrave conversas e crie conexões com respeito.',
       en: 'A gradual exposure ladder, playbooks by situation and a 30-day plan — unlock conversations and build connections with respect.',
       es: 'Escalera de exposición gradual, playbooks por situación y plan de 30 días — destraba conversaciones y crea conexiones con respeto.'
+    }
+  },
+  {
+    slug: 'presenca-social',
+    categoria: 'relacionamentos',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 19.
+    disponivel: true,
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Linguagem Corporal e Presença Social', en: 'Body Language and Social Presence', es: 'Lenguaje Corporal y Presencia Social' },
+    resumo: {
+      pt: 'Postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito, com plano de 30 dias.',
+      en: 'Posture, eye contact, voice, personal space and social calibration — visible presence and attraction with respect, with a 30-day plan.',
+      es: 'Postura, mirada, voz, espacio personal y calibración social — presencia visible y atracción con respeto, con plan de 30 días.'
     }
   },
   {
@@ -206,45 +219,6 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'atracao-com-respeito',
-    categoria: 'relacionamentos',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 18.
-    disponivel: true,
-    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
-    titulo: { pt: 'Confiança Social: Atração com Respeito', en: 'Social Confidence: Attraction with Respect', es: 'Confianza Social: Atracción con Respeto' },
-    resumo: {
-      pt: 'Diagnóstico social, Protocolo P.A.R.E. para ansiedade, método C.O.N.E.C.T.A. e plano de 30 dias — presença, autoestima e atração com respeito.',
-      en: 'A social diagnostic, the STOP protocol for anxiety, the C.O.N.N.E.C.T. method and a 30-day plan — presence, self-esteem and attraction with respect.',
-      es: 'Diagnóstico social, Protocolo P.A.R.E. para la ansiedad, método C.O.N.E.C.T.A. y plan de 30 días — presencia, autoestima y atracción con respeto.'
-    }
-  },
-  {
-    slug: 'presenca-social',
-    categoria: 'relacionamentos',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 19.
-    disponivel: true,
-    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
-    titulo: { pt: 'Linguagem Corporal e Presença Social', en: 'Body Language and Social Presence', es: 'Lenguaje Corporal y Presencia Social' },
-    resumo: {
-      pt: 'Postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito, com plano de 30 dias.',
-      en: 'Posture, eye contact, voice, personal space and social calibration — visible presence and attraction with respect, with a 30-day plan.',
-      es: 'Postura, mirada, voz, espacio personal y calibración social — presencia visible y atracción con respeto, con plan de 30 días.'
-    }
-  },
-  {
-    slug: 'limites-rejeicao-maturidade',
-    categoria: 'relacionamentos',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 20.
-    disponivel: true,
-    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
-    titulo: { pt: 'Limites, Rejeição e Maturidade Emocional', en: 'Boundaries, Rejection and Emotional Maturity', es: 'Límites, Rechazo y Madurez Emocional' },
-    resumo: {
-      pt: 'Protocolo P.A.R.A., mapa de limites e frases de comunicação assertiva — comunique limites e lide com rejeição com maturidade, num plano de 30 dias.',
-      en: 'The P.A.R.M. protocol, a boundary map and assertive communication phrases — communicate boundaries and handle rejection with maturity, in a 30-day plan.',
-      es: 'Protocolo P.A.R.A., mapa de límites y frases de comunicación asertiva — comunica límites y maneja el rechazo con madurez, en un plan de 30 días.'
-    }
-  },
-  {
     slug: 'mensagens-e-conversas-online',
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 21.
@@ -271,29 +245,29 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'etfs-investimento-global',
-    categoria: 'financas',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 23.
+    slug: 'atracao-com-respeito',
+    categoria: 'relacionamentos',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 18.
     disponivel: true,
-    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
-    titulo: { pt: 'ETFs e Investimento Global', en: 'ETFs and Global Investing', es: 'ETFs e Inversión Global' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Confiança Social: Atração com Respeito', en: 'Social Confidence: Attraction with Respect', es: 'Confianza Social: Atracción con Respeto' },
     resumo: {
-      pt: 'ETFs, BDRs, custos, impostos e carteira global com método — diversifique fora do Brasil sem promessa de rentabilidade.',
-      en: 'ETFs, access certificates, costs, taxes and a global portfolio with method — diversify beyond your home market, no promised returns.',
-      es: 'ETFs, certificados de acceso, costos, impuestos y cartera global con método — diversifica fuera de tu país sin promesa de rentabilidad.'
+      pt: 'Diagnóstico social, Protocolo P.A.R.E. para ansiedade, método C.O.N.E.C.T.A. e plano de 30 dias — presença, autoestima e atração com respeito.',
+      en: 'A social diagnostic, the STOP protocol for anxiety, the C.O.N.N.E.C.T. method and a 30-day plan — presence, self-esteem and attraction with respect.',
+      es: 'Diagnóstico social, Protocolo P.A.R.E. para la ansiedad, método C.O.N.E.C.T.A. y plan de 30 días — presencia, autoestima y atracción con respeto.'
     }
   },
   {
-    slug: 'fiis-do-zero',
-    categoria: 'financas',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 24.
+    slug: 'limites-rejeicao-maturidade',
+    categoria: 'relacionamentos',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 20.
     disponivel: true,
-    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
-    titulo: { pt: 'FIIs do Zero', en: 'REITs from Zero', es: 'REITs desde Cero' },
+    tag:    { pt: 'Relacionamentos',  en: 'Relationships',  es: 'Relaciones' },
+    titulo: { pt: 'Limites, Rejeição e Maturidade Emocional', en: 'Boundaries, Rejection and Emotional Maturity', es: 'Límites, Rechazo y Madurez Emocional' },
     resumo: {
-      pt: 'Tipos de FIIs, indicadores sem confusão, análise prática e carteira com método — sem promessa de rentabilidade.',
-      en: 'REIT types, indicators without confusion, practical analysis and a teaching portfolio with method — no promised returns.',
-      es: 'Tipos de REITs, indicadores sin confusión, análisis práctico y cartera con método — sin promesa de rentabilidad.'
+      pt: 'Protocolo P.A.R.A., mapa de limites e frases de comunicação assertiva — comunique limites e lide com rejeição com maturidade, num plano de 30 dias.',
+      en: 'The P.A.R.M. protocol, a boundary map and assertive communication phrases — communicate boundaries and handle rejection with maturity, in a 30-day plan.',
+      es: 'Protocolo P.A.R.A., mapa de límites y frases de comunicación asertiva — comunica límites y maneja el rechazo con madurez, en un plan de 30 días.'
     }
   },
   {
@@ -310,16 +284,16 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'imposto-de-renda-investidores',
+    slug: 'psicologia-do-investidor',
     categoria: 'financas',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 26.
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 28.
     disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
-    titulo: { pt: 'Imposto de Renda para Investidores', en: 'Investment Tax Organization', es: 'Organización Fiscal para Inversionistas' },
+    titulo: { pt: 'Psicologia do Investidor', en: 'Investor Psychology', es: 'Psicología del Inversor' },
     resumo: {
-      pt: 'Rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, exterior, cripto e declaração anual — com plano de 30 dias e checklists.',
-      en: 'A monthly routine, tax folder system, stocks, REITs, ETFs, foreign assets, crypto and annual filing — with a 30-day plan and checklists.',
-      es: 'Rutina mensual, carpeta fiscal, acciones, REITs, ETFs, exterior, cripto y declaración anual — con plan de 30 días y checklists.'
+      pt: 'Método P.A.U.S.A., diagnóstico de vieses comportamentais e protocolo anti-pânico para decidir com mais disciplina — sem indicar ativos.',
+      en: 'The S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline — no asset picks.',
+      es: 'Método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina — sin indicar activos.'
     }
   },
   {
@@ -336,19 +310,6 @@ window.PRODUTOS_SITE = [
     }
   },
   {
-    slug: 'psicologia-do-investidor',
-    categoria: 'financas',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 28.
-    disponivel: true,
-    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
-    titulo: { pt: 'Psicologia do Investidor', en: 'Investor Psychology', es: 'Psicología del Inversor' },
-    resumo: {
-      pt: 'Método P.A.U.S.A., diagnóstico de vieses comportamentais e protocolo anti-pânico para decidir com mais disciplina — sem indicar ativos.',
-      en: 'The S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline — no asset picks.',
-      es: 'Método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina — sin indicar activos.'
-    }
-  },
-  {
     slug: 'renda-fixa-inteligente',
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 29.
@@ -359,6 +320,60 @@ window.PRODUTOS_SITE = [
       pt: 'Método prático de 7 filtros para comparar Tesouro Direto, CDB, LCI/LCA e crédito privado, entender FGC e marcação a mercado, e montar uma carteira por camadas.',
       en: 'A practical 7-filter method to compare treasury bonds, CDs, tax-exempt notes and private credit, understand deposit insurance and mark-to-market, and build a layered portfolio.',
       es: 'Método práctico de 7 filtros para comparar el Tesoro Directo, CDB, LCI/LCA y crédito privado, entender el fondo de garantía y la valoración a mercado, y armar una cartera por capas.'
+    }
+  },
+  {
+    slug: 'fiis-do-zero',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 24.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'FIIs do Zero', en: 'REITs from Zero', es: 'REITs desde Cero' },
+    resumo: {
+      pt: 'Tipos de FIIs, indicadores sem confusão, análise prática e carteira com método — sem promessa de rentabilidade.',
+      en: 'REIT types, indicators without confusion, practical analysis and a teaching portfolio with method — no promised returns.',
+      es: 'Tipos de REITs, indicadores sin confusión, análisis práctico y cartera con método — sin promesa de rentabilidad.'
+    }
+  },
+  {
+    slug: 'dividendos-e-renda-passiva',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 31.
+    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
+    novo: true,
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Dividendos e Renda Passiva', en: 'Dividends & Passive Income', es: 'Dividendos y Renta Pasiva' },
+    resumo: {
+      pt: 'Método prático para construir renda recorrente com ações, FIIs, reinvestimento e disciplina financeira — sem promessa de rentabilidade.',
+      en: 'A practical method to build recurring income with stocks, REITs, reinvestment and financial discipline — no promised returns.',
+      es: 'Método práctico para construir renta recurrente con acciones, FIIs/REITs, reinversión y disciplina financiera — sin promesa de rentabilidad.'
+    }
+  },
+  {
+    slug: 'etfs-investimento-global',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 23.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'ETFs e Investimento Global', en: 'ETFs and Global Investing', es: 'ETFs e Inversión Global' },
+    resumo: {
+      pt: 'ETFs, BDRs, custos, impostos e carteira global com método — diversifique fora do Brasil sem promessa de rentabilidade.',
+      en: 'ETFs, access certificates, costs, taxes and a global portfolio with method — diversify beyond your home market, no promised returns.',
+      es: 'ETFs, certificados de acceso, costos, impuestos y cartera global con método — diversifica fuera de tu país sin promesa de rentabilidad.'
+    }
+  },
+  {
+    slug: 'imposto-de-renda-investidores',
+    categoria: 'financas',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 26.
+    disponivel: true,
+    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
+    titulo: { pt: 'Imposto de Renda para Investidores', en: 'Investment Tax Organization', es: 'Organización Fiscal para Inversionistas' },
+    resumo: {
+      pt: 'Rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, exterior, cripto e declaração anual — com plano de 30 dias e checklists.',
+      en: 'A monthly routine, tax folder system, stocks, REITs, ETFs, foreign assets, crypto and annual filing — with a 30-day plan and checklists.',
+      es: 'Rutina mensual, carpeta fiscal, acciones, REITs, ETFs, exterior, cripto y declaración anual — con plan de 30 días y checklists.'
     }
   },
   {
@@ -374,17 +389,5 @@ window.PRODUTOS_SITE = [
       es: 'Reconoce pirámides, falsos asesores, phishing y facturas falsas, y arma un plan de blindaje financiero en 30 días.'
     }
   },
-  {
-    slug: 'dividendos-e-renda-passiva',
-    categoria: 'financas',
-    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 31.
-    disponivel: true,
-    tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
-    titulo: { pt: 'Dividendos e Renda Passiva', en: 'Dividends & Passive Income', es: 'Dividendos y Renta Pasiva' },
-    resumo: {
-      pt: 'Método prático para construir renda recorrente com ações, FIIs, reinvestimento e disciplina financeira — sem promessa de rentabilidade.',
-      en: 'A practical method to build recurring income with stocks, REITs, reinvestment and financial discipline — no promised returns.',
-      es: 'Método práctico para construir renta recurrente con acciones, FIIs/REITs, reinversión y disciplina financiera — sin promesa de rentabilidad.'
-    }
-  }
+
 ];

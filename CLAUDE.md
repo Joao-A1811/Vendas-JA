@@ -696,6 +696,33 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
   (best-effort, por instância da função — não é distribuído, mas já barra a maioria dos
   scripts de spam).
 
+## Ordem do catálogo (`assets/produtos.js`)
+
+A ordem dos produtos dentro de cada categoria em `window.PRODUTOS_SITE` **não é cronológica
+(ordem de lançamento) — é estratégica**, pensada pra abrir cada seção com o produto de maior
+apelo/gancho comercial e fechar com os mais nichados/avançados, formando uma jornada coerente
+dentro da categoria (reorganizado em jul/2026):
+- **Saúde e Fitness:** Emagrecimento → Desafio 30 Dias → Treino em Casa → Ganho de Massa →
+  Treino Academia → Receitas Fitness → Suplementação Inteligente → Mobilidade/Alongamento →
+  Mentalidade/Ansiedade/Hábitos.
+- **Relacionamentos:** Ansiedade Social e Conversas com Naturalidade → Linguagem Corporal e
+  Presença Social → Carisma, Humor e Storytelling → Comunicação e Relacionamento → Mensagens e
+  Conversas Online → Primeiro Encontro → Confiança Social: Atração com Respeito → Limites,
+  Rejeição e Maturidade Emocional.
+- **Finanças:** Finanças Pessoais → Psicologia do Investidor → Investimentos do Zero →
+  Renda Fixa Inteligente → FIIs do Zero → Dividendos e Renda Passiva → ETFs e Investimento
+  Global → Imposto de Renda → Segurança Financeira e Golpes.
+
+A ordem das **categorias** (Saúde e Fitness → Relacionamentos → Finanças, definida pela ordem
+das chaves em `window.CATEGORIAS_SITE`) também é proposital: da categoria de apelo mais amplo
+e emocional pra mais racional/considerada.
+
+O selo "NOVO" **não depende mais da posição no array** (antes era sempre o último item) — segue
+o campo explícito `novo: true` no produto (hoje em `dividendos-e-renda-passiva`, o mais recente).
+Ao lançar um produto novo, mover o `novo: true` pra ele e remover do anterior. A mesma lógica
+(`MAIS_NOVO`) também escolhe uma das 3 capas em leque do hero, junto com o 1º produto do array e
+um do meio — em `index.html` / `index-en.html` / `index-es.html`.
+
 ## O que ainda falta (estado em julho/2026)
 
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
