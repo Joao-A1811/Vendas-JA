@@ -550,4 +550,24 @@ export const PRODUTOS = {
       dica: 'Antes de comprar por el dividend yield, pregúntate: ¿ese flujo es sostenible, viene de una fuente sana y cabe en mi riesgo? Si la tesis depende solo del próximo pago, el análisis todavía está incompleto.',
     },
   }),
+
+  'ia-para-profissoes': montar('ia-para-profissoes', {
+    pt: {
+      nomeProduto: 'Inteligência Artificial para Profissões — Guia Completo NextLevel',
+      tema: 'a regra dos 4 papéis da IA, matriz de ferramentas por atividade, a fórmula do prompt profissional, 16 profissões com prompts prontos, fluxos de trabalho e um plano de implementação de 14 dias',
+      dica: 'Antes de aceitar a primeira resposta da IA, use o prompt de refinamento: peça pra ela mesma revisar pontos fracos, informações ausentes e possíveis erros. Essa segunda passada é o que separa um resultado genérico de um aplicável.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Artificial Intelligence for Professions — Complete NextLevel Guide',
+      tema: 'the 4 roles of AI, a tools matrix by task, the professional prompt formula, 16 professions with ready-to-use prompts, workflows and a 14-day implementation plan',
+      dica: "Before accepting the AI's first answer, use the refinement prompt: ask it to review its own weak points, missing information and likely errors. That second pass is what separates a generic result from an applicable one.",
+    },
+    es: {
+      nomeProduto: 'Inteligencia Artificial para Profesiones — Guía Completa NextLevel',
+      tema: 'la regla de los 4 roles de la IA, matriz de herramientas por actividad, la fórmula del prompt profesional, 16 profesiones con prompts listos, flujos de trabajo y un plan de implementación de 14 días',
+      dica: 'Antes de aceptar la primera respuesta de la IA, usa el prompt de refinamiento: pídele que revise sus propios puntos débiles, información faltante y posibles errores. Ese segundo paso es lo que separa un resultado genérico de uno aplicable.',
+    },
+  }),
 };

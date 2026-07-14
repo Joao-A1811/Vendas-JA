@@ -1724,6 +1724,70 @@ financiera o asesoría fiscal.
 
 ---
 
+## 32. Inteligência Artificial para Profissões — categoria: nova vertente "IA e Produtividade"
+
+**Nome (PT):** Inteligência Artificial para Profissões — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 40 páginas para usar inteligência artificial no trabalho, nos estudos e nos
+negócios com método: o que muda quando a IA entra na profissão (a regra dos 4 papéis — assistente,
+analista, criadora, treinadora), como escolher a ferramenta certa (matriz de 10 tipos de atividade
+cobrindo ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI e mais), o método do
+prompt profissional (fórmula de contexto, tarefa, formato e revisão), 16 profissões com
+ferramentas indicadas, usos práticos e um prompt pronto cada uma (gestores, administrativo,
+vendas, marketing, empreendedores, professores, estudantes, RH, jurídico, contabilidade,
+investimentos, saúde, engenharia, tecnologia, design e pesquisa/jornalismo), 4 fluxos de trabalho
+prontos, biblioteca de 10 prompts por objetivo, checklist de segurança/qualidade/ética com níveis
+de risco, e um plano de implementação de 14 dias com indicadores simples de resultado. E-book
+digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo 100% educacional — alerta
+que a IA pode errar ou inventar informação e que, em áreas reguladas (saúde, direito, contabilidade,
+finanças, engenharia), o uso deve ser só de apoio, com validação final de profissional habilitado.
+
+**Name (EN):** Artificial Intelligence for Professions — Complete NextLevel Guide
+**Description (EN):**
+Premium 40-page guide to use artificial intelligence at work, in your studies and in your
+business with method: what changes when AI enters a profession (the 4 roles of AI — assistant,
+analyst, creator, coach), how to choose the right tool (a matrix of 10 task types covering
+ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI and more), the professional
+prompt method (a context, task, format and review formula), 16 professions with recommended
+tools, practical uses and a ready-to-use prompt each (managers, administrative staff, sales,
+marketing, entrepreneurs, teachers, students, HR, legal, accounting, investing, health,
+engineering, technology, design and research/journalism), 4 ready-made workflows, a library of 10
+prompts by goal, a safety/quality/ethics checklist with risk levels, and a 14-day implementation
+plan with simple result indicators. Digital ebook, instant access, 7-day unconditional guarantee.
+100% educational content — warns that AI can make mistakes or invent information and that, in
+regulated fields (health, law, accounting, finance, engineering), it should be used only as
+support, with final validation from a qualified professional.
+
+**Nombre (ES):** Inteligencia Artificial para Profesiones — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 40 páginas para usar inteligencia artificial en el trabajo, en los estudios y en
+los negocios con método: qué cambia cuando la IA entra en la profesión (la regla de los 4 roles de
+la IA — asistente, analista, creadora, entrenadora), cómo elegir la herramienta correcta (matriz de
+10 tipos de actividad que cubre ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI y
+más), el método del prompt profesional (fórmula de contexto, tarea, formato y revisión), 16
+profesiones con herramientas indicadas, usos prácticos y un prompt listo cada una (gerentes,
+administrativo, ventas, marketing, emprendedores, profesores, estudiantes, RRHH, jurídico,
+contabilidad, inversiones, salud, ingeniería, tecnología, diseño e investigación/periodismo), 4
+flujos de trabajo listos, biblioteca de 10 prompts por objetivo, checklist de
+seguridad/calidad/ética con niveles de riesgo, y un plan de implementación de 14 días con
+indicadores simples de resultado. Ebook digital, acceso inmediato y garantía incondicional de 7
+días. Contenido 100% educativo — advierte que la IA puede equivocarse o inventar información y que,
+en áreas reguladas (salud, derecho, contabilidad, finanzas, ingeniería), el uso debe ser solo de
+apoyo, con validación final de un profesional habilitado.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/ia-para-profissoes-<pt|en|es>.pdf`. Produto novo,
+> abrindo a vertente "IA e Produtividade" (categoria nova — adicionar em
+> `window.CATEGORIAS_SITE` só no momento do lançamento, junto com o bloco em
+> `assets/produtos.js`). Construído (páginas, ebooks, galeria) mas ainda SEM checkout real —
+> `linkCheckoutHotmart` está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
+> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
+> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
+> abaixo.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

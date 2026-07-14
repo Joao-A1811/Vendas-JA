@@ -725,6 +725,30 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`ia-para-profissoes` (32º produto — "Inteligência Artificial para Profissões", abre a nova
+  vertente "IA e Produtividade") — construído, mas SEM checkout real ainda.** Primeiro produto
+  fora das 3 categorias existentes (Saúde e Fitness, Relacionamentos, Finanças) — quando for
+  lançado, precisa adicionar a categoria nova (`ia-produtividade`) em `window.CATEGORIAS_SITE`
+  junto com o bloco do produto em `assets/produtos.js`. Guia pago de 40 páginas (a regra dos 4
+  papéis da IA — assistente, analista, criadora, treinadora —, matriz de ferramentas por
+  atividade cobrindo ChatGPT/Claude/Gemini/Copilot/Perplexity/NotebookLM/Canva AI, o método do
+  prompt profissional — contexto, tarefa, formato e revisão —, 16 profissões com ferramentas,
+  usos e um prompt pronto cada uma — gestão, administrativo, vendas, marketing, empreendedores,
+  educação, RH, jurídico, contabilidade, investimentos, saúde, engenharia, tecnologia, design e
+  pesquisa —, 4 fluxos de trabalho prontos, biblioteca de 10 prompts por objetivo, checklist de
+  segurança/qualidade/ética com níveis de risco, e plano de implementação de 14 dias) + ebook
+  gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/ia-para-profissoes-<pt|en|es>.pdf`.
+  Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
+  `assets/produtos/ia-para-profissoes/` (3 idiomas), já no visual dark premium
+  navy+teal+âmbar. Conteúdo alerta que a IA pode errar/inventar informação e que, em áreas
+  reguladas (saúde, direito, contabilidade, finanças, engenharia), o uso deve ser só de apoio
+  com validação de profissional habilitado. Páginas de venda em `produtos/ia-para-profissoes/`
+  (3 idiomas) já prontas, com `linkCheckoutHotmart` em placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
+  `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
+  `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em `CADASTRO-HOTMART.md`, seção
+  32. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Falta: cadastrar na
+  Hotmart e colar os 3 links de checkout reais — só depois disso o produto entra em
+  `assets/produtos.js` (com a categoria nova) e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.
