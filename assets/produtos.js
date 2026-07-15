@@ -400,8 +400,6 @@ window.PRODUTOS_SITE = [
     slug: 'ia-para-profissoes',
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 32.
-    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
-    novo: true,
     disponivel: true,
     tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
     titulo: { pt: 'Inteligência Artificial para Profissões', en: 'Artificial Intelligence for Professions', es: 'Inteligencia Artificial para Profesiones' },
@@ -409,6 +407,21 @@ window.PRODUTOS_SITE = [
       pt: 'Ferramentas, fluxos e prompts prontos para 16 profissões, com um plano de implementação de 14 dias.',
       en: 'Ready-to-use tools, workflows and prompts for 16 professions, with a 14-day implementation plan.',
       es: 'Herramientas, flujos y prompts listos para 16 profesiones, con un plan de implementación de 14 días.'
+    }
+  },
+  {
+    slug: 'produtividade-com-ia',
+    categoria: 'ia-produtividade',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 33.
+    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
+    novo: true,
+    disponivel: true,
+    tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
+    titulo: { pt: 'Produtividade com Inteligência Artificial', en: 'Productivity with Artificial Intelligence', es: 'Productividad con Inteligencia Artificial' },
+    resumo: {
+      pt: 'O Sistema 4D, 8 fluxos de trabalho e 30+ prompts prontos para ganhar tempo com IA, com plano de 14 dias.',
+      en: 'The 4D System, 8 ready-made workflows and 30+ prompts to save time with AI, with a 14-day plan.',
+      es: 'El Sistema 4D, 8 flujos de trabajo y 30+ prompts listos para ganar tiempo con IA, con plan de 14 días.'
     }
   },
 ];

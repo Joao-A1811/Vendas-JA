@@ -64,8 +64,9 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
 `imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto),
 `renda-fixa-inteligente` (29º produto), `seguranca-financeira-e-golpes` (30º produto),
-`dividendos-e-renda-passiva` (31º produto) e `ia-para-profissoes` (32º produto — primeiro fora
-das categorias Saúde/Relacionamentos/Finanças, abrindo a vertente "IA e Produtividade"). Depoimentos
+`dividendos-e-renda-passiva` (31º produto), `ia-para-profissoes` (32º produto — primeiro fora
+das categorias Saúde/Relacionamentos/Finanças, abrindo a vertente "IA e Produtividade") e
+`produtividade-com-ia` (33º produto, segundo da mesma vertente). Depoimentos
 ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
 **inventar depoimento é vetado** (Meta Ads + CDC).
 
@@ -646,6 +647,28 @@ validação de profissional habilitado. Preço padrão da coleção: **R$ 49,99 
 - EN/USD: `https://pay.hotmart.com/P106752415S` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/I106752439G` (US$ 19)
 
+**`produtividade-com-ia` (jul/2026, 33º produto — "Produtividade com Inteligência Artificial") —
+✅ AO VIVO nos 3 idiomas.** Segundo produto da vertente "IA e Produtividade" — distinto do
+`ia-para-profissoes` (organizado por 16 profissões): este é um sistema geral de produtividade.
+Guia pago de 40 páginas (o novo conceito de produtividade — o que a IA faz melhor e o que não
+resolve sozinha —, a matriz de 6 blocos de produtividade — clareza, comunicação, pesquisa,
+documentos, organização, automação —, as principais ferramentas do mercado — ChatGPT, Claude,
+Gemini, Microsoft Copilot, Perplexity, NotebookLM, Notion AI, Canva AI, Zapier/Make —, o Sistema
+4D — Descarregar, Decidir, Desenvolver, Delegar — com prompt mestre e rotina diária sugerida, 8
+fluxos de trabalho prontos — planejamento semanal, caixa de entrada, reunião produtiva, documento
+em 30 minutos, pesquisa com fontes, planilha em insight, conteúdo para redes sociais, automação
+simples —, biblioteca de 30+ prompts por objetivo, os multiplicadores de produtividade com modelo
+de cálculo de ganho de tempo, como montar uma base de conhecimento com IA, segurança/privacidade/
+qualidade com checklist antes de entregar, e um plano de implementação de 14 dias que termina no
+"Manual Pessoal de Produtividade com IA" do leitor) + ebook gratuito (isca, 6 páginas) nos 3
+idiomas, `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe
+por dentro" com 5 páginas de amostra em `assets/produtos/produtividade-com-ia/` (3 idiomas), já
+no visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+(EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/R106753629B` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/L106753657N` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/K106753682B` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -740,32 +763,13 @@ das chaves em `window.CATEGORIAS_SITE`) também é proposital: da categoria de a
 e emocional pra mais racional/considerada.
 
 O selo "NOVO" **não depende mais da posição no array** (antes era sempre o último item) — segue
-o campo explícito `novo: true` no produto (hoje em `ia-para-profissoes`, o mais recente).
+o campo explícito `novo: true` no produto (hoje em `produtividade-com-ia`, o mais recente).
 Ao lançar um produto novo, mover o `novo: true` pra ele e remover do anterior. A mesma lógica
 (`MAIS_NOVO`) também escolhe uma das 3 capas em leque do hero, junto com o 1º produto do array e
 um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`produtividade-com-ia` (33º produto — "Produtividade com Inteligência Artificial", segundo
-  produto da vertente "IA e Produtividade") — construído, mas SEM checkout real ainda.**
-  Distinto do `ia-para-profissoes` (que é organizado por 16 profissões): este é um sistema geral
-  de produtividade — o Sistema 4D (Descarregar, Decidir, Desenvolver, Delegar), a matriz de 6
-  blocos de produtividade, 8 fluxos de trabalho prontos (planejamento semanal, caixa de entrada,
-  reunião produtiva, documento em 30 minutos, pesquisa com fontes, planilha em insight,
-  conteúdo para redes sociais, automação simples), biblioteca de 30+ prompts, os multiplicadores
-  de produtividade com modelo de cálculo de ganho de tempo, como montar uma base de conhecimento
-  com IA, segurança/privacidade/qualidade, e plano de implementação de 14 dias. Guia pago de 40
-  páginas + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
-  `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
-  dentro" com 5 páginas de amostra em `assets/produtos/produtividade-com-ia/` (3 idiomas), já no
-  visual dark premium navy+teal+âmbar. Páginas de venda em `produtos/produtividade-com-ia/` (3
-  idiomas) já prontas, com `linkCheckoutHotmart` em placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
-  `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
-  `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em `CADASTRO-HOTMART.md`, seção
-  33. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Falta: cadastrar na
-  Hotmart e colar os 3 links de checkout reais — só depois disso o produto entra em
-  `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

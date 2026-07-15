@@ -1843,11 +1843,8 @@ humana o las políticas internas de seguridad y privacidad.
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Segundo produto
 > da vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`, criada no
-> lançamento do `ia-para-profissoes`). Construído (páginas, ebooks, galeria) mas ainda SEM
-> checkout real — `linkCheckoutHotmart` está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
-> `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
-> `assets/produtos.js` nem em `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de
-> checkout reais, seguir os passos abaixo.
+> lançamento do `ia-para-profissoes`).
+> **Checkout real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
 
 ---
 
