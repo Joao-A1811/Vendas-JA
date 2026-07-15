@@ -32,13 +32,22 @@ export default async (req) => {
   let corpo;
   try { corpo = await req.json(); } catch { return new Response('JSON inválido', { status: 400 }); }
 
-  const hottokEsperado = process.env.HOTMART_HOTTOK;
+  const hottokEsperado = (process.env.HOTMART_HOTTOK || '').trim();
   if (!hottokEsperado) {
     console.error('hotmart-webhook: HOTMART_HOTTOK não configurada no Netlify');
     return new Response('Não configurado', { status: 500 });
   }
-  if (corpo.hottok !== hottokEsperado) {
-    console.error('hotmart-webhook: hottok inválido');
+  const hottokRecebido = String(corpo.hottok || '').trim();
+  if (hottokRecebido !== hottokEsperado) {
+    // Não loga os valores completos (é um segredo), só o suficiente pra
+    // diagnosticar sem expor o token: tamanho de cada um e os 4 primeiros/
+    // últimos caracteres — dá pra ver na hora se foi espaço extra, token
+    // cortado ou copiou o valor errado.
+    const resumo = (v) => v ? `len=${v.length} "${v.slice(0, 4)}…${v.slice(-4)}"` : '(vazio)';
+    console.error(
+      'hotmart-webhook: hottok inválido — recebido:', resumo(hottokRecebido),
+      '| esperado (HOTMART_HOTTOK):', resumo(hottokEsperado)
+    );
     return new Response('Token inválido', { status: 401 });
   }
 
