@@ -1910,11 +1910,7 @@ formal), y refuerza el cuidado con los datos personales de los clientes.
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/ia-para-negocios-pequenos-<pt|en|es>.pdf`. Terceiro
 > produto da vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`).
-> Construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart` está
-> com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
-> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
-> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
-> abaixo.
+> **Checkout real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
 
 ---
 

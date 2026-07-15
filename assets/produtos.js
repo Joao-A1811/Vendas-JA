@@ -413,8 +413,6 @@ window.PRODUTOS_SITE = [
     slug: 'produtividade-com-ia',
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 33.
-    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
-    novo: true,
     disponivel: true,
     tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
     titulo: { pt: 'Produtividade com Inteligência Artificial', en: 'Productivity with Artificial Intelligence', es: 'Productividad con Inteligencia Artificial' },
@@ -422,6 +420,21 @@ window.PRODUTOS_SITE = [
       pt: 'O Sistema 4D, 8 fluxos de trabalho e 30+ prompts prontos para ganhar tempo com IA, com plano de 14 dias.',
       en: 'The 4D System, 8 ready-made workflows and 30+ prompts to save time with AI, with a 14-day plan.',
       es: 'El Sistema 4D, 8 flujos de trabajo y 30+ prompts listos para ganar tiempo con IA, con plan de 14 días.'
+    }
+  },
+  {
+    slug: 'ia-para-negocios-pequenos',
+    categoria: 'ia-produtividade',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 34.
+    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
+    novo: true,
+    disponivel: true,
+    tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
+    titulo: { pt: 'IA para Negócios Pequenos', en: 'AI for Small Businesses', es: 'IA para Pequeños Negocios' },
+    resumo: {
+      pt: 'O Sistema 6A, matriz de 13 ferramentas e 40+ prompts prontos para vender mais e ganhar eficiência com IA.',
+      en: 'The 6A System, a matrix of 13 tools and 40+ ready-made prompts to sell more and gain efficiency with AI.',
+      es: 'El Sistema 6A, matriz de 13 herramientas y 40+ prompts listos para vender más y ganar eficiencia con IA.'
     }
   },
 ];
