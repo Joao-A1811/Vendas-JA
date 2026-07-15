@@ -15,8 +15,8 @@ function links(slug) {
 
 const PRECOS = {
   pt: { precoDe: 'R$ 97,00', precoPor: 'R$ 47,00' },
-  en: { precoDe: '$37', precoPor: '$19' },
-  es: { precoDe: '$37', precoPor: '$19' },
+  en: { precoDe: '$97', precoPor: '$19' },
+  es: { precoDe: '$97', precoPor: '$19' },
 };
 
 function montar(slug, dados) {
@@ -483,15 +483,11 @@ export const PRODUTOS = {
       nomeProduto: 'Investor Psychology — Complete NextLevel Guide',
       tema: 'the S.T.O.P. method, a behavioral bias diagnostic and an anti-panic protocol to decide with more discipline',
       dica: "Before your next investment decision, apply the S.T.O.P. method: Stop, Think through what actually changed, One portfolio view — does it fit the whole, Play out what happens if you're wrong, and only then Proceed. Discipline is not letting emotion sign the buy or sell order.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Psicología del Inversor — Guía Completa NextLevel',
       tema: 'método P.A.U.S.A., diagnóstico de sesgos de comportamiento y protocolo antipánico para decidir con más disciplina',
       dica: 'Antes de tu próxima decisión de inversión, aplica el método P.A.U.S.A.: Para, Analiza qué cambió en realidad, Unifica con tu cartera como un todo, Simula qué pasa si te equivocas, y solo entonces Actúa. Disciplina es no dejar que la emoción firme la orden de compra o venta.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -507,15 +503,11 @@ export const PRODUTOS = {
       nomeProduto: 'Smart Fixed Income — Complete NextLevel Guide',
       tema: 'a practical method to compare treasury bonds, CDs, tax-exempt notes and private credit, understand deposit insurance and mark-to-market, and build a layered portfolio',
       dica: "Before buying any fixed income product, apply the 7 filters: goal, term, liquidity, issuer, guarantees, net return and concentration. If you can't answer all 7 in under 2 minutes, it's not time to buy yet.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Renta Fija Inteligente — Guía Completa NextLevel',
       tema: 'método práctico para comparar el Tesoro Directo, CDB, LCI/LCA y crédito privado, entender el fondo de garantía y la valoración a mercado, y armar una cartera por capas',
       dica: 'Antes de comprar cualquier producto de renta fija, aplica los 7 filtros: objetivo, plazo, liquidez, emisor, garantías, rentabilidad neta y concentración. Si no puedes responder los 7 en menos de 2 minutos, todavía no es momento de comprar.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -531,15 +523,11 @@ export const PRODUTOS = {
       nomeProduto: 'Financial Safety & Scams — Complete NextLevel Guide',
       tema: 'the financial scam map, the 20 red flags, a risk matrix, digital and banking security, incident response and a 30-day shielding plan',
       dica: "Before any transfer or contribution, confirm: does the money go to the institution's account, not an individual's? If the answer is no or unclear, stop and verify through an official channel before deciding.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Seguridad Financiera y Estafas — Guía Completa NextLevel',
       tema: 'el mapa de las estafas financieras, las 20 señales de alerta, matriz de riesgo, seguridad digital y bancaria, respuesta a incidentes y plan de blindaje de 30 días',
       dica: 'Antes de cualquier transferencia o aporte, confirma: ¿el dinero va a la cuenta de la institución, no de una persona física? Si la respuesta es no o incierta, detente y verifica por canal oficial antes de decidir.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -555,15 +543,11 @@ export const PRODUTOS = {
       nomeProduto: 'Dividends & Passive Income — Complete NextLevel Guide',
       tema: 'dividends without illusions, REITs and monthly income, 2026 taxation, a portfolio method, reinvestment and a 30-day plan',
       dica: "Before buying because of the dividend yield, ask: is this flow sustainable, does it come from a healthy source, and does it fit my risk? If the thesis depends only on the next payment, the analysis is still incomplete.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Dividendos y Renta Pasiva — Guía Completa NextLevel',
       tema: 'dividendos sin ilusión, FIIs/REITs y renta mensual, tributación de 2026, método de cartera, reinversión y un plan de 30 días',
       dica: 'Antes de comprar por el dividend yield, pregúntate: ¿ese flujo es sostenible, viene de una fuente sana y cabe en mi riesgo? Si la tesis depende solo del próximo pago, el análisis todavía está incompleto.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -579,15 +563,11 @@ export const PRODUTOS = {
       nomeProduto: 'Artificial Intelligence for Professions — Complete NextLevel Guide',
       tema: 'the 4 roles of AI, a tools matrix by task, the professional prompt formula, 16 professions with ready-to-use prompts, workflows and a 14-day implementation plan',
       dica: "Before accepting the AI's first answer, use the refinement prompt: ask it to review its own weak points, missing information and likely errors. That second pass is what separates a generic result from an applicable one.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Inteligencia Artificial para Profesiones — Guía Completa NextLevel',
       tema: 'la regla de los 4 roles de la IA, matriz de herramientas por actividad, la fórmula del prompt profesional, 16 profesiones con prompts listos, flujos de trabajo y un plan de implementación de 14 días',
       dica: 'Antes de aceptar la primera respuesta de la IA, usa el prompt de refinamiento: pídele que revise sus propios puntos débiles, información faltante y posibles errores. Ese segundo paso es lo que separa un resultado genérico de uno aplicable.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -603,15 +583,11 @@ export const PRODUTOS = {
       nomeProduto: 'Productivity with Artificial Intelligence — Complete NextLevel Guide',
       tema: 'the 4D System (Dump, Decide, Develop, Delegate), the 6-block productivity matrix, 8 ready-made workflows, 30+ prompts, a knowledge base, security and a 14-day implementation plan',
       dica: "Instead of asking for the same thing every week, turn it into a template: an email template, a minutes template, a content routine. Real time savings come from reusable patterns, not one-off answers.",
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Productividad con Inteligencia Artificial — Guía Completa NextLevel',
       tema: 'el Sistema 4D (Descargar, Decidir, Desarrollar, Delegar), la matriz de 6 bloques de productividad, 8 flujos de trabajo listos, 30+ prompts, base de conocimiento, seguridad y un plan de implementación de 14 días',
       dica: 'En vez de pedir lo mismo cada semana, conviértelo en plantilla: una plantilla de correo, una plantilla de acta, una rutina de contenido. La ganancia de tiempo real viene de patrones reutilizables, no de respuestas sueltas.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -627,15 +603,11 @@ export const PRODUTOS = {
       nomeProduto: 'AI for Small Businesses — Complete NextLevel Guide',
       tema: 'the 6A System (Attract, Present, Assist, Argue, Administer, Analyze), a matrix of 13 tools, playbooks for 10 business types, 6 ready-made workflows to sell more, 40+ prompts, simple automations, security/data protection and a 14-day implementation plan',
       dica: 'Before automating any message, get clarity on audience, benefit, price, guarantee, deadline and differentiators. AI increases speed, but the offer still needs to be good.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'IA para Pequeños Negocios — Guía Completa NextLevel',
       tema: 'el Sistema 6A (Atraer, Presentar, Atender, Argumentar, Administrar, Aprender), matriz de 13 herramientas, playbooks para 10 tipos de negocio, 6 flujos listos para vender más, 40+ prompts, automatizaciones simples, seguridad/protección de datos y un plan de implementación de 14 días',
       dica: 'Antes de automatizar cualquier mensaje, ten claridad sobre público, beneficio, precio, garantía, plazo y diferenciales. La IA aumenta la velocidad, pero la oferta debe seguir siendo buena.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 
@@ -651,15 +623,11 @@ export const PRODUTOS = {
       nomeProduto: 'Applied Artificial Intelligence — Complete NextLevel Guide',
       tema: 'the map of the 16 leading AI tools (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney and 8 more tools), the prompt method that works, ready-made prompts by activity, applications by professional profile, precautions on privacy and copyright, and a 7-day implementation plan',
       dica: 'Don\'t try to master all 16 tools at once. Pick 2 or 3 that cover 80% of your routine and go deep on those first — the advantage comes from practice, not from collecting tools.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
     es: {
       nomeProduto: 'Inteligencia Artificial Aplicada — Guía Completa NextLevel',
       tema: 'el mapa de las 16 principales IA del mercado (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney y 8 herramientas más), el método de prompt que funciona, prompts listos por actividad, aplicaciones por perfil profesional, cuidados con la privacidad y los derechos de autor, y un plan de implementación de 7 días',
       dica: 'No intentes dominar las 16 herramientas a la vez. Elige 2 o 3 que cubran el 80% de tu rutina y profundiza en ellas primero — la ventaja viene de la práctica, no de acumular herramientas.',
-      precoDe: '$97',
-      precoPor: '$19',
     },
   }),
 };
