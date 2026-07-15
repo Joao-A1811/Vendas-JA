@@ -61,6 +61,7 @@ window.CATEGORIAS_SITE = {
 window.PRODUTOS_SITE = [
   {
     slug: 'emagrecimento',
+    relacionados: ['desafio-30-dias', 'receitas-fitness', 'mentalidade-ansiedade-habitos'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 10.
     disponivel: true,
@@ -74,6 +75,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'desafio-30-dias',
+    relacionados: ['emagrecimento', 'treino-em-casa', 'receitas-fitness'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 9.
     disponivel: true,
@@ -87,6 +89,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'treino-em-casa',
+    relacionados: ['treino-academia', 'ganho-de-massa', 'desafio-30-dias'],
     categoria: 'saude-fitness',
     disponivel: true,
     tag:    { pt: 'Saúde',  en: 'Health',  es: 'Salud' },
@@ -99,6 +102,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'ganho-de-massa',
+    relacionados: ['treino-academia', 'suplementacao-inteligente', 'treino-em-casa'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 11.
     disponivel: true,
@@ -112,6 +116,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'treino-academia',
+    relacionados: ['ganho-de-massa', 'treino-em-casa', 'suplementacao-inteligente'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 12.
     disponivel: true,
@@ -125,6 +130,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'receitas-fitness',
+    relacionados: ['suplementacao-inteligente', 'emagrecimento', 'desafio-30-dias'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 8.
     disponivel: true,
@@ -138,6 +144,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'suplementacao-inteligente',
+    relacionados: ['ganho-de-massa', 'treino-academia', 'receitas-fitness'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 7.
     disponivel: true,
@@ -151,6 +158,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'mobilidade-alongamento-prevencao',
+    relacionados: ['treino-academia', 'treino-em-casa', 'mentalidade-ansiedade-habitos'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 14.
     disponivel: true,
@@ -164,6 +172,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'mentalidade-ansiedade-habitos',
+    relacionados: ['emagrecimento', 'desafio-30-dias', 'mobilidade-alongamento-prevencao'],
     categoria: 'saude-fitness',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 13.
     disponivel: true,
@@ -177,6 +186,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'confianca-social',
+    relacionados: ['presenca-social', 'atracao-com-respeito', 'carisma-humor-storytelling'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 15.
     disponivel: true,
@@ -190,6 +200,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'presenca-social',
+    relacionados: ['confianca-social', 'atracao-com-respeito', 'primeiro-encontro'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 19.
     disponivel: true,
@@ -203,6 +214,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'carisma-humor-storytelling',
+    relacionados: ['comunicacao-e-relacionamentos', 'confianca-social', 'mensagens-e-conversas-online'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 16.
     disponivel: true,
@@ -216,6 +228,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'comunicacao-e-relacionamentos',
+    relacionados: ['carisma-humor-storytelling', 'limites-rejeicao-maturidade', 'mensagens-e-conversas-online'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 17.
     disponivel: true,
@@ -229,6 +242,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'mensagens-e-conversas-online',
+    relacionados: ['carisma-humor-storytelling', 'primeiro-encontro', 'comunicacao-e-relacionamentos'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 21.
     disponivel: true,
@@ -242,6 +256,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'primeiro-encontro',
+    relacionados: ['mensagens-e-conversas-online', 'atracao-com-respeito', 'presenca-social'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 22.
     disponivel: true,
@@ -255,6 +270,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'atracao-com-respeito',
+    relacionados: ['confianca-social', 'presenca-social', 'primeiro-encontro'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 18.
     disponivel: true,
@@ -268,6 +284,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'limites-rejeicao-maturidade',
+    relacionados: ['comunicacao-e-relacionamentos', 'atracao-com-respeito', 'primeiro-encontro'],
     categoria: 'relacionamentos',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 20.
     disponivel: true,
@@ -281,6 +298,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'financas-pessoais',
+    relacionados: ['investimentos', 'psicologia-do-investidor', 'seguranca-financeira-e-golpes'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 25.
     disponivel: true,
@@ -294,6 +312,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'psicologia-do-investidor',
+    relacionados: ['investimentos', 'seguranca-financeira-e-golpes', 'financas-pessoais'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 28.
     disponivel: true,
@@ -307,6 +326,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'investimentos',
+    relacionados: ['psicologia-do-investidor', 'renda-fixa-inteligente', 'financas-pessoais'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 27.
     disponivel: true,
@@ -320,6 +340,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'renda-fixa-inteligente',
+    relacionados: ['investimentos', 'fiis-do-zero', 'dividendos-e-renda-passiva'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 29.
     disponivel: true,
@@ -333,6 +354,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'fiis-do-zero',
+    relacionados: ['dividendos-e-renda-passiva', 'renda-fixa-inteligente', 'imposto-de-renda-investidores'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 24.
     disponivel: true,
@@ -346,6 +368,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'dividendos-e-renda-passiva',
+    relacionados: ['fiis-do-zero', 'renda-fixa-inteligente', 'imposto-de-renda-investidores'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 31.
     disponivel: true,
@@ -359,6 +382,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'etfs-investimento-global',
+    relacionados: ['investimentos', 'dividendos-e-renda-passiva', 'fiis-do-zero'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 23.
     disponivel: true,
@@ -372,6 +396,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'imposto-de-renda-investidores',
+    relacionados: ['investimentos', 'fiis-do-zero', 'dividendos-e-renda-passiva'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 26.
     disponivel: true,
@@ -385,6 +410,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'seguranca-financeira-e-golpes',
+    relacionados: ['psicologia-do-investidor', 'financas-pessoais', 'investimentos'],
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 30.
     disponivel: true,
@@ -398,6 +424,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'ia-para-profissoes',
+    relacionados: ['produtividade-com-ia', 'ia-para-negocios-pequenos', 'ia-aplicada'],
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 32.
     disponivel: true,
@@ -411,6 +438,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'produtividade-com-ia',
+    relacionados: ['ia-para-profissoes', 'ia-para-negocios-pequenos', 'ia-aplicada'],
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 33.
     disponivel: true,
@@ -424,6 +452,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'ia-para-negocios-pequenos',
+    relacionados: ['produtividade-com-ia', 'ia-aplicada', 'ia-para-profissoes'],
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 34.
     disponivel: true,
@@ -437,6 +466,7 @@ window.PRODUTOS_SITE = [
   },
   {
     slug: 'ia-aplicada',
+    relacionados: ['ia-para-profissoes', 'produtividade-com-ia', 'ia-para-negocios-pequenos'],
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 35.
     // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.

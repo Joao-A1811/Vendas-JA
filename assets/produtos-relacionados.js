@@ -1,9 +1,12 @@
 // ============================================================
 // "VOCÊ TAMBÉM PODE GOSTAR" — NextLevel
-// Cross-sell nas páginas de produto: mostra até 3 outros produtos da
-// mesma categoria, lendo de /assets/produtos.js (mesma fonte da home)
-// e do CONFIG.idioma da própria página. Não faz nada se a categoria
-// não tiver outro produto disponível.
+// Cross-sell nas páginas de produto: mostra os 3 produtos mais
+// correlacionados (campo `relacionados` de cada produto em
+// /assets/produtos.js, curado à mão por proximidade de tema — não é
+// só "mesma categoria"). Se um produto ainda não tiver curadoria (ou
+// algum relacionado tiver saído do catálogo/ficado indisponível), cai
+// de volta pra qualquer outro da mesma categoria, como rede de
+// segurança. Não faz nada se não sobrar nenhum produto pra mostrar.
 // ============================================================
 (function () {
   var TEXTOS = {
@@ -25,16 +28,31 @@
     if (!slugAtual) return;
 
     var lista = window.PRODUTOS_SITE;
-    var atual = lista.filter(function (p) { return p.slug === slugAtual; })[0];
+    var porSlug = {};
+    lista.forEach(function (p) { porSlug[p.slug] = p; });
+    var atual = porSlug[slugAtual];
     if (!atual) return;
 
-    var relacionados = lista.filter(function (p) {
-      return p.slug !== slugAtual && p.categoria === atual.categoria && p.disponivel;
-    });
-    if (!relacionados.length) return;
+    // 1ª tentativa: os relacionados curados à mão (mais precisos que "mesma
+    // categoria" — evita, por exemplo, mostrar ganho de massa pra quem está
+    // vendo emagrecimento só porque os dois são "Saúde e Fitness").
+    var escolhidos = (atual.relacionados || [])
+      .map(function (slug) { return porSlug[slug]; })
+      .filter(function (p) { return p && p.slug !== slugAtual && p.disponivel; });
 
-    relacionados.sort(function (a, b) { return (b.novo ? 1 : 0) - (a.novo ? 1 : 0); });
-    var escolhidos = relacionados.slice(0, 3);
+    // Rede de segurança: completa (ou substitui, se não houver curadoria)
+    // com outros produtos da mesma categoria, caso a curadoria esteja
+    // incompleta ou algum relacionado tenha saído do catálogo.
+    if (escolhidos.length < 3) {
+      var jaEscolhidos = {};
+      escolhidos.forEach(function (p) { jaEscolhidos[p.slug] = true; });
+      var extras = lista.filter(function (p) {
+        return p.slug !== slugAtual && p.categoria === atual.categoria && p.disponivel && !jaEscolhidos[p.slug];
+      });
+      extras.sort(function (a, b) { return (b.novo ? 1 : 0) - (a.novo ? 1 : 0); });
+      escolhidos = escolhidos.concat(extras).slice(0, 3);
+    }
+    if (!escolhidos.length) return;
 
     var sufixo = idioma === 'pt' ? '' : ('index-' + idioma + '.html');
     var t = TEXTOS[idioma];
