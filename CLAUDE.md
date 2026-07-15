@@ -63,8 +63,9 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `comunicacao-e-relacionamentos`, `atracao-com-respeito`, `presenca-social`,
 `etfs-investimento-global`, `fiis-do-zero`, `financas-pessoais`,
 `imposto-de-renda-investidores`, `investimentos`, `psicologia-do-investidor` (28º produto),
-`renda-fixa-inteligente` (29º produto), `seguranca-financeira-e-golpes` (30º produto) e
-`dividendos-e-renda-passiva` (31º produto). Depoimentos
+`renda-fixa-inteligente` (29º produto), `seguranca-financeira-e-golpes` (30º produto),
+`dividendos-e-renda-passiva` (31º produto) e `ia-para-profissoes` (32º produto — primeiro fora
+das categorias Saúde/Relacionamentos/Finanças, abrindo a vertente "IA e Produtividade"). Depoimentos
 ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
 **inventar depoimento é vetado** (Meta Ads + CDC).
 
@@ -624,6 +625,27 @@ coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `d
 - EN/USD: `https://pay.hotmart.com/W106728688G` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/J106728736V` (US$ 19)
 
+**`ia-para-profissoes` (jul/2026, 32º produto — "Inteligência Artificial para Profissões") — ✅
+AO VIVO nos 3 idiomas.** Primeiro produto fora das 3 categorias existentes — abre a vertente
+nova "IA e Produtividade" (`ia-produtividade` em `window.CATEGORIAS_SITE`). Guia pago de 40
+páginas (a regra dos 4 papéis da IA — assistente, analista, criadora, treinadora —, matriz de
+ferramentas por atividade cobrindo ChatGPT/Claude/Gemini/Copilot/Perplexity/NotebookLM/Canva AI,
+o método do prompt profissional — contexto, tarefa, formato e revisão —, 16 profissões com
+ferramentas indicadas, usos práticos e um prompt pronto cada uma — gestão, administrativo,
+vendas, marketing, empreendedores, educação, RH, jurídico, contabilidade, investimentos, saúde,
+engenharia, tecnologia, design e pesquisa —, 4 fluxos de trabalho prontos, biblioteca de 10
+prompts por objetivo, checklist de segurança/qualidade/ética com níveis de risco, e plano de
+implementação de 14 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+`ebooks/arquivos/ia-para-profissoes-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por dentro"
+com 5 páginas de amostra em `assets/produtos/ia-para-profissoes/` (3 idiomas), já no visual dark
+premium navy+teal+âmbar. Conteúdo alerta que a IA pode errar/inventar informação e que, em áreas
+reguladas (saúde, direito, contabilidade, finanças, engenharia), o uso deve ser só de apoio com
+validação de profissional habilitado. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+(EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/X106752389V` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/P106752415S` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/I106752439G` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -718,37 +740,13 @@ das chaves em `window.CATEGORIAS_SITE`) também é proposital: da categoria de a
 e emocional pra mais racional/considerada.
 
 O selo "NOVO" **não depende mais da posição no array** (antes era sempre o último item) — segue
-o campo explícito `novo: true` no produto (hoje em `dividendos-e-renda-passiva`, o mais recente).
+o campo explícito `novo: true` no produto (hoje em `ia-para-profissoes`, o mais recente).
 Ao lançar um produto novo, mover o `novo: true` pra ele e remover do anterior. A mesma lógica
 (`MAIS_NOVO`) também escolhe uma das 3 capas em leque do hero, junto com o 1º produto do array e
 um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`ia-para-profissoes` (32º produto — "Inteligência Artificial para Profissões", abre a nova
-  vertente "IA e Produtividade") — construído, mas SEM checkout real ainda.** Primeiro produto
-  fora das 3 categorias existentes (Saúde e Fitness, Relacionamentos, Finanças) — quando for
-  lançado, precisa adicionar a categoria nova (`ia-produtividade`) em `window.CATEGORIAS_SITE`
-  junto com o bloco do produto em `assets/produtos.js`. Guia pago de 40 páginas (a regra dos 4
-  papéis da IA — assistente, analista, criadora, treinadora —, matriz de ferramentas por
-  atividade cobrindo ChatGPT/Claude/Gemini/Copilot/Perplexity/NotebookLM/Canva AI, o método do
-  prompt profissional — contexto, tarefa, formato e revisão —, 16 profissões com ferramentas,
-  usos e um prompt pronto cada uma — gestão, administrativo, vendas, marketing, empreendedores,
-  educação, RH, jurídico, contabilidade, investimentos, saúde, engenharia, tecnologia, design e
-  pesquisa —, 4 fluxos de trabalho prontos, biblioteca de 10 prompts por objetivo, checklist de
-  segurança/qualidade/ética com níveis de risco, e plano de implementação de 14 dias) + ebook
-  gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/ia-para-profissoes-<pt|en|es>.pdf`.
-  Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
-  `assets/produtos/ia-para-profissoes/` (3 idiomas), já no visual dark premium
-  navy+teal+âmbar. Conteúdo alerta que a IA pode errar/inventar informação e que, em áreas
-  reguladas (saúde, direito, contabilidade, finanças, engenharia), o uso deve ser só de apoio
-  com validação de profissional habilitado. Páginas de venda em `produtos/ia-para-profissoes/`
-  (3 idiomas) já prontas, com `linkCheckoutHotmart` em placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
-  `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
-  `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em `CADASTRO-HOTMART.md`, seção
-  32. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Falta: cadastrar na
-  Hotmart e colar os 3 links de checkout reais — só depois disso o produto entra em
-  `assets/produtos.js` (com a categoria nova) e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

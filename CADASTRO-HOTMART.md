@@ -1778,13 +1778,8 @@ apoyo, con validación final de un profesional habilitado.
 > Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
 > comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
 > vão pro repositório, em `ebooks/arquivos/ia-para-profissoes-<pt|en|es>.pdf`. Produto novo,
-> abrindo a vertente "IA e Produtividade" (categoria nova — adicionar em
-> `window.CATEGORIAS_SITE` só no momento do lançamento, junto com o bloco em
-> `assets/produtos.js`). Construído (páginas, ebooks, galeria) mas ainda SEM checkout real —
-> `linkCheckoutHotmart` está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
-> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
-> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
-> abaixo.
+> abriu a vertente "IA e Produtividade" (categoria nova em `window.CATEGORIAS_SITE`).
+> **Checkout real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
 
 ---
 

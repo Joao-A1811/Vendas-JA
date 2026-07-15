@@ -46,6 +46,15 @@ window.CATEGORIAS_SITE = {
       en: 'Investing, diversification and financial organization — educational content, no promised returns.',
       es: 'Inversión, diversificación y organización financiera — contenido educativo, sin promesa de rentabilidad.'
     }
+  },
+  'ia-produtividade': {
+    icone: (window.ICONS || {}).brain || '🧠',
+    nome: { pt: 'IA e Produtividade', en: 'AI & Productivity', es: 'IA y Productividad' },
+    desc: {
+      pt: 'Ferramentas, fluxos e prompts prontos para usar inteligência artificial no trabalho, nos estudos e nos negócios — com método, não com modismo.',
+      en: 'Ready-to-use tools, workflows and prompts to use artificial intelligence at work, in your studies and in your business — with method, not hype.',
+      es: 'Herramientas, flujos y prompts listos para usar inteligencia artificial en el trabajo, en los estudios y en los negocios — con método, no con moda.'
+    }
   }
 };
 
@@ -339,8 +348,6 @@ window.PRODUTOS_SITE = [
     slug: 'dividendos-e-renda-passiva',
     categoria: 'financas',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 31.
-    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
-    novo: true,
     disponivel: true,
     tag:    { pt: 'Finanças',  en: 'Finance',  es: 'Finanzas' },
     titulo: { pt: 'Dividendos e Renda Passiva', en: 'Dividends & Passive Income', es: 'Dividendos y Renta Pasiva' },
@@ -389,5 +396,19 @@ window.PRODUTOS_SITE = [
       es: 'Reconoce pirámides, falsos asesores, phishing y facturas falsas, y arma un plan de blindaje financiero en 30 días.'
     }
   },
-
+  {
+    slug: 'ia-para-profissoes',
+    categoria: 'ia-produtividade',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 32.
+    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
+    novo: true,
+    disponivel: true,
+    tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
+    titulo: { pt: 'Inteligência Artificial para Profissões', en: 'Artificial Intelligence for Professions', es: 'Inteligencia Artificial para Profesiones' },
+    resumo: {
+      pt: 'Ferramentas, fluxos e prompts prontos para 16 profissões, com um plano de implementação de 14 dias.',
+      en: 'Ready-to-use tools, workflows and prompts for 16 professions, with a 14-day implementation plan.',
+      es: 'Herramientas, flujos y prompts listos para 16 profesiones, con un plan de implementación de 14 días.'
+    }
+  },
 ];
