@@ -16,7 +16,7 @@ window.SITE = {
   // → Fluxos de dados → seu site → "ID de mensuração" (começa com "G-").
   // Enquanto estiver 'COLE_AQUI', o site funciona normal e não carrega nada
   // do Google — sem efeito nenhum até colar um ID de verdade aqui.
-  gaId: 'COLE_AQUI',
+  gaId: 'G-RVZC5Z9GWC',
 
   // E-mail de contato mostrado na política de privacidade e nos termos de uso
   // (necessário pra LGPD: é por ele que a pessoa pede acesso/exclusão dos dados).
