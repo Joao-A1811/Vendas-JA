@@ -17,10 +17,11 @@
 // 5. Testar com o botão de teste do painel de webhook da Hotmart e
 //    conferir os logs desta function no Netlify (Functions → Logs).
 //
-// IMPORTANTE: os nomes de campo abaixo seguem o formato documentado da
-// Hotmart (webhook v2.0.0), mas nunca foram validados contra um payload
-// real — na primeira compra de teste, confira nos logs se os valores
-// (e-mail, preço, moeda) saíram certos e ajuste os caminhos se preciso.
+// A Hotmart manda o token no header `X-Hotmart-Hottok` (não no corpo do
+// JSON) — confirmado em produção em 15/jul/2026 via log real. Os nomes de
+// campo do corpo (data.buyer.email, data.purchase.transaction/price,
+// data.product.name) também já foram confirmados contra um evento
+// PURCHASE_APPROVED real.
 // ============================================================
 import { enviarEventoCapi } from './lib/meta-capi.mjs';
 
@@ -32,31 +33,15 @@ export default async (req) => {
   let corpo;
   try { corpo = await req.json(); } catch { return new Response('JSON inválido', { status: 400 }); }
 
-  // DIAGNÓSTICO TEMPORÁRIO — remover assim que descobrirmos onde a Hotmart
-  // manda o hottok: até agora ele sempre chegou vazio em `corpo.hottok`, o
-  // que prova que o token não vem nesse campo do corpo. Logando headers,
-  // query string e as chaves do corpo (sem valores) pra achar o lugar certo
-  // sem expor dado de comprador.
-  try {
-    console.log('hotmart-webhook: [diag] query:', new URL(req.url).search || '(nenhuma)');
-    console.log('hotmart-webhook: [diag] headers:', JSON.stringify(Object.fromEntries(req.headers.entries())));
-    console.log('hotmart-webhook: [diag] body top-level keys:', Object.keys(corpo).join(', ') || '(nenhuma)');
-    if (corpo.data && typeof corpo.data === 'object') {
-      console.log('hotmart-webhook: [diag] body.data keys:', Object.keys(corpo.data).join(', '));
-    }
-  } catch (e) {
-    console.error('hotmart-webhook: [diag] falhou ao logar diagnóstico —', e.message);
-  }
-
   const hottokEsperado = (process.env.HOTMART_HOTTOK || '').trim();
   if (!hottokEsperado) {
     console.error('hotmart-webhook: HOTMART_HOTTOK não configurada no Netlify');
     return new Response('Não configurado', { status: 500 });
   }
-  // O token pode vir tanto no corpo (`hottok`, formato mais antigo) quanto
-  // no header `X-Hotmart-Hottok` (formato mais novo) — aceita qualquer um
-  // dos dois até confirmarmos, pelo diagnóstico acima, qual a Hotmart usa.
-  const hottokRecebido = String(corpo.hottok || req.headers.get('x-hotmart-hottok') || '').trim();
+  // Confirmado em produção: a Hotmart manda o token no header
+  // X-Hotmart-Hottok. Mantém o fallback pro campo `hottok` no corpo por via
+  // das dúvidas (formato mais antigo / alguma variação de evento).
+  const hottokRecebido = String(req.headers.get('x-hotmart-hottok') || corpo.hottok || '').trim();
   if (hottokRecebido !== hottokEsperado) {
     // Não loga os valores completos (é um segredo), só o suficiente pra
     // diagnosticar sem expor o token: tamanho de cada um e os 4 primeiros/

@@ -98,32 +98,30 @@ Conta de produtor já existe. Antes de cadastrar cada produto nesta plataforma, 
 **Configurações → Verificação de identidade** se está aprovada (só é obrigatório pra sacar
 valores, não bloqueia nada antes disso).
 
-### 3a. Webhook de compra → evento "Purchase" na Meta (⚠️ pendente, fazer juntos)
+### 3a. Webhook de compra → evento "Purchase" na Meta — ✅ configurado e testado (15/jul/2026)
 
-Hoje o Meta só recebe o evento "Lead" (quando alguém deixa o e-mail) — o checkout inteiro
-acontece na Hotmart, fora do site, e o Meta nunca fica sabendo quem de fato *comprou*. Isso
-limita bastante a otimização de anúncio, que aprende muito melhor com sinal de compra do
-que só de topo de funil. A function `netlify/functions/hotmart-webhook.mjs` já está pronta
-pra fechar esse buraco — falta só a configuração do lado da Hotmart:
+Antes o Meta só recebia o evento "Lead" (quando alguém deixa o e-mail) — o checkout inteiro
+acontece na Hotmart, fora do site, e o Meta nunca ficava sabendo quem de fato *comprou*.
+Isso limitava a otimização de anúncio, que aprende muito melhor com sinal de compra do que
+só de topo de funil. A function `netlify/functions/hotmart-webhook.mjs` fecha esse buraco e
+já está **ativa e validada com um evento de teste real** — resumo de como ficou configurado:
 
 1. **Hotmart → Ferramentas → Webhook → Criar webhook** (uma vez, vale pra todos os produtos
    já cadastrados e os futuros — não precisa repetir por produto).
 2. **URL de destino:** `https://nextlevelbr.app.br/.netlify/functions/hotmart-webhook`.
-3. **Eventos:** marcar pelo menos "Compra aprovada" (`PURCHASE_APPROVED`) e "Compra
-   completa" (`PURCHASE_COMPLETE`) — a function deduplica pelo número da transação, então
-   não tem risco de contar a mesma venda 2x pro Meta mesmo recebendo os dois.
-4. A Hotmart mostra um **token (Hottok)** na tela do webhook — copiar e colar no Netlify
-   (Environment variables) como **`HOTMART_HOTTOK`** → Trigger deploy.
-5. **Testar:** a própria tela de webhook da Hotmart tem um botão de enviar um evento de
-   teste. Depois de mandar, conferir em Netlify → Functions → Logs (`hotmart-webhook`) se
-   apareceu "Purchase enviado" com e-mail/preço corretos — e no Gerenciador de Eventos do
-   Meta (aba Test Events, ou Eventos recentes) se o evento "Purchase" chegou.
-
-> ⚠️ Os nomes de campo que a function espera (e-mail, preço, moeda, número da transação)
-> seguem a documentação pública da Hotmart, mas **nunca foram validados contra um webhook
-> real** — na primeira compra de teste, é bom conferir juntos se os valores saíram certos
-> nos logs e ajustar `hotmart-webhook.mjs` se algum campo vier com nome diferente do
-> esperado.
+3. **Eventos:** marcados todos (deixar marcado tudo é seguro — a function só age em "Compra
+   aprovada"/`PURCHASE_APPROVED` e "Compra completa"/`PURCHASE_COMPLETE`; qualquer outro
+   evento recebido é ignorado silenciosamente com 200 OK, sem gerar erro nem custo). Dedup
+   pelo número da transação evita contar a mesma venda 2x pro Meta.
+4. A Hotmart manda o **token (Hottok)** no header `X-Hotmart-Hottok` de cada chamada (não no
+   corpo do JSON, como a documentação pública sugeria) — o valor gerado pela Hotmart está
+   colado no Netlify (Environment variables) como **`HOTMART_HOTTOK`**.
+5. **Testado:** um evento de teste `PURCHASE_APPROVED` real passou pelo pipeline inteiro —
+   o log do Netlify mostrou "Purchase enviado" com transação, produto, preço e moeda todos
+   corretos, confirmando que os caminhos de campo (`data.buyer.email`,
+   `data.purchase.transaction`/`price`, `data.product.name`) batem com o payload real da
+   Hotmart. Não precisa mexer em nada — só acompanhar o Gerenciador de Eventos do Meta na
+   primeira venda de verdade pra confirmar que o evento "Purchase" chega lá também.
 
 ---
 
