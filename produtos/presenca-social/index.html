@@ -529,6 +529,15 @@ function montarLinkCheckout() {
   el.href = montarLinkCheckout();
   el.addEventListener('click', () => {
     if (window.__pixelOn) fbq('track', 'InitiateCheckout');
+    if (window.__ga4On) {
+      var valorGA4 = parseFloat((CONFIG.precoPor || '').replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
+      var moedaGA4 = (CONFIG.precoPor || '').indexOf('R$') === 0 ? 'BRL' : 'USD';
+      window.gtag('event', 'begin_checkout', {
+        currency: moedaGA4,
+        value: valorGA4,
+        items: [{ item_id: location.pathname.split('/')[2] || '', item_name: CONFIG.produto }]
+      });
+    }
   });
 });
 
