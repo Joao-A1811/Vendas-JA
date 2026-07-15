@@ -104,11 +104,22 @@
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) fechar();
     });
+    var focaveis = [btnFechar, btnPrev, btnNext];
+
     document.addEventListener('keydown', function (e) {
       if (!overlay.classList.contains('on')) return;
-      if (e.key === 'Escape') fechar();
-      else if (e.key === 'ArrowLeft') anterior();
-      else if (e.key === 'ArrowRight') proxima();
+      if (e.key === 'Escape') { fechar(); return; }
+      if (e.key === 'ArrowLeft') { anterior(); return; }
+      if (e.key === 'ArrowRight') { proxima(); return; }
+      if (e.key !== 'Tab') return;
+      // Prisão de foco: enquanto o lightbox estiver aberto, Tab/Shift+Tab
+      // circula só entre os botões dele — nunca escapa pro conteúdo atrás.
+      e.preventDefault();
+      var atualIndice = focaveis.indexOf(document.activeElement);
+      var proximoIndice = e.shiftKey
+        ? (atualIndice <= 0 ? focaveis.length - 1 : atualIndice - 1)
+        : (atualIndice === -1 || atualIndice === focaveis.length - 1 ? 0 : atualIndice + 1);
+      focaveis[proximoIndice].focus();
     });
   }
 
