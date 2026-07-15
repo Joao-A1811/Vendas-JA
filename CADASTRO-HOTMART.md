@@ -1848,6 +1848,76 @@ humana o las políticas internas de seguridad y privacidad.
 
 ---
 
+## 34. IA para Negócios Pequenos — categoria: "IA e Produtividade"
+
+**Nome (PT):** IA para Negócios Pequenos — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 39 páginas para vender mais, atender melhor e ganhar eficiência com IA em
+pequenos negócios: por que IA para pequenos negócios agora (o que muda na prática, a regra
+central), o Sistema 6A — Atrair, Apresentar, Atender, Argumentar, Administrar, Aprender — com
+níveis de maturidade no uso de IA, matriz de 13 ferramentas para pequenos negócios (ChatGPT,
+Claude, Gemini, Microsoft Copilot, Perplexity, Canva AI, Notion AI, Zapier/Make, Meta Business
+Agent e mais), aplicações práticas por área — marketing e conteúdo, vendas e propostas,
+atendimento e relacionamento, operação e gestão, financeiro e indicadores, pessoas e treinamento
+—, playbooks prontos para 10 tipos de negócio (loja, restaurante, salão, clínica, prestador de
+serviço, imobiliária, escritório contábil, cursos, e-commerce, infoprodutor), 6 fluxos completos
+para vender mais, automações simples para começar, biblioteca de 40+ prompts prontos, segurança/
+LGPD/bom senso com checklist de uso seguro e política simples de uso de IA, e um plano de
+implantação de 14 dias que termina no checklist final de implantação do próprio leitor. E-book
+digital com acesso imediato e garantia incondicional de 7 dias. Conteúdo 100% educacional — deixa
+claro que a IA é apoio, não substituto de julgamento profissional em áreas reguladas (saúde,
+direito, contabilidade, finanças, educação formal), e reforça cuidado com dados pessoais de
+clientes.
+
+**Name (EN):** AI for Small Businesses — Complete NextLevel Guide
+**Description (EN):**
+Premium 39-page guide to sell more, serve better and gain efficiency with AI in small businesses:
+why AI for small businesses now (what changes in practice, the core rule), the 6A System —
+Attract, Present, Assist, Argue, Administer, Analyze — with AI maturity levels, a matrix of 13
+tools for small businesses (ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Canva AI,
+Notion AI, Zapier/Make, Meta Business Agent and more), practical applications by area —
+marketing and content, sales and proposals, customer service and relationships, operations and
+management, finance and indicators, people and training —, ready-made playbooks for 10 business
+types (shop, restaurant, salon, clinic, service providers, real estate, accounting firms,
+courses, e-commerce, digital product creators), 6 complete workflows to sell more, simple
+automations to get started, a library of 40+ ready-to-use prompts, security/data protection/
+common sense with a safe-use checklist and a simple AI use policy, and a 14-day implementation
+plan that ends with the reader's own final implementation checklist. Digital ebook, instant
+access, 7-day unconditional guarantee. 100% educational content — makes clear that AI is
+support, not a substitute for professional judgment in regulated fields (health, law, accounting,
+finance, formal education), and reinforces care with customers' personal data.
+
+**Nombre (ES):** IA para Pequeños Negocios — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 39 páginas para vender más, atender mejor y ganar eficiencia con IA en pequeños
+negocios: por qué IA para pequeños negocios ahora (lo que cambia en la práctica, la regla
+central), el Sistema 6A — Atraer, Presentar, Atender, Argumentar, Administrar, Aprender — con
+niveles de madurez en el uso de IA, matriz de 13 herramientas para pequeños negocios (ChatGPT,
+Claude, Gemini, Microsoft Copilot, Perplexity, Canva AI, Notion AI, Zapier/Make, Meta Business
+Agent y más), aplicaciones prácticas por área — marketing y contenido, ventas y propuestas,
+atención y relación con el cliente, operación y gestión, finanzas e indicadores, personas y
+capacitación —, playbooks listos para 10 tipos de negocio (tienda, restaurante, salón, clínica,
+prestador de servicios, inmobiliaria, estudio contable, cursos, e-commerce, infoproductor), 6
+flujos completos para vender más, automatizaciones simples para empezar, biblioteca de 40+
+prompts listos, seguridad/protección de datos/sentido común con checklist de uso seguro y una
+política simple de uso de IA, y un plan de implementación de 14 días que termina en el checklist
+final de implementación del propio lector. Ebook digital, acceso inmediato y garantía
+incondicional de 7 días. Contenido 100% educativo — deja claro que la IA es apoyo, no sustituto
+del juicio profesional en áreas reguladas (salud, derecho, contabilidad, finanzas, educación
+formal), y refuerza el cuidado con los datos personales de los clientes.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/ia-para-negocios-pequenos-<pt|en|es>.pdf`. Terceiro
+> produto da vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`).
+> Construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart` está
+> com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
+> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
+> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
+> abaixo.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

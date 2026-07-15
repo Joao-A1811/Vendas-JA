@@ -770,6 +770,25 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`ia-para-negocios-pequenos` (34º produto — "IA para Negócios Pequenos", terceiro produto da
+  vertente "IA e Produtividade") — construído, mas SEM checkout real ainda.** Distinto dos dois
+  produtos anteriores (organizado por profissão e por sistema geral de produtividade): este é
+  focado em pequenos negócios — o Sistema 6A (Atrair, Apresentar, Atender, Argumentar,
+  Administrar, Aprender), matriz de 13 ferramentas, aplicações práticas por área (marketing,
+  vendas, atendimento, operação, financeiro, pessoas), playbooks prontos para 10 tipos de
+  negócio (loja, restaurante, salão, clínica, prestador de serviço, imobiliária, escritório
+  contábil, cursos, e-commerce, infoprodutor), 6 fluxos completos pra vender mais, automações
+  simples, biblioteca de 40+ prompts, segurança/LGPD/bom senso, e plano de implantação de 14
+  dias. Guia pago de 39 páginas + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+  `ebooks/arquivos/ia-para-negocios-pequenos-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
+  dentro" com 5 páginas de amostra em `assets/produtos/ia-para-negocios-pequenos/` (3 idiomas),
+  já no visual dark premium navy+teal+âmbar. Páginas de venda em
+  `produtos/ia-para-negocios-pequenos/` (3 idiomas) já prontas, com `linkCheckoutHotmart` em
+  placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`)
+  e o produto ainda NÃO está em `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em
+  `CADASTRO-HOTMART.md`, seção 34. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+  Falta: cadastrar na Hotmart e colar os 3 links de checkout reais — só depois disso o produto
+  entra em `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

@@ -590,4 +590,24 @@ export const PRODUTOS = {
       dica: 'En vez de pedir lo mismo cada semana, conviértelo en plantilla: una plantilla de correo, una plantilla de acta, una rutina de contenido. La ganancia de tiempo real viene de patrones reutilizables, no de respuestas sueltas.',
     },
   }),
+
+  'ia-para-negocios-pequenos': montar('ia-para-negocios-pequenos', {
+    pt: {
+      nomeProduto: 'IA para Negócios Pequenos — Guia Completo NextLevel',
+      tema: 'o Sistema 6A (Atrair, Apresentar, Atender, Argumentar, Administrar, Aprender), matriz de 13 ferramentas, playbooks para 10 tipos de negócio, 6 fluxos prontos para vender mais, 40+ prompts, automações simples, segurança/LGPD e um plano de implantação de 14 dias',
+      dica: 'Antes de automatizar qualquer mensagem, tenha clareza sobre público, benefício, preço, garantia, prazo e diferenciais. A IA aumenta a velocidade, mas a oferta precisa continuar boa.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'AI for Small Businesses — Complete NextLevel Guide',
+      tema: 'the 6A System (Attract, Present, Assist, Argue, Administer, Analyze), a matrix of 13 tools, playbooks for 10 business types, 6 ready-made workflows to sell more, 40+ prompts, simple automations, security/data protection and a 14-day implementation plan',
+      dica: 'Before automating any message, get clarity on audience, benefit, price, guarantee, deadline and differentiators. AI increases speed, but the offer still needs to be good.',
+    },
+    es: {
+      nomeProduto: 'IA para Pequeños Negocios — Guía Completa NextLevel',
+      tema: 'el Sistema 6A (Atraer, Presentar, Atender, Argumentar, Administrar, Aprender), matriz de 13 herramientas, playbooks para 10 tipos de negocio, 6 flujos listos para vender más, 40+ prompts, automatizaciones simples, seguridad/protección de datos y un plan de implementación de 14 días',
+      dica: 'Antes de automatizar cualquier mensaje, ten claridad sobre público, beneficio, precio, garantía, plazo y diferenciales. La IA aumenta la velocidad, pero la oferta debe seguir siendo buena.',
+    },
+  }),
 };
