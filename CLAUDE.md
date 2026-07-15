@@ -747,6 +747,25 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
+- **`produtividade-com-ia` (33º produto — "Produtividade com Inteligência Artificial", segundo
+  produto da vertente "IA e Produtividade") — construído, mas SEM checkout real ainda.**
+  Distinto do `ia-para-profissoes` (que é organizado por 16 profissões): este é um sistema geral
+  de produtividade — o Sistema 4D (Descarregar, Decidir, Desenvolver, Delegar), a matriz de 6
+  blocos de produtividade, 8 fluxos de trabalho prontos (planejamento semanal, caixa de entrada,
+  reunião produtiva, documento em 30 minutos, pesquisa com fontes, planilha em insight,
+  conteúdo para redes sociais, automação simples), biblioteca de 30+ prompts, os multiplicadores
+  de produtividade com modelo de cálculo de ganho de tempo, como montar uma base de conhecimento
+  com IA, segurança/privacidade/qualidade, e plano de implementação de 14 dias. Guia pago de 40
+  páginas + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
+  `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe por
+  dentro" com 5 páginas de amostra em `assets/produtos/produtividade-com-ia/` (3 idiomas), já no
+  visual dark premium navy+teal+âmbar. Páginas de venda em `produtos/produtividade-com-ia/` (3
+  idiomas) já prontas, com `linkCheckoutHotmart` em placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
+  `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
+  `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em `CADASTRO-HOTMART.md`, seção
+  33. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Falta: cadastrar na
+  Hotmart e colar os 3 links de checkout reais — só depois disso o produto entra em
+  `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.

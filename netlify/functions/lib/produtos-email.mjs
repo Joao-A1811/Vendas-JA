@@ -570,4 +570,24 @@ export const PRODUTOS = {
       dica: 'Antes de aceptar la primera respuesta de la IA, usa el prompt de refinamiento: pídele que revise sus propios puntos débiles, información faltante y posibles errores. Ese segundo paso es lo que separa un resultado genérico de uno aplicable.',
     },
   }),
+
+  'produtividade-com-ia': montar('produtividade-com-ia', {
+    pt: {
+      nomeProduto: 'Produtividade com Inteligência Artificial — Guia Completo NextLevel',
+      tema: 'o Sistema 4D (Descarregar, Decidir, Desenvolver, Delegar), a matriz de 6 blocos de produtividade, 8 fluxos de trabalho prontos, 30+ prompts, base de conhecimento, segurança e um plano de implementação de 14 dias',
+      dica: 'Em vez de pedir a mesma coisa toda semana, transforme em template: um modelo de e-mail, um modelo de ata, uma rotina de conteúdo. O ganho de tempo de verdade vem de padrões reutilizáveis, não de respostas avulsas.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Productivity with Artificial Intelligence — Complete NextLevel Guide',
+      tema: 'the 4D System (Dump, Decide, Develop, Delegate), the 6-block productivity matrix, 8 ready-made workflows, 30+ prompts, a knowledge base, security and a 14-day implementation plan',
+      dica: "Instead of asking for the same thing every week, turn it into a template: an email template, a minutes template, a content routine. Real time savings come from reusable patterns, not one-off answers.",
+    },
+    es: {
+      nomeProduto: 'Productividad con Inteligencia Artificial — Guía Completa NextLevel',
+      tema: 'el Sistema 4D (Descargar, Decidir, Desarrollar, Delegar), la matriz de 6 bloques de productividad, 8 flujos de trabajo listos, 30+ prompts, base de conocimiento, seguridad y un plan de implementación de 14 días',
+      dica: 'En vez de pedir lo mismo cada semana, conviértelo en plantilla: una plantilla de correo, una plantilla de acta, una rutina de contenido. La ganancia de tiempo real viene de patrones reutilizables, no de respuestas sueltas.',
+    },
+  }),
 };

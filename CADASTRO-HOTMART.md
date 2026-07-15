@@ -1783,6 +1783,74 @@ apoyo, con validación final de un profesional habilitado.
 
 ---
 
+## 33. Produtividade com Inteligência Artificial — categoria: "IA e Produtividade"
+
+**Nome (PT):** Produtividade com Inteligência Artificial — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 40 páginas para ganhar tempo e trabalhar melhor com IA no dia a dia: o novo
+conceito de produtividade (o que a IA faz melhor e o que não resolve sozinha), a matriz de 6
+blocos de produtividade (clareza, comunicação, pesquisa, documentos, organização e automação), as
+principais ferramentas do mercado (ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity,
+NotebookLM, Notion AI, Canva AI, Zapier/Make), o Sistema 4D — Descarregar, Decidir, Desenvolver e
+Delegar — com prompt mestre e rotina diária sugerida, 8 fluxos de trabalho prontos (planejamento
+semanal, caixa de entrada, reunião produtiva, documento em 30 minutos, pesquisa com fontes,
+planilha em insight, conteúdo para redes sociais e automação simples), biblioteca com 30+ prompts
+prontos por objetivo, os multiplicadores de produtividade (templates, prompts salvos, bases de
+conhecimento, automação e revisão em camadas) com um modelo de cálculo de ganho de tempo, como
+montar uma base de conhecimento com IA, segurança/privacidade/qualidade com checklist antes de
+entregar, e um plano de implementação de 14 dias que termina no "Manual Pessoal de Produtividade
+com IA" do próprio leitor. E-book digital com acesso imediato e garantia incondicional de 7 dias.
+Conteúdo 100% educacional — deixa claro que a IA é apoio à produtividade, não substituto de
+julgamento profissional, revisão humana ou políticas internas de segurança e privacidade.
+
+**Name (EN):** Productivity with Artificial Intelligence — Complete NextLevel Guide
+**Description (EN):**
+Premium 40-page guide to save time and work better with AI every day: the new concept of
+productivity (what AI does best and what it can't solve on its own), the 6-block productivity
+matrix (clarity, communication, research, documents, organization and automation), the market's
+main tools (ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Notion AI, Canva
+AI, Zapier/Make), the 4D System — Dump, Decide, Develop and Delegate — with a master prompt and a
+suggested daily routine, 8 ready-made workflows (weekly planning, inbox, a productive meeting, a
+document in 30 minutes, research with sources, a spreadsheet into insight, social media content
+and simple automation), a library of 30+ ready-to-use prompts by goal, the productivity
+multipliers (templates, saved prompts, knowledge bases, automation and layered review) with a
+time-saved calculation model, how to build a knowledge base with AI, security/privacy/quality
+with a pre-delivery checklist, and a 14-day implementation plan that ends with the reader's own
+"Personal AI Productivity Manual." Digital ebook, instant access, 7-day unconditional guarantee.
+100% educational content — makes clear that AI is support for productivity, not a substitute for
+professional judgment, human review, or internal security and privacy policies.
+
+**Nombre (ES):** Productividad con Inteligencia Artificial — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 40 páginas para ganar tiempo y trabajar mejor con IA en el día a día: el nuevo
+concepto de productividad (lo que la IA hace mejor y lo que no resuelve sola), la matriz de 6
+bloques de productividad (claridad, comunicación, investigación, documentos, organización y
+automatización), las principales herramientas del mercado (ChatGPT, Claude, Gemini, Microsoft
+Copilot, Perplexity, NotebookLM, Notion AI, Canva AI, Zapier/Make), el Sistema 4D — Descargar,
+Decidir, Desarrollar y Delegar — con prompt maestro y rutina diaria sugerida, 8 flujos de trabajo
+listos (planificación semanal, bandeja de entrada, reunión productiva, documento en 30 minutos,
+investigación con fuentes, hoja de cálculo en insight, contenido para redes sociales y
+automatización simple), biblioteca con 30+ prompts listos por objetivo, los multiplicadores de
+productividad (plantillas, prompts guardados, bases de conocimiento, automatización y revisión en
+capas) con un modelo de cálculo de ganancia de tiempo, cómo armar una base de conocimiento con IA,
+seguridad/privacidad/calidad con checklist antes de entregar, y un plan de implementación de 14
+días que termina en el "Manual Personal de Productividad con IA" del propio lector. Ebook
+digital, acceso inmediato y garantía incondicional de 7 días. Contenido 100% educativo — deja
+claro que la IA es apoyo a la productividad, no sustituto del juicio profesional, la revisión
+humana o las políticas internas de seguridad y privacidad.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Segundo produto
+> da vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`, criada no
+> lançamento do `ia-para-profissoes`). Construído (páginas, ebooks, galeria) mas ainda SEM
+> checkout real — `linkCheckoutHotmart` está com placeholder (`COLE_O_CODIGO_DO_PRODUTO` /
+> `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em
+> `assets/produtos.js` nem em `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de
+> checkout reais, seguir os passos abaixo.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).
