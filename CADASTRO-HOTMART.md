@@ -1986,11 +1986,7 @@ derechos de autor en cualquier herramienta de IA generativa.
 > vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`) — distinto dos
 > três anteriores (organizados por profissão, sistema geral de produtividade e pequenos
 > negócios): este é focado no mapa/comparativo das 16 principais ferramentas de IA do mercado.
-> Construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart` está
-> com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
-> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
-> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
-> abaixo.
+> **Checkout real cadastrado e produto AO VIVO** nas 3 moedas (ver CLAUDE.md).
 
 ---
 

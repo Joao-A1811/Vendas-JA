@@ -426,8 +426,6 @@ window.PRODUTOS_SITE = [
     slug: 'ia-para-negocios-pequenos',
     categoria: 'ia-produtividade',
     // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 34.
-    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
-    novo: true,
     disponivel: true,
     tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
     titulo: { pt: 'IA para Negócios Pequenos', en: 'AI for Small Businesses', es: 'IA para Pequeños Negocios' },
@@ -435,6 +433,21 @@ window.PRODUTOS_SITE = [
       pt: 'O Sistema 6A, matriz de 13 ferramentas e 40+ prompts prontos para vender mais e ganhar eficiência com IA.',
       en: 'The 6A System, a matrix of 13 tools and 40+ ready-made prompts to sell more and gain efficiency with AI.',
       es: 'El Sistema 6A, matriz de 13 herramientas y 40+ prompts listos para vender más y ganar eficiencia con IA.'
+    }
+  },
+  {
+    slug: 'ia-aplicada',
+    categoria: 'ia-produtividade',
+    // Checkout real nas 3 moedas (PT/EN/ES) — ver CADASTRO-HOTMART.md, seção 35.
+    // Produto mais recente do catálogo — mantém o selo "NOVO" mesmo fora da última posição do array.
+    novo: true,
+    disponivel: true,
+    tag:    { pt: 'IA e Produtividade',  en: 'AI & Productivity',  es: 'IA y Productividad' },
+    titulo: { pt: 'Inteligência Artificial Aplicada', en: 'Applied Artificial Intelligence', es: 'Inteligencia Artificial Aplicada' },
+    resumo: {
+      pt: 'O mapa das 16 principais IAs do mercado, o método de prompt que funciona e um plano de implementação de 7 dias.',
+      en: 'The map of the 16 leading AI tools, the prompt method that works, and a 7-day implementation plan.',
+      es: 'El mapa de las 16 principales IA del mercado, el método de prompt que funciona y un plan de implementación de 7 días.'
     }
   },
 ];

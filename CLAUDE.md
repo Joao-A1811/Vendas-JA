@@ -66,8 +66,9 @@ estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moed
 `renda-fixa-inteligente` (29º produto), `seguranca-financeira-e-golpes` (30º produto),
 `dividendos-e-renda-passiva` (31º produto), `ia-para-profissoes` (32º produto — primeiro fora
 das categorias Saúde/Relacionamentos/Finanças, abrindo a vertente "IA e Produtividade"),
-`produtividade-com-ia` (33º produto, segundo da mesma vertente) e `ia-para-negocios-pequenos`
-(34º produto, terceiro da mesma vertente). Depoimentos
+`produtividade-com-ia` (33º produto, segundo da mesma vertente), `ia-para-negocios-pequenos`
+(34º produto, terceiro da mesma vertente) e `ia-aplicada` (35º produto, quarto da mesma
+vertente). Depoimentos
 ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
 **inventar depoimento é vetado** (Meta Ads + CDC).
 
@@ -688,6 +689,26 @@ navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/E
 - EN/USD: `https://pay.hotmart.com/P106755310M` (US$ 19)
 - ES/USD: `https://pay.hotmart.com/R106755349X` (US$ 19)
 
+**`ia-aplicada` (jul/2026, 35º produto — "Inteligência Artificial Aplicada") — ✅ AO VIVO nos 3
+idiomas.** Quarto produto da vertente "IA e Produtividade" — distinto dos três anteriores
+(organizados por profissão, sistema geral de produtividade e pequenos negócios): este é focado no
+mapa/comparativo das 16 principais ferramentas de IA do mercado — ChatGPT, Claude, Gemini,
+Microsoft Copilot, Perplexity, NotebookLM, Canva AI, Midjourney, Adobe Firefly, Runway,
+ElevenLabs, Notion AI, GitHub Copilot, DeepSeek, Mistral, Grok —, com perfil detalhado de cada
+ferramenta (melhor uso, quando usar, quando evitar, prompt inicial), o método de prompt que
+funciona (modelo universal, prompt fraco x forte, 7 comandos), prompts prontos por atividade
+(textos, pesquisa, documentos, planilhas, apresentações, marketing, imagem, vídeo, código),
+aplicações por 8 perfis profissionais, cuidados com privacidade/direitos autorais/uso
+responsável, um plano de implementação de 7 dias com checklist de maturidade, 5 modelos de
+prompt prontos, glossário e workbook completo. Guia pago de 40 páginas + ebook gratuito (isca, 6
+páginas) nos 3 idiomas, `ebooks/arquivos/ia-aplicada-<pt|en|es>.pdf`. Capa, thumbnail e galeria
+"olhe por dentro" com 5 páginas de amostra em `assets/produtos/ia-aplicada/` (3 idiomas), já no
+visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+(EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/G106756375S` (R$ 49,99)
+- EN/USD: `https://pay.hotmart.com/G106756401W` (US$ 19)
+- ES/USD: `https://pay.hotmart.com/J106756430J` (US$ 19)
+
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
 ficar público no site), assim como as capas (imagem estilo capa de ebook, 3 idiomas cada). Falta
@@ -789,27 +810,6 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **`ia-aplicada` (35º produto — "Inteligência Artificial Aplicada", quarto produto da vertente
-  "IA e Produtividade") — construído, mas SEM checkout real ainda.** Distinto dos três anteriores
-  (organizados por profissão, sistema geral de produtividade e pequenos negócios): este é focado
-  no mapa/comparativo das 16 principais ferramentas de IA do mercado — ChatGPT, Claude, Gemini,
-  Microsoft Copilot, Perplexity, NotebookLM, Canva AI, Midjourney, Adobe Firefly, Runway,
-  ElevenLabs, Notion AI, GitHub Copilot, DeepSeek, Mistral, Grok —, com perfil detalhado de cada
-  ferramenta (melhor uso, quando usar, quando evitar, prompt inicial), o método de prompt que
-  funciona (modelo universal, prompt fraco x forte, 7 comandos), prompts prontos por atividade
-  (textos, pesquisa, documentos, planilhas, apresentações, marketing, imagem, vídeo, código),
-  aplicações por 8 perfis profissionais, cuidados com privacidade/direitos autorais/uso
-  responsável, um plano de implementação de 7 dias com checklist de maturidade, 5 modelos de
-  prompt prontos, glossário e workbook completo. Guia pago de 40 páginas + ebook gratuito (isca,
-  6 páginas) nos 3 idiomas, `ebooks/arquivos/ia-aplicada-<pt|en|es>.pdf`. Capa, thumbnail e
-  galeria "olhe por dentro" com 5 páginas de amostra em `assets/produtos/ia-aplicada/` (3
-  idiomas), já no visual dark premium navy+teal+âmbar. Páginas de venda em
-  `produtos/ia-aplicada/` (3 idiomas) já prontas, com `linkCheckoutHotmart` em placeholder
-  (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` / `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto
-  ainda NÃO está em `assets/produtos.js` nem em `sitemap.xml`. Textos de cadastro em
-  `CADASTRO-HOTMART.md`, seção 35. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
-  Falta: cadastrar na Hotmart e colar os 3 links de checkout reais — só depois disso o produto
-  entra em `assets/produtos.js` e `sitemap.xml`.
 - **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
   o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
   dos produtos ao vivo.
