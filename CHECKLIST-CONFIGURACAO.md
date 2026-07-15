@@ -196,6 +196,35 @@ do navegador continua sozinho, sem o reforço server-side.
 
 ---
 
+## 4e. Google Analytics 4 e Search Console — ⚠️ pendente (opcional)
+
+Hoje o site só mede quem chega por anúncio (Pixel do Meta). Sem GA4/Search Console não
+existe visibilidade nenhuma de tráfego orgânico/busca. A infraestrutura já está pronta no
+código — falta só criar as contas (exigem o Google do dono do projeto) e colar os dados:
+
+**Google Analytics 4:**
+1. analytics.google.com → criar uma conta/propriedade pro site.
+2. **Admin → Fluxos de dados → Web** → registrar `https://nextlevelbr.app.br` → copiar o
+   **ID de mensuração** (começa com `G-`).
+3. Colar em `assets/config-global.js`, campo `gaId` → commit + push.
+4. Pronto — o carregamento (`assets/ga4.js`) já está ligado no mesmo banner de
+   consentimento de cookies do Pixel (`assets/consent.js`), em todas as páginas; o CSP em
+   `netlify.toml` já libera os domínios do Google Analytics. Nenhum outro arquivo precisa
+   mudar.
+
+**Google Search Console** (não depende do código — é só DNS, mesmo domínio já usado pra
+verificar o Meta):
+1. search.google.com/search-console → **Adicionar propriedade** → tipo **Domínio**
+   (não "Prefixo do URL" — o tipo Domínio cobre `http/https` e `www`/sem `www` de uma vez
+   só e nunca quebra, mesmo se uma página specífica sair do ar).
+2. Copiar o registro **TXT** que o Google mostrar e colar no Registro.br (mesmo lugar
+   onde já está o TXT de verificação do Meta) → aguardar propagação (minutos a poucas
+   horas) → clicar **Verificar**.
+3. Pronto — sitemap já existe em `/sitemap.xml`; pode submeter em **Sitemaps** no menu
+   lateral do Search Console pra acelerar a indexação.
+
+---
+
 ## 5. A cada novo produto (repetir esta parte)
 
 1. Cadastrar o produto na Hotmart → copiar o **link de checkout** (um por idioma/moeda, se os

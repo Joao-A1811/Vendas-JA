@@ -11,6 +11,13 @@ window.SITE = {
   // Enquanto estiver 'COLE_AQUI', as páginas funcionam normalmente, só não medem conversão.
   pixelId: '1817037532617722',
 
+  // Google Analytics 4 (tráfego orgânico/busca — complementa o Pixel do Meta,
+  // que só vê quem veio de anúncio). Onde pegar: analytics.google.com → Admin
+  // → Fluxos de dados → seu site → "ID de mensuração" (começa com "G-").
+  // Enquanto estiver 'COLE_AQUI', o site funciona normal e não carrega nada
+  // do Google — sem efeito nenhum até colar um ID de verdade aqui.
+  gaId: 'COLE_AQUI',
+
   // E-mail de contato mostrado na política de privacidade e nos termos de uso
   // (necessário pra LGPD: é por ele que a pessoa pede acesso/exclusão dos dados).
   // Enquanto estiver 'COLE_AQUI', as páginas legais mostram um texto genérico.

@@ -13,7 +13,11 @@
   var escolha = null;
   try { escolha = localStorage.getItem(CHAVE); } catch (e) { /* navegação privada */ }
 
-  if (escolha === 'sim' && window.iniciarPixel) { window.iniciarPixel(); return; }
+  if (escolha === 'sim') {
+    if (window.iniciarPixel) window.iniciarPixel();
+    if (window.iniciarGA4) window.iniciarGA4();
+    return;
+  }
   if (escolha === 'nao') return;
 
   var lang = (document.documentElement.lang || 'pt').slice(0, 2).toLowerCase();
@@ -74,6 +78,7 @@
     box.querySelector('.nl-sim').addEventListener('click', function () {
       guardar('sim');
       if (window.iniciarPixel) window.iniciarPixel();
+      if (window.iniciarGA4) window.iniciarGA4();
     });
     box.querySelector('.nl-nao').addEventListener('click', function () { guardar('nao'); });
   }

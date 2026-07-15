@@ -25,7 +25,7 @@ a cada push na `main`.
 
 | Arquivo/pasta | O que é |
 |---|---|
-| `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`) e do Firebase — vale pro site todo |
+| `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`), do Google Analytics 4 (`gaId`, `assets/ga4.js` — inativo enquanto for `COLE_AQUI`, sem efeito nenhum) e do Firebase — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
 | `index.html` / `-en` / `-es` | Página inicial (redesign dark premium, jul/2026): catálogo completo com capas (`thumb-<idioma>.jpg`), busca em tempo real, filtro por categoria, selo "NOVO" automático (último de `PRODUTOS_SITE`), seção "Como funciona", faixa de confiança, captura de lead (select de objetivo, uma opção por categoria → entrega o ebook gratuito de `treino-em-casa` [saúde], `confianca-social` [relacionamentos], `financas-pessoais` [finanças] ou `ia-aplicada` [IA e produtividade] e dispara a mesma automação `lead-email` dos produtos) e JSON-LD ItemList |
 | `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Tem busca por texto (ignora acentos, atravessa as categorias) e JSON-LD ItemList. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
