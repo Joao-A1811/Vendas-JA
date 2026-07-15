@@ -18,7 +18,7 @@ function hash(valor) {
   return crypto.createHash('sha256').update(String(valor).trim().toLowerCase()).digest('hex');
 }
 
-export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAgent, fbp, fbc, eventId, testEventCode }) {
+export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAgent, fbp, fbc, eventId, testEventCode, valor, moeda, conteudo }) {
   const token = process.env.META_ACCESS_TOKEN;
   if (!token) return;
 
@@ -33,16 +33,24 @@ export async function enviarEventoCapi({ nome, email, telefone, url, ip, userAge
     if (digitos) userData.ph = [hash(digitos)];
   }
 
-  const corpo = {
-    data: [{
-      event_name: nome,
-      event_time: Math.floor(Date.now() / 1000),
-      event_id: eventId,
-      event_source_url: url,
-      action_source: 'website',
-      user_data: userData,
-    }],
+  const evento = {
+    event_name: nome,
+    event_time: Math.floor(Date.now() / 1000),
+    event_id: eventId,
+    event_source_url: url,
+    action_source: url ? 'website' : 'system_generated',
+    user_data: userData,
   };
+  // value/currency: recomendado pelo Meta pra eventos de compra — sem isso o
+  // algoritmo de anúncio não sabe otimizar por valor/ROAS, só por volume.
+  if (valor !== undefined || moeda || conteudo) {
+    evento.custom_data = {};
+    if (valor !== undefined) evento.custom_data.value = valor;
+    if (moeda) evento.custom_data.currency = moeda;
+    if (conteudo) evento.custom_data.contents = [{ id: conteudo, quantity: 1 }];
+  }
+
+  const corpo = { data: [evento] };
   // test_event_code (pego em Events Manager → Test Events): faz o evento aparecer
   // só no painel de teste do Meta, sem contar nas métricas reais da conta de anúncios.
   if (testEventCode) corpo.test_event_code = testEventCode;

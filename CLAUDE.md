@@ -37,7 +37,7 @@ a cada push na `main`.
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
 | `emails/` | Conteúdo dos e-mails da sequência (3 × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
-| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` já configurada (Conversions API ligada desde jul/2026) |
+| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` já configurada (Conversions API ligada desde jul/2026). `hotmart-webhook` (⚠️ pendente config do lado da Hotmart, ver CHECKLIST-CONFIGURACAO.md § 3a): recebe o aviso de compra aprovada da Hotmart e ecoa um evento "Purchase" pra CAPI — exige env var `HOTMART_HOTTOK` |
 | `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 | `netlify.toml` | Além do build, define os cabeçalhos de segurança (CSP, X-Frame-Options etc.) pro site todo |
 

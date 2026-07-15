@@ -98,6 +98,33 @@ Conta de produtor já existe. Antes de cadastrar cada produto nesta plataforma, 
 **Configurações → Verificação de identidade** se está aprovada (só é obrigatório pra sacar
 valores, não bloqueia nada antes disso).
 
+### 3a. Webhook de compra → evento "Purchase" na Meta (⚠️ pendente, fazer juntos)
+
+Hoje o Meta só recebe o evento "Lead" (quando alguém deixa o e-mail) — o checkout inteiro
+acontece na Hotmart, fora do site, e o Meta nunca fica sabendo quem de fato *comprou*. Isso
+limita bastante a otimização de anúncio, que aprende muito melhor com sinal de compra do
+que só de topo de funil. A function `netlify/functions/hotmart-webhook.mjs` já está pronta
+pra fechar esse buraco — falta só a configuração do lado da Hotmart:
+
+1. **Hotmart → Ferramentas → Webhook → Criar webhook** (uma vez, vale pra todos os produtos
+   já cadastrados e os futuros — não precisa repetir por produto).
+2. **URL de destino:** `https://nextlevelbr.app.br/.netlify/functions/hotmart-webhook`.
+3. **Eventos:** marcar pelo menos "Compra aprovada" (`PURCHASE_APPROVED`) e "Compra
+   completa" (`PURCHASE_COMPLETE`) — a function deduplica pelo número da transação, então
+   não tem risco de contar a mesma venda 2x pro Meta mesmo recebendo os dois.
+4. A Hotmart mostra um **token (Hottok)** na tela do webhook — copiar e colar no Netlify
+   (Environment variables) como **`HOTMART_HOTTOK`** → Trigger deploy.
+5. **Testar:** a própria tela de webhook da Hotmart tem um botão de enviar um evento de
+   teste. Depois de mandar, conferir em Netlify → Functions → Logs (`hotmart-webhook`) se
+   apareceu "Purchase enviado" com e-mail/preço corretos — e no Gerenciador de Eventos do
+   Meta (aba Test Events, ou Eventos recentes) se o evento "Purchase" chegou.
+
+> ⚠️ Os nomes de campo que a function espera (e-mail, preço, moeda, número da transação)
+> seguem a documentação pública da Hotmart, mas **nunca foram validados contra um webhook
+> real** — na primeira compra de teste, é bom conferir juntos se os valores saíram certos
+> nos logs e ajustar `hotmart-webhook.mjs` se algum campo vier com nome diferente do
+> esperado.
+
 ---
 
 ## 4. Netlify (publicar o site, com todos os produtos)
