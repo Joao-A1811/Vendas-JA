@@ -17,14 +17,14 @@ function pagina(itens, linkTeste, linkCapi) {
   const rodape = (linkTeste
     ? `<p style="margin-top:22px;"><a href="?enviar=1" style="display:inline-block;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#2b1a00;font-weight:bold;padding:12px 24px;border-radius:10px;text-decoration:none;">📨 Enviar e-mail de teste pra mim</a><br><span style="font-size:12px;color:#5c5470;">(vai pro e-mail do dono da conta Brevo)</span></p>`
     : '') + (linkCapi
-    ? `<p style="margin-top:14px;"><a href="?testarcapi=1" style="display:inline-block;background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;font-weight:bold;padding:12px 24px;border-radius:10px;text-decoration:none;">🎯 Enviar evento de teste pra Conversions API</a><br><span style="font-size:12px;color:#5c5470;">(aparece só no painel de Test Events do Meta, não conta nas métricas reais)</span></p>`
+    ? `<p style="margin-top:14px;"><a href="?testarcapi=1" style="display:inline-block;background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;font-weight:bold;padding:12px 24px;border-radius:10px;text-decoration:none;">🎯 Enviar evento de teste pra Conversions API</a><br><span style="font-size:12px;color:#5c5470;">(aparece só no painel de Test Events do Meta, não conta nas métricas reais)</span></p>`
     : '');
   return `<!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex"><title>Diagnóstico de e-mail | NextLevel</title></head>
-<body style="margin:0;font-family:Arial,sans-serif;background:#faf9fc;color:#1c1428;padding:30px 16px;">
+<body style="margin:0;font-family:Arial,sans-serif;background:#f7fbfa;color:#0d1b2a;padding:30px 16px;">
 <div style="max-width:640px;margin:0 auto;">
-<div style="background:linear-gradient(135deg,#5b21b6,#db2777);color:#fff;border-radius:14px;padding:20px 24px;font-weight:bold;letter-spacing:2px;">NEXTLEVEL · DIAGNÓSTICO DE E-MAIL</div>
+<div style="background:linear-gradient(135deg,#0d1b2a,#0f766e);color:#fff;border-radius:14px;padding:20px 24px;font-weight:bold;letter-spacing:2px;">NEXTLEVEL · DIAGNÓSTICO DE E-MAIL</div>
 ${linhas}
 ${rodape}
 <p style="font-size:12px;color:#5c5470;margin-top:26px;">Se algum item estiver ❌, siga a instrução dele e recarregue esta página. Lembre: mudou variável de ambiente no Netlify → precisa de um novo deploy pra valer.</p>
