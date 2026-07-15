@@ -32,12 +32,31 @@ export default async (req) => {
   let corpo;
   try { corpo = await req.json(); } catch { return new Response('JSON inválido', { status: 400 }); }
 
+  // DIAGNÓSTICO TEMPORÁRIO — remover assim que descobrirmos onde a Hotmart
+  // manda o hottok: até agora ele sempre chegou vazio em `corpo.hottok`, o
+  // que prova que o token não vem nesse campo do corpo. Logando headers,
+  // query string e as chaves do corpo (sem valores) pra achar o lugar certo
+  // sem expor dado de comprador.
+  try {
+    console.log('hotmart-webhook: [diag] query:', new URL(req.url).search || '(nenhuma)');
+    console.log('hotmart-webhook: [diag] headers:', JSON.stringify(Object.fromEntries(req.headers.entries())));
+    console.log('hotmart-webhook: [diag] body top-level keys:', Object.keys(corpo).join(', ') || '(nenhuma)');
+    if (corpo.data && typeof corpo.data === 'object') {
+      console.log('hotmart-webhook: [diag] body.data keys:', Object.keys(corpo.data).join(', '));
+    }
+  } catch (e) {
+    console.error('hotmart-webhook: [diag] falhou ao logar diagnóstico —', e.message);
+  }
+
   const hottokEsperado = (process.env.HOTMART_HOTTOK || '').trim();
   if (!hottokEsperado) {
     console.error('hotmart-webhook: HOTMART_HOTTOK não configurada no Netlify');
     return new Response('Não configurado', { status: 500 });
   }
-  const hottokRecebido = String(corpo.hottok || '').trim();
+  // O token pode vir tanto no corpo (`hottok`, formato mais antigo) quanto
+  // no header `X-Hotmart-Hottok` (formato mais novo) — aceita qualquer um
+  // dos dois até confirmarmos, pelo diagnóstico acima, qual a Hotmart usa.
+  const hottokRecebido = String(corpo.hottok || req.headers.get('x-hotmart-hottok') || '').trim();
   if (hottokRecebido !== hottokEsperado) {
     // Não loga os valores completos (é um segredo), só o suficiente pra
     // diagnosticar sem expor o token: tamanho de cada um e os 4 primeiros/
