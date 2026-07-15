@@ -1914,6 +1914,86 @@ formal), y refuerza el cuidado con los datos personales de los clientes.
 
 ---
 
+## 35. Inteligência Artificial Aplicada — categoria: "IA e Produtividade"
+
+**Nome (PT):** Inteligência Artificial Aplicada — Guia Completo NextLevel
+**Descrição (PT):**
+Guia premium de 40 páginas para escolher a IA certa para cada tarefa e criar prompts que
+realmente funcionam: a nova vantagem competitiva (a IA como parceira de processo, o que
+significa IA aplicada, a regra dos 4 elementos — contexto, formato, critério, revisão), o mapa
+rápido de qual IA usar em cada tarefa, o perfil detalhado das 16 principais IAs do mercado —
+ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Canva AI, Midjourney, Adobe
+Firefly, Runway, ElevenLabs, Notion AI, GitHub Copilot, DeepSeek, Mistral, Grok — com melhor uso,
+quando usar e quando evitar cada uma, o método de prompt que funciona (modelo universal, prompt
+fraco x forte, os 7 comandos que melhoram qualquer resposta), prompts prontos por atividade —
+textos, pesquisa com fontes, documentos e PDFs, planilhas e dados, apresentações, marketing e
+vendas, imagem e design, vídeo e áudio, código e automação —, aplicações por 8 perfis
+profissionais (estudantes, empreendedores, marketing, vendas, financeiro, administrativo,
+criadores de conteúdo, programadores) com um exemplo de rotina de 1 hora com IA, cuidados/riscos/
+uso responsável (checklist antes de publicar, privacidade e dados sensíveis, direitos autorais,
+quando não usar IA sozinha), um plano de implementação de 7 dias com checklist de maturidade,
+5 modelos de prompt prontos para copiar, glossário rápido e um workbook completo — mapa pessoal
+de ferramentas, biblioteca de prompts e registro do plano de 7 dias. E-book digital com acesso
+imediato e garantia incondicional de 7 dias. Conteúdo 100% educacional — reforça verificação
+humana, privacidade de dados sensíveis e uso responsável de direitos autorais em qualquer
+ferramenta de IA generativa.
+
+**Name (EN):** Applied Artificial Intelligence — Complete NextLevel Guide
+**Description (EN):**
+Premium 40-page guide to choose the right AI for each task and craft prompts that actually work:
+the new competitive advantage (AI as a process partner, what "applied AI" means, the rule of 4
+elements — context, format, criteria, review), the quick map of which AI to use for each task,
+a detailed profile of the 16 leading AI tools on the market — ChatGPT, Claude, Gemini, Microsoft
+Copilot, Perplexity, NotebookLM, Canva AI, Midjourney, Adobe Firefly, Runway, ElevenLabs, Notion
+AI, GitHub Copilot, DeepSeek, Mistral, Grok — with best use, when to use and when to avoid each
+one, the prompt method that works (universal model, weak vs. strong prompt, the 7 commands that
+improve any answer), ready-made prompts by activity — text, research with sources, documents and
+PDFs, spreadsheets and data, presentations, marketing and sales, image and design, video and
+audio, code and automation —, applications for 8 professional profiles (students, entrepreneurs,
+marketing, sales, finance, administrative, content creators, developers) with a 1-hour AI
+routine example, precautions/risks/responsible use (checklist before publishing, privacy and
+sensitive data, copyright, when not to use AI alone), a 7-day implementation plan with a maturity
+checklist, 5 ready-to-copy prompt templates, a quick glossary, and a complete workbook — personal
+tool map, prompt library, and 7-day plan log. Digital ebook, instant access, 7-day unconditional
+guarantee. 100% educational content — reinforces human verification, sensitive data privacy, and
+responsible use of copyright with any generative AI tool.
+
+**Nombre (ES):** Inteligencia Artificial Aplicada — Guía Completa NextLevel
+**Descripción (ES):**
+Guía premium de 40 páginas para elegir la IA correcta para cada tarea y crear prompts que
+realmente funcionan: la nueva ventaja competitiva (la IA como socia de proceso, qué significa IA
+aplicada, la regla de los 4 elementos — contexto, formato, criterio, revisión), el mapa rápido de
+qué IA usar en cada tarea, el perfil detallado de las 16 principales IA del mercado — ChatGPT,
+Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Canva AI, Midjourney, Adobe Firefly,
+Runway, ElevenLabs, Notion AI, GitHub Copilot, DeepSeek, Mistral, Grok — con mejor uso, cuándo
+usar y cuándo evitar cada una, el método de prompt que funciona (modelo universal, prompt débil
+vs. prompt fuerte, los 7 comandos que mejoran cualquier respuesta), prompts listos por actividad
+— textos, investigación con fuentes, documentos y PDFs, hojas de cálculo y datos,
+presentaciones, marketing y ventas, imagen y diseño, video y audio, código y automatización —,
+aplicaciones por 8 perfiles profesionales (estudiantes, emprendedores, marketing, ventas,
+finanzas, administrativo, creadores de contenido, programadores) con un ejemplo de rutina de 1
+hora con IA, cuidados/riesgos/uso responsable (checklist antes de publicar, privacidad y datos
+sensibles, derechos de autor, cuándo no usar la IA sola), un plan de implementación de 7 días con
+checklist de madurez, 5 plantillas de prompt listas para copiar, un glosario rápido y un workbook
+completo — mapa personal de herramientas, biblioteca de prompts y registro del plan de 7 días.
+Ebook digital, acceso inmediato y garantía incondicional de 7 días. Contenido 100% educativo —
+refuerza la verificación humana, la privacidad de datos sensibles y el uso responsable de
+derechos de autor en cualquier herramienta de IA generativa.
+
+> Observação: os PDFs pagos (PT/EN/ES) e as capas não ficam no repositório (são o produto
+> comercial, entregues direto pra upload manual na Hotmart) — só os e-books gratuitos (isca)
+> vão pro repositório, em `ebooks/arquivos/ia-aplicada-<pt|en|es>.pdf`. Quarto produto da
+> vertente "IA e Produtividade" (categoria já existe em `window.CATEGORIAS_SITE`) — distinto dos
+> três anteriores (organizados por profissão, sistema geral de produtividade e pequenos
+> negócios): este é focado no mapa/comparativo das 16 principais ferramentas de IA do mercado.
+> Construído (páginas, ebooks, galeria) mas ainda SEM checkout real — `linkCheckoutHotmart` está
+> com placeholder (`COLE_O_CODIGO_DO_PRODUTO` / `PASTE_PRODUCT_CODE` /
+> `PEGA_EL_CODIGO_DEL_PRODUCTO`) e o produto ainda NÃO está em `assets/produtos.js` nem em
+> `sitemap.xml`. Depois de cadastrar aqui e colar os 3 links de checkout reais, seguir os passos
+> abaixo.
+
+---
+
 ## Depois de cadastrar cada produto
 
 1. Copiar o **link de checkout** de cada oferta (Hotmart → Produto → Ofertas → link).

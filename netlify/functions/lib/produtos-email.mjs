@@ -610,4 +610,24 @@ export const PRODUTOS = {
       dica: 'Antes de automatizar cualquier mensaje, ten claridad sobre público, beneficio, precio, garantía, plazo y diferenciales. La IA aumenta la velocidad, pero la oferta debe seguir siendo buena.',
     },
   }),
+
+  'ia-aplicada': montar('ia-aplicada', {
+    pt: {
+      nomeProduto: 'Inteligência Artificial Aplicada — Guia Completo NextLevel',
+      tema: 'o mapa das 16 principais IAs do mercado (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney e mais 8 ferramentas), o método de prompt que funciona, prompts prontos por atividade, aplicações por perfil profissional, cuidados com privacidade e direitos autorais, e um plano de implementação de 7 dias',
+      dica: 'Não tente dominar as 16 ferramentas de uma vez. Escolha 2 ou 3 que cobrem 80% da sua rotina e aprofunde nelas primeiro — a vantagem vem da prática, não de acumular ferramentas.',
+      precoDe: 'R$ 97,00',
+      precoPor: 'R$ 49,99',
+    },
+    en: {
+      nomeProduto: 'Applied Artificial Intelligence — Complete NextLevel Guide',
+      tema: 'the map of the 16 leading AI tools (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney and 8 more tools), the prompt method that works, ready-made prompts by activity, applications by professional profile, precautions on privacy and copyright, and a 7-day implementation plan',
+      dica: 'Don\'t try to master all 16 tools at once. Pick 2 or 3 that cover 80% of your routine and go deep on those first — the advantage comes from practice, not from collecting tools.',
+    },
+    es: {
+      nomeProduto: 'Inteligencia Artificial Aplicada — Guía Completa NextLevel',
+      tema: 'el mapa de las 16 principales IA del mercado (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney y 8 herramientas más), el método de prompt que funciona, prompts listos por actividad, aplicaciones por perfil profesional, cuidados con la privacidad y los derechos de autor, y un plan de implementación de 7 días',
+      dica: 'No intentes dominar las 16 herramientas a la vez. Elige 2 o 3 que cubran el 80% de tu rutina y profundiza en ellas primero — la ventaja viene de la práctica, no de acumular herramientas.',
+    },
+  }),
 };
