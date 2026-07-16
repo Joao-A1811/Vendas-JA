@@ -33,11 +33,11 @@ a cada push na `main`.
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
 | `anuncios/` | Templates de copy para Meta Ads (BR e internacional), com regras por nicho |
-| `leads/painel-leads.html` | Painel de leads (login e-mail/senha) com exportação CSV |
+| `leads/painel-leads.html` | Painel de leads (login e-mail/senha) com exportação CSV + **moderação de avaliações** (aprovar como "compra verificada"/"recebeu grátis" ou recusar — nada vai pro site sem aprovação) |
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
 | `emails/` | Conteúdo dos e-mails da sequência (3 × 3 idiomas, visual da marca) + `LEIA-ME-BREVO.md` |
-| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` já configurada (Conversions API ligada desde jul/2026). `hotmart-webhook` (✅ configurado e validado com evento real, ver CHECKLIST-CONFIGURACAO.md § 3a): recebe o aviso de compra aprovada da Hotmart (token no header `X-Hotmart-Hottok`) e ecoa um evento "Purchase" pra CAPI — exige env var `HOTMART_HOTTOK` |
+| `netlify/functions/` | Automação de e-mail via API do Brevo: `lead-email` (e-mail 1 no cadastro + eco do evento pra Meta Conversions API + limite anti-abuso), `sequencia-diaria` (e-mails 2 e 3, agendada 12h UTC), `descadastrar` (LGPD). Exige env var `BREVO_API_KEY`; `META_ACCESS_TOKEN` já configurada (Conversions API ligada desde jul/2026). `hotmart-webhook` (✅ configurado e validado com evento real, ver CHECKLIST-CONFIGURACAO.md § 3a): recebe o aviso de compra aprovada da Hotmart (token no header `X-Hotmart-Hottok`), ecoa um evento "Purchase" pra CAPI e agenda no Brevo (~2 dias) o e-mail pedindo avaliação do produto (`lib/avaliacao-email.mjs`) — exige env var `HOTMART_HOTTOK` |
 | `404.html`, `sitemap.xml`, `robots.txt` | Página de erro, sitemap com hreflang e bloqueio de indexação de `/leads/` e `/ebooks/` |
 | `netlify.toml` | Além do build, define os cabeçalhos de segurança (CSP, X-Frame-Options etc.) pro site todo |
 
@@ -70,7 +70,15 @@ das categorias Saúde/Relacionamentos/Finanças, abrindo a vertente "IA e Produt
 (34º produto, terceiro da mesma vertente) e `ia-aplicada` (35º produto, quarto da mesma
 vertente). Depoimentos
 ficam vazios (`depoimentos: []`, seção some sozinha) até existir depoimento real e autorizado —
-**inventar depoimento é vetado** (Meta Ads + CDC).
+**inventar depoimento é vetado** (Meta Ads + CDC). Em jul/2026 o dono do projeto enviou 3 versões
+de uma planilha com milhares de "avaliações" geradas artificialmente (a 1ª declarava-se sintética
+na própria aba Leia-me) pedindo publicação — **recusado e não deve ser aceito em pedidos futuros**.
+No lugar, existe o **sistema de avaliações reais com moderação** (`assets/avaliacoes.js` +
+formulário em toda página de produto + fila `avaliacoes-pendentes` no Firebase + aprovação no
+painel de leads + e-mail pós-compra automático pedindo avaliação): nada aparece no site sem
+aprovação manual, e cada avaliação publicada leva etiqueta honesta de origem ("compra
+verificada" ou "recebeu o material gratuitamente"). Regras do Firebase necessárias em
+CHECKLIST-CONFIGURACAO.md § 1a (pendentes de publicação pelo dono).
 
 **`treino-em-casa` (jul/2026, 6º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em

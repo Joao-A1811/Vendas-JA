@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel de Leads | NextLevel</title>
+<title>Painel de Leads e Avaliações | NextLevel</title>
 <meta name="robots" content="noindex">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
@@ -23,6 +23,13 @@ th{background:#f4f7fb;color:#0f766e}
 #login-box{max-width:340px;margin:60px auto;text-align:center}
 #login-box input{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:6px}
 #status{margin-top:10px;font-size:13px;color:#666}
+.av-card{border:1px solid #e2e6ec;border-radius:8px;padding:14px 16px;margin-top:12px}
+.av-card .av-meta{font-size:12px;color:#666;margin-bottom:6px}
+.av-card .av-texto{font-size:13.5px;line-height:1.5;margin:8px 0;white-space:pre-wrap}
+.av-card .av-acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn-sec{background:#5b6b68}
+.btn-rec{background:#c0392b}
+.av-estrelas{color:#f59e0b;letter-spacing:2px}
 </style>
 </head>
 <body>
@@ -85,10 +92,32 @@ if (FB_READY) {
       </table>
     </div>
   </div>
+
+  <div id="painel-avaliacoes" class="card" style="display:none;margin-top:22px">
+    <strong id="av-contador">Carregando avaliações...</strong>
+    <p style="font-size:12.5px;color:#666;margin-top:6px">
+      Avaliações enviadas pelo site ficam pendentes aqui e <strong>nada aparece no site sem a sua aprovação</strong>.
+      Antes de aprovar, confira o e-mail: se bater com um comprador na Hotmart, aprove como
+      "compra verificada"; se for alguém que recebeu o material grátis, aprove como "recebeu grátis"
+      (a etiqueta certa aparece junto da avaliação no site — é o que mantém a seção dentro das
+      regras do Meta e do CDC). O e-mail nunca é publicado.
+    </p>
+    <div id="av-status" style="color:#c0392b;font-weight:600;margin-top:8px"></div>
+    <div id="av-lista"></div>
+  </div>
 </div>
 
 <script>
 let leadsAtuais = [];
+
+// Escapa HTML antes de interpolar em innerHTML — nome/comentário vêm de
+// formulário público; sem isso, um texto malicioso executaria script AQUI,
+// na sessão autenticada do painel.
+function esc(v) {
+  const d = document.createElement('div');
+  d.textContent = String(v == null ? '' : v);
+  return d.innerHTML;
+}
 
 function entrar() {
   if (!FB_READY) {
@@ -118,11 +147,14 @@ if (FB_READY) {
     if (user) {
       document.getElementById('login-box').style.display = 'none';
       document.getElementById('painel').style.display = 'block';
+      document.getElementById('painel-avaliacoes').style.display = 'block';
       document.getElementById('btn-logout').style.display = 'inline-block';
       carregarLeads();
+      carregarAvaliacoes();
     } else {
       document.getElementById('login-box').style.display = 'block';
       document.getElementById('painel').style.display = 'none';
+      document.getElementById('painel-avaliacoes').style.display = 'none';
       document.getElementById('btn-logout').style.display = 'none';
     }
   });
@@ -136,15 +168,15 @@ function carregarLeads() {
     document.getElementById('contador').textContent = leadsAtuais.length + ' leads';
     document.getElementById('tbody-leads').innerHTML = leadsAtuais.map(l => `
       <tr>
-        <td>${new Date(l.data).toLocaleString('pt-BR')}</td>
-        <td>${l.nome || ''}</td>
-        <td>${l.email || ''}</td>
-        <td>${l.whatsapp || ''}</td>
-        <td>${l.produto || ''}</td>
-        <td>${(l.idioma || '').toUpperCase()}</td>
-        <td>${l.utm_source || ''}</td>
-        <td>${l.utm_campaign || ''}</td>
-        <td>${l.utm_content || ''}</td>
+        <td>${esc(new Date(l.data).toLocaleString('pt-BR'))}</td>
+        <td>${esc(l.nome)}</td>
+        <td>${esc(l.email)}</td>
+        <td>${esc(l.whatsapp)}</td>
+        <td>${esc(l.produto)}</td>
+        <td>${esc((l.idioma || '').toUpperCase())}</td>
+        <td>${esc(l.utm_source)}</td>
+        <td>${esc(l.utm_campaign)}</td>
+        <td>${esc(l.utm_content)}</td>
       </tr>
     `).join('');
   }, error => {
@@ -154,6 +186,79 @@ function carregarLeads() {
     document.getElementById('db-status').textContent =
       'Erro ao ler os leads: ' + error.message +
       ' — confira em Realtime Database > Regras se este e-mail está autorizado.';
+  });
+}
+
+// ============================================================
+// MODERAÇÃO DE AVALIAÇÕES
+// Pendentes chegam do formulário público das páginas de produto
+// (avaliacoes-pendentes/<slug>). Aprovar copia pra
+// avaliacoes-publicadas/<slug> com a etiqueta de origem escolhida
+// e remove da fila; recusar só remove. O site lê apenas as publicadas.
+// ============================================================
+function estrelasTxt(n) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) s += i <= Number(n) ? '★' : '☆';
+  return s;
+}
+
+function carregarAvaliacoes() {
+  firebase.database().ref('avaliacoes-pendentes').on('value', snap => {
+    document.getElementById('av-status').textContent = '';
+    const porSlug = snap.val() || {};
+    const itens = [];
+    for (const [slug, avs] of Object.entries(porSlug)) {
+      for (const [id, a] of Object.entries(avs || {})) itens.push({ slug, id, ...a });
+    }
+    itens.sort((a, b) => (b.data || '').localeCompare(a.data || ''));
+    document.getElementById('av-contador').textContent =
+      itens.length + ' avaliações pendentes';
+    document.getElementById('av-lista').innerHTML = itens.map(a => `
+      <div class="av-card">
+        <div class="av-meta">
+          <strong>${esc(a.slug)}</strong> · ${esc((a.idioma || '').toUpperCase())} ·
+          ${esc(a.data ? new Date(a.data).toLocaleString('pt-BR') : '')}
+        </div>
+        <div><span class="av-estrelas">${estrelasTxt(a.nota)}</span>
+          &nbsp;<strong>${esc(a.nome)}</strong>
+          &nbsp;<span style="color:#666">${esc(a.email)}</span></div>
+        <div class="av-texto">${esc(a.comentario)}</div>
+        <div class="av-acoes">
+          <button class="btn" onclick="aprovarAvaliacao('${esc(a.slug)}','${esc(a.id)}','compra')">Aprovar (compra verificada)</button>
+          <button class="btn btn-sec" onclick="aprovarAvaliacao('${esc(a.slug)}','${esc(a.id)}','gratis')">Aprovar (recebeu grátis)</button>
+          <button class="btn btn-rec" onclick="recusarAvaliacao('${esc(a.slug)}','${esc(a.id)}')">Recusar</button>
+        </div>
+      </div>
+    `).join('') || '<p style="margin-top:12px;color:#666">Nenhuma avaliação aguardando moderação.</p>';
+  }, error => {
+    document.getElementById('av-contador').textContent = 'Erro ao carregar avaliações';
+    document.getElementById('av-status').textContent =
+      'Erro: ' + error.message + ' — confira se as regras de avaliacoes-pendentes foram publicadas (CHECKLIST § 1a).';
+  });
+}
+
+function aprovarAvaliacao(slug, id, origem) {
+  const ref = firebase.database().ref('avaliacoes-pendentes/' + slug + '/' + id);
+  ref.once('value').then(snap => {
+    const a = snap.val();
+    if (!a) return;
+    // O e-mail fica só na fila de moderação — a versão pública não o carrega.
+    return firebase.database().ref('avaliacoes-publicadas/' + slug).push({
+      nome: a.nome || '',
+      nota: Number(a.nota) || 5,
+      comentario: a.comentario || '',
+      idioma: a.idioma || 'pt',
+      data: a.data || new Date().toISOString(),
+      origem: origem,
+    }).then(() => ref.remove());
+  }).catch(e => {
+    document.getElementById('av-status').textContent = 'Erro ao aprovar: ' + e.message;
+  });
+}
+
+function recusarAvaliacao(slug, id) {
+  firebase.database().ref('avaliacoes-pendentes/' + slug + '/' + id).remove().catch(e => {
+    document.getElementById('av-status').textContent = 'Erro ao recusar: ' + e.message;
   });
 }
 

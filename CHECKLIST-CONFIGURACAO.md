@@ -68,6 +68,46 @@ esbarrava em bloqueio de popup no celular e domínio não autorizado):
    >
    > Cole em **Realtime Database → Regras → Publicar** — 1 minuto, não afeta os leads salvos.
 
+### 1a. Regras das avaliações de leitores — ⚠️ PENDENTE (obrigatório pro sistema de avaliações)
+
+O site tem um sistema de avaliações reais com moderação (jul/2026): o formulário nas páginas
+de produto salva em `avaliacoes-pendentes/<slug>`, **nada aparece no site** até você aprovar no
+painel (`leads/painel-leads.html`), e a aprovação move para `avaliacoes-publicadas/<slug>`, que
+é o único nó que as páginas leem. Para funcionar, as regras do Realtime Database precisam ganhar
+os dois blocos abaixo — **cole DENTRO de `"rules": { ... }`, ao lado do bloco `"leads"`**, e
+publique:
+
+```json
+"avaliacoes-pendentes": {
+  ".read": "auth != null",
+  "$slug": {
+    "$avaliacao": {
+      ".write": "!data.exists() || auth != null",
+      ".validate": "newData.hasChildren(['nome', 'email', 'nota', 'comentario', 'idioma', 'data'])",
+      "nome":       { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 80" },
+      "email":      { ".validate": "newData.isString() && newData.val().contains('@') && newData.val().length < 200" },
+      "nota":       { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 5" },
+      "comentario": { ".validate": "newData.isString() && newData.val().length > 10 && newData.val().length < 1200" },
+      "idioma":     { ".validate": "newData.isString() && newData.val().length < 6" },
+      "data":       { ".validate": "newData.isString() && newData.val().length < 40" },
+      "$outro":     { ".validate": false }
+    }
+  }
+},
+"avaliacoes-publicadas": {
+  ".read": true,
+  ".write": "auth != null"
+}
+```
+
+O que as regras garantem: visitante só consegue **criar** avaliação pendente (com campos
+validados — nunca editar/apagar nada); só usuário autenticado (você, no painel) lê a fila,
+aprova ou recusa; e a parte pública (`avaliacoes-publicadas`) só aceita escrita autenticada.
+O e-mail do avaliador fica **só na fila de moderação** — a versão publicada não o contém.
+
+Enquanto essas regras não forem publicadas, o site continua normal — o formulário aparece,
+mas o envio retorna erro amigável e nenhuma avaliação é aceita.
+
 ---
 
 ## 2. Meta Business Manager (conta de anúncios) — ✅ já configurado

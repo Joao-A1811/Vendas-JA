@@ -24,6 +24,7 @@
 // PURCHASE_APPROVED real.
 // ============================================================
 import { enviarEventoCapi } from './lib/meta-capi.mjs';
+import { enviarPedidoAvaliacao } from './lib/avaliacao-email.mjs';
 
 const EVENTOS_DE_COMPRA = ['PURCHASE_APPROVED', 'PURCHASE_COMPLETE'];
 
@@ -91,6 +92,18 @@ export default async (req) => {
       moeda,
       conteudo: produtoNome,
     });
+
+    // Pedido de avaliação pós-compra (agendado pra ~2 dias no Brevo).
+    // Só no PURCHASE_APPROVED: o PURCHASE_COMPLETE chega depois pra mesma
+    // venda e mandaria o e-mail em dobro. Falha aqui não derruba a resposta —
+    // o evento do Meta (acima) é o crítico.
+    if (corpo.event === 'PURCHASE_APPROVED') {
+      try {
+        await enviarPedidoAvaliacao({ email, nomeHotmart: produtoNome });
+      } catch (e) {
+        console.error('hotmart-webhook: pedido de avaliação falhou —', e.message);
+      }
+    }
 
     console.log('hotmart-webhook: Purchase enviado —', transacao, produtoNome, valor, moeda);
     return new Response(JSON.stringify({ ok: true }), {
