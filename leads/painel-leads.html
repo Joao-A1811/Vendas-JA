@@ -160,6 +160,25 @@ if (FB_READY) {
   });
 }
 
+// WhatsApp do lead → link wa.me que abre a conversa com mensagem pronta no
+// idioma da pessoa. É follow-up MANUAL de 1 clique (nada é enviado sozinho):
+// no volume atual não compensa a API oficial do WhatsApp Business, e mensagem
+// automática sem opt-in explícito arrisca banimento do número + LGPD.
+function linkWhatsApp(l) {
+  const bruto = String(l.whatsapp || '').replace(/\D/g, '');
+  if (bruto.length < 8) return '';
+  // Número sem DDI (padrão BR: DDD + 8-9 dígitos) em lead PT → assume Brasil.
+  const numero = (bruto.length <= 11 && (l.idioma || 'pt') === 'pt') ? '55' + bruto : bruto;
+  const nome = String(l.nome || '').trim().split(/\s+/)[0];
+  const msgs = {
+    pt: `Oi ${nome}! Aqui é da NextLevel 👋 Vi que você baixou nosso material gratuito de "${l.produto || ''}" — chegou tudo certinho? Qualquer dúvida sobre o conteúdo, é só me chamar por aqui.`,
+    en: `Hi ${nome}! This is NextLevel 👋 I saw you downloaded our free "${l.produto || ''}" material — did everything arrive OK? If you have any questions about the content, just message me here.`,
+    es: `¡Hola ${nome}! Somos NextLevel 👋 Vi que descargaste nuestro material gratis de "${l.produto || ''}" — ¿llegó todo bien? Cualquier duda sobre el contenido, escríbeme por aquí.`,
+  };
+  const texto = msgs[l.idioma] || msgs.pt;
+  return `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+}
+
 function carregarLeads() {
   firebase.database().ref('leads').on('value', snap => {
     document.getElementById('db-status').textContent = '';
@@ -171,7 +190,9 @@ function carregarLeads() {
         <td>${esc(new Date(l.data).toLocaleString('pt-BR'))}</td>
         <td>${esc(l.nome)}</td>
         <td>${esc(l.email)}</td>
-        <td>${esc(l.whatsapp)}</td>
+        <td>${linkWhatsApp(l)
+          ? `<a href="${esc(linkWhatsApp(l))}" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp com mensagem pronta">${esc(l.whatsapp)} 💬</a>`
+          : esc(l.whatsapp)}</td>
         <td>${esc(l.produto)}</td>
         <td>${esc((l.idioma || '').toUpperCase())}</td>
         <td>${esc(l.utm_source)}</td>
