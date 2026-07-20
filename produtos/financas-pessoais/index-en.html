@@ -152,6 +152,7 @@ img{max-width:100%;display:block}
 #lead-msg{margin-top:12px;font-size:14px;font-weight:600}
 #lead-site{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 #btn-download-ebook{display:none;margin-top:14px}
+#btn-download-planilha{display:none;margin-top:10px}
 
 .oferta{background:#fff;border-radius:20px;padding:44px;text-align:center;border:1px solid rgba(13,27,42,.08);box-shadow:0 10px 40px rgba(15,118,110,.1)}
 .oferta .produto{font-weight:700;color:var(--roxo);font-size:14px;text-transform:uppercase;letter-spacing:.4px}
@@ -252,6 +253,7 @@ const CONFIG = {
   contagemRegressivaFim: '',
   linkCheckoutHotmart: 'https://pay.hotmart.com/D106713828I',
   linkEbookGratis: '/ebooks/arquivos/financas-pessoais-en.pdf',
+  linkPlanilhaGratis: '/ebooks/arquivos/planilha-controle-gastos-en.xlsx',
   idioma: "en",
   faq: [
     { pergunta: "Does this guide recommend where to invest my money?", resposta: "No. This material is educational and does not represent an individual investment recommendation or securities advice — it teaches you the method to organize your finances and evaluate investments on your own." },
@@ -364,6 +366,7 @@ const CONFIG = {
       </form>
       <div id="lead-msg"></div>
       <a href="#" id="btn-download-ebook" class="btn btn-primary" download>📥 Download the material</a>
+      <a href="#" id="btn-download-planilha" class="btn btn-primary" download>📊 Download the expense tracker spreadsheet</a>
       <small>Your data is safe and will not be shared.</small>
     </div>
   </div>
@@ -556,6 +559,12 @@ function entregarEbook() {
     const btn = document.getElementById('btn-download-ebook');
     btn.href = CONFIG.linkEbookGratis;
     btn.style.display = 'inline-block';
+    // Bônus exclusivo deste produto: planilha de controle de gastos junto do ebook
+    if (CONFIG.linkPlanilhaGratis) {
+      const btnPlanilha = document.getElementById('btn-download-planilha');
+      btnPlanilha.href = CONFIG.linkPlanilhaGratis;
+      btnPlanilha.style.display = 'inline-block';
+    }
     return 'Got it! Click below to download your material now:';
   }
   return 'Got it! Check your inbox in a moment.';

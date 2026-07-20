@@ -32,7 +32,7 @@ a cada push na `main`.
 | `landing-page/` | Template em branco (3 idiomas) — copiar pra criar produto novo |
 | `produtos/<slug>/` | Página de vendas de cada produto (3 idiomas, `CONFIG` no topo de cada uma) |
 | `ebooks/` | Gerador de ebook em PDF + `arquivos/` com os PDFs entregues (`<slug>-<idioma>.pdf`) |
-| `anuncios/` | Templates de copy para Meta Ads (BR e internacional), com regras por nicho |
+| `anuncios/` | Copy pra Meta Ads: `prontos/` (por produto), `categorias/` (por categoria, estratégia de isca grátis → sequência de e-mail vende), com regras por nicho |
 | `leads/painel-leads.html` | Painel de leads (login e-mail/senha) com exportação CSV + **moderação de avaliações** (aprovar como "compra verificada"/"recebeu grátis" ou recusar — nada vai pro site sem aprovação) |
 | `legal/` | Política de privacidade + termos de uso (3 idiomas) — exigidos pelo Meta Ads e LGPD |
 | `assets/consent.js` | Banner de cookies (3 idiomas): o Pixel só liga depois que o visitante aceita |
@@ -43,7 +43,7 @@ a cada push na `main`.
 
 Leads são salvos no Firebase (projeto `vendas-ja-99317`) com produto + idioma + UTMs.
 Quem se cadastra recebe o ebook gratuito na hora, no idioma da página (campo
-`linkEbookGratis` do `CONFIG`). O formulário tem honeypot anti-spam (campo `#lead-site`
+`linkEbookGratis` do `CONFIG`; `financas-pessoais` entrega TAMBÉM uma planilha de controle de gastos via campo opcional `linkPlanilhaGratis` — isca dupla usada nos anúncios da categoria finanças). O formulário tem honeypot anti-spam (campo `#lead-site`
 escondido — robô que preenche é ignorado sem salvar).
 
 As páginas de produto têm SEO/social prontos: favicon, Open Graph com **imagem própria por
@@ -826,9 +826,14 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
 
 ## O que ainda falta (estado em julho/2026)
 
-- **Anúncios Meta Ads:** copy pronta por produto em `anuncios/prontos/` — publicar só quando
-  o produto estiver vendável (checkout real + `disponivel: true`). Ainda não feito pra nenhum
-  dos produtos ao vivo.
+- **Anúncios Meta Ads:** copy por produto em `anuncios/prontos/` e por categoria em
+  `anuncios/categorias/` (estratégia de isca grátis, jul/2026) — publicar fica por conta do
+  dono no Business Manager. Ainda não publicado.
+- **Combos (jul/2026, preços aprovados):** plano completo em `COMBOS-HOTMART.md` — order bump
+  (2º produto a R$ 9,99/US$ 2,99; tabela pronta, config do lado do dono na Hotmart) e 5 kits
+  (4 por categoria a R$ 49,99/US$ 14,99 + completo a R$ 99,99/US$ 29,99; textos de cadastro
+  prontos). Quando o dono cadastrar os kits e mandar os checkouts, construir as páginas dos
+  kits no site (catálogo/sitemap/cross-sell/e-mail).
 
 ## Regras / decisões já tomadas (não contrariar)
 

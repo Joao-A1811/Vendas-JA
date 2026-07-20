@@ -152,6 +152,7 @@ img{max-width:100%;display:block}
 #lead-msg{margin-top:12px;font-size:14px;font-weight:600}
 #lead-site{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 #btn-download-ebook{display:none;margin-top:14px}
+#btn-download-planilha{display:none;margin-top:10px}
 
 .oferta{background:#fff;border-radius:20px;padding:44px;text-align:center;border:1px solid rgba(13,27,42,.08);box-shadow:0 10px 40px rgba(15,118,110,.1)}
 .oferta .produto{font-weight:700;color:var(--roxo);font-size:14px;text-transform:uppercase;letter-spacing:.4px}
@@ -252,6 +253,7 @@ const CONFIG = {
   contagemRegressivaFim: '',
   linkCheckoutHotmart: 'https://pay.hotmart.com/Y106713849X',
   linkEbookGratis: '/ebooks/arquivos/financas-pessoais-es.pdf',
+  linkPlanilhaGratis: '/ebooks/arquivos/planilha-controle-gastos-es.xlsx',
   idioma: "es",
   faq: [
     { pergunta: "¿Esta guía recomienda dónde invertir mi dinero?", resposta: "No. Este material es educativo y no representa una recomendación individual de inversión ni asesoría de valores — enseña el método para que organices tus finanzas y evalúes inversiones por tu cuenta." },
@@ -364,6 +366,7 @@ const CONFIG = {
       </form>
       <div id="lead-msg"></div>
       <a href="#" id="btn-download-ebook" class="btn btn-primary" download>📥 Descargar el material</a>
+      <a href="#" id="btn-download-planilha" class="btn btn-primary" download>📊 Descargar la planilla de control de gastos</a>
       <small>Tus datos están seguros y no serán compartidos.</small>
     </div>
   </div>
@@ -556,6 +559,12 @@ function entregarEbook() {
     const btn = document.getElementById('btn-download-ebook');
     btn.href = CONFIG.linkEbookGratis;
     btn.style.display = 'inline-block';
+    // Bônus exclusivo deste produto: planilha de controle de gastos junto do ebook
+    if (CONFIG.linkPlanilhaGratis) {
+      const btnPlanilha = document.getElementById('btn-download-planilha');
+      btnPlanilha.href = CONFIG.linkPlanilhaGratis;
+      btnPlanilha.style.display = 'inline-block';
+    }
     return '¡Recibido! Haz clic abajo para descargar tu material ahora:';
   }
   return '¡Recibido! Revisa tu correo en un momento.';
