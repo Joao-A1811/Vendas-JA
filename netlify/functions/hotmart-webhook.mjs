@@ -25,6 +25,7 @@
 // ============================================================
 import { enviarEventoCapi } from './lib/meta-capi.mjs';
 import { enviarPedidoAvaliacao } from './lib/avaliacao-email.mjs';
+import { enviarPurchaseGa4 } from './lib/ga4-mp.mjs';
 
 const EVENTOS_DE_COMPRA = ['PURCHASE_APPROVED', 'PURCHASE_COMPLETE'];
 
@@ -93,11 +94,21 @@ export default async (req) => {
       conteudo: produtoNome,
     });
 
-    // Pedido de avaliação pós-compra (agendado pra ~2 dias no Brevo).
-    // Só no PURCHASE_APPROVED: o PURCHASE_COMPLETE chega depois pra mesma
-    // venda e mandaria o e-mail em dobro. Falha aqui não derruba a resposta —
-    // o evento do Meta (acima) é o crítico.
+    // Os dois blocos abaixo só no PURCHASE_APPROVED: o PURCHASE_COMPLETE
+    // chega depois pra MESMA venda e duplicaria e-mail e evento. Falha em
+    // qualquer um não derruba a resposta — o evento do Meta (acima) é o
+    // crítico; estes são reforços.
     if (corpo.event === 'PURCHASE_APPROVED') {
+      // Mesma compra também pro GA4 (Measurement Protocol) — sem isto o
+      // funil do Analytics para no begin_checkout e só o Meta vê a venda.
+      try {
+        const ga4 = await enviarPurchaseGa4({ transacao, email, valor, moeda, produtoNome });
+        if (!ga4.enviado) console.log('hotmart-webhook: GA4 pulado —', ga4.motivo);
+      } catch (e) {
+        console.error('hotmart-webhook: purchase GA4 falhou —', e.message);
+      }
+
+      // Pedido de avaliação pós-compra (agendado pra ~2 dias no Brevo).
       try {
         await enviarPedidoAvaliacao({ email, nomeHotmart: produtoNome });
       } catch (e) {

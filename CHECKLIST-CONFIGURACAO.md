@@ -275,6 +275,25 @@ em todas as páginas — nenhum dado é medido sem consentimento.
 TXT no Registro.br, e o sitemap (`https://nextlevelbr.app.br/sitemap.xml`) já foi enviado
 pra acelerar a indexação.
 
+### 4f. Compra ("purchase") no GA4 — ⚠️ PENDENTE (1 chave, 2 minutos)
+
+O checkout acontece na Hotmart, fora do site, então o GA4 do navegador nunca vê a venda — o
+funil do Analytics morria no `begin_checkout`. O `hotmart-webhook` agora manda a compra
+também pro GA4 (via Measurement Protocol, `lib/ga4-mp.mjs`), no mesmo momento em que já
+avisa o Meta. Falta só a chave:
+
+1. **analytics.google.com** → **Admin** (engrenagem) → coluna do meio → **Fluxos de dados** →
+   clicar no fluxo do site (`nextlevelbr.app.br`).
+2. Rolar até **"Chaves secretas da API do Measurement Protocol"** (Measurement Protocol API
+   secrets) → **Criar** → dar um nome (ex.: `hotmart-webhook`) → copiar o **valor da chave**.
+3. **app.netlify.com** → site → **Site configuration → Environment variables → Add a
+   variable** → Key: `GA4_API_SECRET` → Value: a chave → salvar → **Deploys → Trigger
+   deploy**.
+4. Pronto. Na próxima compra aprovada (ou evento de teste da Hotmart), o GA4 recebe o evento
+   `purchase` com valor, moeda e produto — conferir em **Relatórios → Tempo real** ou, no dia
+   seguinte, em **Relatórios → Monetização**. Enquanto a env var não existir, nada quebra — o
+   webhook só registra "GA4 pulado" no log.
+
 ---
 
 ## 5. A cada novo produto (repetir esta parte)

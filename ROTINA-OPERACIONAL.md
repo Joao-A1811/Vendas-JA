@@ -50,9 +50,11 @@ Checklist de acompanhamento do negócio (não é configuração — isso já est
 **Link:** https://analytics.google.com
 1. Selecionar a propriedade do site.
 2. **Relatórios → Engajamento → Eventos**.
-3. Comparar, por período: `page_view` → `begin_checkout` → (nenhum evento de "Purchase" ainda
-   no GA4 — só existe no Meta hoje). Ver quais produtos geram mais `begin_checkout` e se algum
-   produto/idioma está muito abaixo dos outros — pode indicar problema na página ou no preço.
+3. Comparar, por período, o funil completo: `page_view` → `begin_checkout` → `purchase`
+   (a compra chega via servidor — precisa da env var `GA4_API_SECRET`, ver CHECKLIST § 4f).
+   Ver quais produtos geram mais `begin_checkout` e se algum produto/idioma está muito abaixo
+   dos outros — pode indicar problema na página ou no preço. Receita por produto fica em
+   **Relatórios → Monetização**.
 4. **Relatórios → Aquisição → Aquisição de tráfego**: de onde vem a visita (direto, busca,
    redes sociais, anúncio).
 
