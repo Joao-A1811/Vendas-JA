@@ -99,10 +99,34 @@ partir do momento em que a página é aberta).
 2. Aba **Uso**: conferir se está dentro do plano gratuito (raramente será um problema nesse
    volume, mas é rápido de checar).
 
-### 11. Revisão geral do catálogo
+### 11. Checagem automática de preço (site x Hotmart) — opcional
+Sempre que mudar preço, ou de tempos em tempos só pra garantir que nada saiu de sincronia.
+Roda no seu computador (não dá pra rodar aqui comigo — a rede daqui bloqueia a Hotmart por
+política). Precisa dos arquivos `hotmart_checagem_final.py` e `titulos-catalogo.json` (os
+mesmos que já usamos — guarde numa pasta fixa, ex. `Downloads\NextLevel`) e das credenciais de
+API que você já gerou (Hotmart → Ferramentas → Credenciais de API).
+
+**PowerShell**, na pasta onde estão os arquivos:
+```powershell
+$env:HOTMART_CLIENT_ID = 'SEU_CLIENT_ID'
+$env:HOTMART_CLIENT_SECRET = 'SEU_CLIENT_SECRET'
+$env:HOTMART_BASIC = 'Basic SEU_TOKEN_BASIC'
+python hotmart_checagem_final.py titulos-catalogo.json
+```
+Só leitura — nunca muda nada na Hotmart. No final aparece um resumo (quantos produtos batem,
+quantos divergem) e um arquivo `resultado-final.json` com o detalhe de cada um. Se aparecer
+algo em "DIVERGENTE", me manda o resumo que eu ajudo a diagnosticar — como já fizemos quando
+achou a oferta do `investimentos` com a moeda errada.
+
+> Se algum dia mudar o preço padrão de novo, atualiza também o dicionário `ESPERADO` no topo
+> do `hotmart_checagem_final.py` (valor e moeda esperados por idioma) — hoje ele está fixo em
+> R$ 19,99 (PT) / US$ 4,99 (EN-ES). Me chama que eu atualizo esse arquivo pra você.
+
+### 12. Revisão geral do catálogo
 1. Confirmar que os 30 produtos continuam com `disponivel: true` e checkout funcionando —
    um teste rápido: abrir 2–3 produtos aleatórios no site e clicar em "Comprar agora",
-   conferir se abre a Hotmart certa.
+   conferir se abre a Hotmart certa (a checagem do item 11 já cobre o preço; isso aqui é só
+   pra ver se o link em si ainda funciona).
 2. Avaliar se algum produto precisa de preço revisado, novo depoimento aprovado, ou nova
    campanha de anúncio (copy já pronta em `anuncios/prontos/`).
 
