@@ -555,7 +555,7 @@ brasileiro (Tesouro Direto, CDB/LCI/LCA, FGC, Selic/CDI/IPCA). Segue a regra de 
 investimentos já documentada neste arquivo (sem recomendar ativos, sem prometer rentabilidade).
 Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/Q106716967J` (R$ 19,99)
+- PT/BRL: `https://pay.hotmart.com/T106813833H` (R$ 19,99)
 - EN/USD: `https://pay.hotmart.com/Y106716993J` (US$ 4,99)
 - ES/USD: `https://pay.hotmart.com/Y106717009V` (US$ 4,99)
 
