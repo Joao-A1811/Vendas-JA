@@ -398,8 +398,7 @@ Galeria "olhe por dentro" com 5 páginas de amostra em `assets/produtos/primeiro
 idiomas). Todo o conteúdo (headline, FAQ, ebook, capa, Hotmart) segue a mesma regra de nicho
 sensível de relacionamentos dos demais produtos da vertente — não promete conquistar ninguém e
 não ensina pressão, manipulação, joguinhos ou insistência após um não; trata consentimento,
-segurança e autonomia como base, não opcional. Preço padrão da coleção: **R$ 19,99 (PT) / US$
-19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+segurança e autonomia como base, não opcional. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
 - PT/BRL: `https://pay.hotmart.com/D106706588C` (R$ 19,99)
 - EN/USD: `https://pay.hotmart.com/O106706603K` (US$ 4,99)
 - ES/USD: `https://pay.hotmart.com/B106706622I` (US$ 4,99)
@@ -426,8 +425,7 @@ como estritamente educacional (não é recomendação individual nem consultoria
 mobiliários) e recomenda sempre consultar fontes oficiais/contador antes de vender ou declarar —
 segue a regra de nicho sensível de investimentos já documentada neste arquivo. As versões EN/ES
 generalizam a seção de tributação (que no PT cita a lei brasileira 14.754/2023) para não afirmar
-regras fiscais específicas de outros países. Preço padrão da coleção: **R$ 19,99 (PT) / US$
-19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+regras fiscais específicas de outros países. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
 - PT/BRL: `https://pay.hotmart.com/G106711251O` (R$ 19,99)
 - EN/USD: `https://pay.hotmart.com/L106711275V` (US$ 4,99)
 - ES/USD: `https://pay.hotmart.com/B106711299T` (US$ 4,99)
@@ -526,8 +524,7 @@ sensível (investimentos/tributário)** — todo o conteúdo evita prometer rest
 economia de imposto, não substitui contador/consultor tributário/orientação oficial da Receita
 Federal (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente
 das regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
-investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 19,99 (PT) / US$
-19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
 - PT/BRL: `https://pay.hotmart.com/E106716252K` (R$ 19,99)
 - EN/USD: `https://pay.hotmart.com/V106716286B` (US$ 4,99)
 - ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 4,99)
