@@ -55,14 +55,16 @@ páginas**: produto, home e `/categorias/` — as duas últimas só PageView, se
 
 ## Catálogo atual
 
-> ⚠️ **Preço padrão da coleção reduzido em jul/2026: R$ 49,99→R$ 19,99 (PT) e US$ 19,00→US$ 4,99
-> (EN/ES).** Já atualizado nas 90 páginas de produto, em `produtos-email.mjs` (e-mails da
-> sequência) e neste arquivo. **Pendência do lado do dono do projeto:** o valor exibido no site
-> é só o texto da página — quem define o valor realmente cobrado é o preço cadastrado em cada
-> oferta na Hotmart (30 produtos × até 3 moedas). **Enquanto o preço não for atualizado lá
-> também, o site vai anunciar um valor e a Hotmart vai cobrar outro** — risco de propaganda
-> enganosa (CDC) e de carrinho abandonado no checkout. Trocar em Hotmart → Produtos → cada
-> produto → Ofertas → editar o valor de cada moeda.
+> ⚠️ **Preço padrão da coleção reduzido em jul/2026 — inclusive o "de" (âncora):** o site agora
+> mostra **de R$ 49,99 por R$ 19,99 (PT)** e **de US$ 19,99 por US$ 4,99 (EN/ES)** (antes era de
+> R$ 97,00/US$ 97,00 por R$ 49,99/US$ 19,00). Já atualizado nas 90 páginas de produto (`precoDe`
+> e `precoPor`), em `produtos-email.mjs` (e-mails da sequência) e neste arquivo. **Pendência do
+> lado do dono do projeto:** o valor exibido no site é só o texto da página — quem define o
+> valor realmente cobrado é o preço cadastrado em cada oferta na Hotmart (30 produtos × até 3
+> moedas). **Enquanto o preço não for atualizado lá também, o site vai anunciar um valor e a
+> Hotmart vai cobrar outro** — risco de propaganda enganosa (CDC) e de carrinho abandonado no
+> checkout. Trocar em Hotmart → Produtos → cada produto → Ofertas → editar o valor de cada
+> moeda.
 
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são

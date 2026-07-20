@@ -1,6 +1,6 @@
 # Ready-to-use ad copy — Investing from Zero Ebook (International)
 
-Copy adapted to `produtos/investimentos/index-en.html` and `index-es.html`, matching the current price ($4.99, from $97).
+Copy adapted to `produtos/investimentos/index-en.html` and `index-es.html`, matching the current price ($4.99, from $19.99).
 Run the 4 variations together in the same ad set and let Meta optimize after ~50 conversions.
 
 > Meta limits: primary text up to 125 characters, headline up to 40, description up to 30.
@@ -55,10 +55,10 @@ Run the 4 variations together in the same ad set and let Meta optimize after ~50
 
 ### Variation 4 — Direct offer
 **Primary text:**
-`Investing from Zero Ebook for just $4.99 (from $97). Organize your money and start investing.`
+`Investing from Zero Ebook for just $4.99 (from $19.99). Organize your money and start investing.`
 
 **Headline:**
-`Offer: $97 now $4.99`
+`Offer: $19.99 now $4.99`
 
 **Description:**
 `For a limited time`
@@ -108,10 +108,10 @@ Run the 4 variations together in the same ad set and let Meta optimize after ~50
 
 ### Variación 4 — Oferta directa
 **Texto principal:**
-`Ebook Inversiones desde Cero por solo $4.99 (antes $97). Organiza tu dinero y empieza a invertir.`
+`Ebook Inversiones desde Cero por solo $4.99 (antes $19.99). Organiza tu dinero y empieza a invertir.`
 
 **Título:**
-`Oferta: de $97 a $4.99`
+`Oferta: de $19.99 a $4.99`
 
 **Descripción:**
 `Por tiempo limitado`
