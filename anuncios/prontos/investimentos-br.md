@@ -1,6 +1,6 @@
 # Anúncio pronto — Ebook Investimentos do Zero (Brasil / Português)
 
-Copy já adaptada à página `produtos/investimentos/index.html` e ao preço atual (de R$ 97,00 por R$ 47,00).
+Copy já adaptada à página `produtos/investimentos/index.html` e ao preço atual (de R$ 97,00 por R$ 19,99).
 Suba as 4 variações juntas no mesmo conjunto de anúncios e deixe o Meta otimizar depois de ~50 conversões.
 
 > Limites do Meta: texto principal até 125 caracteres, título até 40, descrição até 30 (o anúncio roda passando disso, mas corta em alguns posicionamentos).
@@ -62,7 +62,7 @@ Suba as 4 variações juntas no mesmo conjunto de anúncios e deixe o Meta otimi
 
 ## Variação 4 — Oferta direta
 **Texto principal:**
-`Ebook Investimentos do Zero por R$ 47 (de R$ 97). Organize seu dinheiro e comece a investir.`
+`Ebook Investimentos do Zero por R$ 19,99 (de R$ 97). Organize seu dinheiro e comece a investir.`
 
 **Título:**
 `Oferta: de R$97 por R$47`

@@ -1,5 +1,11 @@
 # Textos prontos pro cadastro dos produtos na Hotmart
 
+> ⚠️ **Registro histórico do que foi cadastrado em cada produto** — não é a fonte viva do preço
+> atual. Os valores citados abaixo, produto a produto, refletem o preço vigente no momento em
+> que cada um foi cadastrado (útil pra conferência/auditoria). **O preço em vigor hoje no site
+> está sempre em `CLAUDE.md` → seção "Catálogo atual"** (jul/2026: R$ 19,99 PT / US$ 4,99
+> EN/ES). Se decidir mudar o preço de novo, atualizar lá — este arquivo não precisa acompanhar.
+
 Copiar e colar ao cadastrar cada produto em **app.hotmart.com → Produtos → Cadastrar produto**.
 
 ## Configurações iguais pra todos os 6 produtos

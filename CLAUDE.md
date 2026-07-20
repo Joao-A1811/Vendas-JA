@@ -55,6 +55,15 @@ páginas**: produto, home e `/categorias/` — as duas últimas só PageView, se
 
 ## Catálogo atual
 
+> ⚠️ **Preço padrão da coleção reduzido em jul/2026: R$ 49,99→R$ 19,99 (PT) e US$ 19,00→US$ 4,99
+> (EN/ES).** Já atualizado nas 90 páginas de produto, em `produtos-email.mjs` (e-mails da
+> sequência) e neste arquivo. **Pendência do lado do dono do projeto:** o valor exibido no site
+> é só o texto da página — quem define o valor realmente cobrado é o preço cadastrado em cada
+> oferta na Hotmart (30 produtos × até 3 moedas). **Enquanto o preço não for atualizado lá
+> também, o site vai anunciar um valor e a Hotmart vai cobrar outro** — risco de propaganda
+> enganosa (CDC) e de carrinho abandonado no checkout. Trocar em Hotmart → Produtos → cada
+> produto → Ofertas → editar o valor de cada moeda.
+
 **Por decisão do dono do projeto (jul/2026), `assets/produtos.js` só lista produtos que JÁ
 estão sendo vendidos de verdade** (checkout Hotmart real em pelo menos uma moeda) — hoje são
 `treino-em-casa`, `suplementacao-inteligente`, `receitas-fitness`, `desafio-30-dias`,
@@ -85,19 +94,19 @@ idiomas.** CONFIG completo, ebooks gratuitos (isca, 7 páginas cada) em
 `ebooks/arquivos/treino-em-casa-<pt|en|es>.pdf`, galeria "olhe por dentro" com 5 páginas de
 amostra do manual em `assets/produtos/treino-em-casa/` (3 idiomas). Checkout real nas 3
 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/S106595121K` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/F106595630M` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/V106595694E` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/S106595121K` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/F106595630M` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/V106595694E` (US$ 4,99)
 
 **`suplementacao-inteligente` (jul/2026, 7º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos
 3 idiomas.** Guia pago de 50 páginas + ebook gratuito (isca, 7 páginas) nos 3 idiomas,
 `ebooks/arquivos/suplementacao-inteligente-<pt|en|es>.pdf`. Ainda sem galeria "olhe por dentro"
-(nenhum preview gerado pra este produto). Preço final definido pelo dono do projeto: **R$ 49,99
-(PT) / US$ 19,00 (EN/ES)** — já salvo nas 3 páginas e em `produtos-email.mjs`. Checkout real nas
+(nenhum preview gerado pra este produto). Preço final definido pelo dono do projeto: **R$ 19,99
+(PT) / US$ 4,99 (EN/ES)** — já salvo nas 3 páginas e em `produtos-email.mjs`. Checkout real nas
 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/L106596626U` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/K106596585A` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/T106596501Y` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/L106596626U` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/K106596585A` (US$ 4,99)
 
 O produto EN tinha sido barrado pela Hotmart num primeiro momento (moderação reprovou por
 "non-compliance", suspeita de a palavra "steroids" na descrição ter disparado filtro
@@ -111,11 +120,11 @@ mais conservadora, mas não foram necessários desta vez.
 idiomas.** Guia pago de 43 páginas (50+ receitas, cardápios por objetivo, sistema de meal prep
 3-2-1, cronograma de 30 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
 `ebooks/arquivos/receitas-fitness-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5 páginas de
-amostra em `assets/produtos/receitas-fitness/` (3 idiomas). Preço padrão da coleção: **R$ 49,99
-(PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/N106607533X` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/P106607574X` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/U106607614K` (US$ 19)
+amostra em `assets/produtos/receitas-fitness/` (3 idiomas). Preço padrão da coleção: **R$ 19,99
+(PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/N106607533X` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/P106607574X` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/U106607614K` (US$ 4,99)
 
 **`desafio-30-dias` (jul/2026, 9º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** Guia pago de 36 páginas (sistema de pontuação semanal, treinos A/B/C com cardio e
@@ -123,11 +132,11 @@ mobilidade, cardápios flexíveis, protocolo anti-impulso, cronograma de 30 dias
 páginas semanais, planner e plano de continuidade de 90 dias) + ebook gratuito (isca, 6
 páginas) nos 3 idiomas, `ebooks/arquivos/desafio-30-dias-<pt|en|es>.pdf`. Galeria "olhe por
 dentro" com 5 páginas de amostra em `assets/produtos/desafio-30-dias/` (3 idiomas). Preço padrão
-da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel:
+da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel:
 true`:
-- PT/BRL: `https://pay.hotmart.com/L106608497Y` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/A106608536W` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/N106608560T` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/L106608497Y` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/A106608536W` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/N106608560T` (US$ 4,99)
 
 **`emagrecimento` (jul/2026, 10º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** Reaproveitou o slug/pasta que já existia como rascunho (nicho sensível — ver regras
@@ -138,11 +147,11 @@ idiomas, `ebooks/arquivos/emagrecimento-<pt|en|es>.pdf`. Galeria "olhe por dentr
 de amostra em `assets/produtos/emagrecimento/` (3 idiomas). Todo o conteúdo (headline, FAQ,
 ebook, capa, Hotmart) foi escrito sem promessa numérica de peso, sem foto antes/depois e sem
 linguagem de vergonha corporal, seguindo a regra do nicho sensível já documentada neste arquivo.
-Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/H106609158K` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/W106609196K` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/G106609215L` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/H106609158K` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/W106609196K` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/G106609215L` (US$ 4,99)
 
 **`ganho-de-massa` (jul/2026, 11º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** Reaproveitou o slug/pasta que já existia como rascunho (nicho sensível — ver regras
@@ -155,11 +164,11 @@ sem fantasia, plano de execução de 30 dias com planners e checklist, plano de 
 amostra em `assets/produtos/ganho-de-massa/` (3 idiomas). Todo o conteúdo (headline, FAQ, ebook,
 capa, Hotmart) foi escrito sem promessa numérica de quilos ganhos, sem foto antes/depois e sem
 linguagem de vergonha corporal, seguindo a regra do nicho sensível já documentada neste arquivo.
-Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/W106610896N` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/Y106610935L` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/F106610965B` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/W106610896N` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/Y106610935L` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/F106610965B` (US$ 4,99)
 
 **`treino-academia` (jul/2026, 12º produto — "Coleção Projeto Verão") — ✅ AO VIVO nos 3
 idiomas.** Produto novo (sem pasta de rascunho prévia). Guia pago de 36 páginas (6 pilares da
@@ -169,10 +178,10 @@ costas, ombros, braços, pernas e core —, 4 divisões semanais prontas de 3x a
 fichas prontas Full Body/Superior-Inferior/Push-Pull-Legs) + ebook gratuito (isca, 6 páginas)
 nos 3 idiomas, `ebooks/arquivos/treino-academia-<pt|en|es>.pdf`. Galeria "olhe por dentro" com 5
 páginas de amostra em `assets/produtos/treino-academia/` (3 idiomas). Preço padrão da coleção:
-**R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/Y106612661T` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/J106612684I` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/X106612700Y` (US$ 19)
+**R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/Y106612661T` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/J106612684I` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/X106612700Y` (US$ 4,99)
 
 **`mentalidade-ansiedade-habitos` (jul/2026, 13º produto — "Coleção Projeto Verão") — ✅ AO VIVO
 nos 3 idiomas.** Produto novo (sem pasta de rascunho prévia), funciona como bônus/complemento
@@ -185,10 +194,10 @@ original, sem diagnosticar nem tratar ansiedade ou transtornos alimentares) + eb
 (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/mentalidade-ansiedade-habitos-<pt|en|es>.pdf`.
 Galeria "olhe por dentro" com 5 páginas de amostra em
 `assets/produtos/mentalidade-ansiedade-habitos/` (3 idiomas). Preço padrão da coleção: **R$
-49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/Q106613382C` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/N106613402F` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/B106613410C` (US$ 19)
+49,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/Q106613382C` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/N106613402F` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/B106613410C` (US$ 4,99)
 
 **`mobilidade-alongamento-prevencao` (jul/2026, 14º produto — "Coleção Projeto Verão") — ✅ AO
 VIVO nos 3 idiomas.** Produto novo (sem pasta de rascunho prévia). Guia pago de 37 páginas
@@ -202,11 +211,11 @@ dor/rigidez — sem prometer "nunca mais sentir dor", sempre recomendando avalia
 quando necessário) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
 `ebooks/arquivos/mobilidade-alongamento-prevencao-<pt|en|es>.pdf`. Galeria "olhe por dentro" com
 5 páginas de amostra em `assets/produtos/mobilidade-alongamento-prevencao/` (3 idiomas). Preço
-padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/P106614336M` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/T106614345B` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/C106614359D` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/P106614336M` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/T106614345B` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/C106614359D` (US$ 4,99)
 
 **`confianca-social` (jul/2026, 15º produto — "Ansiedade Social e Conversas com Naturalidade",
 nova vertente) — ✅ AO VIVO nos 3 idiomas.** Reaproveitou o slug/pasta que já existia como
@@ -223,11 +232,11 @@ amostra em `assets/produtos/confianca-social/` (3 idiomas). Todo o conteúdo (he
 ebook, capa, Hotmart) evita prometer conquista garantida ou resultado romântico, sempre
 enquadrando o método como comunicação e habilidades sociais que dependem de reciprocidade —
 nunca manipulação — seguindo a regra de nicho sensível de relacionamentos já documentada neste
-arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3
+arquivo. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3
 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/K106617805B` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/I106617832D` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Y106617848F` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/K106617805B` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/I106617832D` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Y106617848F` (US$ 4,99)
 
 **`carisma-humor-storytelling` (jul/2026, 16º produto — "Carisma, Humor e Storytelling", mesma
 nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3 idiomas.**
@@ -244,11 +253,11 @@ páginas de amostra em `assets/produtos/carisma-humor-storytelling/` (3 idiomas)
 (headline, FAQ, ebook, capa, Hotmart) evita prometer conquista garantida ou fazer todo mundo
 gostar do leitor, e explicitamente não ensina manipulação, negs, pressão ou técnicas para passar
 por cima da vontade de alguém — segue a mesma regra de nicho sensível de relacionamentos do
-`confianca-social`. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real
+`confianca-social`. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real
 nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/E106618653J` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/X106618676C` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Q106618694P` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/E106618653J` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/X106618676C` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Q106618694P` (US$ 4,99)
 
 **`comunicacao-e-relacionamentos` (jul/2026, 17º produto — "Comunicação e Relacionamento:
 Conversas que Criam Conexão", mesma nova vertente "Conexões, Presença e Relacionamentos
@@ -268,11 +277,11 @@ páginas de amostra em `assets/produtos/comunicacao-e-relacionamentos/` (3 idiom
 conteúdo (headline, FAQ, ebook, capa, Hotmart) reconhece que o outro sempre tem liberdade para
 dizer sim, não ou talvez, e explicitamente não ensina manipulação, pressão, insistência após um
 "não" ou qualquer jogo emocional — segue a mesma regra de nicho sensível de relacionamentos do
-`confianca-social` e do `carisma-humor-storytelling`. Preço padrão da coleção: **R$ 49,99 (PT) /
-US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/O106619803O` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/D106619836D` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Q106619860V` (US$ 19)
+`confianca-social` e do `carisma-humor-storytelling`. Preço padrão da coleção: **R$ 19,99 (PT) /
+US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/O106619803O` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/D106619836D` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Q106619860V` (US$ 4,99)
 
 **`atracao-com-respeito` (jul/2026, 18º produto — "Confiança Social: Atração com Respeito", mesma
 nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3 idiomas.**
@@ -292,11 +301,11 @@ páginas de amostra em `assets/produtos/atracao-com-respeito/` (3 idiomas). Todo
 (headline, FAQ, ebook, capa, Hotmart) não promete conquistar ninguém, não substitui terapia e não
 incentiva insistência, pressão, manipulação ou qualquer abordagem invasiva — segue a mesma regra
 de nicho sensível de relacionamentos do `confianca-social`, do `carisma-humor-storytelling` e do
-`comunicacao-e-relacionamentos`. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+`comunicacao-e-relacionamentos`. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**.
 Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/I106620409B` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/L106620441I` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Q106620456T` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/I106620409B` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/L106620441I` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Q106620456T` (US$ 4,99)
 
 **`presenca-social` (jul/2026, 19º produto — "Linguagem Corporal e Presença Social", mesma nova
 vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3 idiomas.** Produto
@@ -317,11 +326,11 @@ FAQ, ebook, capa, Hotmart) não promete que alguém vai se sentir atraído por q
 apoio psicológico e não ensina nenhuma técnica de intimidação, encarada fixa ou invasão de espaço
 alheio — segue a mesma regra de nicho sensível de relacionamentos do `confianca-social`, do
 `carisma-humor-storytelling`, do `comunicacao-e-relacionamentos` e do `atracao-com-respeito`.
-Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/E106621916S` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/N106621947M` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/A106621974F` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/E106621916S` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/N106621947M` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/A106621974F` (US$ 4,99)
 
 **`limites-rejeicao-maturidade` (jul/2026, 20º produto — "Limites, Rejeição e Maturidade
 Emocional", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO
@@ -341,11 +350,11 @@ capa, Hotmart) reconhece que o outro sempre tem liberdade para dizer sim, não o
 explicitamente não ensina manipulação, pressão, insistência após um "não" ou qualquer jogo
 emocional — segue a mesma regra de nicho sensível de relacionamentos do `confianca-social`, do
 `carisma-humor-storytelling`, do `comunicacao-e-relacionamentos`, do `atracao-com-respeito` e do
-`presenca-social`. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real
+`presenca-social`. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real
 nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/E106705365S` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/P106705432B` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/U106705446J` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/E106705365S` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/P106705432B` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/U106705446J` (US$ 4,99)
 
 **`mensagens-e-conversas-online` (jul/2026, 21º produto — "Mensagens, WhatsApp e Conversas
 Online", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos 3
@@ -363,11 +372,11 @@ Galeria "olhe por dentro" com 5 páginas de amostra em
 ebook, capa, Hotmart) segue a mesma regra de nicho sensível de relacionamentos dos demais
 produtos da vertente — não promete conquistar ninguém e não ensina pressão, manipulação,
 joguinhos ou insistência; inclui módulo dedicado a segurança digital e reconhecimento de golpes
-afetivos. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3
+afetivos. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3
 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/X106706106E` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/W106706125W` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/I106706139S` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/X106706106E` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/W106706125W` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/I106706139S` (US$ 4,99)
 
 **`primeiro-encontro` (jul/2026, 22º produto — "Primeiro Encontro: Conversa, Presença e
 Respeito", mesma nova vertente "Conexões, Presença e Relacionamentos Saudáveis") — ✅ AO VIVO nos
@@ -387,11 +396,11 @@ Galeria "olhe por dentro" com 5 páginas de amostra em `assets/produtos/primeiro
 idiomas). Todo o conteúdo (headline, FAQ, ebook, capa, Hotmart) segue a mesma regra de nicho
 sensível de relacionamentos dos demais produtos da vertente — não promete conquistar ninguém e
 não ensina pressão, manipulação, joguinhos ou insistência após um não; trata consentimento,
-segurança e autonomia como base, não opcional. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+segurança e autonomia como base, não opcional. Preço padrão da coleção: **R$ 19,99 (PT) / US$
 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/D106706588C` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/O106706603K` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/B106706622I` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/D106706588C` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/O106706603K` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/B106706622I` (US$ 4,99)
 
 **`etfs-investimento-global` (jul/2026, 23º produto — "ETFs e Investimento Global", primeiro
 produto da nova vertente "Projeto Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3
@@ -415,11 +424,11 @@ como estritamente educacional (não é recomendação individual nem consultoria
 mobiliários) e recomenda sempre consultar fontes oficiais/contador antes de vender ou declarar —
 segue a regra de nicho sensível de investimentos já documentada neste arquivo. As versões EN/ES
 generalizam a seção de tributação (que no PT cita a lei brasileira 14.754/2023) para não afirmar
-regras fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+regras fiscais específicas de outros países. Preço padrão da coleção: **R$ 19,99 (PT) / US$
 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/G106711251O` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/L106711275V` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/B106711299T` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/G106711251O` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/L106711275V` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/B106711299T` (US$ 4,99)
 
 **`fiis-do-zero` (jul/2026, 24º produto — "FIIs do Zero", segundo produto da vertente "Projeto
 Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3 idiomas.**
@@ -449,11 +458,11 @@ específico do mercado brasileiro** — as versões EN/ES generalizam o conceito
 Estate Investment Trust), o termo internacionalmente reconhecido equivalente, com título "REITs
 from Zero" (EN) / "REITs desde Cero" (ES); o PT mantém todo o detalhe específico do Brasil (leis,
 DARF, ReVar) e a seção de tributação nas versões EN/ES foi generalizada para não afirmar regras
-fiscais específicas de outros países. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+fiscais específicas de outros países. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99
 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/O106711807A` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/X106711836U` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/R106711854B` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/O106711807A` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/X106711836U` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/R106711854B` (US$ 4,99)
 
 **`financas-pessoais` (jul/2026, 25º produto — "Finanças Pessoais e Liberdade Financeira",
 terceiro produto da vertente "Projeto Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3
@@ -484,11 +493,11 @@ oficiais/profissional antes de decisões reais — segue a regra de nicho sensí
 já documentada neste arquivo. **Conteúdo universal, não específico do Brasil** — diferente do
 ETFs e do FIIs, não precisou de generalização de terminologia ou tributação para as versões EN/ES
 (orçamento, dívidas, reserva de emergência e metas são conceitos universais); a tradução seguiu o
-padrão normal de localização. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+padrão normal de localização. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**.
 Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/W106713797N` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/D106713828I` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Y106713849X` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/W106713797N` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/D106713828I` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Y106713849X` (US$ 4,99)
 
 **`imposto-de-renda-investidores` (jul/2026, 26º produto — "Imposto de Renda para
 Investidores", quarto produto da vertente "Projeto Verão Financeiro" / Educação Financeira) —
@@ -515,11 +524,11 @@ sensível (investimentos/tributário)** — todo o conteúdo evita prometer rest
 economia de imposto, não substitui contador/consultor tributário/orientação oficial da Receita
 Federal (PT) ou da autoridade fiscal local (EN/ES), e recomenda sempre revisar a versão vigente
 das regras antes de declarar ou recolher imposto — segue e reforça a regra de nicho sensível de
-investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 49,99 (PT) / US$
+investimentos já documentada neste arquivo. Preço padrão da coleção: **R$ 19,99 (PT) / US$
 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/E106716252K` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/V106716286B` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/E106716252K` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/V106716286B` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/W106716311O` (US$ 4,99)
 
 **`investimentos` (jul/2026, 27º produto — "Investimentos do Zero ao Método", quinto produto da
 vertente "Projeto Verão Financeiro" / Educação Financeira) — ✅ AO VIVO nos 3 idiomas.**
@@ -542,11 +551,11 @@ diretamente; só os veículos específicos do Brasil foram generalizados com par
 em vez de reescrever o guia inteiro como no Imposto de Renda. O PT mantém 100% do detalhe
 brasileiro (Tesouro Direto, CDB/LCI/LCA, FGC, Selic/CDI/IPCA). Segue a regra de nicho sensível de
 investimentos já documentada neste arquivo (sem recomendar ativos, sem prometer rentabilidade).
-Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas,
+Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas,
 `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/Q106716967J` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/Y106716993J` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Y106717009V` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/Q106716967J` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/Y106716993J` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Y106717009V` (US$ 4,99)
 
 **`psicologia-do-investidor` (jul/2026, 28º produto — "Psicologia do Investidor", sexto produto
 da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto novo, slug
@@ -565,10 +574,10 @@ continuidade de 90 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
 dentro" com 5 páginas de amostra em `assets/produtos/psicologia-do-investidor/` (3 idiomas), já
 no visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
 documentada neste arquivo (sem indicar ativos, sem prometer rentabilidade). Preço padrão da
-coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/E106722185U` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/Q106722260X` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/Q106722276C` (US$ 19)
+coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/E106722185U` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/Q106722260X` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/Q106722276C` (US$ 4,99)
 
 **`renda-fixa-inteligente` (jul/2026, 29º produto — "Renda Fixa Inteligente", sétimo produto da
 vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto novo, slug novo
@@ -586,10 +595,10 @@ decisão por produto e simulações didáticas) + ebook gratuito (isca, 6 págin
 dentro" com 5 páginas de amostra em `assets/produtos/renda-fixa-inteligente/` (3 idiomas), já no
 visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
 documentada neste arquivo (sem indicar ativos, sem prometer rentabilidade). Preço padrão da
-coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/T106725310X` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/K106725347G` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/K106725373C` (US$ 19)
+coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/T106725310X` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/K106725347G` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/K106725373C` (US$ 4,99)
 
 **`seguranca-financeira-e-golpes` (jul/2026, 30º produto — "Segurança Financeira e Golpes",
 oitavo produto da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Produto
@@ -609,11 +618,11 @@ blindagem de 30 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
 por dentro" com 5 páginas de amostra em `assets/produtos/seguranca-financeira-e-golpes/` (3
 idiomas), já no visual dark premium navy+teal+âmbar. Conteúdo 100% educacional de prevenção — não
 ensina a praticar golpes, não promete recuperação de valores e não substitui orientação jurídica,
-policial, bancária ou regulatória. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**.
+policial, bancária ou regulatória. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**.
 Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/T106728083S` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/B106728123S` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/B106728152H` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/T106728083S` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/B106728123S` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/B106728152H` (US$ 4,99)
 
 **`dividendos-e-renda-passiva` (jul/2026, 31º produto — "Dividendos e Renda Passiva", nono
 produto da vertente "Finanças / Educação Financeira") — ✅ AO VIVO nos 3 idiomas.** Distinto dos
@@ -631,10 +640,10 @@ dashboard mensal, cards de decisão rápida) + ebook gratuito (isca, 6 páginas)
 dentro" com 5 páginas de amostra em `assets/produtos/dividendos-e-renda-passiva/` (3 idiomas), já
 no visual dark premium navy+teal+âmbar. Segue a regra de nicho sensível de investimentos já
 documentada neste arquivo (sem indicar ativos, sem prometer renda garantida). Preço padrão da
-coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/I106728656C` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/W106728688G` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/J106728736V` (US$ 19)
+coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
+- PT/BRL: `https://pay.hotmart.com/I106728656C` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/W106728688G` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/J106728736V` (US$ 4,99)
 
 **`ia-para-profissoes` (jul/2026, 32º produto — "Inteligência Artificial para Profissões") — ✅
 AO VIVO nos 3 idiomas.** Primeiro produto fora das 3 categorias existentes — abre a vertente
@@ -651,11 +660,11 @@ implementação de 14 dias) + ebook gratuito (isca, 6 páginas) nos 3 idiomas,
 com 5 páginas de amostra em `assets/produtos/ia-para-profissoes/` (3 idiomas), já no visual dark
 premium navy+teal+âmbar. Conteúdo alerta que a IA pode errar/inventar informação e que, em áreas
 reguladas (saúde, direito, contabilidade, finanças, engenharia), o uso deve ser só de apoio com
-validação de profissional habilitado. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+validação de profissional habilitado. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99
 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/X106752389V` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/P106752415S` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/I106752439G` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/X106752389V` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/P106752415S` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/I106752439G` (US$ 4,99)
 
 **`produtividade-com-ia` (jul/2026, 33º produto — "Produtividade com Inteligência Artificial") —
 ✅ AO VIVO nos 3 idiomas.** Segundo produto da vertente "IA e Produtividade" — distinto do
@@ -673,11 +682,11 @@ qualidade com checklist antes de entregar, e um plano de implementação de 14 d
 "Manual Pessoal de Produtividade com IA" do leitor) + ebook gratuito (isca, 6 páginas) nos 3
 idiomas, `ebooks/arquivos/produtividade-com-ia-<pt|en|es>.pdf`. Capa, thumbnail e galeria "olhe
 por dentro" com 5 páginas de amostra em `assets/produtos/produtividade-com-ia/` (3 idiomas), já
-no visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+no visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99
 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/R106753629B` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/L106753657N` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/K106753682B` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/R106753629B` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/L106753657N` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/K106753682B` (US$ 4,99)
 
 **`ia-para-negocios-pequenos` (jul/2026, 34º produto — "IA para Negócios Pequenos") — ✅ AO VIVO
 nos 3 idiomas.** Terceiro produto da vertente "IA e Produtividade" — distinto dos dois anteriores
@@ -691,11 +700,11 @@ segurança/LGPD/bom senso, e plano de implantação de 14 dias. Guia pago de 39 
 gratuito (isca, 6 páginas) nos 3 idiomas, `ebooks/arquivos/ia-para-negocios-pequenos-<pt|en|es>.pdf`.
 Capa, thumbnail e galeria "olhe por dentro" com 5 páginas de amostra em
 `assets/produtos/ia-para-negocios-pequenos/` (3 idiomas), já no visual dark premium
-navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00 (EN/ES)**. Checkout real nas
+navy+teal+âmbar. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99 (EN/ES)**. Checkout real nas
 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/V106755275G` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/P106755310M` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/R106755349X` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/V106755275G` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/P106755310M` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/R106755349X` (US$ 4,99)
 
 **`ia-aplicada` (jul/2026, 35º produto — "Inteligência Artificial Aplicada") — ✅ AO VIVO nos 3
 idiomas.** Quarto produto da vertente "IA e Produtividade" — distinto dos três anteriores
@@ -711,11 +720,11 @@ responsável, um plano de implementação de 7 dias com checklist de maturidade,
 prompt prontos, glossário e workbook completo. Guia pago de 40 páginas + ebook gratuito (isca, 6
 páginas) nos 3 idiomas, `ebooks/arquivos/ia-aplicada-<pt|en|es>.pdf`. Capa, thumbnail e galeria
 "olhe por dentro" com 5 páginas de amostra em `assets/produtos/ia-aplicada/` (3 idiomas), já no
-visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 49,99 (PT) / US$ 19,00
+visual dark premium navy+teal+âmbar. Preço padrão da coleção: **R$ 19,99 (PT) / US$ 4,99
 (EN/ES)**. Checkout real nas 3 moedas, `disponivel: true`:
-- PT/BRL: `https://pay.hotmart.com/G106756375S` (R$ 49,99)
-- EN/USD: `https://pay.hotmart.com/G106756401W` (US$ 19)
-- ES/USD: `https://pay.hotmart.com/J106756430J` (US$ 19)
+- PT/BRL: `https://pay.hotmart.com/G106756375S` (R$ 19,99)
+- EN/USD: `https://pay.hotmart.com/G106756401W` (US$ 4,99)
+- ES/USD: `https://pay.hotmart.com/J106756430J` (US$ 4,99)
 
 **Os produtos pagos (manuais completos, 3 idiomas cada) NÃO ficam no repositório** — foram
 entregues direto pro dono do projeto pra upload manual na Hotmart (ebook comercial, não pode
