@@ -244,8 +244,8 @@ const CONFIG = {
     { nome: '{{Nome}}', papel: '{{quem é / resultado obtido}}', texto: '{{Depoimento real do cliente}}', estrelas: 5 },
     { nome: '{{Nome}}', papel: '{{quem é / resultado obtido}}', texto: '{{Depoimento real do cliente}}', estrelas: 5 }
   ],
-  precoDe: '{{R$ 297,00}}',
-  precoPor: '{{R$ 97,00}}',
+  precoDe: window.PRECOS_SITE.pt.de,   // preço padrão central — sobrescreva só se este produto tiver preço próprio
+  precoPor: window.PRECOS_SITE.pt.por,
   garantiaTexto: '{{Garantia incondicional de 7 dias}}',
   // Opcional: data/hora ISO em que a oferta acaba (ex: '2026-08-01T23:59:59'). Deixe vazio para não mostrar contador.
   contagemRegressivaFim: '',

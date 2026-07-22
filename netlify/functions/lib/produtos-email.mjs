@@ -36,8 +36,6 @@ export const PRODUTOS = {
       nomeProduto: 'Emagrecimento Inteligente — Guia Completo NextLevel',
       tema: 'dieta flexível, treino progressivo e mente sob controle, sem dieta radical',
       dica: 'Nos momentos de fome emocional, aplique o Protocolo P.A.U.S.A. antes de decidir comer: Pare, Avalie a fome real, Utilize uma alternativa, Se ainda quiser, coma com atenção, Analise depois sem culpa.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Smart Weight Loss — Complete NextLevel Guide',
@@ -56,8 +54,6 @@ export const PRODUTOS = {
       nomeProduto: 'Ganho de Massa Muscular — Guia Completo NextLevel',
       tema: 'superávit calórico, treino progressivo e recuperação, sem promessa de quilos',
       dica: 'Anote as cargas e repetições de cada treino, nem que seja no bloco de notas do celular. Sem registro não existe progressão — e progressão é o que faz o músculo crescer.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Muscle Mass Gain — Complete NextLevel Guide',
@@ -76,8 +72,6 @@ export const PRODUTOS = {
       nomeProduto: 'Investimentos do Zero ao Método — Guia Completo NextLevel',
       tema: 'diagnóstico financeiro, orçamento, reserva de emergência, perfil de risco, renda fixa, fundos, FIIs, ações, ETFs, montagem de carteira, psicologia do investidor e segurança contra golpes',
       dica: 'Antes de qualquer aplicação, responda: se sua carteira caísse 20% amanhã, você venderia tudo em pânico ou manteria o plano? Essa é a "pergunta de ouro" que revela seu perfil de risco real.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Investing from Zero: A Complete Method — Complete NextLevel Guide',
@@ -96,8 +90,6 @@ export const PRODUTOS = {
       nomeProduto: 'Ansiedade Social e Conversas com Naturalidade — Guia Completo NextLevel',
       tema: 'escada de exposição gradual, playbooks por situação e plano de 30 dias para destravar conversas',
       dica: 'Hoje, faça UMA pergunta simples a alguém (no mercado, no trabalho, no elevador) — só isso. Naturalidade social se constrói como músculo: repetições pequenas, feitas com frequência.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Social Anxiety and Natural Conversations — Complete NextLevel Guide',
@@ -116,8 +108,6 @@ export const PRODUTOS = {
       nomeProduto: 'Comunicação e Relacionamento: Conversas que Criam Conexão — Guia Completo NextLevel',
       tema: 'método O.U.V.I.R. de escuta ativa, storytelling social e método R.E.P.A.R.O. para conflitos',
       dica: "Na próxima conversa difícil, antes de responder, repita com suas palavras o que a pessoa disse ('então o que te incomoda é...'). Esse gesto simples desarma a briga e mostra que você escutou de verdade.",
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Communication and Relationships: Conversations That Create Connection — Complete NextLevel Guide',
@@ -136,8 +126,6 @@ export const PRODUTOS = {
       nomeProduto: 'Treino em Casa — Manual Completo NextLevel',
       tema: 'treinar em casa com método, sem academia',
       dica: 'Nos dias sem vontade nenhuma, prometa só 5 minutos de treino. Muitas vezes você acaba continuando — e quando não continua, ainda manteve o hábito vivo, que é o que mais importa no início.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Home Workout — Complete NextLevel Manual',
@@ -156,8 +144,6 @@ export const PRODUTOS = {
       nomeProduto: 'Suplementação Inteligente — Guia Completo NextLevel',
       tema: 'suplementar com método, sem desperdício e sem promessa milagrosa',
       dica: 'Antes de comprar qualquer suplemento novo, responda: eu já tentei resolver isso com comida, treino ou sono? Se a resposta for não, comida resolve mais barato e melhor do que qualquer pote.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Smart Supplementation — Complete NextLevel Guide',
@@ -176,8 +162,6 @@ export const PRODUTOS = {
       nomeProduto: 'Receitas, Marmitas e Cardápios Fitness — Guia Completo NextLevel',
       tema: 'comer bem com método, sem dieta radical',
       dica: 'Nesta semana, escolha só UMA receita nova do guia e monte a marmita dela com antecedência. Comida boa que já está pronta na geladeira vence qualquer tentação de última hora.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Fitness Recipes, Meal Preps and Menus — Complete NextLevel Guide',
@@ -196,8 +180,6 @@ export const PRODUTOS = {
       nomeProduto: 'Desafio 30 Dias — Guia Completo NextLevel',
       tema: 'organizar treino, alimentação, sono e hábitos em 30 dias, sem radicalismo',
       dica: 'Hoje, marque só UMA missão do dia — treino, comida ou mentalidade — e cumpra ela até o fim. A regra dos 80% vale mais que qualquer semana perfeita abandonada no meio.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: '30-Day Challenge — Complete NextLevel Guide',
@@ -216,8 +198,6 @@ export const PRODUTOS = {
       nomeProduto: 'Manual Completo de Academia — Guia Completo NextLevel',
       tema: 'treino por grupo muscular, dieta por objetivo e cronograma de 12 semanas na academia',
       dica: 'Escolha a divisão semanal (3x, 4x, 5x ou 6x) que cabe de verdade na sua rotina — a melhor divisão não é a mais avançada, é a que você consegue manter todo mês.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Complete Gym Manual — Complete NextLevel Guide',
@@ -236,8 +216,6 @@ export const PRODUTOS = {
       nomeProduto: 'Mentalidade, Ansiedade e Hábitos — Guia Completo NextLevel',
       tema: 'ciclo do hábito, protocolo anti-impulso e plano de 30 dias para construir constância',
       dica: 'Da próxima vez que sentir vontade de comer por impulso, teste o protocolo de 10 minutos antes de decidir: nomeie a emoção, respire, mova o corpo e só depois decida. Criar esse espaço já muda a decisão na maioria das vezes.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Mindset, Anxiety and Habits — Complete NextLevel Guide',
@@ -256,8 +234,6 @@ export const PRODUTOS = {
       nomeProduto: 'Mobilidade, Alongamento e Prevenção de Lesões — Guia Completo NextLevel',
       tema: 'rotinas A/B por articulação, aquecimento de 3 camadas e prevenção de lesões por área',
       dica: 'Antes do próximo treino, faça só 5 minutos do aquecimento específico da articulação que mais te preocupa. Prevenção não é o treino extra que você nunca faz — é o aquecimento de 5 minutos que você já pode começar hoje.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Mobility, Stretching and Injury Prevention — Complete NextLevel Guide',
@@ -276,8 +252,6 @@ export const PRODUTOS = {
       nomeProduto: 'Carisma, Humor e Storytelling — Guia Completo NextLevel',
       tema: 'método C.H.A.R.M.E., estruturas de storytelling e playbooks por situação para conversar com mais leveza',
       dica: 'Na próxima conversa, aplique a técnica 2+1: antes de contar algo sobre você, faça duas respostas conectadas ao que a outra pessoa falou — uma validação e uma pergunta — e só depois compartilhe uma experiência curta.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Charisma, Humor and Storytelling — Complete NextLevel Guide',
@@ -296,8 +270,6 @@ export const PRODUTOS = {
       nomeProduto: 'Confiança Social: Atração com Respeito — Guia Completo NextLevel',
       tema: 'diagnóstico social, Protocolo P.A.R.E. para ansiedade e método C.O.N.E.C.T.A. para conversas naturais',
       dica: 'Hoje, pratique um degrau da escada de exposição social: cumprimente 3 pessoas em ambientes comuns (porteiro, caixa, colega). Confiança social se constrói como músculo — repetições pequenas e frequentes.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Social Confidence: Attraction with Respect — Complete NextLevel Guide',
@@ -316,8 +288,6 @@ export const PRODUTOS = {
       nomeProduto: 'Linguagem Corporal e Presença Social — Guia Completo NextLevel',
       tema: 'postura, olhar, voz, espaço pessoal e calibragem social — presença visível e atração com respeito',
       dica: 'Hoje, faça o protocolo de 60 segundos antes de entrar em um ambiente social: pés apoiados, ombros soltos, mãos visíveis e um ponto de foco à frente. Presença se treina no corpo, não só na cabeça.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Body Language and Social Presence — Complete NextLevel Guide',
@@ -336,8 +306,6 @@ export const PRODUTOS = {
       nomeProduto: 'Limites, Rejeição e Maturidade Emocional — Guia Completo NextLevel',
       tema: 'Protocolo P.A.R.A., mapa de limites e frases de comunicação assertiva — comunique limites e lide com rejeição com maturidade',
       dica: 'Hoje, aplique o Protocolo P.A.R.A. numa pequena frustração: pause antes de reagir, acolha o que está sentindo sem se julgar, reavalie a situação e só então aja com dignidade.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Boundaries, Rejection and Emotional Maturity — Complete NextLevel Guide',
@@ -356,8 +324,6 @@ export const PRODUTOS = {
       nomeProduto: 'Mensagens, WhatsApp e Conversas Online — Guia Completo NextLevel',
       tema: 'fórmula base da conversa, técnica C.E.C., convite para sair com respeito e segurança contra golpes afetivos',
       dica: 'Hoje, aplique a técnica C.E.C. numa conversa: comente algo sobre a resposta da pessoa, explore com uma pergunta curta e compartilhe um detalhe seu para equilibrar a troca.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Messages, WhatsApp and Online Conversations — Complete NextLevel Guide',
@@ -376,8 +342,6 @@ export const PRODUTOS = {
       nomeProduto: 'Primeiro Encontro: Conversa, Presença e Respeito — Guia Completo NextLevel',
       tema: 'mentalidade certa, convite sem pressão, estrutura C.E.C. para conversar e presença/limites no primeiro encontro',
       dica: 'Antes do próximo encontro, use a preparação mental de 15 minutos do guia: respire mais devagar, relembre o objetivo (conhecer, conversar e respeitar) e defina uma atitude-chave para o encontro.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'First Date: Conversation, Presence and Respect — Complete NextLevel Guide',
@@ -396,8 +360,6 @@ export const PRODUTOS = {
       nomeProduto: 'ETFs e Investimento Global — Guia Completo NextLevel',
       tema: 'ETF sem mistério, caminhos de acesso, riscos/custos/impostos e carteira global com método',
       dica: 'Antes de comprar qualquer ETF, aplique os 10 critérios do guia: índice, objetivo, custo, liquidez, tracking, concentração, moeda, domicílio, distribuição e uso na carteira.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'ETFs and Global Investing — Complete NextLevel Guide',
@@ -416,8 +378,6 @@ export const PRODUTOS = {
       nomeProduto: 'FIIs do Zero — Guia Completo NextLevel',
       tema: 'base dos FIIs, tipos de fundos, indicadores sem confusão (Dividend Yield, P/VP, vacância, WAULT), análise prática e carteira com método',
       dica: 'Antes de comprar qualquer FII, use o checklist do guia: leia o relatório gerencial, identifique se é tijolo, papel, híbrido ou FoF, entenda os riscos e a concentração, compare com pares do mesmo segmento e confirme se a liquidez é compatível com o valor investido.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'REITs from Zero — Complete NextLevel Guide',
@@ -436,8 +396,6 @@ export const PRODUTOS = {
       nomeProduto: 'Finanças Pessoais e Liberdade Financeira — Guia Completo NextLevel',
       tema: 'diagnóstico financeiro, orçamento por função, plano de ataque a dívidas, reserva de emergência, metas por prazo e a ordem certa para investir',
       dica: 'Antes de qualquer outra coisa, calcule seus 5 números essenciais: renda líquida mensal, custo de vida essencial, gasto total, dívida total e patrimônio líquido. Esse diagnóstico simples é a base de todo o método.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Personal Finance and Financial Freedom — Complete NextLevel Guide',
@@ -456,8 +414,6 @@ export const PRODUTOS = {
       nomeProduto: 'Imposto de Renda para Investidores — Guia Completo NextLevel',
       tema: 'rotina mensal, pasta fiscal, ações, FIIs, ETFs, BDRs, day trade, proventos, exterior, cripto e declaração anual',
       dica: 'Nomeie seus arquivos assim: AAAA-MM - Corretora - Nota - Ativo.pdf. Esse padrão simples economiza horas de organização no ano seguinte.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Investment Tax Organization: A Practical Method — Complete NextLevel Guide',
@@ -476,8 +432,6 @@ export const PRODUTOS = {
       nomeProduto: 'Psicologia do Investidor — Guia Completo NextLevel',
       tema: 'método P.A.U.S.A., diagnóstico de vieses comportamentais e protocolo anti-pânico para decidir com mais disciplina',
       dica: 'Antes da próxima decisão de investimento, aplique o método P.A.U.S.A.: Pare, Analise o que mudou de fato, Unifique com sua carteira como um todo, Simule o que acontece se você estiver errado, e só então Aja. Disciplina é isso — não deixar a emoção assinar a ordem de compra ou venda.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Investor Psychology — Complete NextLevel Guide',
@@ -496,8 +450,6 @@ export const PRODUTOS = {
       nomeProduto: 'Renda Fixa Inteligente — Guia Completo NextLevel',
       tema: 'método prático para comparar Tesouro Direto, CDB, LCI/LCA e crédito privado, entender FGC e marcação a mercado, e montar uma carteira por camadas',
       dica: 'Antes de comprar qualquer produto de renda fixa, aplique os 7 filtros: objetivo, prazo, liquidez, emissor, garantias, rentabilidade líquida e concentração. Se você não conseguir responder aos 7 em menos de 2 minutos, ainda não é hora de comprar.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Smart Fixed Income — Complete NextLevel Guide',
@@ -516,8 +468,6 @@ export const PRODUTOS = {
       nomeProduto: 'Segurança Financeira e Golpes — Guia Completo NextLevel',
       tema: 'mapa dos golpes financeiros, os 20 sinais vermelhos, matriz de risco, segurança digital e bancária, resposta a incidentes e plano de blindagem de 30 dias',
       dica: 'Antes de qualquer transferência ou aporte, confirme: o dinheiro vai para conta da instituição, não de pessoa física? Se a resposta for não ou incerta, pare e verifique por canal oficial antes de decidir.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Financial Safety & Scams — Complete NextLevel Guide',
@@ -536,8 +486,6 @@ export const PRODUTOS = {
       nomeProduto: 'Dividendos e Renda Passiva — Guia Completo NextLevel',
       tema: 'dividendos sem ilusão, FIIs e renda mensal, tributação de 2026, método de carteira, reinvestimento e um plano de 30 dias',
       dica: 'Antes de comprar por causa do dividend yield, pergunte: esse fluxo é sustentável, vem de fonte saudável e cabe no meu risco? Se a tese depende só do próximo pagamento, a análise ainda está incompleta.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Dividends & Passive Income — Complete NextLevel Guide',
@@ -556,8 +504,6 @@ export const PRODUTOS = {
       nomeProduto: 'Inteligência Artificial para Profissões — Guia Completo NextLevel',
       tema: 'a regra dos 4 papéis da IA, matriz de ferramentas por atividade, a fórmula do prompt profissional, 16 profissões com prompts prontos, fluxos de trabalho e um plano de implementação de 14 dias',
       dica: 'Antes de aceitar a primeira resposta da IA, use o prompt de refinamento: peça pra ela mesma revisar pontos fracos, informações ausentes e possíveis erros. Essa segunda passada é o que separa um resultado genérico de um aplicável.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Artificial Intelligence for Professions — Complete NextLevel Guide',
@@ -576,8 +522,6 @@ export const PRODUTOS = {
       nomeProduto: 'Produtividade com Inteligência Artificial — Guia Completo NextLevel',
       tema: 'o Sistema 4D (Descarregar, Decidir, Desenvolver, Delegar), a matriz de 6 blocos de produtividade, 8 fluxos de trabalho prontos, 30+ prompts, base de conhecimento, segurança e um plano de implementação de 14 dias',
       dica: 'Em vez de pedir a mesma coisa toda semana, transforme em template: um modelo de e-mail, um modelo de ata, uma rotina de conteúdo. O ganho de tempo de verdade vem de padrões reutilizáveis, não de respostas avulsas.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Productivity with Artificial Intelligence — Complete NextLevel Guide',
@@ -596,8 +540,6 @@ export const PRODUTOS = {
       nomeProduto: 'IA para Negócios Pequenos — Guia Completo NextLevel',
       tema: 'o Sistema 6A (Atrair, Apresentar, Atender, Argumentar, Administrar, Aprender), matriz de 13 ferramentas, playbooks para 10 tipos de negócio, 6 fluxos prontos para vender mais, 40+ prompts, automações simples, segurança/LGPD e um plano de implantação de 14 dias',
       dica: 'Antes de automatizar qualquer mensagem, tenha clareza sobre público, benefício, preço, garantia, prazo e diferenciais. A IA aumenta a velocidade, mas a oferta precisa continuar boa.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'AI for Small Businesses — Complete NextLevel Guide',
@@ -616,8 +558,6 @@ export const PRODUTOS = {
       nomeProduto: 'Inteligência Artificial Aplicada — Guia Completo NextLevel',
       tema: 'o mapa das 16 principais IAs do mercado (ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Canva AI, Midjourney e mais 8 ferramentas), o método de prompt que funciona, prompts prontos por atividade, aplicações por perfil profissional, cuidados com privacidade e direitos autorais, e um plano de implementação de 7 dias',
       dica: 'Não tente dominar as 16 ferramentas de uma vez. Escolha 2 ou 3 que cobrem 80% da sua rotina e aprofunde nelas primeiro — a vantagem vem da prática, não de acumular ferramentas.',
-      precoDe: 'R$ 49,99',
-      precoPor: 'R$ 19,99',
     },
     en: {
       nomeProduto: 'Applied Artificial Intelligence — Complete NextLevel Guide',

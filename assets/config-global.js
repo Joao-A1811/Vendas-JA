@@ -34,3 +34,13 @@ window.SITE = {
     appId: '1:101750111486:web:a24c06daf344fafdff39af'
   }
 };
+
+// Preço padrão de TODOS os produtos do site — ÚNICO lugar pra mudar preço nas páginas
+// (home + páginas de produto leem daqui). Se mudar aqui, atualizar também:
+// 1) netlify/functions/lib/produtos-email.mjs (e-mails da sequência)
+// 2) o valor real das ofertas na Hotmart (o checkout cobra o que está lá, não o que o site mostra)
+window.PRECOS_SITE = {
+  pt: { de: 'R$ 49,99', por: 'R$ 19,99' },
+  en: { de: '$19.99', por: '$4.99' },
+  es: { de: '$19.99', por: '$4.99' }
+};

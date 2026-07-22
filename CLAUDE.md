@@ -25,7 +25,7 @@ a cada push na `main`.
 
 | Arquivo/pasta | O que é |
 |---|---|
-| `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`), do Google Analytics 4 (`gaId`, `assets/ga4.js` — inativo enquanto for `COLE_AQUI`, sem efeito nenhum) e do Firebase — vale pro site todo |
+| `assets/config-global.js` | **Único lugar** do Pixel do Meta (`pixelId`), do Google Analytics 4 (`gaId`, `assets/ga4.js` — inativo enquanto for `COLE_AQUI`, sem efeito nenhum), do Firebase **e do preço padrão do site** (`window.PRECOS_SITE` — home, páginas de produto e template leem daqui) — vale pro site todo |
 | `assets/produtos.js` | **Único lugar** do catálogo (títulos/resumos nos 3 idiomas, flag `disponivel`, campo `categoria` + metadados `CATEGORIAS_SITE`) |
 | `index.html` / `-en` / `-es` | Página inicial (redesign dark premium, jul/2026): catálogo completo com capas (`thumb-<idioma>.jpg`), busca em tempo real, filtro por categoria, selo "NOVO" automático (último de `PRODUTOS_SITE`), seção "Como funciona", faixa de confiança, captura de lead (select de objetivo, uma opção por categoria → entrega o ebook gratuito de `treino-em-casa` [saúde], `confianca-social` [relacionamentos], `financas-pessoais` [finanças] ou `ia-aplicada` [IA e produtividade] e dispara a mesma automação `lead-email` dos produtos) e JSON-LD ItemList |
 | `categorias/` | Página "Explore por categoria" (3 idiomas): os chips FILTRAM os produtos — chegando com `#<categoria>` na URL (como os cards da home linkam) só aparece aquela categoria; "✨ Todos os guias" mostra tudo. Tem busca por texto (ignora acentos, atravessa as categorias) e JSON-LD ItemList. Categoria sem produto listado não aparece. O header de toda página de produto tem link "Categorias" ao lado do seletor de idiomas |
@@ -57,8 +57,11 @@ páginas**: produto, home e `/categorias/` — as duas últimas só PageView, se
 
 > ⚠️ **Preço padrão da coleção reduzido em jul/2026 — inclusive o "de" (âncora):** o site agora
 > mostra **de R$ 49,99 por R$ 19,99 (PT)** e **de US$ 19,99 por US$ 4,99 (EN/ES)** (antes era de
-> R$ 97,00/US$ 97,00 por R$ 49,99/US$ 19,00). Já atualizado nas 90 páginas de produto (`precoDe`
-> e `precoPor`), em `produtos-email.mjs` (e-mails da sequência) e neste arquivo. **Pendência do
+> R$ 97,00/US$ 97,00 por R$ 49,99/US$ 19,00). **Desde jul/2026 o preço é centralizado em
+> `assets/config-global.js` (`window.PRECOS_SITE`)** — home, as 90 páginas de produto e o template
+> `landing-page/` leem de lá (o `CONFIG` das páginas referencia `window.PRECOS_SITE.<idioma>`, sem
+> valor copiado); os e-mails leem do default `PRECOS` em `produtos-email.mjs`. Mudança de preço =
+> editar esses 2 arquivos (+ Hotmart), nada de busca-e-troca em 90 páginas. **Pendência do
 > lado do dono do projeto:** o valor exibido no site é só o texto da página — quem define o
 > valor realmente cobrado é o preço cadastrado em cada oferta na Hotmart (30 produtos × até 3
 > moedas). **Enquanto o preço não for atualizado lá também, o site vai anunciar um valor e a
@@ -732,7 +735,13 @@ só, opcionalmente, copy de anúncio Meta Ads em `anuncios/` pros produtos ao vi
 
 ## Como fazer alterações comuns
 
-- **Preço, headline, benefícios, FAQ, checkout Hotmart de um produto:** editar o `CONFIG` no
+- **Preço padrão do site (todos os produtos):** editar `window.PRECOS_SITE` em
+  `assets/config-global.js` + o default `PRECOS` em `netlify/functions/lib/produtos-email.mjs`
+  (+ o valor real das ofertas na Hotmart e o `ESPERADO` do `hotmart_checagem_final.py`).
+  As páginas leem tudo de lá — NÃO existe mais preço copiado por página.
+- **Preço próprio de UM produto (exceção):** trocar a referência `window.PRECOS_SITE...` por um
+  valor literal no `CONFIG` das 3 páginas dele + override em `produtos-email.mjs`.
+- **Headline, benefícios, FAQ, checkout Hotmart de um produto:** editar o `CONFIG` no
   topo de `produtos/<slug>/index*.html` (lembrar dos 3 idiomas).
 - **Produto novo — checklist completo (por decisão do dono do projeto, jul/2026: já fazer tudo
   isso ao criar cada novo produto, sem esperar pedido separado):**
