@@ -26,6 +26,18 @@ function normalizar(s) {
 }
 
 export function identificarProduto(nomeHotmart) {
+  const bruto = String(nomeHotmart || '').toLowerCase().trim();
+  if (!bruto) return null;
+  // 1º passo: nome completo idêntico, preservando acentos — sem isso, "Desafío 30 Días" (ES)
+  // e "Desafio 30 Dias" (PT) empatam depois de normalizar e o comprador ES receberia PT.
+  for (const [slug, porIdioma] of Object.entries(PRODUTOS)) {
+    for (const idioma of ['pt', 'en', 'es']) {
+      if (String(porIdioma[idioma]?.nomeProduto || '').toLowerCase().trim() === bruto) {
+        return { slug, idioma };
+      }
+    }
+  }
+  // 2º passo: núcleo normalizado (tolerante a pequenas variações do cadastro na Hotmart)
   const alvo = normalizar(String(nomeHotmart || '').split('—')[0]);
   if (!alvo) return null;
   for (const [slug, porIdioma] of Object.entries(PRODUTOS)) {
