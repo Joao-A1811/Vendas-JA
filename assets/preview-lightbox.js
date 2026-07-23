@@ -106,6 +106,25 @@
     });
     var focaveis = [btnFechar, btnPrev, btnNext];
 
+    // Arrastar (swipe) pra passar as fotos no celular — só conta como swipe
+    // quando o movimento é mais horizontal que vertical, pra não atrapalhar
+    // um toque comum ou um gesto de rolagem.
+    var toqueX = null, toqueY = null;
+    overlay.addEventListener('touchstart', function (e) {
+      toqueX = e.touches[0].clientX;
+      toqueY = e.touches[0].clientY;
+    }, { passive: true });
+    overlay.addEventListener('touchend', function (e) {
+      if (toqueX === null) return;
+      var dx = e.changedTouches[0].clientX - toqueX;
+      var dy = e.changedTouches[0].clientY - toqueY;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        dx < 0 ? proxima() : anterior();
+      }
+      toqueX = null;
+      toqueY = null;
+    }, { passive: true });
+
     document.addEventListener('keydown', function (e) {
       if (!overlay.classList.contains('on')) return;
       if (e.key === 'Escape') { fechar(); return; }
