@@ -843,17 +843,18 @@ um do meio — em `index.html` / `index-en.html` / `index-es.html`.
   (4 por categoria a R$ 49,99/US$ 14,99 + completo a R$ 99,99/US$ 29,99; textos de cadastro
   prontos). Quando o dono cadastrar os kits e mandar os checkouts, construir as páginas dos
   kits no site (catálogo/sitemap/cross-sell/e-mail).
-- **Order bumps AO VIVO (jul/2026):** o dono criou na Hotmart, via Checkout Builder, uma página
-  de checkout com order bump pra cada produto/idioma. Os links novos têm o formato
-  `pay.hotmart.com/<código>?off=<oferta>&checkoutMode=10` e **já estão aplicados no
-  `linkCheckoutHotmart` de 87 das 90 páginas** (30 produtos × 3 idiomas). 3 exceções seguraram
-  o link antigo por erro na planilha enviada (link de outro produto/idioma colado na célula):
-  `investimentos` PT (código `T106813833H` não bate com nada conhecido — confirmar com o dono),
-  `fiis-do-zero` PT (recebeu o link do `ia-aplicada` EN) e `ia-para-profissoes` ES (recebeu o
-  link da versão EN). Pedir os 3 links certos ao dono e aplicar. A validação por acesso direto
-  a `pay.hotmart.com` não é possível daqui (política de rede bloqueia o domínio) — a checagem
-  foi por consistência de códigos (base do link novo × base já usada na página, que pegou os 3
-  erros acima).
+- **Order bumps AO VIVO (jul/2026) — ✅ 90/90 aplicados:** o dono criou na Hotmart, via
+  Checkout Builder, uma página de checkout com order bump pra cada produto/idioma. Os links têm
+  o formato `pay.hotmart.com/<código>?off=<oferta>&checkoutMode=10` e estão aplicados no
+  `linkCheckoutHotmart` de TODAS as 90 páginas (30 produtos × 3 idiomas). Detalhe do
+  `investimentos` PT: o checkout correto é o do produto novo `T106813833H` (o antigo
+  `Q106716967J` cobrava em USD — ver commit "Fix investimentos (PT) checkout link"); se o dono
+  mandar de volta um link `Q106716967J`, NÃO aplicar. A validação por acesso direto a
+  `pay.hotmart.com` não é possível daqui (política de rede bloqueia o domínio) — a checagem foi
+  por consistência de códigos (base do link novo × base já usada na página), que pegou 3 erros
+  de copia-e-cola na planilha original, todos corrigidos com links reenviados pelo dono. Falta
+  só o dono conferir por amostragem no navegador (produto certo, R$ 19,99/US$ 4,99, bump de
+  R$ 9,99/US$ 2,49 aparecendo).
 
 ## Regras / decisões já tomadas (não contrariar)
 
