@@ -156,6 +156,8 @@ img{max-width:100%;display:block}
 .oferta .preco{font-size:42px;font-weight:800;color:var(--texto);margin:12px 0 4px;font-family:'Poppins',Arial,sans-serif}
 .oferta .preco-de{font-size:15px;color:#a09aad;text-decoration:line-through}
 .garantia{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(15,118,110,.10);border-radius:99px;padding:8px 18px;font-size:12.5px;color:var(--roxo);font-weight:600}
+.confianca-compra{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(13,27,42,.08)}
+.confianca-compra span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--texto-suave)}
 
 .contador{display:flex;justify-content:center;gap:12px;margin:22px 0}
 .contador .bloco{background:var(--texto);color:#fff;border-radius:10px;padding:12px 14px;min-width:60px}
@@ -210,6 +212,7 @@ img{max-width:100%;display:block}
 [data-tema="escuro"] .oferta .preco{color:#fff}
 [data-tema="escuro"] .oferta .preco-de{color:#7fa39c}
 [data-tema="escuro"] .garantia{background:rgba(94,234,212,.12);color:#5eead4}
+[data-tema="escuro"] .confianca-compra{border-top-color:rgba(255,255,255,.1)}
 [data-tema="escuro"] .contador .bloco{background:#0a1520}
 [data-tema="escuro"] .faq details{border-bottom:1px solid rgba(255,255,255,.1)}
 [data-tema="escuro"] .faq summary{color:#fff}
@@ -378,6 +381,11 @@ const CONFIG = {
       <div class="contador" id="contador" style="display:none"></div>
       <a href="#" id="btn-checkout" target="_blank" rel="noopener" class="btn btn-primary">Comprar agora</a>
       <div><span class="garantia">🛡️ <span id="oferta-garantia"></span></span></div>
+      <div class="confianca-compra">
+        <span>🔒 Pagamento 100% seguro, processado pela Hotmart</span>
+        <span>📩 Acesso imediato por e-mail após a confirmação</span>
+        <span>💳 Cartão, Pix ou boleto</span>
+      </div>
     </div>
   </div>
 </section>
