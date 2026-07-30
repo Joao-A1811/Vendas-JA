@@ -158,6 +158,11 @@ img{max-width:100%;display:block}
 .garantia{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(15,118,110,.10);border-radius:99px;padding:8px 18px;font-size:12.5px;color:var(--roxo);font-weight:600}
 .confianca-compra{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(13,27,42,.08)}
 .confianca-compra span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--texto-suave)}
+.badges-pagamento{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.badge-pagto{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:700}
+.badge-cartao{background:rgba(37,99,235,.10);color:#2563eb}
+.badge-pix{background:rgba(15,148,136,.14);color:#0f9488}
+.badge-boleto{background:rgba(107,114,128,.14);color:#4b5563}
 
 .contador{display:flex;justify-content:center;gap:12px;margin:22px 0}
 .contador .bloco{background:var(--texto);color:#fff;border-radius:10px;padding:12px 14px;min-width:60px}
@@ -213,6 +218,9 @@ img{max-width:100%;display:block}
 [data-tema="escuro"] .oferta .preco-de{color:#7fa39c}
 [data-tema="escuro"] .garantia{background:rgba(94,234,212,.12);color:#5eead4}
 [data-tema="escuro"] .confianca-compra{border-top-color:rgba(255,255,255,.1)}
+[data-tema="escuro"] .badge-cartao{background:rgba(94,180,255,.16);color:#93c5fd}
+[data-tema="escuro"] .badge-pix{background:rgba(94,234,212,.16);color:#5eead4}
+[data-tema="escuro"] .badge-boleto{background:rgba(255,255,255,.1);color:#cbd5e1}
 [data-tema="escuro"] .contador .bloco{background:#0a1520}
 [data-tema="escuro"] .faq details{border-bottom:1px solid rgba(255,255,255,.1)}
 [data-tema="escuro"] .faq summary{color:#fff}
@@ -384,7 +392,7 @@ const CONFIG = {
       <div class="confianca-compra">
         <span>🔒 Pagamento 100% seguro, processado pela Hotmart</span>
         <span>📩 Acesso imediato por e-mail após a confirmação</span>
-        <span>💳 Cartão, Pix ou boleto</span>
+        <span class="badges-pagamento"><span class="badge-pagto badge-cartao">💳 Cartão</span><span class="badge-pagto badge-pix">Pix</span><span class="badge-pagto badge-boleto">🧾 Boleto</span></span>
       </div>
     </div>
   </div>
