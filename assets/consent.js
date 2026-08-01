@@ -55,7 +55,12 @@
     '#nl-consent .nl-botoes{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}' +
     '#nl-consent button{cursor:pointer;border:none;border-radius:9px;padding:9px 20px;font-size:13.5px;font-weight:700;font-family:inherit}' +
     '#nl-consent .nl-sim{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#2b1a00}' +
-    '#nl-consent .nl-nao{background:#eef6f5;color:#0f766e}';
+    '#nl-consent .nl-nao{background:#eef6f5;color:#0f766e}' +
+    // Empurra a barra fixa de compra (se a página tiver uma) pra cima do
+    // banner enquanto ele estiver aberto — sem isso, o banner cobre quase
+    // todo o botão "Comprar agora" no celular, bem na hora que o visitante
+    // novo (100% do tráfego de anúncio) mais precisa dele.
+    '.barra-fixa.on{transform:translateY(calc(-1 * var(--nl-consent-offset,0px)));transition:bottom .3s ease, transform .3s ease}';
 
   var box = document.createElement('div');
   box.id = 'nl-consent';
@@ -67,14 +72,24 @@
     '<button type="button" class="nl-nao">' + t.recusar + '</button>' +
     '</div>';
 
+  function ajustarOffsetBarra() {
+    // Mede a altura real do banner (varia com o tamanho da tela/texto) e
+    // afasta a barra fixa de compra na mesma medida, com uma folga de 10px.
+    var altura = box.offsetHeight;
+    document.documentElement.style.setProperty('--nl-consent-offset', altura ? (altura + 10) + 'px' : '0px');
+  }
+
   function guardar(valor) {
     try { localStorage.setItem(CHAVE, valor); } catch (e) { /* sem armazenamento, só fecha */ }
     box.remove();
+    document.documentElement.style.setProperty('--nl-consent-offset', '0px');
   }
 
   function montar() {
     document.head.appendChild(css);
     document.body.appendChild(box);
+    ajustarOffsetBarra();
+    window.addEventListener('resize', ajustarOffsetBarra);
     box.querySelector('.nl-sim').addEventListener('click', function () {
       guardar('sim');
       if (window.iniciarPixel) window.iniciarPixel();
