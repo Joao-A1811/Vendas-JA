@@ -177,6 +177,9 @@ img{max-width:100%;display:block}
 .faq summary::after{content:'+';float:right;color:var(--roxo);font-size:20px}
 .faq details[open] summary::after{content:'–'}
 .faq p{margin-top:10px;color:var(--texto-suave);font-size:13.5px}
+.faq summary{padding:6px 0;min-height:28px;display:flex;align-items:center}
+.nl-destaque-guiado{animation:nlPulsoOferta 1.8s ease}
+@keyframes nlPulsoOferta{0%{box-shadow:0 0 0 0 rgba(245,158,11,.55)}70%{box-shadow:0 0 0 22px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
 
 .footer{background:var(--texto);color:#a9c4bf;padding:30px 0;font-size:12px;text-align:center}
 
@@ -566,6 +569,22 @@ function montarLinkCheckout() {
 const FB_READY = typeof firebase !== 'undefined' && window.SITE.firebase.apiKey !== 'COLE_AQUI';
 if (FB_READY) firebase.initializeApp(window.SITE.firebase);
 
+function guiarParaOferta() {
+  // Depois que a pessoa recebe o material gratuito, rola sozinho e com
+  // suavidade até a oferta paga (com um pulso pra chamar atenção) — um
+  // caminho automático e leve até o próximo passo, sem forçar nada.
+  var oferta = document.getElementById('oferta');
+  if (!oferta) return;
+  setTimeout(function () {
+    oferta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var caixa = oferta.querySelector('.oferta');
+    if (caixa) {
+      caixa.classList.add('nl-destaque-guiado');
+      setTimeout(function () { caixa.classList.remove('nl-destaque-guiado'); }, 1800);
+    }
+  }, 3500);
+}
+
 function entregarEbook() {
   // Si hay un ebook gratuito configurado para ESTE idioma, muestra el botón de descarga al instante
   if (CONFIG.linkEbookGratis) {
@@ -626,6 +645,7 @@ document.getElementById('form-lead').addEventListener('submit', function (e) {
     .then(() => {
       msg.textContent = entregarEbook();
       msg.style.color = '#baffc9';
+      guiarParaOferta();
       document.getElementById('form-lead').reset();
       if (window.__pixelOn) fbq('track', 'Lead', {}, { eventID: leadEventId });
       // Dispara la secuencia de correos (función en Netlify + API de Brevo).
