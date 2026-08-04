@@ -400,7 +400,10 @@ const ordemCats = Object.keys(CATS).filter(c => porCategoria[c]).concat(
 const elFiltros = document.getElementById('filtros');
 elFiltros.innerHTML = ordemCats.map(c => {
   const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c } };
-  return `<a class="chip" href="#cat-${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
+  // Manda pra /categorias/, que filtra de verdade e mostra só essa categoria
+  // — no celular, rolar até a seção certa no meio da home inteira era
+  // cansativo; a página de categorias resolve isso direto.
+  return `<a class="chip" href="/categorias/${SUFIXO_PAGINA}#${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
 }).join('');
 
 function normalizar(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
