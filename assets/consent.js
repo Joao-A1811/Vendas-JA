@@ -60,7 +60,11 @@
     // banner enquanto ele estiver aberto — sem isso, o banner cobre quase
     // todo o botão "Comprar agora" no celular, bem na hora que o visitante
     // novo (100% do tráfego de anúncio) mais precisa dele.
-    '.barra-fixa.on{transform:translateY(calc(-1 * var(--nl-consent-offset,0px)));transition:bottom .3s ease, transform .3s ease}';
+    '.barra-fixa.on{transform:translateY(calc(-1 * var(--nl-consent-offset,0px)));transition:bottom .3s ease, transform .3s ease}' +
+    // No primeiro carregamento (antes de rolar), o botão do hero também pode
+    // ficar embaixo do banner em telas pequenas — puxado pra cima em JS
+    // (ver ajustarHero) porque a sobreposição real varia por página.
+    '.hero .container{margin-top:calc(-1 * var(--nl-hero-ajuste,0px));transition:margin-top .3s ease}';
 
   var box = document.createElement('div');
   box.id = 'nl-consent';
@@ -79,17 +83,34 @@
     document.documentElement.style.setProperty('--nl-consent-offset', altura ? (altura + 10) + 'px' : '0px');
   }
 
+  function ajustarHero() {
+    // Só o botão do hero (se existir e estiver visível na tela) importa
+    // aqui — mede a sobreposição real com o banner e puxa o quanto for
+    // preciso pra cima (com uma folga de 12px), sem exagerar caso a tela
+    // seja bem maior que o banner (nesse caso nem precisa mexer).
+    var btn = document.querySelector('.hero .btn');
+    if (!btn) return;
+    var rBtn = btn.getBoundingClientRect();
+    var rBox = box.getBoundingClientRect();
+    var sobreposicao = rBtn.bottom - rBox.top;
+    var ajuste = sobreposicao > 0 ? Math.min(sobreposicao + 12, 70) : 0;
+    document.documentElement.style.setProperty('--nl-hero-ajuste', ajuste + 'px');
+  }
+
   function guardar(valor) {
     try { localStorage.setItem(CHAVE, valor); } catch (e) { /* sem armazenamento, só fecha */ }
     box.remove();
     document.documentElement.style.setProperty('--nl-consent-offset', '0px');
+    document.documentElement.style.setProperty('--nl-hero-ajuste', '0px');
   }
 
   function montar() {
     document.head.appendChild(css);
     document.body.appendChild(box);
     ajustarOffsetBarra();
+    ajustarHero();
     window.addEventListener('resize', ajustarOffsetBarra);
+    window.addEventListener('resize', ajustarHero);
     box.querySelector('.nl-sim').addEventListener('click', function () {
       guardar('sim');
       if (window.iniciarPixel) window.iniciarPixel();
