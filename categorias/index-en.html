@@ -239,6 +239,17 @@ document.getElementById('chips').addEventListener('click', e => {
 window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
 aplicarFiltro(location.hash.slice(1));
 
+// mantem o filtro de categoria ao trocar de idioma (o link de PT/EN/ES
+// carrega o mesmo #hash, em vez de sempre voltar pra "todos os guias")
+function sincronizarIdiomas() {
+  var h = location.hash;
+  document.querySelectorAll('.idiomas a').forEach(a => {
+    a.href = a.getAttribute('href').split('#')[0] + h;
+  });
+}
+window.addEventListener('hashchange', sincronizarIdiomas);
+sincronizarIdiomas();
+
 // ---- busca por texto (atravessa todas as categorias, ignora acentos) ----
 const campoBusca = document.getElementById('busca');
 function normalizar(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }

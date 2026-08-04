@@ -242,6 +242,17 @@ document.getElementById('chips').addEventListener('click', e => {
 window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
 aplicarFiltro(location.hash.slice(1));
 
+// mantem o filtro de categoria ao trocar de idioma (o link de PT/EN/ES
+// carrega o mesmo #hash, em vez de sempre voltar pra "todos os guias")
+function sincronizarIdiomas() {
+  var h = location.hash;
+  document.querySelectorAll('.idiomas a').forEach(a => {
+    a.href = a.getAttribute('href').split('#')[0] + h;
+  });
+}
+window.addEventListener('hashchange', sincronizarIdiomas);
+sincronizarIdiomas();
+
 // ---- busca por texto: funciona em qualquer estado, atravessa todas as
 // categorias e ignora acentos; sobrep\u00f5e o filtro de categoria enquanto
 // houver termo digitado ----
