@@ -143,19 +143,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .secao-cat-head .cat-total{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--teal-claro);white-space:nowrap}
 .secao-cat .cat-desc{color:var(--texto-suave);font-size:13.5px;margin:6px 0 20px;max-width:640px}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:22px;padding-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(214px,1fr));gap:18px;padding-bottom:26px}
 .card{position:relative;background:var(--card);border:1px solid rgba(94,234,212,.12);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--texto);transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);border-color:rgba(94,234,212,.5);box-shadow:0 16px 40px rgba(20,184,166,.15)}
 .card .novo{position:absolute;top:12px;left:12px;z-index:2;background:var(--amarelo);color:#2b1a00;font-size:10px;font-weight:800;letter-spacing:.6px;padding:4px 11px;border-radius:99px}
 .card .em-breve{position:absolute;top:12px;right:12px;z-index:2;background:#fff7e6;color:#92600a;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 11px;border-radius:99px}
-.card .capa{aspect-ratio:4.7/1;overflow:hidden;background:#0a1520}
+.card .capa{aspect-ratio:5.6/1;overflow:hidden;background:#0a1520}
 .card .capa img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s ease}
 .card:hover .capa img{transform:scale(1.04)}
-.card .corpo{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
-.card .tag{align-self:flex-start;background:rgba(94,234,212,.12);color:var(--teal-claro);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:99px;margin-bottom:10px}
-.card h3{font-size:15px;color:var(--texto-forte);line-height:1.35;margin-bottom:7px}
-.card p{font-size:12.5px;color:var(--texto-suave);line-height:1.5;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card .rodape{margin-top:13px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--borda-fraca);padding-top:12px}
+.card .corpo{padding:13px 15px 13px;display:flex;flex-direction:column;flex:1}
+.card .tag{align-self:flex-start;background:rgba(94,234,212,.12);color:var(--teal-claro);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 9px;border-radius:99px;margin-bottom:7px}
+.card h3{font-size:14.5px;color:var(--texto-forte);line-height:1.3;margin-bottom:5px;min-height:2.6em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card p{font-size:12px;color:var(--texto-suave);line-height:1.45;min-height:2.9em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .rodape{margin-top:10px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--borda-fraca);padding-top:10px}
 .card .preco{font-size:15px;font-weight:800;color:var(--texto-forte)}
 .card .preco s{display:block;color:#7fa39c;font-weight:500;font-size:11px}
 .card .cta{font-size:12px;font-weight:700;color:var(--amarelo)}
@@ -414,7 +414,7 @@ function cardHtml(p, cat) {
       ${p.disponivel ? '' : `<span class="em-breve">${TXT_EM_BREVE}</span>`}
       <div class="capa"><img src="/assets/produtos/${p.slug}/thumb-${IDIOMA}.jpg" alt="Cover of the ${p.titulo[IDIOMA]} guide" loading="lazy"></div>
       <div class="corpo">
-        <span class="tag">${cat ? cat.icone + ' ' + cat.nome[IDIOMA] : p.tag[IDIOMA]}</span>
+        <span class="tag">${(cat ? cat.icone + ' ' : '')}${p.tag[IDIOMA]}</span>
         <h3>${p.titulo[IDIOMA]}</h3>
         <p>${p.resumo[IDIOMA]}</p>
         <div class="rodape">
