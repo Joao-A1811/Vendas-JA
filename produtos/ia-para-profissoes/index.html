@@ -91,6 +91,10 @@ img{max-width:100%;display:block}
 .idiomas a:hover{color:var(--rosa)}
 .tema-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(13,27,42,.14);background:transparent;color:var(--texto-suave);cursor:pointer;font-size:15px;flex-shrink:0;margin-left:2px;box-sizing:border-box}
 .tema-toggle:hover{color:var(--roxo);border-color:var(--roxo)}
+.breadcrumb{font-size:12px;color:var(--texto-suave);padding:14px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.breadcrumb a{color:var(--texto-suave);text-decoration:none}
+.breadcrumb a:hover{color:var(--roxo)}
+.breadcrumb .atual{color:var(--texto)}
 
 .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--roxo) 0%,var(--roxo-claro) 45%,var(--rosa) 100%);color:#fff;padding:76px 0 90px}
 .hero::before,.hero::after{content:'';position:absolute;border-radius:50%;filter:blur(60px);opacity:.35}
@@ -311,7 +315,7 @@ const CONFIG = {
   <div class="container">
     <h1><a href="/" style="color:inherit;text-decoration:none">NextLevel</a></h1>
     <nav class="idiomas" id="idiomas">
-      <a href="/categorias/" style="margin-right:0;padding:12px 14px 12px 0;border-right:1px solid rgba(13,27,42,.12);display:inline-flex;align-items:center;min-height:40px;box-sizing:border-box">Categorias</a>
+      <a href="/categorias/#ia-produtividade" style="margin-right:0;padding:12px 14px 12px 0;border-right:1px solid rgba(13,27,42,.12);display:inline-flex;align-items:center;min-height:40px;box-sizing:border-box">Categorias</a>
       <a href="index.html" class="atual">PT</a>
       <a href="index-en.html">EN</a>
       <a href="index-es.html">ES</a>
@@ -319,6 +323,8 @@ const CONFIG = {
     </nav>
   </div>
 </header>
+
+<nav class="breadcrumb container" aria-label="breadcrumb"><a href="/">Início</a> <span aria-hidden="true">›</span> <a href="/categorias/#ia-produtividade">IA e Produtividade</a> <span aria-hidden="true">›</span> <span class="atual" aria-current="page">Inteligência Artificial para Profissões</span></nav>
 
 <section class="hero">
   <div class="container">
@@ -415,7 +421,8 @@ const CONFIG = {
   <div class="container">
     NextLevel — todos os direitos reservados. ·
     <a href="/legal/privacidade.html" style="color:inherit">Privacidade</a> ·
-    <a href="/legal/termos.html" style="color:inherit">Termos de uso</a>
+    <a href="/legal/termos.html" style="color:inherit">Termos de uso</a> ·
+    <a href="/categorias/" style="color:inherit">Ver todos os guias</a>
   </div>
 </footer>
 
