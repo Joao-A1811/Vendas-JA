@@ -440,6 +440,13 @@ document.getElementById('grid').innerHTML = ordemCats.map(c => {
 
 document.getElementById('conta').textContent = `${lista.length} ${TXT_GUIAS}`;
 
+// Auto-foco no campo de busca só em telas grandes (mouse/teclado) — no
+// celular, focar sozinho abriria o teclado na hora e empurraria o
+// conteúdo, o que atrapalha mais do que ajuda.
+if (window.matchMedia('(min-width: 768px) and (pointer: fine)').matches) {
+  document.getElementById('busca').focus({ preventScroll: true });
+}
+
 document.getElementById('busca').addEventListener('input', e => {
   const termo = normalizar(e.target.value.trim());
   let totalVisivel = 0;

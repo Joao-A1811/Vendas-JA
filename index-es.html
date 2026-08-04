@@ -439,6 +439,13 @@ document.getElementById('grid').innerHTML = ordemCats.map(c => {
 
 document.getElementById('conta').textContent = `${lista.length} ${TXT_GUIAS}`;
 
+// Foco automático en el campo de búsqueda solo en pantallas grandes (mouse/
+// teclado) — en el móvil, enfocarlo abriría el teclado de inmediato y
+// empujaría el contenido, lo que estorba más de lo que ayuda.
+if (window.matchMedia('(min-width: 768px) and (pointer: fine)').matches) {
+  document.getElementById('busca').focus({ preventScroll: true });
+}
+
 document.getElementById('busca').addEventListener('input', e => {
   const termo = normalizar(e.target.value.trim());
   let totalVisivel = 0;

@@ -439,6 +439,13 @@ document.getElementById('grid').innerHTML = ordemCats.map(c => {
 
 document.getElementById('conta').textContent = `${lista.length} ${TXT_GUIAS}`;
 
+// Auto-focus the search field only on large screens (mouse/keyboard) — on
+// mobile, focusing it would pop the keyboard right away and push the
+// content around, which hurts more than it helps.
+if (window.matchMedia('(min-width: 768px) and (pointer: fine)').matches) {
+  document.getElementById('busca').focus({ preventScroll: true });
+}
+
 document.getElementById('busca').addEventListener('input', e => {
   const termo = normalizar(e.target.value.trim());
   let totalVisivel = 0;
