@@ -79,8 +79,6 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 .busca{position:relative;margin:18px auto 0;max-width:430px}
 .busca input{width:100%;padding:12px 20px;border-radius:99px;border:none;font-size:14px;font-family:inherit;box-shadow:0 6px 24px rgba(0,0,0,.18)}
 .sem-resultado{display:none;text-align:center;color:var(--texto-suave);padding:52px 0 8px;font-size:14.5px}
-.escolha-categoria{text-align:center;color:var(--texto-suave);padding:60px 20px;font-size:15px}
-.escolha-categoria b{display:block;color:var(--texto);font-size:19px;margin-bottom:8px;font-family:'Poppins',Arial,sans-serif}
 
 .categoria{padding:52px 0 8px}
 .categoria .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -153,7 +151,6 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 </section>
 
 <main class="container" id="categorias"></main>
-<p class="escolha-categoria container" id="escolha-categoria"><b>Escolha uma categoria acima</b>Clique em uma das áreas pra ver os guias dela.</p>
 <p class="sem-resultado container" id="sem-resultado">Nenhum guia encontrado pra essa busca.</p>
 
 <div class="container" style="text-align:center">
@@ -192,7 +189,9 @@ const ordem = Object.keys(CATS).filter(c => porCategoria[c]).concat(
   Object.keys(porCategoria).filter(c => !CATS[c])
 );
 
-document.getElementById('chips').innerHTML = ordem.map(c => {
+document.getElementById('chips').innerHTML =
+  `<a href="#todos" data-cat="todos">✨ Todos os guias</a>` +
+  ordem.map(c => {
     const meta = CATS[c] || { icone: ICO.spark || '', nome: { [IDIOMA]: c } };
     return `<a href="#${c}" data-cat="${c}">${meta.icone} ${meta.nome[IDIOMA]}</a>`;
   }).join('');
@@ -220,14 +219,14 @@ document.getElementById('categorias').innerHTML = ordem.map(c => {
 
 // ---- filtro por categoria: exige escolha, n\u00e3o tem "mostrar tudo" ----
 function aplicarFiltro(cat) {
-  const ativo = ordem.includes(cat) ? cat : null;
+  const todos = !cat || cat === 'todos';
+  const ativo = !todos && ordem.includes(cat) ? cat : null;
   document.querySelectorAll('.categoria').forEach(sec => {
-    sec.style.display = (ativo && sec.id === 'sec-' + ativo) ? '' : 'none';
+    sec.style.display = (todos || (ativo && sec.id === 'sec-' + ativo)) ? '' : 'none';
   });
   document.querySelectorAll('.chips a').forEach(a => {
-    a.classList.toggle('ativa', a.dataset.cat === ativo);
+    a.classList.toggle('ativa', a.dataset.cat === (todos ? 'todos' : ativo));
   });
-  document.getElementById('escolha-categoria').style.display = ativo ? 'none' : 'block';
   document.getElementById('sem-resultado').style.display = 'none';
 }
 document.getElementById('chips').addEventListener('click', e => {
@@ -237,7 +236,7 @@ document.getElementById('chips').addEventListener('click', e => {
   const busca = document.getElementById('busca');
   if (busca.value) { busca.value = ''; }
   const cat = a.dataset.cat;
-  history.replaceState(null, '', '#' + cat);
+  history.replaceState(null, '', cat === 'todos' ? location.pathname + location.search : '#' + cat);
   aplicarFiltro(cat);
 });
 window.addEventListener('hashchange', () => aplicarFiltro(location.hash.slice(1)));
@@ -257,7 +256,6 @@ function aplicarBusca() {
     aplicarFiltro(location.hash.slice(1));
     return;
   }
-  document.getElementById('escolha-categoria').style.display = 'none';
   let total = 0;
   document.querySelectorAll('.categoria').forEach(sec => {
     let n = 0;
