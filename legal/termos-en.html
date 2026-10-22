@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="/assets/icons.js"></script>
 <script src="/assets/config-global.js"></script>
+<script src="/assets/idioma.js" defer></script>
 <style>
 :root{--roxo:#0f766e;--rosa:#14b8a6;--texto:#33474a;--texto-suave:#5b6b68;--bg:#f7fbfa}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -25,10 +26,21 @@ h1,h2{font-family:'Poppins',Arial,sans-serif}
 .header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid rgba(13,27,42,.08)}
 .header .container{display:flex;align-items:center;justify-content:space-between;max-width:1000px}
 .header a.marca{font-family:'Poppins',Arial,sans-serif;font-size:16px;font-weight:800;background:linear-gradient(135deg,var(--roxo),var(--rosa));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
-.idiomas{display:flex;gap:12px;font-size:12px;font-weight:700;align-items:center}
-.idiomas a{color:var(--texto-suave);text-decoration:none}
-.idiomas a.atual{color:var(--roxo)}
+.idiomas{display:flex;gap:10px;font-size:12px;font-weight:700;align-items:center}
 .tema-toggle{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(13,27,42,.14);background:transparent;color:var(--texto-suave);cursor:pointer;font-size:13px;flex-shrink:0;margin-left:4px}
+.idioma-seletor{position:relative}
+.idioma-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(13,27,42,.14);color:var(--texto-suave);border-radius:99px;padding:8px 11px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;min-height:36px;box-sizing:border-box}
+.idioma-btn:hover{border-color:var(--roxo)}
+.idioma-seletor.aberto .idioma-btn{border-color:var(--roxo)}
+.idioma-bandeira{font-size:14px;line-height:1}
+.idioma-seta{transition:transform .15s ease;flex-shrink:0}
+.idioma-seletor.aberto .idioma-seta{transform:rotate(180deg)}
+.idioma-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid rgba(13,27,42,.1);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.18);min-width:172px;padding:6px;display:none;z-index:60}
+.idioma-seletor.aberto .idioma-menu{display:block}
+.idioma-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--texto);font-size:13.5px;font-weight:600}
+.idioma-item:hover{background:rgba(15,118,110,.08)}
+.idioma-item.atual{background:rgba(15,118,110,.1);color:var(--roxo)}
+.idioma-item .idioma-check{margin-left:auto;flex-shrink:0}
 .tema-toggle:hover{color:var(--roxo);border-color:var(--roxo)}
 .topo{background:linear-gradient(160deg,var(--roxo),var(--rosa));color:#fff;padding:44px 0;text-align:center}
 .topo h1{font-size:clamp(22px,4vw,32px)}
@@ -45,8 +57,11 @@ main a{color:var(--roxo);font-weight:600}
 :root[data-tema="escuro"]{--roxo:#5eead4;--rosa:#14b8a6;--texto:#eaf4f2;--texto-suave:#b7d5cf;--bg:#0d1b2a}
 [data-tema="escuro"] .header{background:rgba(13,27,42,.92);border-bottom:1px solid rgba(94,234,212,.14)}
 [data-tema="escuro"] .header a.marca{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff}
-[data-tema="escuro"] .idiomas a.atual{color:#5eead4}
 [data-tema="escuro"] .tema-toggle{border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .idioma-btn{border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .idioma-menu{background:#132a3e;border-color:rgba(94,234,212,.14);box-shadow:0 12px 32px rgba(0,0,0,.45)}
+[data-tema="escuro"] .idioma-item:hover{background:rgba(94,234,212,.08)}
+[data-tema="escuro"] .idioma-item.atual{background:rgba(94,234,212,.12)}
 [data-tema="escuro"] .topo{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
 [data-tema="escuro"] .topo p{color:#cfe8e3}
 [data-tema="escuro"] main h2{color:#5eead4}
@@ -61,9 +76,17 @@ main a{color:var(--roxo);font-weight:600}
   <div class="container">
     <a class="marca" href="/index-en.html">NextLevel</a>
     <nav class="idiomas">
-      <a href="termos.html">PT</a>
-      <a href="termos-en.html" class="atual">EN</a>
-      <a href="termos-es.html">ES</a>
+      <div class="idioma-seletor" id="idioma-seletor">
+        <button type="button" class="idioma-btn" id="idioma-btn" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+          <span class="idioma-bandeira">🇺🇸</span><span>EN</span>
+          <svg class="idioma-seta" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="idioma-menu" id="idioma-menu" role="menu">
+      <a href="termos.html" class="idioma-item" data-idioma-link="pt" role="menuitem" lang="pt"><span class="idioma-bandeira">🇧🇷</span>Português</a>
+      <a href="termos-en.html" class="idioma-item atual" data-idioma-link="en" role="menuitem" lang="en"><span class="idioma-bandeira">🇺🇸</span>English<svg class="idioma-check" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7L5.5 10.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="termos-es.html" class="idioma-item" data-idioma-link="es" role="menuitem" lang="es"><span class="idioma-bandeira">🇪🇸</span>Español</a>
+        </div>
+      </div>
       <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
     </nav>
   </div>
