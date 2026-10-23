@@ -99,12 +99,19 @@ img{max-width:100%;display:block}
 .idioma-bandeira{font-size:15px;line-height:1}
 .idioma-seta{transition:transform .15s ease;flex-shrink:0}
 .idioma-seletor.aberto .idioma-seta{transform:rotate(180deg)}
-.idioma-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid rgba(13,27,42,.1);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.18);min-width:172px;padding:6px;display:none;z-index:60}
-.idioma-seletor.aberto .idioma-menu{display:block}
-.idioma-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--texto);font-size:13.5px;font-weight:600}
+.idioma-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid rgba(13,27,42,.1);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.18);width:min(260px,calc(100vw - 24px));max-height:min(420px,70vh);display:none;flex-direction:column;z-index:60;overflow:hidden}
+.idioma-seletor.aberto .idioma-menu{display:flex}
+.idioma-busca-wrap{padding:8px;border-bottom:1px solid rgba(13,27,42,.08);flex-shrink:0}
+.idioma-busca{width:100%;padding:8px 10px;border-radius:8px;border:1px solid rgba(13,27,42,.14);font-size:13px;font-family:inherit;box-sizing:border-box;color:var(--texto)}
+.idioma-lista{overflow-y:auto;padding:6px}
+.idioma-grupo-titulo{padding:8px 10px 4px;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--texto-suave)}
+.idioma-divisor{height:1px;background:rgba(13,27,42,.08);margin:6px 4px}
+.idioma-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--texto);font-size:13.5px;font-weight:600}
 .idioma-item:hover{background:rgba(15,118,110,.08)}
 .idioma-item.atual{background:rgba(15,118,110,.1);color:var(--roxo)}
 .idioma-item .idioma-check{margin-left:auto;flex-shrink:0}
+.idioma-item.idioma-outro{font-weight:500;font-size:13px}
+.idioma-vazio{padding:18px 12px;text-align:center;font-size:12.5px;color:var(--texto-suave)}
 @media(max-width:340px){.idioma-btn{padding:8px 9px}}
 .breadcrumb{font-size:12px;color:var(--texto-suave);padding:14px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .breadcrumb a{color:var(--texto-suave);text-decoration:none}
@@ -205,6 +212,10 @@ img{max-width:100%;display:block}
 [data-tema="escuro"] .idioma-menu{background:#132a3e;border-color:rgba(94,234,212,.14);box-shadow:0 12px 32px rgba(0,0,0,.45)}
 [data-tema="escuro"] .idioma-item:hover{background:rgba(94,234,212,.08)}
 [data-tema="escuro"] .idioma-item.atual{background:rgba(94,234,212,.12)}
+[data-tema="escuro"] .idioma-busca-wrap{border-bottom-color:rgba(94,234,212,.14)}
+[data-tema="escuro"] .idioma-busca{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .idioma-busca::placeholder{color:#8fb3ac}
+[data-tema="escuro"] .idioma-divisor{background:rgba(94,234,212,.14)}
 [data-tema="escuro"] .hero{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
 [data-tema="escuro"] .hero::after{background:#14b8a6}
 [data-tema="escuro"] .hero p.sub{color:#cfe8e3}
@@ -320,11 +331,7 @@ const CONFIG = {
           <span class="idioma-bandeira">🇺🇸</span><span>EN</span>
           <svg class="idioma-seta" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="idioma-menu" id="idioma-menu" role="menu">
-      <a href="index.html" class="idioma-item" data-idioma-link="pt" role="menuitem" lang="pt"><span class="idioma-bandeira">🇧🇷</span>Português</a>
-      <a href="index-en.html" class="idioma-item atual" data-idioma-link="en" role="menuitem" lang="en"><span class="idioma-bandeira">🇺🇸</span>English<svg class="idioma-check" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7L5.5 10.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="index-es.html" class="idioma-item" data-idioma-link="es" role="menuitem" lang="es"><span class="idioma-bandeira">🇪🇸</span>Español</a>
-        </div>
+        <div class="idioma-menu" id="idioma-menu" role="menu"></div>
       </div>
       <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Toggle light/dark theme" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
     </nav>
