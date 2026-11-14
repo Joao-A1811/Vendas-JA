@@ -132,7 +132,7 @@
     montarFaixa(idioma, t, pct);
     marcarCards(pct);
     marcarOferta(idioma, t, pct);
-    montarDestaqueHome(idioma, t, pct);
+    montarDestaque(idioma, t, pct);
     montarPopup(idioma, t, pct);
   }
 
@@ -293,12 +293,31 @@
     if (btnBarra) btnBarra.classList.add('nl-bf-glow');
   }
 
-  // Seção grande entre o hero e o catálogo — só na home, só se o
-  // catálogo (#catalogo) existir na página.
-  function montarDestaqueHome(idioma, t, pct) {
-    if (!paginaHome()) return;
-    var alvo = document.getElementById('catalogo');
-    if (!alvo || !alvo.parentNode) return;
+  function paginaProduto() {
+    return /^\/produtos\//.test(location.pathname);
+  }
+
+  // Seção grande de destaque — na home, entre o hero e o catálogo
+  // (#catalogo); numa página de produto, entre o hero e o resto do
+  // conteúdo, mandando pra caixa de oferta (#oferta) da própria página.
+  function montarDestaque(idioma, t, pct) {
+    var pai, refElemento, ctaHref;
+
+    if (paginaHome()) {
+      refElemento = document.getElementById('catalogo');
+      if (!refElemento || !refElemento.parentNode) return;
+      pai = refElemento.parentNode;
+      ctaHref = '#catalogo';
+    } else if (paginaProduto()) {
+      var hero = document.querySelector('.hero');
+      var oferta = document.getElementById('oferta');
+      if (!hero || !hero.parentNode || !oferta) return;
+      pai = hero.parentNode;
+      refElemento = hero.nextElementSibling; // null = insere no fim (hero nunca é o último)
+      ctaHref = '#oferta';
+    } else {
+      return;
+    }
 
     var secao = document.createElement('section');
     secao.className = 'nl-bf-destaque';
@@ -308,10 +327,10 @@
       '<h2 class="nl-bf-destaque-titulo">' + (pct ? '<b>-' + pct + '%</b> ' : '') + t.off + '</h2>' +
       '<p class="nl-bf-destaque-sub">' + t.destaqueSub + '</p>' +
       '<div class="nl-bf-blocos" id="nl-bf-destaque-blocos"></div>' +
-      '<a class="nl-bf-destaque-cta nl-bf-glow" href="#catalogo">' + t.cta + '</a>' +
+      '<a class="nl-bf-destaque-cta nl-bf-glow" href="' + ctaHref + '">' + t.cta + '</a>' +
       '</div>';
 
-    alvo.parentNode.insertBefore(secao, alvo);
+    pai.insertBefore(secao, refElemento);
 
     var elBlocos = document.getElementById('nl-bf-destaque-blocos');
     var intervalo;
