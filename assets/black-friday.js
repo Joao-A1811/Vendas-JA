@@ -152,9 +152,16 @@
       '.nl-bf-cta:hover{background:#fbbf24}',
       '@media(max-width:620px){.nl-bf-inner{padding:8px 14px;font-size:12px;gap:7px}.nl-bf-titulo{font-size:12.5px}.nl-bf-off{display:none}}',
 
-      // --- fita diagonal nos cards do catálogo ---
+      // --- fita diagonal nos cards do catálogo (telas largas) ---
       '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#1a1200;font-weight:900;font-size:11px;letter-spacing:.2px;text-align:center;padding:4px 0;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.3);pointer-events:none;animation:nlBfPulsoFita 2.4s ease-in-out infinite}',
-      '@media(max-width:640px){.nl-bf-fita{top:11px;left:-32px;width:122px;font-size:9px;padding:3px 0}}',
+      // A capa do card é uma faixa bem baixa (aspect-ratio 5.6/1) — numa
+      // tela estreita (cards em 2 colunas) a fita diagonal, que tem
+      // tamanho fixo, acaba mais alta que essa faixa e invade o título/
+      // categoria abaixo. Em vez de só encolher a fita (o que ainda
+      // vazava), ela vira um selo reto e compacto, do tamanho certo pra
+      // caber só em cima da capa — mesmo visual "chamativo", sem invadir
+      // o conteúdo do card.
+      '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border-radius:6px;font-size:10px;padding:3px 7px;letter-spacing:0}}',
 
       // --- selo na caixa de oferta das páginas de produto ---
       '.nl-bf-oferta-selo{display:inline-flex;align-items:center;gap:8px;background:#0a0a0a;color:#f59e0b;font-weight:800;font-size:13px;letter-spacing:.4px;padding:7px 16px;border-radius:99px;margin-bottom:16px}',
