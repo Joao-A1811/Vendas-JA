@@ -96,6 +96,21 @@ const TEXTOS = {
   },
 };
 
+// Escapa texto antes de inserir no HTML do e-mail — padrão já usado em
+// assets/avaliacoes.js pro mesmo tipo de dado (nome de produto). Aqui
+// nomeProduto normalmente vem do nosso próprio catálogo, mas no caminho
+// em que identificarProduto() não reconhece o produto, cai pro nome cru
+// cadastrado na Hotmart — e esse texto nunca deveria ir pro HTML sem
+// escapar, venha de onde vier.
+function escaparHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function montarHtml({ idioma, nomeProduto, linkAvaliar, linkDescadastro }) {
   const t = TEXTOS[idioma];
   return `<!DOCTYPE html>
@@ -112,7 +127,7 @@ function montarHtml({ idioma, nomeProduto, linkAvaliar, linkDescadastro }) {
 
   <tr><td bgcolor="#ffffff" style="padding:32px 30px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:#2b3446;">
     <p style="margin:0 0 16px;">${t.saudacao}</p>
-    <p style="margin:0 0 16px;">${t.corpo1.replace('[[PRODUTO]]', nomeProduto)}</p>
+    <p style="margin:0 0 16px;">${t.corpo1.replace('[[PRODUTO]]', escaparHtml(nomeProduto))}</p>
     <p style="margin:0 0 22px;">${t.corpo2}</p>
     <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto 22px;">
       <tr><td bgcolor="#0f766e" style="border-radius:10px;">

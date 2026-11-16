@@ -26,6 +26,7 @@
 import { enviarEventoCapi } from './lib/meta-capi.mjs';
 import { enviarPedidoAvaliacao } from './lib/avaliacao-email.mjs';
 import { enviarPurchaseGa4 } from './lib/ga4-mp.mjs';
+import { compararSeguro } from './lib/seguranca.mjs';
 
 const EVENTOS_DE_COMPRA = ['PURCHASE_APPROVED', 'PURCHASE_COMPLETE'];
 
@@ -44,7 +45,7 @@ export default async (req) => {
   // X-Hotmart-Hottok. Mantém o fallback pro campo `hottok` no corpo por via
   // das dúvidas (formato mais antigo / alguma variação de evento).
   const hottokRecebido = String(req.headers.get('x-hotmart-hottok') || corpo.hottok || '').trim();
-  if (hottokRecebido !== hottokEsperado) {
+  if (!compararSeguro(hottokRecebido, hottokEsperado)) {
     // Não loga os valores completos (é um segredo), só o suficiente pra
     // diagnosticar sem expor o token: tamanho de cada um e os 4 primeiros/
     // últimos caracteres — dá pra ver na hora se foi espaço extra, token

@@ -296,6 +296,55 @@ avisa o Meta. Falta só a chave:
 
 ---
 
+### 4g. Login com Google no `/diagnostico` + segredo próprio do descadastro — ⚠️ PENDENTE
+
+Auditoria encontrou dois pontos de segurança: a página `/.netlify/functions/diagnostico` era
+pública (qualquer um com a URL via a configuração e podia disparar e-mail de teste pra sua
+caixa), e o link de descadastro usava a própria `BREVO_API_KEY` como segredo (se essa chave for
+trocada um dia, todo link de descadastro já enviado para de funcionar). Agora:
+- `/diagnostico` só mostra qualquer informação depois de login com Google, restrito a UM
+  e-mail (o seu).
+- O descadastro passou a usar um segredo próprio (`UNSUB_SECRET`), independente da chave do
+  Brevo.
+
+**Enquanto as variáveis abaixo não forem criadas, nada quebra** — `/diagnostico` mostra "login
+não configurado" (sem vazar nada) e o descadastro continua funcionando com o segredo antigo.
+
+1. **Criar o Client ID no Google Cloud Console** (precisa de uma conta Google — pode ser a
+   mesma do e-mail abaixo):
+   1. **console.cloud.google.com** → criar um projeto novo (ou usar um existente) → menu →
+      **APIs e serviços → Tela de permissão OAuth** → tipo **Externo** → preencher nome do
+      app (ex. "NextLevel Admin") e o seu e-mail nos campos de contato → salvar (não precisa
+      publicar nem enviar pra verificação — um app em modo "Teste" já funciona pra login seu).
+   2. Ainda em **APIs e serviços**, se pedir pra adicionar "usuários de teste" (test users),
+      adicionar o e-mail `gutotome15@hotmail.com` (ou o que você quiser usar pra entrar).
+   3. **APIs e serviços → Credenciais → Criar credenciais → ID do cliente OAuth** → tipo
+      **Aplicativo da Web** → nome livre → em **URIs de redirecionamento autorizados**,
+      adicionar exatamente:
+      `https://nextlevelbr.app.br/.netlify/functions/diagnostico`
+      (e, se quiser testar também pelo domínio antigo, adicionar
+      `https://vendas-ja.netlify.app/.netlify/functions/diagnostico` numa segunda linha).
+   4. Criar → copiar o **Client ID** gerado (um texto longo terminado em
+      `.apps.googleusercontent.com` — não tem "segredo"/client secret envolvido, esse fluxo só
+      usa o Client ID, que não é sigiloso).
+2. **app.netlify.com** → site → **Site configuration → Environment variables → Add a
+   variable**, criar estas 3:
+   - `GOOGLE_CLIENT_ID` → o Client ID copiado no passo anterior.
+   - `ADMIN_EMAIL` → `gutotome15@hotmail.com` (só esse e-mail consegue entrar).
+   - `SESSAO_ADMIN_SECRET` → `9ba90599bd1ebffa11d4dbdfe03f3619e5325509eab69909c45df21d5852933d`
+     (gerado nesta sessão — qualquer string aleatória longa serve, essa já está pronta pra
+     colar).
+3. Aproveitar e criar também, na mesma tela:
+   - `UNSUB_SECRET` → `2f8f7bc59fbb939bb765033402a1adcd8fc3ab2227f2c69a4f8fc6c73d40abba`
+     (gerado nesta sessão).
+4. **Deploys → Trigger deploy** pra tudo valer.
+5. Testar: abrir `https://nextlevelbr.app.br/.netlify/functions/diagnostico` → deve aparecer a
+   tela de login → "Entrar com Google" → escolher a conta do e-mail autorizado → deve voltar
+   pra página já mostrando o diagnóstico normal. Testar também um descadastro (link de
+   qualquer e-mail recebido) pra confirmar que continua funcionando com o novo segredo.
+
+---
+
 ## 5. A cada novo produto (repetir esta parte)
 
 1. Cadastrar o produto na Hotmart → copiar o **link de checkout** (um por idioma/moeda, se os

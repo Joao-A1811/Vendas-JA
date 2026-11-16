@@ -8,6 +8,117 @@
 // ============================================================
 import { chaveApi, api, garantirInfra, enviarEmailSequencia, REMETENTE } from './lib/brevo.mjs';
 import { verificarToken, enviarEventoCapi } from './lib/meta-capi.mjs';
+import { verificarIdTokenGoogle, criarCookieSessao, lerSessaoValida } from './lib/auth-google.mjs';
+
+const CAMINHO_FUNCAO = '/.netlify/functions/diagnostico';
+
+// Página mostrada enquanto não há sessão válida: ou falta configurar o
+// login (GOOGLE_CLIENT_ID/ADMIN_EMAIL/SESSAO_ADMIN_SECRET no Netlify), ou
+// mostra o botão "Entrar com Google". Nenhum dado do diagnóstico em si
+// aparece aqui — só depois de autenticado.
+function paginaLogin({ clientId, configurado, erro }) {
+  const avisoConfig = !configurado
+    ? `<div style="background:#fff;border-radius:10px;padding:14px 16px;margin:16px 0;border-left:4px solid #dc2626;">
+         ❌ Login ainda não configurado no Netlify. Faltam uma ou mais destas variáveis: <strong>GOOGLE_CLIENT_ID</strong>, <strong>ADMIN_EMAIL</strong>, <strong>SESSAO_ADMIN_SECRET</strong>.
+       </div>`
+    : '';
+  const erroHtml = erro
+    ? `<p id="erro-login" style="color:#dc2626;font-weight:bold;">${erro}</p>`
+    : `<p id="erro-login" style="color:#dc2626;font-weight:bold;"></p>`;
+  const botao = configurado
+    ? `<a href="#" id="btn-entrar" style="display:inline-block;background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;font-weight:bold;padding:14px 30px;border-radius:10px;text-decoration:none;">Entrar com Google</a>`
+    : '';
+  return `<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"><title>Diagnóstico de e-mail | NextLevel</title></head>
+<body style="margin:0;font-family:Arial,sans-serif;background:#f7fbfa;color:#0d1b2a;padding:30px 16px;">
+<div style="max-width:640px;margin:0 auto;text-align:center;">
+<div style="background:linear-gradient(135deg,#0d1b2a,#0f766e);color:#fff;border-radius:14px;padding:20px 24px;font-weight:bold;letter-spacing:2px;text-align:left;">NEXTLEVEL · DIAGNÓSTICO DE E-MAIL</div>
+<p style="margin:26px 0 18px;">Esta página é restrita. Entre com a conta Google autorizada pra continuar.</p>
+${avisoConfig}
+${botao}
+${erroHtml}
+</div>
+<script>
+(function () {
+  var CLIENT_ID = ${JSON.stringify(clientId || '')};
+  var btn = document.getElementById('btn-entrar');
+  var elErro = document.getElementById('erro-login');
+
+  function mostrarErro(msg) { if (elErro) elErro.textContent = msg; }
+
+  function nonceAleatorio() {
+    var bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '');
+  }
+
+  // Voltou do Google com o id_token no fragmento da URL (fluxo implícito)?
+  var hash = location.hash && location.hash[0] === '#' ? location.hash.slice(1) : '';
+  var params = new URLSearchParams(hash);
+  var idToken = params.get('id_token');
+
+  if (idToken) {
+    var nonce = '';
+    try { nonce = sessionStorage.getItem('nl_admin_nonce') || ''; sessionStorage.removeItem('nl_admin_nonce'); } catch (e) {}
+    history.replaceState(null, '', location.pathname);
+    fetch(location.pathname, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ credential: idToken, nonce: nonce }),
+    }).then(function (r) { return r.json(); }).then(function (r) {
+      if (r.ok) { location.reload(); }
+      else { mostrarErro(r.erro || 'Login recusado.'); }
+    }).catch(function () { mostrarErro('Falha ao validar o login.'); });
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var nonce = nonceAleatorio();
+      try { sessionStorage.setItem('nl_admin_nonce', nonce); } catch (e) {}
+      var url = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
+        client_id: CLIENT_ID,
+        redirect_uri: location.origin + location.pathname,
+        response_type: 'id_token',
+        scope: 'openid email',
+        nonce: nonce,
+        prompt: 'select_account',
+      });
+      location.href = url;
+    });
+  }
+})();
+</script>
+</body></html>`;
+}
+
+async function tratarLogin(req) {
+  const cabecalho = { 'content-type': 'application/json' };
+  let corpo;
+  try { corpo = await req.json(); } catch { return new Response(JSON.stringify({ ok: false, erro: 'JSON inválido.' }), { status: 400, headers: cabecalho }); }
+
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const emailPermitido = process.env.ADMIN_EMAIL;
+  if (!clientId || !emailPermitido || !process.env.SESSAO_ADMIN_SECRET) {
+    return new Response(JSON.stringify({ ok: false, erro: 'Login não configurado no servidor.' }), { status: 500, headers: cabecalho });
+  }
+
+  try {
+    const payload = await verificarIdTokenGoogle(corpo.credential, { clientId, nonceEsperado: corpo.nonce });
+    if (payload.email.toLowerCase() !== emailPermitido.toLowerCase()) {
+      console.error('diagnostico: login recusado — e-mail não autorizado');
+      return new Response(JSON.stringify({ ok: false, erro: 'E-mail não autorizado.' }), { status: 403, headers: cabecalho });
+    }
+    const cookie = criarCookieSessao(payload.email, CAMINHO_FUNCAO);
+    return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { ...cabecalho, 'set-cookie': cookie } });
+  } catch (e) {
+    console.error('diagnostico: login recusado —', e.message);
+    return new Response(JSON.stringify({ ok: false, erro: 'Login recusado.' }), { status: 401, headers: cabecalho });
+  }
+}
 
 function pagina(itens, linkTeste, linkCapi) {
   const ICONE = { ok: '✅', erro: '❌', aviso: '⚠️' };
@@ -32,6 +143,20 @@ ${rodape}
 }
 
 export default async (req) => {
+  if (req.method === 'POST') return tratarLogin(req);
+
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const emailPermitido = process.env.ADMIN_EMAIL;
+  const configurado = !!(clientId && emailPermitido && process.env.SESSAO_ADMIN_SECRET);
+  const sessaoEmail = configurado ? lerSessaoValida(req, emailPermitido) : null;
+
+  if (!sessaoEmail) {
+    return new Response(paginaLogin({ clientId, configurado }), {
+      status: 200,
+      headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' },
+    });
+  }
+
   const url = new URL(req.url);
   const enviar = url.searchParams.get('enviar') === '1';
   const testarCapi = url.searchParams.get('testarcapi') === '1';

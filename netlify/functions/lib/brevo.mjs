@@ -99,8 +99,17 @@ export async function bloquearContato(email) {
 }
 
 // Token de descadastro: HMAC do e-mail, pra ninguém descadastrar terceiros.
+// Usa um segredo próprio (UNSUB_SECRET) em vez da chave da API do Brevo —
+// se a chave do Brevo for trocada/revogada um dia, os links de descadastro
+// já enviados em e-mails antigos continuam válidos. Enquanto UNSUB_SECRET
+// não for configurada no Netlify, cai pra chave do Brevo (comportamento
+// antigo) só pra não quebrar descadastro em produção antes do deploy.
+function segredoDescadastro() {
+  return process.env.UNSUB_SECRET || chaveApi();
+}
+
 export function tokenDescadastro(email) {
-  return crypto.createHmac('sha256', chaveApi()).update(email.toLowerCase()).digest('hex').slice(0, 32);
+  return crypto.createHmac('sha256', segredoDescadastro()).update(email.toLowerCase()).digest('hex').slice(0, 32);
 }
 
 // Monta assunto + HTML do e-mail N (1, 2 ou 3) já com os dados do produto,
@@ -142,6 +151,7 @@ export function textoSimples(html) {
     .replace(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, '$2 ( $1 )')
     .replace(/<[^>]+>/g, '')
     .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
     .replace(/[ \t]+/g, ' ')
     .replace(/ ?\n ?/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
