@@ -1,0 +1,12 @@
+/* Degradê único do site (NextLevel): um só véu verde-água que cai do topo e
+   volta a aparecer de leve no rodapé, sobre a cor de fundo do tema (claro ou
+   escuro). Todas as páginas carregam este arquivo — mexer aqui muda o site todo. */
+html body{
+  background-color:var(--bg,#f7fbfa);
+  background-image:
+    linear-gradient(180deg,rgba(20,184,166,.20) 0,rgba(20,184,166,.09) 620px,rgba(20,184,166,0) 1400px),
+    linear-gradient(0deg,rgba(20,184,166,.10) 0,rgba(20,184,166,0) 560px);
+  background-repeat:no-repeat;
+  background-size:100% 1400px,100% 560px;
+  background-position:top,bottom;
+}

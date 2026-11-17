@@ -109,8 +109,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;padding:72px 0 64px}
-.hero::before{content:'';position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #14b8a6, #0f766e 70%);opacity:.30;filter:blur(30px);top:-220px;right:-160px}
-.hero::after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:#1b3a5c;opacity:.5;filter:blur(40px);bottom:-200px;left:-140px}
 .hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
 @media(max-width:840px){.hero .container{grid-template-columns:1fr}}
 .hero .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.4);color:var(--teal-claro);padding:7px 16px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.6px;margin-bottom:20px}
@@ -223,6 +221,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .footer .marca{font-family:'Poppins',Arial,sans-serif;font-weight:800;letter-spacing:2px;color:var(--texto-forte);font-size:14px}
 .footer .marca b{color:var(--teal-claro)}
 </style>
+<link rel="stylesheet" href="/assets/degrade-site.css">
 </head>
 <body>
 
