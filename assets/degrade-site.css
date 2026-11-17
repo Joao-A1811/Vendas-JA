@@ -10,3 +10,10 @@ html body{
   background-size:100% 1400px,100% 560px;
   background-position:top,bottom;
 }
+
+/* Faixas "hero" com fundo próprio (categorias, produtos, landing): as bordas
+   de cima e de baixo se dissolvem no degradê da página, sem corte seco. */
+.hero{
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 64px,#000 calc(100% - 120px),transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 64px,#000 calc(100% - 120px),transparent 100%);
+}
