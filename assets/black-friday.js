@@ -230,7 +230,7 @@
       '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0d1b2a 0%,#0f4a52 100%);color:#fff;font-family:inherit;border-top:3px solid #f59e0b;border-bottom:1px solid rgba(94,234,212,.25);padding:32px 22px 28px}',
       '.nl-bf-hero-in{position:relative;max-width:1080px;margin:0 auto}',
       '.nl-bf-ey{color:#5eead4;font-size:11px;font-weight:700;letter-spacing:4px}',
-      '.nl-bf-wm{font-weight:800;font-size:44px;letter-spacing:5px;line-height:1.02;margin:10px 0 0}',
+      '.nl-bf-wm{font-weight:800;font-size:44px;letter-spacing:5px;line-height:1.02;margin:10px 0 0;color:#fbbf24}',
       '.nl-bf-rule{width:44px;height:3px;background:#f59e0b;margin:14px 0 12px}',
       '.nl-bf-p{font-size:15px;color:#b7d5cf;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
