@@ -1,28 +1,30 @@
 // ============================================================
-// FAIXA DE BLACK FRIDAY — NextLevel
-// Campanha temporária (ver DATA_FIM abaixo). Injeta sozinho todo o
-// visual da campanha — nenhuma página precisa de HTML extra, só o
-// <script src="/assets/black-friday.js" defer> no <head>/fim do <body>:
-//   1) faixa fina no topo com contador (todas as páginas do site)
-//   2) fita diagonal "-X% OFF" nos cards do catálogo (home e /categorias/)
-//   3) selo + brilho na caixa de oferta das páginas de produto
-//   4) seção de destaque grande entre o hero e o catálogo (só na home)
-//   5) pop-up uma vez por dia por visitante (qualquer página)
-// Depois que a campanha acabar, tudo some sozinho (ver expirou() mais
-// abaixo) — não quebra nada ficar esquecido no ar, mas pra limpar de vez
-// basta remover a tag <script> das páginas e apagar este arquivo.
+// BLACK FRIDAY — NextLevel
+// Campanha temporária (ver DATA_FIM abaixo). Injeta sozinho todo o visual
+// — nenhuma página precisa de HTML extra, só o
+// <script src="/assets/black-friday.js" defer>:
+//   1) faixa-letreiro no topo (todas as páginas): texto rolando + contador,
+//      fita zebrada amarela/preta; clique leva à oferta
+//   2) bloco "oferta relâmpago" logo abaixo do cabeçalho (home e produtos):
+//      -X% gigante, preço de/por, contador e botão grande
+//   3) selo vermelho nos cards do catálogo (home e /categorias/)
+//   4) caixa de oferta das páginas de produto vira vitrine da promoção
+//   5) pop-up uma vez por dia por visitante
+// Quando DATA_FIM passa, tudo se remove sozinho — inclusive o <style>
+// injetado, então as páginas voltam exatamente ao visual normal. Pra
+// limpar de vez, tirar a tag <script> das páginas e apagar este arquivo.
 //
 // A faixa do topo fica em fluxo normal (não fixed/sticky) de propósito:
-// assim ela some com a rolagem como qualquer conteúdo e não precisa de
-// nenhum ajuste de offset com o cabeçalho sticky, o banner de cookies
-// (consent.js) ou a barra fixa de compra do mobile — todos continuam se
-// comportando exatamente como antes. O pop-up usa z-index 9999, acima de
-// tudo isso (o maior z-index usado no resto do site é 60).
+// não precisa de ajuste de offset com o cabeçalho sticky, o banner de
+// cookies (consent.js) nem a barra fixa de compra do mobile. O pop-up usa
+// z-index 9999 (o maior z-index do resto do site é 60).
+//
+// Paleta da campanha (de propósito fora da paleta da marca, pra destacar):
+// preto #0a0a0a · amarelo #ffd60a/#ffb800 · vermelho #ff1f3d.
 // ============================================================
 (function () {
   // Horário de Brasília é UTC-3 o ano todo (sem horário de verão desde
-  // 2019) — por isso o offset fixo "-03:00" funciona sem biblioteca de
-  // fuso horário.
+  // 2019) — por isso o offset fixo "-03:00" funciona sem biblioteca.
   var DATA_FIM = new Date('2026-11-30T23:59:00-03:00');
 
   function expirou() {
@@ -40,69 +42,101 @@
     return /^\/(index(-en|-es)?\.html)?$/.test(location.pathname);
   }
 
+  function paginaProduto() {
+    return /^\/produtos\//.test(location.pathname);
+  }
+
+  // Aceita "R$ 49,99", "$4.99" e também milhar ("R$ 1.234,56"): o último
+  // separador é o decimal.
   function numero(precoTexto) {
-    return parseFloat((precoTexto || '').replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
+    var s = String(precoTexto || '').replace(/[^0-9,.]/g, '');
+    var dec = Math.max(s.lastIndexOf('.'), s.lastIndexOf(','));
+    if (dec === -1) return parseFloat(s) || 0;
+    var inteiro = s.slice(0, dec).replace(/[.,]/g, '');
+    return parseFloat(inteiro + '.' + s.slice(dec + 1)) || 0;
+  }
+
+  function precosDoIdioma(idioma) {
+    var p = (window.PRECOS_SITE || {})[idioma];
+    if (!p || !numero(p.de) || !numero(p.por)) return null;
+    return p;
   }
 
   function percentualOff(idioma) {
-    var precos = (window.PRECOS_SITE || {})[idioma];
-    if (!precos) return null;
-    var de = numero(precos.de), por = numero(precos.por);
-    if (!de) return null;
+    var p = precosDoIdioma(idioma);
+    if (!p) return null;
+    var de = numero(p.de), por = numero(p.por);
     return Math.round(((de - por) / de) * 100);
+  }
+
+  // Quanto a pessoa economiza, no mesmo formato do preço do site.
+  function economia(idioma) {
+    var p = precosDoIdioma(idioma);
+    if (!p) return null;
+    var prefixo = (String(p.por).match(/^[^0-9]*/) || [''])[0];
+    var valor = (numero(p.de) - numero(p.por)).toFixed(2);
+    if (idioma === 'pt') valor = valor.replace('.', ',');
+    return prefixo + valor;
   }
 
   var TEXTOS = {
     pt: {
-      titulo: 'BLACK FRIDAY', termina: 'Termina em', off: 'OFF em todos os guias',
-      dias: 'd', horas: 'h', min: 'm', seg: 's', cta: 'Ver ofertas', fechar: 'Fechar',
-      destaqueSub: 'Só até segunda-feira (Cyber Monday) — depois os preços voltam ao normal.',
+      titulo: 'BLACK FRIDAY', termina: 'Termina em', todos: 'em todos os guias',
+      cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
+      sub: 'Oferta de Black Friday até segunda-feira (Cyber Monday)',
+      extras: '⚡ Acesso imediato · 🛡️ 7 dias de garantia', economiza: 'Você economiza',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DIAS', horas: 'HORAS', min: 'MIN', seg: 'SEG',
     },
     en: {
-      titulo: 'BLACK FRIDAY', termina: 'Ends in', off: 'OFF on every guide',
-      dias: 'd', horas: 'h', min: 'm', seg: 's', cta: 'See deals', fechar: 'Close',
-      destaqueSub: 'Only until Monday (Cyber Monday) — prices go back up after that.',
+      titulo: 'BLACK FRIDAY', termina: 'Ends in', todos: 'on every guide',
+      cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
+      sub: 'Black Friday offer until Monday (Cyber Monday)',
+      extras: '⚡ Instant access · 🛡️ 7-day guarantee', economiza: 'You save',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DAYS', horas: 'HRS', min: 'MIN', seg: 'SEC',
     },
     es: {
-      titulo: 'BLACK FRIDAY', termina: 'Termina en', off: 'OFF en todas las guías',
-      dias: 'd', horas: 'h', min: 'm', seg: 's', cta: 'Ver ofertas', fechar: 'Cerrar',
-      destaqueSub: 'Solo hasta el lunes (Cyber Monday) — después los precios vuelven a la normalidad.',
+      titulo: 'BLACK FRIDAY', termina: 'Termina en', todos: 'en todas las guías',
+      cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
+      sub: 'Oferta de Black Friday hasta el lunes (Cyber Monday)',
+      extras: '⚡ Acceso inmediato · 🛡️ 7 días de garantía', economiza: 'Ahorras',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DÍAS', horas: 'HORAS', min: 'MIN', seg: 'SEG',
     },
   };
 
   function doisDigitos(n) { return n < 10 ? '0' + n : '' + n; }
 
+  function partes(ms) {
+    var total = Math.max(0, Math.floor(ms / 1000));
+    return {
+      dias: Math.floor(total / 86400),
+      horas: Math.floor((total % 86400) / 3600),
+      min: Math.floor((total % 3600) / 60),
+      seg: total % 60,
+    };
+  }
+
   function formatarRestante(ms, t) {
-    var total = Math.max(0, Math.floor(ms / 1000));
-    var dias = Math.floor(total / 86400);
-    var horas = Math.floor((total % 86400) / 3600);
-    var min = Math.floor((total % 3600) / 60);
-    var seg = total % 60;
-    return dias + t.dias + ' ' + doisDigitos(horas) + t.horas + ' ' + doisDigitos(min) + t.min + ' ' + doisDigitos(seg) + t.seg;
+    var p = partes(ms);
+    return p.dias + t.d + ' ' + doisDigitos(p.horas) + t.h + ' ' + doisDigitos(p.min) + t.m + ' ' + doisDigitos(p.seg) + t.s;
   }
 
-  // Versão em blocos (dia/hora/min/seg separados) usada na seção de
-  // destaque da home e no pop-up — mesmo visual do contador que já
-  // existia nas páginas de produto.
+  // Contador em blocos (dia/hora/min/seg) usado no bloco de oferta e no pop-up.
   function blocosHtml(ms, t) {
-    var total = Math.max(0, Math.floor(ms / 1000));
-    var dias = Math.floor(total / 86400);
-    var horas = Math.floor((total % 86400) / 3600);
-    var min = Math.floor((total % 3600) / 60);
-    var seg = total % 60;
-    var partes = [[dias, t.dias], [doisDigitos(horas), t.horas], [doisDigitos(min), t.min], [doisDigitos(seg), t.seg]];
-    return partes.map(function (p) {
-      return '<div class="bloco"><b>' + p[0] + '</b><span>' + p[1] + '</span></div>';
-    }).join('');
+    var p = partes(ms);
+    function bloco(v, rotulo) {
+      return '<div class="nl-bf-bloco"><b>' + v + '</b><span>' + rotulo + '</span></div>';
+    }
+    var dois = '<i class="nl-bf-dois">:</i>';
+    return bloco(p.dias, t.dias) + dois + bloco(doisDigitos(p.horas), t.horas) + dois +
+      bloco(doisDigitos(p.min), t.min) + dois + bloco(doisDigitos(p.seg), t.seg);
   }
 
-  // CTA da campanha: na home rola até o catálogo; em /categorias/ não faz
-  // sentido linkar pra ela mesma (omite — quem chama trata o null); em
-  // qualquer outra página (produto, legal etc.) manda pra /categorias/
-  // no idioma certo, pra quem está decidido a aproveitar a promoção ver
-  // o resto do catálogo.
-  function hrefCatalogo(idioma) {
+  // Pra onde o clique leva: na home, ao catálogo; no produto, à caixa de
+  // oferta da própria página; em /categorias/ não há destino (null) —
+  // quem chama trata; nas demais, a /categorias/ no idioma certo.
+  function hrefAcao(idioma) {
     if (paginaHome()) return '#catalogo';
+    if (paginaProduto() && document.getElementById('oferta')) return '#oferta';
     if (/^\/categorias\//.test(location.pathname)) return null;
     if (idioma === 'en') return '/categorias/index-en.html';
     if (idioma === 'es') return '/categorias/index-es.html';
@@ -122,153 +156,233 @@
     try { localStorage.setItem('nl_bf_popup', chaveHoje()); } catch (e) {}
   }
 
+  var estilo = null;
+  var intervalo = null;
+  var idiomaAtual = 'pt';
+  var tAtual = null;
+
   function montar() {
     if (expirou()) return;
-    var idioma = idiomaDaPagina();
-    var t = TEXTOS[idioma];
-    var pct = percentualOff(idioma);
+    idiomaAtual = idiomaDaPagina();
+    tAtual = TEXTOS[idiomaAtual];
+    var pct = percentualOff(idiomaAtual);
 
     injetarEstilos();
-    montarFaixa(idioma, t, pct);
+    montarFaixa(idiomaAtual, tAtual, pct);
+    montarBlocoOferta(idiomaAtual, tAtual, pct);
     marcarCards(pct);
-    marcarOferta(idioma, t, pct);
-    montarDestaque(idioma, t, pct);
-    montarPopup(idioma, t, pct);
+    marcarOferta(idiomaAtual, tAtual, pct);
+    montarPopup(idiomaAtual, tAtual, pct);
+
+    tick();
+    intervalo = setInterval(tick, 1000);
+  }
+
+  // Um único relógio atualiza todos os contadores da página.
+  function tick() {
+    var restante = DATA_FIM.getTime() - Date.now();
+    if (restante <= 0) { encerrar(); return; }
+    var texto = formatarRestante(restante, tAtual);
+    var html = blocosHtml(restante, tAtual);
+    var tempos = document.querySelectorAll('.nl-bf-tempo');
+    for (var i = 0; i < tempos.length; i++) tempos[i].textContent = texto;
+    var blocos = document.querySelectorAll('.nl-bf-blocos');
+    for (var j = 0; j < blocos.length; j++) blocos[j].innerHTML = html;
+  }
+
+  // Campanha acabou com a página aberta: remove tudo, inclusive o CSS.
+  function encerrar() {
+    if (intervalo) clearInterval(intervalo);
+    var alvos = document.querySelectorAll(
+      '.nl-bf-faixa,.nl-bf-hero,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
+    );
+    for (var i = 0; i < alvos.length; i++) alvos[i].remove();
+    var marcados = document.querySelectorAll('.nl-bf-shine,.nl-bf-batida,.nl-bf-preco-glow');
+    for (var j = 0; j < marcados.length; j++) {
+      marcados[j].classList.remove('nl-bf-shine', 'nl-bf-batida', 'nl-bf-preco-glow');
+    }
+    document.body.classList.remove('nl-bf-trava');
+    if (estilo) estilo.remove();
   }
 
   function injetarEstilos() {
-    var estilo = document.createElement('style');
+    estilo = document.createElement('style');
     estilo.textContent = [
-      // --- faixa fina no topo ---
-      '.nl-bf-faixa{background:#0a0a0a;color:#fff;font-family:Arial,Helvetica,sans-serif;position:relative;overflow:hidden}',
-      '.nl-bf-faixa::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,158,11,.12),transparent 40%,transparent 60%,rgba(245,158,11,.12));pointer-events:none}',
-      '.nl-bf-inner{max-width:1080px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:700;position:relative;text-align:center}',
-      '.nl-bf-titulo{color:#f59e0b;font-weight:900;letter-spacing:.5px;font-size:13.5px;white-space:nowrap}',
-      '.nl-bf-pct{background:#f59e0b;color:#1a1200;padding:2px 9px;border-radius:99px;font-weight:900;font-size:12px;white-space:nowrap}',
-      '.nl-bf-off{color:#e8e8e8;font-weight:600;white-space:nowrap}',
-      '.nl-bf-cron{display:inline-flex;align-items:center;gap:6px;color:#fff;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);padding:3px 10px;border-radius:99px;font-variant-numeric:tabular-nums;white-space:nowrap}',
-      '.nl-bf-cron b{color:#f59e0b}',
-      '.nl-bf-cta{color:#0a0a0a;background:#f59e0b;padding:4px 12px;border-radius:99px;text-decoration:none;font-weight:800;white-space:nowrap;font-size:12.5px}',
-      '.nl-bf-cta:hover{background:#fbbf24}',
-      '@media(max-width:620px){.nl-bf-inner{padding:8px 14px;font-size:12px;gap:7px}.nl-bf-titulo{font-size:12.5px}.nl-bf-off{display:none}}',
+      // ---------- 1) faixa-letreiro ----------
+      '.nl-bf-faixa{display:block;background:#0a0a0a;color:#fff;font-family:Arial,Helvetica,sans-serif;position:relative;overflow:hidden;text-decoration:none}',
+      '.nl-bf-faixa::after{content:"";display:block;height:5px;background:repeating-linear-gradient(135deg,#ffd60a 0 9px,#0a0a0a 9px 18px)}',
+      '.nl-bf-trilho{display:flex;width:max-content;padding:9px 0;animation:nlBfLetreiro 26s linear infinite}',
+      '.nl-bf-grupo{display:flex;align-items:center;flex-shrink:0}',
+      '.nl-bf-rep{display:flex;align-items:center;flex-shrink:0}',
+      '.nl-bf-item{white-space:nowrap;font-weight:900;font-size:13px;letter-spacing:.7px;text-transform:uppercase;padding:0 12px}',
+      '.nl-bf-item.amarelo{color:#ffd60a}',
+      '.nl-bf-item .nl-bf-tempo{color:#ffd60a;font-variant-numeric:tabular-nums}',
+      '.nl-bf-pilula{background:#ff1f3d;color:#fff;border-radius:4px;padding:3px 10px;transform:skew(-8deg);display:inline-block}',
+      '.nl-bf-estrela-sep{color:#ffd60a;font-size:12px}',
+      '@keyframes nlBfLetreiro{to{transform:translateX(-50%)}}',
 
-      // --- fita diagonal nos cards do catálogo (telas largas) ---
-      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#1a1200;font-weight:900;font-size:11px;letter-spacing:.2px;text-align:center;padding:4px 0;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.3);pointer-events:none;animation:nlBfPulsoFita 2.4s ease-in-out infinite}',
-      // A capa do card é uma faixa bem baixa (aspect-ratio 5.6/1) — numa
-      // tela estreita (cards em 2 colunas) a fita diagonal, que tem
-      // tamanho fixo, acaba mais alta que essa faixa e invade o título/
-      // categoria abaixo. Em vez de só encolher a fita (o que ainda
-      // vazava), ela vira um selo reto e compacto, do tamanho certo pra
-      // caber só em cima da capa — mesmo visual "chamativo", sem invadir
-      // o conteúdo do card.
-      '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border-radius:6px;font-size:10px;padding:3px 7px;letter-spacing:0}}',
+      // ---------- 2) bloco de oferta relâmpago ----------
+      '.nl-bf-hero{background:#050505;color:#fff;position:relative;overflow:hidden;font-family:Arial,Helvetica,sans-serif;text-align:center;padding:24px 16px 28px}',
+      '.nl-bf-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(255,214,10,.30),transparent 62%),radial-gradient(circle at 100% 100%,rgba(255,31,61,.26),transparent 55%),radial-gradient(circle at 0 100%,rgba(255,31,61,.16),transparent 50%);pointer-events:none}',
+      '.nl-bf-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:repeating-linear-gradient(135deg,#ffd60a 0 9px,#050505 9px 18px)}',
+      '.nl-bf-hero-in{position:relative;max-width:560px;margin:0 auto}',
+      '.nl-bf-tag{display:inline-block;background:#ff1f3d;color:#fff;font-weight:900;letter-spacing:1.6px;font-size:13px;padding:6px 16px;border-radius:4px;transform:skew(-8deg);box-shadow:0 0 0 2px #ffd60a;text-transform:uppercase}',
+      '.nl-bf-big{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:10px 0 0;line-height:.95}',
+      '.nl-bf-big b{font-size:clamp(76px,24vw,128px);font-weight:900;font-style:italic;letter-spacing:-3px;background:linear-gradient(180deg,#fff27a,#ffb800);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 0 rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(255,184,0,.35))}',
+      '.nl-bf-big span{font-size:clamp(26px,8vw,44px);font-weight:900;font-style:italic;color:#fff}',
+      '.nl-bf-sub{font-size:14.5px;font-weight:800;color:#e8e8e8;letter-spacing:.5px;margin:2px 0 14px;text-transform:uppercase}',
+      '.nl-bf-precos{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 16px}',
+      '.nl-bf-precos s{font-size:20px;font-weight:700;color:#ff6b7f;text-decoration-thickness:2px}',
+      '.nl-bf-precos i{color:#ffd60a;font-style:normal;font-size:22px}',
+      '.nl-bf-precos strong{font-size:clamp(36px,11vw,52px);font-weight:900;color:#ffd60a;line-height:1}',
+      '.nl-bf-termina{font-size:12px;font-weight:900;letter-spacing:2.2px;text-transform:uppercase;color:#ff6b7f;margin-bottom:8px}',
+      '.nl-bf-blocos{display:flex;justify-content:center;align-items:flex-start;gap:5px;margin:0 0 18px}',
+      '.nl-bf-bloco{background:linear-gradient(180deg,#1c1c1c,#0b0b0b);border:1px solid rgba(255,214,10,.5);border-radius:10px;min-width:60px;padding:9px 4px 7px}',
+      '.nl-bf-bloco b{display:block;font-size:30px;font-weight:900;color:#ffd60a;font-variant-numeric:tabular-nums;line-height:1}',
+      '.nl-bf-bloco span{display:block;font-size:9px;font-weight:800;letter-spacing:1.1px;color:#bdbdbd;margin-top:5px}',
+      '.nl-bf-dois{color:#ffd60a;font-style:normal;font-weight:900;font-size:24px;line-height:1;margin-top:9px}',
+      '.nl-bf-btn{display:block;max-width:420px;margin:0 auto;background:linear-gradient(180deg,#ffe14d,#ffb800);color:#111;font-weight:900;font-size:18px;letter-spacing:.6px;text-transform:uppercase;padding:16px 20px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 0 #b37f00,0 12px 28px rgba(255,184,0,.35);position:relative;overflow:hidden}',
+      '.nl-bf-btn:active{transform:translateY(3px);box-shadow:0 3px 0 #b37f00,0 6px 16px rgba(255,184,0,.3)}',
+      '.nl-bf-extras{margin-top:13px;font-size:12.5px;color:#d0d0d0}',
+      '.nl-bf-sub-aviso{margin-top:6px;font-size:11.5px;color:#9a9a9a}',
 
-      // --- selo na caixa de oferta das páginas de produto ---
-      '.nl-bf-oferta-selo{display:inline-flex;align-items:center;gap:8px;background:#0a0a0a;color:#f59e0b;font-weight:800;font-size:13px;letter-spacing:.4px;padding:7px 16px;border-radius:99px;margin-bottom:16px}',
-      '.nl-bf-oferta-pct{background:#f59e0b;color:#1a1200;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:900}',
-      '#oferta .contador .bloco{background:#0a0a0a}',
-      '#oferta .contador .bloco b{color:#f59e0b}',
-      '#oferta .contador .bloco span{color:#fff}',
+      // brilho que atravessa o botão + "batida" leve
+      '.nl-bf-shine{position:relative;overflow:hidden}',
+      '.nl-bf-shine::after{content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:nlBfBrilho 2.8s ease-in-out infinite;pointer-events:none}',
+      '@keyframes nlBfBrilho{0%,55%{left:-60%}100%{left:135%}}',
+      '.nl-bf-batida{animation:nlBfBatida 1.7s ease-in-out infinite}',
+      '@keyframes nlBfBatida{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}',
+      '@keyframes nlBfPulsoPreco{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}',
+      '.nl-bf-preco-glow{display:inline-block;animation:nlBfPulsoPreco 1.6s ease-in-out infinite}',
+      '@keyframes nlBfPulsoFita{0%,100%{box-shadow:0 3px 8px rgba(0,0,0,.35)}50%{box-shadow:0 3px 16px rgba(255,31,61,.75)}}',
 
-      // --- seção de destaque na home ---
-      '.nl-bf-destaque{background:linear-gradient(160deg,#0a0a0a,#111827 60%,#0a0a0a);color:#fff;padding:48px 20px;text-align:center;position:relative;overflow:hidden;font-family:Arial,Helvetica,sans-serif}',
-      '.nl-bf-destaque::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 20%,rgba(245,158,11,.16),transparent 45%),radial-gradient(circle at 82% 80%,rgba(94,234,212,.08),transparent 45%);pointer-events:none}',
-      '.nl-bf-destaque-inner{position:relative;max-width:720px;margin:0 auto}',
-      '.nl-bf-destaque-selo{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.4);color:#f59e0b;font-weight:800;font-size:13px;letter-spacing:.5px;padding:6px 16px;border-radius:99px;margin-bottom:18px}',
-      '.nl-bf-destaque-titulo{font-size:clamp(26px,5vw,42px);font-weight:900;margin:0 0 10px;line-height:1.15}',
-      '.nl-bf-destaque-titulo b{color:#f59e0b}',
-      '.nl-bf-destaque-sub{color:#c7d2d8;font-size:15px;margin:0 0 28px;line-height:1.5}',
-      '.nl-bf-blocos{display:flex;justify-content:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}',
-      '.nl-bf-blocos .bloco{background:rgba(255,255,255,.06);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:14px 16px;min-width:68px}',
-      '.nl-bf-blocos .bloco b{display:block;font-size:26px;font-weight:900;color:#f59e0b;font-variant-numeric:tabular-nums}',
-      '.nl-bf-blocos .bloco span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#9fb0b8;margin-top:2px}',
-      '.nl-bf-destaque-cta{display:inline-block;background:#f59e0b;color:#0a0a0a;font-weight:800;font-size:15px;padding:13px 32px;border-radius:99px;text-decoration:none}',
-      '.nl-bf-destaque-cta:hover{background:#fbbf24}',
-      '@media(max-width:620px){.nl-bf-destaque{padding:36px 16px}.nl-bf-blocos .bloco{min-width:56px;padding:10px 10px}.nl-bf-blocos .bloco b{font-size:20px}}',
+      // ---------- 3) selo nos cards do catálogo ----------
+      // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
+      // larga cabe uma fita diagonal; em tela estreita viraria mais alta
+      // que a capa e invadiria o título, então vira selo reto compacto)
+      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:linear-gradient(135deg,#ff2d4a,#d90429);color:#fff;font-weight:900;font-size:11px;letter-spacing:.3px;text-align:center;padding:4px 0;z-index:3;border-top:2px solid #ffd60a;border-bottom:2px solid #ffd60a;box-shadow:0 3px 8px rgba(0,0,0,.35);pointer-events:none;animation:nlBfPulsoFita 2.4s ease-in-out infinite}',
+      '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border:1.5px solid #ffd60a;border-radius:6px;font-size:10.5px;padding:3px 7px;letter-spacing:0}}',
+      'body .card .preco{color:#d90429}',
+      '[data-tema="escuro"] body .card .preco,[data-tema="escuro"] .card .preco{color:#ff6b7f}',
 
-      // --- pop-up diário ---
-      '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,8,12,.72);display:flex;align-items:center;justify-content:center;z-index:9999;padding:18px;opacity:0;pointer-events:none;transition:opacity .25s ease}',
-      '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;pointer-events:auto}',
-      '.nl-bf-modal-caixa{position:relative;background:#0a0a0a;color:#fff;border:1px solid rgba(245,158,11,.35);border-radius:20px;max-width:420px;width:100%;padding:34px 26px 28px;text-align:center;font-family:Arial,Helvetica,sans-serif;box-shadow:0 24px 60px rgba(0,0,0,.5);transform:scale(.92);transition:transform .25s ease}',
+      // ---------- 4) caixa de oferta nas páginas de produto ----------
+      '#oferta .oferta{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0,rgba(255,214,10,.18),transparent 62%),#0a0a0a;border:2px solid #ffd60a;box-shadow:0 0 0 4px rgba(255,214,10,.14),0 18px 60px rgba(255,184,0,.24);color:#fff}',
+      '#oferta .oferta .produto{color:#ffd60a}',
+      '#oferta .oferta .preco-de{color:#ff6b7f;font-size:20px;font-weight:700;text-decoration-thickness:2px}',
+      '#oferta .oferta .preco{color:#ffd60a;font-size:clamp(52px,15vw,74px);font-weight:900;line-height:1;margin:8px 0 6px}',
+      '#oferta .oferta .garantia{background:rgba(255,255,255,.09);color:#fff}',
+      '#oferta .oferta .confianca-compra{border-top-color:rgba(255,255,255,.16)}',
+      '#oferta .oferta .confianca-compra span{color:#d0d0d0}',
+      '#oferta .contador .bloco{background:linear-gradient(180deg,#1c1c1c,#0b0b0b);border:1px solid rgba(255,214,10,.5)}',
+      '#oferta .contador .bloco b{color:#ffd60a}',
+      '#oferta .contador .bloco span{color:#bdbdbd}',
+      '#oferta #btn-checkout{display:block;width:100%;max-width:420px;margin:0 auto;background:linear-gradient(180deg,#ffe14d,#ffb800);color:#111;font-weight:900;font-size:19px;letter-spacing:.6px;text-transform:uppercase;padding:18px 20px;border-radius:12px;border:0;box-shadow:0 6px 0 #b37f00,0 12px 28px rgba(255,184,0,.35)}',
+      '.barra-fixa .btn#barra-btn{background:linear-gradient(180deg,#ffe14d,#ffb800);color:#111;font-weight:900;text-transform:uppercase;box-shadow:0 4px 0 #b37f00}',
+      '.nl-bf-tag-oferta{margin-bottom:14px}',
+      '.nl-bf-economiza{display:inline-block;background:#ff1f3d;color:#fff;font-weight:900;font-size:13px;letter-spacing:.6px;padding:6px 16px;border-radius:4px;margin:2px 0 18px;text-transform:uppercase;transform:skew(-8deg)}',
+      '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:66px;height:66px;border-radius:50%;background:#ff1f3d;color:#fff;font-weight:900;font-size:19px;display:flex;align-items:center;justify-content:center;transform:rotate(12deg);box-shadow:0 0 0 3px #ffd60a,0 6px 16px rgba(0,0,0,.5);font-family:Arial,Helvetica,sans-serif;z-index:2}',
+      '@media(max-width:520px){#oferta .oferta{padding:34px 16px 28px}.nl-bf-estrela{width:56px;height:56px;font-size:16px;top:8px;right:8px}}',
+
+      // ---------- 5) pop-up diário ----------
+      '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
+      '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
+      '.nl-bf-modal-caixa{position:relative;background:#050505;color:#fff;border:2px solid #ffd60a;border-radius:18px;max-width:400px;width:100%;padding:26px 16px 20px;text-align:center;font-family:Arial,Helvetica,sans-serif;box-shadow:0 0 0 5px rgba(255,214,10,.16),0 24px 70px rgba(255,184,0,.28);transform:scale(.9);transition:transform .25s ease;overflow:hidden}',
+      '.nl-bf-modal-caixa::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(255,214,10,.3),transparent 62%),radial-gradient(circle at 100% 100%,rgba(255,31,61,.26),transparent 55%);pointer-events:none}',
+      '.nl-bf-modal-caixa>*{position:relative}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
-      '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:transparent;border:0;color:#9fb0b8;font-size:24px;line-height:1;cursor:pointer;padding:8px}',
-      '.nl-bf-modal-fechar:hover{color:#fff}',
-      '.nl-bf-modal-selo{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.4);color:#f59e0b;font-weight:800;font-size:12px;letter-spacing:.5px;padding:5px 14px;border-radius:99px;margin-bottom:14px}',
-      '.nl-bf-modal-titulo{font-size:22px;font-weight:900;margin:0 0 8px;line-height:1.25}',
-      '.nl-bf-modal-titulo b{color:#f59e0b}',
-      '.nl-bf-modal-sub{color:#c7d2d8;font-size:13.5px;margin:0 0 20px;line-height:1.5}',
-      '.nl-bf-modal-caixa .nl-bf-blocos{margin-bottom:22px;gap:8px}',
-      '.nl-bf-modal-caixa .nl-bf-blocos .bloco{min-width:54px;padding:9px 8px}',
-      '.nl-bf-modal-caixa .nl-bf-blocos .bloco b{font-size:19px}',
-      '.nl-bf-modal-cta{display:inline-block;background:#f59e0b;color:#0a0a0a;font-weight:800;font-size:14px;padding:12px 30px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}',
-      '.nl-bf-modal-cta:hover{background:#fbbf24}',
+      '.nl-bf-modal-fechar{position:absolute!important;top:6px;right:8px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%;z-index:2}',
+      '.nl-bf-modal-fechar:hover{background:rgba(255,255,255,.22)}',
+      '.nl-bf-modal-caixa .nl-bf-big b{font-size:clamp(70px,22vw,104px)}',
+      '.nl-bf-modal-caixa .nl-bf-blocos{margin-bottom:16px}',
+      '.nl-bf-modal-caixa .nl-bf-bloco{min-width:56px}',
+      '.nl-bf-modal-caixa .nl-bf-bloco b{font-size:26px}',
       'body.nl-bf-trava{overflow:hidden}',
 
-      // --- brilho pulsante (CTAs e preço com desconto) ---
-      '@keyframes nlBfPulsoBtn{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.5)}50%{box-shadow:0 0 0 9px rgba(245,158,11,0)}}',
-      '.nl-bf-glow{animation:nlBfPulsoBtn 1.8s ease-out infinite}',
-      '@keyframes nlBfPulsoPreco{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}',
-      '.nl-bf-preco-glow{display:inline-block;animation:nlBfPulsoPreco 1.6s ease-in-out infinite}',
-      '@keyframes nlBfPulsoFita{0%,100%{box-shadow:0 3px 8px rgba(0,0,0,.3)}50%{box-shadow:0 3px 14px rgba(245,158,11,.65)}}',
-      '@media(prefers-reduced-motion:reduce){.nl-bf-glow,.nl-bf-fita,.nl-bf-preco-glow{animation:none!important}}',
+      // ---------- telas estreitas ----------
+      '@media(max-width:420px){.nl-bf-bloco{min-width:54px}.nl-bf-bloco b{font-size:27px}.nl-bf-item{font-size:12.5px;padding:0 10px}.nl-bf-btn{font-size:17px}}',
+
+      // ---------- acessibilidade: sem movimento ----------
+      '@media(prefers-reduced-motion:reduce){.nl-bf-trilho{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.nl-bf-grupo{flex-wrap:wrap;justify-content:center}.nl-bf-grupo+.nl-bf-grupo,.nl-bf-rep+.nl-bf-rep{display:none}.nl-bf-shine::after{display:none}.nl-bf-batida,.nl-bf-preco-glow,.nl-bf-fita{animation:none!important}}',
     ].join('');
     document.head.appendChild(estilo);
   }
 
+  // ---------- 1) faixa-letreiro ----------
   function montarFaixa(idioma, t, pct) {
-    var faixa = document.createElement('div');
+    var href = hrefAcao(idioma);
+    var faixa = document.createElement(href ? 'a' : 'div');
     faixa.className = 'nl-bf-faixa';
-    faixa.setAttribute('role', 'region');
-    faixa.setAttribute('aria-label', t.titulo);
+    if (href) faixa.setAttribute('href', href);
+    faixa.setAttribute('aria-label', t.titulo + (pct ? ' -' + pct + '%' : ''));
 
-    var ctaHref = hrefCatalogo(idioma);
-    var pctHtml = pct ? '<span class="nl-bf-pct">-' + pct + '%</span>' : '';
-    var ctaHtml = ctaHref ? '<a class="nl-bf-cta" href="' + ctaHref + '">' + t.cta + '</a>' : '';
-
-    faixa.innerHTML =
-      '<div class="nl-bf-inner">' +
-      '<span class="nl-bf-titulo">🔥 ' + t.titulo + '</span>' +
-      pctHtml +
-      '<span class="nl-bf-off">' + t.off + '</span>' +
-      '<span class="nl-bf-cron">' + t.termina + ': <b id="nl-bf-tempo"></b></span>' +
-      ctaHtml +
-      '</div>';
+    var sep = '<span class="nl-bf-item nl-bf-estrela-sep" aria-hidden="true">★</span>';
+    var rep =
+      '<span class="nl-bf-rep">' +
+      '<span class="nl-bf-item amarelo">🔥 ' + t.titulo + '</span>' + sep +
+      (pct ? '<span class="nl-bf-item"><span class="nl-bf-pilula">-' + pct + '% OFF</span></span>' + sep : '') +
+      '<span class="nl-bf-item">' + t.termina + ' <span class="nl-bf-tempo"></span></span>' + sep +
+      '</span>';
+    var grupo = '<div class="nl-bf-grupo">' + rep + rep + rep + '</div>';
+    faixa.innerHTML = '<div class="nl-bf-trilho">' + grupo + grupo.replace('class="nl-bf-grupo"', 'class="nl-bf-grupo" aria-hidden="true"') + '</div>';
 
     document.body.insertBefore(faixa, document.body.firstChild);
-
-    var elTempo = document.getElementById('nl-bf-tempo');
-    var intervalo;
-    function atualizar() {
-      var restante = DATA_FIM.getTime() - Date.now();
-      if (restante <= 0) {
-        faixa.remove();
-        if (intervalo) clearInterval(intervalo);
-        return;
-      }
-      elTempo.textContent = formatarRestante(restante, t);
-    }
-    atualizar();
-    intervalo = setInterval(atualizar, 1000);
   }
 
-  // Fita diagonal nos cards do catálogo (home e /categorias/) — ambos
-  // usam a mesma classe .card, então um seletor só cobre as duas
-  // páginas. Os cards já são renderizados por um <script> inline antes
-  // deste arquivo (que é defer) rodar, mas o retry cobre o caso de
-  // alguma página vir a gerar os cards de forma assíncrona no futuro.
+  // ---------- 2) bloco de oferta relâmpago (home e produtos) ----------
+  function montarBlocoOferta(idioma, t, pct) {
+    var hero = document.querySelector('.hero');
+    var ehHome = paginaHome();
+    var ehProduto = paginaProduto() && document.getElementById('oferta');
+    if (!hero || !hero.parentNode || !(ehHome || ehProduto)) return;
+    var href = ehHome ? '#catalogo' : '#oferta';
+    var precos = precosDoIdioma(idioma);
+
+    var secao = document.createElement('section');
+    secao.className = 'nl-bf-hero';
+    secao.setAttribute('aria-label', t.titulo);
+    secao.innerHTML =
+      '<div class="nl-bf-hero-in">' +
+      '<span class="nl-bf-tag">🔥 ' + t.titulo + '</span>' +
+      (pct ? '<div class="nl-bf-big"><b>-' + pct + '%</b><span>OFF</span></div>' : '') +
+      '<div class="nl-bf-sub">' + t.todos + '</div>' +
+      (precos
+        ? '<div class="nl-bf-precos"><s>' + precos.de + '</s><i>→</i><strong>' + precos.por + '</strong></div>'
+        : '') +
+      '<div class="nl-bf-termina">⏰ ' + t.termina + '</div>' +
+      '<div class="nl-bf-blocos"></div>' +
+      '<a class="nl-bf-btn nl-bf-shine nl-bf-batida" href="' + href + '">' + (ehHome ? t.cta : t.ctaProduto) + '</a>' +
+      '<div class="nl-bf-extras">' + t.extras + '</div>' +
+      '<div class="nl-bf-sub-aviso">' + t.sub + '</div>' +
+      '</div>';
+
+    // Na página de produto, o nome do produto no lugar do texto genérico
+    // (o resto da primeira tela agora é só promoção).
+    var nomeProduto = ehProduto && document.getElementById('oferta-produto');
+    if (nomeProduto && nomeProduto.textContent.trim()) {
+      secao.querySelector('.nl-bf-sub').textContent = nomeProduto.textContent.trim();
+    }
+
+    hero.parentNode.insertBefore(secao, hero);
+  }
+
+  // ---------- 3) selo nos cards do catálogo ----------
+  // Home e /categorias/ usam a mesma classe .card. Os cards já são
+  // renderizados por <script> inline antes deste arquivo (defer) rodar,
+  // mas o retry cobre geração assíncrona no futuro.
   function marcarCards(pct) {
     if (!pct) return;
     var textoFita = '-' + pct + '% OFF';
     function aplicar() {
       var cards = document.querySelectorAll('.card');
       if (!cards.length) return false;
-      cards.forEach(function (card) {
-        if (card.querySelector('.nl-bf-fita')) return;
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        if (card.querySelector('.nl-bf-fita')) continue;
         var fita = document.createElement('span');
         fita.className = 'nl-bf-fita';
         fita.textContent = textoFita;
         card.insertBefore(fita, card.firstChild);
-      });
+      }
       return true;
     }
     if (aplicar()) return;
@@ -279,86 +393,46 @@
     }, 150);
   }
 
-  // Selo + brilho na caixa de oferta das páginas de produto — o
-  // contador em si é o mecanismo que já existia em CONFIG
-  // (contagemRegressivaFim), só ligado pra essa campanha; aqui só
-  // coloca o rótulo "BLACK FRIDAY" e o brilho no botão/preço.
+  // ---------- 4) caixa de oferta nas páginas de produto ----------
+  // O contador da caixa é o mecanismo que já existia em CONFIG
+  // (contagemRegressivaFim), ligado pra esta campanha; aqui entram o
+  // selo, a estrela de desconto, a linha de economia e os botões.
   function marcarOferta(idioma, t, pct) {
     var oferta = document.querySelector('.oferta');
     if (!oferta) return;
-    if (!oferta.querySelector('.nl-bf-oferta-selo')) {
+    if (!oferta.querySelector('.nl-bf-tag-oferta')) {
       var selo = document.createElement('div');
-      selo.className = 'nl-bf-oferta-selo';
-      selo.innerHTML = '🔥 ' + t.titulo + (pct ? ' <span class="nl-bf-oferta-pct">-' + pct + '%</span>' : '');
+      selo.className = 'nl-bf-tag nl-bf-tag-oferta';
+      selo.textContent = '🔥 ' + t.titulo;
       oferta.insertBefore(selo, oferta.firstChild);
     }
+    if (pct && !oferta.querySelector('.nl-bf-estrela')) {
+      var estrela = document.createElement('div');
+      estrela.className = 'nl-bf-estrela';
+      estrela.textContent = '-' + pct + '%';
+      oferta.appendChild(estrela);
+    }
+    var eco = economia(idioma);
     var preco = document.getElementById('oferta-preco-por');
+    if (eco && preco && !oferta.querySelector('.nl-bf-economiza')) {
+      var linha = document.createElement('div');
+      linha.className = 'nl-bf-economiza';
+      linha.textContent = t.economiza + ' ' + eco;
+      preco.parentNode.insertBefore(linha, preco.nextSibling);
+    }
     if (preco) preco.classList.add('nl-bf-preco-glow');
     var btn = document.getElementById('btn-checkout');
-    if (btn) btn.classList.add('nl-bf-glow');
+    if (btn) btn.classList.add('nl-bf-shine', 'nl-bf-batida');
     var btnBarra = document.getElementById('barra-btn');
-    if (btnBarra) btnBarra.classList.add('nl-bf-glow');
+    if (btnBarra) btnBarra.classList.add('nl-bf-shine');
   }
 
-  function paginaProduto() {
-    return /^\/produtos\//.test(location.pathname);
-  }
-
-  // Seção grande de destaque — na home, entre o hero e o catálogo
-  // (#catalogo); numa página de produto, entre o hero e o resto do
-  // conteúdo, mandando pra caixa de oferta (#oferta) da própria página.
-  function montarDestaque(idioma, t, pct) {
-    var pai, refElemento, ctaHref;
-
-    if (paginaHome()) {
-      refElemento = document.getElementById('catalogo');
-      if (!refElemento || !refElemento.parentNode) return;
-      pai = refElemento.parentNode;
-      ctaHref = '#catalogo';
-    } else if (paginaProduto()) {
-      var hero = document.querySelector('.hero');
-      var oferta = document.getElementById('oferta');
-      if (!hero || !hero.parentNode || !oferta) return;
-      pai = hero.parentNode;
-      refElemento = hero.nextElementSibling; // null = insere no fim (hero nunca é o último)
-      ctaHref = '#oferta';
-    } else {
-      return;
-    }
-
-    var secao = document.createElement('section');
-    secao.className = 'nl-bf-destaque';
-    secao.innerHTML =
-      '<div class="nl-bf-destaque-inner">' +
-      '<span class="nl-bf-destaque-selo">🔥 ' + t.titulo + '</span>' +
-      '<h2 class="nl-bf-destaque-titulo">' + (pct ? '<b>-' + pct + '%</b> ' : '') + t.off + '</h2>' +
-      '<p class="nl-bf-destaque-sub">' + t.destaqueSub + '</p>' +
-      '<div class="nl-bf-blocos" id="nl-bf-destaque-blocos"></div>' +
-      '<a class="nl-bf-destaque-cta nl-bf-glow" href="' + ctaHref + '">' + t.cta + '</a>' +
-      '</div>';
-
-    pai.insertBefore(secao, refElemento);
-
-    var elBlocos = document.getElementById('nl-bf-destaque-blocos');
-    var intervalo;
-    function atualizar() {
-      var restante = DATA_FIM.getTime() - Date.now();
-      if (restante <= 0) {
-        secao.remove();
-        if (intervalo) clearInterval(intervalo);
-        return;
-      }
-      elBlocos.innerHTML = blocosHtml(restante, t);
-    }
-    atualizar();
-    intervalo = setInterval(atualizar, 1000);
-  }
-
-  // Pop-up uma vez por dia por visitante (qualquer página do site que
-  // carregue este script). Aparece com um pequeno atraso, trava o
-  // scroll enquanto aberto e fecha pelo X, clique fora ou Esc.
+  // ---------- 5) pop-up uma vez por dia ----------
+  // Aparece com pequeno atraso, trava o scroll, prende o foco do teclado
+  // dentro dele e fecha pelo X, clique fora ou Esc.
   function montarPopup(idioma, t, pct) {
     if (jaMostrouPopupHoje()) return;
+    var precos = precosDoIdioma(idioma);
 
     var overlay = document.createElement('div');
     overlay.className = 'nl-bf-modal-overlay';
@@ -366,56 +440,66 @@
     overlay.setAttribute('aria-modal', 'true');
     overlay.setAttribute('aria-label', t.titulo);
 
-    var ctaHref = hrefCatalogo(idioma);
-    var ctaTag = ctaHref
-      ? '<a class="nl-bf-modal-cta" href="' + ctaHref + '" id="nl-bf-modal-cta">' + t.cta + '</a>'
-      : '<button type="button" class="nl-bf-modal-cta" id="nl-bf-modal-cta">' + t.cta + '</button>';
+    var href = hrefAcao(idioma);
+    var rotuloCta = paginaProduto() ? t.ctaProduto : t.cta;
+    var cta = href
+      ? '<a class="nl-bf-btn nl-bf-shine nl-bf-batida nl-bf-modal-cta" href="' + href + '">' + rotuloCta + '</a>'
+      : '<button type="button" class="nl-bf-btn nl-bf-shine nl-bf-batida nl-bf-modal-cta">' + rotuloCta + '</button>';
 
     overlay.innerHTML =
       '<div class="nl-bf-modal-caixa">' +
       '<button type="button" class="nl-bf-modal-fechar" aria-label="' + t.fechar + '">×</button>' +
-      '<span class="nl-bf-modal-selo">🔥 ' + t.titulo + '</span>' +
-      '<h3 class="nl-bf-modal-titulo">' + (pct ? '<b>-' + pct + '%</b> ' : '') + t.off + '</h3>' +
-      '<p class="nl-bf-modal-sub">' + t.destaqueSub + '</p>' +
-      '<div class="nl-bf-blocos" id="nl-bf-modal-blocos"></div>' +
-      ctaTag +
+      '<span class="nl-bf-tag">🔥 ' + t.titulo + '</span>' +
+      (pct ? '<div class="nl-bf-big"><b>-' + pct + '%</b><span>OFF</span></div>' : '') +
+      '<div class="nl-bf-sub">' + t.todos + '</div>' +
+      (precos
+        ? '<div class="nl-bf-precos"><s>' + precos.de + '</s><i>→</i><strong>' + precos.por + '</strong></div>'
+        : '') +
+      '<div class="nl-bf-termina">⏰ ' + t.termina + '</div>' +
+      '<div class="nl-bf-blocos"></div>' +
+      cta +
+      '<div class="nl-bf-extras">' + t.extras + '</div>' +
       '</div>';
 
     document.body.appendChild(overlay);
 
-    var elBlocos = document.getElementById('nl-bf-modal-blocos');
-    var intervalo;
-    function atualizar() {
-      var restante = DATA_FIM.getTime() - Date.now();
-      if (restante <= 0) { fechar(); return; }
-      elBlocos.innerHTML = blocosHtml(restante, t);
+    var botaoFechar = overlay.querySelector('.nl-bf-modal-fechar');
+    var focoAnterior = null;
+    var aberto = false;
+
+    function aoTeclar(e) {
+      if (e.key === 'Escape') { fechar(); return; }
+      if (e.key !== 'Tab') return;
+      var focaveis = overlay.querySelectorAll('button,a[href]');
+      var primeiro = focaveis[0];
+      var ultimo = focaveis[focaveis.length - 1];
+      if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+      else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
     }
 
     function abrir() {
-      if (expirou()) return;
-      atualizar();
-      intervalo = setInterval(atualizar, 1000);
+      if (expirou() || !document.body.contains(overlay)) return;
+      aberto = true;
+      focoAnterior = document.activeElement;
       overlay.classList.add('nl-bf-aberto');
       document.body.classList.add('nl-bf-trava');
+      document.addEventListener('keydown', aoTeclar);
+      botaoFechar.focus({ preventScroll: true });
       marcarPopupMostrado();
     }
 
     function fechar() {
       overlay.classList.remove('nl-bf-aberto');
       document.body.classList.remove('nl-bf-trava');
-      if (intervalo) clearInterval(intervalo);
+      document.removeEventListener('keydown', aoTeclar);
+      if (aberto && focoAnterior && focoAnterior.focus) { try { focoAnterior.focus({ preventScroll: true }); } catch (e) {} }
+      aberto = false;
       setTimeout(function () { overlay.remove(); }, 300);
     }
 
-    overlay.querySelector('.nl-bf-modal-fechar').addEventListener('click', fechar);
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) fechar();
-    });
-    document.addEventListener('keydown', function escHandler(e) {
-      if (e.key === 'Escape') { fechar(); document.removeEventListener('keydown', escHandler); }
-    });
-    var cta = document.getElementById('nl-bf-modal-cta');
-    if (cta) cta.addEventListener('click', fechar);
+    botaoFechar.addEventListener('click', fechar);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) fechar(); });
+    overlay.querySelector('.nl-bf-modal-cta').addEventListener('click', fechar);
 
     setTimeout(abrir, 1500);
   }
