@@ -3,15 +3,14 @@
 // Campanha temporária (ver DATA_FIM abaixo). Injeta sozinho todo o visual
 // — nenhuma página precisa de HTML extra, só o
 // <script src="/assets/black-friday.js" defer>:
-//   1) faixa fina no topo (todas as páginas), com contador; clique leva
-//      à oferta
-//   2) banner de destaque logo abaixo do cabeçalho (home e produtos):
-//      nome "BLACK FRIDAY", etiqueta de preço pendurada, capas reais dos
-//      guias, preço de/por, botão e contador
-//   3) selo "-X% OFF" nos cards do catálogo (home e /categorias/)
-//   4) caixa de oferta das páginas de produto em destaque
+//   1) faixa amarela fina no topo (todas as páginas), com contador
+//   2) banner preto logo abaixo do cabeçalho (home e produtos): nome
+//      "BLACK FRIDAY", desconto, preço, contador e botão
+//   3) selo amarelo "-X% OFF" nos cards do catálogo (home e /categorias/)
+//   4) caixa de oferta das páginas de produto em preto e amarelo
 //   5) pop-up uma vez por dia por visitante
-// Visual usa só as cores do site (azul-marinho, verde-água e âmbar).
+// Paleta da campanha: preto #0a0a0a + amarelo #ffd60a (de propósito fora
+// da paleta da marca, só durante a campanha).
 // Quando DATA_FIM passa, tudo se remove sozinho — inclusive o <style>
 // injetado, então as páginas voltam exatamente ao visual normal. Pra
 // limpar de vez, tirar a tag <script> das páginas e apagar este arquivo.
@@ -43,11 +42,6 @@
 
   function paginaProduto() {
     return /^\/produtos\//.test(location.pathname);
-  }
-
-  function slugDoProduto() {
-    var m = location.pathname.match(/^\/produtos\/([^/]+)\//);
-    return m ? m[1] : null;
   }
 
   // Aceita "R$ 49,99", "$4.99" e também milhar ("R$ 1.234,56"): o último
@@ -85,25 +79,22 @@
 
   var TEXTOS = {
     pt: {
-      titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', todos: 'em todos os guias',
-      desconto: function (p) { return p + '% de desconto'; },
-      cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
+      termina: 'termina em', de: 'de', todos: 'NEXTLEVEL · EM TODOS OS GUIAS', desc: 'de desconto',
+      especial: 'PREÇO ESPECIAL', cta: 'VER AS OFERTAS', ctaProduto: 'QUERO APROVEITAR', fechar: 'Fechar',
       aviso: 'Oferta de Black Friday até segunda-feira (Cyber Monday)', economiza: 'Você economiza',
-      d: 'd', h: 'h', m: 'm', s: 's',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DIAS', horas: 'HORAS', min: 'MIN', seg: 'SEG',
     },
     en: {
-      titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', todos: 'on every guide',
-      desconto: function (p) { return p + '% off'; },
-      cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
+      termina: 'ends in', de: 'was', todos: 'NEXTLEVEL · ON EVERY GUIDE', desc: 'off',
+      especial: 'SPECIAL PRICE', cta: 'SEE THE DEALS', ctaProduto: 'GRAB THE DEAL', fechar: 'Close',
       aviso: 'Black Friday offer until Monday (Cyber Monday)', economiza: 'You save',
-      d: 'd', h: 'h', m: 'm', s: 's',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DAYS', horas: 'HRS', min: 'MIN', seg: 'SEC',
     },
     es: {
-      titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', todos: 'en todas las guías',
-      desconto: function (p) { return p + '% de descuento'; },
-      cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
+      termina: 'termina en', de: 'de', todos: 'NEXTLEVEL · EN TODAS LAS GUÍAS', desc: 'de descuento',
+      especial: 'PRECIO ESPECIAL', cta: 'VER LAS OFERTAS', ctaProduto: 'APROVECHAR AHORA', fechar: 'Cerrar',
       aviso: 'Oferta de Black Friday hasta el lunes (Cyber Monday)', economiza: 'Ahorras',
-      d: 'd', h: 'h', m: 'm', s: 's',
+      d: 'd', h: 'h', m: 'm', s: 's', dias: 'DÍAS', horas: 'HORAS', min: 'MIN', seg: 'SEG',
     },
   };
 
@@ -119,11 +110,16 @@
     };
   }
 
-  // "13d 13h 32m" (faixa do topo) ou "13d 13h 32m 15s" (banner e pop-up).
-  function formatarRestante(ms, t, comSegundos) {
+  function formatarRestante(ms, t) {
     var p = partes(ms);
-    var txt = p.dias + t.d + ' ' + doisDigitos(p.horas) + t.h + ' ' + doisDigitos(p.min) + t.m;
-    return comSegundos ? txt + ' ' + doisDigitos(p.seg) + t.s : txt;
+    return p.dias + t.d + ' ' + doisDigitos(p.horas) + t.h + ' ' + doisDigitos(p.min) + t.m;
+  }
+
+  // Quatro cartões (dias/horas/min/seg) do banner e do pop-up.
+  function blocosHtml(ms, t) {
+    var p = partes(ms);
+    function c(v, r) { return '<div><b>' + v + '</b><span>' + r + '</span></div>'; }
+    return c(p.dias, t.dias) + c(doisDigitos(p.horas), t.horas) + c(doisDigitos(p.min), t.min) + c(doisDigitos(p.seg), t.seg);
   }
 
   function esc(texto) {
@@ -157,23 +153,6 @@
     try { localStorage.setItem('nl_bf_popup', chaveHoje()); } catch (e) {}
   }
 
-  // Quais 3 capas aparecem no banner: nas páginas de produto, a do
-  // próprio produto no centro; na home, uma seleção fixa de 3 produtos
-  // de categorias diferentes. Só entram produtos que existem no catálogo.
-  function capasDoBanner() {
-    var catalogo = (window.PRODUTOS_SITE || []).filter(function (p) { return p.disponivel; })
-      .map(function (p) { return p.slug; });
-    function existe(s) { return catalogo.indexOf(s) !== -1; }
-    var preferidos = ['emagrecimento', 'financas-pessoais', 'ia-aplicada', 'confianca-social'];
-    var atual = paginaProduto() ? slugDoProduto() : null;
-    var centro = atual && existe(atual) ? atual : (existe('emagrecimento') ? 'emagrecimento' : catalogo[0]);
-    var laterais = preferidos.concat(catalogo).filter(function (s, i, a) {
-      return existe(s) && s !== centro && a.indexOf(s) === i;
-    }).slice(0, 2);
-    if (!centro || laterais.length < 2) return null;
-    return { esquerda: laterais[0], centro: centro, direita: laterais[1] };
-  }
-
   var estilo = null;
   var intervalo = null;
   var tAtual = null;
@@ -199,12 +178,12 @@
   function tick() {
     var restante = DATA_FIM.getTime() - Date.now();
     if (restante <= 0) { encerrar(); return; }
-    var curto = formatarRestante(restante, tAtual, false);
-    var longo = formatarRestante(restante, tAtual, true);
+    var curto = formatarRestante(restante, tAtual);
+    var html = blocosHtml(restante, tAtual);
     var a = document.querySelectorAll('.nl-bf-tempo');
     for (var i = 0; i < a.length; i++) a[i].textContent = curto;
-    var b = document.querySelectorAll('.nl-bf-tempo-full');
-    for (var j = 0; j < b.length; j++) b[j].textContent = longo;
+    var b = document.querySelectorAll('.nl-bf-cartoes');
+    for (var j = 0; j < b.length; j++) b[j].innerHTML = html;
   }
 
   // Campanha acabou com a página aberta: remove tudo, inclusive o CSS.
@@ -222,76 +201,68 @@
     estilo = document.createElement('style');
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
-      '.nl-bf-faixa{display:block;background:#0d1b2a;color:#fff;font-family:inherit;font-weight:600;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:11px 8px;text-align:center;text-decoration:none;border-bottom:2px solid #f59e0b}',
-      '.nl-bf-faixa b{color:#fbbf24;font-weight:800;letter-spacing:.8px}',
-      '.nl-bf-faixa .nl-bf-tempo{color:#5eead4;font-weight:700}',
+      '.nl-bf-faixa{display:block;background:#ffd60a;color:#0a0a0a;font-family:inherit;font-weight:800;font-size:12px;letter-spacing:.8px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:11px 8px;text-align:center;text-decoration:none;text-transform:uppercase}',
+      '@media(max-width:360px){.nl-bf-faixa{font-size:11px;letter-spacing:.2px}}',
 
-      // ---------- 2) banner de destaque ----------
-      '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0d1b2a 0%,#0f4a52 100%);color:#fff;font-family:inherit;border-top:3px solid #f59e0b;border-bottom:1px solid rgba(94,234,212,.25);padding:32px 22px 28px}',
-      '.nl-bf-hero-in{position:relative;max-width:1080px;margin:0 auto}',
-      '.nl-bf-ey{color:#5eead4;font-size:11px;font-weight:700;letter-spacing:4px}',
-      '.nl-bf-wm{font-weight:800;font-size:44px;letter-spacing:5px;line-height:1.02;margin:10px 0 0;color:#fbbf24}',
-      '.nl-bf-rule{width:44px;height:3px;background:#f59e0b;margin:14px 0 12px}',
-      '.nl-bf-p{font-size:15px;color:#b7d5cf;line-height:1.4;max-width:210px;margin:0}',
-      '.nl-bf-p b{color:#fff;font-weight:700}',
-      '.nl-bf-p span{display:block;margin-top:2px}',
-      '.nl-bf-etiqueta{position:absolute;right:0;top:-6px;width:74px;overflow:visible;transform:rotate(6deg);transform-origin:50% 0;z-index:3;filter:drop-shadow(0 8px 8px rgba(0,0,0,.3))}',
-
-      // capas em leque (--u escala tudo junto no desktop)
-      '.nl-bf-palco{--u:1px;position:relative;height:calc(230*var(--u));margin-top:6px}',
-      '.nl-bf-sombra{position:absolute;left:12%;right:12%;bottom:2px;height:calc(20*var(--u));border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%)}',
-      '.nl-bf-livro{position:absolute;border-radius:2px 5px 5px 2px;box-shadow:0 14px 22px rgba(0,0,0,.4)}',
-      '.nl-bf-livro img{display:block;width:100%;height:auto;border-radius:2px 5px 5px 2px}',
-      '.nl-bf-livro::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6%;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,255,255,0));border-radius:2px 0 0 2px}',
-      '.nl-bf-livro.esq{width:calc(104*var(--u));left:calc(50% - 124*var(--u));bottom:calc(12*var(--u));transform:rotate(-6deg);z-index:2}',
-      '.nl-bf-livro.dir{width:calc(104*var(--u));left:calc(50% + 20*var(--u));bottom:calc(12*var(--u));transform:rotate(6deg);z-index:2}',
-      '.nl-bf-livro.cen{width:calc(124*var(--u));left:calc(50% - 62*var(--u));bottom:calc(6*var(--u));z-index:3}',
-
-      '.nl-bf-linha{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}',
-      '.nl-bf-pr s{display:block;color:#8aa7a3;font-size:13px}',
-      '.nl-bf-pr b{display:block;font-size:34px;font-weight:800;color:#fbbf24;white-space:nowrap;line-height:1.1}',
-      '.nl-bf-btn{display:inline-block;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#2b1a00;font-weight:800;font-size:14px;padding:15px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(245,158,11,.28)}',
-      '.nl-bf-btn:hover{filter:brightness(1.06)}',
-      '.nl-bf-tm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(94,234,212,.2);font-size:12px;color:#9fd9d1;letter-spacing:.5px}',
-      '.nl-bf-tm b{color:#fff;font-weight:700}',
-      '.nl-bf-aviso{margin-top:6px;font-size:11px;color:#7fa39c}',
-
-      '@media(max-width:360px){.nl-bf-wm{font-size:40px}.nl-bf-etiqueta{width:66px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
-      '@media(min-width:820px){.nl-bf-hero{padding:44px 22px}.nl-bf-hero-in{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"txt palco" "act palco";column-gap:48px;align-items:center}',
-      '.nl-bf-txt{grid-area:txt}.nl-bf-palco{grid-area:palco;--u:1.25px;margin-top:0}.nl-bf-act{grid-area:act}',
-      '.nl-bf-wm{font-size:64px;letter-spacing:7px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{justify-content:flex-start;gap:28px}.nl-bf-etiqueta{width:92px;top:-18px;right:34px}}',
+      // ---------- 2) banner (também usado no pop-up) ----------
+      '.nl-bf-hero{background:#0a0a0a;color:#fff;font-family:inherit;text-align:center;padding:30px 22px 28px;border-bottom:4px solid #ffd60a}',
+      '.nl-bf-in{max-width:520px;margin:0 auto}',
+      '.nl-bf-lock{display:inline-block;text-align:left}',
+      '.nl-bf-lock span{display:block;font-weight:900;font-size:clamp(46px,16vw,62px);letter-spacing:-1px;line-height:1}',
+      '.nl-bf-lock .a{color:#fff}',
+      '.nl-bf-lock .b{background:#ffd60a;color:#0a0a0a;padding:2px 14px 4px;margin-top:2px}',
+      '.nl-bf-sub{margin:18px 0 6px;font-size:14px;color:#cfcfcf;letter-spacing:.6px;text-transform:uppercase}',
+      '.nl-bf-big{font-size:24px;font-weight:800;margin:0 0 18px}',
+      '.nl-bf-big b{color:#ffd60a;font-size:40px;font-weight:900}',
+      '.nl-bf-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#161616;border:1px solid #2c2c2c;border-radius:12px;padding:14px 16px;margin-bottom:12px}',
+      '.nl-bf-box .l{text-align:left;font-size:12px;color:#9a9a9a;letter-spacing:1px}',
+      '.nl-bf-box .l s{display:block;font-size:14px;color:#777;letter-spacing:0;margin-top:2px}',
+      '.nl-bf-box .p{font-size:34px;font-weight:900;color:#ffd60a;white-space:nowrap}',
+      '.nl-bf-cartoes{display:flex;gap:8px;margin-bottom:20px}',
+      '.nl-bf-cartoes div{flex:1;background:#161616;border:1px solid #2c2c2c;border-radius:10px;padding:10px 0}',
+      '.nl-bf-cartoes b{display:block;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}',
+      '.nl-bf-cartoes span{display:block;font-size:9px;letter-spacing:1.5px;color:#9a9a9a;margin-top:2px}',
+      '.nl-bf-btn{display:block;background:#ffd60a;color:#0a0a0a;font-weight:900;letter-spacing:1.5px;font-size:15px;padding:16px;border-radius:10px;text-decoration:none;text-align:center;border:0;cursor:pointer;font-family:inherit;width:100%;box-sizing:border-box}',
+      '.nl-bf-btn:hover{background:#ffe14d}',
+      '.nl-bf-aviso{margin-top:12px;font-size:11px;color:#8a8a8a}',
+      '@media(min-width:820px){.nl-bf-hero{padding:44px 22px 40px}.nl-bf-in{max-width:560px}.nl-bf-lock span{font-size:84px}}',
 
       // ---------- 3) selo nos cards do catálogo ----------
       // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
       // larga cabe uma fita diagonal; em tela estreita viraria mais alta
       // que a capa e invadiria o título, então vira selo reto compacto)
-      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0d1b2a;font-weight:800;font-size:11px;letter-spacing:.3px;text-align:center;padding:4px 0;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.25);pointer-events:none}',
-      '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border-radius:6px;font-size:10.5px;padding:3px 8px;letter-spacing:0}}',
+      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:#ffd60a;color:#0a0a0a;font-weight:900;font-size:11px;letter-spacing:.3px;text-align:center;padding:4px 0;z-index:3;border-top:2px solid #0a0a0a;border-bottom:2px solid #0a0a0a;box-shadow:0 3px 8px rgba(0,0,0,.3);pointer-events:none}',
+      '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border:2px solid #0a0a0a;border-radius:6px;font-size:10.5px;padding:2px 7px;letter-spacing:0}}',
 
       // ---------- 4) caixa de oferta nas páginas de produto ----------
-      '#oferta .oferta{position:relative;overflow:hidden;border:2px solid #f59e0b;box-shadow:0 0 0 4px rgba(245,158,11,.12),0 14px 40px rgba(245,158,11,.16)}',
-      '#oferta .oferta .preco{font-size:clamp(38px,11.5vw,56px);font-weight:800;line-height:1.05;color:#0f766e}',
-      '[data-tema="escuro"] #oferta .oferta .preco{color:#5eead4}',
-      '#oferta .contador .bloco{background:#0d1b2a}',
-      '#oferta .contador .bloco b{color:#fbbf24}',
-      '#oferta .contador .bloco span{color:#b7d5cf}',
-      '.nl-bf-tag-oferta{display:inline-block;background:#0d1b2a;color:#fbbf24;font-weight:800;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:6px;margin-bottom:14px}',
-      '.nl-bf-economiza{display:inline-block;background:rgba(245,158,11,.16);color:#92400e;font-weight:800;font-size:13px;padding:6px 14px;border-radius:99px;margin:2px 0 16px}',
-      '[data-tema="escuro"] .nl-bf-economiza{color:#fbbf24}',
-      '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0d1b2a;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);box-shadow:0 6px 14px rgba(13,27,42,.25);font-family:inherit}',
-      '@media(max-width:520px){#oferta .oferta{padding:34px 16px 28px}.nl-bf-estrela{width:54px;height:54px;font-size:15px;top:8px;right:8px}}',
+      '#oferta .oferta{position:relative;overflow:hidden;background:#0a0a0a;border:2px solid #ffd60a;box-shadow:0 0 0 4px rgba(255,214,10,.14),0 14px 40px rgba(0,0,0,.3);color:#fff}',
+      '#oferta .oferta .produto{color:#ffd60a}',
+      '#oferta .oferta .preco-de{color:#8a8a8a;font-size:18px;font-weight:700}',
+      '#oferta .oferta .preco{font-size:clamp(40px,12vw,58px);font-weight:900;line-height:1.05;color:#ffd60a}',
+      '#oferta .oferta .garantia{background:#161616;border:1px solid #2c2c2c;color:#fff}',
+      '#oferta .oferta .confianca-compra{border-top-color:#2c2c2c}',
+      '#oferta .oferta .confianca-compra span{color:#bdbdbd}',
+      '#oferta .contador .bloco{background:#161616;border:1px solid #2c2c2c}',
+      '#oferta .contador .bloco b{color:#ffd60a}',
+      '#oferta .contador .bloco span{color:#9a9a9a}',
+      '#oferta #btn-checkout{display:block;width:100%;max-width:420px;margin:0 auto;background:#ffd60a;color:#0a0a0a;font-weight:900;font-size:16px;letter-spacing:1.2px;text-transform:uppercase;padding:17px 18px;border-radius:10px;border:0;box-shadow:none}',
+      '.barra-fixa .btn#barra-btn{background:#ffd60a;color:#0a0a0a;font-weight:900;text-transform:uppercase;box-shadow:none}',
+      '.nl-bf-tag-oferta{display:inline-block;background:#ffd60a;color:#0a0a0a;font-weight:900;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:4px;margin-bottom:14px}',
+      '.nl-bf-economiza{display:inline-block;background:rgba(255,214,10,.14);color:#ffd60a;font-weight:800;font-size:13px;padding:6px 14px;border-radius:99px;margin:2px 0 16px}',
+      '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:60px;height:60px;border-radius:50%;background:#ffd60a;color:#0a0a0a;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);font-family:inherit}',
+      '@media(max-width:520px){#oferta .oferta{padding:34px 16px 28px}.nl-bf-estrela{width:52px;height:52px;font-size:15px;top:8px;right:8px}}',
 
       // ---------- 5) pop-up diário ----------
-      '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,12,20,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
+      '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
-      '.nl-bf-modal-caixa{position:relative;background:linear-gradient(160deg,#0d1b2a 0%,#0f4a52 100%);color:#fff;border:2px solid #f59e0b;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
+      '.nl-bf-modal-caixa{position:relative;background:#0a0a0a;color:#fff;border:2px solid #ffd60a;border-radius:16px;max-width:400px;width:100%;max-height:calc(100vh - 32px);overflow-y:auto;font-family:inherit;transform:scale(.94);transition:transform .25s ease}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
-      '.nl-bf-modal-caixa .nl-bf-wm{font-size:38px}',
-      '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
-      '.nl-bf-modal-caixa .nl-bf-linha{flex-direction:column;align-items:stretch;gap:14px}',
-      '.nl-bf-modal-caixa .nl-bf-btn{text-align:center}',
-      '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%}',
-      '.nl-bf-modal-fechar:hover{background:rgba(255,255,255,.22)}',
+      '.nl-bf-modal-caixa .nl-bf-hero{border-bottom:0;padding:34px 18px 22px}',
+      '.nl-bf-modal-caixa .nl-bf-lock span{font-size:clamp(40px,13vw,50px)}',
+      '.nl-bf-modal-caixa .nl-bf-sub{margin-top:14px}',
+      '.nl-bf-modal-caixa .nl-bf-big{margin-bottom:14px}',
+      '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:#1f1f1f;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%;z-index:2}',
+      '.nl-bf-modal-fechar:hover{background:#2c2c2c}',
       'body.nl-bf-trava{overflow:hidden}',
     ].join('');
     document.head.appendChild(estilo);
@@ -304,70 +275,43 @@
     faixa.className = 'nl-bf-faixa';
     if (href) faixa.setAttribute('href', href);
     faixa.innerHTML =
-      '<b>' + t.titulo + '</b>' +
-      (pct ? ' &nbsp;·&nbsp; ' + pct + '% OFF' : '') +
+      'BLACK FRIDAY' + (pct ? ' &nbsp;·&nbsp; ' + pct + '% OFF' : '') +
       ' &nbsp;·&nbsp; ' + t.termina + ' <span class="nl-bf-tempo"></span>';
     document.body.insertBefore(faixa, document.body.firstChild);
   }
 
-  // Etiqueta de preço pendurada (SVG), na cor âmbar do site.
-  function etiquetaSvg(pct) {
-    return '<svg class="nl-bf-etiqueta" viewBox="0 -60 120 220" aria-hidden="true">' +
-      '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#fbbf24" stroke-width="2" opacity=".7"/>' +
-      '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="#fbbf24" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
-      '<circle cx="60" cy="30" r="6" fill="#0d1b2a" stroke="#0d1b2a" stroke-width="2.5"/>' +
-      '<text x="60" y="108" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="34" letter-spacing="-1" fill="#0d1b2a">-' + pct + '%</text>' +
-      '<text x="60" y="134" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#0d1b2a">OFF</text></svg>';
+  // Miolo do banner e do pop-up: nome, desconto, preço, contador e botão.
+  function miolo(idioma, t, pct, href, rotuloCta, nomeProduto) {
+    var precos = precosDoIdioma(idioma);
+    var cta = href
+      ? '<a class="nl-bf-btn nl-bf-cta" href="' + href + '">' + rotuloCta + '</a>'
+      : '<button type="button" class="nl-bf-btn nl-bf-cta">' + rotuloCta + '</button>';
+    return '<div class="nl-bf-in">' +
+      '<div class="nl-bf-lock"><span class="a">BLACK</span><span class="b">FRIDAY</span></div>' +
+      '<div class="nl-bf-sub">' + (nomeProduto ? esc(nomeProduto) : t.todos) + '</div>' +
+      (pct ? '<div class="nl-bf-big"><b>' + pct + '%</b> ' + t.desc + '</div>' : '') +
+      (precos
+        ? '<div class="nl-bf-box"><div class="l">' + t.especial + '<s>' + t.de + ' ' + esc(precos.de) + '</s></div><div class="p">' + esc(precos.por) + '</div></div>'
+        : '') +
+      '<div class="nl-bf-cartoes"></div>' +
+      cta +
+      '<div class="nl-bf-aviso">' + t.aviso + '</div>' +
+      '</div>';
   }
 
-  function palcoHtml(idioma) {
-    var c = capasDoBanner();
-    if (!c) return '';
-    function livro(classe, slug) {
-      return '<div class="nl-bf-livro ' + classe + '"><img src="/assets/produtos/' + esc(slug) +
-        '/thumb-' + idioma + '.jpg" alt="" width="400" height="565" decoding="async"></div>';
-    }
-    return '<div class="nl-bf-palco" aria-hidden="true"><div class="nl-bf-sombra"></div>' +
-      livro('esq', c.esquerda) + livro('dir', c.direita) + livro('cen', c.centro) + '</div>';
-  }
-
-  // ---------- 2) banner de destaque (home e produtos) ----------
+  // ---------- 2) banner (home e produtos) ----------
   function montarBanner(idioma, t, pct) {
     var hero = document.querySelector('.hero');
     var ehHome = paginaHome();
     var ehProduto = paginaProduto() && document.getElementById('oferta');
     if (!hero || !hero.parentNode || !(ehHome || ehProduto)) return;
-    var href = ehHome ? '#catalogo' : '#oferta';
-    var precos = precosDoIdioma(idioma);
-
     var nomeEl = ehProduto && document.getElementById('oferta-produto');
     var nome = nomeEl ? nomeEl.textContent.trim() : '';
-    var paragrafo = pct
-      ? '<b>' + esc(t.desconto(pct)) + '</b>' + (nome ? '<span>' + esc(nome) + '</span>' : ' ' + t.todos)
-      : (nome ? esc(nome) : t.todos);
 
     var secao = document.createElement('section');
     secao.className = 'nl-bf-hero';
-    secao.setAttribute('aria-label', t.titulo);
-    secao.innerHTML =
-      '<div class="nl-bf-hero-in">' +
-      (pct ? etiquetaSvg(pct) : '') +
-      '<div class="nl-bf-txt">' +
-      '<div class="nl-bf-ey">NEXTLEVEL</div>' +
-      '<div class="nl-bf-wm">BLACK<br>FRIDAY</div>' +
-      '<div class="nl-bf-rule"></div>' +
-      '<p class="nl-bf-p">' + paragrafo + '</p>' +
-      '</div>' +
-      palcoHtml(idioma) +
-      '<div class="nl-bf-act">' +
-      '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s><b>' + esc(precos.por) + '</b></div>' : '') +
-      '<a class="nl-bf-btn" href="' + href + '">' + (ehHome ? t.cta : t.ctaProduto) + '</a>' +
-      '</div>' +
-      '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
-      '<div class="nl-bf-aviso">' + t.aviso + '</div>' +
-      '</div></div>';
-
+    secao.setAttribute('aria-label', 'BLACK FRIDAY');
+    secao.innerHTML = miolo(idioma, t, pct, ehHome ? '#catalogo' : '#oferta', ehHome ? t.cta : t.ctaProduto, nome);
     hero.parentNode.insertBefore(secao, hero);
   }
 
@@ -409,7 +353,7 @@
     if (!oferta.querySelector('.nl-bf-tag-oferta')) {
       var selo = document.createElement('div');
       selo.className = 'nl-bf-tag-oferta';
-      selo.textContent = t.titulo;
+      selo.textContent = 'BLACK FRIDAY';
       oferta.insertBefore(selo, oferta.firstChild);
     }
     if (pct && !oferta.querySelector('.nl-bf-estrela')) {
@@ -433,32 +377,19 @@
   // dentro dele e fecha pelo X, clique fora ou Esc.
   function montarPopup(idioma, t, pct) {
     if (jaMostrouPopupHoje()) return;
-    var precos = precosDoIdioma(idioma);
 
     var overlay = document.createElement('div');
     overlay.className = 'nl-bf-modal-overlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', t.titulo);
-
-    var href = hrefAcao(idioma);
-    var rotuloCta = paginaProduto() ? t.ctaProduto : t.cta;
-    var cta = href
-      ? '<a class="nl-bf-btn nl-bf-modal-cta" href="' + href + '">' + rotuloCta + '</a>'
-      : '<button type="button" class="nl-bf-btn nl-bf-modal-cta">' + rotuloCta + '</button>';
+    overlay.setAttribute('aria-label', 'BLACK FRIDAY');
 
     overlay.innerHTML =
       '<div class="nl-bf-modal-caixa">' +
       '<button type="button" class="nl-bf-modal-fechar" aria-label="' + t.fechar + '">×</button>' +
-      '<div class="nl-bf-ey">NEXTLEVEL</div>' +
-      '<div class="nl-bf-wm">BLACK<br>FRIDAY</div>' +
-      '<div class="nl-bf-rule"></div>' +
-      '<p class="nl-bf-p">' + (pct ? '<b>' + esc(t.desconto(pct)) + '</b> ' : '') + t.todos + '</p>' +
-      '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s><b>' + esc(precos.por) + '</b></div>' : '') +
-      cta + '</div>' +
-      '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
-      '</div>';
+      '<div class="nl-bf-hero">' +
+      miolo(idioma, t, pct, hrefAcao(idioma), paginaProduto() ? t.ctaProduto : t.cta, '') +
+      '</div></div>';
 
     document.body.appendChild(overlay);
 
@@ -499,7 +430,7 @@
 
     botaoFechar.addEventListener('click', fechar);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) fechar(); });
-    overlay.querySelector('.nl-bf-modal-cta').addEventListener('click', fechar);
+    overlay.querySelector('.nl-bf-cta').addEventListener('click', fechar);
 
     setTimeout(abrir, 1500);
   }
