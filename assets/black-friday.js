@@ -222,9 +222,12 @@
     estilo = document.createElement('style');
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
-      '.nl-bf-faixa{display:block;background:#0b1520;color:#fff;font-family:inherit;font-weight:600;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:11px 8px;text-align:center;text-decoration:none;border-bottom:2px solid #0f766e}',
-      '.nl-bf-faixa b{color:#fbbf24;font-weight:800;letter-spacing:.8px}',
-      '.nl-bf-faixa .nl-bf-tempo{color:#5eead4;font-weight:700}',
+      '.nl-bf-faixa{display:flex;align-items:center;justify-content:center;gap:8px;background:#fbbf24;color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px;text-decoration:none}',
+      '.nl-bf-faixa .tit{letter-spacing:.8px}',
+      '.nl-bf-faixa .pil{border-radius:99px;padding:4px 10px;background:#0d1b2a;letter-spacing:.4px}',
+      '.nl-bf-faixa .pil.off{color:#fbbf24}',
+      '.nl-bf-faixa .pil.cont{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}',
+      '@media(max-width:340px){.nl-bf-faixa{gap:6px;font-size:11.5px}.nl-bf-faixa .pil{padding:4px 8px}}',
 
       // ---------- 2) banner de destaque ----------
       '.nl-bf-hero{position:relative;overflow:hidden;background:#0d1b2a;color:#fff;font-family:inherit;border-top:3px solid #0f766e;border-bottom:1px solid rgba(94,234,212,.2);padding:32px 22px 28px}',
@@ -303,9 +306,9 @@
     faixa.className = 'nl-bf-faixa';
     if (href) faixa.setAttribute('href', href);
     faixa.innerHTML =
-      '<b>' + t.titulo + '</b>' +
-      (pct ? ' &nbsp;·&nbsp; ' + pct + '% OFF' : '') +
-      ' &nbsp;·&nbsp; ' + t.termina + ' <span class="nl-bf-tempo"></span>';
+      '<span class="tit">BLACK FRIDAY</span>' +
+      (pct ? '<span class="pil off">-' + pct + '% OFF</span>' : '') +
+      '<span class="pil cont nl-bf-tempo"></span>';
     document.body.insertBefore(faixa, document.body.firstChild);
   }
 
