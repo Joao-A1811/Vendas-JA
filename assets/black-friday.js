@@ -237,8 +237,7 @@
       // ---------- 2) banner de destaque ----------
       '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;font-family:inherit;border-top:3px solid #fbbf24;padding:32px 22px 28px}',
       '.nl-bf-hero-in{position:relative;max-width:1080px;margin:0 auto}',
-      '.nl-bf-ey{color:#ccfbf1;font-size:11px;font-weight:700;letter-spacing:4px}',
-      '.nl-bf-wm{font-family:Poppins,Arial,sans-serif;font-weight:800;font-size:42px;letter-spacing:5px;line-height:1.02;margin:10px 0 0;color:#fbbf24}',
+      '.nl-bf-wm{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:46px;letter-spacing:-1px;line-height:1.04;margin:0;color:#fbbf24}',
       '.nl-bf-rule{width:44px;height:3px;background:#fbbf24;margin:14px 0 12px}',
       '.nl-bf-p{font-size:15px;color:#d5f3ee;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
@@ -264,8 +263,7 @@
       '.nl-bf-tm b{color:#fff;font-weight:700}',
       '.nl-bf-aviso{margin-top:6px;font-size:11px;color:#b6ded7}',
       '.nl-bf-hero{background:transparent;color:#0d1b2a;border:0;border-bottom:3px solid #0d1b2a}',
-      '.nl-bf-hero .nl-bf-ey{color:#0f766e}',
-      '.nl-bf-hero .nl-bf-wm{color:#fbbf24;-webkit-text-stroke:2px #0d1b2a;paint-order:stroke fill;text-shadow:0 3px 0 rgba(13,27,42,.14)}',
+      '.nl-bf-hero .nl-bf-wm{color:#fbbf24;text-shadow:0 1px 0 rgba(13,27,42,.45),0 6px 16px rgba(13,27,42,.22)}',
       '.nl-bf-hero .nl-bf-p{color:#3f5c58}',
       '.nl-bf-hero .nl-bf-p b,.nl-bf-hero .nl-bf-pr b,.nl-bf-hero .nl-bf-tm b{color:#0d1b2a}',
       '.nl-bf-hero .nl-bf-pr s,.nl-bf-hero .nl-bf-aviso{color:#5b6b68}',
@@ -273,8 +271,7 @@
       '.nl-bf-hero .nl-bf-sombra{background:radial-gradient(ellipse,rgba(13,27,42,.28),transparent 70%)}',
       '.nl-bf-hero .nl-bf-btn{box-shadow:0 6px 16px rgba(13,27,42,.2)}',
       '[data-tema="escuro"] .nl-bf-hero{background:transparent;color:#fff;border-bottom-color:#5eead4}',
-      '[data-tema="escuro"] .nl-bf-hero .nl-bf-ey{color:#ccfbf1}',
-      '[data-tema="escuro"] .nl-bf-hero .nl-bf-wm{-webkit-text-stroke:0;text-shadow:none}',
+      '[data-tema="escuro"] .nl-bf-hero .nl-bf-wm{text-shadow:none}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-p{color:#d5f3ee}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-p b,[data-tema="escuro"] .nl-bf-hero .nl-bf-pr b,[data-tema="escuro"] .nl-bf-hero .nl-bf-tm b{color:#fff}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-pr s{color:#a8d4cc}',
@@ -282,10 +279,10 @@
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-tm{border-top-color:rgba(255,255,255,.22);color:#d5f3ee}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-sombra{background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%)}',
 
-      '@media(max-width:360px){.nl-bf-wm{font-size:32px;letter-spacing:3px}.nl-bf-etiqueta{width:96px}.nl-bf-p{max-width:150px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
+      '@media(max-width:360px){.nl-bf-wm{font-size:37px;letter-spacing:-1px}.nl-bf-etiqueta{width:96px}.nl-bf-p{max-width:150px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
       '@media(min-width:820px){.nl-bf-hero{padding:44px 22px}.nl-bf-hero-in{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"txt palco" "act palco";column-gap:48px;align-items:center}',
       '.nl-bf-txt{grid-area:txt}.nl-bf-palco{grid-area:palco;--u:1.25px;margin-top:0}.nl-bf-act{grid-area:act}',
-      '.nl-bf-wm{font-size:60px;letter-spacing:6px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{flex-direction:row;align-items:center;justify-content:flex-start;gap:28px}.nl-bf-btn{display:inline-block}.nl-bf-etiqueta{width:140px;top:-22px;right:6px}}',
+      '.nl-bf-wm{font-size:68px;letter-spacing:-1.5px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{flex-direction:row;align-items:center;justify-content:flex-start;gap:28px}.nl-bf-btn{display:inline-block}.nl-bf-etiqueta{width:140px;top:-22px;right:6px}}',
 
       // ---------- 3) selo nos cards do catálogo ----------
       // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
@@ -312,7 +309,7 @@
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
       '.nl-bf-modal-caixa{position:relative;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #fbbf24;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
-      '.nl-bf-modal-caixa .nl-bf-wm{font-size:36px}',
+      '.nl-bf-modal-caixa .nl-bf-wm{font-size:40px}',
       '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
       '.nl-bf-modal-caixa .nl-bf-linha{flex-direction:column;align-items:stretch;gap:14px}',
       '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%}',
@@ -385,8 +382,7 @@
       '<div class="nl-bf-hero-in">' +
       (pct ? etiquetaSvg(pct, precos && precos.por) : '') +
       '<div class="nl-bf-txt">' +
-      '<div class="nl-bf-ey">NEXTLEVEL</div>' +
-      '<div class="nl-bf-wm">BLACK<br>FRIDAY</div>' +
+      '<div class="nl-bf-wm">Black<br>Friday</div>' +
       '<div class="nl-bf-rule"></div>' +
       '<p class="nl-bf-p">' + paragrafo + '</p>' +
       '</div>' +
@@ -482,8 +478,7 @@
     overlay.innerHTML =
       '<div class="nl-bf-modal-caixa">' +
       '<button type="button" class="nl-bf-modal-fechar" aria-label="' + t.fechar + '">×</button>' +
-      '<div class="nl-bf-ey">NEXTLEVEL</div>' +
-      '<div class="nl-bf-wm">BLACK<br>FRIDAY</div>' +
+      '<div class="nl-bf-wm">Black<br>Friday</div>' +
       '<div class="nl-bf-rule"></div>' +
       '<p class="nl-bf-p">' + (pct ? '<b>' + esc(t.desconto(pct)) + '</b> ' : '') + t.todos + '</p>' +
       '<div class="nl-bf-linha">' +
