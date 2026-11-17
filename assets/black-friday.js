@@ -223,7 +223,7 @@
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
       '.nl-bf-faixa{display:flex;align-items:center;justify-content:center;gap:8px;background:#fbbf24;color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px;text-decoration:none}',
-      '.nl-bf-faixa .tit{letter-spacing:.8px}',
+      '.nl-bf-faixa .tit{font-family:Poppins,Arial,sans-serif;letter-spacing:.8px}',
       '.nl-bf-faixa .pil{border-radius:99px;padding:4px 10px;background:#0d1b2a;letter-spacing:.4px}',
       '.nl-bf-faixa .pil.off{color:#fbbf24}',
       '.nl-bf-faixa .pil.cont{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}',
@@ -233,7 +233,7 @@
       '.nl-bf-hero{position:relative;overflow:hidden;background:#0d1b2a;color:#fff;font-family:inherit;border-top:3px solid #0f766e;border-bottom:1px solid rgba(94,234,212,.2);padding:32px 22px 28px}',
       '.nl-bf-hero-in{position:relative;max-width:1080px;margin:0 auto}',
       '.nl-bf-ey{color:#5eead4;font-size:11px;font-weight:700;letter-spacing:4px}',
-      '.nl-bf-wm{font-weight:800;font-size:44px;letter-spacing:5px;line-height:1.02;margin:10px 0 0;color:#fbbf24}',
+      '.nl-bf-wm{font-family:Poppins,Arial,sans-serif;font-weight:800;font-size:42px;letter-spacing:5px;line-height:1.02;margin:10px 0 0;color:#fbbf24}',
       '.nl-bf-rule{width:44px;height:3px;background:#fbbf24;margin:14px 0 12px}',
       '.nl-bf-p{font-size:15px;color:#b7d5cf;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
@@ -259,10 +259,10 @@
       '.nl-bf-tm b{color:#fff;font-weight:700}',
       '.nl-bf-aviso{margin-top:6px;font-size:11px;color:#7fa39c}',
 
-      '@media(max-width:360px){.nl-bf-wm{font-size:40px}.nl-bf-etiqueta{width:100px}.nl-bf-p{max-width:150px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
+      '@media(max-width:360px){.nl-bf-wm{font-size:32px;letter-spacing:3px}.nl-bf-etiqueta{width:96px}.nl-bf-p{max-width:150px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
       '@media(min-width:820px){.nl-bf-hero{padding:44px 22px}.nl-bf-hero-in{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"txt palco" "act palco";column-gap:48px;align-items:center}',
       '.nl-bf-txt{grid-area:txt}.nl-bf-palco{grid-area:palco;--u:1.25px;margin-top:0}.nl-bf-act{grid-area:act}',
-      '.nl-bf-wm{font-size:64px;letter-spacing:7px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{flex-direction:row;align-items:center;justify-content:flex-start;gap:28px}.nl-bf-btn{display:inline-block}.nl-bf-etiqueta{width:140px;top:-22px;right:6px}}',
+      '.nl-bf-wm{font-size:60px;letter-spacing:6px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{flex-direction:row;align-items:center;justify-content:flex-start;gap:28px}.nl-bf-btn{display:inline-block}.nl-bf-etiqueta{width:140px;top:-22px;right:6px}}',
 
       // ---------- 3) selo nos cards do catálogo ----------
       // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
@@ -278,7 +278,7 @@
       '#oferta .contador .bloco{background:#0d1b2a}',
       '#oferta .contador .bloco b{color:#fbbf24}',
       '#oferta .contador .bloco span{color:#b7d5cf}',
-      '.nl-bf-tag-oferta{display:inline-block;background:#0d1b2a;color:#fbbf24;font-weight:800;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:6px;margin-bottom:14px}',
+      '.nl-bf-tag-oferta{font-family:Poppins,Arial,sans-serif;display:inline-block;background:#0d1b2a;color:#fbbf24;font-weight:800;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:6px;margin-bottom:14px}',
       '.nl-bf-economiza{display:inline-block;background:rgba(245,158,11,.16);color:#92400e;font-weight:800;font-size:13px;padding:6px 14px;border-radius:99px;margin:2px 0 16px}',
       '[data-tema="escuro"] .nl-bf-economiza{color:#fbbf24}',
       '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0d1b2a;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);box-shadow:0 6px 14px rgba(13,27,42,.25);font-family:inherit}',
@@ -289,7 +289,7 @@
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
       '.nl-bf-modal-caixa{position:relative;background:#0d1b2a;color:#fff;border:2px solid #0f766e;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
-      '.nl-bf-modal-caixa .nl-bf-wm{font-size:38px}',
+      '.nl-bf-modal-caixa .nl-bf-wm{font-size:36px}',
       '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
       '.nl-bf-modal-caixa .nl-bf-linha{flex-direction:column;align-items:stretch;gap:14px}',
       '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%}',
@@ -314,7 +314,7 @@
 
   // Etiqueta de preço pendurada (SVG), na cor âmbar do site.
   function etiquetaSvg(pct, preco) {
-    var f = 'font-family="Inter,Arial,sans-serif" fill="#0d1b2a" text-anchor="middle"';
+    var f = 'font-family="Poppins,Arial,sans-serif" fill="#0d1b2a" text-anchor="middle"';
     return '<svg class="nl-bf-etiqueta" viewBox="0 -60 120 220" aria-hidden="true">' +
       '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#fbbf24" stroke-width="2" opacity=".7"/>' +
       '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="#fbbf24" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
