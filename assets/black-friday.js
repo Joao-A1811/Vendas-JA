@@ -222,7 +222,7 @@
     estilo = document.createElement('style');
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
-      '.nl-bf-faixa{display:block;background:#fbbf24;color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px 0;text-decoration:none}',
+      '.nl-bf-faixa{display:block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px 0;text-decoration:none}',
       '.nl-bf-trilho{display:flex;width:max-content;animation:nl-bf-mq 70s linear infinite}',
       '.nl-bf-faixa:hover .nl-bf-trilho{animation-play-state:paused}',
       '.nl-bf-grupo{display:flex;align-items:center;flex:none}',
@@ -235,10 +235,10 @@
       '@media(prefers-reduced-motion:reduce){.nl-bf-trilho{animation:none;width:auto;justify-content:center}.nl-bf-grupo+.nl-bf-grupo{display:none}.nl-bf-grupo .nl-bf-item:nth-child(n+2){display:none}.nl-bf-item{gap:8px;padding-right:0}.nl-bf-faixa .est{display:none}}',
 
       // ---------- 2) banner de destaque ----------
-      '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;font-family:inherit;border-top:3px solid #fbbf24;padding:32px 22px 28px}',
+      '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;font-family:inherit;border-top:3px solid #f5b72a;padding:32px 22px 28px}',
       '.nl-bf-hero-in{position:relative;max-width:1080px;margin:0 auto}',
-      '.nl-bf-wm{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:46px;letter-spacing:-1px;line-height:1.04;margin:0;color:#fbbf24}',
-      '.nl-bf-rule{width:44px;height:3px;background:#fbbf24;margin:14px 0 12px}',
+      '.nl-bf-wm{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:46px;letter-spacing:-1px;line-height:1.04;margin:0;color:#f5b72a}',
+      '.nl-bf-rule{width:44px;height:3px;background:linear-gradient(135deg,#fde68a,#f59e0b);margin:14px 0 12px}',
       '.nl-bf-p{font-size:15px;color:#d5f3ee;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
       '.nl-bf-p span{display:block;margin-top:2px}',
@@ -257,8 +257,8 @@
       '.nl-bf-linha{display:flex;flex-direction:column;align-items:stretch;gap:14px;margin-top:16px}',
       '.nl-bf-pr{display:flex;align-items:baseline;gap:12px}.nl-bf-pr s{color:#a8d4cc;font-size:13px}',
       '.nl-bf-pr b{font-size:34px;font-weight:800;color:#fff;white-space:nowrap;line-height:1.1}',
-      '.nl-bf-btn{display:block;text-align:center;background:#fbbf24;color:#0d1b2a;font-weight:800;font-size:14px;padding:15px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(0,0,0,.3)}',
-      '.nl-bf-btn:hover{background:#fcd34d}',
+      '.nl-bf-btn{display:block;text-align:center;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;font-size:14px;padding:15px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(0,0,0,.3)}',
+      '.nl-bf-btn:hover{background:linear-gradient(135deg,#fff1b8,#f5b72a)}',
       '.nl-bf-tm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);font-size:12px;color:#d5f3ee;letter-spacing:.5px}',
       '.nl-bf-tm b{color:#fff;font-weight:700}',
       '.nl-bf-aviso{margin-top:6px;font-size:11px;color:#b6ded7}',
@@ -271,7 +271,7 @@
       '.nl-bf-hero .nl-bf-sombra{background:radial-gradient(ellipse,rgba(13,27,42,.28),transparent 70%)}',
       '.nl-bf-hero .nl-bf-btn{box-shadow:0 6px 16px rgba(13,27,42,.2)}',
       '[data-tema="escuro"] .nl-bf-hero{background:transparent;color:#fff;border-bottom-color:rgba(94,234,212,.28)}',
-      '[data-tema="escuro"] .nl-bf-hero .nl-bf-wm{color:#fbbf24;text-shadow:none}',
+      '[data-tema="escuro"] .nl-bf-hero .nl-bf-wm{color:#f5b72a;text-shadow:none}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-p{color:#d5f3ee}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-p b,[data-tema="escuro"] .nl-bf-hero .nl-bf-pr b,[data-tema="escuro"] .nl-bf-hero .nl-bf-tm b{color:#fff}',
       '[data-tema="escuro"] .nl-bf-hero .nl-bf-pr s{color:#a8d4cc}',
@@ -288,26 +288,26 @@
       // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
       // larga cabe uma fita diagonal; em tela estreita viraria mais alta
       // que a capa e invadiria o título, então vira selo reto compacto)
-      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:#fbbf24;color:#0d1b2a;font-weight:800;font-size:11px;letter-spacing:.3px;text-align:center;padding:4px 0;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.25);pointer-events:none}',
+      '.nl-bf-fita{position:absolute;top:17px;left:-36px;width:144px;transform:rotate(-45deg);background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;font-size:11px;letter-spacing:.3px;text-align:center;padding:4px 0;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.25);pointer-events:none}',
       '@media(max-width:640px){.nl-bf-fita{top:7px;left:7px;width:auto;transform:none;border-radius:6px;font-size:10.5px;padding:3px 8px;letter-spacing:0}}',
 
       // ---------- 4) caixa de oferta nas páginas de produto ----------
-      '#oferta .oferta{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #fbbf24;box-shadow:0 14px 40px rgba(15,118,110,.28)}',
+      '#oferta .oferta{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #f5b72a;box-shadow:0 14px 40px rgba(15,118,110,.28)}',
       '#oferta .oferta .preco{font-size:clamp(38px,11.5vw,56px);font-weight:800;line-height:1.05;color:#fff}',
-      '#oferta .oferta .produto,[data-tema="escuro"] #oferta .oferta .produto{color:#ccfbf1}','#oferta .oferta .preco-de,[data-tema="escuro"] #oferta .oferta .preco-de{color:#a8d4cc}','[data-tema="escuro"] #oferta .oferta .preco{color:#fff}','#oferta .oferta #btn-checkout{background:#fbbf24;color:#0d1b2a;box-shadow:0 8px 20px rgba(0,0,0,.28)}','#oferta .oferta #btn-checkout:hover{background:#fcd34d}','#oferta .oferta .garantia{background:rgba(255,255,255,.14);color:#fff}','#oferta .oferta .confianca-compra{border-top-color:rgba(255,255,255,.22)}','#oferta .oferta .confianca-compra span{color:#d5f3ee}','#oferta .oferta .badge-pagto{background:rgba(255,255,255,.14);color:#fff}',
+      '#oferta .oferta .produto,[data-tema="escuro"] #oferta .oferta .produto{color:#ccfbf1}','#oferta .oferta .preco-de,[data-tema="escuro"] #oferta .oferta .preco-de{color:#a8d4cc}','[data-tema="escuro"] #oferta .oferta .preco{color:#fff}','#oferta .oferta #btn-checkout{background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;box-shadow:0 8px 20px rgba(0,0,0,.28)}','#oferta .oferta #btn-checkout:hover{background:linear-gradient(135deg,#fff1b8,#f5b72a)}','#oferta .oferta .garantia{background:rgba(255,255,255,.14);color:#fff}','#oferta .oferta .confianca-compra{border-top-color:rgba(255,255,255,.22)}','#oferta .oferta .confianca-compra span{color:#d5f3ee}','#oferta .oferta .badge-pagto{background:rgba(255,255,255,.14);color:#fff}',
       '#oferta .contador .bloco{background:#0d1b2a}',
       '#oferta .contador .bloco b{color:#5eead4}',
       '#oferta .contador .bloco span{color:#b7d5cf}',
-      '.nl-bf-tag-oferta{font-family:Poppins,Arial,sans-serif;display:inline-block;background:#fbbf24;color:#0d1b2a;font-weight:800;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:6px;margin-bottom:14px}',
+      '.nl-bf-tag-oferta{font-family:Poppins,Arial,sans-serif;display:inline-block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;letter-spacing:3px;font-size:11px;padding:7px 14px;border-radius:6px;margin-bottom:14px}',
       '.nl-bf-economiza{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;padding:6px 14px;border-radius:99px;margin:2px 0 16px}',
       
-      '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:62px;height:62px;border-radius:50%;background:#fbbf24;color:#0d1b2a;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);box-shadow:0 6px 14px rgba(13,27,42,.25);font-family:inherit}',
+      '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);box-shadow:0 6px 14px rgba(13,27,42,.25);font-family:inherit}',
       '@media(max-width:520px){#oferta .oferta{padding:34px 16px 28px}.nl-bf-estrela{width:54px;height:54px;font-size:15px;top:8px;right:8px}}',
 
       // ---------- 5) pop-up diário ----------
       '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,12,20,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
-      '.nl-bf-modal-caixa{position:relative;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #fbbf24;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
+      '.nl-bf-modal-caixa{position:relative;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #f5b72a;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
       '.nl-bf-modal-caixa .nl-bf-wm{font-size:40px}',
       '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
@@ -340,8 +340,9 @@
   function etiquetaSvg(pct, preco) {
     var f = 'font-family="Poppins,Arial,sans-serif" fill="#0d1b2a" text-anchor="middle"';
     return '<svg class="nl-bf-etiqueta" viewBox="0 -60 120 220" aria-hidden="true">' +
-      '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#fbbf24" stroke-width="2" opacity=".8"/>' +
-      '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="#fbbf24" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<defs><linearGradient id="nlbfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>' +
+      '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#f5b72a" stroke-width="2" opacity=".8"/>' +
+      '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="url(#nlbfg)" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
       '<circle cx="60" cy="30" r="6" fill="#0d1b2a"/>' +
       '<text x="60" y="74" ' + f + ' font-weight="800" font-size="9" letter-spacing="1.6">BLACK FRIDAY</text>' +
       '<line x1="26" y1="82" x2="94" y2="82" stroke="#0d1b2a" stroke-width="1.5"/>' +
