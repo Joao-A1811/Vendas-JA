@@ -17,3 +17,14 @@ html body{
   -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 64px,#000 calc(100% - 120px),transparent 100%);
   mask-image:linear-gradient(180deg,transparent 0,#000 64px,#000 calc(100% - 120px),transparent 100%);
 }
+
+/* ===== Amarelo único em degradê dourado (mesmo da Black Friday) =====
+   Botões de compra, selo NOVO, links "Saiba mais", estrelas e brilhos laranja. */
+.btn-solid,.btn-primary{background:linear-gradient(135deg,#fde68a,#f59e0b)}
+.capas-stack .selo-novo{background:linear-gradient(135deg,#fde68a,#f59e0b)}
+.card .cta,[data-tema="escuro"] .card .cta,.depoimento .estrelas,.nl-av-estrelas{
+  background:linear-gradient(90deg,#f7b32b,#e0870a);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent!important;
+}
+.hero::before{background:linear-gradient(135deg,#fde68a,#f59e0b)}

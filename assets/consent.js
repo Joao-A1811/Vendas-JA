@@ -54,7 +54,7 @@
     '#nl-consent a{color:#0f766e;font-weight:600}' +
     '#nl-consent .nl-botoes{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}' +
     '#nl-consent button{cursor:pointer;border:none;border-radius:9px;padding:9px 20px;font-size:13.5px;font-weight:700;font-family:inherit}' +
-    '#nl-consent .nl-sim{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#2b1a00}' +
+    '#nl-consent .nl-sim{background:linear-gradient(135deg,#fde68a,#f59e0b);color:#2b1a00}' +
     '#nl-consent .nl-nao{background:#eef6f5;color:#0f766e}' +
     // Empurra a barra fixa de compra (se a página tiver uma) pra cima do
     // banner enquanto ele estiver aberto — sem isso, o banner cobre quase
