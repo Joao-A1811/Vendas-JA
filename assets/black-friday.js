@@ -235,7 +235,7 @@
       '.nl-bf-p{font-size:15px;color:#b7d5cf;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
       '.nl-bf-p span{display:block;margin-top:2px}',
-      '.nl-bf-etiqueta{position:absolute;right:0;top:-6px;width:74px;overflow:visible;transform:rotate(6deg);transform-origin:50% 0;z-index:3;filter:drop-shadow(0 8px 8px rgba(0,0,0,.3))}',
+      '.nl-bf-etiqueta{position:absolute;right:0;top:-6px;width:116px;overflow:visible;transform:rotate(6deg);transform-origin:50% 0;z-index:8;filter:drop-shadow(0 8px 8px rgba(0,0,0,.3))}',
 
       // capas em leque (--u escala tudo junto no desktop)
       '.nl-bf-palco{--u:1px;position:relative;height:calc(230*var(--u));margin-top:6px}',
@@ -247,19 +247,19 @@
       '.nl-bf-livro.dir{width:calc(104*var(--u));left:calc(50% + 20*var(--u));bottom:calc(12*var(--u));transform:rotate(6deg);z-index:2}',
       '.nl-bf-livro.cen{width:calc(124*var(--u));left:calc(50% - 62*var(--u));bottom:calc(6*var(--u));z-index:3}',
 
-      '.nl-bf-linha{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}',
-      '.nl-bf-pr s{display:block;color:#8aa7a3;font-size:13px}',
-      '.nl-bf-pr b{display:block;font-size:34px;font-weight:800;color:#fff;white-space:nowrap;line-height:1.1}',
-      '.nl-bf-btn{display:inline-block;background:#fbbf24;color:#0d1b2a;font-weight:800;font-size:14px;padding:15px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(0,0,0,.3)}',
+      '.nl-bf-linha{display:flex;flex-direction:column;align-items:stretch;gap:14px;margin-top:16px}',
+      '.nl-bf-pr{display:flex;align-items:baseline;gap:12px}.nl-bf-pr s{color:#8aa7a3;font-size:13px}',
+      '.nl-bf-pr b{font-size:34px;font-weight:800;color:#fff;white-space:nowrap;line-height:1.1}',
+      '.nl-bf-btn{display:block;text-align:center;background:#fbbf24;color:#0d1b2a;font-weight:800;font-size:14px;padding:15px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(0,0,0,.3)}',
       '.nl-bf-btn:hover{background:#fcd34d}',
       '.nl-bf-tm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(94,234,212,.2);font-size:12px;color:#9fd9d1;letter-spacing:.5px}',
       '.nl-bf-tm b{color:#fff;font-weight:700}',
       '.nl-bf-aviso{margin-top:6px;font-size:11px;color:#7fa39c}',
 
-      '@media(max-width:360px){.nl-bf-wm{font-size:40px}.nl-bf-etiqueta{width:66px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
+      '@media(max-width:360px){.nl-bf-wm{font-size:40px}.nl-bf-etiqueta{width:100px}.nl-bf-p{max-width:150px}.nl-bf-pr b{font-size:28px}.nl-bf-btn{padding:14px 14px;font-size:13px}}',
       '@media(min-width:820px){.nl-bf-hero{padding:44px 22px}.nl-bf-hero-in{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"txt palco" "act palco";column-gap:48px;align-items:center}',
       '.nl-bf-txt{grid-area:txt}.nl-bf-palco{grid-area:palco;--u:1.25px;margin-top:0}.nl-bf-act{grid-area:act}',
-      '.nl-bf-wm{font-size:64px;letter-spacing:7px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{justify-content:flex-start;gap:28px}.nl-bf-etiqueta{width:92px;top:-18px;right:34px}}',
+      '.nl-bf-wm{font-size:64px;letter-spacing:7px}.nl-bf-p{font-size:18px;max-width:380px}.nl-bf-pr b{font-size:44px}.nl-bf-linha{flex-direction:row;align-items:center;justify-content:flex-start;gap:28px}.nl-bf-btn{display:inline-block}.nl-bf-etiqueta{width:140px;top:-22px;right:6px}}',
 
       // ---------- 3) selo nos cards do catálogo ----------
       // (a capa do card é uma faixa baixa, aspect-ratio 5.6/1: em tela
@@ -289,7 +289,6 @@
       '.nl-bf-modal-caixa .nl-bf-wm{font-size:38px}',
       '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
       '.nl-bf-modal-caixa .nl-bf-linha{flex-direction:column;align-items:stretch;gap:14px}',
-      '.nl-bf-modal-caixa .nl-bf-btn{text-align:center}',
       '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%}',
       '.nl-bf-modal-fechar:hover{background:rgba(255,255,255,.22)}',
       'body.nl-bf-trava{overflow:hidden}',
@@ -311,13 +310,16 @@
   }
 
   // Etiqueta de preço pendurada (SVG), na cor âmbar do site.
-  function etiquetaSvg(pct) {
+  function etiquetaSvg(pct, preco) {
+    var f = 'font-family="Inter,Arial,sans-serif" fill="#0d1b2a" text-anchor="middle"';
     return '<svg class="nl-bf-etiqueta" viewBox="0 -60 120 220" aria-hidden="true">' +
       '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#fbbf24" stroke-width="2" opacity=".7"/>' +
       '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="#fbbf24" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
-      '<circle cx="60" cy="30" r="6" fill="#0d1b2a" stroke="#0d1b2a" stroke-width="2.5"/>' +
-      '<text x="60" y="108" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="34" letter-spacing="-1" fill="#0d1b2a">-' + pct + '%</text>' +
-      '<text x="60" y="134" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#0d1b2a">OFF</text></svg>';
+      '<circle cx="60" cy="30" r="6" fill="#0d1b2a"/>' +
+      '<text x="60" y="74" ' + f + ' font-weight="800" font-size="9" letter-spacing="1.6">BLACK FRIDAY</text>' +
+      '<line x1="26" y1="82" x2="94" y2="82" stroke="#0d1b2a" stroke-width="1.5"/>' +
+      '<text x="60" y="116" ' + f + ' font-weight="900" font-size="30" letter-spacing="-1">-' + pct + '%</text>' +
+      (preco ? '<text x="60" y="140" ' + f + ' font-weight="800" font-size="11">' + esc(preco) + '</text>' : '') + '</svg>';
   }
 
   function palcoHtml(idioma) {
@@ -351,7 +353,7 @@
     secao.setAttribute('aria-label', t.titulo);
     secao.innerHTML =
       '<div class="nl-bf-hero-in">' +
-      (pct ? etiquetaSvg(pct) : '') +
+      (pct ? etiquetaSvg(pct, precos && precos.por) : '') +
       '<div class="nl-bf-txt">' +
       '<div class="nl-bf-ey">NEXTLEVEL</div>' +
       '<div class="nl-bf-wm">BLACK<br>FRIDAY</div>' +
@@ -361,7 +363,7 @@
       palcoHtml(idioma) +
       '<div class="nl-bf-act">' +
       '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s><b>' + esc(precos.por) + '</b></div>' : '') +
+      (precos ? '<div class="nl-bf-pr"><b>' + esc(precos.por) + '</b><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s></div>' : '') +
       '<a class="nl-bf-btn" href="' + href + '">' + (ehHome ? t.cta : t.ctaProduto) + '</a>' +
       '</div>' +
       '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
@@ -455,7 +457,7 @@
       '<div class="nl-bf-rule"></div>' +
       '<p class="nl-bf-p">' + (pct ? '<b>' + esc(t.desconto(pct)) + '</b> ' : '') + t.todos + '</p>' +
       '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s><b>' + esc(precos.por) + '</b></div>' : '') +
+      (precos ? '<div class="nl-bf-pr"><b>' + esc(precos.por) + '</b><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s></div>' : '') +
       cta + '</div>' +
       '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
       '</div>';
