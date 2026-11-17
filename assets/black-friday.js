@@ -222,12 +222,17 @@
     estilo = document.createElement('style');
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
-      '.nl-bf-faixa{display:flex;align-items:center;justify-content:center;gap:8px;background:#fbbf24;color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px;text-decoration:none}',
-      '.nl-bf-faixa .tit{font-family:Poppins,Arial,sans-serif;letter-spacing:.8px}',
-      '.nl-bf-faixa .pil{border-radius:99px;padding:4px 10px;background:#0d1b2a;letter-spacing:.4px}',
-      '.nl-bf-faixa .pil.off{color:#fff}',
-      '.nl-bf-faixa .pil.cont{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}',
-      '@media(max-width:340px){.nl-bf-faixa{gap:6px;font-size:11.5px}.nl-bf-faixa .pil{padding:4px 8px}}',
+      '.nl-bf-faixa{display:block;background:#fbbf24;color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px 0;text-decoration:none}',
+      '.nl-bf-trilho{display:flex;width:max-content;animation:nl-bf-mq 70s linear infinite}',
+      '.nl-bf-faixa:hover .nl-bf-trilho{animation-play-state:paused}',
+      '.nl-bf-grupo{display:flex;align-items:center;flex:none}',
+      '.nl-bf-item{display:flex;align-items:center;gap:28px;padding-right:28px}',
+      '.nl-bf-faixa .tit{font-family:Poppins,Arial,sans-serif;letter-spacing:1px}',
+      '.nl-bf-faixa .pil{border-radius:99px;padding:4px 10px;background:#0d1b2a;color:#fff;letter-spacing:.4px}',
+      '.nl-bf-faixa .pil.cont{font-weight:700;font-variant-numeric:tabular-nums}',
+      '.nl-bf-faixa .est{font-size:11px}',
+      '@keyframes nl-bf-mq{to{transform:translateX(-50%)}}',
+      '@media(prefers-reduced-motion:reduce){.nl-bf-trilho{animation:none;width:auto;justify-content:center}.nl-bf-grupo+.nl-bf-grupo{display:none}.nl-bf-grupo .nl-bf-item:nth-child(n+2){display:none}.nl-bf-item{gap:8px;padding-right:0}.nl-bf-faixa .est{display:none}}',
 
       // ---------- 2) banner de destaque ----------
       '.nl-bf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;font-family:inherit;border-top:3px solid #fbbf24;padding:32px 22px 28px}',
@@ -323,10 +328,14 @@
     var faixa = document.createElement(href ? 'a' : 'div');
     faixa.className = 'nl-bf-faixa';
     if (href) faixa.setAttribute('href', href);
-    faixa.innerHTML =
-      '<span class="tit">BLACK FRIDAY</span>' +
-      (pct ? '<span class="pil off">-' + pct + '% OFF</span>' : '') +
-      '<span class="pil cont nl-bf-tempo"></span>';
+    faixa.setAttribute('aria-label', 'BLACK FRIDAY' + (pct ? ' -' + pct + '% OFF' : ''));
+    var item = '<span class="nl-bf-item"><span class="tit">BLACK FRIDAY</span>' +
+      (pct ? '<span class="pil">-' + pct + '% OFF</span>' : '') +
+      '<span class="pil cont nl-bf-tempo"></span><span class="est">\u2605</span></span>';
+    var grupo = '';
+    for (var i = 0; i < 8; i++) grupo += item;
+    faixa.innerHTML = '<div class="nl-bf-trilho" aria-hidden="true"><div class="nl-bf-grupo">' + grupo +
+      '</div><div class="nl-bf-grupo" aria-hidden="true">' + grupo + '</div></div>';
     document.body.insertBefore(faixa, document.body.firstChild);
   }
 
