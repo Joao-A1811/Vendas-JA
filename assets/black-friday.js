@@ -86,26 +86,26 @@
   var TEXTOS = {
     pt: {
       titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', por: 'por', em: 'em',
-      popTexto: function (p) { return 'Todos os guias com <b>' + p + '% de desconto</b>, só até segunda-feira.'; }, todos: 'em todos os guias',
+      popTexto: function (p) { return 'Todos os guias com <b>' + p + '% de desconto</b>, só até 30/11.'; }, todos: 'em todos os guias',
       desconto: function (p) { return p + '% de desconto'; },
       cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
-      aviso: 'Oferta de Black Friday até segunda-feira (Cyber Monday)', economiza: 'Você economiza',
+      aviso: 'Oferta de Black Friday até 30/11', economiza: 'Você economiza',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     en: {
       titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', por: 'now', em: 'on',
-      popTexto: function (p) { return 'Every guide <b>' + p + '% off</b>, only until Monday.'; }, todos: 'on every guide',
+      popTexto: function (p) { return 'Every guide <b>' + p + '% off</b>, only until Nov 30.'; }, todos: 'on every guide',
       desconto: function (p) { return p + '% off'; },
       cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
-      aviso: 'Black Friday offer until Monday (Cyber Monday)', economiza: 'You save',
+      aviso: 'Black Friday offer until Nov 30', economiza: 'You save',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     es: {
       titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', por: 'por', em: 'en',
-      popTexto: function (p) { return 'Todas las guías con <b>' + p + '% de descuento</b>, solo hasta el lunes.'; }, todos: 'en todas las guías',
+      popTexto: function (p) { return 'Todas las guías con <b>' + p + '% de descuento</b>, solo hasta el 30/11.'; }, todos: 'en todas las guías',
       desconto: function (p) { return p + '% de descuento'; },
       cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
-      aviso: 'Oferta de Black Friday hasta el lunes (Cyber Monday)', economiza: 'Ahorras',
+      aviso: 'Oferta de Black Friday hasta el 30/11', economiza: 'Ahorras',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
   };
