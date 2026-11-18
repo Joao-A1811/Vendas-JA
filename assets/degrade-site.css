@@ -97,3 +97,38 @@ a.nl-inicio:hover{opacity:.7}
 [data-tema="escuro"] .lead input,[data-tema="escuro"] .lead select{background-color:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.16)}
 [data-tema="escuro"] .lead select option{color:#0d1b2a}
 [data-tema="escuro"] .lead select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235eead4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+
+/* ===== Seletor de tema personalizado (assets/seletor-lead.js) ===== */
+.nl-sel{position:relative}
+.nl-sel-nativo{position:absolute!important;opacity:0;pointer-events:none;width:1px!important;height:1px!important;padding:0!important;border:0!important;bottom:0;left:0}
+.nl-sel-btn{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;color:#0d1b2a;border:1px solid rgba(13,27,42,.12);border-radius:14px;padding:11px 16px;font-family:inherit;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease}
+.nl-sel-btn:hover{border-color:rgba(15,118,110,.45)}
+.nl-sel-btn:focus-visible,.nl-sel.aberto .nl-sel-btn{outline:none;border-color:#0f766e;box-shadow:0 0 0 3px rgba(15,118,110,.15)}
+.nl-sel-ico{flex:none;width:34px;height:34px;padding:8px;border-radius:10px;background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff}
+.nl-sel-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.nl-sel-txt b{font-size:14.5px;font-weight:700;color:#0d1b2a}
+.nl-sel-txt small{font-size:12px;color:#5b6b68;margin-top:2px}
+.nl-sel-seta{flex:none;width:12px;height:8px;color:#0f766e;transition:transform .2s ease}
+.nl-sel.aberto .nl-sel-seta{transform:rotate(180deg)}
+.nl-sel-lista{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:30;list-style:none;margin:0;padding:6px;background:#fff;border:1px solid rgba(13,27,42,.08);border-radius:16px;box-shadow:0 20px 44px rgba(13,27,42,.18);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s;outline:none}
+.nl-sel.aberto .nl-sel-lista{opacity:1;visibility:visible;transform:none;transition:opacity .18s ease,transform .18s ease}
+.nl-sel-lista li{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:11px;cursor:pointer}
+.nl-sel-lista li .nl-sel-ico{width:32px;height:32px;padding:7px;background:rgba(15,118,110,.1);color:#0f766e}
+.nl-sel-lista li:hover,.nl-sel-lista li.nl-sel-foco{background:rgba(15,118,110,.08)}
+.nl-sel-ok{flex:none;width:18px;height:18px;color:#0f766e;opacity:0}
+.nl-sel-lista li[aria-selected="true"] .nl-sel-ok{opacity:1}
+.nl-sel-lista li[aria-selected="true"] .nl-sel-ico{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff}
+[data-tema="escuro"] .nl-sel-btn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .nl-sel-txt b{color:#fff}
+[data-tema="escuro"] .nl-sel-txt small{color:#9fc4bd}
+[data-tema="escuro"] .nl-sel-seta{color:#5eead4}
+[data-tema="escuro"] .nl-sel-lista{background:#132a3e;border-color:rgba(255,255,255,.1)}
+[data-tema="escuro"] .nl-sel-lista li:hover,[data-tema="escuro"] .nl-sel-lista li.nl-sel-foco{background:rgba(255,255,255,.06)}
+[data-tema="escuro"] .nl-sel-lista li .nl-sel-ico{background:rgba(94,234,212,.12);color:#5eead4}
+[data-tema="escuro"] .nl-sel-ok{color:#5eead4}
+/* o seletor fica dentro de .lead: impede que herde o estilo do botão "Quero receber" e do <small> do rodapé do form */
+.lead .nl-sel-btn{background:#fff;color:#0d1b2a;box-shadow:none;padding:11px 16px;border-radius:14px;font-weight:400;filter:none}
+.lead .nl-sel-btn:hover{filter:none}
+.lead .nl-sel-txt small,.lead .nl-sel-lista small{color:#5b6b68!important;font-size:12px}
+[data-tema="escuro"] .lead .nl-sel-btn{background:rgba(255,255,255,.08)}
+[data-tema="escuro"] .lead .nl-sel-txt small{color:#9fc4bd!important}
