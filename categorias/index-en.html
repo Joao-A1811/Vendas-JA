@@ -180,6 +180,7 @@ header.topo .container{max-width:1080px;padding:0 24px;display:flex;align-items:
 header.topo .logo{font-family:'Poppins',Arial,sans-serif;font-weight:800;font-size:18px;letter-spacing:3px;color:#0d1b2a;text-decoration:none}
 header.topo .logo b{color:#0f766e}
 header.topo nav.menu{display:flex;gap:22px;font-size:13.5px;font-weight:600}
+header.topo nav.menu{visibility:hidden}
 header.topo nav.menu a{color:var(--texto-suave);text-decoration:none}
 header.topo nav.menu a:hover,header.topo nav.menu a.atual{color:#0f766e}
 header.topo .container{position:relative}
@@ -194,7 +195,6 @@ header.topo .idioma-btn{min-height:40px;padding:9px 12px}
 header.topo .menu-inicio .mi-ico{display:none}
 @media(max-width:680px){header.topo .menu-inicio{left:calc(100% + 10px);padding-left:10px;display:inline-flex;align-items:center}header.topo .menu-inicio span{display:none}header.topo .menu-inicio .mi-ico{display:block}}
 @media(max-width:339px){header.topo .menu-inicio{display:none}}
-@media(min-width:681px) and (max-width:960px){header.topo .menu-inicio{display:none}}
 [data-tema="escuro"] header.topo .logo{color:#fff}
 [data-tema="escuro"] header.topo .logo b{color:#5eead4}
 [data-tema="escuro"] header.topo nav.menu a.atual,[data-tema="escuro"] header.topo nav.menu a:hover{color:#5eead4}
@@ -206,8 +206,9 @@ header.topo .menu-inicio .mi-ico{display:none}
 <header class="topo">
   <div class="container">
     <span class="marca-wrap"><a class="logo" href="/index-en.html">NEXT<b>LEVEL</b></a><a class="menu-inicio" href="/index-en.html" aria-label="Home"><svg class="mi-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg><span>Home</span></a></span>
-    <nav class="menu">
+    <nav class="menu" aria-hidden="true">
       <a href="/index-en.html#catalogo">Catalog</a>
+      <a>Categories</a>
       <a href="/index-en.html#como">How it works</a>
       <a href="/index-en.html#lead">Free material</a>
     </nav>
