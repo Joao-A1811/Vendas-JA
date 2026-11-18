@@ -172,17 +172,46 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 [data-tema="escuro"] .card .preco s{color:#7fa39c}
 [data-tema="escuro"] .voltar{color:#5eead4}
 [data-tema="escuro"] .voltar:hover{color:#fff}
+
+/* ===== Cabeçalho idêntico ao da home (mesmas medidas/posições); só muda o "Início" ===== */
+header.topo{position:sticky;top:0;z-index:50;background:rgba(247,251,250,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:14px 0}
+[data-tema="escuro"] header.topo{background:rgba(13,27,42,.92)}
+header.topo .container{max-width:1080px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.topo .logo{font-family:'Poppins',Arial,sans-serif;font-weight:800;font-size:18px;letter-spacing:3px;color:#0d1b2a;text-decoration:none}
+header.topo .logo b{color:#0f766e}
+header.topo nav.menu{display:flex;gap:22px;font-size:13.5px;font-weight:600}
+header.topo nav.menu a{color:var(--texto-suave);text-decoration:none}
+header.topo nav.menu a:hover,header.topo nav.menu a.atual{color:#0f766e}
+header.topo .container{position:relative}
+header.topo .marca-wrap{position:relative;display:inline-flex;align-items:center}
+header.topo .menu-inicio{position:absolute;left:calc(100% + 14px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12.5px;font-weight:600;color:var(--texto-suave);text-decoration:none;padding-left:12px;border-left:1px solid rgba(13,27,42,.16);line-height:1.1}
+header.topo .menu-inicio:hover{color:#0f766e}
+[data-tema="escuro"] header.topo .menu-inicio{border-left-color:rgba(255,255,255,.2)}
+header.topo .tema-toggle{width:40px;height:40px;font-size:16px;margin:0}
+header.topo .idioma-btn{min-height:40px;padding:9px 12px}
+@media(max-width:680px){header.topo nav.menu{display:none}header.topo .container{gap:8px}header.topo .logo{font-size:15px;letter-spacing:1.5px}}
+@media(max-width:340px){header.topo .container{padding:0 14px;gap:6px}}
+header.topo .menu-inicio .mi-ico{display:none}
+@media(max-width:680px){header.topo .menu-inicio{left:calc(100% + 10px);padding-left:10px;display:inline-flex;align-items:center}header.topo .menu-inicio span{display:none}header.topo .menu-inicio .mi-ico{display:block}}
+@media(max-width:339px){header.topo .menu-inicio{display:none}}
+@media(min-width:681px) and (max-width:960px){header.topo .menu-inicio{display:none}}
+[data-tema="escuro"] header.topo .logo{color:#fff}
+[data-tema="escuro"] header.topo .logo b{color:#5eead4}
+[data-tema="escuro"] header.topo nav.menu a.atual,[data-tema="escuro"] header.topo nav.menu a:hover{color:#5eead4}
 </style>
 <link rel="stylesheet" href="/assets/degrade-site.css">
 </head>
 <body>
 
-<header class="header">
+<header class="topo">
   <div class="container">
-    <div class="marca-grupo">
-      <h1><a href="/index-en.html">NextLevel</a></h1>
-      <a class="nl-inicio" href="/index-en.html">Home</a>
-    </div>
+    <span class="marca-wrap"><a class="logo" href="/index-en.html">NEXT<b>LEVEL</b></a><a class="menu-inicio" href="/index-en.html" aria-label="Home"><svg class="mi-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg><span>Home</span></a></span>
+    <nav class="menu">
+      <a href="/index-en.html#catalogo">Catalog</a>
+      <a class="atual" aria-current="page">Categories</a>
+      <a href="/index-en.html#como">How it works</a>
+      <a href="/index-en.html#lead">Free material</a>
+    </nav>
     <nav class="idiomas">
       <div class="idioma-seletor" id="idioma-seletor">
         <button type="button" class="idioma-btn" id="idioma-btn" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
