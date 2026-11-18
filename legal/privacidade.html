@@ -49,9 +49,9 @@ h1,h2{font-family:'Poppins',Arial,sans-serif}
 .idioma-item.atual{background:rgba(15,118,110,.1);color:var(--roxo)}
 .idioma-item .idioma-check{margin-left:auto;flex-shrink:0}
 .tema-toggle:hover{color:var(--roxo);border-color:var(--roxo)}
-.topo{background:linear-gradient(160deg,var(--roxo),var(--rosa));color:#fff;padding:44px 0;text-align:center}
-.topo h1{font-size:clamp(22px,4vw,32px)}
-.topo p{color:#d9f7f0;font-size:13px;margin-top:8px}
+.topo-legal{background:linear-gradient(160deg,var(--roxo),var(--rosa));color:#fff;padding:44px 0;text-align:center}
+.topo-legal h1{font-size:clamp(22px,4vw,32px)}
+.topo-legal p{color:#d9f7f0;font-size:13px;margin-top:8px}
 main{padding:40px 0 60px}
 main h2{font-size:19px;margin:32px 0 10px;color:var(--roxo)}
 main p, main li{color:var(--texto-suave);margin-bottom:10px}
@@ -69,7 +69,7 @@ main a{color:var(--roxo);font-weight:600}
 [data-tema="escuro"] .idioma-menu{background:#132a3e;border-color:rgba(94,234,212,.14);box-shadow:0 12px 32px rgba(0,0,0,.45)}
 [data-tema="escuro"] .idioma-item:hover{background:rgba(94,234,212,.08)}
 [data-tema="escuro"] .idioma-item.atual{background:rgba(94,234,212,.12)}
-[data-tema="escuro"] .topo{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
+[data-tema="escuro"] .topo-legal{background:linear-gradient(160deg,#0d1b2a 0%,#13293d 55%,#0f766e 140%)}
 [data-tema="escuro"] .topo p{color:#cfe8e3}
 [data-tema="escuro"] main h2{color:#5eead4}
 [data-tema="escuro"] main a{color:#5eead4}
@@ -80,10 +80,16 @@ main a{color:var(--roxo);font-weight:600}
 </head>
 <body>
 
-<header class="header">
+<header class="topo interno">
   <div class="container">
-    <a class="marca" href="/">NextLevel</a>
-    <nav class="idiomas">
+    <span class="marca-wrap"><a class="logo" href="/">NEXT<b>LEVEL</b></a><a class="menu-inicio" href="/" aria-label="Início"><svg class="mi-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg><span>Início</span></a></span>
+    <nav class="menu" aria-hidden="true">
+      <a>Catálogo</a>
+      <a>Categorias</a>
+      <a>Como funciona</a>
+      <a>Material gratuito</a>
+    </nav>
+    <nav class="idiomas" id="idiomas">
       <div class="idioma-seletor" id="idioma-seletor">
         <button type="button" class="idioma-btn" id="idioma-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma">
           <span class="idioma-bandeira">🇧🇷</span><span>PT</span>
@@ -91,12 +97,12 @@ main a{color:var(--roxo);font-weight:600}
         </button>
         <div class="idioma-menu" id="idioma-menu" role="menu"></div>
       </div>
-      <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
     </nav>
+    <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
   </div>
 </header>
 
-<section class="topo">
+<section class="topo-legal">
   <div class="container">
     <h1>Política de Privacidade</h1>
     <p>Última atualização: 1º de julho de 2026</p>
