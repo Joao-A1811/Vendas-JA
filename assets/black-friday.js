@@ -85,21 +85,24 @@
 
   var TEXTOS = {
     pt: {
-      titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', por: 'por', em: 'em', todos: 'em todos os guias',
+      titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', por: 'por', em: 'em',
+      popTexto: function (p) { return 'Todos os guias com <b>' + p + '% de desconto</b>, só até segunda-feira.'; }, todos: 'em todos os guias',
       desconto: function (p) { return p + '% de desconto'; },
       cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
       aviso: 'Oferta de Black Friday até segunda-feira (Cyber Monday)', economiza: 'Você economiza',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     en: {
-      titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', por: 'now', em: 'on', todos: 'on every guide',
+      titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', por: 'now', em: 'on',
+      popTexto: function (p) { return 'Every guide <b>' + p + '% off</b>, only until Monday.'; }, todos: 'on every guide',
       desconto: function (p) { return p + '% off'; },
       cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
       aviso: 'Black Friday offer until Monday (Cyber Monday)', economiza: 'You save',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     es: {
-      titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', por: 'por', em: 'en', todos: 'en todas las guías',
+      titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', por: 'por', em: 'en',
+      popTexto: function (p) { return 'Todas las guías con <b>' + p + '% de descuento</b>, solo hasta el lunes.'; }, todos: 'en todas las guías',
       desconto: function (p) { return p + '% de descuento'; },
       cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
       aviso: 'Oferta de Black Friday hasta el lunes (Cyber Monday)', economiza: 'Ahorras',
@@ -326,13 +329,23 @@
       // ---------- 5) pop-up diário ----------
       '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,12,20,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
-      '.nl-bf-modal-caixa{position:relative;background:linear-gradient(160deg,#0f766e 0%,#0c5c56 55%,#0a4540 100%);color:#fff;border:2px solid #f5b72a;border-radius:18px;max-width:380px;width:100%;padding:28px 22px 22px;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.5);transform:scale(.94);transition:transform .25s ease;overflow:hidden}',
+      '.nl-bf-modal-caixa{position:relative;display:flex;background:#fff;color:#0d1b2a;border-radius:22px;max-width:640px;width:100%;overflow:hidden;font-family:inherit;box-shadow:0 24px 70px rgba(0,0,0,.4);transform:scale(.94);transition:transform .25s ease;max-height:calc(100vh - 32px);overflow-y:auto}',
       '.nl-bf-modal-overlay.nl-bf-aberto .nl-bf-modal-caixa{transform:scale(1)}',
-      '.nl-bf-modal-caixa .nl-bf-wm{font-size:40px}',
-      '.nl-bf-modal-caixa .nl-bf-p{max-width:none}',
-      '.nl-bf-modal-caixa .nl-bf-linha{flex-direction:column;align-items:stretch;gap:14px}',
-      '.nl-bf-modal-fechar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;width:38px;height:38px;border-radius:50%}',
-      '.nl-bf-modal-fechar:hover{background:rgba(255,255,255,.22)}',
+      '.nl-bf-modal-capas{flex:0 0 250px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#d9f3ee,#a7e3d8);padding:20px 0}',
+      '.nl-bf-modal-capas .nl-bf-palco{--u:.78px;width:100%;margin:0}',
+      '.nl-bf-modal-capas .nl-bf-sombra{background:radial-gradient(ellipse,rgba(13,27,42,.3),transparent 70%)}',
+      '.nl-bf-modal-corpo{flex:1;padding:34px 28px 26px}',
+      '.nl-bf-modal-selo{display:inline-block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;font-size:11px;letter-spacing:3px;padding:6px 12px;border-radius:7px}',
+      '.nl-bf-modal-tit{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:34px;line-height:1.05;letter-spacing:-.6px;margin:12px 0 8px}',
+      '.nl-bf-modal-txt{margin:0;font-size:15px;line-height:1.45;color:#3f5c58}.nl-bf-modal-txt b{color:#0d1b2a}',
+      '.nl-bf-modal-pr{display:flex;align-items:baseline;gap:10px;margin:14px 0 16px}.nl-bf-modal-pr b{font-size:32px;font-weight:800;white-space:nowrap}.nl-bf-modal-pr s{font-size:14px;color:#5b6b68}',
+      '.nl-bf-modal-cta{display:block;width:100%;text-align:center;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:700;font-size:15px;padding:14px;border-radius:12px;border:0;cursor:pointer;font-family:inherit;text-decoration:none;box-shadow:0 8px 20px rgba(245,158,11,.3)}',
+      '.nl-bf-modal-cta:hover{filter:brightness(1.05)}',
+      '.nl-bf-modal-tm{margin-top:12px;font-size:12.5px;color:#5b6b68}.nl-bf-modal-tm b{color:#0d1b2a;font-variant-numeric:tabular-nums}',
+      '.nl-bf-modal-fechar{position:absolute;top:12px;right:12px;z-index:2;background:rgba(13,27,42,.08);border:0;color:#0d1b2a;font-size:22px;line-height:1;cursor:pointer;width:36px;height:36px;border-radius:50%}',
+      '.nl-bf-modal-fechar:hover{background:rgba(13,27,42,.16)}',
+      '[data-tema="escuro"] .nl-bf-modal-caixa{background:#132a3e;color:#fff}[data-tema="escuro"] .nl-bf-modal-txt{color:#cfe7e2}[data-tema="escuro"] .nl-bf-modal-txt b,[data-tema="escuro"] .nl-bf-modal-tm b{color:#fff}[data-tema="escuro"] .nl-bf-modal-pr s,[data-tema="escuro"] .nl-bf-modal-tm{color:#9fc4bd}[data-tema="escuro"] .nl-bf-modal-capas{background:linear-gradient(160deg,#0f766e,#0a4540)}[data-tema="escuro"] .nl-bf-modal-fechar{background:rgba(255,255,255,.12);color:#fff}',
+      '@media(max-width:640px){.nl-bf-modal-caixa{flex-direction:column;max-width:380px}.nl-bf-modal-capas{flex:0 0 auto;padding:14px 0 6px}.nl-bf-modal-capas .nl-bf-palco{--u:.7px}.nl-bf-modal-corpo{padding:20px 22px 22px}.nl-bf-modal-tit{font-size:30px}}',
       'body.nl-bf-trava{overflow:hidden}',
     ].join('');
     document.head.appendChild(estilo);
@@ -492,20 +505,21 @@
     var href = hrefAcao(idioma);
     var rotuloCta = paginaProduto() ? t.ctaProduto : t.cta;
     var cta = href
-      ? '<a class="nl-bf-btn nl-bf-modal-cta" href="' + href + '">' + rotuloCta + '</a>'
-      : '<button type="button" class="nl-bf-btn nl-bf-modal-cta">' + rotuloCta + '</button>';
+      ? '<a class="nl-bf-modal-cta" href="' + href + '">' + rotuloCta + '</a>'
+      : '<button type="button" class="nl-bf-modal-cta">' + rotuloCta + '</button>';
 
     overlay.innerHTML =
       '<div class="nl-bf-modal-caixa">' +
       '<button type="button" class="nl-bf-modal-fechar" aria-label="' + t.fechar + '">×</button>' +
-      '<div class="nl-bf-wm">Black<br>Friday</div>' +
-      '<div class="nl-bf-rule"></div>' +
-      '<p class="nl-bf-p">' + (pct ? '<b>' + esc(t.desconto(pct)) + '</b> ' : '') + t.todos + '</p>' +
-      '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><b>' + esc(precos.por) + '</b><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s></div>' : '') +
-      cta + '</div>' +
-      '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
-      '</div>';
+      '<div class="nl-bf-modal-capas">' + palcoHtml(idioma) + '</div>' +
+      '<div class="nl-bf-modal-corpo">' +
+      (pct ? '<span class="nl-bf-modal-selo">-' + pct + '% OFF</span>' : '') +
+      '<div class="nl-bf-modal-tit">Black Friday</div>' +
+      '<p class="nl-bf-modal-txt">' + (pct ? t.popTexto(pct) : t.todos) + '</p>' +
+      (precos ? '<div class="nl-bf-modal-pr"><b>' + esc(precos.por) + '</b><s>' + esc(precos.de) + '</s></div>' : '') +
+      cta +
+      '<div class="nl-bf-modal-tm">' + t.termina + ' <b class="nl-bf-tempo"></b></div>' +
+      '</div></div>';
 
     document.body.appendChild(overlay);
 
