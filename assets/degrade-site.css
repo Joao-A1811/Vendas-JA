@@ -143,3 +143,6 @@ body:has(#oferta) .hero .stat span{color:#5b6b68}
 [data-tema="escuro"] body:has(#oferta) .hero p.sub{color:#cfe8e3}
 [data-tema="escuro"] body:has(#oferta) .hero .badge{background:rgba(255,255,255,.06);border-color:rgba(94,234,212,.3);color:#5eead4}
 [data-tema="escuro"] body:has(#oferta) .hero .stat span{color:#b7d5cf}
+
+/* Sem contagem de guias (pedido do dono): "N guias" nas categorias e no catálogo */
+.cat-total,#conta{display:none!important}
