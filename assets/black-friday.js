@@ -242,7 +242,7 @@
       '.nl-bf-p{font-size:15px;color:#d5f3ee;line-height:1.4;max-width:210px;margin:0}',
       '.nl-bf-p b{color:#fff;font-weight:700}',
       '.nl-bf-p span{display:block;margin-top:2px}',
-      '.nl-bf-etiqueta{position:absolute;right:0;top:-6px;width:116px;overflow:visible;transform:rotate(6deg);transform-origin:50% 0;z-index:8;filter:drop-shadow(0 8px 8px rgba(0,0,0,.3))}',
+      '.nl-bf-etiqueta{position:absolute;right:0;top:-6px;width:116px;overflow:visible;transform:rotate(6deg);transform-origin:50% 0;z-index:8}',
 
       // capas em leque (--u escala tudo junto no desktop)
       '.nl-bf-palco{--u:1px;position:relative;height:calc(230*var(--u));margin-top:6px}',
@@ -308,8 +308,8 @@
       '.nl-bf-wrap{padding:22px 22px 4px;font-family:inherit}',
       '.nl-bf-card{max-width:1032px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(255,255,255,.78);border:1px solid rgba(13,27,42,.1);border-radius:20px;padding:18px 28px 18px 20px;box-shadow:0 12px 30px rgba(15,118,110,.12)}',
       '.nl-bf-esq{display:flex;align-items:center;gap:18px;min-width:0}',
-      '.nl-bf-tagbox{flex:none;width:74px;margin:-18px 6px -10px 0}',
-      '.nl-bf-card .nl-bf-etiqueta{position:static;display:block;width:74px;transform:rotate(-8deg);transform-origin:50% 0;filter:drop-shadow(0 6px 8px rgba(13,27,42,.25))}',
+      '.nl-bf-tagbox{flex:none;width:88px;margin:-22px 4px -14px 0}',
+      '.nl-bf-card .nl-bf-etiqueta{position:static;display:block;width:88px;transform:rotate(-6deg);transform-origin:50% 0}',
       '.nl-bf-tit{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:32px;line-height:1.05;letter-spacing:-.5px;color:#0d1b2a}',
       '.nl-bf-txt2{margin:6px 0 0;font-size:15px;line-height:1.45;color:#3f5c58}',
       '.nl-bf-txt2 b{color:#0d1b2a}',
@@ -356,17 +356,20 @@
   }
 
   // Etiqueta de preço pendurada (SVG), na cor âmbar do site.
+  var contEtiqueta = 0;
   function etiquetaSvg(pct, preco) {
+    var gid = 'nlbfg' + (++contEtiqueta);
     var f = 'font-family="Poppins,Arial,sans-serif" fill="#0d1b2a" text-anchor="middle"';
-    return '<svg class="nl-bf-etiqueta" viewBox="0 -60 120 220" aria-hidden="true">' +
-      '<defs><linearGradient id="nlbfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>' +
-      '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#f5b72a" stroke-width="2" opacity=".8"/>' +
-      '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="url(#nlbfg)" stroke="#0d1b2a" stroke-width="2.5" stroke-linejoin="round"/>' +
-      '<circle cx="60" cy="30" r="6" fill="#0d1b2a"/>' +
-      '<text x="60" y="74" ' + f + ' font-weight="800" font-size="9" letter-spacing="1.6">BLACK FRIDAY</text>' +
-      '<line x1="26" y1="82" x2="94" y2="82" stroke="#0d1b2a" stroke-width="1.5"/>' +
-      '<text x="60" y="116" ' + f + ' font-weight="900" font-size="30" letter-spacing="-1">-' + pct + '%</text>' +
-      (preco ? '<text x="60" y="140" ' + f + ' font-weight="800" font-size="11">' + esc(preco) + '</text>' : '') + '</svg>';
+    return '<svg class="nl-bf-etiqueta" viewBox="0 -60 124 226" aria-hidden="true" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">' +
+      '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>' +
+      '<path d="M60 30 C58 -10 66 -30 54 -60" fill="none" stroke="#d99a06" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M13 41 L41 13 H89 L117 41 V155 Q117 163 109 163 H21 Q13 163 13 155 Z" fill="#0d1b2a" opacity=".18"/>' +
+      '<path d="M8 36 L36 8 H84 L112 36 V150 Q112 158 104 158 H16 Q8 158 8 150 Z" fill="url(#' + gid + ')" stroke="#0d1b2a" stroke-width="3" stroke-linejoin="round"/>' +
+      '<circle cx="60" cy="30" r="6.5" fill="#0d1b2a"/>' +
+      '<text x="60" y="72" ' + f + ' font-weight="800" font-size="11" letter-spacing=".6">BLACK FRIDAY</text>' +
+      '<line x1="22" y1="81" x2="98" y2="81" stroke="#0d1b2a" stroke-width="2"/>' +
+      '<text x="60" y="118" ' + f + ' font-weight="900" font-size="33" letter-spacing="-1">-' + pct + '%</text>' +
+      (preco ? '<text x="60" y="143" ' + f + ' font-weight="800" font-size="14">' + esc(preco) + '</text>' : '') + '</svg>';
   }
 
   function palcoHtml(idioma) {
