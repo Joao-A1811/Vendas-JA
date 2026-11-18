@@ -180,3 +180,8 @@ body:has(#oferta) .hero .stat span{color:#5b6b68}
 .nl-av-form button{background:linear-gradient(135deg,#fde68a,#f59e0b)!important;color:#0d1b2a!important;border-radius:12px!important;box-shadow:0 8px 20px rgba(245,158,11,.28)}
 .nl-av-form button:hover{filter:brightness(1.05)}
 .nl-av-consent input{accent-color:#0f766e;width:16px;height:16px}
+
+/* ===== "O que você vai conseguir" (páginas de produto): ícone no degradê verde-água claro (GG1) ===== */
+.beneficio{border-radius:18px!important}
+.beneficio .icone{background:linear-gradient(135deg,#d9f3ee,#a7e3d8 50%,#5ec9b6)!important;color:#0d1b2a}
+[data-tema="escuro"] .beneficio .icone{background:linear-gradient(135deg,#0f766e,#14b8a6)!important;color:#fff}
