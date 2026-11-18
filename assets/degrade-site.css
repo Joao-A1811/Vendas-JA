@@ -28,3 +28,7 @@ html body{
   -webkit-text-fill-color:transparent;color:transparent!important;
 }
 .hero::before{background:linear-gradient(135deg,#fde68a,#f59e0b)}
+
+/* Sem linhas separando cabeçalho e rodapé do resto da página: o degradê é contínuo. */
+.topo,.header,[data-tema="escuro"] .topo,[data-tema="escuro"] .header{border-bottom:0!important;box-shadow:none!important}
+.footer,[data-tema="escuro"] .footer{border-top:0!important}
