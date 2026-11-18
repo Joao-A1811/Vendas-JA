@@ -86,6 +86,7 @@
   var TEXTOS = {
     pt: {
       titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', por: 'por', em: 'em',
+      subOferta: function (p) { return '<b>' + p + '% de desconto</b> — só até 30/11'; },
       popTexto: function (p) { return 'Todos os guias com <b>' + p + '% de desconto</b>, só até 30/11.'; }, todos: 'em todos os guias',
       desconto: function (p) { return p + '% de desconto'; },
       cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
@@ -94,6 +95,7 @@
     },
     en: {
       titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', por: 'now', em: 'on',
+      subOferta: function (p) { return '<b>' + p + '% off</b> — only until Nov 30'; },
       popTexto: function (p) { return 'Every guide <b>' + p + '% off</b>, only until Nov 30.'; }, todos: 'on every guide',
       desconto: function (p) { return p + '% off'; },
       cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
@@ -102,6 +104,7 @@
     },
     es: {
       titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', por: 'por', em: 'en',
+      subOferta: function (p) { return '<b>' + p + '% de descuento</b> — solo hasta el 30/11'; },
       popTexto: function (p) { return 'Todas las guías con <b>' + p + '% de descuento</b>, solo hasta el 30/11.'; }, todos: 'en todas las guías',
       desconto: function (p) { return p + '% de descuento'; },
       cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
@@ -214,7 +217,7 @@
   function encerrar() {
     if (intervalo) clearInterval(intervalo);
     var alvos = document.querySelectorAll(
-      '.nl-bf-faixa,.nl-bf-hero,.nl-bf-wrap,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
+      '.nl-bf-faixa,.nl-bf-hero,.nl-bf-wrap,.nl-bf-of-cab,.nl-bf-of-tag,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
     );
     for (var i = 0; i < alvos.length; i++) alvos[i].remove();
     document.body.classList.remove('nl-bf-trava');
@@ -326,6 +329,20 @@
       '[data-tema="escuro"] .nl-bf-txt2{color:#cfe7e2}',
       '[data-tema="escuro"] .nl-bf-tm2{color:#9fc4bd}',
       '@media(max-width:700px){.nl-bf-wrap{padding:16px 16px 0}.nl-bf-card{flex-direction:column;align-items:stretch;text-align:center;padding:20px 18px;gap:14px}.nl-bf-tagbox{display:none}.nl-bf-tit{font-size:28px}.nl-bf-btn2{display:block;text-align:center}}',
+
+      // ---------- 4b) caixa de oferta: título + etiqueta pendurada ----------
+      '#oferta .oferta{overflow:visible!important;border:0!important;border-radius:22px!important;margin-top:40px;box-shadow:0 14px 40px rgba(15,118,110,.16)!important}',
+      '.nl-bf-of-tag{position:absolute;top:-58px;right:34px;width:150px;transform:rotate(8deg);z-index:3}',
+      '.nl-bf-of-tag .nl-bf-etiqueta{position:static;display:block;width:100%;transform:none}',
+      '.nl-bf-of-tit{font-family:Poppins,Arial,sans-serif;font-weight:800;font-size:38px;line-height:1.05;letter-spacing:-.6px;color:#0d1b2a}',
+      '.nl-bf-of-sub{font-size:15px;color:#244a45;margin:6px 0 18px}.nl-bf-of-sub b{color:#0d1b2a}',
+      '#oferta .oferta .produto{font-family:Poppins,Arial,sans-serif!important;font-weight:700!important;font-size:26px!important;line-height:1.2;color:#0d1b2a!important;text-transform:none!important;letter-spacing:-.3px!important;margin-bottom:8px}',
+      '#oferta .oferta .preco-de{font-size:24px!important;font-weight:600!important;color:#3f5c58!important;text-decoration:line-through;text-decoration-color:#e0870a;text-decoration-thickness:2.5px}',
+      '#oferta .oferta .contador .bloco{background:#fff!important;border-radius:14px!important;min-width:72px!important;padding:14px 10px!important;box-shadow:0 6px 16px rgba(15,118,110,.12)}#oferta .oferta .contador .bloco b{color:#0d1b2a!important;font-size:26px!important}#oferta .oferta .contador .bloco span{color:#0f766e!important;letter-spacing:1px}',
+      '#oferta .oferta .nl-bf-economiza{background:rgba(255,255,255,.7)!important;color:#0d1b2a!important}#oferta .oferta .garantia,#oferta .oferta .badge-pagto{background:rgba(255,255,255,.7)!important}#oferta .oferta #btn-checkout{font-size:17px!important;padding:16px 44px!important}',
+      '[data-tema="escuro"] .nl-bf-of-tit,[data-tema="escuro"] #oferta .oferta .produto,[data-tema="escuro"] .nl-bf-of-sub b{color:#fff!important}[data-tema="escuro"] .nl-bf-of-sub,[data-tema="escuro"] #oferta .oferta .preco-de{color:#cfe7e2!important}[data-tema="escuro"] #oferta .oferta .contador .bloco{background:rgba(255,255,255,.08)!important}[data-tema="escuro"] #oferta .oferta .contador .bloco b{color:#fff!important}[data-tema="escuro"] #oferta .oferta .contador .bloco span{color:#5eead4!important}',
+      '[data-tema="escuro"] #oferta .oferta .nl-bf-economiza,[data-tema="escuro"] #oferta .oferta .garantia,[data-tema="escuro"] #oferta .oferta .badge-pagto{background:rgba(255,255,255,.1)!important;color:#e6f4f1!important}',
+      '@media(max-width:520px){#oferta .oferta{padding-top:134px!important}.nl-bf-of-tag{width:90px;top:-50px;right:16px}.nl-bf-of-tit{font-size:32px}#oferta .oferta .produto{font-size:21px!important}#oferta .oferta .contador .bloco{min-width:58px!important}}',
 
       // ---------- 5) pop-up diário ----------
       '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,12,20,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
@@ -469,17 +486,19 @@
   function marcarOferta(idioma, t, pct) {
     var oferta = document.querySelector('.oferta');
     if (!oferta) return;
-    if (!oferta.querySelector('.nl-bf-tag-oferta')) {
-      var selo = document.createElement('div');
-      selo.className = 'nl-bf-tag-oferta';
-      selo.textContent = t.titulo;
-      oferta.insertBefore(selo, oferta.firstChild);
-    }
-    if (pct && !oferta.querySelector('.nl-bf-estrela')) {
-      var estrela = document.createElement('div');
-      estrela.className = 'nl-bf-estrela';
-      estrela.textContent = '-' + pct + '%';
-      oferta.appendChild(estrela);
+    if (!oferta.querySelector('.nl-bf-of-tit')) {
+      var precos = precosDoIdioma(idioma);
+      var cab = document.createElement('div');
+      cab.className = 'nl-bf-of-cab';
+      cab.innerHTML = '<div class="nl-bf-of-tit">Black Friday</div>' +
+        (pct ? '<div class="nl-bf-of-sub">' + t.subOferta(pct) + '</div>' : '');
+      oferta.insertBefore(cab, oferta.firstChild);
+      if (pct) {
+        var tag = document.createElement('div');
+        tag.className = 'nl-bf-of-tag';
+        tag.innerHTML = etiquetaSvg(pct, precos && precos.por);
+        oferta.insertBefore(tag, oferta.firstChild);
+      }
     }
     var eco = economia(idioma);
     var preco = document.getElementById('oferta-preco-por');
