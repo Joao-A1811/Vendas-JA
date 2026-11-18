@@ -335,11 +335,16 @@ const CONFIG = {
 })();
 </script>
 
-<header class="header">
+<header class="topo">
   <div class="container">
-    <h1><a href="/" style="color:inherit;text-decoration:none">NextLevel</a></h1>
+    <span class="marca-wrap"><a class="logo" href="/">NEXT<b>LEVEL</b></a><a class="menu-inicio" href="/" aria-label="Início"><svg class="mi-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg><span>Início</span></a></span>
+    <nav class="menu" aria-hidden="true">
+      <a>Catálogo</a>
+      <a>Categorias</a>
+      <a>Como funciona</a>
+      <a>Material gratuito</a>
+    </nav>
     <nav class="idiomas" id="idiomas">
-      <a href="/categorias/#saude-fitness" style="margin-right:0;padding:12px 14px 12px 0;border-right:1px solid rgba(13,27,42,.12);display:inline-flex;align-items:center;min-height:40px;box-sizing:border-box">Categorias</a>
       <div class="idioma-seletor" id="idioma-seletor">
         <button type="button" class="idioma-btn" id="idioma-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma">
           <span class="idioma-bandeira">🇧🇷</span><span>PT</span>
@@ -347,8 +352,8 @@ const CONFIG = {
         </button>
         <div class="idioma-menu" id="idioma-menu" role="menu"></div>
       </div>
-      <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
     </nav>
+    <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" onclick="NL_TEMA_ALTERNAR()"></button>
   </div>
 </header>
 
