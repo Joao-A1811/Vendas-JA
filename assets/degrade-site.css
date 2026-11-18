@@ -77,7 +77,7 @@ a.nl-inicio:hover{opacity:.7}
 [data-tema="escuro"] a.nl-inicio{background:none;color:#fff;border-left-color:rgba(255,255,255,.25)}
 
 /* ===== Bloco "Não sabe por onde começar?" (home): verde-água claro, texto nítido ===== */
-.lead{background:linear-gradient(120deg,#f0fbf8 0%,#cdeee7 45%,#93dccf 100%);box-shadow:0 14px 36px rgba(15,118,110,.14)}
+.lead{background:linear-gradient(120deg,rgba(255,255,255,.28) 0%,rgba(20,184,166,.10) 45%,rgba(20,184,166,.26) 100%);box-shadow:0 8px 28px rgba(15,118,110,.06)}
 .lead h2{color:#0d1b2a}
 .lead p{color:#244a45}
 .lead small{color:#3f5c58}
