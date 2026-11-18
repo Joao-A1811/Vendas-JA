@@ -75,3 +75,25 @@ a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);trans
 a.nl-inicio{display:inline-flex;align-items:center;line-height:1;font-family:'Poppins',Arial,sans-serif;padding-left:14px;border-left:1px solid rgba(13,27,42,.2);font-size:16px;font-weight:800;text-decoration:none;background:linear-gradient(135deg,#0f766e,#0d9488);-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .15s ease}
 a.nl-inicio:hover{opacity:.7}
 [data-tema="escuro"] a.nl-inicio{background:none;color:#fff;border-left-color:rgba(255,255,255,.25)}
+
+/* ===== Bloco "Não sabe por onde começar?" (home): verde-água claro, texto nítido ===== */
+.lead{background:linear-gradient(135deg,#d9f3ee,#a7e3d8);box-shadow:0 14px 36px rgba(15,118,110,.14)}
+.lead h2{color:#0d1b2a}
+.lead p{color:#244a45}
+.lead small{color:#3f5c58}
+.lead input,.lead select{background-color:#fff;color:#0d1b2a;border:1px solid rgba(13,27,42,.12);border-radius:12px;transition:border-color .15s ease,box-shadow .15s ease}
+.lead input::placeholder{color:#7c8f8b}
+.lead input:focus,.lead select:focus{outline:none;border-color:#0f766e;box-shadow:0 0 0 3px rgba(15,118,110,.15)}
+.lead select{-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;font-weight:600;padding-right:46px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%230f766e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;background-size:12px 8px}
+.lead select:hover{border-color:rgba(15,118,110,.45)}
+.lead button{background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;border-radius:12px;box-shadow:0 8px 20px rgba(245,158,11,.28);transition:filter .15s ease}
+.lead button:hover{filter:brightness(1.05)}
+[data-tema="escuro"] .lead{background:linear-gradient(135deg,#13293d,#0f4f4a);box-shadow:none}
+[data-tema="escuro"] .lead h2{color:#fff}
+[data-tema="escuro"] .lead p{color:#cfe7e2}
+[data-tema="escuro"] .lead small{color:#9fc4bd}
+[data-tema="escuro"] .lead input,[data-tema="escuro"] .lead select{background-color:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.16)}
+[data-tema="escuro"] .lead select option{color:#0d1b2a}
+[data-tema="escuro"] .lead select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235eead4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
