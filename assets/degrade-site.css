@@ -129,3 +129,17 @@ a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);trans
 
 /* Números de "Como funciona" (home): mesmo degradê do bloco de material gratuito */
 .passo .num{background:linear-gradient(135deg,#d9f3ee,#a7e3d8 50%,#5ec9b6);color:#0d1b2a}
+
+/* ===== Hero das páginas de produto (e landing): sem bloco verde próprio, sobre o degradê do site ===== */
+body:has(#oferta) .hero,[data-tema="escuro"] body:has(#oferta) .hero{background:transparent!important;color:#0d1b2a;-webkit-mask-image:none;mask-image:none;padding:56px 0 64px}
+body:has(#oferta) .hero::before,body:has(#oferta) .hero::after{display:none}
+body:has(#oferta) .hero h2{color:#0d1b2a}
+body:has(#oferta) .hero p.sub{color:#3f5c58}
+body:has(#oferta) .hero .badge{background:rgba(255,255,255,.75);border:1px solid rgba(15,118,110,.25);color:#0f766e}
+body:has(#oferta) .hero .stat b{color:#0d1b2a}
+body:has(#oferta) .hero .stat span{color:#5b6b68}
+[data-tema="escuro"] body:has(#oferta) .hero{color:#fff}
+[data-tema="escuro"] body:has(#oferta) .hero h2,[data-tema="escuro"] body:has(#oferta) .hero .stat b{color:#fff}
+[data-tema="escuro"] body:has(#oferta) .hero p.sub{color:#cfe8e3}
+[data-tema="escuro"] body:has(#oferta) .hero .badge{background:rgba(255,255,255,.06);border-color:rgba(94,234,212,.3);color:#5eead4}
+[data-tema="escuro"] body:has(#oferta) .hero .stat span{color:#b7d5cf}
