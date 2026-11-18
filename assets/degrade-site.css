@@ -264,3 +264,56 @@ body:has(#chips) .hero p{display:none!important}
   .grid .card .preco s{display:inline!important;margin-right:6px}
   .grid .card .preco{font-size:16px!important}
 }
+
+/* ===== Celular: layout mais compacto e prático (todas as páginas) ===== */
+@media(max-width:640px){
+  /* menos espaço vazio entre seções */
+  .section{padding:40px 0!important}
+  .section h3{font-size:22px!important}
+  .secao{padding-top:30px!important}
+  .como{padding:34px 0 10px!important}
+  .confianca{margin-top:24px!important;padding:18px 0!important}
+  .lead{margin:30px 0!important;padding:26px 20px!important}
+  .lead p{font-size:13.5px!important}
+
+  /* topo da home mais enxuto */
+  .hero{padding:36px 0 28px!important}
+  .hero .badge,#hero-badge{font-size:11px!important;padding:6px 12px!important}
+  .hero h1{font-size:32px!important}
+  .hero p{font-size:15px!important;margin-top:12px!important}
+  .hero .stats{gap:22px!important;margin-top:20px!important}
+  .hero .stat b{font-size:20px!important}
+  .hero .stat span{font-size:10px!important}
+  .painel-busca{margin-top:0!important;padding:16px!important}
+
+  /* "Como funciona": passos compactos (número ao lado do texto) */
+  .passos{gap:10px!important}
+  .passo{display:grid!important;grid-template-columns:38px 1fr;column-gap:14px;padding:16px!important;align-items:start}
+  .passo .num{grid-row:1/span 2;margin:0!important}
+  .passo b{margin:0 0 4px!important}
+
+  /* página de produto: topo mais curto */
+  body:has(#oferta) .hero{padding:32px 0 36px!important}
+  body:has(#oferta) .hero h2{font-size:26px!important;line-height:1.2!important}
+  body:has(#oferta) .hero p.sub{font-size:15px!important;margin-bottom:22px!important}
+  body:has(#oferta) .stats{gap:22px!important;margin-top:26px!important}
+
+  /* galeria "olhe por dentro" e "você também pode gostar": carrossel de arrastar */
+  .preview-galeria,.nl-relacionados{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-22px!important;margin-right:-22px!important;padding:4px 22px 14px!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .preview-galeria::-webkit-scrollbar,.nl-relacionados::-webkit-scrollbar{display:none}
+  .preview-galeria a{flex:0 0 62%;scroll-snap-align:start}
+  .nl-relacionados-card{flex:0 0 66%;scroll-snap-align:start}
+  .nl-relacionados-card .corpo{padding:12px 14px!important}
+  .nl-relacionados-card p{display:none}
+
+  /* FAQ e avaliação um pouco mais compactos */
+  .faq details{padding:4px 16px!important;margin-bottom:10px!important}
+  .nl-av-form{padding:22px 18px!important}
+}
+@media(max-width:640px){
+  .beneficios{gap:10px!important;margin-top:22px!important}
+  .beneficio{display:grid!important;grid-template-columns:44px 1fr;column-gap:14px;padding:16px!important;align-items:start}
+  .beneficio .icone{grid-row:1/span 2;margin:0!important}
+  .beneficio h4{margin:2px 0 4px!important}
+  .secao-cat{margin-bottom:28px!important}
+}
