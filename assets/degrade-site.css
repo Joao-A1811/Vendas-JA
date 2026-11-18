@@ -71,7 +71,7 @@ a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);trans
 [data-tema="escuro"] a.voltar:hover{background:rgba(255,255,255,.12)}
 
 /* ===== Bloco "Não sabe por onde começar?" (home): verde-água claro, texto nítido ===== */
-.lead{background:linear-gradient(120deg,rgba(255,255,255,.28) 0%,rgba(20,184,166,.10) 45%,rgba(20,184,166,.26) 100%);box-shadow:0 8px 28px rgba(15,118,110,.06)}
+.lead{background:linear-gradient(120deg,rgba(255,255,255,.7) 0%,rgba(20,184,166,.14) 45%,rgba(20,184,166,.32) 100%);border:1px solid rgba(15,118,110,.16);box-shadow:0 10px 30px rgba(15,118,110,.10)}
 .lead h2{color:#0d1b2a}
 .lead p{color:#244a45}
 .lead small{color:#3f5c58}
