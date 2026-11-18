@@ -242,3 +242,4 @@ body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:140px!important}
 /* Menos texto (pedido do dono): subtítulos da home e da página de categorias */
 .hero .prova,#catalogo .sub,.como .sub{display:none!important}
 body:has(#chips) .hero p{display:none!important}
+#catalogo .secao-head{display:none!important}
