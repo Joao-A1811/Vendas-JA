@@ -144,6 +144,19 @@ h1,h2,h3{font-family:'Poppins',Arial,sans-serif}
 [data-tema="escuro"] .chips a.ativa{color:#04211d;background:#5eead4;border-color:#5eead4}
 [data-tema="escuro"] .busca input{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16);box-shadow:none}
 [data-tema="escuro"] .busca input::placeholder{color:#8fb3ac}
+/* Hero integrado ao degradê único do site (sem bloco verde próprio) */
+.hero,[data-tema="escuro"] .hero{background:transparent;color:var(--texto);-webkit-mask-image:none;mask-image:none}
+.hero::before{display:none}
+.hero h2{color:#0d1b2a}
+.hero p{color:#3f5c58}
+.chips a{background:rgba(255,255,255,.75);border:1px solid rgba(13,27,42,.12);color:#0d1b2a}
+.chips a:hover{background:#fff;border-color:rgba(15,118,110,.4)}
+.chips a.ativa{background:#0f766e;color:#fff;border-color:#0f766e}
+.busca input{border:1px solid rgba(13,27,42,.12);box-shadow:0 6px 20px rgba(15,118,110,.12)}
+[data-tema="escuro"] .hero h2{color:#fff}
+[data-tema="escuro"] .hero p{color:#cfe8e3}
+[data-tema="escuro"] .chips a{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#eaf4f2}
+[data-tema="escuro"] .chips a.ativa{color:#04211d;background:#5eead4;border-color:#5eead4}
 [data-tema="escuro"] .categoria h3{color:#fff}
 [data-tema="escuro"] .categoria .cat-icone{background:linear-gradient(135deg,#0f766e,#14b8a6)}
 [data-tema="escuro"] .categoria .cat-total{color:#5eead4}
