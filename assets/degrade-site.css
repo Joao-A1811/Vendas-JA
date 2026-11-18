@@ -238,3 +238,7 @@ body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:140px!important}
 /* Sem a descrição embaixo do nome de cada categoria (home e categorias) */
 .cat-desc{display:none!important}
 .secao-cat-head{margin-bottom:18px!important}
+
+/* Menos texto (pedido do dono): subtítulos da home e da página de categorias */
+.hero .prova,#catalogo .sub,.como .sub{display:none!important}
+body:has(#chips) .hero p{display:none!important}
