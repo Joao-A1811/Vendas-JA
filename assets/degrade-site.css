@@ -40,3 +40,22 @@ html body{
 .faq details,[data-tema="escuro"] .faq details{border-bottom:0!important}
 .barra-fixa,[data-tema="escuro"] .barra-fixa{border-top:0!important}
 .nl-bf-tm{border-top:0!important}
+
+/* ===== Rodapé único (F3): centralizado, marca + traço dourado + selos + links ===== */
+.footer.nl-rodape{background:transparent!important;color:var(--texto-suave,#5b6b68);padding:56px 22px 32px!important;text-align:center;font-size:13px}
+.nl-rodape .nl-rd-in{max-width:760px;margin:0 auto}
+.nl-rodape .nl-rd-marca{display:inline-block;font-family:'Poppins',Arial,sans-serif;font-weight:800;font-size:26px;letter-spacing:6px;color:#0d1b2a;text-decoration:none}
+.nl-rodape .nl-rd-marca b{color:#0f766e}
+.nl-rodape .nl-rd-traco{width:46px;height:4px;border-radius:3px;background:linear-gradient(135deg,#fde68a,#f59e0b);margin:14px auto 22px}
+.nl-rodape .nl-rd-selos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.nl-rodape .nl-rd-selos span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.8);border:1px solid rgba(13,27,42,.1);color:#0d1b2a;font-weight:600;font-size:12.5px;padding:7px 13px;border-radius:99px}
+.nl-rodape .nl-rd-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin:26px 0 0}
+.nl-rodape .nl-rd-links a{color:#0d1b2a!important;font-weight:600;font-size:14px;text-decoration:none}
+.nl-rodape .nl-rd-links a:hover{color:#0f766e!important}
+.nl-rodape .nl-rd-copy{margin-top:18px;font-size:12.5px;color:#5b6b68;line-height:1.6}
+[data-tema="escuro"] .nl-rodape .nl-rd-marca,[data-tema="escuro"] .nl-rodape .nl-rd-links a{color:#fff!important}
+[data-tema="escuro"] .nl-rodape .nl-rd-marca b{color:#5eead4}
+[data-tema="escuro"] .nl-rodape .nl-rd-selos span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#e6f4f1}
+[data-tema="escuro"] .nl-rodape .nl-rd-copy{color:#9fc4bd}
+@media(max-width:520px){.nl-rodape .nl-rd-marca{font-size:22px;letter-spacing:5px}.nl-rodape .nl-rd-links{gap:10px 18px}}
+body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:110px!important}
