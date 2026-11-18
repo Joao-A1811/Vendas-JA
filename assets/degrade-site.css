@@ -216,3 +216,21 @@ header.topo.interno .idiomas{gap:8px;margin:0}
 
 /* Sem trilha "Início › Categoria › Produto" nas páginas de produto (pedido do dono) */
 .breadcrumb{display:none!important}
+
+/* ===== Barra de compra das páginas de produto: cartão flutuante sempre visível (PP3, assets/barra-compra.js) ===== */
+.barra-fixa.nl-bc{left:16px!important;right:16px!important;bottom:16px!important;max-width:1032px;margin:0 auto;background:#fff!important;border:1px solid rgba(13,27,42,.06)!important;border-radius:20px;box-shadow:0 18px 44px rgba(13,27,42,.20)!important;padding:14px 22px!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.barra-fixa.nl-bc .container{max-width:none;padding:0;gap:16px}
+.nl-bc-esq{display:flex;align-items:center;gap:14px;min-width:0}
+.nl-bc-capa{width:44px;height:62px;object-fit:cover;border-radius:4px;box-shadow:0 6px 14px rgba(13,27,42,.25);flex:none}
+.nl-bc-txt{display:flex;flex-direction:column;min-width:0}
+.nl-bc-nome{font-family:'Poppins',Arial,sans-serif;font-weight:700;font-size:15px;color:#0d1b2a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nl-bc-pr{display:flex;align-items:baseline;gap:10px;margin-top:2px}
+.nl-bc-pr s{font-size:13px;color:#5b6b68;text-decoration-color:#e0870a;text-decoration-thickness:2px}
+.nl-bc-pr b{font-family:'Poppins',Arial,sans-serif;font-weight:800;font-size:22px;color:#0d1b2a;white-space:nowrap}
+.nl-bc-pr i{font-style:normal;font-weight:800;font-size:11px;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;padding:3px 8px;border-radius:99px}
+.barra-fixa.nl-bc .btn{font-size:16px!important;padding:15px 34px!important;flex:none}
+body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:140px!important}
+[data-tema="escuro"] .barra-fixa.nl-bc{background:#132a3e!important;border-color:rgba(255,255,255,.1)!important;box-shadow:0 18px 44px rgba(0,0,0,.45)!important}
+[data-tema="escuro"] .nl-bc-nome,[data-tema="escuro"] .nl-bc-pr b{color:#fff}
+[data-tema="escuro"] .nl-bc-pr s{color:#9fc4bd}
+@media(max-width:520px){.barra-fixa.nl-bc{left:10px!important;right:10px!important;bottom:10px!important;padding:12px 14px!important;border-radius:16px}.barra-fixa.nl-bc .container{gap:10px}.nl-bc-esq{gap:10px}.nl-bc-capa{width:36px;height:51px}.nl-bc-nome{font-size:13px}.nl-bc-pr s,.nl-bc-pr i{display:none}.nl-bc-pr b{font-size:19px}.barra-fixa.nl-bc .btn{padding:13px 16px!important;font-size:14px!important}}
