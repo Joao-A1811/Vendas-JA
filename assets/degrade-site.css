@@ -59,3 +59,13 @@ html body{
 [data-tema="escuro"] .nl-rodape .nl-rd-copy{color:#9fc4bd}
 @media(max-width:520px){.nl-rodape .nl-rd-marca{font-size:22px;letter-spacing:5px}.nl-rodape .nl-rd-links{gap:10px 18px}}
 body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:110px!important}
+
+/* Cabeçalho igual ao da home em todas as páginas: translúcido no tom do fundo, sem faixa branca. */
+.header{background:rgba(247,251,250,.88)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+[data-tema="escuro"] .header{background:rgba(13,27,42,.92)!important}
+
+/* "Voltar pra página inicial": botão discreto em pílula, visível sem pesar. */
+a.voltar{display:inline-flex!important;align-items:center;gap:8px;margin-top:48px!important;padding:11px 22px;border-radius:99px;background:rgba(255,255,255,.8);border:1px solid rgba(15,118,110,.28);color:#0f766e!important;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 18px rgba(15,118,110,.10);transition:background .15s ease,box-shadow .15s ease,transform .15s ease}
+a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);transform:translateY(-1px)}
+[data-tema="escuro"] a.voltar{background:rgba(255,255,255,.06);border-color:rgba(94,234,212,.3);color:#5eead4!important;box-shadow:none}
+[data-tema="escuro"] a.voltar:hover{background:rgba(255,255,255,.12)}
