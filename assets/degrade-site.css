@@ -126,3 +126,6 @@ a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);trans
 .lead .nl-sel-txt small,.lead .nl-sel-lista small{color:#5b6b68!important;font-size:12px}
 [data-tema="escuro"] .lead .nl-sel-btn{background:rgba(255,255,255,.08)}
 [data-tema="escuro"] .lead .nl-sel-txt small{color:#9fc4bd!important}
+
+/* Números de "Como funciona" (home): mesmo degradê do bloco de material gratuito */
+.passo .num{background:linear-gradient(135deg,#d9f3ee,#a7e3d8 50%,#5ec9b6);color:#0d1b2a}
