@@ -213,7 +213,6 @@
   // Campanha acabou com a página aberta: remove tudo, inclusive o CSS.
   function encerrar() {
     if (intervalo) clearInterval(intervalo);
-    document.documentElement.style.removeProperty('--nl-bf-h');
     var alvos = document.querySelectorAll(
       '.nl-bf-faixa,.nl-bf-hero,.nl-bf-wrap,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
     );
@@ -226,8 +225,7 @@
     estilo = document.createElement('style');
     estilo.textContent = [
       // ---------- 1) faixa do topo ----------
-      '.nl-bf-faixa{position:sticky;top:0;z-index:60;display:block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px 0;text-decoration:none}',
-      '.topo,.header{top:var(--nl-bf-h,0px)!important}',
+      '.nl-bf-faixa{display:block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-family:inherit;font-weight:800;font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;padding:8px 0;text-decoration:none}',
       '.nl-bf-trilho{display:flex;width:max-content;animation:nl-bf-mq 70s linear infinite}',
       '.nl-bf-faixa:hover .nl-bf-trilho{animation-play-state:paused}',
       '.nl-bf-grupo{display:flex;align-items:center;flex:none}',
@@ -368,10 +366,6 @@
     faixa.innerHTML = '<div class="nl-bf-trilho" aria-hidden="true"><div class="nl-bf-grupo">' + grupo +
       '</div><div class="nl-bf-grupo" aria-hidden="true">' + grupo + '</div></div>';
     document.body.insertBefore(faixa, document.body.firstChild);
-    // A faixa fica presa no topo ao rolar; o cabeçalho (também fixo) gruda logo abaixo dela.
-    function alturaFaixa() { document.documentElement.style.setProperty('--nl-bf-h', faixa.offsetHeight + 'px'); }
-    alturaFaixa();
-    window.addEventListener('resize', alturaFaixa);
   }
 
   // Etiqueta de preço pendurada (SVG), na cor âmbar do site.
