@@ -234,3 +234,7 @@ body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:140px!important}
 [data-tema="escuro"] .nl-bc-nome,[data-tema="escuro"] .nl-bc-pr b{color:#fff}
 [data-tema="escuro"] .nl-bc-pr s{color:#9fc4bd}
 @media(max-width:520px){.barra-fixa.nl-bc{left:10px!important;right:10px!important;bottom:10px!important;padding:12px 14px!important;border-radius:16px}.barra-fixa.nl-bc .container{gap:10px}.nl-bc-esq{gap:10px}.nl-bc-capa{width:36px;height:51px}.nl-bc-nome{font-size:13px}.nl-bc-pr s,.nl-bc-pr i{display:none}.nl-bc-pr b{font-size:19px}.barra-fixa.nl-bc .btn{padding:13px 16px!important;font-size:14px!important}}
+
+/* Sem a descrição embaixo do nome de cada categoria (home e categorias) */
+.cat-desc{display:none!important}
+.secao-cat-head{margin-bottom:18px!important}
