@@ -146,3 +146,16 @@ body:has(#oferta) .hero .stat span{color:#5b6b68}
 
 /* Sem contagem de guias (pedido do dono): "N guias" nas categorias e no catálogo */
 .cat-total,#conta{display:none!important}
+
+/* ===== Páginas de produto: mesmas cores da home (sem faixas alternadas, blocos no degradê BB3) ===== */
+.secao-alt,[data-tema="escuro"] .secao-alt{background:transparent!important}
+.lead-form{background:linear-gradient(135deg,#d9f3ee 0%,#a7e3d8 50%,#5ec9b6 100%)!important;color:#0d1b2a!important;box-shadow:0 10px 30px rgba(15,118,110,.10)}
+.lead-form h3{color:#0d1b2a!important}
+.lead-form .lead-sec,.lead-form p{color:#244a45!important}
+.lead-form small{color:#3f5c58!important}
+.lead-form input{border:1px solid rgba(13,27,42,.12)!important;border-radius:12px!important}
+[data-tema="escuro"] .lead-form{background:linear-gradient(135deg,#13293d,#0f4f4a)!important;color:#fff!important;box-shadow:none}
+[data-tema="escuro"] .lead-form h3{color:#fff!important}
+[data-tema="escuro"] .lead-form .lead-sec,[data-tema="escuro"] .lead-form p,[data-tema="escuro"] .lead-form small{color:#cfe7e2!important}
+.barra-fixa{background:rgba(247,251,250,.92)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+[data-tema="escuro"] .barra-fixa{background:rgba(13,27,42,.92)!important}
