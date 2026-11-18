@@ -170,3 +170,13 @@ body:has(#oferta) .hero .stat span{color:#5b6b68}
 .faq p{padding-bottom:12px}
 [data-tema="escuro"] .faq details{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)!important;box-shadow:none}
 [data-tema="escuro"] .faq summary::after{border-color:#5eead4}
+
+/* ===== "Avalie este material" (assets/avaliacoes.js): cartão branco refinado (FF1) ===== */
+.nl-av-form{max-width:760px;margin:0 auto;border-radius:20px!important;padding:32px!important;box-shadow:0 10px 30px rgba(15,118,110,.08)!important}
+.nl-av-form h4{font-size:20px!important}
+.nl-av-notas label{font-size:30px!important}
+.nl-av-form input[type=text],.nl-av-form input[type=email],.nl-av-form textarea{border-radius:12px!important;border:1px solid rgba(13,27,42,.12)!important}
+.nl-av-form input[type=text]:focus,.nl-av-form input[type=email]:focus,.nl-av-form textarea:focus{outline:none;border-color:#0f766e!important;box-shadow:0 0 0 3px rgba(15,118,110,.15)}
+.nl-av-form button{background:linear-gradient(135deg,#fde68a,#f59e0b)!important;color:#0d1b2a!important;border-radius:12px!important;box-shadow:0 8px 20px rgba(245,158,11,.28)}
+.nl-av-form button:hover{filter:brightness(1.05)}
+.nl-av-consent input{accent-color:#0f766e;width:16px;height:16px}
