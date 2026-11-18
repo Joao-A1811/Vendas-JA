@@ -402,7 +402,8 @@
     var hero = document.querySelector('.hero');
     var ehHome = paginaHome();
     var ehProduto = paginaProduto() && document.getElementById('oferta');
-    if (!hero || !hero.parentNode || !(ehHome || ehProduto)) return;
+    // Nas páginas de produto o destaque fica só na caixa de oferta (pedido do dono).
+    if (!hero || !hero.parentNode || !ehHome) return;
     var href = ehHome ? '#catalogo' : '#oferta';
     var precos = precosDoIdioma(idioma);
 
