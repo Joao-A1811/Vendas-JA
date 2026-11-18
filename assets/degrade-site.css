@@ -243,3 +243,4 @@ body:has(.barra-fixa) .footer.nl-rodape{padding-bottom:140px!important}
 .hero .prova,#catalogo .sub,.como .sub{display:none!important}
 body:has(#chips) .hero p{display:none!important}
 #catalogo .secao-head{display:none!important}
+#catalogo #grid{margin-top:40px}
