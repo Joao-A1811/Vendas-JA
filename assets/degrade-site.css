@@ -69,3 +69,4 @@ a.voltar{display:inline-flex!important;align-items:center;gap:8px;margin-top:48p
 a.voltar:hover{background:#fff;box-shadow:0 10px 24px rgba(15,118,110,.18);transform:translateY(-1px)}
 [data-tema="escuro"] a.voltar{background:rgba(255,255,255,.06);border-color:rgba(94,234,212,.3);color:#5eead4!important;box-shadow:none}
 [data-tema="escuro"] a.voltar:hover{background:rgba(255,255,255,.12)}
+a.voltar.voltar-topo{margin:0 0 18px!important;padding:8px 16px;font-size:13px}
