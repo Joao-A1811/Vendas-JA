@@ -32,3 +32,11 @@ html body{
 /* Sem linhas separando cabeçalho e rodapé do resto da página: o degradê é contínuo. */
 .topo,.header,[data-tema="escuro"] .topo,[data-tema="escuro"] .header{border-bottom:0!important;box-shadow:none!important}
 .footer,[data-tema="escuro"] .footer{border-top:0!important}
+
+/* Nenhuma linha divisória no site (pedido do dono): seções, cards, FAQ, oferta e barra fixa. */
+.confianca,[data-tema="escuro"] .confianca{border-top:0!important;border-bottom:0!important}
+.card .rodape,.rodape,[data-tema="escuro"] .rodape{border-top:0!important}
+.confianca-compra,[data-tema="escuro"] .confianca-compra,#oferta .oferta .confianca-compra{border-top:0!important}
+.faq details,[data-tema="escuro"] .faq details{border-bottom:0!important}
+.barra-fixa,[data-tema="escuro"] .barra-fixa{border-top:0!important}
+.nl-bf-tm{border-top:0!important}
