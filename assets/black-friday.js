@@ -85,21 +85,21 @@
 
   var TEXTOS = {
     pt: {
-      titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', todos: 'em todos os guias',
+      titulo: 'BLACK FRIDAY', termina: 'termina em', de: 'de', por: 'por', em: 'em', todos: 'em todos os guias',
       desconto: function (p) { return p + '% de desconto'; },
       cta: 'Ver as ofertas', ctaProduto: 'Quero aproveitar', fechar: 'Fechar',
       aviso: 'Oferta de Black Friday até segunda-feira (Cyber Monday)', economiza: 'Você economiza',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     en: {
-      titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', todos: 'on every guide',
+      titulo: 'BLACK FRIDAY', termina: 'ends in', de: 'was', por: 'now', em: 'on', todos: 'on every guide',
       desconto: function (p) { return p + '% off'; },
       cta: 'See the deals', ctaProduto: 'Grab the deal', fechar: 'Close',
       aviso: 'Black Friday offer until Monday (Cyber Monday)', economiza: 'You save',
       d: 'd', h: 'h', m: 'm', s: 's',
     },
     es: {
-      titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', todos: 'en todas las guías',
+      titulo: 'BLACK FRIDAY', termina: 'termina en', de: 'de', por: 'por', em: 'en', todos: 'en todas las guías',
       desconto: function (p) { return p + '% de descuento'; },
       cta: 'Ver las ofertas', ctaProduto: 'Aprovechar ahora', fechar: 'Cerrar',
       aviso: 'Oferta de Black Friday hasta el lunes (Cyber Monday)', economiza: 'Ahorras',
@@ -211,7 +211,7 @@
   function encerrar() {
     if (intervalo) clearInterval(intervalo);
     var alvos = document.querySelectorAll(
-      '.nl-bf-faixa,.nl-bf-hero,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
+      '.nl-bf-faixa,.nl-bf-hero,.nl-bf-wrap,.nl-bf-modal-overlay,.nl-bf-fita,.nl-bf-tag-oferta,.nl-bf-estrela,.nl-bf-economiza'
     );
     for (var i = 0; i < alvos.length; i++) alvos[i].remove();
     document.body.classList.remove('nl-bf-trava');
@@ -304,6 +304,25 @@
       '.nl-bf-estrela{position:absolute;top:12px;right:12px;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;transform:rotate(10deg);box-shadow:0 6px 14px rgba(13,27,42,.25);font-family:inherit}',
       '@media(max-width:520px){#oferta .oferta{padding:34px 16px 28px}.nl-bf-estrela{width:54px;height:54px;font-size:15px;top:8px;right:8px}}',
 
+      // ---------- 2b) cartão de Black Friday acima do hero ----------
+      '.nl-bf-wrap{padding:22px 22px 4px;font-family:inherit}',
+      '.nl-bf-card{max-width:1032px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(255,255,255,.78);border:1px solid rgba(13,27,42,.1);border-radius:20px;padding:18px 28px 18px 20px;box-shadow:0 12px 30px rgba(15,118,110,.12)}',
+      '.nl-bf-esq{display:flex;align-items:center;gap:18px;min-width:0}',
+      '.nl-bf-tagbox{flex:none;width:74px;margin:-18px 6px -10px 0}',
+      '.nl-bf-card .nl-bf-etiqueta{position:static;display:block;width:74px;transform:rotate(-8deg);transform-origin:50% 0;filter:drop-shadow(0 6px 8px rgba(13,27,42,.25))}',
+      '.nl-bf-tit{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:32px;line-height:1.05;letter-spacing:-.5px;color:#0d1b2a}',
+      '.nl-bf-txt2{margin:6px 0 0;font-size:15px;line-height:1.45;color:#3f5c58}',
+      '.nl-bf-txt2 b{color:#0d1b2a}',
+      '.nl-bf-tm2{margin-top:6px;font-size:12.5px;color:#5b6b68}',
+      '.nl-bf-tm2 b{color:#0d1b2a;font-variant-numeric:tabular-nums}',
+      '.nl-bf-btn2{flex:none;display:inline-block;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#0d1b2a;font-weight:700;font-size:15px;padding:13px 24px;border-radius:12px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 20px rgba(245,158,11,.3)}',
+      '.nl-bf-btn2:hover{filter:brightness(1.05)}',
+      '[data-tema="escuro"] .nl-bf-card{background:rgba(19,42,62,.85);border-color:rgba(94,234,212,.18);box-shadow:0 12px 30px rgba(0,0,0,.35)}',
+      '[data-tema="escuro"] .nl-bf-tit,[data-tema="escuro"] .nl-bf-txt2 b,[data-tema="escuro"] .nl-bf-tm2 b{color:#fff}',
+      '[data-tema="escuro"] .nl-bf-txt2{color:#cfe7e2}',
+      '[data-tema="escuro"] .nl-bf-tm2{color:#9fc4bd}',
+      '@media(max-width:700px){.nl-bf-wrap{padding:16px 16px 0}.nl-bf-card{flex-direction:column;align-items:stretch;text-align:center;padding:20px 18px;gap:14px}.nl-bf-tagbox{display:none}.nl-bf-tit{font-size:28px}.nl-bf-btn2{display:block;text-align:center}}',
+
       // ---------- 5) pop-up diário ----------
       '.nl-bf-modal-overlay{position:fixed;inset:0;background:rgba(5,12,20,.78);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}',
       '.nl-bf-modal-overlay.nl-bf-aberto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}',
@@ -373,29 +392,26 @@
     var nomeEl = ehProduto && document.getElementById('oferta-produto');
     var nome = nomeEl ? nomeEl.textContent.trim() : '';
     var paragrafo = pct
-      ? '<b>' + esc(t.desconto(pct)) + '</b>' + (nome ? '<span>' + esc(nome) + '</span>' : ' ' + t.todos)
+      ? '<b>' + esc(t.desconto(pct)) + '</b> ' + (nome ? esc(t.em) + ' ' + esc(nome) : t.todos)
       : (nome ? esc(nome) : t.todos);
 
+    var oferta = precos
+      ? ' — ' + esc(t.de) + ' <s>' + esc(precos.de) + '</s> ' + esc(t.por) + ' <b>' + esc(precos.por) + '</b>'
+      : '';
     var secao = document.createElement('section');
-    secao.className = 'nl-bf-hero';
+    secao.className = 'nl-bf-wrap';
     secao.setAttribute('aria-label', t.titulo);
     secao.innerHTML =
-      '<div class="nl-bf-hero-in">' +
-      (pct ? etiquetaSvg(pct, precos && precos.por) : '') +
-      '<div class="nl-bf-txt">' +
-      '<div class="nl-bf-wm">Black<br>Friday</div>' +
-      '<div class="nl-bf-rule"></div>' +
-      '<p class="nl-bf-p">' + paragrafo + '</p>' +
-      '</div>' +
-      palcoHtml(idioma) +
-      '<div class="nl-bf-act">' +
-      '<div class="nl-bf-linha">' +
-      (precos ? '<div class="nl-bf-pr"><b>' + esc(precos.por) + '</b><s>' + esc(t.de) + ' ' + esc(precos.de) + '</s></div>' : '') +
-      '<a class="nl-bf-btn" href="' + href + '">' + (ehHome ? t.cta : t.ctaProduto) + '</a>' +
-      '</div>' +
-      '<div class="nl-bf-tm">' + t.termina + ' <b class="nl-bf-tempo-full"></b></div>' +
-      '<div class="nl-bf-aviso">' + t.aviso + '</div>' +
-      '</div></div>';
+      '<div class="nl-bf-card">' +
+      '<div class="nl-bf-esq">' +
+      (pct ? '<span class="nl-bf-tagbox">' + etiquetaSvg(pct, precos && precos.por) + '</span>' : '') +
+      '<div class="nl-bf-info">' +
+      '<div class="nl-bf-tit">Black Friday</div>' +
+      '<p class="nl-bf-txt2">' + paragrafo + oferta + '</p>' +
+      '<div class="nl-bf-tm2">' + t.termina + ' <b class="nl-bf-tempo"></b></div>' +
+      '</div></div>' +
+      '<a class="nl-bf-btn2" href="' + href + '">' + (ehHome ? t.cta : t.ctaProduto) + '</a>' +
+      '</div>';
 
     hero.parentNode.insertBefore(secao, hero);
   }
