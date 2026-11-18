@@ -213,3 +213,6 @@ header.topo.interno .menu-inicio .mi-ico{display:none}
 [data-tema="escuro"] header.topo.interno nav.menu a.atual,[data-tema="escuro"] header.topo.interno nav.menu a:hover{color:#5eead4}
 header.topo.interno .logo{line-height:normal}
 header.topo.interno .idiomas{gap:8px;margin:0}
+
+/* Sem trilha "Início › Categoria › Produto" nas páginas de produto (pedido do dono) */
+.breadcrumb{display:none!important}
