@@ -381,3 +381,16 @@ body:has(#chips) .hero p{display:none!important}
   /* "você também pode gostar": título do card visível */
   .nl-relacionados-card h4{font-size:14px!important}
 }
+
+/* ===== Avaliações no tema escuro (formulário "Avalie este material" e cartões publicados) ===== */
+[data-tema="escuro"] .nl-av-form,[data-tema="escuro"] .nl-av-card{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.1)!important;box-shadow:none!important}
+[data-tema="escuro"] .nl-av-form h4,[data-tema="escuro"] .nl-av-card strong{color:#fff!important}
+[data-tema="escuro"] .nl-av-form .nl-av-sub,[data-tema="escuro"] .nl-av-form form>span,[data-tema="escuro"] .nl-av-consent{color:#b7d5cf!important}
+[data-tema="escuro"] .nl-av-card p{color:#cfe7e2!important}
+[data-tema="escuro"] .nl-av-tag{background:rgba(94,234,212,.12)!important;color:#5eead4!important}
+[data-tema="escuro"] .nl-av-form input[type=text],[data-tema="escuro"] .nl-av-form input[type=email],[data-tema="escuro"] .nl-av-form textarea{background:rgba(255,255,255,.06)!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important}
+[data-tema="escuro"] .nl-av-form input::placeholder,[data-tema="escuro"] .nl-av-form textarea::placeholder{color:#8fb3ac}
+[data-tema="escuro"] .nl-av-form input[type=text]:focus,[data-tema="escuro"] .nl-av-form input[type=email]:focus,[data-tema="escuro"] .nl-av-form textarea:focus{border-color:#5eead4!important;box-shadow:0 0 0 3px rgba(94,234,212,.15)}
+[data-tema="escuro"] .nl-av-notas label{color:rgba(255,255,255,.22)}
+[data-tema="escuro"] .nl-av-notas input:checked ~ label,[data-tema="escuro"] .nl-av-notas label:hover,[data-tema="escuro"] .nl-av-notas label:hover ~ label{color:#f59e0b}
+[data-tema="escuro"] .nl-av-consent input{accent-color:#5eead4}
