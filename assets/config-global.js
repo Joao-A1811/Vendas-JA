@@ -21,7 +21,7 @@ window.SITE = {
   // E-mail de contato mostrado na política de privacidade e nos termos de uso
   // (necessário pra LGPD: é por ele que a pessoa pede acesso/exclusão dos dados).
   // Enquanto estiver 'COLE_AQUI', as páginas legais mostram um texto genérico.
-  emailContato: 'ja.investimentos@outlook.com',
+  emailContato: 'contato@nextlevelbr.app.br',
 
   // Projeto Firebase que guarda os leads (formulários preenchidos).
   firebase: {
